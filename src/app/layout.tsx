@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { GameProvider } from "@/lib/gameContext";
+import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "PocketWise — Financial Literacy for NZ Students",
@@ -11,9 +11,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <GameProvider>
-          {children}
-        </GameProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
