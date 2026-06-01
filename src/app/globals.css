@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:       #0d1526;
+  --navy2:      #111c30;
+  --navy3:      #1a2540;
+  --green:      #76AD25;
+  --green2:     #5d8a1c;
+  --green-light:#e8f5d0;
+  --red:        #EF4444;
+  --red-light:  #fef2f2;
+  --blue:       #3B82F6;
+  --blue-light: #eff6ff;
+  --page-bg:    #f1f5f9;
+  --white:      #ffffff;
+  --text:       #0f172a;
+  --text2:      #475569;
+  --text3:      #94a3b8;
+  --border:     #e2e8f0;
+  --border-dark:#2a3a5c;
+  --muted:      #8b9dc3;
+  --font: 'Inter', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--white); color: var(--text); -webkit-font-smoothing: antialiased; }
+
+.plus-grid {
+  background-color: var(--navy);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M15 0h2v32h-2zM0 15h32v2H0z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.casino-bg {
+  background: radial-gradient(ellipse at top, #0a2010 0%, #060f08 100%);
+}
