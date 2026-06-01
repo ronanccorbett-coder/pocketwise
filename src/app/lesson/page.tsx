@@ -232,7 +232,7 @@ function DragDropActivity({ a, onPass }: { a: Activity; onPass: () => void }) {
 
       {/* Zones */}
       <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 16 }}>
-        {[...new Set(pairs.map(p => p.zone))].map(zone => {
+        {Array.from(new Set(pairs.map(p => p.zone))).map(zone => {
           const itemsHere = pairs.filter(p => placements[p.item] === zone).map(p => p.item);
           let zoneBorder = "#e2e8f0", zoneBg = "#f8fafc";
           if (checked) {
