@@ -1,0 +1,166 @@
+{
+  "title": "Building Your First Budget",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Apply & Analyse",
+  "nceaFocus": "AS92028 — using a budget as a financial tool, describing options to address a financial need, pūtake in decision-making",
+  "ownerEmail": "admin@pocketwise.nz",
+
+  "objectives": [
+    "Categorise expenses as fixed, variable, irregular or discretionary",
+    "Build a complete monthly budget for a NZ scenario",
+    "Apply the pay-yourself-first principle",
+    "Analyse where a budget can be improved",
+    "Connect budgeting decisions to pūtake"
+  ],
+
+  "vocabulary": [
+    {
+      "term": "Fixed Expense",
+      "definition": "An expense that is exactly the same every month. Examples: phone plan, rent, loan repayment, Netflix subscription."
+    },
+    {
+      "term": "Variable Expense",
+      "definition": "An expense that changes in amount from month to month. Examples: groceries, petrol, electricity, eating out."
+    },
+    {
+      "term": "Irregular Expense",
+      "definition": "An expense that doesn't come up every month but you know it's coming. Examples: car registration, dentist, school trips, Christmas. Smart budgeters save a small amount each month for these."
+    },
+    {
+      "term": "Discretionary Spending",
+      "definition": "Optional spending you choose to do. If money is tight, these are the first things to cut. Examples: takeaways, concerts, new clothing, subscriptions."
+    },
+    {
+      "term": "Pay Yourself First",
+      "definition": "The habit of transferring your savings amount to a separate account the moment your pay arrives — before spending anything else. This guarantees you save rather than spend what's left over (which is usually nothing)."
+    },
+    {
+      "term": "Emergency Fund",
+      "definition": "Money set aside specifically for unexpected expenses — job loss, car breakdown, medical costs. Financial experts recommend saving 3 months of living expenses. Even $500 saved provides meaningful protection."
+    }
+  ],
+
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Four Types of Expenses",
+      "estimatedMinutes": 5,
+      "content": "Not all expenses are equal. Understanding the four categories of expenses is the first step to building a budget that actually works.\n\nFIXED EXPENSES — Same every month, no surprises:\n• Phone plan: $45\n• Gym membership: $30\n• Streaming services: $25\n• Bus pass: $80\n\nVARIABLE EXPENSES — Change each month, need monitoring:\n• Groceries: $80–$150\n• Petrol: $40–$120\n• Electricity: $80–$200 (higher in winter)\n• Eating out: $0–$200\n\nIRREGULAR EXPENSES — Don't come monthly but always come:\n• Car rego: $130/year = $11/month to save\n• Dentist checkup: $150/year = $12.50/month to save\n• Christmas: $300/year = $25/month to save\n• School trips: varies\n\nDISCRETIONARY — Pure choices:\n• Clothing beyond basics\n• Takeaways and cafes\n• Entertainment\n• New tech\n\nThe key insight: most people only track fixed and variable expenses and get blindsided by irregular ones. Smart budgeters save a small amount every month for irregular expenses so they're never a shock."
+    },
+    {
+      "type": "quiz",
+      "title": "Checkpoint: Expense Categories",
+      "estimatedMinutes": 4,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Anika pays $47.99 for her phone plan every month without fail. This is a:",
+          "options": ["Variable expense", "Irregular expense", "Fixed expense", "Discretionary expense"],
+          "correctIndex": 2,
+          "explanation": "A fixed expense is the same amount every single month. Anika's phone plan never changes — it's fixed. This makes it easy to budget for because there are no surprises."
+        },
+        {
+          "question": "Wiremu's electricity bill is $90 in summer but $210 in winter. This is a:",
+          "options": ["Fixed expense", "Variable expense", "Discretionary expense", "Surplus"],
+          "correctIndex": 1,
+          "explanation": "A variable expense changes in amount. Wiremu's electricity changes with the seasons — it's variable. He needs to budget a higher amount in winter or save extra in summer to cover it."
+        },
+        {
+          "question": "What is the main advantage of the 'pay yourself first' strategy?",
+          "options": [
+            "You pay your bills before your landlord asks",
+            "You transfer savings before you can spend the money",
+            "You receive your pay before tax is deducted",
+            "You avoid PAYE by managing your own tax"
+          ],
+          "correctIndex": 1,
+          "explanation": "Pay yourself first means the savings transfer happens automatically the moment you're paid. Most people try to save what's left over at the end of the month — which is usually nothing. Pay yourself first guarantees saving happens."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "How to Build a Budget — Step by Step",
+      "estimatedMinutes": 7,
+      "content": "Building a budget takes about 20 minutes. Here are the five steps:\n\nSTEP 1 — List your monthly NET income\nWrite down every source of income. Use your net pay (after tax). If your income varies, use the lowest month as your estimate to be safe.\n\nSTEP 2 — List all fixed expenses\nThese are easy — same every month. Phone, rent/board, subscriptions, loan repayments.\n\nSTEP 3 — Estimate variable expenses\nLook at your last 2–3 months of bank statements. Average them. Be honest.\n\nSTEP 4 — Add irregular expense savings\nAdd up your annual irregular expenses. Divide by 12. Add this as a monthly line item called 'irregular expenses fund'.\n\nSTEP 5 — Calculate surplus/deficit and allocate savings\nIncome minus all expenses = your surplus. If positive, allocate the 20% savings first. If negative, you need to find cuts.\n\nReal NZ example — Aroha's monthly budget:\n• NET INCOME: $900 (from 10hrs/week job)\n• Fixed: phone $45, bus pass $80 = $125\n• Variable: food $120, eating out $60 = $180\n• Irregular fund: $30 (car rego, dentist saved monthly)\n• Discretionary: Spotify $12, clothing $50 = $62\n• TOTAL EXPENSES: $397\n• SURPLUS: $503\n• Savings (20% target = $180): $180 transferred automatically\n• Remaining surplus: $323 — available for goals or extra savings\n\nAroha's budget works because she's honest about her spending and pays herself first."
+    },
+    {
+      "type": "scenario",
+      "title": "Fix Jordan's Budget",
+      "estimatedMinutes": 12,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "Jordan is 16, lives at home, and works 18 hours per week at a local New World supermarket earning $23.15/hr. His monthly NET income (after PAYE at 10.5%) is approximately $1,480.\n\nJordan's current monthly spending (he tracked it for a month):\n• Phone plan: $55\n• Bus pass: $85\n• Groceries/food from home (his share): $0 — whānau covers this\n• Lunch at school: $140 (buys every day from the canteen)\n• Petrol (borrows Mum's car occasionally): $40\n• Clothing: $120\n• Entertainment: $180\n• Takeaways and cafes: $160\n• Gaming (new games + Xbox Live): $70\n• Savings: $0\n• TOTAL: $850\n• SURPLUS: $630 (but Jordan can't explain where this $630 goes)\n\nJordan's pūtake — his personal financial purpose — is to save enough for a used car (he needs $5,000) and to eventually move into a flat with his mates when he turns 18. He estimates a flat will cost him $1,200/month in rent and living costs.",
+      "challenge": "1. Categorise each of Jordan's expenses as Fixed, Variable, or Discretionary.\n\n2. Apply the 50/30/20 rule to Jordan's $1,480 income. What should he allocate to each category?\n\n3. Jordan's needs total is actually very low because his whānau covers food and he lives at home rent-free. Identify what his real needs, wants, and savings SHOULD be at 50/30/20.\n\n4. Jordan needs to save $5,000 for a car. At the 20% savings rate ($296/month), how many months will it take? What if he saved 30% instead?\n\n5. Jordan's bigger goal is flatting at 18 — in approximately 2 years. His flat will cost $1,200/month. Right now he earns $1,480/month net. Will he be able to afford to flat on his current income? What would he need to do differently to make it work?\n\n6. Write a short paragraph explaining how Jordan's pūtake (his goals of car ownership and independence) should shape his financial decisions right now.",
+      "hints": [
+        "50% of $1,480 = $740 for needs. Jordan's actual needs are only $140 (phone + bus). Big gap.",
+        "20% of $1,480 = $296 for savings per month",
+        "$5,000 ÷ $296 = approximately 17 months for car at 20% savings",
+        "For flatting question: if rent is $1,200 and Jordan earns $1,480, he only has $280 left for everything else. That's very tight."
+      ],
+      "solution": "1. Categories:\n• Phone plan $55 — Fixed\n• Bus pass $85 — Fixed\n• Lunch $140 — Variable (discretionary — could bring lunch)\n• Petrol $40 — Variable\n• Clothing $120 — Discretionary\n• Entertainment $180 — Discretionary\n• Takeaways $160 — Discretionary\n• Gaming $70 — Discretionary\n• Savings $0 — Missing!\n\n2 & 3. 50/30/20 applied to $1,480:\n• Needs (50%) = $740. Jordan's real needs = $140. He has $600 of unused needs budget — this shows how fortunate he is to live at home.\n• Wants (30%) = $444. Jordan's wants = $710 — he's overspending wants by $266.\n• Savings (20%) = $296. Jordan saves $0 — critical failure.\n\n4. Car savings:\n• At 20% ($296/month): $5,000 ÷ $296 = 17 months\n• At 30% ($444/month): $5,000 ÷ $444 = 11 months (6 months faster!)\n\n5. Flatting reality check:\n• Rent/living = $1,200. Income = $1,480. Remaining = $280 for ALL other expenses.\n• This is not workable unless Jordan increases his income (more hours, higher-paying job) or significantly reduces flat costs (cheaper suburb, extra flatmates).\n• Jordan needs to either earn more or save a larger buffer before moving out.\n\n6. Sample paragraph: Jordan's pūtake is financial independence — owning his own car and living on his own terms. Right now he is undermining that pūtake by spending $360/month on takeaways and entertainment while saving nothing. Every dollar spent on discretionary items today delays the car and makes the flat goal more difficult. Redirecting even $200/month from wants to savings would cut the time to his car from 17 months to 13 months, and give him a $2,400 buffer before he flats."
+    },
+    {
+      "type": "quiz",
+      "title": "End-of-Lesson Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Merit",
+      "questions": [
+        {
+          "question": "Zoe earns $1,200/month net. She spends $600 on needs, $360 on wants, and saves $240. Which statement is correct?",
+          "options": [
+            "Zoe is overspending on wants and should cut them",
+            "Zoe is following the 50/30/20 rule exactly",
+            "Zoe is saving too much and should spend more on wants",
+            "Zoe's needs are too high and should be reduced"
+          ],
+          "correctIndex": 1,
+          "explanation": "50% of $1,200 = $600 needs ✓. 30% = $360 wants ✓. 20% = $240 savings ✓. Zoe is following the 50/30/20 rule precisely. This is the target to aim for."
+        },
+        {
+          "question": "A community sports club is deciding whether to reduce its annual fees to make membership more accessible to low-income families. This financial decision is shaped by their:",
+          "options": [
+            "Fixed expenses",
+            "Variable income",
+            "Pūtake — their purpose of making sport accessible to everyone",
+            "Irregular expense fund"
+          ],
+          "correctIndex": 2,
+          "explanation": "The club's pūtake — why they exist — is to make sport accessible. This shapes a financial decision (reducing fees) that costs the club money but serves their purpose. This is classic AS92028 pūtake analysis."
+        },
+        {
+          "question": "Aroha has a $200 car registration bill due in October. She forgot to save for it and now has to take it from her emergency fund. What should she have done differently?",
+          "options": [
+            "Taken out a credit card to cover it",
+            "Ignored it and hoped for the best",
+            "Added $17/month to her budget as an irregular expenses fund throughout the year",
+            "Borrowed money from her whānau each year"
+          ],
+          "correctIndex": 2,
+          "explanation": "$200 ÷ 12 months = $16.67/month. By saving $17/month all year, Aroha would have exactly $204 set aside when October arrives — no stress, no borrowing. This is how irregular expenses are managed in a smart budget."
+        },
+        {
+          "question": "At Merit level, what does 'examining' a financial decision involve? (AS92028)",
+          "options": [
+            "Simply describing what the decision was",
+            "Calculating the exact cost of the decision",
+            "Explaining stakeholder perspectives and possible consequences of the decision",
+            "Drawing a graph of income vs expenses"
+          ],
+          "correctIndex": 2,
+          "explanation": "At Merit level (Examine), AS92028 requires you to explain stakeholder perspectives relevant to the decision AND explain possible consequences for the organisation and its stakeholders. This goes beyond just describing what happened."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "Build YOUR Budget",
+      "estimatedMinutes": 5,
+      "prompt": "Using what you've learned today, have a go at building a real budget for yourself.\n\n1. Write down your monthly net income (or estimate it based on minimum wage at your desired hours).\n2. List your top 5 monthly expenses with amounts.\n3. Calculate your surplus or deficit.\n4. If you applied the 50/30/20 rule, what would you change?\n5. What is YOUR pūtake — your financial purpose right now? (A car? Travel? Independence? Supporting your whānau?)\n\nBe as honest as you can. This doesn't get marked — it's for you.",
+      "nceaLink": "Building a personal budget develops the practical skills needed for AS92028 — where you'll analyse an organisation's budget and financial decision-making using the same process."
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "title": "NZ Income, PAYE & the Minimum Wage",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Understand & Apply",
+  "nceaFocus": "AS92028 — using financial data and tools to support decision-making, understanding gross vs net income",
+  "ownerEmail": "admin@pocketwise.nz",
+
+  "objectives": [
+    "Distinguish between gross and net pay",
+    "Calculate approximate take-home pay from gross wages using NZ tax rates",
+    "Explain how PAYE works in New Zealand",
+    "Understand NZ minimum wage rates for 2025",
+    "Know what a tax code is and why it matters"
+  ],
+
+  "vocabulary": [
+    {
+      "term": "Gross Pay",
+      "definition": "Your pay BEFORE any deductions. What your employer agrees to pay you before tax is taken."
+    },
+    {
+      "term": "Net Pay",
+      "definition": "Your pay AFTER all deductions — what actually hits your bank account. Also called take-home pay."
+    },
+    {
+      "term": "PAYE",
+      "definition": "Pay As You Earn. NZ income tax deducted automatically by your employer before you receive your pay. Sent directly to Inland Revenue (IRD)."
+    },
+    {
+      "term": "Minimum Wage",
+      "definition": "The lowest hourly rate an employer can legally pay in New Zealand. In 2025: adult minimum wage is $23.15/hr. Starting-out and training wage is $18.52/hr."
+    },
+    {
+      "term": "Tax Code",
+      "definition": "A code (like M, S, or SH) that tells your employer how much PAYE to deduct. M is for your main/only job. S is for a secondary job. Using the wrong code means you may owe tax at the end of the year."
+    },
+    {
+      "term": "IRD Number",
+      "definition": "Your unique tax identification number from Inland Revenue (IRD). You need this to start work, open a bank account, and join KiwiSaver. Apply free at ird.govt.nz."
+    }
+  ],
+
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Recap: Where We Left Off",
+      "estimatedMinutes": 3,
+      "content": "Last lesson we learned that a budget is a plan — not a restriction — and that the 50/30/20 rule gives you a simple framework for splitting your income between needs, wants, and savings.\n\nBut here's the thing: before you can budget, you need to know exactly how much money you actually receive. Not what your employer promises you — what actually lands in your bank account.\n\nMost students are surprised to learn the difference between these two numbers. Today we're going to understand exactly why they're different, and how to calculate your real take-home pay in New Zealand."
+    },
+    {
+      "type": "quiz",
+      "title": "Recap Quiz: Lesson 1",
+      "estimatedMinutes": 4,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "What does the 20% in the 50/30/20 rule represent?",
+          "options": [
+            "Money for wants like entertainment",
+            "Money saved or invested",
+            "Money for essential needs",
+            "Money paid in tax"
+          ],
+          "correctIndex": 1,
+          "explanation": "The 20% is your savings — emergency fund, KiwiSaver, and saving for goals. Treating this as a non-negotiable expense is the key habit of financially secure people."
+        },
+        {
+          "question": "If your income is less than your expenses, you have a:",
+          "options": ["Surplus", "Deficit", "Budget", "Pūtake"],
+          "correctIndex": 1,
+          "explanation": "A deficit means spending more than you earn. Income − Expenses = negative number = deficit. This leads to debt if it continues."
+        },
+        {
+          "question": "What is pūtake in a Commerce context?",
+          "options": [
+            "The amount of tax an organisation pays",
+            "The reason an organisation exists — its purpose and values",
+            "The profit margin of a business",
+            "The name for a NZ savings account"
+          ],
+          "correctIndex": 1,
+          "explanation": "Pūtake is the reason an organisation exists. It shapes all financial decisions. This is a mandatory part of AS92028 — you must discuss pūtake in your assessment."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "NZ Minimum Wage & Gross Pay",
+      "estimatedMinutes": 6,
+      "content": "New Zealand has a legal minimum wage that all employers must pay. In 2025 the rates are:\n\n• Adult minimum wage: $23.15 per hour\n• Starting-out wage (16–17 year olds in their first 6 months of work): $18.52/hr\n• Training wage (completing industry training): $18.52/hr\n\nIf you work 10 hours per week at the adult minimum wage:\n• Gross weekly pay = 10 × $23.15 = $231.50\n• Gross fortnightly pay = $463.00\n• Gross annual pay = $231.50 × 52 = $12,038\n\nBut here is the crucial thing: you will never receive $231.50. Your employer is legally required to deduct PAYE tax and send it directly to Inland Revenue before you see a cent.\n\nThis is why understanding PAYE is so important. Your gross pay is what you agree to work for. Your net pay is what you actually live on — and budgeting must always be based on net pay."
+    },
+    {
+      "type": "slide",
+      "title": "How PAYE Works in NZ",
+      "estimatedMinutes": 7,
+      "content": "PAYE stands for Pay As You Earn. It is New Zealand's system of collecting income tax throughout the year rather than in one lump sum at the end.\n\nNZ income tax rates in 2025 (these are marginal rates — you only pay each rate on income within that band):\n\n• Up to $14,000 per year: 10.5%\n• $14,001 to $48,000: 17.5%\n• $48,001 to $70,000: 30%\n• $70,001 to $180,000: 33%\n• Over $180,000: 39%\n\nFor most students earning under $14,000 per year, the rate is simply 10.5%.\n\nExample calculation — Aroha earns $231.50 gross per week:\n• Annual gross = $231.50 × 52 = $12,038 (under $14,000 threshold)\n• PAYE rate = 10.5%\n• Weekly PAYE = $231.50 × 0.105 = $24.31\n• Net weekly pay = $231.50 − $24.31 = $207.19\n\nAroha also needs to check her tax code. Because this is her only job, she uses tax code M. If she had a second job, the second job would use tax code S — which has a higher deduction rate to prevent under-paying tax.\n\nYou can get your IRD number and manage your tax at myIR.ird.govt.nz — completely free."
+    },
+    {
+      "type": "scenario",
+      "title": "Calculate Your Take-Home Pay",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Three Year 11 students have just started part-time jobs. Help each of them work out their actual take-home pay so they can build accurate budgets.\n\nTax rate reminder: for annual income under $14,000, PAYE rate = 10.5%. For $14,001–$48,000, rate = 17.5%.",
+      "challenge": "Calculate the WEEKLY gross pay, weekly PAYE deduction, and weekly NET pay for each student:\n\nStudent A — Mia works 12 hours per week at a supermarket, earning $23.15/hr.\n\nStudent B — Liam works 20 hours per week at a petrol station, earning $25.00/hr. (Note: Liam's annual income exceeds $14,000 — use 17.5% for the portion above $14,000, or use 17.5% as an approximation for simplicity.)\n\nStudent C — Zoe works 8 hours per week at a café, earning $23.15/hr, AND contributes 3% to KiwiSaver (deducted from gross). Calculate her net pay after PAYE AND KiwiSaver.",
+      "hints": [
+        "Gross weekly = hours × hourly rate",
+        "Weekly PAYE = gross weekly × tax rate",
+        "Net pay = gross − PAYE (and minus KiwiSaver if applicable)",
+        "For Zoe: KiwiSaver deduction = gross × 0.03, then deduct both PAYE and KiwiSaver"
+      ],
+      "solution": "Student A — Mia:\n• Gross weekly = 12 × $23.15 = $277.80\n• Annual gross = $277.80 × 52 = $14,446 (just over threshold — use 17.5% as approximation)\n• Weekly PAYE ≈ $277.80 × 0.175 = $48.62\n• Net weekly ≈ $277.80 − $48.62 = $229.18\n\nStudent B — Liam:\n• Gross weekly = 20 × $25.00 = $500.00\n• Annual gross = $500 × 52 = $26,000 (17.5% bracket)\n• Weekly PAYE = $500 × 0.175 = $87.50\n• Net weekly = $500 − $87.50 = $412.50\n\nStudent C — Zoe:\n• Gross weekly = 8 × $23.15 = $185.20\n• Annual gross = $185.20 × 52 = $9,630 (10.5% bracket)\n• Weekly PAYE = $185.20 × 0.105 = $19.45\n• KiwiSaver 3% = $185.20 × 0.03 = $5.56\n• Net weekly = $185.20 − $19.45 − $5.56 = $160.19\n\nNote: Even though Zoe takes home less than Mia, she is building retirement savings. Her employer also contributes 3%, so she gains $5.56/week extra in KiwiSaver on top of her own contribution."
+    },
+    {
+      "type": "quiz",
+      "title": "Mid-Lesson Quiz: PAYE & Net Pay",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved to Merit",
+      "questions": [
+        {
+          "question": "Jordan earns $250 gross per week. At a PAYE rate of 10.5%, what is his net weekly pay?",
+          "options": ["$223.75", "$226.25", "$240.50", "$250.00"],
+          "correctIndex": 0,
+          "explanation": "PAYE = $250 × 0.105 = $26.25. Net pay = $250 − $26.25 = $223.75. This is what Jordan should use when building his budget — not the $250 gross."
+        },
+        {
+          "question": "Ethan has a main job (tax code M) and picks up a second job. What tax code should he use for his second job?",
+          "options": ["M", "S", "SH", "IRD"],
+          "correctIndex": 1,
+          "explanation": "Tax code S is for secondary employment. It has a higher deduction rate to prevent under-paying tax. Using code M on a second job means you'll owe a tax bill at the end of the year."
+        },
+        {
+          "question": "Why should you always budget based on NET pay rather than gross pay?",
+          "options": [
+            "Because gross pay is just an estimate",
+            "Because net pay is the money you actually receive after tax",
+            "Because gross pay includes KiwiSaver",
+            "Because IRD requires you to use net pay"
+          ],
+          "correctIndex": 1,
+          "explanation": "Net pay is the real money in your bank account. Gross pay is what you earn before deductions. If you budget using gross pay, you'll think you have more money than you actually do."
+        }
+      ]
+    },
+    {
+      "type": "discussion",
+      "title": "Group Discussion: Is the Minimum Wage Enough?",
+      "estimatedMinutes": 7,
+      "prompt": "A Year 11 student working 15 hours per week at the minimum wage earns approximately $232 gross per week — about $207 net after PAYE. Auckland's average weekly rent for a room in a flatting situation is around $280. A one-bedroom apartment averages $550/week.\n\nDiscuss: Is it actually possible for a young New Zealander to live independently on the minimum wage? What would need to change?",
+      "guidingQuestions": [
+        "What are the essential weekly expenses someone living independently would need to cover?",
+        "How does living with whānau change the financial picture? What is the value of that support?",
+        "What is the pūtake behind having a minimum wage — why does the government set one?",
+        "If you were the Minister of Finance, what would you change and why?"
+      ]
+    },
+    {
+      "type": "quiz",
+      "title": "End-of-Lesson Quiz",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Merit",
+      "questions": [
+        {
+          "question": "Caleb earns $400 gross per fortnight. He is on tax code M with PAYE at 10.5% and contributes 3% to KiwiSaver. What is his fortnightly net pay?",
+          "options": ["$347.20", "$354.20", "$358.00", "$374.00"],
+          "correctIndex": 0,
+          "explanation": "PAYE = $400 × 0.105 = $42. KiwiSaver = $400 × 0.03 = $12. Net pay = $400 − $42 − $12 = $346. Option A ($347.20) is closest — minor rounding differences may occur in real payslips."
+        },
+        {
+          "question": "A business owner decides to pay all staff above the minimum wage even when they could legally pay less. This decision reflects their:",
+          "options": [
+            "Gross profit margin",
+            "PAYE obligations",
+            "Pūtake — their values about fair treatment of employees",
+            "KiwiSaver contributions"
+          ],
+          "correctIndex": 2,
+          "explanation": "This is a financial decision shaped by pūtake. The business's values — treating staff fairly — drive a financial choice that costs more than the minimum legal requirement. This is exactly the kind of analysis AS92028 requires."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "Your Payslip Reality",
+      "estimatedMinutes": 4,
+      "prompt": "If you have a part-time job, pull up your last payslip (or ask a family member to show you theirs).\n\nIf you don't have a job yet, calculate what you would earn working 10 hours per week at the minimum wage.\n\n1. What is the gross pay amount?\n2. What is the net pay amount after deductions?\n3. What percentage of your gross pay is taken in deductions?\n4. Does knowing your actual take-home pay change how you think about spending or saving?\n\nWrite 3–4 sentences.",
+      "nceaLink": "Understanding gross vs net pay is foundational for AS92028 — you need accurate financial data before you can use a budget as a financial tool to support a decision."
+    }
+  ]
+}

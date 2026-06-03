@@ -1,0 +1,170 @@
+{
+  "title": "Week 1 Challenge — Pūtake & Financial Tools",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 100,
+  "bloomsLevel": "Apply & Analyse",
+  "nceaFocus": "AS92028 — full synthesis of week 1: pūtake, financial tools, stakeholder perspectives, describing options",
+  "ownerEmail": "admin@pocketwise.nz",
+
+  "objectives": [
+    "Synthesise week 1 learning across all key concepts",
+    "Apply pūtake analysis to real NZ organisation financial decisions",
+    "Use a budget as a financial tool to support and justify a decision",
+    "Identify internal and external stakeholders and explain their perspectives",
+    "Describe options available to address a financial need or issue"
+  ],
+
+  "vocabulary": [
+    {
+      "term": "Financial Tool",
+      "definition": "Any tool that uses financial data to support decision-making. In AS92028, examples include: a budget, a cost-benefit analysis, a price comparison chart, or a SWOT analysis with financial data."
+    },
+    {
+      "term": "Stakeholder",
+      "definition": "A person or group with a shared interest in an organisation. Internal stakeholders work within it (staff, managers). External stakeholders are affected by it (customers, community, government, whānau)."
+    },
+    {
+      "term": "Internal Stakeholder",
+      "definition": "Someone who works within or is directly part of an organisation. Examples: employees, managers, board members, volunteers."
+    },
+    {
+      "term": "External Stakeholder",
+      "definition": "Someone outside the organisation who is affected by its decisions. Examples: customers, suppliers, the local community, iwi, government agencies."
+    },
+    {
+      "term": "Consequence",
+      "definition": "The effect of a financial decision. Consequences can be positive (increased revenue, happier staff) or negative (reduced profit, unhappy customers). AS92028 requires you to analyse consequences at Merit and Excellence level."
+    }
+  ],
+
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Week 1 Recap — The Big Picture",
+      "estimatedMinutes": 4,
+      "content": "This week you've covered three foundational lessons. Let's connect them before we go further.\n\nLesson 1: A budget is a financial tool — a plan for your money. The 50/30/20 rule provides a framework. Pūtake is the reason behind every financial decision.\n\nLesson 2: Gross pay is not the same as net pay. PAYE means tax is deducted before you see your wages. Always budget based on net income.\n\nLesson 3: Expenses fall into four categories — fixed, variable, irregular, and discretionary. Pay yourself first. Build an emergency fund.\n\nThe thread connecting all three lessons is this: good financial decisions are made with accurate information, a clear tool, and an understanding of why you are making the decision — your pūtake.\n\nToday you're going to apply everything to a more complex NZ scenario — this is exactly the kind of thinking AS92028 tests."
+    },
+    {
+      "type": "quiz",
+      "title": "Week 1 Recap Quiz",
+      "estimatedMinutes": 8,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Which of these is a financial tool that can support decision-making? (AS92028)",
+          "options": [
+            "A list of pūtake statements",
+            "A budget showing income and expenses with actual dollar amounts",
+            "A reflection on personal spending habits",
+            "A definition of gross pay"
+          ],
+          "correctIndex": 1,
+          "explanation": "AS92028 specifically requires the use of a financial tool — a budget, SWOT with financial data, cost-benefit analysis, or price comparison. The tool must include actual dollar values to count as financial evidence."
+        },
+        {
+          "question": "Aroha earns $800/month net and spends $950/month. Her financial situation is:",
+          "options": [
+            "A surplus of $150",
+            "A deficit of $150",
+            "Breaking even",
+            "A surplus of $950"
+          ],
+          "correctIndex": 1,
+          "explanation": "$800 − $950 = −$150. Aroha has a $150 monthly deficit. If this continues she'll need to borrow or sell assets to cover the shortfall."
+        },
+        {
+          "question": "Ethan earns $400/week gross. PAYE is 10.5% and he contributes 3% to KiwiSaver. What is his weekly net pay?",
+          "options": ["$354.00", "$346.00", "$358.00", "$348.80"],
+          "correctIndex": 1,
+          "explanation": "PAYE = $400 × 0.105 = $42. KiwiSaver = $400 × 0.03 = $12. Net = $400 − $42 − $12 = $346."
+        },
+        {
+          "question": "Who is an EXTERNAL stakeholder of a local school?",
+          "options": [
+            "A classroom teacher",
+            "The school principal",
+            "Parents and whānau of students",
+            "The school's board of trustees"
+          ],
+          "correctIndex": 2,
+          "explanation": "External stakeholders are outside the organisation but affected by its decisions. Parents and whānau are external — they don't work at the school, but school decisions directly affect their children and families."
+        },
+        {
+          "question": "A local iwi decides to invest its land trust profits into a new health centre rather than distributing cash to members. This decision best reflects their:",
+          "options": [
+            "Fixed expense obligations",
+            "Pūtake — their purpose of caring for the long-term wellbeing of their people",
+            "External stakeholder pressure",
+            "PAYE obligations to IRD"
+          ],
+          "correctIndex": 1,
+          "explanation": "The iwi's pūtake — caring for the long-term health and wellbeing of their people — shapes a financial decision to reinvest profits rather than distribute them. This is pūtake in action."
+        },
+        {
+          "question": "What does examining (Merit level) a financial decision require you to do?",
+          "options": [
+            "Describe what the decision was",
+            "Calculate the exact tax implications",
+            "Explain stakeholder perspectives and possible consequences",
+            "List all expenses in a spreadsheet"
+          ],
+          "correctIndex": 2,
+          "explanation": "At Merit (Examine), AS92028 requires you to explain the perspectives of stakeholders AND explain possible consequences of the decision. Simply describing the decision is only Achieved level."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "The Kāinga Kai Food Bank Challenge",
+      "estimatedMinutes": 18,
+      "nceaLevel": "Achieved to Excellence",
+      "setup": "Kāinga Kai is a community food bank based in South Auckland. Their pūtake is ensuring that no whānau in their community goes without kai (food).\n\nThey are facing a financial issue: their current premises lease is expiring in 3 months. The landlord has offered to renew at $2,800/month — up from their current $1,800/month.\n\nKāinga Kai's current monthly budget:\n• INCOME: Government grant $3,000, community donations $2,500, fundraising $500 = $6,000 total\n• EXPENSES: Lease $1,800, food purchasing $2,400, staff wages (2 part-time) $1,200, utilities $300, transport $200 = $5,900 total\n• CURRENT SURPLUS: $100/month\n\nThree options they are considering:\n\nOPTION A: Accept the new lease at $2,800/month. This creates a monthly deficit of $900.\n\nOPTION B: Relocate to a smaller community hall at $1,200/month. The hall is 3km further from their main client base, reducing the distance some whānau can walk.\n\nOPTION C: Apply for an emergency government grant of $15,000 to cover the rent increase for one year while they fundraise for a permanent solution.",
+      "challenge": "Using a budget as your financial tool, complete the following analysis at each NCEA level:\n\nACHIEVED:\n1. Describe Kāinga Kai's financial issue clearly.\n2. Using the budget provided, calculate what the monthly deficit would be under Option A.\n3. Describe all three options available to Kāinga Kai.\n4. Describe which option you would recommend and include at least one piece of financial data to support it.\n5. Explain how Kāinga Kai's pūtake is relevant to this decision.\n\nMERIT (add to the above):\n6. Identify TWO stakeholders affected by this decision. For each, explain their perspective on the options.\n7. Explain TWO possible consequences of the decision Kāinga Kai makes — one positive, one negative.\n\nEXCELLENCE (add to the above):\n8. Analyse how Kāinga Kai's pūtake should shape their response to the consequences you identified.\n9. Evaluate which option BEST balances financial viability with pūtake. Use specific figures to support your analysis.",
+      "hints": [
+        "Option A deficit: new expenses = $1,800 replaced by $2,800 = $1,000 more. New total expenses = $6,900. Deficit = $6,000 − $6,900 = −$900",
+        "Stakeholders could include: local whānau who use the food bank, the staff, the government funding body, the landlord, the wider South Auckland community",
+        "For Excellence: think about what happens if they choose the cheaper hall — does it serve their pūtake if fewer whānau can access it?"
+      ],
+      "solution": "ACHIEVED:\n1. Kāinga Kai faces a financial issue: their lease is increasing from $1,800 to $2,800/month — a $1,000/month increase that turns their $100 surplus into a $900 deficit.\n\n2. Option A deficit: $6,000 income − $6,900 expenses = −$900/month deficit.\n\n3. Option A: accept increase (−$900/month deficit). Option B: smaller hall at $1,200/month (saves $600/month but reduces accessibility). Option C: emergency grant of $15,000 (buys 12+ months to find a solution).\n\n4. Recommended option: C. The $15,000 grant covers the $900/month deficit for over 16 months, giving Kāinga Kai time to grow donations and fundraising without compromising service. Financial evidence: $15,000 ÷ $900 = 16.7 months of deficit coverage.\n\n5. Kāinga Kai's pūtake — ensuring no whānau goes without kai — means accessibility is central to every decision. A smaller, harder-to-reach facility or a crippling deficit both undermine this purpose.\n\nMERIT:\n6. Stakeholders:\n• Local whānau (external): their perspective is that accessibility and continuity of service is paramount. Option B concerns them because of the extra distance. Option A without more funding concerns them because a deficit may force service cuts.\n• Staff (internal): their perspective is job security. A $900/month deficit threatens their part-time wages. Option C provides the most stability.\n\n7. Consequences:\n• Positive consequence of Option C: Kāinga Kai maintains current service levels, giving them time to grow their funding base and potentially negotiate a better long-term arrangement.\n• Negative consequence of Option C: The grant is time-limited. If they don't grow income in 16 months, they face the same crisis again — but potentially worse if the grant is not renewable.\n\nEXCELLENCE:\n8. Kāinga Kai's pūtake demands they respond to the risk of relying on a one-off grant by using the 16-month window strategically. Their values oblige them to invest in growing sustainable income — not just delay the problem. This might mean hiring a volunteer fundraising coordinator, applying for ongoing government contracts, or launching a community fundraising campaign.\n\n9. Option C best balances viability and pūtake. Option A's $900/month deficit ($10,800/year) would exhaust reserves within months, forcing service cuts that directly contradict their pūtake. Option B saves money but violates the accessibility principle central to who they are. Option C costs $0 immediately, maintains full service, and — if used strategically — could generate enough new income to make the higher lease sustainable permanently. The $15,000 investment in continuity is justified by the pūtake and supported by the financial evidence."
+    },
+    {
+      "type": "quiz",
+      "title": "NCEA Standards Check",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Merit to Excellence",
+      "questions": [
+        {
+          "question": "To achieve EXCELLENCE in AS92028, you must analyse how the organisation could respond to consequences. What does this mean?",
+          "options": [
+            "List all the consequences without explaining them",
+            "Describe the decision that was made",
+            "Analyse how the organisation's pūtake shapes its response to positive and negative consequences",
+            "Calculate the exact financial cost of each consequence"
+          ],
+          "correctIndex": 2,
+          "explanation": "Excellence requires you to analyse — not just list — how the organisation considers its pūtake when responding to consequences. For example: 'Although Option B saves $600/month, Kāinga Kai's pūtake of accessibility means this saving cannot justify reducing service to vulnerable whānau.'"
+        },
+        {
+          "question": "Which of the following is the STRONGEST use of a financial tool in an AS92028 response?",
+          "options": [
+            "'The food bank should spend less money to save money.'",
+            "'The food bank has a deficit.'",
+            "'Option A creates a monthly deficit of $900 ($6,000 income − $6,900 expenses), which would deplete their $1,200 savings reserve within 2 months.'",
+            "'The food bank uses a budget to make decisions.'"
+          ],
+          "correctIndex": 2,
+          "explanation": "A strong financial tool response includes specific dollar figures, shows the calculation, and connects it directly to the decision. Vague statements ('spend less', 'has a deficit') do not demonstrate use of a financial tool."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "Project Introduction — Your AS92028 Assessment Task",
+      "estimatedMinutes": 5,
+      "content": "Starting next week, you'll complete your module project — a full AS92028-style financial decision-making task.\n\nHere's what it involves:\n\nYou will choose a real or fictional NZ organisation facing a financial need, issue, or opportunity. It could be:\n• A school deciding whether to buy new technology\n• A sports club considering raising its membership fees\n• A small business deciding whether to hire a new staff member\n• A marae choosing how to use a heritage grant\n• A food bank like Kāinga Kai facing rising costs\n\nYou will need to:\n1. Describe the organisation and its pūtake\n2. Describe THREE options using a financial tool (budget or cost-benefit analysis with real figures)\n3. Recommend and justify one option using financial data\n4. Identify stakeholders and explain their perspectives (Merit)\n5. Analyse consequences and how pūtake shapes the response (Excellence)\n\nBy the end of Lesson 7, you'll have a completed response. Lesson 8 is the formal NCEA assessment session.\n\nStart thinking now: what organisation will you choose? Tip: choose something you genuinely care about — the best responses come from real interest."
+    }
+  ]
+}

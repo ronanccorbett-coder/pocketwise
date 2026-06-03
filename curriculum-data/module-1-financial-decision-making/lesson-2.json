@@ -1,0 +1,181 @@
+{
+  "title": "Financial Tools and How to Use Them",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "AS92028: Describing options using a financial tool with actual dollar amounts — understanding budgets, cost-benefit analysis, price comparison charts, and SWOT in NZ organisational contexts",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Identify and describe the four financial tools accepted in AS92028",
+    "Construct a basic budget and cost-benefit analysis using actual NZ dollar figures",
+    "Select the most appropriate financial tool for a given organisational scenario"
+  ],
+  "vocabulary": [
+    {
+      "term": "Budget",
+      "definition": "A financial plan that estimates income and expenses over a set time period. A budget helps an organisation plan how to use its money and track whether it is on track. In AS92028, a budget must include actual dollar figures for income and expenses."
+    },
+    {
+      "term": "Cost-benefit analysis",
+      "definition": "A financial tool that lists and compares all the costs and all the benefits of a decision, usually in dollar terms. If the total benefits outweigh the total costs, the option may be worth pursuing."
+    },
+    {
+      "term": "Price comparison chart",
+      "definition": "A table that sets out the key financial details of two or more options side by side so they can be compared directly. Commonly used when choosing between suppliers, products, or funding sources."
+    },
+    {
+      "term": "SWOT analysis",
+      "definition": "A tool that identifies Strengths, Weaknesses, Opportunities, and Threats. In AS92028, a SWOT only counts as a financial tool when it includes actual financial data in at least two of the four quadrants."
+    },
+    {
+      "term": "Net benefit",
+      "definition": "The result of subtracting total costs from total benefits in a cost-benefit analysis. A positive net benefit means benefits outweigh costs. A negative net benefit means costs outweigh benefits."
+    },
+    {
+      "term": "Fixed costs",
+      "definition": "Costs that stay the same regardless of how much the organisation produces or sells. Examples include rent, insurance, and annual registration fees."
+    },
+    {
+      "term": "Variable costs",
+      "definition": "Costs that change depending on how much the organisation produces or sells. Examples include ingredients, packaging, and casual staff wages."
+    },
+    {
+      "term": "Income",
+      "definition": "Money coming into the organisation. For a business this is usually revenue from sales. For a not-for-profit it might include membership fees, grants, donations, and fundraising."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Recap Quiz — What Did We Learn Yesterday?",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A surf club's rescue boat motor has failed and the club cannot operate safety patrols without it. What type of financial situation is this?",
+          "options": [
+            "A financial opportunity",
+            "A financial issue",
+            "A financial need",
+            "A putake decision"
+          ],
+          "correctIndex": 2,
+          "explanation": "This is a financial need. Without the motor, the club cannot carry out its core function — running safety patrols. A financial need is something the organisation must address to keep operating. It is not an opportunity (which involves improvement, not survival) and not just an issue (which is an ongoing problem, not a complete operational block)."
+        },
+        {
+          "question": "Which of the following is NOT one of the five qualities of a good financial decision?",
+          "options": [
+            "It is evidence-based",
+            "It reflects putake",
+            "It maximises profit above all other considerations",
+            "It considers stakeholders"
+          ],
+          "correctIndex": 2,
+          "explanation": "Maximising profit above all other considerations is not one of the five qualities of a good financial decision — in fact, it is the opposite of good decision-making for many organisations. Putake, stakeholder consideration, evidence, options, and consequences are the five qualities. Many NZ organisations such as schools, sports clubs, marae, and charities do not exist to maximise profit, so applying a profit-first lens would directly conflict with their putake."
+        },
+        {
+          "question": "In AS92028, putake must be discussed at which achievement levels?",
+          "options": [
+            "Excellence only",
+            "Merit and Excellence only",
+            "All levels — Achieved, Merit, and Excellence",
+            "It is optional at all levels"
+          ],
+          "correctIndex": 2,
+          "explanation": "Putake is mandatory at all achievement levels in AS92028. At Achieved, you describe the financial situation and state a decision that discusses putake. At Merit, you examine stakeholder perspectives in the context of putake. At Excellence, you analyse how the decision considers stakeholder perspectives and how the organisation could respond to consequences in a way that upholds putake. It is never optional."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "The Four Financial Tools You Need to Know",
+      "estimatedMinutes": 8,
+      "content": "In AS92028, you are required to use a financial tool to describe your options. There are four tools that NZQA accepts for this standard: a budget, a cost-benefit analysis, a price comparison chart, and a SWOT analysis with financial data. You do not need to use all four — you just need to pick the right one for the situation and use it well.\n\nLet's look at each one.\n\nA budget is the most familiar. A budget lists expected income and expected expenses for a time period, usually a month or a year. The difference between income and expenses is either a surplus (income is higher) or a deficit (expenses are higher). Budgets are especially useful when the financial decision involves planning for a future activity or project. If a school's drama club is deciding whether they can afford to stage a production, a budget is the right tool. They would list income (ticket sales, sponsorship, school funding) and expenses (costumes, set materials, venue hire, printing) and see whether the numbers stack up.\n\nHere is a simple example. The Whanganui Junior Soccer Club is deciding whether to run a tournament this year. They estimate 20 teams will enter at $180 per team, giving income of $3,600. Their estimated costs are: ground hire $800, referees $600, trophies $350, first aid cover $200, advertising $150. Total costs: $2,100. Projected surplus: $1,500. The budget tells them the tournament is likely to be financially viable.\n\nA cost-benefit analysis goes a step further than a budget. Instead of just listing income and expenses for a single plan, it compares the total costs and total benefits of a decision — and benefits can include things that are not directly financial, like improved community relationships or better staff morale, as long as you assign a dollar value or clearly explain the value. Cost-benefit analyses are best when the decision involves a trade-off between spending money now for benefits later.\n\nHere is an example. A Rotorua café owner, Ethan, is considering installing a solar panel system for $14,000. The benefits include reduced power bills of approximately $2,800 per year, a potential increase in customers who prefer sustainable businesses (estimated $1,500 additional revenue per year), and a $3,000 government rebate available through EECA. Over five years, total benefits are approximately $4,300 x 5 = $21,500 plus $3,000 rebate = $24,500. Total cost is $14,000. Net benefit over five years: $10,500. The analysis supports the investment.\n\nA price comparison chart is the simplest tool. It takes two or more options and puts their key financial details side by side in a table. It is best used when you need to choose between different suppliers, funding options, or products. For example, if the surf club is choosing between three loan options from three different banks, a price comparison chart would list the loan amount, interest rate, repayment term, and total repayment for each option.\n\nA SWOT analysis with financial data lists Strengths, Weaknesses, Opportunities, and Threats. It is the most flexible tool but also the easiest to misuse. In AS92028, a SWOT only counts as a valid financial tool if it contains actual financial figures in at least two quadrants. A SWOT that says 'strength: good location, weakness: high costs' without any dollar amounts is not strong enough. A SWOT that says 'strength: annual revenue of $42,000 from regular customers, weakness: fixed costs of $38,000 per year leave only $4,000 for unexpected expenses' is much more useful.\n\nThe bottom line: choose the tool that best fits the decision. Budget for planning a project. Cost-benefit for a significant investment with trade-offs. Price comparison for choosing between specific options. SWOT for a broader strategic analysis that includes financial context.\n\nAnd always — always — include actual dollar figures. A financial tool without real numbers is just a template."
+    },
+    {
+      "type": "slide",
+      "title": "Building a Budget Step by Step",
+      "estimatedMinutes": 8,
+      "content": "The budget is the tool you will use most often in AS92028. Let's learn how to build one properly, step by step, using a real NZ scenario.\n\nThe scenario: Mia runs a small sausage sizzle fundraiser every Saturday for her school's environmental club. She is planning a special end-of-year fundraiser and needs to decide whether it is worth scaling up — hiring a bigger BBQ, buying more supplies, and running it across two days instead of one.\n\nStep 1: Identify your income sources and estimate the amounts.\n\nMia's income for the two-day fundraiser:\n- Sausage sizzle sales: She expects to sell 400 sausages per day at $3 each. 400 x $3 x 2 days = $2,400\n- Drink sales: 150 cans per day at $2 each. 150 x $2 x 2 days = $600\n- Donation bucket: Estimated $80 per day. $80 x 2 = $160\n\nTotal estimated income: $3,160\n\nStep 2: Identify your expense categories and estimate the amounts.\n\nMia's expenses:\n- Sausages: 400 per day x 2 days = 800 sausages. At $0.60 each from Pak'nSave = $480\n- Bread: 800 rolls at $0.25 each = $200\n- Onions, sauce, napkins, plates: $85\n- Drinks (cost price): 300 cans at $1.10 each = $330\n- BBQ hire (larger unit for 2 days): $180\n- Gazebo hire: $60\n- Volunteer thank-you morning tea: $45\n\nTotal estimated expenses: $1,380\n\nStep 3: Calculate the surplus or deficit.\n\nSurplus = Total income minus total expenses\n$3,160 - $1,380 = $1,780 projected surplus\n\nStep 4: Interpret the result.\n\nThe budget shows the two-day fundraiser is projected to generate a surplus of $1,780. This is significantly more than a single-day event (which typically generates around $600 to $700). The additional costs of scaling up are more than covered by the additional income.\n\nStep 5: Connect the result to putake and the decision.\n\nMia's environmental club exists to fund sustainability projects at their school, including a school garden, a recycling programme, and an annual tree-planting day. A surplus of $1,780 would fully fund all three projects for the year. The budget supports going ahead with the two-day event.\n\nNow here are three common mistakes students make when building budgets in AS92028:\n\nMistake 1: Using vague estimates without showing calculations. 'Income: approximately $3,000' is not good enough. Show the calculation: 400 units x $3 x 2 days = $2,400. Markers need to see your working.\n\nMistake 2: Forgetting variable costs. Students often remember the big costs (hiring equipment, buying main supplies) but forget smaller variable costs like condiments, packaging, and transport. These add up.\n\nMistake 3: Building only one budget. For AS92028, you need to compare options. Build a budget for Option A and a separate budget for Option B, then compare the two. One budget on its own does not show decision-making — it just shows planning.\n\nThe budget is your evidence. Build it carefully, show your calculations, and use it to drive your recommendation. That is how you earn marks at the Achieved level and set yourself up for Merit."
+    },
+    {
+      "type": "scenario",
+      "title": "The Tuck Shop Decision",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Tama is the student president of the Ōtāhuhu College tuck shop committee. The tuck shop currently sells pies, chips, and drinks at lunch time, Monday to Friday. It runs five days a week and generates income of $620 per week. Weekly costs are: food supplies $280, packaging $40, part-time staff wages (2 hours per day, 5 days, $17.50 per hour) $175, electricity $30. Total weekly costs: $525. Weekly surplus: $95. The committee has identified a financial opportunity: adding a fresh salad and sandwich bar. Startup costs would be $1,400 for a refrigerated display unit. Ongoing additional weekly costs would include extra ingredients $120 and extra packaging $15. The committee estimates the new items would add $280 in weekly income from students who currently do not buy from the tuck shop. The tuck shop's putake is to provide affordable, quality food to all students and reinvest any surplus into student welfare activities.",
+      "challenge": "1. Identify whether this is a financial need, issue, or opportunity and explain why.\n2. Build a budget comparing the tuck shop's current weekly position against the projected weekly position if the salad bar is added.\n3. Calculate how many weeks it would take to recover the $1,400 startup cost from the additional weekly surplus generated by the salad bar.\n4. Write two sentences connecting the decision to the tuck shop's putake.",
+      "hints": [
+        "For question 2, set up two columns: 'Current' and 'With Salad Bar'. Income and costs change in the With Salad Bar column — make sure you add the new income and new costs separately so the comparison is clear.",
+        "For question 3, the additional weekly surplus is the extra income minus the extra costs. Divide the startup cost by the additional weekly surplus to find the payback period."
+      ],
+      "solution": "Question 1: This is a financial opportunity. The tuck shop is currently operating and generating a surplus of $95 per week — there is no crisis or ongoing problem. The salad bar represents a chance to improve the tuck shop's financial position and expand its service offering. Nothing forces the committee to act; they are choosing to pursue a potential improvement.\n\nQuestion 2: Budget comparison\n\nCurrent weekly position:\nIncome: $620\nFood supplies: $280\nPackaging: $40\nStaff wages (2 hrs x 5 days x $17.50): $175\nElectricity: $30\nTotal costs: $525\nWeekly surplus: $95\n\nWith Salad Bar — weekly position:\nIncome: $620 + $280 = $900\nFood supplies: $280 + $120 = $400\nPackaging: $40 + $15 = $55\nStaff wages: $175 (unchanged)\nElectricity: $30 (unchanged)\nTotal costs: $660\nWeekly surplus: $900 - $660 = $240\n\nThe addition of the salad bar increases the weekly surplus from $95 to $240 — an improvement of $145 per week.\n\nQuestion 3: Payback period calculation\nAdditional weekly surplus from salad bar: $240 - $95 = $145\nStartup cost: $1,400\nPayback period: $1,400 ÷ $145 = 9.66 weeks, rounded to approximately 10 weeks\n\nThe tuck shop would recover the $1,400 startup cost within approximately 10 weeks of opening the salad bar.\n\nQuestion 4 (sample response): The tuck shop exists to provide affordable, quality food to all students. Adding a salad and sandwich bar expands the range of healthy, affordable options available, which directly supports this putake. The additional surplus of $145 per week also provides more funds to reinvest into student welfare activities, further fulfilling the tuck shop's reason for existing."
+    },
+    {
+      "type": "quiz",
+      "title": "Mid-Session Quiz — Financial Tools",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A school drama club is deciding whether to stage a production. They need to compare expected ticket sales and sponsorship income against costume, venue, and printing costs. Which financial tool is most appropriate?",
+          "options": [
+            "A SWOT analysis",
+            "A price comparison chart",
+            "A budget",
+            "A cost-benefit analysis"
+          ],
+          "correctIndex": 2,
+          "explanation": "A budget is the most appropriate tool here. The drama club needs to list its expected income sources (ticket sales, sponsorship) and expected expenses (costumes, venue, printing) to see whether the production is financially viable. A budget is designed exactly for this purpose — planning income and expenses for a future activity. A price comparison chart would be better for choosing between suppliers. A cost-benefit analysis is better for long-term investments. A SWOT would be less precise without the detailed income/expense breakdown a budget provides."
+        },
+        {
+          "question": "In the tuck shop scenario, the weekly surplus increased from $95 to $240 after adding the salad bar. The startup cost was $1,400. What is the correct payback period calculation?",
+          "options": [
+            "$1,400 ÷ $240 = 5.8 weeks",
+            "$1,400 ÷ $95 = 14.7 weeks",
+            "$1,400 ÷ $145 = 9.66 weeks",
+            "$1,400 ÷ $900 = 1.6 weeks"
+          ],
+          "correctIndex": 2,
+          "explanation": "The payback period is calculated by dividing the startup cost by the additional weekly surplus — the extra money generated by the new option, not the total surplus. The salad bar generates an additional $145 per week ($240 - $95). Dividing $1,400 by $145 gives 9.66 weeks, approximately 10 weeks. Using the total surplus of $240 would be incorrect because $95 of that was already being generated before the salad bar existed."
+        },
+        {
+          "question": "Which of the following SWOT analyses would qualify as a valid financial tool in AS92028?",
+          "options": [
+            "Strength: Good reputation. Weakness: High costs. Opportunity: New market. Threat: Competition.",
+            "Strength: Strong community support from 200 members. Weakness: Annual costs of $34,000 exceed income of $28,000 by $6,000. Opportunity: Grant funding available up to $10,000. Threat: Venue lease expires in 12 months.",
+            "Strength: Experienced team. Weakness: Limited budget. Opportunity: Expansion possible. Threat: Economic downturn.",
+            "Strength: Good products. Weakness: Slow sales. Opportunity: Online store. Threat: New competitors."
+          ],
+          "correctIndex": 1,
+          "explanation": "Option B is the only SWOT that qualifies as a financial tool because it includes actual dollar figures in multiple quadrants — annual costs of $34,000, income of $28,000, a $6,000 shortfall, and a potential grant of up to $10,000. The other three options use vague language like 'high costs' and 'limited budget' without any specific figures. In AS92028, a SWOT must include actual financial data to count as a valid financial tool."
+        },
+        {
+          "question": "A cost-benefit analysis for a solar panel installation shows total benefits of $24,500 over five years and a total cost of $14,000. What is the net benefit?",
+          "options": [
+            "$14,000",
+            "$24,500",
+            "$10,500",
+            "$38,500"
+          ],
+          "correctIndex": 2,
+          "explanation": "Net benefit = Total benefits minus total costs. $24,500 - $14,000 = $10,500. This positive net benefit suggests the investment is financially worthwhile over the five-year period. $14,000 would just be restating the cost. $24,500 would be restating the total benefits. $38,500 would be adding benefits and costs together, which is not a net benefit calculation."
+        }
+      ]
+    },
+    {
+      "type": "discussion",
+      "title": "Which Tool Would You Use?",
+      "estimatedMinutes": 9,
+      "prompt": "A community swimming pool in Nelson is considering two options: Option A is to raise annual membership fees by $40 to cover rising maintenance costs. Option B is to apply for a $25,000 government sport infrastructure grant to fund a full maintenance overhaul that would reduce annual maintenance costs by $8,000 for the next five years. Which financial tool or tools would you use to compare these two options, and why? What figures would you need to build your analysis?",
+      "guidingQuestions": [
+        "What are the costs and benefits of each option over a five-year period? Try to estimate figures even if they are approximate.",
+        "Is one tool enough here, or would you need to use two different tools to capture both options fairly?",
+        "How does the pool's putake — providing affordable swimming access to the Nelson community — affect which option looks more attractive?"
+      ]
+    }
+  ]
+}

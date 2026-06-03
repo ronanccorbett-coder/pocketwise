@@ -1,0 +1,106 @@
+{
+  "title": "Bringing It All Together — Full Analysis and Common Mistakes",
+  "order": 6,
+  "dayNumber": 6,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Analyse and Evaluate",
+  "nceaFocus": "AS92030: Complete analysis from Achieved through to Excellence — all levels of the standard in one integrated response",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Write a complete AS92030 response covering all achievement levels in an integrated structure",
+    "Identify and correct the most common mistakes in AS92030 exam responses",
+    "Apply the full analysis structure to a new NZ scenario independently"
+  ],
+  "vocabulary": [
+    {
+      "term": "Integrated response",
+      "definition": "A written analysis where all parts connect logically — the relationship description leads into the event analysis, which leads into flow-on effects, which leads into extent analysis and response strategies."
+    },
+    {
+      "term": "NCEA external exam",
+      "definition": "An examination set and marked by NZQA, taken under formal conditions at school. AS92030 is assessed externally, meaning the exam scenario is not known in advance and responses are written under timed conditions."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Complete AS92030 Response Structure",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the six-part structure into your notes. Tick off which parts you feel confident with. Put a star next to parts you still need to practise.",
+      "content": "In the AS92030 external exam, you will be given a scenario describing two or more entities and an event. You must write a structured response. Here is the complete structure.\n\nPart 1 (Achieved): Identify and describe the financial relationship between the entities. Name them, describe the nature of the relationship, and describe how money flows — with specific amounts.\n\nPart 2 (Achieved): Describe how the event affects the financial relationship. What changes? What is the new money flow? Use figures from the scenario.\n\nPart 3 (Merit): Explain how the event affects EACH entity. What are the direct financial consequences for Entity A? For Entity B? Use specific figures.\n\nPart 4 (Merit): Explain the flow-on effects. Trace the chain — how does Entity A's situation change as a result, and what does that do to Entity B?\n\nPart 5 (Excellence): Analyse the extent to which the entities are interdependent. Is the relationship symmetric or asymmetric? Who is more vulnerable? Who holds more bargaining power? Justify your judgement.\n\nPart 6 (Excellence): Analyse how each entity could respond to the flow-on effects. Propose specific, practical NZ-relevant strategies for each entity.\n\nEvery part must include actual figures from the scenario wherever possible. A response with no dollar amounts will not reach Merit or Excellence."
+    },
+    {
+      "type": "slide",
+      "title": "Common Mistakes in AS92030 Responses",
+      "estimatedMinutes": 4,
+      "notePrompt": "List the five common mistakes. For each one, write a one-sentence fix that describes what a correct approach looks like.",
+      "content": "These are the most common errors in AS92030 exam responses. Knowing them before the exam gives you a real advantage.\n\nMistake 1: Describing the relationship without specifying money flows. 'The business and the bank have a relationship' is not enough. You must say: 'Westpac provided a $40,000 loan to the business. The business repays $960 per month to Westpac, including $250 in interest.'\n\nMistake 2: Describing the event's effect on only one entity. At Merit level, you must explain the effect on BOTH entities. Many students analyse the business thoroughly and forget to explain what happens to the bank.\n\nMistake 3: Confusing direct effects with flow-on effects. The direct effect is what happens immediately to the entity. The flow-on is what then happens to the other entity as a consequence. Keep these separate.\n\nMistake 4: Treating all relationships as equally interdependent. Excellence requires you to judge the EXTENT. Most relationships are asymmetric — one entity is more vulnerable. Identifying which one, and why, is the Excellence move.\n\nMistake 5: Suggesting vague response strategies. 'The business should manage its finances better' earns nothing. 'Anika should contact ASB to request a 3-month repayment holiday and simultaneously apply for a Rural Support Trust emergency grant' is a specific, actionable response."
+    },
+    {
+      "type": "truefalse",
+      "statement": "At the Achieved level in AS92030, students only need to name the entities — they do not need to describe money flows or the effect of the event.",
+      "correctAnswer": false,
+      "explanation": "False. At Achieved, students must: (1) identify and describe the financial relationship between entities, (2) describe how money flows between them, and (3) describe how an event affects the financial relationship. Simply naming the entities is insufficient. The Achieved criteria require description of the relationship, the money flow, and the event's effect — all three elements, with specific figures wherever possible.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Sample Excellence Response — The Orchard and the Supermarket",
+      "estimatedMinutes": 4,
+      "notePrompt": "Annotate this response: Mark Part 1 to Part 6. Highlight at least two dollar figures. Circle one place where the response uses Excellence-level language (extent, asymmetric, bargaining power, respond to effects).",
+      "content": "Here is a condensed but complete response covering all six parts for the Anika's Orchard scenario.\n\nPart 1 — Relationship and money flows: Anika's Apple Orchard and Countdown have a business-customer financial relationship. Anika supplies 2,000 trays of apples per season at $18 per tray. Money flows from Countdown to Anika's Orchard as seasonal revenue of $36,000, received 60 days after delivery. Goods flow from Anika to Countdown.\n\nPart 2 — Event and change to relationship: Cyclone Gabrielle destroys 40% of Anika's crop. She can only supply 1,200 trays. Revenue from Countdown falls from $36,000 to $21,600 — a reduction of $14,400.\n\nPart 3 — Effect on each entity: Anika's annual income falls by $14,400, threatening her ability to cover mortgage repayments of $16,080 per year. Countdown must source an additional 800 trays from alternative suppliers, potentially at higher cost or lower preferred quality.\n\nPart 4 — Flow-on effects: The income reduction flows on to Anika's relationship with ASB. With $14,400 less revenue, her $1,340 monthly mortgage repayment becomes financially stressful — especially if the crop damage also incurred recovery costs. If Anika misses repayments, ASB faces increased credit risk.\n\nPart 5 — Extent of interdependence: The relationship is asymmetrically interdependent. Anika is highly dependent on Countdown — the $36,000 contract is her primary revenue source. Countdown is minimally dependent on Anika — she is one of approximately 15 apple suppliers. Countdown holds significantly more bargaining power. Anika's vulnerability is acute; Countdown's is negligible.\n\nPart 6 — Response strategies: Anika should proactively contact ASB to request a repayment holiday and apply for the Rural Support Trust emergency grant to bridge the income gap. To reduce future vulnerability, she should develop contracts with 3 to 4 buyers rather than relying on a single supermarket chain."
+    },
+    {
+      "type": "scenario",
+      "title": "Practice Scenario — The School and Its Stationery Supplier",
+      "estimatedMinutes": 15,
+      "nceaLevel": "Achieved to Excellence",
+      "setup": "Eastfield Intermediate School in Christchurch has an annual stationery and resources contract with Office Express NZ Ltd. The school orders $28,000 of stationery and classroom resources per year on 30-day credit terms. Office Express delivers quarterly. The school pays from its Ministry of Education operational funding.\n\nEvent: Office Express NZ is acquired by an Australian company which immediately raises prices by 18% on all NZ school contracts, effective from the next delivery.\n\nNew annual cost: $28,000 × 1.18 = $33,040. Increase: $5,040 per year.",
+      "challenge": "Write a complete six-part AS92030 response for this scenario. Cover:\n1. Relationship description and money flows\n2. How the event changes the relationship\n3. Effect on each entity\n4. Flow-on effects\n5. Extent of interdependence\n6. Response strategies for each entity",
+      "hints": [
+        "For Part 5: How many stationery suppliers are available to NZ schools? How easy is it for a school to switch? Does Office Express depend heavily on this one school's contract?",
+        "For Part 6: What specific NZ options does the school have for reducing stationery costs? Think about cooperative buying, alternative suppliers, or Ministry of Education advocacy."
+      ],
+      "solution": "Part 1 — Relationship and money flows:\nEastfield Intermediate and Office Express NZ have a business-customer relationship. The school orders $28,000 of stationery and resources annually on 30-day credit terms. Money flows from the school to Office Express as quarterly payments of $7,000 (four quarterly orders). Stationery goods flow from Office Express to the school. The school funds these purchases from its Ministry of Education (MoE) operational funding grant.\n\nPart 2 — Event and change to relationship:\nThe 18% price increase raises the annual cost of the contract from $28,000 to $33,040 — an increase of $5,040 per year. If the school continues with Office Express, the quarterly payment increases from $7,000 to $8,260. More money now flows from the school to Office Express per quarter for the same volume of goods.\n\nPart 3 — Effect on each entity:\nEastfield Intermediate: Annual stationery costs increase by $5,040. If MoE operational funding does not increase, this reduces the budget available for other school expenses — teaching materials, event funding, or facility maintenance. The school must find $5,040 from elsewhere in its operational budget or reduce spending on other items.\nOffice Express NZ: The 18% price increase increases their revenue from this account from $28,000 to $33,040 per year. Across all NZ school contracts, the price increase significantly boosts Office Express's revenue and may help offset the acquisition costs paid by the Australian parent company.\n\nPart 4 — Flow-on effects:\nIf the school absorbs the $5,040 increase, it must cut other budget lines — potentially reducing spending with other local NZ suppliers (e.g. a local print shop, sports equipment supplier) who depend on school contracts. These third-party suppliers experience a flow-on effect: reduced orders from a school that has redirected budget to meet higher stationery costs. If the school cannot absorb the increase and seeks MoE additional funding, the government faces increased pressure on the operational funding pool — a flow-on to the broader education funding system.\n\nPart 5 — Extent of interdependence:\nThe relationship is moderately asymmetric. Eastfield Intermediate is somewhat dependent on Office Express for its established supply chain, but not uniquely so — multiple alternative stationery suppliers serve NZ schools, including OfficeMax, Warehouse Stationery, and local cooperatives. The school can switch suppliers with some administrative effort. Office Express, now part of a large Australian company with hundreds of NZ school clients, is minimally dependent on any single school's contract. The school has limited bargaining power individually, but collectively NZ schools represent significant purchasing power. The asymmetry is moderate rather than extreme — the school has viable alternatives, which gives it more agency than Anika's Orchard had with Countdown.\n\nPart 6 — Response strategies:\nFor Eastfield Intermediate: The school should immediately seek alternative supplier quotes from OfficeMax and Warehouse Stationery to determine whether the 18% price increase can be avoided by switching. If quotes are lower, the school should give Office Express the opportunity to match the lower price before terminating the contract. The school's principal should also contact the New Zealand School Trustees Association (NZSTA) to see whether collective bargaining with a preferred national stationery supplier can be established across multiple Christchurch schools — reducing costs through volume purchasing. The school should also report the price increase to the Ministry of Education's operational funding team, noting that the increase reduces their ability to provide adequate teaching resources within their current funding allocation.\nFor Office Express NZ: To retain NZ school clients who may switch suppliers in response to the price increase, Office Express should consider a loyalty discount scheme for multi-year contracts, or a price adjustment ceiling for existing clients. Immediately applying an 18% increase to all existing contracts simultaneously is a high-risk commercial strategy that may trigger widespread client attrition — the flow-on effect of which would be reduced NZ revenue, undermining the rationale for the acquisition."
+    },
+    {
+      "type": "quiz",
+      "title": "Merit and Excellence Level Check",
+      "estimatedMinutes": 7,
+      "nceaLevel": "Merit to Excellence",
+      "questions": [
+        {
+          "question": "Which of the following best analyses the extent of interdependence in the school-stationery supplier scenario?",
+          "options": [
+            "The school and Office Express are interdependent because they exchange money for goods.",
+            "The school is completely dependent on Office Express and cannot change suppliers.",
+            "The relationship is moderately asymmetric — the school has alternative supplier options (reducing its dependence) while Office Express views the school as one small account among hundreds (minimising its dependence). The school has more agency than in many supplier relationships because viable alternatives exist.",
+            "Office Express depends on the school because schools spend a lot on stationery."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is the Excellence-level response. It names the type of asymmetry (moderate), explains the reasoning for each entity's dependence level (alternatives exist for the school; the school is a small account for Office Express), and draws a specific conclusion about agency. Option A restates the basic relationship. Option B overstates the school's dependence. Option D ignores the availability of alternative suppliers to both the school and Office Express."
+        },
+        {
+          "question": "The school faces a $5,040 annual cost increase. Which response strategy most directly addresses the source of the problem?",
+          "options": [
+            "Reduce spending on sports equipment to cover the higher stationery cost",
+            "Ask the Ministry of Education for additional funding",
+            "Seek alternative supplier quotes and switch to a cheaper provider if available, while using the threat of switching to negotiate a lower price with Office Express",
+            "Accept the price increase as unavoidable because Office Express is the only stationery supplier"
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C directly addresses the source — the price increase — rather than just absorbing its consequences. It uses the school's bargaining power (ability to switch) to create leverage in negotiations. Option A and B are reactive strategies that accept the higher cost rather than challenging it. Option D is factually incorrect — multiple NZ stationery suppliers serve schools — and represents poor financial management."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "Project Progress Check",
+      "estimatedMinutes": 7,
+      "prompt": "Review your module project draft. Using the six-part structure, assess which sections are complete and which still need work. For each incomplete section, write one sentence describing exactly what you need to add. Pay particular attention to: Do your money flow descriptions include specific dollar amounts? Does your flow-on analysis trace at least three steps? Does your extent analysis use the words 'asymmetric' or 'symmetric' and explain why? Do your response strategies name specific NZ institutions or options?",
+      "nceaLink": "The six-part structure maps directly to the AS92030 achievement criteria. Completing each part with specific figures and clear reasoning is the path to Merit and Excellence in the external exam."
+    }
+  ]
+}

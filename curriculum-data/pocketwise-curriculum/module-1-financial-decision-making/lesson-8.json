@@ -1,0 +1,139 @@
+{
+  "title": "NCEA Assessment Day",
+  "order": 8,
+  "dayNumber": 8,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 120,
+  "bloomsLevel": "Apply, Analyse, and Evaluate",
+  "nceaFocus": "AS92028: Full assessment-condition financial decision-making task — all achievement levels from Achieved through to Excellence",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Complete a full AS92028-style assessment task under timed conditions",
+    "Demonstrate understanding of financial decision-making at the Achieved level",
+    "Demonstrate ability to examine and evaluate financial decision-making at Merit and Excellence levels"
+  ],
+  "vocabulary": [
+    {
+      "term": "Assessment conditions",
+      "definition": "The specific rules that apply during a formal NCEA assessment. These typically mean working independently without notes, within a fixed time, and submitting work that is entirely your own."
+    },
+    {
+      "term": "Annotated financial tool",
+      "definition": "A financial tool (like a budget or cost-benefit analysis) that includes labels, calculations, and brief explanations of what the figures mean — not just a table of numbers."
+    }
+  ],
+  "activities": [
+    {
+      "type": "scenario",
+      "title": "NCEA-Style Assessment Task — The Rotorua Marae Development Decision",
+      "estimatedMinutes": 35,
+      "nceaLevel": "Achieved to Excellence",
+      "setup": "Te Arawa Marae Trust is a not-for-profit organisation located in Rotorua that manages a marae serving the local Te Arawa hapū. The marae's putake is to preserve and celebrate Te Arawa culture, provide a gathering place for the community, and support the wellbeing of all hapū members — including those in financial need.\n\nThe marae currently generates income from: hall hire to community groups ($14,400 per year at $1,200 per month), catering for tangihanga and celebrations ($9,600 per year), and a small annual grant from Rotorua Lakes Council ($4,000). Total annual income: $28,000.\n\nAnnual costs: building maintenance $6,800, insurance $3,200, power and utilities $4,400, caretaker wages (part-time, 15 hours per week at $22 per hour x 52 weeks) $17,160, kitchen supplies $2,100, administration $1,200. Total annual costs: $34,860. Annual deficit: -$6,860. Reserves: $29,400.\n\nAt the current rate of deficit, reserves will be exhausted in approximately 4.3 years.\n\nThe Trust's kaumātua committee has identified three options to address the financial issue:\n\nOption A: Increase hall hire rates by 25%, raising monthly hire from $1,200 to $1,500. Projected additional annual income: $3,600. However, several community groups who hire the hall — including a Pacific youth group, a kapa haka club, and a parents' group — have indicated they cannot afford a significant rate increase and may have to stop hiring the hall.\n\nOption B: Apply for a Māori Housing Network capital improvement grant (administered through Kāinga Ora) of up to $20,000, and use the funds to renovate the marae kitchen to a commercial standard. This would allow the Trust to take commercial catering contracts. Projected additional income from commercial catering: $18,000 per year. Grant application: 10 to 12 weeks. Renovation work: 6 to 8 weeks. No hall hire disruption expected.\n\nOption C: Enter a commercial lease agreement with a local wedding photography business that wants to use the marae grounds for photoshoots on weekends. Annual lease income: $8,400. The business would have exclusive weekend grounds access from 8am to 2pm on Saturdays and Sundays, year-round.\n\nKey context: The marae regularly hosts weekend hui, tangihanga, and family celebrations. These often fall on Saturdays and Sundays. The weekend grounds exclusion in Option C could directly conflict with the marae's primary function.",
+      "challenge": "This is your AS92028 assessment task. Answer all parts fully.\n\nPart A — Achieved level:\n1. Identify and describe the type of financial situation the Trust is facing. Use data from the scenario to support your answer.\n2. Using a budget or cost-benefit analysis, compare Option A and Option B. Include all relevant income and cost figures. Show your calculations.\n3. State your recommended option and provide a brief justification connected to the Trust's putake.\n\nPart B — Merit level:\n4. Identify two stakeholders and explain each one's perspective on the financial decision. Your explanation must state what they want, what they are worried about, and why it matters in the context of the Trust's putake.\n5. Explain two possible consequences of your recommended decision — one financial and one non-financial.\n\nPart C — Excellence level:\n6. Analyse the extent to which your recommended option considers the perspectives of the two stakeholders you identified. In your analysis, state whether the option fully, partially, or does not address each perspective, and explain your judgement.\n7. Identify the most significant consequence of your recommended decision and analyse how the Trust could respond to this consequence in a way that upholds their putake.",
+      "hints": [
+        "For Part A Question 2, calculate the projected annual position under Option A and under Option B separately. For Option B, remember that the grant funds the renovation capital cost — it is not ongoing income. The improvement comes from the additional catering revenue of $18,000 per year.",
+        "For Option B annual position: New income = $28,000 + $18,000 = $46,000. Costs remain $34,860 (the renovation is a capital cost funded by the grant, not an ongoing expense). New surplus = $11,140.",
+        "For Option A annual position: New income = $28,000 + $3,600 = $31,600. Costs remain $34,860. New deficit = -$3,260. This improves the situation but does not solve it.",
+        "For Part C, think about what might go wrong with Option B (the 10 to 12 week application period and 6 to 8 week renovation mean no commercial catering income for approximately 4 to 5 months) and how the Trust could manage this while upholding their putake of supporting hapū wellbeing."
+      ],
+      "solution": "Part A — Achieved level:\n\nQuestion 1: The Trust is facing a financial issue. Annual income of $28,000 is significantly less than annual costs of $34,860, resulting in an annual deficit of $6,860. This is an ongoing problem — not a crisis requiring immediate action to keep the doors open, but a sustained imbalance that will exhaust reserves of $29,400 in approximately 4.3 years if nothing changes. A financial issue requires a proactive decision to correct the imbalance before it becomes a survival crisis.\n\nQuestion 2: Budget comparison\n\nCurrent annual position:\nIncome: $28,000\nCosts: $34,860\nAnnual deficit: -$6,860\n\nOption A (increase hall hire by 25%):\nIncome: $28,000 + $3,600 = $31,600\nCosts: $34,860 (unchanged)\nAnnual deficit: -$3,260\nImprovement: Reduces deficit by $3,600 but does not eliminate it. Reserves will still be exhausted, now in approximately 9 years instead of 4.3.\n\nOption B (Māori Housing Network grant + commercial catering):\nIncome: $28,000 + $18,000 = $46,000\nCosts: $34,860 (renovation is a capital cost covered by the $20,000 grant, not an ongoing expense)\nAnnual surplus: +$11,140\nGrant benefit: $20,000 one-off capital funding for kitchen renovation\nImprovement: Fully resolves the deficit and generates an $11,140 annual surplus from Year 1.\n\nQuestion 3 — Recommended decision: The Trust should pursue Option B. It is the only option that fully eliminates the annual deficit — transforming a $6,860 annual loss into an $11,140 annual surplus. Option A reduces the deficit but does not solve it, and potentially loses community groups who cannot afford higher hire rates. Option C generates $8,400 per year but restricts weekend grounds access, conflicting with the marae's primary function of hosting tangihanga and hui. Option B grows the Trust's income substantially, preserves existing community access, and upholds putake by funding cultural activities through commercial catering rather than charging higher fees to the community groups the marae serves.\n\nPart B — Merit level:\n\nQuestion 4 — Stakeholder perspectives:\n\nStakeholder 1 — Community groups who hire the hall (Pacific youth group, kapa haka club, parents' group): These organisations would strongly oppose Option A because a 25% rate increase may force them to stop hiring the hall. Their main concern is affordability — these are community groups, not commercial businesses, and their budgets are limited. If they cannot meet the new rate, they lose access to a venue that is central to their programmes. This matters deeply in the context of the Trust's putake: the marae exists to support the wellbeing of the community, and excluding community groups through pricing would directly contradict this. Under Option B, the hire rate does not change, so these groups continue to access the marae at current rates — their perspective is fully considered.\n\nStakeholder 2 — The hapū community members who use the marae for tangihanga and family events: This group would strongly oppose Option C. Their main concern is that the weekend grounds exclusion would conflict with the marae's most important function — hosting tangihanga. Tangihanga often occur with little notice and cannot be rescheduled to fit a photography company's weekend lease. Being told the grounds are unavailable for a tangihanga would be a serious breach of tikanga and deeply distressing for grieving families. This directly conflicts with the Trust's putake of providing a gathering place for the community and supporting the wellbeing of hapū members. Under Option B, no access is restricted, so this stakeholder's perspective is fully considered.\n\nQuestion 5 — Consequences of Option B:\n\nFinancial consequence: The kitchen renovation funded by the $20,000 grant is a one-off capital investment that generates $18,000 in new annual catering income. Over five years, this means $90,000 in additional revenue above current income levels. Combined with the resolution of the $6,860 annual deficit, the Trust will add approximately $11,140 to its reserves per year — rebuilding financial resilience and funding future maintenance or cultural programmes. Within three years, the Trust's reserve position would grow from $29,400 to approximately $62,820.\n\nNon-financial consequence: During the 10 to 12 week grant application period and 6 to 8 week renovation, the commercial kitchen will be unavailable. Regular catering clients for tangihanga and celebrations may need to arrange alternative catering during this period. While the hall remains open and no community groups are displaced, the disruption to catering services may cause stress for families planning events during the renovation. The Trust must communicate clearly and proactively with the community about the timeline.\n\nPart C — Excellence level:\n\nQuestion 6 — Extent to which Option B considers stakeholder perspectives:\n\nOption B fully considers the perspective of community groups who hire the hall. Because it does not raise hire rates, the Pacific youth group, kapa haka club, and parents' group can all continue to access the marae at current rates. The Trust's financial sustainability is achieved through commercial catering, not by increasing costs for community users. This is entirely consistent with the Trust's putake of supporting community wellbeing.\n\nOption B fully considers the perspective of hapū community members who use the marae for tangihanga and celebrations. No weekend or grounds access restrictions are introduced. The marae remains fully available for tangihanga with no notice required, and all cultural functions continue uninterrupted. The only impact is the temporary disruption to catering during the renovation, which is manageable through advance planning.\n\nOption B strongly addresses the perspectives of both major stakeholder groups without requiring either group to compromise their core interests. The commercial revenue growth comes from an entirely new activity (commercial catering contracts with outside clients) that does not draw on or restrict the services the community depends on.\n\nQuestion 7 — Responding to the most significant consequence in a way that upholds putake:\n\nThe most significant consequence of Option B is the service disruption during the renovation period (approximately 4 to 5 months total). During this time, families planning tangihanga and celebrations cannot rely on the marae's catering service.\n\nTo respond in a way that upholds putake, the Trust should take the following actions:\n\nFirst, communicate the renovation timeline clearly to the community as soon as the grant is confirmed — ideally through a hui where kaumātua and community members can ask questions and plan ahead. Transparency is consistent with Te Arawa values of collective decision-making.\n\nSecond, establish a roster of trusted community members (kaimahi kai — food helpers) who can provide informal catering support for tangihanga during the renovation using the marae's existing basic kitchen equipment. This preserves the core function of supporting families in grief without waiting for the commercial kitchen to be complete.\n\nThird, consider using a small portion of the $20,000 grant (approximately $1,500) to cover temporary catering equipment hire for any tangihanga that fall during the full kitchen closure period. This is a modest cost relative to the $18,000 annual income gain the renovation will generate.\n\nThis response upholds putake at every step: it prioritises community members in need (tangihanga families), involves the community in problem-solving (community kaimahi kai roster), maintains transparency (open communication about the timeline), and ensures the Trust's most important cultural function is never suspended, even during a period of necessary investment in the organisation's future."
+    },
+    {
+      "type": "quiz",
+      "title": "Full Module Review Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved to Excellence",
+      "questions": [
+        {
+          "question": "What is the annual deficit for Te Arawa Marae Trust under the current scenario?",
+          "options": [
+            "-$3,260",
+            "-$6,860",
+            "-$9,000",
+            "-$4,860"
+          ],
+          "correctIndex": 1,
+          "explanation": "Annual income $28,000 minus annual costs $34,860 = -$6,860. This is the current annual deficit. -$3,260 is the projected deficit under Option A. -$9,000 is the Kahua Café deficit from the project scenario. -$4,860 is not a figure from this scenario."
+        },
+        {
+          "question": "Under Option B, what is the projected annual surplus after the renovation, assuming the $20,000 grant covers all capital costs?",
+          "options": [
+            "$11,140",
+            "$18,000",
+            "$46,000",
+            "$3,140"
+          ],
+          "correctIndex": 0,
+          "explanation": "Under Option B, new income = $28,000 + $18,000 = $46,000. Costs remain $34,860 (the renovation is funded by the grant). Surplus = $46,000 - $34,860 = $11,140. $18,000 is just the additional catering income, not the surplus. $46,000 is total income, not surplus. $3,140 is not a figure from this calculation."
+        },
+        {
+          "question": "Why does Option C conflict with the Te Arawa Marae Trust's putake?",
+          "options": [
+            "Because it generates less income than Option B",
+            "Because the photography business is not a Māori organisation",
+            "Because exclusive weekend grounds access from 8am to 2pm could prevent the marae from hosting tangihanga and hui, directly conflicting with the marae's reason for existing",
+            "Because leasing to a commercial business is not allowed under trust law"
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C conflicts with putake because it restricts weekend grounds access — precisely when tangihanga and hui most commonly occur. The marae's putake centres on being a gathering place for the community, supporting hapū members through significant life events. Being unable to use the grounds for a tangihanga because of a photography company's lease would be a direct and serious contradiction of why the marae exists."
+        },
+        {
+          "question": "Which of the following is an example of a putake-grounded response to a negative consequence?",
+          "options": [
+            "Reducing services to cut costs and restore a surplus",
+            "Raising community hire rates to compensate for lost catering income during the renovation",
+            "Establishing a roster of community kaimahi kai to support tangihanga families during the kitchen renovation, ensuring the Trust's most important cultural function continues during the investment period",
+            "Applying for a grant to cover the operating deficit and avoiding any changes to services"
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is putake-grounded because it responds to the consequence (kitchen unavailability during renovation) in a way that directly upholds the Trust's reason for existing — supporting hapū members through significant cultural events, particularly tangihanga. Options A and B both compromise the community's access to services, which conflicts with the Trust's putake. Option D avoids the problem rather than responding to it in a values-grounded way."
+        },
+        {
+          "question": "At which achievement level in AS92028 are students required to explain stakeholder perspectives relevant to the decision?",
+          "options": [
+            "Achieved",
+            "Merit",
+            "Excellence",
+            "All levels"
+          ],
+          "correctIndex": 1,
+          "explanation": "Explaining stakeholder perspectives is a Merit-level requirement in AS92028. At Achieved, students describe the financial situation and state a decision with putake discussion. At Merit, students explain stakeholder perspectives and possible consequences. At Excellence, students analyse the extent to which the decision considers stakeholder perspectives and analyse how the organisation could respond to consequences while upholding putake."
+        },
+        {
+          "question": "The Trust's reserves are $29,400 and the annual deficit is $6,860. How many years until reserves are exhausted if no decision is made?",
+          "options": [
+            "2.1 years",
+            "4.3 years",
+            "6.0 years",
+            "8.5 years"
+          ],
+          "correctIndex": 1,
+          "explanation": "$29,400 ÷ $6,860 = 4.28 years, rounded to approximately 4.3 years. This shows that while the Trust is not in immediate crisis, the financial issue is serious and requires action within the next few years. 2.1 years would suggest a deficit of approximately $14,000 per year. 6.0 and 8.5 years suggest smaller deficits than the actual $6,860."
+        },
+        {
+          "question": "Which of the following correctly describes the difference between a financial issue and a financial need in AS92028?",
+          "options": [
+            "A financial need involves large amounts of money; a financial issue involves smaller amounts",
+            "A financial need is something the organisation must address to keep operating at all; a financial issue is an ongoing problem affecting finances that requires a decision to fix before it worsens",
+            "A financial issue only affects not-for-profit organisations; a financial need can affect any type of organisation",
+            "A financial need is always more urgent than a financial issue"
+          ],
+          "correctIndex": 1,
+          "explanation": "The key distinction is operational survival. A financial need is something the organisation cannot function without — like a broken piece of essential equipment. A financial issue is an ongoing problem that, if left unaddressed, will worsen over time, but the organisation is still functioning now. The marae's deficit is a financial issue: it is operating, but the imbalance will eventually exhaust reserves."
+        },
+        {
+          "question": "Over five years, how much additional revenue does Option B generate compared to the current situation?",
+          "options": [
+            "$18,000",
+            "$90,000",
+            "$46,000",
+            "$55,700"
+          ],
+          "correctIndex": 1,
+          "explanation": "Option B generates $18,000 per year in additional catering income. Over five years: $18,000 x 5 = $90,000 in additional revenue above current income levels. $18,000 is the annual additional income only. $46,000 is the total annual income under Option B (including existing income), not just the additional amount. $55,700 is not a figure derived from this scenario."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "title": "What Is a Budget?",
+  "order": 1,
+  "dayNumber": 1,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Remember & Understand",
+  "nceaFocus": "AS92028 — describing options, using a budget as a financial tool",
+  "ownerEmail": "admin@pocketwise.nz",
+
+  "objectives": [
+    "Define income and expenses in a NZ context",
+    "Explain the 50/30/20 rule with real examples",
+    "Identify needs vs wants",
+    "Understand what pūtake means in a financial context"
+  ],
+
+  "vocabulary": [
+    {
+      "term": "Budget",
+      "definition": "A plan that shows how much money you earn and how you will spend or save it. A budget is a financial tool, not a restriction."
+    },
+    {
+      "term": "Income",
+      "definition": "Money coming IN — wages, allowances, benefits, rental income. Gross income is before tax. Net income is what actually hits your bank account."
+    },
+    {
+      "term": "Expenses",
+      "definition": "Money going OUT — rent, food, transport, entertainment, subscriptions. Fixed expenses stay the same each month. Variable expenses change."
+    },
+    {
+      "term": "Surplus",
+      "definition": "When your income is greater than your expenses. You have money left over. This is what you want."
+    },
+    {
+      "term": "Deficit",
+      "definition": "When your expenses are greater than your income. You are spending more than you earn. This leads to debt if it continues."
+    },
+    {
+      "term": "Pūtake",
+      "definition": "In Commerce, pūtake is the reason an organisation exists — its purpose and values. For example, a food bank's pūtake is to ensure no one in their community goes hungry. Pūtake shapes every financial decision."
+    }
+  ],
+
+  "activities": [
+
+    {
+      "type": "slide",
+      "title": "Why Most Kiwis Struggle With Money",
+      "estimatedMinutes": 5,
+      "content": "Here's something nobody tells you at school: most financial stress doesn't come from not earning enough money. It comes from having no plan for the money you do earn.\n\nA 2024 survey found that 47% of New Zealanders couldn't cover an unexpected $1,000 expense without going into debt or selling something. That's nearly half of all Kiwis — including plenty who earn good salaries.\n\nThe single most powerful financial habit you can build right now isn't earning more. It's knowing exactly where your money is going.\n\nThat's what a budget does. It's not about being tight with money. It's about being intentional with it. When you have a plan, every dollar has a job — and you stop wondering where your money went at the end of the week.\n\nToday you're going to learn the most important financial tool you'll ever use. And unlike most things you learn at school, you'll use this literally every week for the rest of your life."
+    },
+
+    {
+      "type": "quiz",
+      "title": "Checkpoint: Why Budgeting Matters",
+      "estimatedMinutes": 4,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "What is the most common reason Kiwis struggle financially?",
+          "options": [
+            "They don't earn enough money",
+            "They have no plan for the money they earn",
+            "The cost of living is too high",
+            "They don't work hard enough"
+          ],
+          "correctIndex": 1,
+          "explanation": "Research consistently shows that most financial stress comes from a lack of planning, not a lack of income. A budget gives every dollar a purpose."
+        },
+        {
+          "question": "What is a budget?",
+          "options": [
+            "A limit on how much you can spend",
+            "A plan for how you earn and use your money",
+            "A type of bank account",
+            "A government tax document"
+          ],
+          "correctIndex": 1,
+          "explanation": "A budget is a plan — not a restriction. It shows your income, your planned expenses, and how much you'll save."
+        }
+      ]
+    },
+
+    {
+      "type": "slide",
+      "title": "Income vs Expenses — The Fundamental Equation",
+      "estimatedMinutes": 6,
+      "content": "Every financial situation in the world comes down to one equation:\n\n  INCOME − EXPENSES = SURPLUS (good) or DEFICIT (bad)\n\nIncome is money coming IN. In New Zealand, common income sources for students include:\n• Part-time wages (minimum wage is $23.15/hr in 2025)\n• Allowances from whānau\n• Government payments like the Student Allowance\n• Side income from selling things online or doing odd jobs\n\nExpenses are money going OUT. These fall into categories:\n• FIXED: the same every month (phone plan, bus pass, subscriptions)\n• VARIABLE: changes month to month (groceries, petrol, entertainment)\n• IRREGULAR: comes up occasionally (car rego, dentist, school trips)\n\nHere's a real example. Aroha works 10 hours per week at a café earning $23.15/hr. Her gross weekly income is $231.50. After PAYE tax at 10.5%, her net income is about $207.29.\n\nHer weekly expenses: phone $12, bus pass $20, lunch $25, streaming services $5 = $62 total.\n\nSurplus: $207.29 − $62 = $145.29 per week she could save.\n\nBut Aroha doesn't save any of it. By Friday she's spent it all and doesn't know where it went. Does that sound familiar?"
+    },
+
+    {
+      "type": "vocabulary",
+      "title": "Key Terms — Financial Foundations",
+      "estimatedMinutes": 5,
+      "instruction": "Read each term and its definition. These are the building blocks of everything in this module."
+    },
+
+    {
+      "type": "quiz",
+      "title": "Mid-Lesson Check: Income & Expenses",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Tama earns $320 per week and spends $415 per week. What is his financial situation?",
+          "options": [
+            "A surplus of $95",
+            "A deficit of $95",
+            "Breaking even",
+            "A surplus of $415"
+          ],
+          "correctIndex": 1,
+          "explanation": "$320 − $415 = −$95. Tama is spending $95 more than he earns each week. This is a deficit. If this continues, he will accumulate debt."
+        },
+        {
+          "question": "Which of the following is a FIXED expense?",
+          "options": [
+            "Groceries",
+            "Petrol",
+            "Monthly phone plan",
+            "Entertainment"
+          ],
+          "correctIndex": 2,
+          "explanation": "A fixed expense is the same amount every month. A phone plan is a contract with a set monthly fee. Groceries and petrol vary — they are variable expenses."
+        },
+        {
+          "question": "Aroha earns $207 per week net and spends $62 on essentials. How much could she save weekly?",
+          "options": [
+            "$62",
+            "$145",
+            "$207",
+            "$269"
+          ],
+          "correctIndex": 1,
+          "explanation": "$207 − $62 = $145. This is her potential weekly surplus if she doesn't spend on anything else. Over a year, that's $7,540 she could save."
+        }
+      ]
+    },
+
+    {
+      "type": "slide",
+      "title": "The 50/30/20 Rule — Your First Budget Framework",
+      "estimatedMinutes": 6,
+      "content": "The 50/30/20 rule is the simplest budgeting framework in the world, and it works whether you earn $200 or $2,000 a week.\n\n50% NEEDS — things you genuinely cannot do without:\n• Rent/board contribution\n• Food and groceries\n• Transport to work or school\n• Essential phone plan\n• Healthcare\n\n30% WANTS — things that improve your life but aren't essential:\n• Eating out and takeaways\n• Entertainment (Netflix, Spotify, games)\n• Clothing beyond the basics\n• Hobbies\n\n20% SAVINGS — treat this as non-negotiable:\n• Emergency fund (goal: 3 months of expenses)\n• KiwiSaver contributions\n• Saving for a specific goal (car, travel, deposit)\n\nLet's apply it to a real NZ example:\n\nLiam earns $400/fortnight from his part-time job at Pak'nSave.\n• 50% ($200) → needs: bus pass $40, food $80, phone $45, board $35\n• 30% ($120) → wants: Uber Eats $40, PS Plus $20, clothing $60\n• 20% ($80) → savings: $80 straight to savings account the day he gets paid\n\nThe most important trick: set up an automatic transfer to savings the moment your pay lands. Pay yourself first — before you can spend it."
+    },
+
+    {
+      "type": "scenario",
+      "title": "The Corbin Challenge",
+      "estimatedMinutes": 8,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "Corbin is 17 and lives at home with his whānau in Hamilton. He works 15 hours per week at The Warehouse earning $23.15/hr. His monthly NET income (after tax) is approximately $1,200.\n\nHis current monthly expenses:\n• Phone: $45\n• Bus pass: $80\n• Lunch at school: $120 (buys every day)\n• Spotify + Netflix: $30\n• Clothing: $100\n• Entertainment (movies, nights out): $150\n• Savings: $0\n\nTotal expenses: $525\nSurplus: $675",
+      "challenge": "1. Calculate Corbin's monthly surplus (done above — $675). Where do you think this $675 is actually going?\n\n2. Apply the 50/30/20 rule to Corbin's income. What should he be spending in each category?\n\n3. Identify two expenses you would reduce and explain why, considering both the financial impact and Corbin's wellbeing.\n\n4. Corbin wants to save for a car worth $8,000. Using the 20% savings rule, how many months will it take him to reach his goal?",
+      "hints": [
+        "50% of $1,200 = $600 for needs",
+        "20% of $1,200 = $240 for savings",
+        "To find months to goal: divide $8,000 by monthly savings amount"
+      ],
+      "solution": "50/30/20 applied: Needs $600, Wants $360, Savings $240.\n\nCorbin's needs total $245 — well under $600. His wants total $280 — under his $360 wants budget. But he's saving $0.\n\nAt $240/month savings, Corbin reaches $8,000 in approximately 33 months (just under 3 years).\n\nIf he cut his lunch spend from $120 to $40 (by bringing lunch 3 days per week) and reduced entertainment to $80, he could save an extra $150/month — reaching his goal in about 21 months instead."
+    },
+
+    {
+      "type": "quiz",
+      "title": "End-of-Lesson Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved to Merit",
+      "questions": [
+        {
+          "question": "According to the 50/30/20 rule, what percentage of income should go to savings?",
+          "options": ["10%", "20%", "30%", "50%"],
+          "correctIndex": 1,
+          "explanation": "20% is the savings allocation in the 50/30/20 rule. This includes KiwiSaver contributions, emergency funds, and saving for goals."
+        },
+        {
+          "question": "Which of these is a WANT, not a NEED?",
+          "options": [
+            "Bus fare to school",
+            "Basic phone plan",
+            "Streaming services",
+            "Food for meals at home"
+          ],
+          "correctIndex": 2,
+          "explanation": "Streaming services (Netflix, Spotify) are wants — they improve quality of life but are not essential for survival or participation in work/school. Transport, a basic phone, and food are needs."
+        },
+        {
+          "question": "Mia earns $1,500/month and applies the 50/30/20 rule. How much should she save per month?",
+          "options": ["$150", "$300", "$450", "$750"],
+          "correctIndex": 1,
+          "explanation": "20% of $1,500 = $300. Mia should automatically transfer $300 to savings on payday before spending anything else."
+        },
+        {
+          "question": "What does pūtake mean in a Commerce context?",
+          "options": [
+            "The profit an organisation makes",
+            "The reason an organisation exists — its purpose and values",
+            "The tax an organisation pays",
+            "The budget an organisation uses"
+          ],
+          "correctIndex": 1,
+          "explanation": "Pūtake is the reason an organisation exists. It shapes all financial decisions. For example, a food bank's pūtake is to ensure no one goes hungry — this drives every spending and saving decision they make."
+        }
+      ]
+    },
+
+    {
+      "type": "reflection",
+      "title": "My Money Right Now",
+      "estimatedMinutes": 5,
+      "prompt": "Think honestly about your own finances right now. You don't have to share this with anyone.\n\n1. What are your main sources of income (however small)?\n2. What do you spend most of your money on each week?\n3. Do you think you're in surplus or deficit right now?\n4. If you applied the 50/30/20 rule to your income, what would need to change?\n\nWrite 3–5 sentences. There are no wrong answers — this is just about being honest with yourself.",
+      "nceaLink": "This reflection builds self-awareness that supports AS92028 assessment — understanding your own financial situation before analysing an organisation's."
+    }
+
+  ]
+}

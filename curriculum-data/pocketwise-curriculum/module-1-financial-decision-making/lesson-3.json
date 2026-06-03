@@ -1,0 +1,178 @@
+{
+  "title": "Stakeholders, Perspectives, and the Decision",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "AS92028: Explaining stakeholder perspectives relevant to a financial decision and explaining possible consequences of the decision for the organisation and its stakeholders — the Merit-level skills",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Identify at least two stakeholders for a given NZ organisational scenario",
+    "Explain each stakeholder's perspective on a financial decision with specific reasoning",
+    "Explain at least two possible consequences of a financial decision for the organisation and its stakeholders"
+  ],
+  "vocabulary": [
+    {
+      "term": "Stakeholder perspective",
+      "definition": "A stakeholder's point of view on a decision — what they want, what they are worried about, and why. In AS92028, explaining a perspective means going beyond just naming who the stakeholder is. You must explain what they want from the decision and why that matters to them."
+    },
+    {
+      "term": "Consequence",
+      "definition": "An outcome or effect that results from a decision. Consequences can be positive or negative, short-term or long-term, financial or non-financial. In AS92028, you need to explain likely consequences for both the organisation and its stakeholders."
+    },
+    {
+      "term": "Internal stakeholder",
+      "definition": "Someone inside the organisation who is affected by its decisions. Examples include employees, managers, owners, and board members."
+    },
+    {
+      "term": "External stakeholder",
+      "definition": "Someone outside the organisation who is affected by its decisions. Examples include customers, suppliers, the local community, the government, and banks or lenders."
+    },
+    {
+      "term": "Conflict of interest",
+      "definition": "When two stakeholders want different things from the same decision. For example, employees might want wage increases while the owner wants to reduce costs. Identifying conflicts of interest is an important part of Merit-level analysis."
+    },
+    {
+      "term": "Short-term consequence",
+      "definition": "An effect that happens quickly after a decision is made — usually within the same financial year. For example, taking out a loan immediately increases debt."
+    },
+    {
+      "term": "Long-term consequence",
+      "definition": "An effect that develops over time, often over several years. For example, a loan taken out now will affect cash flow for the entire repayment period."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Who Is Affected? Understanding Stakeholders",
+      "estimatedMinutes": 8,
+      "content": "Every financial decision an organisation makes affects people. Some of those people are inside the organisation — employees, managers, owners, board members. Some are outside — customers, suppliers, the local community, lenders, and even the government. These people are called stakeholders, and their perspectives matter.\n\nIn AS92028, you need to do more than just name stakeholders. At the Achieved level, you describe the financial situation and state a decision. But at the Merit level — where you start earning more marks and demonstrating real understanding — you need to explain each stakeholder's perspective and explain the possible consequences of the decision for both the organisation and those stakeholders.\n\nLet's think about what a perspective actually is. A perspective is not just 'this person is affected.' A perspective is: what does this person want from this decision, and why? What are they worried about? What would they consider a good outcome?\n\nHere is an example. The Gisborne Rowing Club is deciding whether to purchase a new eight-person rowing shell for $28,000. They currently have two ageing boats but need a third to run a junior development squad. Let's identify three stakeholders and think about their perspectives.\n\nStakeholder 1: The club members (existing). Their perspective: They want the club to be financially stable. They are worried that a large purchase might put strain on the club's finances and lead to higher membership fees or reduced services. They would support the purchase only if it does not threaten the club's day-to-day operations. They might also be excited if it means competitive success, which reflects well on the club.\n\nStakeholder 2: The junior development squad members and their families. Their perspective: They want the new boat. Without it, the junior programme cannot expand. Their children cannot train and compete at the level needed to develop as athletes. They would strongly support the purchase because it directly improves what they get from being part of the club. Their putake — developing young rowers — is served by the decision.\n\nStakeholder 3: The bank (ANZ, who the club would borrow from). Their perspective: The bank wants to be sure the club can repay the loan. They will look at the club's income, existing debts, and financial management history. If the club has a good track record and a plan for repayment, the bank is likely to approve the loan. If the club is already financially stretched, the bank may decline or charge a higher interest rate.\n\nNotice how each perspective is different — and sometimes in conflict. The existing members want financial stability. The junior families want the new boat now. The bank wants repayment security. This is the tension that makes financial decision-making genuinely difficult. There is no option that makes everyone happy. Good financial decision-making means understanding all of these perspectives and choosing the option that best balances them — while staying true to putake.\n\nAt the Merit level in AS92028, you need to identify at least two stakeholders and explain each one's perspective in full. Do not just list them. Do not just say 'the employees are affected.' Explain what they want, what they are worried about, and why that matters in the context of the specific decision being made.\n\nHere is a framework to help you write a strong stakeholder perspective in your assessment. Use this structure: '[Stakeholder name] would [support/oppose/be concerned about] this decision because [specific reason connected to their interests]. Their main concern is [specific worry or desire] because [explanation of why this matters to them]. This perspective is relevant to the club's putake because [connection to organisational values].'\n\nPractise this structure. It will save you time in the actual assessment and keep your explanations focused and specific."
+    },
+    {
+      "type": "slide",
+      "title": "Consequences — What Happens After the Decision?",
+      "estimatedMinutes": 8,
+      "content": "Making a financial decision is not the end of the story. Once a decision is made, things happen as a result. Those things are consequences. In AS92028, explaining consequences is a Merit-level skill. You need to think beyond the decision itself and consider what it leads to — both for the organisation and for its stakeholders.\n\nConsequences can be positive or negative. They can be financial (affecting money) or non-financial (affecting people, reputation, or services). They can happen immediately (short-term) or develop over time (long-term). In a good Merit response, you explain at least two consequences and make them specific — not just 'the club might struggle financially' but 'if the club borrows $28,000 at 8.5% interest over five years, the annual repayment of approximately $6,900 will reduce the amount available for equipment maintenance and coach wages by around 18%.'\n\nLet's stay with the Gisborne Rowing Club example and work through four possible consequences of the decision to purchase the rowing shell using a bank loan.\n\nConsequence 1 (Positive, Financial, Short to Medium Term): The club gains a third boat immediately and can run a full junior development programme. This is expected to attract 12 new junior members at $420 annual membership each, generating $5,040 in additional annual income. Within two years, this additional income offsets a significant portion of the loan repayment costs.\n\nConsequence 2 (Negative, Financial, Short to Medium Term): The annual loan repayment of approximately $6,900 puts pressure on the club's existing cash flow. The club currently has an annual surplus of $4,200 after all operating costs. The loan repayment would turn this into a deficit of approximately $2,700 per year unless membership increases or costs are reduced elsewhere. This means the club would need to draw on its reserves, which currently stand at $11,800, to cover the shortfall.\n\nConsequence 3 (Positive, Non-Financial, Long Term): Running a successful junior development programme builds the club's reputation in the regional rowing community. This could attract sponsorships, improve results at regattas, and make the club more attractive to new members of all ages over time. Reputation has long-term financial value even though it cannot be measured immediately.\n\nConsequence 4 (Negative, Non-Financial, Short Term): Some existing members may be unhappy about the increased financial pressure on the club. If they feel the committee prioritised junior development at the expense of the club's stability, this could cause tension within the membership, reduce volunteer participation, and damage internal club culture.\n\nNotice how each of these consequences is specific. I have not just said 'the club might have money problems.' I have said exactly what the problem is, what causes it, and approximately how significant it is. That specificity is what earns Merit marks.\n\nThere is one more thing to understand about consequences: they are connected to each other. Consequence 2 (cash flow pressure) leads directly to the possibility of drawing on reserves, which reduces the club's financial buffer. That weakened buffer is itself a consequence. Showing that you can trace a chain of consequences — A leads to B which leads to C — is exactly the kind of analysis that moves you toward Excellence.\n\nFor now, focus on being specific. For every consequence you write, ask yourself: What exactly happens? Who is affected? How much does it matter financially? How does it connect to the organisation's putake? If you can answer all four questions, your consequence is strong enough."
+    },
+    {
+      "type": "quiz",
+      "title": "Checkpoint Quiz — Stakeholders and Consequences",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Merit",
+      "questions": [
+        {
+          "question": "Which of the following best demonstrates explaining a stakeholder perspective at the Merit level?",
+          "options": [
+            "The employees are a stakeholder in this decision.",
+            "The employees are affected because they work at the organisation.",
+            "The employees would oppose wage cuts because this directly reduces their take-home pay, making it harder to meet living costs. Their main concern is financial security, and they would want the committee to find cost savings that do not affect staff income.",
+            "The employees want to keep their jobs and would not like changes."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C demonstrates Merit-level explanation. It names the stakeholder, states their position (opposition to wage cuts), gives a specific reason (reduced take-home pay, difficulty meeting living costs), and explains what they would want instead. Options A and B only identify the stakeholder without explaining their perspective. Option D is too vague — 'would not like changes' is not a meaningful explanation of what the stakeholder wants and why it matters."
+        },
+        {
+          "question": "A surf lifesaving club takes out a $6,200 loan at 12.5% per annum over 12 months, resulting in total repayments of approximately $6,990. Which of the following is the most specific and well-explained consequence?",
+          "options": [
+            "The loan will cost more than the original amount.",
+            "The club will have less money.",
+            "The $790 in interest means the club pays 12.7% more for the motor than if they had used reserves. This reduces the amount available for annual maintenance by $66 per month across the repayment year.",
+            "Borrowing money always has consequences for an organisation."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is the most specific. It calculates the exact interest cost ($790), expresses it as a percentage premium (12.7%), and breaks down the monthly impact ($66 per month). This level of specificity is what Merit requires. Option A is true but not explained. Option B is extremely vague. Option D is a generic statement that could apply to any situation — it shows no understanding of this specific decision."
+        },
+        {
+          "question": "Which stakeholder type is a bank that has provided a loan to a community sports club?",
+          "options": [
+            "An internal stakeholder",
+            "An external stakeholder",
+            "A putake stakeholder",
+            "A silent stakeholder"
+          ],
+          "correctIndex": 1,
+          "explanation": "A bank is an external stakeholder — it exists outside the organisation but is affected by its financial decisions. The bank has a direct financial interest in the club's ability to repay the loan. Internal stakeholders are people inside the organisation, such as employees, managers, or committee members. 'Putake stakeholder' and 'silent stakeholder' are not terms used in AS92028."
+        },
+        {
+          "question": "An organisation's decision to cut its community outreach programme to save $8,000 per year is likely to have which type of consequence for its reputation?",
+          "options": [
+            "A short-term positive financial consequence",
+            "A long-term negative non-financial consequence",
+            "A short-term negative financial consequence",
+            "No consequence, since reputation is not financial"
+          ],
+          "correctIndex": 1,
+          "explanation": "Cutting a community outreach programme might save money in the short term, but it is likely to damage the organisation's reputation over time — a long-term negative non-financial consequence. Reputation matters for organisations because it affects their ability to attract members, donors, customers, and support. Option C is wrong because the immediate financial effect of the cut is positive (savings), not negative. Option D is wrong because non-financial consequences are still real consequences in AS92028."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "The Canteen Expansion Decision",
+      "estimatedMinutes": 15,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "St Joseph's College in Dunedin has a school canteen that currently operates three days per week (Tuesday, Wednesday, Friday). The canteen committee is considering whether to expand operations to five days per week. The canteen's putake is to provide affordable, nutritious food to students and to use surplus funds to support the school's student hardship fund. Current three-day income: $1,980 per week. Current three-day costs: food $780, packaging $90, part-time staff (one person, 3 hrs per day x 3 days x $17.50) $157.50, power $45. Total current costs: $1,072.50. Current weekly surplus: $907.50. If expanded to five days, additional income is estimated at $1,200 per week (Monday and Thursday). Additional costs would be: food $520, packaging $60, additional staff hours (one extra person, 3 hrs x 2 days x $17.50) $105, power $30. Total additional weekly costs: $715. Stakeholders include: students (who want affordable daily access to food), the student hardship fund committee (who benefits from surplus), canteen staff (who would gain hours), the school principal (who must approve the expansion), and a local fresh produce supplier who currently supplies three days and would increase supply.",
+      "challenge": "1. Identify the type of financial situation (need, issue, or opportunity) and justify your answer.\n2. Build a budget comparing the current three-day operation against the proposed five-day operation.\n3. Identify two stakeholders and explain each one's perspective on the expansion decision.\n4. Explain two possible consequences of choosing to expand — one financial and one non-financial.\n5. Write a recommendation that states whether the canteen should expand, with reasons connected to both the financial evidence and the canteen's putake.",
+      "hints": [
+        "For the budget, set up two columns clearly labelled 'Current (3 days)' and 'Proposed (5 days)'. Add the additional figures to the current figures in the second column — do not just show the new amounts in isolation.",
+        "For stakeholder perspectives, use the framework: [Stakeholder] would [support/oppose/be concerned about] this decision because [specific reason]. Their main concern is [specific worry or desire] because [why it matters to them].",
+        "For your recommendation, you need both financial evidence (from the budget) and a putake connection. One without the other is not a complete answer."
+      ],
+      "solution": "Question 1: This is a financial opportunity. The canteen is currently operating successfully with a weekly surplus of $907.50. There is no crisis and no ongoing problem. The expansion to five days represents a chance to improve the canteen's financial position and extend its service to students. The committee is choosing to pursue potential improvement, not responding to a problem.\n\nQuestion 2: Budget comparison\n\nCurrent (3 days per week):\nIncome: $1,980.00\nFood: $780.00\nPackaging: $90.00\nStaff wages: $157.50\nPower: $45.00\nTotal costs: $1,072.50\nWeekly surplus: $907.50\n\nProposed (5 days per week):\nIncome: $1,980 + $1,200 = $3,180.00\nFood: $780 + $520 = $1,300.00\nPackaging: $90 + $60 = $150.00\nStaff wages: $157.50 + $105 = $262.50\nPower: $45 + $30 = $75.00\nTotal costs: $1,787.50\nWeekly surplus: $3,180 - $1,787.50 = $1,392.50\n\nExpanding to five days increases the weekly surplus from $907.50 to $1,392.50 — an increase of $485 per week.\n\nQuestion 3: Stakeholder perspectives\n\nStakeholder 1 — Students: Students would strongly support the expansion because it gives them access to affordable, nutritious food on all five school days instead of just three. Many students who rely on the canteen for lunch currently have no affordable food option on Mondays and Thursdays. Their main concern is daily access to food at a price they can afford, and expanding the canteen directly addresses this. This aligns with the canteen's putake of providing affordable nutrition to all students.\n\nStakeholder 2 — School Principal: The principal would likely support the expansion but would want reassurance about financial sustainability. Their main concern is that the expansion does not put strain on the school's overall budget or require a school subsidy if the canteen underperforms. They would want to see the budget evidence showing a projected surplus before approving the expansion.\n\nQuestion 4: Consequences\n\nFinancial consequence: The weekly surplus increases by $485, which over a 40-week school year generates an additional $19,400 for the student hardship fund. This is a significant positive consequence — the fund would nearly double its annual intake, allowing it to support more students in financial need.\n\nNon-financial consequence: Expanding to five days may increase stress on canteen staff, particularly during peak lunch periods when demand is highest. If Monday and Thursday are busier than expected, staff may feel rushed and undervalued, which could affect their performance and willingness to continue in the role.\n\nQuestion 5 — Recommendation: The canteen committee should proceed with expanding to five days per week. The budget shows a clear financial case: the weekly surplus increases from $907.50 to $1,392.50, generating an additional $19,400 per year for the student hardship fund. This directly serves the canteen's putake — providing affordable food and supporting students in financial need. The expansion also improves student access to affordable nutrition on all school days, which aligns with the canteen's reason for existing."
+    },
+    {
+      "type": "quiz",
+      "title": "End-of-Day Quiz — Putting It All Together",
+      "estimatedMinutes": 9,
+      "nceaLevel": "Achieved to Merit",
+      "questions": [
+        {
+          "question": "In the canteen scenario, the expanded five-day operation generates a weekly surplus of $1,392.50 compared to $907.50 currently. Over a 40-week school year, what is the additional annual contribution to the student hardship fund?",
+          "options": [
+            "$907.50 x 40 = $36,300",
+            "$1,392.50 x 40 = $55,700",
+            "$485 x 40 = $19,400",
+            "$715 x 40 = $28,600"
+          ],
+          "correctIndex": 2,
+          "explanation": "The additional annual contribution is the increase in weekly surplus ($485) multiplied by the number of school weeks (40). $485 x 40 = $19,400. You would not multiply the total new surplus ($1,392.50) because $907.50 of that was already going to the fund under the current arrangement. The $715 figure is the total additional weekly cost, not the additional surplus."
+        },
+        {
+          "question": "Which of the following responses best explains a consequence at the Merit level?",
+          "options": [
+            "If the canteen expands, there will be more food available for students.",
+            "If the canteen expands to five days, the additional $485 weekly surplus over 40 school weeks generates $19,400 for the student hardship fund, potentially doubling the number of students it can support each year.",
+            "The expansion will have consequences for stakeholders.",
+            "Expanding the canteen is good for the school community."
+          ],
+          "correctIndex": 1,
+          "explanation": "Option B demonstrates Merit-level explanation. It names the specific consequence (increased hardship fund income), provides the exact figure ($19,400), and explains what this means in practice (potentially doubling the number of students supported). Options A, C, and D are too vague — they do not specify amounts, do not explain the mechanism of the consequence, and do not connect it to specific stakeholders or the organisation's putake."
+        },
+        {
+          "question": "The local fresh produce supplier who currently supplies the canteen three days a week is a stakeholder. Which of the following best explains their perspective on the expansion?",
+          "options": [
+            "The supplier is not really a stakeholder because they are a separate business.",
+            "The supplier would oppose the expansion because it means more work.",
+            "The supplier would likely support the expansion because increasing from three to five supply days per week would increase their revenue from this contract, providing them with more stable income and a stronger business relationship with the school.",
+            "The supplier's perspective is not relevant to the canteen's financial decision."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C correctly identifies that the supplier would likely support the expansion because it directly benefits them financially — more supply days means more revenue and a stronger contract relationship. Option A is incorrect because anyone affected by the decision is a stakeholder, including external parties like suppliers. Option B assumes opposition without any logical basis. Option D is wrong because supplier perspectives are a valid part of Merit-level stakeholder analysis in AS92028."
+        },
+        {
+          "question": "Which of the following correctly identifies a conflict of interest among the stakeholders in the canteen scenario?",
+          "options": [
+            "The students want food and the canteen sells food — they want the same thing.",
+            "The principal wants the canteen to succeed and so does the hardship fund committee.",
+            "The canteen staff might prefer fewer days of work (less stress) while students want the canteen to be open more days — these two groups want different things from the expansion.",
+            "There is no conflict of interest because everyone benefits from the expansion."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C correctly identifies a conflict of interest. Canteen staff may prefer a lighter workload while students want maximum access to affordable food. These are genuine competing interests. Option D is an assumption — not all stakeholders benefit equally, and identifying conflicts of interest is an important part of Merit analysis in AS92028."
+        }
+      ]
+    }
+  ]
+}

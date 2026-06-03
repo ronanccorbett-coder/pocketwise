@@ -1,0 +1,52 @@
+{
+  "title": "Project Completion Day",
+  "order": 7,
+  "dayNumber": 7,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 100,
+  "bloomsLevel": "Apply, Analyse, and Evaluate",
+  "nceaFocus": "AS92030: Full project completion — applying all achievement criteria from Achieved through to Excellence in a complete interdependent financial relationships analysis",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Complete a full AS92030-aligned financial relationships analysis for a chosen NZ scenario",
+    "Apply the six-part structure with specific figures throughout",
+    "Conduct peer review using the AS92030 achievement criteria"
+  ],
+  "vocabulary": [
+    {
+      "term": "Peer review",
+      "definition": "The process of reading and evaluating another student's work using assessment criteria — helps you see your own work more objectively."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Project Reference Scenario — If You Need One",
+      "estimatedMinutes": 4,
+      "notePrompt": "If using your own scenario, skip to the work session. If using the reference scenario, copy the key figures into your notes now — you will need them throughout your response.",
+      "content": "If you have not yet developed your own scenario, use this reference scenario for your project.\n\nEntities: Wiremu's Corner Dairy (South Auckland) and Pacific Foods Ltd (Manukau supplier).\n\nRelationship: Wiremu's Dairy purchases $1,800 of stock per week from Pacific Foods on 30-day credit terms. Annual purchase value: approximately $93,600.\n\nWiremu's Dairy also has a $30,000 overdraft facility with Kiwibank at 14.5% per annum to manage cash flow gaps between purchasing stock and receiving customer payments.\n\nEvent: Pacific Foods is acquired by a larger supplier and announces it is discontinuing the 30-day credit terms. All accounts must now pay within 7 days of delivery, effective in 30 days.\n\nThis change affects Wiremu's cash flow management significantly — he previously had 30 days to sell stock and collect customer payments before paying Pacific Foods. Now he has only 7 days.\n\nConsider the three-entity relationship: Wiremu's Dairy, Pacific Foods, and Kiwibank."
+    },
+    {
+      "type": "scenario",
+      "title": "Full Project Work Session — Your Interdependent Financial Relationships Analysis",
+      "estimatedMinutes": 30,
+      "nceaLevel": "Achieved to Excellence",
+      "setup": "Use your own chosen NZ scenario or the Wiremu dairy reference scenario above. Apply the complete six-part AS92030 structure.",
+      "challenge": "Write your complete analysis covering all six parts:\n\nPart 1 (Achieved): Identify and describe the financial relationship(s). Name all entities. Describe the money flows with specific NZD figures.\n\nPart 2 (Achieved): Describe how the event changes the financial relationship. What specifically changes in the money flow? Use figures.\n\nPart 3 (Merit): Explain how the event affects EACH entity with specific figures and reasoning.\n\nPart 4 (Merit): Explain the flow-on effects. Trace the chain — at least 3 steps. Show how consequences travel from one entity to another.\n\nPart 5 (Excellence): Analyse the extent of interdependence. Is it symmetric or asymmetric? Who is more vulnerable? Who holds more bargaining power? Justify with evidence.\n\nPart 6 (Excellence): Propose specific response strategies for each entity. Name actual NZ institutions, options, or mechanisms where relevant.",
+      "hints": [
+        "For the dairy scenario: The key change is credit terms from 30 days to 7 days. Wiremu collects cash from customers daily but now has to pay Pacific Foods in 7 days. How does this affect his cash flow? What role does the Kiwibank overdraft play?",
+        "For extent analysis: How easily could Wiremu switch to a different supplier? How important is Wiremu's account to Pacific Foods (now part of a larger company)?",
+        "For response strategies: Wiremu's options include: negotiate with Pacific Foods, draw on the Kiwibank overdraft (at a cost), find an alternative supplier, or increase cash held as buffer. Each has financial implications — explain them."
+      ],
+      "solution": "Sample response for Wiremu's dairy scenario:\n\nPart 1 — Relationships and money flows:\nThree entities: Wiremu's Corner Dairy, Pacific Foods Ltd, and Kiwibank.\n\nRelationship 1 — Dairy and Pacific Foods: Pacific Foods supplies $1,800 of stock weekly to Wiremu's Dairy. Under 30-day credit terms, Wiremu pays approximately $7,200 per month (4 weeks of deliveries) to Pacific Foods 30 days after the first delivery of each cycle. Money flows from Pacific Foods to Wiremu as goods, and from Wiremu to Pacific Foods as monthly payment of $7,200.\n\nRelationship 2 — Dairy and Kiwibank: Kiwibank provides a $30,000 overdraft to Wiremu's Dairy at 14.5% per annum. When Wiremu's cash balance drops (e.g. between stock purchases and customer receipts), he draws on the overdraft. Interest flows from Wiremu to Kiwibank on any overdraft balance used.\n\nPart 2 — Event and change to relationship:\nPacific Foods changes payment terms from 30 days to 7 days. Previously, Wiremu had 30 days to collect customer payments before paying his stock invoice. Now he has only 7 days. The first week's stock ($1,800) must be paid within 7 days of delivery — before Wiremu has received sufficient customer revenue from selling that stock. Money must flow from Wiremu to Pacific Foods $22,600 sooner each month (the difference in timing between 7-day and 30-day terms applied to $93,600 annual purchasing).\n\nPart 3 — Effect on each entity:\nWiremu's Dairy: The shortened payment terms create a cash flow problem. Wiremu now must pay for stock before he has sold it and collected payment. His daily customer cash receipts (estimated $600 to $700 per day) will not fully cover a $1,800 weekly invoice payable within 7 days. He will need to draw more frequently on his Kiwibank overdraft to bridge the gap, increasing his interest costs.\n\nPacific Foods: The change improves Pacific Foods' own cash flow — they receive payment 23 days sooner per delivery cycle. Their accounts receivable (money owed to them) decreases, reducing their exposure to late payment risk. They receive approximately $93,600 of annual payments significantly earlier.\n\nPart 4 — Flow-on effects:\nStep 1: Wiremu draws more heavily on the Kiwibank overdraft to meet the 7-day payment requirement.\nStep 2: Higher overdraft use means more interest flows from Wiremu to Kiwibank. At 14.5% per annum on an average additional overdraft balance of, say, $5,000, annual interest increases by approximately $725.\nStep 3: Higher interest costs reduce Wiremu's annual profit by approximately $725. Combined with any existing margin pressures, this further strains his finances.\nStep 4: If Wiremu's overdraft regularly approaches its $30,000 limit, Kiwibank may flag the account for review. A high utilisation ratio may result in Kiwibank declining future overdraft increases or increasing the interest rate.\nStep 5: If Wiremu cannot consistently meet the 7-day payment requirement, Pacific Foods may place the account on stop-supply — meaning no more stock deliveries. Without stock, the dairy cannot operate.\n\nPart 5 — Extent of interdependence:\nThe relationship is asymmetrically interdependent. Wiremu's Dairy is highly dependent on Pacific Foods — it is his primary stock supplier and switching would require finding a new supplier with comparable product range, delivery reliability, and pricing. This takes time and carries risk. In contrast, Pacific Foods (now part of a larger company) has hundreds of dairy and convenience store accounts across Auckland. Wiremu's $93,600 annual account, while not trivial, represents a small fraction of their total revenue. Pacific Foods holds significantly more bargaining power. Wiremu is the more vulnerable entity — losing supply would shut him down; losing Wiremu would barely affect Pacific Foods' revenue.\n\nPart 6 — Response strategies:\nFor Wiremu's Dairy: Immediately negotiate with Pacific Foods' account manager to request an exemption or phased transition — pointing out that 30-day terms are standard in the industry and requesting a minimum of 14-day terms as a compromise. Simultaneously, Wiremu should approach two or three alternative suppliers (other Auckland-based food wholesalers) to obtain quotes, both as a genuine alternative and as leverage in negotiations with Pacific Foods. He should also contact Kiwibank proactively to discuss whether his $30,000 overdraft limit can be increased to $40,000 to provide a larger cash flow buffer during the transition — before it becomes an emergency.\n\nFor Pacific Foods: To retain valued accounts like Wiremu's during the transition to shorter terms, Pacific Foods should offer a 14-day compromise option for accounts with a strong payment history, or provide a direct debit arrangement that automates 7-day payments without requiring active management from the account holder. Imposing uniform 7-day terms across all small accounts without flexibility risks a wave of account cancellations — a significant flow-on effect that would undermine the revenue benefits the policy was designed to deliver."
+    },
+    {
+      "type": "reflection",
+      "title": "Peer Review — AS92030 Criteria Check",
+      "estimatedMinutes": 7,
+      "prompt": "Exchange your completed project with a classmate. Mark their response using the criteria:\n\nAchieved (A): Entities identified. Financial relationship described. Money flows described with figures. Event's effect on relationship described.\nMerit (M): Explains how event affects each entity with figures. Explains flow-on effects with a chain of at least 3 steps.\nExcellence (E): Analyses extent of interdependence — labels it symmetric or asymmetric with justification. Proposes specific response strategies for each entity naming real NZ options.\n\nWrite two pieces of specific feedback: one strength and one targeted improvement. Make the improvement specific — not 'add more detail' but 'the flow-on analysis stops after two steps — add a third step showing how the bank is affected when the business draws on its overdraft more heavily.'",
+      "nceaLink": "AS92030 is externally assessed. The exam gives you a scenario and requires structured written analysis. Practising the peer review marking process internalises the criteria and helps you self-assess under exam conditions."
+    }
+  ]
+}

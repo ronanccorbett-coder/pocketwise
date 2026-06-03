@@ -1,0 +1,169 @@
+{
+  "title": "What Are Interdependent Financial Relationships?",
+  "order": 1,
+  "dayNumber": 1,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Remember and Understand",
+  "nceaFocus": "AS92030: Identify and describe financial relationships between two or more entities, and describe how money flows between them",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain what an interdependent financial relationship is",
+    "Identify at least three types of financial relationships between NZ entities",
+    "Describe how money flows between two entities in a given relationship"
+  ],
+  "vocabulary": [
+    {
+      "term": "Interdependence",
+      "definition": "A relationship where two or more entities depend on each other financially. What happens to one affects the other. For example, a business depends on its bank for credit, and the bank depends on the business for interest repayments."
+    },
+    {
+      "term": "Entity",
+      "definition": "Any organisation, business, household, or individual that participates in a financial relationship. Examples include businesses, banks, government agencies, households, marae, community trusts, and sports clubs."
+    },
+    {
+      "term": "Flow of money",
+      "definition": "The direction money moves between entities in a financial relationship. Money can flow one way (a grant) or both ways (a loan with repayments, a sale with payment)."
+    },
+    {
+      "term": "Financial relationship",
+      "definition": "A connection between two or more entities that involves money moving between them. The relationship creates mutual obligations, expectations, or dependencies."
+    },
+    {
+      "term": "Flow-on effect",
+      "definition": "A consequence that travels through a financial relationship from one entity to another. If one entity is affected by an event, the flow-on effect is what happens to the other entity as a result."
+    },
+    {
+      "term": "Creditor",
+      "definition": "An entity that is owed money by another. A bank that has lent money to a business is a creditor of that business."
+    },
+    {
+      "term": "Debtor",
+      "definition": "An entity that owes money to another. A business that has borrowed from a bank is a debtor of that bank."
+    },
+    {
+      "term": "Revenue",
+      "definition": "Money received by an entity from its main activities — for example, sales income for a business, tax income for the government, or rent income for a landlord."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Everything Is Connected — Financial Relationships in NZ",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: What is an interdependent financial relationship? Give one example from your own life — think about your school, your family, a local business, or a sports club.",
+      "content": "Every organisation and household in New Zealand exists inside a web of financial relationships. A dairy buys stock from a supplier, sells goods to customers, pays rent to a landlord, and banks with ANZ. The dairy depends on all of these relationships to operate, and all of those entities depend on the dairy too.\n\nThis is what interdependence means in a financial context. Two entities are financially interdependent when what happens to one affects the other. If the dairy's supplier raises prices, the dairy's costs rise. If the dairy closes, the supplier loses a customer. Both are affected by what happens to the other.\n\nIn AS92030, you need to understand these relationships at several levels. First, you identify and describe the relationship — who are the entities and how are they financially connected? Second, you describe how money flows between them. Third, you describe how a specific event changes the relationship. And at Merit and Excellence levels, you explain and analyse the flow-on effects — what happens to each entity as a consequence.\n\nThis standard is assessed externally, which means the exam gives you a scenario and asks you to apply these ideas. The best preparation is practising with real NZ examples until the thinking becomes second nature."
+    },
+    {
+      "type": "slide",
+      "title": "Types of Financial Relationships",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a table with two columns: Relationship Type and Example. List at least five types of financial relationships from this slide with a real NZ example for each.",
+      "content": "Financial relationships between NZ entities take several forms. Here are the most important ones for AS92030.\n\nBusiness and customer: A business provides goods or services; the customer pays money. The Warehouse sells products to shoppers. Air New Zealand sells flights to passengers. Money flows from customer to business.\n\nBusiness and supplier: A business buys inputs from a supplier; money flows to the supplier. A café buys coffee beans from a roastery. A builder buys timber from a hardware store.\n\nBusiness and bank: A bank provides credit (loans, overdrafts); the business makes repayments plus interest. Money flows from bank to business as a loan, and back from business to bank as repayments.\n\nGovernment and taxpayer: Taxpayers pay income tax and GST to the government (via IRD). The government uses this revenue to fund public services. Money flows from taxpayers to the government.\n\nGovernment and business/individual: The government distributes grants, benefits, subsidies, and funding. Money flows from the government to recipients.\n\nEmployer and employee: The employer pays wages; the employee provides labour. Money flows from employer to employee, with a portion flowing through to IRD as PAYE tax.\n\nLandlord and tenant: The tenant pays rent; the landlord provides use of property. Money flows from tenant to landlord."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Relationship Type",
+      "pairs": [
+        { "item": "A café pays a coffee roastery for weekly bean deliveries", "zone": "Business and Supplier" },
+        { "item": "ANZ provides a $20,000 loan to a small business", "zone": "Business and Bank" },
+        { "item": "A Countdown shopper pays $85 for groceries", "zone": "Business and Customer" },
+        { "item": "IRD collects PAYE from a Wellington employer", "zone": "Government and Taxpayer" },
+        { "item": "A school pays a teacher $1,400 per week wages", "zone": "Employer and Employee" },
+        { "item": "A family pays $2,200/month rent to a landlord", "zone": "Landlord and Tenant" },
+        { "item": "Creative NZ awards a $15,000 grant to a community arts trust", "zone": "Government and Organisation" }
+      ],
+      "explanation": "Each of these is a distinct financial relationship type. In AS92030, identifying the type of relationship is the starting point. You must then describe the specific financial connection — not just 'they have a relationship' but exactly what money flows between them and why. The relationship type shapes what flow-on effects are possible when an event occurs.",
+      "estimatedMinutes": 6
+    },
+    {
+      "type": "slide",
+      "title": "How Money Flows — Describing the Flow",
+      "estimatedMinutes": 4,
+      "notePrompt": "For each money flow described in this slide, draw a simple arrow diagram showing which entity the money moves FROM and which entity it moves TO.",
+      "content": "Describing how money flows is one of the core skills in AS92030. The flow description must be specific — not just 'money moves between them' but exactly what money, in what direction, and for what reason.\n\nA good flow description has three components: who sends the money, what the money is for, and who receives it.\n\nExample 1 — Business and bank:\n'Kiwibank provides a $50,000 term loan to Aroha's café. Money flows from Kiwibank to Aroha as the loan principal. Aroha then makes monthly repayments of $1,050 (principal plus interest at 8.5% per annum) back to Kiwibank. Money flows in both directions — initially from Kiwibank to Aroha, then regularly from Aroha back to Kiwibank.'\n\nExample 2 — Employer and employee:\n'Pak'nSave pays Tama $23.15 per hour for 30 hours per week. Money flows from Pak'nSave to Tama as gross wages of $694.50. Pak'nSave deducts PAYE tax (approximately $84) and sends it to IRD. Tama receives net wages of approximately $610. Money flows from Pak'nSave to Tama (wages) and from Pak'nSave to IRD (PAYE).'\n\nNotice how these descriptions name specific amounts and explain why the money moves. That specificity is what earns marks in the external exam."
+    },
+    {
+      "type": "truefalse",
+      "statement": "In an interdependent financial relationship, only one entity is affected when an event occurs — the entity that receives the money.",
+      "correctAnswer": false,
+      "explanation": "False. Interdependence means both entities are affected when an event occurs. That is the whole point of the concept. If a business loses revenue, the bank it owes money to is also affected because repayments may be at risk. If a supplier raises prices, the business that buys from them is affected. Flow-on effects travel in both directions through financial relationships. In AS92030, you must show how EACH entity in the relationship is affected by an event — not just one.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "A Real NZ Example — The Dairy and Its Supplier",
+      "estimatedMinutes": 4,
+      "notePrompt": "Map this relationship in your notes: draw two boxes (Dairy and Supplier), then draw arrows showing each money flow with a label. List at least two ways the dairy depends on the supplier and two ways the supplier depends on the dairy.",
+      "content": "Let's build a complete picture of a financial relationship using a simple NZ example.\n\nEntities: Wiremu's Dairy (a corner dairy in South Auckland) and Pacific Foods Ltd (a snack and drink supplier based in Manukau).\n\nThe relationship: Wiremu's Dairy purchases stock weekly from Pacific Foods Ltd. Pacific Foods delivers snacks, drinks, and confectionery on credit terms — Wiremu pays 30 days after delivery.\n\nMoney flows:\n— Pacific Foods delivers $1,800 of stock to Wiremu's Dairy each week\n— Wiremu's Dairy pays $1,800 to Pacific Foods 30 days after delivery\n— Pacific Foods earns revenue from the sale; Wiremu's Dairy incurs a cost of goods sold\n\nInterdependence:\n— Wiremu's Dairy depends on Pacific Foods for reliable stock supply. Without stock, Wiremu cannot sell to customers and loses revenue.\n— Pacific Foods depends on Wiremu's Dairy for regular purchase income. Wiremu is one of 40 local dairies Pacific Foods supplies — losing one customer reduces Pacific Foods' revenue by approximately $93,600 per year.\n\nThis is a genuine two-way dependency. Neither entity is fully in control. Each needs the other to function profitably."
+    },
+    {
+      "type": "slide",
+      "title": "Introducing Events — When Things Change",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: What is a financial event? Give three examples of events that could change a financial relationship between a business and its bank.",
+      "content": "An event is something that happens that changes the financial relationship between entities. In AS92030, the event is usually introduced in the scenario — and your job is to describe how it affects the relationship and then explain the flow-on effects.\n\nEvents can be positive or negative. They can come from inside the relationship (one entity makes a decision) or from outside (an economic change, a natural disaster, a law change).\n\nExamples of events:\n— A business misses a loan repayment (affects the business-bank relationship)\n— A supplier raises their prices by 15% (affects the business-supplier relationship)\n— The government increases the minimum wage (affects the employer-employee relationship)\n— A cyclone damages a business's premises (affects multiple relationships simultaneously)\n— Interest rates rise (affects any entity with variable-rate debt)\n— A business loses its biggest customer (affects its ability to service all financial relationships)\n\nFor each event, the key question in AS92030 is: what happens to each entity in the relationship as a direct result of this event, and what are the flow-on consequences?\n\nWe will work through this in detail in the next lessons. For now, understand that events are the engine of the analysis — without an event, there is no change to describe."
+    },
+    {
+      "type": "quiz",
+      "title": "Checkpoint Quiz — Financial Relationships",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Wiremu's Dairy buys stock on 30-day credit terms from Pacific Foods Ltd. In this relationship, which statement correctly describes the money flow?",
+          "options": [
+            "Money flows only from Pacific Foods to Wiremu's Dairy as stock deliveries",
+            "Money flows from Pacific Foods to Wiremu's Dairy as stock, and from Wiremu's Dairy back to Pacific Foods as payment 30 days later",
+            "Money flows only from Wiremu's Dairy to Pacific Foods as weekly payments",
+            "There is no money flow because credit terms mean payment is optional"
+          ],
+          "correctIndex": 1,
+          "explanation": "In a credit supply relationship, money flows in both directions over time. First, Pacific Foods provides stock (value flows to the dairy). Then, 30 days later, Wiremu's Dairy pays for the stock (money flows back to Pacific Foods). Both flows must be described in AS92030. Credit terms mean payment is deferred, not avoided — the obligation exists from the moment the stock is received."
+        },
+        {
+          "question": "Which of the following best explains what 'interdependence' means in a financial relationship?",
+          "options": [
+            "Two entities share the same bank account",
+            "One entity provides money and the other spends it",
+            "Each entity depends on the other financially — what happens to one affects the other",
+            "Two entities compete for the same customers"
+          ],
+          "correctIndex": 2,
+          "explanation": "Interdependence means mutual dependence — each entity needs the other to achieve its financial goals. Wiremu's Dairy needs Pacific Foods for stock; Pacific Foods needs Wiremu for revenue. When something changes for one entity, the other is affected too. This mutual dependency is what makes these relationships 'interdependent' rather than one-directional."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "Three-Entity Relationships",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a triangle diagram showing the three-entity relationship from this slide. Label each arrow with the money flow and its direction.",
+      "content": "Some of the most important financial relationships in AS92030 involve three entities, not just two. Understanding how money flows through a three-entity system is essential for the external exam.\n\nA common NZ example: Employee, Employer, and IRD.\n\nTama works at Pak'nSave. Pak'nSave pays Tama gross wages. Pak'nSave deducts PAYE tax from Tama's wages and pays it directly to IRD on Tama's behalf. Tama receives net wages. IRD receives PAYE.\n\nThree money flows:\n1. Pak'nSave pays Tama gross wages (employer to employee)\n2. Pak'nSave sends PAYE to IRD (employer to government, on behalf of employee)\n3. Tama receives net wages after deductions (employer to employee, net amount)\n\nAll three entities are interdependent. If Pak'nSave closes, Tama loses income and IRD loses PAYE revenue. If Tama leaves, Pak'nSave loses a worker and IRD loses that taxpayer's PAYE. If IRD changes the tax rate, Tama's net income changes and Pak'nSave's payroll costs change.\n\nThree-entity relationships appear frequently in NCEA AS92030 external exams. Practise mapping them visually — draw the entities as circles or boxes and draw labelled arrows for each money flow."
+    },
+    {
+      "type": "typed",
+      "question": "What is the term for a consequence that travels through a financial relationship from one entity to another when an event occurs?",
+      "acceptedAnswers": ["flow-on effect", "flow on effect", "flow-on", "flowon effect"],
+      "placeholder": "Type your answer here...",
+      "hint": "Think about what happens downstream in a relationship when something changes upstream.",
+      "explanation": "The term is 'flow-on effect.' In AS92030, flow-on effects are central to Merit and Excellence analysis. When an event affects one entity in a financial relationship, the consequences travel through the relationship to the other entity — that is the flow-on effect. For example, if a business reduces its orders from a supplier, the supplier experiences a flow-on effect of reduced revenue.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "NZ Institutions in Financial Relationships",
+      "estimatedMinutes": 4,
+      "notePrompt": "List at least five NZ institutions from this slide and write one sentence for each explaining what financial role they play in relationships with businesses or households.",
+      "content": "AS92030 uses real NZ institutional contexts. You need to know what role each major institution plays in financial relationships.\n\nReserve Bank of New Zealand (RBNZ): Sets the Official Cash Rate (OCR), which influences all interest rates in NZ. When the RBNZ raises the OCR, banks raise their lending rates — affecting businesses and households with variable-rate loans.\n\nInland Revenue Department (IRD): Collects income tax, GST, PAYE, and KiwiSaver contributions. All businesses and employed individuals have a financial relationship with IRD.\n\nKiwiSaver providers (e.g. Simplicity, ANZ KiwiSaver, Booster): Employees and employers both contribute to KiwiSaver. The provider invests the funds. Three-entity relationship: employee, employer, KiwiSaver provider.\n\nKāinga Ora: Provides social housing and housing development. Tenants pay rent to Kāinga Ora. The government funds Kāinga Ora. Three-entity relationship: tenant, Kāinga Ora, government.\n\nCommerce Commission: Enforces fair trading and competition laws. Not a direct money-flow entity but affects pricing behaviour and contracts between businesses.\n\nMajor NZ banks — ANZ, ASB, BNZ, Kiwibank, Westpac: Provide loans, mortgages, overdrafts, and transaction accounts to businesses and households. Central to business-bank financial relationships."
+    },
+    {
+      "type": "reflection",
+      "title": "Map Your Own Financial Relationships",
+      "estimatedMinutes": 5,
+      "prompt": "Think about an organisation you belong to or know well — your school, a sports club, a workplace, or a family business. Draw a simple diagram showing at least three financial relationships that organisation has. For each relationship, name the two entities, describe what money flows between them, and note the direction of flow. Which relationship do you think is most important for that organisation's survival? Why?",
+      "nceaLink": "AS92030 requires you to identify, describe, and analyse financial relationships. This reflection practises the foundational skill of mapping relationships before the exam gives you a specific scenario to work with."
+    }
+  ]
+}

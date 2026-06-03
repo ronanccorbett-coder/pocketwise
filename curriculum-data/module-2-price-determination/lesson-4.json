@@ -1,0 +1,139 @@
+{
+  "title": "Week 1 Challenge — Pricing From Scratch",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 100,
+  "bloomsLevel": "Apply and Analyse",
+  "nceaFocus": "AS92029: Synthesising internal/external factors, break-even analysis, projected income statements, and a justified price recommendation into a complete Achieved-level response",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Apply all Week 1 pricing skills to a new extended NZ scenario from scratch",
+    "Construct a complete pricing model including break-even and projected income statement",
+    "Write a full three-part price recommendation at the Achieved level",
+    "Identify what is needed to move from Achieved toward Merit in AS92029"
+  ],
+  "vocabulary": [
+    {
+      "term": "Pricing strategy",
+      "definition": "The overall approach an organisation takes to setting prices across its products or services, considering costs, competition, and customer value."
+    },
+    {
+      "term": "Price sensitivity",
+      "definition": "How much a change in price affects customer buying behaviour. High price sensitivity means customers will reduce purchases significantly if prices rise. Low price sensitivity means customers continue buying even at higher prices."
+    },
+    {
+      "term": "Market positioning",
+      "definition": "How an organisation places its product or service in the minds of customers relative to competitors. Pricing is a key part of positioning — a premium price signals quality, a low price signals affordability."
+    },
+    {
+      "term": "Effect of pricing decision",
+      "definition": "The impact a pricing decision has on the organisation, its stakeholders, and the market. In AS92029, explaining effects is a Merit-level skill."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Week 1 Recap Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "An organisation's fixed costs are $900 per month. Its variable cost per unit is $4.50 and it sells at $9.00 per unit. What is its monthly break-even point?",
+          "options": [
+            "100 units",
+            "150 units",
+            "200 units",
+            "225 units"
+          ],
+          "correctIndex": 2,
+          "explanation": "Contribution margin = $9.00 − $4.50 = $4.50. Break-even = $900 ÷ $4.50 = 200 units. The organisation must sell 200 units before making any profit. Unit 201 and beyond contribute $4.50 each directly to net profit."
+        },
+        {
+          "question": "A business builds two projected income statements at the same expected sales volume. Option A generates $1,200 net profit and Option B generates $1,800 net profit. Variable costs are identical in both. What must be different between the two options?",
+          "options": [
+            "The fixed costs must be different",
+            "The selling price must be different — Option B has a higher price generating more revenue",
+            "The sales volume must be different",
+            "The cost of goods sold must be higher in Option A"
+          ],
+          "correctIndex": 1,
+          "explanation": "If variable costs are identical and sales volume is the same, the only way Option B generates more net profit is through a higher selling price. Higher price → higher revenue → higher gross profit → higher net profit (with the same costs). This is exactly what the projected income statement demonstrates — comparing the financial outcomes of different pricing options at the same expected sales volume."
+        },
+        {
+          "question": "At the Achieved level in AS92029, a price recommendation must include which of the following?",
+          "options": [
+            "An explanation of how the pricing decision affects competitors",
+            "A description of the recommended price, financial evidence from a model, and reference to internal and external factors",
+            "An analysis of how the organisation should respond to any negative effects of the pricing decision",
+            "A discussion of what would happen if the price were changed in the future"
+          ],
+          "correctIndex": 1,
+          "explanation": "At Achieved, the price recommendation must state the recommended price, support it with financial evidence (break-even or projected income statement), and reference both internal factors (costs, margin) and external factors (competitor prices, demand). Explaining effects on competitors is a Merit-level skill. Analysing how the organisation should respond to effects is an Excellence-level skill."
+        },
+        {
+          "question": "Which pricing method is most likely to result in a price that ignores what customers are willing to pay?",
+          "options": [
+            "Value-based pricing",
+            "Competitive pricing",
+            "Cost-plus pricing",
+            "Market pricing"
+          ],
+          "correctIndex": 2,
+          "explanation": "Cost-plus pricing calculates price based only on production costs plus a markup. It ensures costs are covered but does not take into account what customers are willing to pay or what competitors are charging. The result might be a price that is financially justified internally but commercially unviable if customers would pay more (meaning revenue is left on the table) or if the market simply will not accept the price (meaning insufficient sales)."
+        },
+        {
+          "question": "A NZ food truck operator discovers their main competitor has cut prices by $2.00 per item. This is an example of which type of pricing factor?",
+          "options": [
+            "An internal factor — the operator must respond by reducing their costs",
+            "An external factor — a competitor's pricing decision comes from outside the organisation",
+            "A fixed cost factor — it affects the operator's fixed expenses",
+            "A demand factor — it shows customers want lower prices"
+          ],
+          "correctIndex": 1,
+          "explanation": "A competitor's pricing decision is an external factor — it originates outside the organisation and cannot be directly controlled. The food truck operator must decide how to respond: match the lower price, hold firm and compete on quality, or adjust their offering. External factors like competitor pricing must be considered alongside internal factors when making a pricing decision."
+        },
+        {
+          "question": "Caleb's handmade jewellery costs $28 to make. He adds a 75% markup. What is his selling price?",
+          "options": [
+            "$35.00",
+            "$42.00",
+            "$49.00",
+            "$56.00"
+          ],
+          "correctIndex": 2,
+          "explanation": "Markup is calculated on the cost price. 75% of $28 = $21. Selling price = $28 + $21 = $49. At $49, Caleb's gross profit is $21 per piece, and his gross profit margin is $21 ÷ $49 = 42.9%. Remember: the markup percentage (75%) is always higher than the margin percentage (42.9%) because markup uses cost as the base while margin uses selling price."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "Week 1 Challenge — Wiremu's Honey Business",
+      "estimatedMinutes": 20,
+      "nceaLevel": "Achieved",
+      "setup": "Wiremu runs a small honey business on his family's property near Kerikeri, Northland. He keeps eight hives and harvests, jars, and sells raw mānuka honey at local markets and through a small online store. He is preparing to set a price for the upcoming season.\n\nWiremu's monthly costs:\nFixed costs: Market stall fees $160, website hosting and online store $45, labels and marketing materials $55, equipment maintenance $80. Total fixed costs: $340 per month.\nVariable costs per 250g jar: Honey (cost per jar from production) $6.20, glass jar and lid $1.80, label $0.40, packing and posting (online orders average) $4.60 (note: market sales have no posting cost — Wiremu estimates 60% of sales are at market, 40% online). Blended variable cost per jar: market jars (60%): $6.20 + $1.80 + $0.40 = $8.40. Online jars (40%): $8.40 + $4.60 = $13.00. Weighted average variable cost: (0.60 × $8.40) + (0.40 × $13.00) = $5.04 + $5.20 = $10.24 per jar.\n\nWiremu estimates he can sell 80 jars per month. His market research shows comparable Northland mānuka honey sells for $18 to $28 for a 250g jar. Premium certified-grade mānuka honey from large NZ producers sells for $30 to $50+, but Wiremu's honey is not certified at that grade.\n\nWiremu is considering three prices: $18, $22, or $26 per jar.",
+      "challenge": "1. Calculate the contribution margin per jar at each of the three price options.\n2. Calculate the break-even point in jars per month at each price.\n3. Build a projected income statement for all three pricing options at the expected 80 jars per month. Show revenue, COGS, gross profit, fixed costs, and net profit for each.\n4. Which price generates the most net profit at 80 jars? Which requires the fewest jars to break even?\n5. Write a complete price recommendation for Wiremu using the three-part structure: recommended price, financial evidence, and internal and external factors.",
+      "hints": [
+        "Use the weighted average variable cost of $10.24 per jar for all calculations.",
+        "For the income statement: COGS = variable cost × units sold. Gross Profit = Revenue − COGS. Net Profit = Gross Profit − Fixed Costs.",
+        "In your recommendation, reference at least one internal factor (cost, margin goal) and at least one external factor (competitor prices, market range)."
+      ],
+      "solution": "1. Contribution margins:\n$18: $18.00 − $10.24 = $7.76 per jar\n$22: $22.00 − $10.24 = $11.76 per jar\n$26: $26.00 − $10.24 = $15.76 per jar\n\n2. Break-even points:\n$18: $340 ÷ $7.76 = 43.8 → 44 jars\n$22: $340 ÷ $11.76 = 28.9 → 29 jars\n$26: $340 ÷ $15.76 = 21.6 → 22 jars\n\n3. Projected income statements at 80 jars/month:\n\nPrice $18:\nRevenue: 80 × $18 = $1,440\nCOGS: 80 × $10.24 = $819.20\nGross Profit: $620.80\nFixed Costs: $340.00\nNet Profit: $280.80\n\nPrice $22:\nRevenue: 80 × $22 = $1,760\nCOGS: 80 × $10.24 = $819.20\nGross Profit: $940.80\nFixed Costs: $340.00\nNet Profit: $600.80\n\nPrice $26:\nRevenue: 80 × $26 = $2,080\nCOGS: 80 × $10.24 = $819.20\nGross Profit: $1,260.80\nFixed Costs: $340.00\nNet Profit: $920.80\n\n4. The $26 price generates the most net profit ($920.80 vs $600.80 vs $280.80) and requires the fewest jars to break even (22 jars vs 29 vs 44). The $26 price is clearly the strongest financial option at 80 jars.\n\n5. Sample recommendation:\nI recommend Wiremu price his mānuka honey at $26 per 250g jar.\n\nFinancial evidence: At $26, the contribution margin is $15.76 per jar and the break-even point is 22 jars per month. At Wiremu's expected 80 jars per month, the projected monthly net profit is $920.80. This is significantly higher than the $22 option ($600.80) and more than three times the $18 option ($280.80). Even if sales fall to 50 jars in a slow month, the $26 price still generates profit: (50 − 22) × $15.76 = $441.28.\n\nInternal factors: Wiremu's weighted average variable cost is $10.24 per jar, incorporating both market and online sales. His monthly fixed costs are $340. The $26 price provides a 60.6% gross margin and a strong net margin of 44.3% — appropriate for a handcrafted artisan product with significant production and distribution costs.\n\nExternal factors: Comparable Northland mānuka honey sells for $18 to $28 per 250g jar. The $26 price sits near the top of this range, reflecting the premium quality of Wiremu's raw, locally harvested product. At $26, Wiremu is positioned as a quality-oriented producer rather than a volume discounter, which is consistent with the artisan honey market in Northland and supports customer willingness to pay for genuine, local provenance."
+    },
+    {
+      "type": "slide",
+      "title": "What Does Merit Look Like in AS92029?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the two things you need to add to an Achieved response to reach Merit. Give one example of each using the Wiremu scenario.",
+      "content": "You have now completed a full Achieved-level price recommendation. Before we move into Week 2, it is worth understanding what Merit requires — because it is a different kind of thinking, not just more of the same.\n\nAt Achieved: You describe the financial situation, apply a financial model with real figures, and state a recommended price with justification referencing internal and external factors.\n\nAt Merit: You examine the pricing decision. This means two additional things.\n\nFirst, you explain how internal and external factors INFLUENCE the pricing decision — not just what they are, but how they interact and shape the choice. For example: 'The high cost of production ($10.24 per jar) means Wiremu cannot price below $18 without making a loss. However, the competitive market range of $18 to $28 means he also cannot price much above $26 without losing customers to cheaper alternatives. These two factors together define his viable pricing corridor.'\n\nSecond, you explain the possible EFFECTS of the pricing decision on the organisation and its stakeholders. Who is affected by the price Wiremu sets? How? For example: 'Setting a price of $26 positions Wiremu as a premium producer, which may attract customers willing to pay for quality but could deter budget-conscious market shoppers who compare prices across stalls. This could reduce total sales volume, affecting Wiremu's family income.'\n\nIn Week 2, we will practise both of these skills in depth."
+    },
+    {
+      "type": "reflection",
+      "title": "Project Introduction — Your Price Determination",
+      "estimatedMinutes": 5,
+      "prompt": "For your AS92029 module project, you will select a real or fictional NZ product or service and determine an appropriate price using a financial model. Start planning now. Write three to four sentences covering: What product or service will you price? What are your estimated variable and fixed costs? What is the approximate market price range from competitors? This is your project foundation — the more specific you are now, the easier the assessment task will be.",
+      "nceaLink": "Your module project directly matches the AS92029 assessment task. Everything from Week 1 — identifying factors, building a break-even analysis and projected income statement, and writing a price recommendation — will form the core of your project submission."
+    }
+  ]
+}

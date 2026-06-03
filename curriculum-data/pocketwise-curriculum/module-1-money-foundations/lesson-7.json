@@ -1,0 +1,64 @@
+{
+  "title": "Project Work Session",
+  "order": 7,
+  "dayNumber": 7,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 60,
+  "bloomsLevel": "Apply, Analyse & Evaluate",
+  "nceaFocus": "AS92028 — full project completion, peer review, teacher feedback before formal assessment",
+  "ownerEmail": "admin@pocketwise.nz",
+
+  "objectives": [
+    "Complete a full AS92028-style financial decision-making response",
+    "Peer review a classmate's response using the achievement criteria",
+    "Revise and strengthen your response based on feedback",
+    "Ensure all required elements are present: pūtake, financial tool, stakeholders, consequences"
+  ],
+
+  "vocabulary": [
+    {
+      "term": "Assessment Criteria",
+      "definition": "The specific requirements that markers look for. In AS92028 these include: options described, financial tool used, pūtake discussed, decision justified, stakeholders explained (Merit), consequences analysed (Excellence)."
+    },
+    {
+      "term": "Peer Review",
+      "definition": "When a classmate reads your work and gives feedback using the same assessment criteria a teacher would use. Giving good peer feedback also deepens your own understanding of the standards."
+    }
+  ],
+
+  "activities": [
+    {
+      "type": "slide",
+      "title": "AS92028 Checklist — What Your Response Must Include",
+      "estimatedMinutes": 5,
+      "content": "Before you write a single word, check you have all the required ingredients.\n\nFOR ACHIEVED:\n✅ Organisation clearly described (name, what it does, who it serves)\n✅ Pūtake clearly explained — the organisation's reason for existing\n✅ Need, issue, or opportunity clearly described\n✅ THREE options described — not just one\n✅ Financial tool used — budget, cost-benefit analysis, or comparison chart WITH ACTUAL DOLLAR VALUES\n✅ Decision stated clearly — which option and why\n✅ Financial data used to justify the decision (specific figures)\n\nFOR MERIT (add to above):\n✅ TWO stakeholders identified — name them specifically (not just 'the community')\n✅ Each stakeholder's PERSPECTIVE explained — what do they want, what do they fear?\n✅ TWO consequences explained — what might happen as a result? Positive and negative.\n\nFOR EXCELLENCE (add to above):\n✅ How does the decision CONSIDER stakeholder perspectives? Does it balance them?\n✅ How could the organisation RESPOND to the consequences in a way that upholds their pūtake?\n✅ Judgements made — not just explained, but evaluated\n\nCOMMON MISTAKES TO AVOID:\n❌ Using a financial tool without dollar amounts (not valid as evidence)\n❌ Forgetting to mention pūtake at all\n❌ Only describing one option instead of three\n❌ Stakeholders without explained perspectives\n❌ Consequences without analysis of how to respond"
+    },
+    {
+      "type": "reflection",
+      "title": "Project Draft — Full Written Response",
+      "estimatedMinutes": 25,
+      "prompt": "Write your full AS92028 response now. Use the checklist above as your guide.\n\nYour response should include:\n\nPART 1 — THE ORGANISATION (2–3 sentences)\nDescribe your organisation, its pūtake, and the financial need/issue/opportunity it faces.\n\nPART 2 — THE OPTIONS (use your financial tool here)\nDescribe three options. For each option, include financial data (dollar amounts). Use a budget, cost-benefit table, or comparison chart.\n\nPART 3 — THE DECISION\nState which option you recommend. Use financial data from your tool to justify why. Explain how this decision relates to the organisation's pūtake.\n\nPART 4 — STAKEHOLDERS (Merit)\nIdentify two stakeholders. For each: name them, explain their perspective, and explain what the decision means for them.\n\nPART 5 — CONSEQUENCES (Merit)\nExplain one positive and one negative consequence of your chosen option.\n\nPART 6 — EXCELLENCE ANALYSIS\nAnalyse how your recommended decision considers stakeholder perspectives. Explain how the organisation should respond to the negative consequence in a way that upholds their pūtake.\n\nAim for 400–600 words total. Quality over length.",
+      "nceaLink": "This is your practice run for the formal AS92028 assessment in Lesson 8. Treat it like the real thing."
+    },
+    {
+      "type": "discussion",
+      "title": "Peer Review Session",
+      "estimatedMinutes": 10,
+      "prompt": "Swap your draft with a classmate. Using the AS92028 checklist from the slide, review their work and answer:\n\n1. Did they clearly explain the organisation's pūtake? (Yes/Needs work)\n2. Did they describe THREE options with financial data? (Yes/Needs work)\n3. Did they use a financial tool with actual dollar amounts? (Yes/Needs work)\n4. For Merit: did they explain two stakeholder perspectives? (Yes/Needs work/Not attempted)\n5. For Excellence: did they analyse how the decision honours pūtake while responding to consequences? (Yes/Needs work/Not attempted)\n6. Write ONE specific suggestion that would most improve their response.",
+      "guidingQuestions": [
+        "Is the pūtake more than just a definition — does it connect to the decision?",
+        "Are the dollar figures real and specific, or vague and estimated?",
+        "Are the stakeholders named specifically (not just 'the community') with clear perspectives?",
+        "What is the single most important improvement they could make?"
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "Revise Based on Feedback",
+      "estimatedMinutes": 5,
+      "prompt": "Read the feedback your peer gave you.\n\n1. What is the most important change you need to make before tomorrow's assessment?\n2. Is your financial tool strong enough — does it have specific dollar amounts?\n3. Is your pūtake analysis woven through your whole response, or just mentioned once at the start?\n\nMake the changes now. Your revised version is what you'll use tomorrow.",
+      "nceaLink": "Revision based on criteria is exactly the process NZQA expects students to use to improve their work. The goal is a response that meets the standard — not just a first draft."
+    }
+  ]
+}

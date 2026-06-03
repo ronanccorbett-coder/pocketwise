@@ -1,0 +1,137 @@
+{
+  "title": "Flow-On Effects — Merit Level Skills",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "AS92030: Examine interdependent financial relationships — explain how an event affects each entity and explain the flow-on effects",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain the flow-on effects of an event through a financial relationship",
+    "Trace a chain of effects from an initial event through to secondary and tertiary consequences",
+    "Explain the flow-on effects for each entity in a multi-entity relationship using specific NZ figures"
+  ],
+  "vocabulary": [
+    {
+      "term": "Flow-on effect",
+      "definition": "A consequence that travels through a financial relationship from one entity to another. After the initial direct effect, flow-on effects continue to ripple through connected relationships."
+    },
+    {
+      "term": "Chain of effects",
+      "definition": "A sequence of consequences where one effect leads to another. For example: supplier raises prices → café costs rise → café profits fall → café reduces orders → supplier revenue falls."
+    },
+    {
+      "term": "Secondary effect",
+      "definition": "The effect that occurs as a result of the direct (primary) effect. One step removed from the original event."
+    },
+    {
+      "term": "Cash flow",
+      "definition": "The movement of money into and out of an entity over a period. Positive cash flow means more money coming in than going out. Negative cash flow means the opposite and can threaten an entity's ability to meet obligations."
+    },
+    {
+      "term": "Default",
+      "definition": "Failure to meet a financial obligation — for example, missing a loan repayment or failing to pay a supplier invoice. Default can trigger serious consequences in a financial relationship."
+    },
+    {
+      "term": "Insolvency",
+      "definition": "When an entity cannot pay its debts as they fall due. An insolvent business cannot continue operating. This is the most serious flow-on effect of financial pressure."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "What Are Flow-On Effects?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a chain diagram: Box 1 (Event) → Box 2 (Direct Effect on Entity A) → Box 3 (Flow-on Effect on Entity B) → Box 4 (Further Flow-on). Fill it in using the café-supplier example from the last lesson.",
+      "content": "At Achieved level, you describe the direct effect of an event on each entity. At Merit level, you go further — you explain the flow-on effects.\n\nA flow-on effect is what happens NEXT. After the direct effect hits Entity A, what does Entity A do? And how does that action create a further consequence for Entity B?\n\nHere is the structure:\nEvent → Direct effect on Entity A → Entity A responds or is further affected → Flow-on effect on Entity B\n\nUsing the Ethan-supplier example:\nEvent: NZ Fresh Supplies raises prices by 12%\nDirect effect on Ethan's café: Monthly costs increase by $384\nEthan responds: To protect his profit margin, Ethan decides to reduce his monthly order from $3,200 to $2,800 — he sources some items from a different supplier\nFlow-on effect on NZ Fresh Supplies: Their monthly revenue from Ethan drops from $3,584 (at the new price) to $2,800. Despite raising prices, they actually receive less money from this customer.\n\nThis chain — event, direct effect, response, flow-on — is the Merit-level analysis. You are tracing how the event travels through the relationship."
+    },
+    {
+      "type": "slide",
+      "title": "Tracing the Chain of Effects",
+      "estimatedMinutes": 4,
+      "notePrompt": "Using the interest rate scenario from Lesson 2 (Mia's Flower Shop and Westpac), trace a full chain of effects at least 3 steps long. Write each step clearly.",
+      "content": "The most powerful flow-on analyses in AS92030 trace a chain of at least three steps. Let's build one using a different scenario.\n\nEntities: Jordan's Meal Prep Service and ANZ (which provided a $15,000 equipment loan).\n\nEvent: Jordan loses three major clients unexpectedly. Her monthly revenue drops from $6,800 to $4,800.\n\nStep 1 — Direct effect on Jordan:\nMonthly revenue falls by $2,000. Jordan's monthly net profit, previously $2,250, becomes approximately $250 (fixed costs unchanged at $550). Her cash flow becomes very tight.\n\nStep 2 — Jordan's response:\nTo conserve cash, Jordan delays her $520 monthly loan repayment to ANZ by two weeks.\n\nStep 3 — Flow-on effect on ANZ:\nANZ flags the account as late. Under the loan agreement, ANZ is entitled to charge a $25 late payment fee. ANZ's collections team contacts Jordan. The relationship becomes strained.\n\nStep 4 — Further flow-on:\nIf Jordan continues to miss repayments, ANZ may classify the loan as non-performing, increase the interest rate as a penalty, or begin recovery proceedings. This would dramatically worsen Jordan's financial position.\n\nThis four-step chain is a Merit-to-Excellence level analysis. Each step connects logically to the next, and each step involves a specific financial consequence."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Flow-on effects in a financial relationship always move from the business to the bank — never the other way.",
+      "correctAnswer": false,
+      "explanation": "False. Flow-on effects travel in both directions in a financial relationship. A bank's decision to raise interest rates flows ON to the business (higher costs). A business missing repayments flows ON to the bank (lost income, increased risk). A business growing and taking a larger loan flows on to the bank (more interest income). The direction of flow-on effects depends on which entity experienced the initial event and what their response is.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Merit-Level Language for Flow-On Effects",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down five sentence starters from this slide that signal Merit-level flow-on analysis. Try using each one in a sentence about the Ethan café scenario.",
+      "content": "The language you use in your AS92030 exam response signals which achievement level you are working at. Here are the phrases that specifically signal Merit-level flow-on analysis.\n\n'As a result of [direct effect], [Entity] experienced...'\n'This led to a further consequence for [Entity] — namely...'\n'Because [Entity A] [action], [Entity B] faced...'\n'The flow-on effect for [Entity] was...'\n'This change in [Entity A's] situation meant that [Entity B]...'\n'Following the initial impact, [Entity] was also affected by...'\n\nExample using Ethan's café scenario:\n'As a result of the 12% price increase, Lakeside Brew's monthly supply costs rose by $384. This led to a further consequence for Ethan — namely, a reduction in monthly net profit that put pressure on his ability to pay rent. Because Ethan reduced his monthly order to $2,800, NZ Fresh Supplies faced a flow-on effect of lower revenue from this account despite charging higher prices.'\n\nThese phrases are not just stylistic — they signal to the marker that you understand the mechanism by which effects travel through the relationship. Use them deliberately in your exam."
+    },
+    {
+      "type": "quiz",
+      "title": "Flow-On Effects — Knowledge Check",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Merit",
+      "questions": [
+        {
+          "question": "A supplier raises prices. The café's costs increase. The café reduces its order volume. Which of the following correctly identifies the flow-on effect on the supplier?",
+          "options": [
+            "The supplier earns more revenue because of the higher prices",
+            "The supplier is unaffected because it still supplies the same product",
+            "The supplier may receive less total revenue from the café if the reduced order volume offsets the price increase",
+            "The supplier loses all revenue from the café immediately"
+          ],
+          "correctIndex": 2,
+          "explanation": "This is the Merit-level flow-on analysis. The supplier raised prices hoping to earn more revenue, but the café responded by reducing order volume. If the volume reduction is large enough, the supplier's total revenue from that customer may actually decrease despite the higher per-unit price. For example: previous revenue = $3,200. New revenue at higher price but lower volume = $2,800. Net effect: $400 less revenue — the opposite of what the price increase was meant to achieve."
+        },
+        {
+          "question": "Jordan's meal prep business loses clients and her cash flow tightens. She delays a loan repayment to ANZ. What is the FLOW-ON effect on ANZ?",
+          "options": [
+            "ANZ immediately loses all the money Jordan borrowed",
+            "ANZ is unaffected because the loan agreement protects them",
+            "ANZ receives late payment, may charge a penalty fee, and faces increased risk that Jordan may default on the full loan",
+            "ANZ automatically writes off Jordan's debt"
+          ],
+          "correctIndex": 2,
+          "explanation": "The flow-on effect on ANZ is threefold: (1) delayed receipt of monthly repayment — a disruption to their expected cash flow, (2) the right to charge a late fee under the loan agreement, and (3) increased credit risk — the possibility that Jordan's financial difficulties worsen and she defaults entirely. Each of these is a consequence for ANZ that flows on from Jordan's initial cash flow problem."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "Multi-Entity Flow-On Effects",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a three-entity diagram for the scenario in this slide. Show the flow-on effects as dotted arrows moving through the chain of entities.",
+      "content": "In some AS92030 scenarios, flow-on effects travel not just between two entities but across three or more. These multi-entity chains are especially common in exam questions because they test whether you can trace effects across an entire system.\n\nExample: Employee (Tama), Employer (Pak'nSave), IRD\n\nEvent: Pak'nSave reduces Tama's hours from 30 to 20 per week due to falling customer numbers.\n\nDirect effect on Tama: Weekly gross wages fall from $694.50 (30 hrs × $23.15) to $463.00 (20 hrs × $23.15). A reduction of $231.50 per week.\n\nFlow-on to IRD: Tama's reduced wages mean less PAYE is deducted. Weekly PAYE falls from approximately $84 to approximately $46. IRD receives $38 less per week in PAYE revenue from Tama's wages.\n\nFurther flow-on: Tama's reduced income means he has less money to spend at local businesses. If many employees have hours reduced, local consumer spending falls — which could further reduce Pak'nSave's revenue, potentially leading to further hour reductions. This is a reinforcing cycle.\n\nTracking this chain across three entities and showing the dollar amounts at each step is a Merit-to-Excellence level response in AS92030."
+    },
+    {
+      "type": "scenario",
+      "title": "Flow-On Effects Scenario — The Sports Club and Its Bank",
+      "estimatedMinutes": 14,
+      "nceaLevel": "Merit",
+      "setup": "The Palmerston North Rugby Club borrowed $45,000 from BNZ in 2023 to upgrade their clubrooms. The loan is at a variable interest rate of 8.0% per annum over 5 years. Monthly repayment: approximately $912. The club's annual income is $78,000 (membership fees $42,000, bar income $22,000, sponsorships $14,000).\n\nEvent: The club's major sponsor, a local building company, announces it is closing down. The club loses $14,000 in annual sponsorship income immediately.\n\nThe club's financial position after the event:\nNew annual income: $78,000 − $14,000 = $64,000\nAnnual loan repayments: $912 × 12 = $10,944\nOther annual costs (power, maintenance, insurance, wages): $52,000\nAnnual surplus/deficit: $64,000 − $10,944 − $52,000 = $1,056 surplus (previously: $15,056 surplus)",
+      "challenge": "1. Describe the financial relationship between the Palmerston North Rugby Club and BNZ before the event, including money flows.\n2. Describe the direct effect of the event on the rugby club's financial position (use figures).\n3. Explain the flow-on effect on BNZ if the club begins to struggle with loan repayments.\n4. Trace the full chain of effects: sponsor closes → club loses income → [what happens next] → [flow-on to BNZ] → [further flow-on]. Write at least 4 steps.",
+      "hints": [
+        "For Q2: Calculate the change in annual surplus (from $15,056 to $1,056). How much has the financial buffer shrunk?",
+        "For Q3: What does BNZ care about in this relationship? What are the risks to BNZ if the club's financial position weakens?",
+        "For Q4: Think about what the club might do to cope with reduced income — reduce spending, seek new sponsors, draw on reserves. What does each action mean for BNZ?"
+      ],
+      "solution": "1. Financial relationship before the event:\nThe Palmerston North Rugby Club has a debtor-creditor relationship with BNZ. BNZ provided a $45,000 term loan to the club in 2023. Money flows from the club to BNZ as monthly repayments of $912, which include both principal reduction and interest (at 8% per annum variable rate). The club depends on BNZ for capital to fund the clubroom upgrade. BNZ depends on the club for regular repayment income and interest earnings.\n\n2. Direct effect of the event on the rugby club:\nThe loss of $14,000 in annual sponsorship income reduces the club's annual income from $78,000 to $64,000. The annual surplus falls dramatically from $15,056 to $1,056 — a reduction of $14,000. The financial buffer that previously allowed the club to absorb unexpected costs is now almost entirely gone. The club is still technically solvent but has very little margin for any further income reduction or cost increase.\n\n3. Flow-on effect on BNZ:\nIf the club's reduced surplus makes it difficult to meet its $912 monthly repayment, BNZ faces several flow-on effects: (a) missed or late repayments disrupt BNZ's expected interest and principal income stream from this loan; (b) BNZ must classify the loan as higher risk, potentially triggering internal review processes; (c) if repayments are missed, BNZ may charge penalty interest or fees, which paradoxically worsen the club's financial position; (d) in a worst-case scenario, BNZ may need to consider loan recovery options, including calling in the loan — which would threaten the club's existence.\n\n4. Full chain of effects:\nStep 1 (Event): The building company sponsor closes down. The club's annual sponsorship income falls from $14,000 to $0.\nStep 2 (Direct effect on club): Annual income falls by $14,000. Annual surplus shrinks from $15,056 to $1,056. Cash buffer is critically reduced.\nStep 3 (Club responds): To protect its ability to make loan repayments, the club committee decides to cut $6,000 in annual operating costs — reducing maintenance, cancelling some team events, and reducing bar staffing.\nStep 4 (Flow-on to other entities): Reduced spending means local suppliers and contractors receive less business from the club. The bar reduces operating hours, affecting part-time staff income.\nStep 5 (Flow-on to BNZ): As long as the club makes repayments, BNZ's direct financial position is unchanged. However, BNZ's credit risk assessment for this loan increases. If BNZ conducts a loan review, it may offer to refinance at a higher interest rate to reflect the increased risk — which would increase the club's monthly repayments and worsen an already tight financial position.\nStep 6 (Further reinforcing risk): Higher repayments further reduce the club's surplus, potentially triggering the very default they were trying to avoid. This is a reinforcing negative cycle that flows directly from the original sponsorship loss."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Put the Chain of Effects in Order",
+      "pairs": [
+        { "item": "Building company sponsor closes", "zone": "Step 1: Event" },
+        { "item": "Club loses $14,000 in annual income", "zone": "Step 2: Direct Effect" },
+        { "item": "Annual surplus shrinks from $15,056 to $1,056", "zone": "Step 3: Financial Impact" },
+        { "item": "Club cuts operating costs to protect loan repayments", "zone": "Step 4: Entity Response" },
+        { "item": "BNZ flags increased credit risk on the loan account", "zone": "Step 5: Flow-On to Second Entity" },
+        { "item": "Possible loan review leads to higher interest rate", "zone": "Step 6: Further Flow-On" }
+      ],
+      "explanation": "This chain shows how a single external event (sponsor closure) creates a cascade of consequences through the financial relationship. Each step follows logically from the previous one. In your AS92030 exam, tracing this kind of multi-step chain — with specific figures at each step — is what distinguishes a Merit or Excellence response from an Achieved one.",
+      "estimatedMinutes": 6
+    }
+  ]
+}

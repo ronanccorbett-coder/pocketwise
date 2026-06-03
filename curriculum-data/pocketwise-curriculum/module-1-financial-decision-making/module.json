@@ -1,0 +1,29 @@
+{
+  "title": "Financial Decision-Making",
+  "description": "Students learn how to analyse and evaluate financial decisions for New Zealand organisations using financial tools, stakeholder perspectives, and putake.",
+  "ageTrack": "15",
+  "yearLevel": "Year 11",
+  "nceaStandard": "AS92028",
+  "nceaStandardTitle": "Demonstrate understanding of an organisation's financial decision-making",
+  "nceaCredits": 5,
+  "nceaAssessmentType": "Internal",
+  "durationWeeks": 2,
+  "sessionsPerWeek": 4,
+  "minutesPerSession": 45,
+  "xpReward": 740,
+  "iconName": "money",
+  "colorTheme": "#1a56db",
+  "isPublished": true,
+  "order": 1,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "AS92028 is a Year 11 internal standard worth 5 credits that requires students to demonstrate understanding of how organisations make financial decisions. This module equips NZ students with the skills to identify financial needs, issues, and opportunities; use financial tools such as budgets and cost-benefit analyses with real dollar figures; explain stakeholder perspectives and consequences; and evaluate decisions against an organisation's putake. These skills are directly applicable to students' own financial lives and to the NCEA assessment context.",
+  "learningObjectives": [
+    "Identify and describe whether an organisation is facing a financial need, issue, or opportunity",
+    "Select and apply an appropriate financial tool — budget, cost-benefit analysis, price comparison chart, or SWOT — using actual NZD figures",
+    "Describe and explain the perspectives of at least two stakeholders affected by a financial decision",
+    "Explain and analyse the financial and non-financial consequences of a decision for an organisation and its stakeholders",
+    "Discuss, examine, and evaluate how financial decisions reflect and uphold an organisation's putake",
+    "Produce a complete financial decision-making report structured to meet Achieved, Merit, and Excellence criteria for AS92028"
+  ],
+  "assessmentTask": "Students select a real or fictional New Zealand organisation facing a financial need, issue, or opportunity and write a complete financial decision-making report. The report must describe the financial situation and the organisation's putake, compare at least two options using a financial tool with actual dollar figures, state and justify a recommended decision connected to putake, explain the perspectives of at least two stakeholders, explain at least two consequences of the decision, and at Excellence level analyse the extent to which the decision considers stakeholder perspectives and analyse how the organisation could respond to consequences in a way that upholds their putake."
+}

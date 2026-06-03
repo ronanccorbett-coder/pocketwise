@@ -1,0 +1,175 @@
+{
+  "title": "Break-Even Analysis",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "AS92029: Describing the pricing process using a financial model — building and interpreting break-even analysis with actual NZD figures",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain what a break-even point is and why it matters for pricing",
+    "Calculate break-even point in units and revenue using fixed costs, variable costs, and selling price",
+    "Interpret a break-even analysis to recommend a minimum viable price"
+  ],
+  "vocabulary": [
+    {
+      "term": "Break-even point",
+      "definition": "The number of units an organisation must sell at a given price so that total income exactly equals total costs — no profit, no loss."
+    },
+    {
+      "term": "Contribution margin",
+      "definition": "The amount each unit sold contributes toward covering fixed costs, after variable costs are subtracted. Contribution margin = Selling price minus variable cost per unit."
+    },
+    {
+      "term": "Fixed costs",
+      "definition": "Costs that do not change with the number of units produced or sold. Examples include rent, insurance, loan repayments, and annual registration fees."
+    },
+    {
+      "term": "Variable costs",
+      "definition": "Costs that change directly with the number of units produced or sold. Examples include ingredients, packaging, and casual labour per unit."
+    },
+    {
+      "term": "Total revenue",
+      "definition": "The total money received from sales. Total revenue = Selling price per unit multiplied by the number of units sold."
+    },
+    {
+      "term": "Total costs",
+      "definition": "Fixed costs plus total variable costs for a given level of output. Total costs = Fixed costs + (Variable cost per unit x Number of units)."
+    },
+    {
+      "term": "Profit zone",
+      "definition": "The range of sales above the break-even point where total revenue exceeds total costs, generating profit."
+    },
+    {
+      "term": "Loss zone",
+      "definition": "The range of sales below the break-even point where total costs exceed total revenue, resulting in a loss."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Recap — Pricing Factors",
+      "estimatedMinutes": 4,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Which of the following is an INTERNAL factor that influences price determination?",
+          "options": [
+            "The prices charged by a competitor café nearby",
+            "A rise in the NZ inflation rate",
+            "The cost of ingredients used to make the product",
+            "The level of customer demand in the market"
+          ],
+          "correctIndex": 2,
+          "explanation": "The cost of ingredients is an internal factor — it comes from inside the organisation and reflects the cost of production. Competitor prices, inflation, and customer demand are all external factors that come from outside the organisation and cannot be directly controlled. In AS92029, you must identify and describe both types of factors when explaining a pricing decision."
+        },
+        {
+          "question": "A pie costs $2.40 to make. The canteen adds a 50% markup. What is the selling price?",
+          "options": [
+            "$2.90",
+            "$3.20",
+            "$3.60",
+            "$4.80"
+          ],
+          "correctIndex": 2,
+          "explanation": "A 50% markup means adding 50% of the cost to the cost price. 50% of $2.40 = $1.20. Selling price = $2.40 + $1.20 = $3.60. This is cost-plus pricing. Remember: markup is calculated on the cost, while margin is calculated on the selling price — they give different percentages for the same transaction."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "What Is Break-Even Analysis?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the break-even formula in your own words. Why would a business owner need to know their break-even point before setting a price?",
+      "content": "Break-even analysis is one of the most important financial tools in AS92029. It tells you exactly how many units you need to sell at a given price before you start making a profit.\n\nHere is the core idea: every business has fixed costs that must be paid regardless of how much they sell — rent, insurance, equipment. Every unit sold contributes some money toward covering those fixed costs. The break-even point is reached when enough units have been sold to cover all fixed costs.\n\nAfter break-even, every additional unit sold generates pure profit.\n\nThe formula is:\nBreak-even point (in units) = Fixed costs ÷ Contribution margin per unit\n\nContribution margin per unit = Selling price per unit − Variable cost per unit\n\nFor example: if fixed costs are $1,200 per month, selling price is $8 per unit, and variable cost is $3 per unit, then:\nContribution margin = $8 − $3 = $5 per unit\nBreak-even = $1,200 ÷ $5 = 240 units per month\n\nYou must sell 240 units just to break even. Unit 241 onwards is profit."
+    },
+    {
+      "type": "slide",
+      "title": "Why Break-Even Matters for Pricing",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: How does changing the selling price affect the break-even point? What happens to break-even if you raise the price? What if you lower it?",
+      "content": "Break-even analysis and pricing are directly connected. The price you set determines your contribution margin — and your contribution margin determines how many units you need to sell to cover fixed costs.\n\nIf you raise your price, your contribution margin increases and your break-even point falls — you need to sell fewer units to cover fixed costs. This makes the business easier to sustain at lower sales volumes.\n\nIf you lower your price, your contribution margin decreases and your break-even point rises — you need to sell more units just to break even. This means higher volume is needed to reach the same financial outcome.\n\nThis is why a price that seems 'affordable' can actually be dangerous for a small business. Cutting $1 off the price sounds minor, but if fixed costs are $2,000 per month and you are selling at $6 versus $7, you need to sell 333 extra units per month just to stay at break-even.\n\nFor AS92029, your break-even analysis must use real dollar figures for your chosen scenario. It is not enough to describe the concept — you must calculate it."
+    },
+    {
+      "type": "truefalse",
+      "statement": "If a business sells more units than its break-even point, it will always make a profit.",
+      "correctAnswer": true,
+      "explanation": "True. The break-even point is where total revenue equals total costs. Any units sold beyond the break-even point generate revenue that exceeds the cost of producing them (since fixed costs are already covered). Each additional unit contributes its full contribution margin as profit. This is why reaching break-even quickly is an important financial goal for any organisation.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Worked Example — Anika's Cookie Business",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the full worked example into your notes. Then answer: If Anika raised her price to $4.50, what would her new break-even point be? Show your working.",
+      "content": "Let's work through a full break-even calculation using a real NZ scenario.\n\nAnika bakes and sells gourmet cookies at the Napier Saturday market. She is deciding whether to charge $3.50 or $4.00 per cookie.\n\nHer costs:\nFixed costs per month: Market stall fee $120, packaging supplies $80, mixer depreciation $40. Total fixed costs: $240 per month.\nVariable cost per cookie: Ingredients $1.20, individual wrap $0.15. Total variable cost: $1.35 per cookie.\n\nBreak-even at $3.50:\nContribution margin = $3.50 − $1.35 = $2.15 per cookie\nBreak-even = $240 ÷ $2.15 = 112 cookies per month\n\nBreak-even at $4.00:\nContribution margin = $4.00 − $1.35 = $2.65 per cookie\nBreak-even = $240 ÷ $2.65 = 91 cookies per month\n\nAt $4.00, Anika needs to sell 21 fewer cookies to break even. If she sells 150 cookies per month:\nProfit at $3.50: (150 − 112) × $2.15 = 38 × $2.15 = $81.70\nProfit at $4.00: (150 − 91) × $2.65 = 59 × $2.65 = $156.35\n\nThe $4.00 price generates nearly double the profit at the same sales volume."
+    },
+    {
+      "type": "typed",
+      "question": "Using Anika's cookie business: fixed costs are $240/month, variable cost is $1.35 per cookie, selling price is $4.00. What is the contribution margin per cookie in dollars?",
+      "acceptedAnswers": ["$2.65", "2.65"],
+      "placeholder": "Type the contribution margin here...",
+      "hint": "Contribution margin = Selling price minus variable cost per unit.",
+      "explanation": "Contribution margin = $4.00 − $1.35 = $2.65 per cookie. This means every cookie sold at $4.00 contributes $2.65 toward covering Anika's fixed costs of $240 per month. Once 91 cookies are sold (covering fixed costs), each additional cookie sold contributes $2.65 directly to profit.",
+      "estimatedMinutes": 4
+    },
+    {
+      "type": "slide",
+      "title": "Break-Even in a Table Format",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the break-even table into your notes. Circle the row where the business reaches break-even. Shade the profit zone.",
+      "content": "Break-even can also be shown as a table, which is sometimes easier to read than a chart. This format is acceptable in your AS92029 assessment.\n\nUsing Anika's cookie business at $4.00 per cookie (variable cost $1.35, fixed costs $240/month):\n\nUnits Sold | Total Revenue | Total Variable Costs | Fixed Costs | Total Costs | Profit/Loss\n0          | $0.00         | $0.00                | $240.00     | $240.00     | -$240.00\n30         | $120.00       | $40.50               | $240.00     | $280.50     | -$160.50\n60         | $240.00       | $81.00               | $240.00     | $321.00     | -$81.00\n91         | $364.00       | $122.85              | $240.00     | $362.85     | +$1.15 ← BREAK-EVEN\n120        | $480.00       | $162.00              | $240.00     | $402.00     | +$78.00\n150        | $600.00       | $202.50              | $240.00     | $442.50     | +$157.50\n\nNotice how the loss decreases with each unit sold until break-even at 91 cookies, then profit increases from there. This table format clearly shows the loss zone (0 to 90 cookies) and the profit zone (91+ cookies)."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Break-Even Terms",
+      "pairs": [
+        { "item": "Selling price minus variable cost per unit", "zone": "Contribution Margin" },
+        { "item": "Fixed costs ÷ contribution margin", "zone": "Break-Even Formula" },
+        { "item": "Costs that do not change with output", "zone": "Fixed Costs" },
+        { "item": "Costs that change with each unit produced", "zone": "Variable Costs" },
+        { "item": "Sales volume above the break-even point", "zone": "Profit Zone" },
+        { "item": "Total income = total costs", "zone": "Break-Even Point" }
+      ],
+      "explanation": "These are the core break-even concepts for AS92029. The contribution margin per unit is the building block of break-even analysis — it tells you how much each sale contributes toward fixed costs. Dividing fixed costs by the contribution margin gives the break-even quantity. Above that quantity you make profit; below it you make a loss. You must use real dollar figures when applying these concepts in your assessment.",
+      "estimatedMinutes": 6
+    },
+    {
+      "type": "slide",
+      "title": "What If Sales Volume Is Lower Than Expected?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write a short paragraph explaining why a business owner should always compare their expected sales volume against their break-even point before launching a product.",
+      "content": "A break-even analysis is only useful if you compare it against realistic sales expectations.\n\nIf Anika's break-even point at $4.00 is 91 cookies per month, but she can realistically only sell 60 cookies at the Napier Saturday market, then her business will make a loss — even though the price 'looks' reasonable.\n\nThis is a critical point for AS92029. When you recommend a price, you must also consider whether the expected sales volume is achievable at that price. A high price that reduces customer numbers might push sales below break-even. A low price that attracts more customers might still not generate enough contribution margin to cover fixed costs.\n\nThe question to always ask: at this price, can we realistically sell enough units to reach break-even?\n\nIf the answer is no, the price or the business model needs to change. This might mean:\n— Raising the price to reduce the break-even point\n— Reducing fixed costs (moving to a cheaper market stall, sharing equipment)\n— Finding ways to increase sales volume (social media marketing, selling online)\n\nThe break-even analysis is the tool that forces this question to be asked."
+    },
+    {
+      "type": "slide",
+      "title": "Break-Even and the Pricing Recommendation",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: In AS92029, how does break-even analysis connect to your final price recommendation? What must you include to meet the Achieved level?",
+      "content": "In AS92029, break-even analysis is a key part of your pricing recommendation. It is not just a standalone calculation — it is evidence that supports your recommended price.\n\nHere is how it fits together:\n\nFirst, you calculate the break-even point at your proposed price. This tells you how many units must be sold to cover all costs.\n\nSecond, you compare that break-even quantity to realistic sales expectations. Is it achievable? Is it realistic for this business in this market?\n\nThird, you use this analysis to justify your recommended price. For example: 'At a price of $4.00 per cookie, Anika's break-even point is 91 cookies per month. Based on comparable market stalls and her existing customer base of 150 regular buyers, this is achievable. At full expected sales, monthly profit would be $157.50, which supports the pricing decision.'\n\nAt the Achieved level, your recommendation must:\n— State the recommended price\n— Show the break-even calculation with actual figures\n— Connect the analysis to the recommendation\n— Reference relevant internal and external factors\n\nWe will practice writing full recommendations in Lesson 3. For now, make sure you can perform and interpret the break-even calculation confidently."
+    },
+    {
+      "type": "scenario",
+      "title": "Break-Even Scenario — Ethan's Food Truck",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Ethan runs a food truck selling Hawaiian-style poke bowls at lunchtime in Wellington's CBD, operating Monday to Friday. His monthly fixed costs are: food truck lease $800, permit and parking $180, insurance $95, fuel $120. Total fixed costs: $1,195 per month. Variable costs per bowl: rice and base $1.80, protein (salmon or tofu) $3.20, toppings and sauce $0.90, packaging $0.40. Total variable cost per bowl: $6.30. Ethan operates 22 days per month and estimates he can sell between 40 and 60 bowls per day depending on weather and foot traffic.",
+      "challenge": "1. Calculate Ethan's contribution margin per bowl if he charges $14.00.\n2. Calculate his break-even point in bowls per month at a $14.00 price.\n3. Calculate his break-even point per day (assuming 22 operating days).\n4. At his expected average of 50 bowls per day (1,100 per month), calculate his monthly profit at $14.00.\n5. Ethan is considering raising his price to $16.00. Calculate the new break-even point in bowls per month and compare it to the $14.00 option.",
+      "hints": [
+        "Contribution margin = Selling price − Variable cost per unit",
+        "Break-even (units) = Fixed costs ÷ Contribution margin",
+        "Monthly profit = (Units sold − Break-even units) × Contribution margin"
+      ],
+      "solution": "1. Contribution margin at $14.00:\n$14.00 − $6.30 = $7.70 per bowl\n\n2. Break-even at $14.00:\n$1,195 ÷ $7.70 = 155.2 bowls per month, rounded to 156 bowls\n\n3. Break-even per day:\n156 ÷ 22 = 7.1 bowls per day — well within Ethan's capacity\n\n4. Monthly profit at 1,100 bowls (50/day × 22 days):\nUnits above break-even: 1,100 − 156 = 944 bowls\nMonthly profit: 944 × $7.70 = $7,268.80\n\n5. Break-even at $16.00:\nContribution margin = $16.00 − $6.30 = $9.70 per bowl\nBreak-even = $1,195 ÷ $9.70 = 123.2 bowls, rounded to 124 bowls\nComparison: At $16.00, Ethan needs 32 fewer bowls to break even (124 vs 156). At 1,100 bowls per month, profit at $16.00 = (1,100 − 124) × $9.70 = 976 × $9.70 = $9,467.20. The $16.00 price generates $2,198.40 more monthly profit at the same sales volume, provided customers will pay the higher price."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Lowering a product's price always leads to higher profit because more customers will buy it.",
+      "correctAnswer": false,
+      "explanation": "False. Lowering a price increases sales volume only if demand is price-sensitive enough. Even if more customers buy, the lower contribution margin per unit means the business needs a much higher volume just to break even. In many cases, a price cut reduces total profit even when sales volume increases. For example, if Ethan cuts his poke bowl price from $14 to $12, his contribution margin drops from $7.70 to $5.70 — he would need to sell 56% more bowls just to earn the same total contribution toward fixed costs.",
+      "estimatedMinutes": 3
+    }
+  ]
+}

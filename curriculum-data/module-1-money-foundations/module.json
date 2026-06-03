@@ -1,0 +1,31 @@
+{
+  "title": "Money Foundations",
+  "description": "Understand income, expenses, budgeting, and why financial literacy is the most important life skill you never learned in school.",
+  "ageTrack": "15",
+  "yearLevel": "Year 11",
+  "nceaStandard": "AS92028",
+  "nceaStandardTitle": "Demonstrate understanding of an organisation's financial decision-making",
+  "nceaCredits": 5,
+  "nceaAssessmentType": "Internal",
+  "durationWeeks": 2,
+  "sessionsPerWeek": 4,
+  "minutesPerSession": 45,
+  "xpReward": 640,
+  "iconName": "💰",
+  "colorTheme": "#1a56db",
+  "isPublished": true,
+  "order": 1,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "Aligned with NCEA Level 1 Commerce AS92028. Students demonstrate understanding of financial decision-making using budgets and cost-benefit analysis as financial tools. Pūtake is embedded in all scenarios to meet the mandatory AS92028 requirement.",
+  "learningObjectives": [
+    "Define income, expenses, surplus and deficit in a NZ context",
+    "Apply the 50/30/20 budgeting rule to real NZ scenarios",
+    "Use a budget as a financial tool to support a decision",
+    "Identify and explain stakeholder perspectives in financial decisions",
+    "Discuss pūtake in the context of an organisation's financial decision-making",
+    "Calculate gross and net pay using NZ tax rates",
+    "Evaluate the financial viability of personal and organisational decisions",
+    "Complete an NCEA-style financial decision-making assessment task"
+  ],
+  "assessmentTask": "Students choose a real or fictional NZ organisation facing a financial need, issue or opportunity. They describe three options using a financial tool (budget or cost-benefit analysis), recommend a decision supported by financial data, identify stakeholder perspectives, discuss pūtake, and analyse consequences at Achieved, Merit, and Excellence levels."
+}

@@ -1,0 +1,135 @@
+{
+  "title": "Stakeholders, Consequences & Merit-Level Analysis",
+  "order": 6,
+  "dayNumber": 6,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Analyse & Evaluate",
+  "nceaFocus": "AS92028 — examining stakeholder perspectives, analysing consequences, Merit and Excellence level thinking",
+  "ownerEmail": "admin@pocketwise.nz",
+
+  "objectives": [
+    "Identify and categorise internal and external stakeholders for NZ organisations",
+    "Explain stakeholder perspectives on financial decisions",
+    "Analyse positive and negative consequences of financial decisions",
+    "Understand the difference between Achieved, Merit and Excellence responses",
+    "Apply Merit-level analysis to a NZ case study"
+  ],
+
+  "vocabulary": [
+    {
+      "term": "Perspective",
+      "definition": "A stakeholder's point of view on a financial decision — how the decision affects them and what outcome they want. Perspectives can conflict. For example, a landlord wants rent to increase; a tenant wants it to stay the same."
+    },
+    {
+      "term": "Direct Effect",
+      "definition": "The immediate result of a financial decision or event. For example, a café raising prices: the direct effect is higher revenue per item sold."
+    },
+    {
+      "term": "Indirect/Flow-on Effect",
+      "definition": "A secondary consequence that follows the direct effect. For example, after the café raises prices: some customers stop coming, so total revenue may actually fall despite higher prices per item."
+    },
+    {
+      "term": "Cost-Benefit Analysis",
+      "definition": "A financial tool that lists and quantifies the costs and benefits of a decision. If total benefits outweigh total costs, the decision may be justified. Used as evidence in AS92028."
+    }
+  ],
+
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Understanding NCEA Achievement Levels",
+      "estimatedMinutes": 6,
+      "content": "AS92028 has three levels of achievement. Understanding what each level asks for is the key to getting the grade you want.\n\nACHIEVED — Describe and use\n• Describe the options available to address the need, issue or opportunity\n• Describe a decision and use data from a financial tool to support it\n• Discuss pūtake in the context of the decision\n• This means: explain what the options are and what decision you'd make, backed by numbers\n\nMERIT — Examine\n• Everything at Achieved PLUS:\n• Explain stakeholder perspectives relevant to the decision\n• Explain possible consequences of the decision for the organisation and its stakeholders\n• This means: who is affected, what do they think, and what might happen as a result?\n\nEXCELLENCE — Evaluate\n• Everything at Merit PLUS:\n• Analyse how the decision considers stakeholder perspectives\n• Analyse how the organisation could respond to possible consequences\n• This means: does the decision genuinely balance stakeholder needs? How should the organisation prepare for what comes next?\n\nThe word 'analyse' is key at Excellence — it means going beyond explaining to making judgements about quality, balance, and responses."
+    },
+    {
+      "type": "slide",
+      "title": "How to Write a Strong Stakeholder Analysis",
+      "estimatedMinutes": 6,
+      "content": "A strong stakeholder analysis does three things:\n1. Names the stakeholder specifically\n2. Explains their perspective — what they want, what they fear\n3. Connects their perspective to the financial decision with specific detail\n\nWEAK (Achieved level):\n'Customers are affected by the price increase.'\n\nSTRONG (Merit level):\n'Students who rely on the school canteen for lunch are an external stakeholder. From their perspective, a 20% price increase from $8 to $9.60 per meal makes daily lunch unaffordable for those on limited incomes — approximately $48 per fortnight extra. They would prefer prices to stay the same or the school to introduce subsidised meal options.'\n\nEVEN STRONGER (Excellence level):\n'Students who rely on the school canteen are an external stakeholder. The 20% price increase from $8 to $9.60 adds $48/fortnight to their costs. However, the school's pūtake — ensuring every student can participate fully in school life — requires them to respond to this consequence. They could introduce a subsidy fund using proceeds from the price increase, ensuring that affordability remains aligned with their pūtake while still addressing the financial issue that drove the increase.'\n\nNotice: Excellence doesn't just explain the problem — it analyses how the organisation should respond in a way that honours their pūtake."
+    },
+    {
+      "type": "quiz",
+      "title": "Checkpoint: Achievement Levels",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Merit",
+      "questions": [
+        {
+          "question": "Which response is at MERIT level for AS92028?",
+          "options": [
+            "'The sports club should raise fees because they need more money.'",
+            "'Raising membership fees from $120 to $180/year would generate an extra $3,600 for the club based on 60 members.'",
+            "'Raising fees would affect members financially. Low-income families who are external stakeholders would struggle to afford the $60 increase. This could reduce membership by 10–15%, partially offsetting the revenue gain.'",
+            "'The club's pūtake is making sport accessible to everyone in the community.'"
+          ],
+          "correctIndex": 2,
+          "explanation": "Merit requires explaining stakeholder perspectives AND consequences. Option C names the stakeholder (low-income families), explains their perspective (can't afford the increase), and explains a consequence (membership may fall). Options A and D are too vague. Option B uses a financial tool but doesn't address stakeholders or consequences."
+        },
+        {
+          "question": "A school decides to cut its arts programme to save $15,000/year. What is a FLOW-ON consequence of this decision?",
+          "options": [
+            "The school saves $15,000 per year",
+            "Arts teachers lose their jobs",
+            "Students interested in arts may lose motivation and engagement, potentially affecting school-wide attendance and NCEA results",
+            "The school board needs to vote on the decision"
+          ],
+          "correctIndex": 2,
+          "explanation": "A flow-on (indirect) consequence goes beyond the immediate effect. The direct effect is saving $15,000. The flow-on is that students who valued arts may disengage from school altogether — affecting results, attendance, and wellbeing across the school."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "The Tūhoe Community Centre Dilemma",
+      "estimatedMinutes": 16,
+      "nceaLevel": "Merit to Excellence",
+      "setup": "Te Kāhui o Tūhoe Community Centre in Whakatāne serves as a hub for whānau programmes, kaumātua activities, youth services, and te reo Māori classes. Their pūtake is strengthening Tūhoe identity and supporting the wellbeing of their community across all generations.\n\nThey face a financial opportunity: a government agency has offered them a $120,000 contract to run a regional employment training programme for 18–24 year olds for 2 years. The contract would require them to:\n• Hire 2 full-time employment coaches ($55,000/year each = $110,000/year)\n• Use 40% of their main hall space Monday–Friday for training\n• Shift some existing programmes (kaumātua group, Saturday te reo class) to smaller rooms or evening timeslots\n\nCurrent annual finances:\n• Income: government grants $80,000, community donations $20,000, room hire $15,000 = $115,000\n• Expenses: staff wages $60,000, programme costs $25,000, utilities and maintenance $18,000, administration $10,000 = $113,000\n• Current surplus: $2,000/year",
+      "challenge": "Complete a Merit to Excellence level analysis:\n\n1. Calculate the annual financial impact of accepting the contract. Show your working using the budget figures provided.\n\n2. Identify THREE stakeholders and explain each one's perspective on whether the centre should accept the contract.\n\n3. Explain TWO consequences of accepting the contract — one positive, one negative.\n\n4. EXCELLENCE: Analyse whether accepting the contract aligns with the centre's pūtake. How should the centre respond to the negative consequence you identified to ensure their pūtake is upheld?",
+      "hints": [
+        "Income from contract: $120,000/year. New staff cost: $110,000/year. Net gain from contract: $10,000/year.",
+        "Consider: kaumātua who use the hall, young people in the employment programme, existing staff, the wider Tūhoe community",
+        "The negative consequence involves existing community members who may feel displaced by the employment training programme",
+        "For Excellence: how can the centre accept the contract AND maintain its commitment to all generations, not just the 18-24 target group?"
+      ],
+      "solution": "1. Financial impact:\n• New income: $120,000\n• New expenses: $110,000 (coaches)\n• Net additional surplus: $10,000/year\n• New total annual surplus: $2,000 + $10,000 = $12,000\n• Over 2 years: $24,000 accumulated — significant for a community centre\n\n2. Stakeholders:\n• Kaumātua (external): their perspective is concern. The hall shift means their regular programme may move to a less accessible time or smaller space. For older members with mobility or transport issues, evening times may be very difficult. They value consistency and accessibility.\n• Young people aged 18–24 seeking employment (external): their perspective is strongly positive. Quality employment coaching is rarely available in smaller NZ towns. This programme directly serves their need for economic independence and career development.\n• Existing programme staff (internal): their perspective is mixed. Job security is maintained and potentially increased. However, managing a busier, more complex facility with competing stakeholder needs adds pressure.\n\n3. Consequences:\n• Positive: The $10,000 annual surplus gives the centre financial stability, reduced reliance on grants, and the ability to fund new equipment or expand programmes after the 2-year contract.\n• Negative: Kaumātua and te reo class participants may feel the centre is prioritising younger people and government contracts over its founding community. If they stop attending, the centre loses both cultural connection and the $15,000 room hire income.\n\n4. Excellence analysis:\nThe contract offers real financial benefit and serves young Tūhoe people — consistent with the pūtake of strengthening community across generations. However, displacing kaumātua programmes risks damaging the intergenerational connection that is central to Tūhoe identity. The centre should accept the contract AND implement a specific kaumātua accommodation plan: guarantee kaumātua morning sessions in the main hall at least 3 days/week (the employment programme could use alternative spaces those mornings), provide transport assistance for evening te reo classes, and use a portion of the $10,000 surplus to invest in upgrading secondary rooms. This approach honours the pūtake across all generations rather than sacrificing one group for financial gain."
+    },
+    {
+      "type": "quiz",
+      "title": "End-of-Lesson Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Merit to Excellence",
+      "questions": [
+        {
+          "question": "A school board is deciding whether to close its library to save $40,000/year. At EXCELLENCE level, what must your response do?",
+          "options": [
+            "List all the books in the library",
+            "Calculate the exact cost of every library book",
+            "Analyse how the school's pūtake shapes its response to the consequences — for example, if their pūtake is academic excellence, closing the library directly contradicts it",
+            "Simply describe what closing the library would mean"
+          ],
+          "correctIndex": 2,
+          "explanation": "Excellence requires analysing how pūtake shapes the response to consequences. It's not enough to say 'students lose library access.' You must analyse: does this decision align with what the school fundamentally exists to do? And how should they respond to the consequences in a way that honours their pūtake?"
+        },
+        {
+          "question": "Which of the following is the BEST use of a cost-benefit analysis as a financial tool in AS92028?",
+          "options": [
+            "A list of reasons for and against without dollar values",
+            "A table showing that benefits ($55,000 in new revenue) outweigh costs ($40,000 in new expenses) by $15,000, supporting the decision to expand",
+            "A personal opinion about whether the decision seems fair",
+            "A description of what a cost-benefit analysis is"
+          ],
+          "correctIndex": 1,
+          "explanation": "AS92028 requires financial data in the tool — actual dollar values. Option B uses specific figures ($55,000 benefits vs $40,000 costs = $15,000 net benefit) to support the decision. This is exactly what 'using a financial tool to support a decision' means."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "Project Check-In",
+      "estimatedMinutes": 6,
+      "prompt": "Your project assessment is in two lessons. Use this time to check your progress.\n\n1. Have you chosen your organisation and its financial need/issue/opportunity? Write it here.\n2. Have you identified your organisation's pūtake? Write it in one sentence.\n3. Have you got three options with financial figures? List them briefly.\n4. Who are your TWO stakeholders going to be? Name them and their likely perspective in one sentence each.\n5. What is one thing you're unsure about that you want to clarify before the assessment?\n\nThis is planning time — use it well.",
+      "nceaLink": "This directly prepares your AS92028 assessment response. The better your planning here, the stronger your final submission will be."
+    }
+  ]
+}

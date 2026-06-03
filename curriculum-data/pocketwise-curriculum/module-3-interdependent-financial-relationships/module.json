@@ -1,0 +1,28 @@
+{
+  "title": "Interdependent Financial Relationships",
+  "description": "Students learn how financial relationships work between entities in New Zealand, how money flows between them, and how events affect those relationships.",
+  "ageTrack": "15",
+  "yearLevel": "Year 11",
+  "nceaStandard": "AS92030",
+  "nceaStandardTitle": "Demonstrate understanding of interdependent financial relationships",
+  "nceaCredits": 5,
+  "nceaAssessmentType": "External",
+  "durationWeeks": 2,
+  "sessionsPerWeek": 4,
+  "minutesPerSession": 45,
+  "xpReward": 740,
+  "iconName": "arrows-right-left",
+  "colorTheme": "#7e3af2",
+  "isPublished": true,
+  "order": 3,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "AS92030 is a Year 11 external standard worth 5 credits. Students must understand how two or more entities are financially connected, how money flows between them, and how events create flow-on effects. This module builds systematic thinking about financial interdependence using real NZ contexts including businesses, banks, government, households, and Māori organisations.",
+  "learningObjectives": [
+    "Identify and describe financial relationships between two or more NZ entities",
+    "Describe how money flows between entities in a financial relationship",
+    "Describe how a specific event affects the financial relationship between entities",
+    "Explain how an event affects each entity and the flow-on effects of that event",
+    "Analyse the extent to which entities are interdependent and how each could respond to flow-on effects"
+  ],
+  "assessmentTask": "Students select two or more NZ entities with a financial relationship and write a structured analysis. The response must identify and describe the financial relationship, describe how money flows between the entities, describe how a specific event affects the relationship, and at Merit and Excellence levels explain the flow-on effects for each entity and analyse the extent of interdependence and how each entity could respond."
+}

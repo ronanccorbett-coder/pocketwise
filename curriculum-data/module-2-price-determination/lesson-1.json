@@ -1,0 +1,215 @@
+{
+  "title": "What Is Price Determination?",
+  "order": 1,
+  "dayNumber": 1,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Remember and Understand",
+  "nceaFocus": "AS92029: Demonstrate understanding of price determination — identifying factors that influence price and understanding the pricing process for a NZ organisation",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain what price determination means and why it matters for a NZ organisation",
+    "Identify internal and external factors that influence the price of a product or service",
+    "Distinguish between cost-plus pricing, competitive pricing, and value-based pricing"
+  ],
+  "vocabulary": [
+    {
+      "term": "Price determination",
+      "definition": "The process an organisation goes through to decide how much to charge for its product or service. It involves analysing costs, understanding the market, considering competitors, and choosing a price that achieves the organisation's goals."
+    },
+    {
+      "term": "Internal factors",
+      "definition": "Factors inside the organisation that influence pricing decisions. These include costs of production, desired profit margin, organisational goals, and production capacity."
+    },
+    {
+      "term": "External factors",
+      "definition": "Factors outside the organisation that influence pricing decisions. These include competitor prices, customer demand, economic conditions, and government regulations such as GST."
+    },
+    {
+      "term": "Cost-plus pricing",
+      "definition": "A pricing method where the organisation adds a percentage markup on top of the cost of producing the product. If a pie costs $2.40 to make and the markup is 50%, the selling price is $3.60."
+    },
+    {
+      "term": "Competitive pricing",
+      "definition": "Setting a price based on what competitors charge. An organisation might price below, at, or above the market rate depending on their strategy."
+    },
+    {
+      "term": "Value-based pricing",
+      "definition": "Setting a price based on how much customers believe the product or service is worth, rather than just the cost of producing it."
+    },
+    {
+      "term": "Break-even point",
+      "definition": "The level of sales at which total income equals total costs. At break-even, the organisation makes neither a profit nor a loss."
+    },
+    {
+      "term": "Markup",
+      "definition": "The amount added to the cost of a product to determine its selling price, expressed as a percentage of cost. A 40% markup on a $5 product gives a selling price of $7."
+    },
+    {
+      "term": "Demand",
+      "definition": "The quantity of a product or service customers are willing and able to buy at a given price. When price rises, demand typically falls."
+    },
+    {
+      "term": "Profit margin",
+      "definition": "The profit expressed as a percentage of the selling price. A product selling for $10 that cost $6 has a profit margin of 40%."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Why Pricing Matters",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: What is price determination in your own words? Why might getting the price wrong cause problems for a business?",
+      "content": "Every organisation that sells a product or service has to decide what to charge. That decision is called price determination.\n\nPrice too low and the organisation loses money on every sale. Price too high and customers go elsewhere. The right price covers costs, reflects what customers will pay, and helps the organisation achieve its goals.\n\nIn AS92029, you need to understand the full pricing process — from identifying factors that influence price, through to applying a financial model, through to recommending a price and explaining the effects of that decision.\n\nThink about a school canteen. If pies cost $2.40 to make and the canteen charges $2.00, they lose $0.40 on every pie sold. That is a financial problem. If they charge $6.00, students stop buying pies altogether. The right price is somewhere in between — and finding it requires analysis, not guesswork."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Price determination only requires knowing your production costs — nothing else matters.",
+      "correctAnswer": false,
+      "explanation": "False. Production costs are important but they are only one factor. A good pricing decision also considers competitor prices, what customers are willing to pay, economic conditions, and the organisation's goals. A price based only on costs might still be too high for the market or too low compared to what customers would actually pay.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Internal Factors That Influence Price",
+      "estimatedMinutes": 4,
+      "notePrompt": "List at least three internal factors. For each one, write a sentence explaining how it could push the price up or down.",
+      "content": "Internal factors come from inside the organisation. They are things the organisation can influence or control.\n\nThe most important internal factor is cost of production — what it costs to make each unit, including ingredients, packaging, labour, and a share of fixed costs like rent and insurance. If costs rise, the minimum viable price rises too.\n\nThe second is desired profit margin. Every organisation has a goal for how much profit they want to make on each sale. A business owner might target a 40% gross margin. A not-for-profit might just want to cover costs.\n\nThird is organisational goals. A community café with a putake of affordability will price differently from a premium restaurant targeting tourists. Goals shape the pricing strategy.\n\nFourth is capacity. A small producer who can only make 50 units per week does not need to price low to attract huge volume. Limited supply can support a higher price."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Internal or External? Sort the Pricing Factors",
+      "pairs": [
+        { "item": "Cost of ingredients", "zone": "Internal Factor" },
+        { "item": "Competitor prices", "zone": "External Factor" },
+        { "item": "Desired profit margin", "zone": "Internal Factor" },
+        { "item": "Customer demand levels", "zone": "External Factor" },
+        { "item": "Production capacity", "zone": "Internal Factor" },
+        { "item": "Current inflation rate in NZ", "zone": "External Factor" },
+        { "item": "Organisational goals", "zone": "Internal Factor" },
+        { "item": "GST rate set by the government", "zone": "External Factor" }
+      ],
+      "explanation": "Internal factors are things the organisation controls — costs, margins, goals, capacity. External factors come from outside — competitor prices, demand, economic conditions, and government policy like GST. Both must be considered when setting a price. Ignoring internal factors risks pricing below cost. Ignoring external factors risks pricing outside what the market will bear.",
+      "estimatedMinutes": 6
+    },
+    {
+      "type": "slide",
+      "title": "External Factors That Influence Price",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down two external factors and explain how each one could force a NZ business to change its price.",
+      "content": "External factors come from outside the organisation. They cannot be directly controlled, but they must be understood.\n\nCompetitor prices set the reference point customers use. If Pak'nSave sells similar bread for $4.50 and a local bakery charges $12, the bakery needs a compelling reason for customers to pay the difference.\n\nCustomer demand matters too. When demand is high and customers are not very price-sensitive — because the product is unique or essential — organisations can charge more. When demand is low or alternatives are easy to find, prices must be more competitive.\n\nEconomic conditions affect what customers can afford. In 2025, New Zealand has faced cost-of-living pressure from inflation and rising interest rates. Customers have become more price-sensitive, which limits how high prices can go.\n\nFinally, GST (15% in NZ) is a government-set cost that applies to most goods and services. It affects both the price customers pay and the amount organisations must pass on to IRD."
+    },
+    {
+      "type": "quiz",
+      "title": "Factors That Influence Price — Knowledge Check",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Zoe's artisan bakery in Ōamaru makes sourdough loaves. Her ingredient, power, and packaging costs total $4.80 per loaf. Which type of factor is this?",
+          "options": [
+            "An external factor — it is set by suppliers",
+            "An internal factor — it reflects the cost of production inside her business",
+            "A competitive factor — it depends on what other bakeries charge",
+            "A demand factor — it depends on how many customers want the loaves"
+          ],
+          "correctIndex": 1,
+          "explanation": "Cost of production is an internal factor. It comes from inside Zoe's business — what she pays for ingredients, power, and packaging. While supplier prices are partly set externally, the total cost per unit reflects Zoe's internal operations and choices. Internal factors are those the organisation can influence or control, and production costs are the most fundamental internal pricing factor."
+        },
+        {
+          "question": "Zoe researches other Ōamaru bakeries and finds sourdough loaves sell for $10 to $14. This research represents which type of factor?",
+          "options": [
+            "An internal factor — she gathered this information herself",
+            "A cost factor — it tells her what her costs should be",
+            "An external factor — competitor prices come from outside her organisation",
+            "A capacity factor — it tells her how many loaves to make"
+          ],
+          "correctIndex": 2,
+          "explanation": "Competitor prices are an external factor. They come from other organisations in the market, which Zoe cannot control. By knowing that competitors charge $10 to $14, she understands the market range her price should sit within. If she prices below $10 without good reason, she may be undervaluing her product. If she prices above $14, she needs a clear point of difference to justify it."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "The Three Pricing Approaches",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a simple table with three columns: Pricing Approach, How it Works, Best Used When. Fill it in from this slide.",
+      "content": "There are three main pricing approaches used by NZ organisations. Most businesses use a blend of all three.\n\nCost-plus pricing: Calculate the cost to produce one unit, then add a markup percentage. Simple and ensures you cover costs. The weakness is it ignores what customers are willing to pay and what competitors charge.\n\nCompetitive pricing: Set your price based on what others in the market are charging. You might match, undercut, or price above competitors depending on your strategy. The risk is that if competitors are pricing below their costs (not uncommon in tough markets), following them could mean you also make a loss.\n\nValue-based pricing: Charge what customers think your product is worth. Works best when your product is unique, premium, or emotionally meaningful. A Waitomo glowworm tour, a handcrafted Māori carving, or a personalised training programme can all command prices well above their production costs because of the value they deliver.\n\nFor AS92029, you need to describe which approach you are using and why it suits your chosen organisation."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Cost-plus pricing is always the best method because it guarantees the organisation will make a profit.",
+      "correctAnswer": false,
+      "explanation": "False. Cost-plus pricing ensures you price above your production costs, but it does not guarantee profit because it ignores the market. If the resulting price is higher than what customers will pay, sales volume will be too low to cover fixed costs. For example, if Zoe's cost-plus price for a sourdough loaf is $12 but customers in her area will only pay $8, she will not sell enough to break even regardless of her markup.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Pricing and the Organisation's Goals",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write one sentence explaining how an organisation's putake or goals could cause it to price lower than a profit-maximising business would.",
+      "content": "Pricing is not just a financial calculation — it is also a reflection of what an organisation stands for.\n\nA school canteen with a putake of providing affordable food to all students will deliberately price at or near cost, keeping pies at $3.50 rather than $5.50, because access matters more than margin.\n\nA Māori tourism operator whose putake includes sharing culture authentically might price their experience at a level that is profitable but still accessible to New Zealand families — not just at the maximum international tourist rate.\n\nA community gym in Porirua might charge $5 per session rather than $15 because their goal is community health, not profit.\n\nFor AS92029, you need to connect the organisation's goals and putake (where relevant) to its pricing decision. A price that makes financial sense but conflicts with the organisation's reason for existing is not a complete recommendation. The best pricing decisions are ones where the numbers and the values are aligned."
+    },
+    {
+      "type": "typed",
+      "question": "A pie costs $2.40 to make. The canteen adds a 50% markup. What is the selling price in dollars?",
+      "acceptedAnswers": ["$3.60", "3.60", "3.6"],
+      "placeholder": "Type the selling price here...",
+      "hint": "Markup is applied to the cost. 50% of $2.40 = $1.20. Add that to the cost price.",
+      "explanation": "50% markup on $2.40 = 0.50 x $2.40 = $1.20. Selling price = $2.40 + $1.20 = $3.60. This is cost-plus pricing in action. Note that a 50% markup gives a gross profit margin of $1.20 ÷ $3.60 = 33.3% — the markup percentage and margin percentage are different because markup is calculated on cost while margin is calculated on selling price.",
+      "estimatedMinutes": 4
+    },
+    {
+      "type": "slide",
+      "title": "The Pricing Process — Five Steps",
+      "estimatedMinutes": 4,
+      "notePrompt": "Number a page 1 to 5 and write the name of each pricing step with one line of explanation in your own words.",
+      "content": "The pricing process follows five clear steps. This is the process you will apply in your AS92029 assessment.\n\nStep 1 — Calculate your costs per unit. Add up variable costs (ingredients, packaging, direct labour) and allocate a share of fixed costs (rent, insurance, equipment) to find total cost per unit.\n\nStep 2 — Apply your target markup or margin. Decide what gross margin or markup you need to achieve your financial goals. This gives you a minimum viable price.\n\nStep 3 — Check competitor prices. Research what similar products or services sell for in your market. Are you in range? Too high? Too low?\n\nStep 4 — Consider customer demand and willingness to pay. Who are your customers? How price-sensitive are they? Would they pay more for quality, convenience, or uniqueness?\n\nStep 5 — Arrive at a recommended price and justify it. Set the final price, show the financial evidence, and explain how internal and external factors shaped your decision.\n\nIn your assessment, you must use a financial model — a break-even chart, a projected income statement, or a cost table — to support your recommended price. We will build these models in the next three lessons."
+    },
+    {
+      "type": "slide",
+      "title": "Real NZ Example — CleanDrive Mobile Car Detailing",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the cost breakdown into your notes. Calculate: at $85 per job and 25 jobs per month, what is Liam's total monthly profit? Show your working.",
+      "content": "Let's walk through the five-step pricing process using a real NZ example.\n\nLiam runs a mobile car detailing business in Tauranga called CleanDrive NZ. He comes to your home or workplace and fully details your car.\n\nStep 1 — Costs per job:\nCleaning products and cloths: $18.00\nFuel (average travel): $9.50\nDisposables (gloves, seat covers, air freshener): $3.50\nTotal variable cost per job: $31.00\nFixed costs per month: $350 (insurance $140, equipment $80, admin $55, marketing $75)\nAt 25 jobs per month: Fixed cost per job = $350 ÷ 25 = $14.00\nTotal cost per job = $31.00 + $14.00 = $45.00\n\nStep 2 — Target markup: Liam targets a 50% gross margin on variable costs. This gives a minimum price of $62.\n\nStep 3 — Competitor prices: Mobile detailers in Tauranga charge $65 to $120.\n\nStep 4 — Customer demand: Liam targets busy professionals — low price sensitivity, high value on convenience.\n\nStep 5 — Recommended price: $85 per job. Net profit per job = $85 - $45 = $40. Monthly profit at 25 jobs = $1,000."
+    },
+    {
+      "type": "quiz",
+      "title": "Pricing Process — Application Check",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Liam's total cost per job is $45 and he charges $85. What is his gross profit margin (profit as a percentage of selling price)?",
+          "options": [
+            "53%",
+            "47%",
+            "88%",
+            "35%"
+          ],
+          "correctIndex": 1,
+          "explanation": "Gross profit margin = (Selling price - Total cost) ÷ Selling price x 100. ($85 - $45) ÷ $85 x 100 = $40 ÷ $85 x 100 = 47.1%, rounded to 47%. Note: if you used only variable cost ($31), the gross margin would be ($85 - $31) ÷ $85 = 63.5%. The 47% figure uses total cost including fixed cost allocation, which is the more complete measure of profitability per job."
+        },
+        {
+          "question": "Liam is deciding whether to raise his price from $85 to $95. Which external factor would MOST influence whether this is a good idea?",
+          "options": [
+            "His fixed costs of $350 per month",
+            "His variable cost of $31 per job",
+            "Whether customers in his target market will pay $95 for mobile detailing, and whether competitors charge similar rates",
+            "The number of jobs he completes per month"
+          ],
+          "correctIndex": 2,
+          "explanation": "The decision to raise price is most influenced by external factors — specifically whether the market will support a higher price. Customer willingness to pay and competitor pricing are the key external checks. His internal costs (fixed and variable) set the floor but do not determine the ceiling. If competitors charge up to $120 and his customers have low price sensitivity, $95 is very likely viable. If competitors are clustered around $80 to $90, a jump to $95 might cost him bookings."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "What Would You Charge?",
+      "estimatedMinutes": 5,
+      "prompt": "Think of a product or service you could imagine running as a small NZ business. Write down: What would it cost you to produce one unit or provide one service? What would you charge? What internal and external factors influenced your price? Did you think about competitors before writing your price, or did you set it based on gut feel? What does this tell you about how pricing decisions actually get made?",
+      "nceaLink": "AS92029 requires you to describe factors that influence price and apply a financial model. This reflection helps you connect the theory to real decision-making before building financial models in the next lesson."
+    }
+  ]
+}

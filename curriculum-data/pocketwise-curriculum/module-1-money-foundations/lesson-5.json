@@ -1,0 +1,160 @@
+{
+  "title": "NZ Banks, Saving Accounts & Compound Interest",
+  "order": 5,
+  "dayNumber": 5,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Understand & Apply",
+  "nceaFocus": "AS92028 — financial tools, interdependent financial relationships, stakeholder perspectives in banking decisions",
+  "ownerEmail": "admin@pocketwise.nz",
+
+  "objectives": [
+    "Compare main NZ bank account types and their purposes",
+    "Understand and calculate compound interest",
+    "Apply the Rule of 72 to estimate investment doubling time",
+    "Explain the financial relationship between a bank and its customers",
+    "Identify stakeholder perspectives in a banking decision"
+  ],
+
+  "vocabulary": [
+    {
+      "term": "Interest Rate",
+      "definition": "The percentage a bank pays you for saving money with them, or charges you for borrowing. Expressed as a percentage per year (% p.a. = per annum)."
+    },
+    {
+      "term": "Compound Interest",
+      "definition": "Earning interest on your interest. If you earn $50 interest in year 1, in year 2 you earn interest on your original deposit PLUS on the $50. Over time this creates exponential growth — the most powerful force in personal finance."
+    },
+    {
+      "term": "Term Deposit",
+      "definition": "A savings product where you lock your money away for a fixed period (e.g. 6 months, 1 year, 5 years) at a guaranteed higher interest rate. You cannot access the money early without paying a penalty."
+    },
+    {
+      "term": "PIR",
+      "definition": "Prescribed Investor Rate. The tax rate applied to the interest you earn on savings in New Zealand. Most students pay 10.5% PIR — the same as their income tax rate."
+    },
+    {
+      "term": "Rule of 72",
+      "definition": "A quick mental maths trick: divide 72 by your interest rate to find how many years it takes to double your money. At 4% interest: 72 ÷ 4 = 18 years to double. At 8%: 72 ÷ 8 = 9 years."
+    },
+    {
+      "term": "Kiwibank",
+      "definition": "New Zealand's only government-owned retail bank. Established in 2002 to give Kiwis a locally owned alternative to Australian-owned banks. Known for strong student and youth accounts."
+    }
+  ],
+
+  "activities": [
+    {
+      "type": "slide",
+      "title": "NZ Banks — Who Are They and What Do They Offer?",
+      "estimatedMinutes": 6,
+      "content": "New Zealand has five main retail banks. Four are Australian-owned; one is NZ-owned:\n\n• ANZ (Australian-owned — Australia's largest bank)\n• ASB (Australian-owned — subsidiary of Commonwealth Bank)\n• BNZ (Australian-owned — subsidiary of NAB)\n• Westpac (Australian-owned — subsidiary of Westpac Australia)\n• Kiwibank (NZ government-owned — established 2002 to keep banking profits in NZ)\n\nFor students, the most relevant accounts are:\n\nEVERYDAY/TRANSACTION ACCOUNT:\n• For daily spending — wages get deposited here\n• Debit card attached for EFTPOS and online shopping\n• Zero or very low interest (0.01–0.1% p.a.)\n• No fees for students at most NZ banks\n• Examples: ANZ Go, ASB Student Account, Kiwibank Free Account\n\nSAVINGS ACCOUNT:\n• Higher interest than everyday accounts (1–5% p.a. in 2025)\n• Some have conditions to earn full interest (e.g. no withdrawals that month)\n• Best for your emergency fund and savings goals\n• Examples: ANZ Serious Saver, ASB Savings OnCall, Kiwibank 32-Day Notice Saver\n\nTERM DEPOSIT:\n• Locked away for 3 months to 5 years\n• Higher interest rate (4.5–5.5% p.a. in 2025 for 1-year terms)\n• Cannot touch the money without penalty\n• Best for money you definitely won't need for a fixed period"
+    },
+    {
+      "type": "quiz",
+      "title": "Checkpoint: NZ Banks",
+      "estimatedMinutes": 4,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Which NZ bank is government-owned?",
+          "options": ["ANZ", "ASB", "Kiwibank", "BNZ"],
+          "correctIndex": 2,
+          "explanation": "Kiwibank is New Zealand's only government-owned retail bank, established in 2002. All other major NZ retail banks are owned by Australian parent companies."
+        },
+        {
+          "question": "Mia wants to save $2,000 for an overseas trip in 18 months. She won't need to touch it. Which account type is best?",
+          "options": [
+            "Everyday transaction account (0.05% interest)",
+            "Savings account (3.5% interest, no withdrawal conditions)",
+            "Term deposit (5.0% for 18 months)",
+            "She should keep it as cash at home"
+          ],
+          "correctIndex": 2,
+          "explanation": "Since Mia won't need the money for exactly 18 months, a term deposit gives her the highest interest rate (5.0% vs 3.5%) and she knows precisely when she gets it back. The penalty for early withdrawal is not a concern since she has a fixed timeline."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "The Magic of Compound Interest",
+      "estimatedMinutes": 7,
+      "content": "Albert Einstein reportedly called compound interest 'the eighth wonder of the world.' Whether or not he actually said it, the maths is genuinely remarkable.\n\nSIMPLE INTEREST: You earn interest only on your original deposit.\n$1,000 at 5% simple interest for 10 years = $500 total interest = $1,500\n\nCOMPOUND INTEREST: You earn interest on your original deposit AND on all the interest already earned.\n$1,000 at 5% compound interest for 10 years = $628.89 total interest = $1,628.89\n\nThe difference grows dramatically over time:\n• After 10 years: $1,629 (compound) vs $1,500 (simple)\n• After 20 years: $2,653 (compound) vs $2,000 (simple)\n• After 40 years: $7,040 (compound) vs $3,000 (simple)\n\nNow add regular contributions. If you deposit $50/month at 5% compound interest:\n• After 10 years: $7,764\n• After 20 years: $20,552\n• After 40 years: $76,301\n\nTHE KEY LESSON: Time is the most powerful ingredient. Starting at 15 instead of 25 can mean the difference between $76,301 and $20,552 — even at the same contribution rate.\n\nThis is why KiwiSaver from day one of your career is so powerful. And why the 20% savings rule matters right now, not later."
+    },
+    {
+      "type": "scenario",
+      "title": "The Rule of 72 — Quick Calculations",
+      "estimatedMinutes": 8,
+      "nceaLevel": "Achieved",
+      "setup": "The Rule of 72 is a mental maths shortcut: divide 72 by the interest rate to estimate how many years it takes to double your money.\n\nExamples:\n• 72 ÷ 4% = 18 years to double\n• 72 ÷ 6% = 12 years to double\n• 72 ÷ 9% = 8 years to double",
+      "challenge": "Use the Rule of 72 to answer these questions:\n\n1. Aroha puts $500 in a term deposit at 5% interest. How many years until her $500 doubles to $1,000?\n\n2. Tama invests in a managed fund averaging 7% annual returns. How long until his investment doubles?\n\n3. Zoe is choosing between two savings accounts:\n   • Account A: 3% interest\n   • Account B: 5% interest\n   How many more years does Account A take to double compared to Account B?\n\n4. A financial advisor tells Liam he can find an investment returning 12% per year. How long to double? Why should Liam be cautious about this claim?",
+      "hints": [
+        "Rule of 72: Years to double = 72 ÷ interest rate",
+        "For question 3: calculate both doubling times, then subtract",
+        "For question 4: remember if returns are too high, risks are usually also very high"
+      ],
+      "solution": "1. 72 ÷ 5 = 14.4 years for Aroha's $500 to become $1,000.\n\n2. 72 ÷ 7 = approximately 10.3 years for Tama's investment to double.\n\n3. Account A: 72 ÷ 3 = 24 years. Account B: 72 ÷ 5 = 14.4 years. Difference = 9.6 years. Choosing Account B saves Zoe almost a decade of waiting.\n\n4. 72 ÷ 12 = 6 years to double. Liam should be cautious because a 12% guaranteed annual return is extremely high — legitimate low-risk investments typically return 3–6%. Returns above 8–10% usually carry significant risk of loss, or may even be scams. The higher the promised return, the higher the risk."
+    },
+    {
+      "type": "slide",
+      "title": "Māori & Pacific Financial Traditions",
+      "estimatedMinutes": 5,
+      "content": "New Zealand's financial landscape includes powerful indigenous and Pacific saving traditions that predate modern banking — and in some ways are superior to it.\n\nKÕHА (Māori gifting):\nKōha is a traditional Māori practice of reciprocal gifting. Unlike money sitting in a bank, kōha circulates through the community. When you give generously at a tangi or wedding, that generosity comes back when your whānau needs support. The 'return' is not financial — it's social capital, mana, and community strength.\n\nIPU KAI / COMMUNITY SAVING (Māori):\nTraditionally, iwi managed collective resources for the long-term benefit of all members. Modern Māori land trusts and iwi investment arms (like Ngāi Tahu Holdings, Te Arawa Group Holdings) reflect this principle — collective assets managed for future generations.\n\nFA'ALAVELAVE (Samoan):\nFa'alavelave refers to major life events (weddings, funerals, celebrations) that require significant financial contributions from the extended family network. It can be a financial burden but also a safety net — the community supports you when you need it most.\n\nKE'A (Tongan tauhi vā):\nThe Tongan principle of tauhi vā (maintaining relationships) means obligations to family and community are considered as important as individual saving. Financial decisions are rarely made without considering their impact on the wider family network.\n\nThe lesson: Western personal finance focuses on individual accumulation. Many NZ cultures embed saving and financial security within community and relationships. Both approaches have strengths — the best financial literacy honours both."
+    },
+    {
+      "type": "quiz",
+      "title": "End-of-Lesson Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved to Merit",
+      "questions": [
+        {
+          "question": "Caleb has $800 in a savings account at 4% compound interest per year. Using the Rule of 72, approximately how long until his money doubles?",
+          "options": ["9 years", "14 years", "18 years", "22 years"],
+          "correctIndex": 2,
+          "explanation": "72 ÷ 4 = 18 years. At 4% compound interest, Caleb's $800 will grow to approximately $1,600 in 18 years without any additional contributions."
+        },
+        {
+          "question": "A bank decides to offer lower interest rates to student customers to help young people avoid overdrafts. Which stakeholders benefit from this decision?",
+          "options": [
+            "Only the bank's shareholders",
+            "Student customers (lower borrowing costs) and potentially the wider community (financially healthier young people)",
+            "Only the bank's employees",
+            "The NZ government through higher tax revenue"
+          ],
+          "correctIndex": 1,
+          "explanation": "Multiple stakeholders benefit: students pay less interest when borrowing, making them financially healthier. The community benefits from young people not falling into debt spirals. The bank may benefit from loyal long-term customers. This is stakeholder analysis applied to a banking decision."
+        },
+        {
+          "question": "Why is the compound interest earned on $1,000 over 40 years so much greater than simple interest on the same amount?",
+          "options": [
+            "The interest rate increases every year",
+            "The bank adds extra bonus payments after 20 years",
+            "Each year you earn interest on your original deposit AND on all the interest already earned",
+            "The government removes tax on interest after 10 years"
+          ],
+          "correctIndex": 2,
+          "explanation": "Compound interest earns returns on returns. In year 1 you earn interest on $1,000. In year 2 you earn interest on $1,000 PLUS the year 1 interest. This compounding effect grows exponentially over decades."
+        },
+        {
+          "question": "Aroha wants to analyse whether switching banks is a good financial decision for her organisation (a community group). Which financial tool from AS92028 would best support this decision?",
+          "options": [
+            "A kōha gifting record",
+            "A price/feature comparison chart showing interest rates, fees, and account features across banks",
+            "Her personal spending diary",
+            "The Rule of 72 calculation only"
+          ],
+          "correctIndex": 1,
+          "explanation": "A price/feature comparison chart is one of the four financial tools listed in AS92028 Explanatory Note 4. It allows Aroha to use financial data (interest rates, fees) to support a decision — exactly what the standard requires."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "Your Savings Strategy",
+      "estimatedMinutes": 4,
+      "prompt": "1. Do you currently have a savings account separate from your spending account? If yes, what is the interest rate? If no, which NZ bank and account type would you choose and why?\n\n2. If you saved $50/week starting today, how much would you have in 2 years? (Without interest: $50 × 104 weeks = ?)\n\n3. Looking at your own pūtake from Lesson 3 — what you're saving for — how does understanding compound interest change how urgently you feel about starting to save?\n\nWrite 3–4 sentences.",
+      "nceaLink": "Comparing bank accounts using a price/feature comparison chart is a valid financial tool for AS92028. This reflection prepares you to apply that analysis to an organisation's decision."
+    }
+  ]
+}
