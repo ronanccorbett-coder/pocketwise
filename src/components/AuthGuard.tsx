@@ -1,20 +1,27 @@
 "use client";
 import { useEffect, ReactNode } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useGame } from "@/lib/gameContext";
 import Image from "next/image";
 
 export default function AuthGuard({ children }: { children: ReactNode }) {
-  const { user, isLoading } = useGame();
+  const { user, isLoading, state } = useGame();
   const router = useRouter();
+  const path = usePathname();
 
   useEffect(() => {
-    if (!isLoading && !user) {
+    if (isLoading) return;
+    if (!user) {
       router.replace("/login");
+      return;
     }
-  }, [user, isLoading, router]);
+    // Redirect new users to onboarding unless already there
+    if (state && !(state.badges as string[])?.includes("onboarded") && path !== "/onboarding") {
+      router.replace("/onboarding");
+    }
+  }, [user, isLoading, state, path, router]);
 
-  if (isLoading) {
+  if (isLoading || !user) {
     return (
       <div style={{
         minHeight: "100vh", background: "#0d1526",
@@ -27,6 +34,5 @@ export default function AuthGuard({ children }: { children: ReactNode }) {
     );
   }
 
-  if (!user) return null;
   return <>{children}</>;
 }
