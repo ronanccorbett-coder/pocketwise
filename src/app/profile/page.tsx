@@ -235,7 +235,7 @@ export default function ProfilePage() {
                     <div style={{ fontSize: "0.78rem", color: "#64748b", marginBottom: 8 }}>
                       {currentJobLabel.split("—")[1]?.trim()}
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 4, background: "#e8f5d0", padding: "4px 10px", borderRadius: 99, display: "inline-flex" }}>
+                    <div style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "#e8f5d0", padding: "4px 10px", borderRadius: 99 }}>
                       <DollarSign size={12} color="#76AD25" />
                       <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#5d8a1c" }}>${currentJobSalary}/day</span>
                     </div>
