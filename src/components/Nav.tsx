@@ -2,10 +2,10 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield } from "lucide-react";
+import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield, User } from "lucide-react";
 import { useGame } from "@/lib/gameContext";
 
-const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronanccorbett@gmail.com"];
+const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronan@pocketwise.nz"];
 
 const links = [
   { href: "/curriculum",  label: "Curriculum",  Icon: BookOpen },
@@ -83,6 +83,14 @@ export default function Nav() {
             ${(state?.balance ?? 5000).toFixed(0)}
           </span>
         </div>
+        <Link href="/profile" style={{
+          background: path.startsWith("/profile") ? "#f1f5f9" : "none",
+          border: "none", cursor: "pointer", color: "#94a3b8",
+          padding: 6, borderRadius: 6, display: "flex", alignItems: "center",
+          textDecoration: "none",
+        }}>
+          <User size={15} color={path.startsWith("/profile") ? "#0d1526" : "#94a3b8"} />
+        </Link>
         <button onClick={handleSignOut} style={{ background: "none", border: "none", cursor: "pointer", color: "#94a3b8", padding: 6, borderRadius: 6, display: "flex", alignItems: "center" }} title="Sign out">
           <LogOut size={15} />
         </button>
