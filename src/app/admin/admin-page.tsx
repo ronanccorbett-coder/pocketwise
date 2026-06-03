@@ -304,7 +304,7 @@ export default function AdminPage() {
 
                         {/* XP display/edit */}
                         <div style={{ textAlign: "center", minWidth: 90 }}>
-                          {editing?.userId === u.userId && editing.field === "xp" ? (
+                          {editing !== null && editing.userId === u.userId && editing.field === "xp" ? (
                             <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
                               <input
                                 type="number"
@@ -327,7 +327,7 @@ export default function AdminPage() {
 
                         {/* Balance display/edit */}
                         <div style={{ textAlign: "center", minWidth: 100 }}>
-                          {editing?.userId === u.userId && editing.field === "balance" ? (
+                          {editing !== null && editing.userId === u.userId && editing.field === "balance" ? (
                             <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
                               <input
                                 type="number"
