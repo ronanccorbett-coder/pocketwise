@@ -756,7 +756,7 @@ function LessonContent() {
   if (completed) return (
     <CompletionScreen
       lesson={lesson}
-      onContinue={() => router.push("/curriculum")}
+      onContinue={() => router.push(folder ? `/module?folder=${folder}` : "/curriculum")}
       onReview={restart}
     />
   );

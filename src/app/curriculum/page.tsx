@@ -74,7 +74,7 @@ function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: 
   }
 
   function startModule() {
-    if (firstLesson) openLesson(firstLesson);
+    router.push(`/module?folder=${mod.folder}`);
   }
 
   const btnLabel = completedCount === 0
