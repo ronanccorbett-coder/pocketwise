@@ -10,7 +10,7 @@ import {
   ChevronDown, ChevronUp, RefreshCw,
 } from "lucide-react";
 
-const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronanccorbet@gmail.com"];
+const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronanccorbett@gmail.com"];
 
 type AdminTab = "overview" | "users" | "modules" | "permissions";
 
