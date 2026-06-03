@@ -31,23 +31,20 @@ type ModuleData = {
 // ── Path generation ───────────────────────────────────────────────────────
 function generateNodes(count: number, svgW: number, svgH: number) {
   const nodes: { x: number; y: number }[] = [];
-  const padX = 90;
-  const padY = 80;
+  const padX = 70;
+  const padY = 60;
   const usableW = svgW - padX * 2;
-  const usableH = svgH - padY * 2;
-  const cols = 3;
+  const rowHeight = Math.min(120, (svgH - padY * 2) / Math.max(count - 1, 1));
 
   for (let i = 0; i < count; i++) {
-    const row = Math.floor(i / cols);
-    const col = i % cols;
-    // Zigzag — even rows go left-to-right, odd rows right-to-left
-    const dir = row % 2 === 0 ? col : (cols - 1 - col);
-    const x = padX + (dir / (cols - 1)) * usableW;
-    const y = padY + (row / Math.max(1, Math.ceil(count / cols) - 1)) * usableH;
-    nodes.push({ x, y });
+    const y = padY + i * rowHeight;
+    const phase = (i / Math.max(count - 1, 1)) * Math.PI * 2.5;
+    const x = padX + usableW / 2 + Math.sin(phase) * (usableW * 0.42);
+    nodes.push({ x: Math.round(x), y: Math.round(y) });
   }
   return nodes;
 }
+
 
 function buildPath(pts: { x: number; y: number }[]) {
   if (pts.length < 2) return "";
@@ -163,8 +160,7 @@ function ModuleMapContent() {
 
   // SVG dimensions
   const SVG_W = 380;
-  const rows = Math.ceil(sorted.length / 3);
-  const SVG_H = Math.max(400, rows * 140 + 100);
+  const SVG_H = Math.max(500, sorted.length * 115 + 100);
 
   const nodes = generateNodes(sorted.length, SVG_W, SVG_H);
   const pathD = buildPath(nodes);

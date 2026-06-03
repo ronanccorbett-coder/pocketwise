@@ -4,8 +4,7 @@ import { useRouter } from "next/navigation";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useGame } from "@/lib/gameContext";
-import { BookOpen, Zap, Award, Flame, ChevronRight, Lock, Play, List, Map } from "lucide-react";
-import LessonPathMap from "@/components/LessonPathMap";
+import { BookOpen, Zap, Award, Flame, ChevronRight, Lock, Play } from "lucide-react";
 
 type Lesson = {
   filename: string;
@@ -51,8 +50,6 @@ function trackToGroup(ageTrack: string, yearLevel?: string): string {
 }
 
 function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: string[] }) {
-  const [showLessons, setShowLessons] = useState(false);
-  const [viewMode, setViewMode] = useState<"list"|"map">("map");
   const router = useRouter();
   const accent = mod.colorTheme || "#76AD25";
   const totalXp = mod.lessons.reduce((s, l) => s + (l.xpReward || 0), 0) || mod.xpReward || 0;
@@ -159,110 +156,23 @@ function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: 
           )}
         </div>
 
-        {/* Action buttons */}
-        <div style={{ display: "flex", gap: 8 }}>
-          <button
-            onClick={startModule}
-            disabled={mod.lessonCount === 0}
-            style={{
-              flex: 1, padding: "10px 0",
-              background: mod.lessonCount === 0 ? "#f1f5f9" : "#0d1526",
-              color: mod.lessonCount === 0 ? "#94a3b8" : "#fff",
-              border: "none", borderRadius: 8,
-              fontSize: "0.8rem", fontWeight: 600,
-              cursor: mod.lessonCount === 0 ? "not-allowed" : "pointer",
-              fontFamily: "Inter, sans-serif",
-              display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
-            }}>
-            <Play size={13} />
-            {btnLabel}
-          </button>
-          {mod.lessonCount > 0 && (
-            <button
-              onClick={() => setShowLessons(s => !s)}
-              style={{
-                padding: "10px 12px",
-                background: showLessons ? "#f1f5f9" : "#fff",
-                color: "#475569",
-                border: "1px solid #e2e8f0", borderRadius: 8,
-                fontSize: "0.8rem", fontWeight: 600,
-                cursor: "pointer", fontFamily: "Inter, sans-serif",
-                display: "flex", alignItems: "center", gap: 4,
-              }}>
-              <Map size={14} />
-              <ChevronRight size={13} style={{ transform: showLessons ? "rotate(90deg)" : "none", transition: "transform .15s" }} />
-            </button>
-          )}
-        </div>
-
-        {/* Lesson path / list dropdown */}
-        {showLessons && mod.lessons.length > 0 && (
-          <div style={{ marginTop: 12, borderTop: "1px solid #f1f5f9", paddingTop: 12 }}>
-            {/* View toggle */}
-            <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
-              <button onClick={() => setViewMode("map")} style={{ flex: 1, padding: "6px", borderRadius: 7, background: viewMode === "map" ? accent : "#f1f5f9", color: viewMode === "map" ? "#fff" : "#475569", border: "none", fontWeight: 600, fontSize: "0.75rem", cursor: "pointer", fontFamily: "Inter, sans-serif", display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}>
-                <Map size={12} /> Path
-              </button>
-              <button onClick={() => setViewMode("list")} style={{ flex: 1, padding: "6px", borderRadius: 7, background: viewMode === "list" ? accent : "#f1f5f9", color: viewMode === "list" ? "#fff" : "#475569", border: "none", fontWeight: 600, fontSize: "0.75rem", cursor: "pointer", fontFamily: "Inter, sans-serif", display: "flex", alignItems: "center", justifyContent: "center", gap: 4 }}>
-                <List size={12} /> List
-              </button>
-            </div>
-
-            {/* Map view */}
-            {viewMode === "map" && (
-              <LessonPathMap
-                folder={mod.folder}
-                lessons={mod.lessons}
-                completedLessons={completedLessons}
-                accentColor={accent}
-                moduleTitle={mod.title}
-              />
-            )}
-
-            {/* List view */}
-            {viewMode === "list" && mod.lessons
-              .sort((a, b) => (a.order || 0) - (b.order || 0))
-              .map((l, i) => {
-                const done = completedLessons.includes(`${mod.folder}/${l.filename}`);
-                const isCurrent = !done && l.filename === firstLesson?.filename;
-                return (
-                  <button
-                    key={l.filename}
-                    onClick={() => openLesson(l)}
-                    style={{
-                      width: "100%", display: "flex", alignItems: "center", gap: 10,
-                      padding: "9px 10px", borderRadius: 8, marginBottom: 4,
-                      background: isCurrent ? "#f0fdf4" : "transparent",
-                      border: `1px solid ${isCurrent ? "#76AD25" : "transparent"}`,
-                      cursor: "pointer", textAlign: "left",
-                      fontFamily: "Inter, sans-serif", transition: "background .1s",
-                    }}
-                    onMouseEnter={e => { if (!isCurrent) (e.currentTarget as HTMLElement).style.background = "#f8fafc"; }}
-                    onMouseLeave={e => { if (!isCurrent) (e.currentTarget as HTMLElement).style.background = "transparent"; }}
-                  >
-                    <div style={{ width: 26, height: 26, borderRadius: 6, flexShrink: 0, background: done ? "#76AD25" : isCurrent ? "#e8f5d0" : "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontWeight: 700, color: done ? "#fff" : isCurrent ? "#3d5a12" : "#64748b" }}>
-                      {done ? "✓" : l.order || i + 1}
-                    </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: "0.8rem", fontWeight: isCurrent ? 600 : 500, color: done ? "#94a3b8" : "#0d1526", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", textDecoration: done ? "line-through" : "none" }}>
-                        {l.title}
-                      </div>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 3, flexShrink: 0 }}>
-                      <Zap size={11} color="#f59e0b" />
-                      <span style={{ fontSize: "0.7rem", color: "#94a3b8", fontWeight: 600 }}>{l.xpReward}</span>
-                    </div>
-                  </button>
-                );
-              })}
-          </div>
-        )}
-
-        {showLessons && mod.lessons.length === 0 && (
-          <div style={{ marginTop: 12, padding: "12px", background: "#f8fafc", borderRadius: 8, textAlign: "center" }}>
-            <p style={{ fontSize: "0.78rem", color: "#94a3b8" }}>No lessons yet.</p>
-          </div>
-        )}
+        {/* Open module map */}
+        <button
+          onClick={() => router.push(`/module?folder=${mod.folder}`)}
+          disabled={mod.lessonCount === 0}
+          style={{
+            width: "100%", padding: "11px 0",
+            background: mod.lessonCount === 0 ? "#f1f5f9" : "#0d1526",
+            color: mod.lessonCount === 0 ? "#94a3b8" : "#fff",
+            border: "none", borderRadius: 8,
+            fontSize: "0.825rem", fontWeight: 700,
+            cursor: mod.lessonCount === 0 ? "not-allowed" : "pointer",
+            fontFamily: "Inter, sans-serif",
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+          }}>
+          <Play size={13} />
+          {btnLabel}
+        </button>
       </div>
     </div>
   );
