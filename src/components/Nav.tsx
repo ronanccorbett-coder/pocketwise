@@ -2,8 +2,10 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign } from "lucide-react";
+import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield } from "lucide-react";
 import { useGame } from "@/lib/gameContext";
+
+const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronanccorbett@gmail.com"];
 
 const links = [
   { href: "/curriculum",  label: "Curriculum",  Icon: BookOpen },
@@ -16,7 +18,8 @@ const links = [
 export default function Nav() {
   const path = usePathname();
   const router = useRouter();
-  const { state, signOut } = useGame();
+  const { state, signOut, user } = useGame();
+  const isAdmin = ADMIN_EMAILS.includes(user?.email ?? "");
 
   function handleSignOut() {
     signOut();
@@ -52,37 +55,35 @@ export default function Nav() {
             </Link>
           );
         })}
+        {isAdmin && (
+          <Link href="/admin" style={{
+            display: "flex", alignItems: "center", gap: 5,
+            padding: "6px 12px", borderRadius: 8,
+            fontSize: "0.84rem", fontWeight: 500,
+            color: path.startsWith("/admin") ? "#76AD25" : "#64748b",
+            background: path.startsWith("/admin") ? "#e8f5d0" : "transparent",
+            textDecoration: "none",
+          }}>
+            <Shield size={14} />
+            Admin
+          </Link>
+        )}
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-        {/* XP badge */}
-        <div style={{
-          display: "flex", alignItems: "center", gap: 4,
-          background: "rgba(245,158,11,.1)", padding: "4px 10px",
-          borderRadius: 99,
-        }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 4, background: "rgba(245,158,11,.1)", padding: "4px 10px", borderRadius: 99 }}>
           <Zap size={13} color="#f59e0b" />
           <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#f59e0b" }}>
             {(state?.xp ?? 0).toLocaleString()} XP
           </span>
         </div>
-        {/* Balance badge */}
-        <div style={{
-          display: "flex", alignItems: "center", gap: 4,
-          background: "rgba(118,173,37,.1)", padding: "4px 10px",
-          borderRadius: 99,
-        }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 4, background: "rgba(118,173,37,.1)", padding: "4px 10px", borderRadius: 99 }}>
           <DollarSign size={13} color="#76AD25" />
           <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#76AD25" }}>
             ${(state?.balance ?? 5000).toFixed(0)}
           </span>
         </div>
-        {/* Sign out */}
-        <button onClick={handleSignOut} style={{
-          background: "none", border: "none", cursor: "pointer",
-          color: "#94a3b8", padding: 6, borderRadius: 6,
-          display: "flex", alignItems: "center",
-        }} title="Sign out">
+        <button onClick={handleSignOut} style={{ background: "none", border: "none", cursor: "pointer", color: "#94a3b8", padding: 6, borderRadius: 6, display: "flex", alignItems: "center" }} title="Sign out">
           <LogOut size={15} />
         </button>
       </div>
