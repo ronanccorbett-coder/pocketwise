@@ -10,14 +10,43 @@ const COLORS = ["#EF4444","#3B82F6","#76AD25","#6b7280","#3B82F6","#f59e0b","#08
 export default function LeaderboardPage() {
   const { user, state } = useGame();
   const { data } = db.useQuery({ userState: {} });
+  const { data: usersData } = db.useQuery({ $users: {} });
 
   const allStates = (data?.userState ?? []) as any[];
+  const allUsers = (usersData?.$users ?? []) as any[];
   const sorted = [...allStates].sort((a, b) => (b.xp ?? 0) - (a.xp ?? 0)).slice(0, 20);
 
   const userRank = sorted.findIndex(s => s.userId === user?.id);
 
+  function getDisplayName(userId: string, isMe: boolean): string {
+    if (isMe) return "You";
+    const found = allUsers.find((u: any) => u.id === userId);
+    if (found?.email) {
+      // Show first part of email before @, capitalised
+      const name = found.email.split("@")[0];
+      return name.charAt(0).toUpperCase() + name.slice(1);
+    }
+    return `Student ${userId?.slice(0, 6) ?? "?"}`;
+  }
+
   const rankLabel = (i: number) =>
     i === 0 ? "1st" : i === 1 ? "2nd" : i === 2 ? "3rd" : `#${i + 1}`;
+
+  function getDisplayName(userId: string, isMe: boolean): string {
+    if (isMe) return "You";
+    const found = allUsers.find((u: any) => u.id === userId);
+    if (found?.email) {
+      const name = found.email.split("@")[0];
+      return name.charAt(0).toUpperCase() + name.slice(1);
+    }
+    return `Student ${userId?.slice(0, 6) ?? "?"}`;
+  }
+
+  function getInitials(userId: string): string {
+    const found = allUsers.find((u: any) => u.id === userId);
+    if (found?.email) return found.email.slice(0, 2).toUpperCase();
+    return userId?.slice(0, 2).toUpperCase() ?? "??";
+  }
 
   return (
     <AuthGuard>
@@ -54,7 +83,6 @@ export default function LeaderboardPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {sorted.map((s, i) => {
                 const isMe = s.userId === user?.id;
-                const initials = s.userId?.slice(0, 2).toUpperCase() ?? "??";
                 return (
                   <div key={s.id ?? i} style={{
                     background: isMe ? "#f0fdf4" : "#fff",
@@ -66,11 +94,11 @@ export default function LeaderboardPage() {
                       {rankLabel(i)}
                     </div>
                     <div style={{ width: 34, height: 34, borderRadius: "50%", background: COLORS[i % COLORS.length], display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 700, fontSize: "0.78rem", flexShrink: 0 }}>
-                      {initials}
+                      {getInitials(s.userId)}
                     </div>
                     <div style={{ flex: 1 }}>
                       <div style={{ fontWeight: 600, fontSize: "0.875rem", color: "#0d1526" }}>
-                        {isMe ? "You" : `Student ${s.userId?.slice(0, 6) ?? "?"}`}
+                        {getDisplayName(s.userId, isMe)}
                         {isMe && <span style={{ color: "#76AD25", fontSize: "0.75rem", fontWeight: 500, marginLeft: 6 }}>(You)</span>}
                       </div>
                       <div style={{ fontSize: "0.75rem", color: "#94a3b8", marginTop: 1 }}>

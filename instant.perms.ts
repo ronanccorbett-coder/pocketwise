@@ -3,7 +3,7 @@ import type { InstantRules } from "@instantdb/react";
 const rules = {
   userState: {
     allow: {
-      view:   "auth.id != null && data.userId == auth.id",
+      view:   "auth.id != null",
       create: "auth.id != null && data.userId == auth.id",
       update: "auth.id != null && data.userId == auth.id",
       delete: "auth.id != null && data.userId == auth.id",
@@ -11,7 +11,7 @@ const rules = {
   },
   userStocks: {
     allow: {
-      view:   "auth.id != null && data.userId == auth.id",
+      view:   "auth.id != null",
       create: "auth.id != null && data.userId == auth.id",
       update: "auth.id != null && data.userId == auth.id",
       delete: "auth.id != null && data.userId == auth.id",
@@ -19,7 +19,7 @@ const rules = {
   },
   userProperties: {
     allow: {
-      view:   "auth.id != null && data.userId == auth.id",
+      view:   "auth.id != null",
       create: "auth.id != null && data.userId == auth.id",
       update: "auth.id != null && data.userId == auth.id",
       delete: "auth.id != null && data.userId == auth.id",
@@ -27,7 +27,7 @@ const rules = {
   },
   userLoans: {
     allow: {
-      view:   "auth.id != null && data.userId == auth.id",
+      view:   "auth.id != null",
       create: "auth.id != null && data.userId == auth.id",
       update: "auth.id != null && data.userId == auth.id",
       delete: "auth.id != null && data.userId == auth.id",
@@ -35,7 +35,7 @@ const rules = {
   },
   userAssets: {
     allow: {
-      view:   "auth.id != null && data.userId == auth.id",
+      view:   "auth.id != null",
       create: "auth.id != null && data.userId == auth.id",
       update: "auth.id != null && data.userId == auth.id",
       delete: "auth.id != null && data.userId == auth.id",
