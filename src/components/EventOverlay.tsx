@@ -20,8 +20,6 @@ function CategoryIcon({ name, color }: { name: string; color: string }) {
   }
 }
 
-const FONT = "Inter, system-ui, sans-serif";
-
 const MILESTONES = [
   { value: 10000,  label: "$10,000",  message: "Five figures! You've doubled your starting balance.",        color: "#76AD25" },
   { value: 25000,  label: "$25,000",  message: "A quarter of $100k. Compound growth is working for you.",   color: "#3B82F6" },
