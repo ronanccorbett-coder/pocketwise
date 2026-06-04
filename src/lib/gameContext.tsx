@@ -150,18 +150,35 @@ export function GameProvider({ children }: { children: ReactNode }) {
     authUser ? { userAssets: { $: { where: { userId: authUser.id } } } } : null
   );
 
-  const rawState  = (stateData?.userState?.[0] ?? null) as UserState | null;
+  const allStates = (stateData?.userState ?? []) as UserState[];
+  const rawState  = allStates[0] ?? null;
   const stocks    = (stockData?.userStocks ?? []) as Stock[];
   const properties = (propData?.userProperties ?? []) as Property[];
   const loans     = (loanData?.userLoans ?? []) as Loan[];
   const assets    = (assetData?.userAssets ?? []) as Asset[];
 
-  // Track whether this is a brand new user (no state record yet)
-  const isNewUser = !authLoading && !!authUser && !rawState && stateData !== undefined;
-
-  // Bootstrap new user
+  // Clean up duplicate userState rows — keep the one with the most XP
+  const bootstrapRef = useRef(false);
   useEffect(() => {
-    if (!authUser || rawState || authLoading || stateData === undefined) return;
+    if (!authUser || authLoading || stateData === undefined) return;
+    if (allStates.length > 1) {
+      // Keep highest XP row, delete the rest
+      const sorted = [...allStates].sort((a, b) => (b.xp ?? 0) - (a.xp ?? 0));
+      const toDelete = sorted.slice(1);
+      db.transact(toDelete.map(s => (db as any).tx.userState[s.id].delete()));
+      return;
+    }
+  }, [allStates.length, authUser, authLoading]);
+
+  // Track whether this is a brand new user (no state record yet)
+  const isNewUser = !authLoading && !!authUser && allStates.length === 0 && stateData !== undefined;
+
+  // Bootstrap new user — guarded by ref to prevent double-fire
+  useEffect(() => {
+    if (!authUser || authLoading || stateData === undefined) return;
+    if (allStates.length > 0) return; // already exists
+    if (bootstrapRef.current) return; // already bootstrapping
+    bootstrapRef.current = true;
     db.transact(
       (db as any).tx.userState[id()].update({
         userId: authUser.id,
@@ -318,11 +335,20 @@ export function GameProvider({ children }: { children: ReactNode }) {
     const newXp = (rawState.xp ?? 0) + xpReward;
     const newBal = (rawState.balance ?? 0) + cashReward;
 
-    // Streak logic
+    // Streak logic — only increment once per calendar day
     const lastDate = new Date(rawState.lastActivityDate ?? 0);
     const today = new Date();
-    const dayDiff = Math.floor((today.getTime() - lastDate.getTime()) / (1000 * 60 * 60 * 24));
-    const newStreak = dayDiff <= 1 ? (rawState.streak ?? 0) + 1 : 1;
+    const lastDay = new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate());
+    const todayDay = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    const dayDiff = Math.floor((todayDay.getTime() - lastDay.getTime()) / (1000 * 60 * 60 * 24));
+    // dayDiff 0 = already had activity today (no increment)
+    // dayDiff 1 = yesterday (continue streak)
+    // dayDiff 2+ = missed a day (reset to 1)
+    const newStreak = dayDiff === 0
+      ? (rawState.streak ?? 1)
+      : dayDiff === 1
+        ? (rawState.streak ?? 0) + 1
+        : 1;
 
     // Badge checks
     const badges = [...(rawState.badges as string[] ?? [])];
