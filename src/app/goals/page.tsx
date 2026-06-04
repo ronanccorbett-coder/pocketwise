@@ -119,8 +119,7 @@ export default function GoalsPage() {
                         return <button key={ico} onClick={() => setNewIcon(ico)} style={{ width: 36, height: 36, borderRadius: 8, border: `2px solid ${newIcon === ico ? "#76AD25" : "#e2e8f0"}`, background: newIcon === ico ? "#e8f5d0" : "#f8fafc", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
                           <I size={16} color={newIcon === ico ? "#76AD25" : "#94a3b8"} />
                         </button>;
-                      }
-                      ))}
+                      })}
                     </div>
                   </div>
 
