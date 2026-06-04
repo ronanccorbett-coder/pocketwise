@@ -8,7 +8,7 @@ import { useStockSimulator, sparklinePath } from "@/lib/stockSimulator";
 import {
   DollarSign, TrendingUp, Car, AlertTriangle, Wallet,
   BarChart2, Plus, Minus, Wrench, Zap, TrendingDown,
-  Package, Cpu, Music, Camera, Bike, ShoppingBag,
+  Package, Cpu, Music, Camera, Bike, ShoppingBag, Star, BookOpen,
 } from "lucide-react";
 
 type Tab = "Overview"|"Markets"|"Day Trading"|"Property"|"Loans"|"Assets";
@@ -29,7 +29,7 @@ type AssetProduct = {
   tip: string;
 };
 
-const ASSET_CATEGORIES = ["All", "Vehicle", "Technology", "Recreation", "Business", "Creative"];
+const ASSET_CATEGORIES = ["All", "Vehicle", "Technology", "Recreation", "Business", "Creative", "Collectible"];
 
 const ASSET_PRODUCTS: AssetProduct[] = [
   // Vehicles
@@ -61,6 +61,20 @@ const ASSET_PRODUCTS: AssetProduct[] = [
     icon: Bike, iconColor: "#f59e0b", iconBg: "#fffbeb",
     tip: "Low depreciation and no running costs. Smart choice if you live close to work or school.",
   },
+  {
+    name: "Ford Mustang GT 2021",
+    category: "Vehicle", price: 68000, dep: 14,
+    description: "5.0L V8. Pure performance, high depreciation.",
+    icon: Car, iconColor: "#EF4444", iconBg: "#fef2f2",
+    tip: "High-end cars lose more in absolute dollars even at similar depreciation rates. $68k at 14% = $9,520/year lost.",
+  },
+  {
+    name: "Classic Mini Cooper 1975",
+    category: "Vehicle", price: 28000, dep: -3,
+    description: "Restored classic. Appreciates over time if maintained.",
+    icon: Car, iconColor: "#a78bfa", iconBg: "#faf5ff",
+    tip: "Classic cars in good condition can appreciate — rare exception to the depreciation rule. Condition and provenance are everything.",
+  },
 
   // Technology
   {
@@ -90,6 +104,13 @@ const ASSET_PRODUCTS: AssetProduct[] = [
     description: "Print and sell custom products from home.",
     icon: Package, iconColor: "#0891b2", iconBg: "#ecfeff",
     tip: "Income-generating asset. The $60/week income comes from selling prints on Etsy or locally.",
+  },
+  {
+    name: "Professional Drone",
+    category: "Technology", price: 4200, dep: 18, income: 110,
+    description: "Real estate and event aerial photography.",
+    icon: Cpu, iconColor: "#06b6d4", iconBg: "#ecfeff",
+    tip: "Licensed drone pilots earn $80-200 per booking. With 1-2 jobs per week this easily covers depreciation.",
   },
 
   // Creative
@@ -135,8 +156,14 @@ const ASSET_PRODUCTS: AssetProduct[] = [
     category: "Business", price: 4500, dep: 8, income: 95,
     description: "Place in an office or school. Passive income.",
     icon: ShoppingBag, iconColor: "#f59e0b", iconBg: "#fffbeb",
-    xpReq: 300,
     tip: "Passive income asset. Find a good location and it earns while you sleep.",
+  },
+  {
+    name: "Commercial Coffee Machine",
+    category: "Business", price: 8500, dep: 10, income: 220,
+    description: "Rent to a café or run a coffee cart.",
+    icon: Wrench, iconColor: "#92400e", iconBg: "#fef3c7",
+    tip: "Coffee machines rented to cafés earn $200-300/week. High upfront cost but strong passive returns.",
   },
 
   // Recreation
@@ -154,7 +181,66 @@ const ASSET_PRODUCTS: AssetProduct[] = [
     icon: Zap, iconColor: "#3B82F6", iconBg: "#eff6ff",
     tip: "Lowest depreciation on the list. Kayaks last decades if stored properly.",
   },
+
+  // Collectibles — rare, high-value, appreciation potential
+  {
+    name: "Signed All Blacks Jersey (RWC 2023)",
+    category: "Collectible", price: 4800, dep: -5,
+    description: "Full team signatures. Certificate of authenticity.",
+    icon: Star, iconColor: "#f59e0b", iconBg: "#fffbeb",
+    tip: "Sports memorabilia from winning teams appreciates over time. Storage and authentication are critical to value.",
+  },
+  {
+    name: "First Edition Pokémon Cards (Sealed)",
+    category: "Collectible", price: 12000, dep: -8,
+    description: "Base Set booster box. Never opened. Grading certified.",
+    icon: Star, iconColor: "#EF4444", iconBg: "#fef2f2",
+    tip: "Sealed first edition Pokémon cards have appreciated 300%+ over the past decade. Condition is everything.",
+  },
+  {
+    name: "NZ Mint Gold Coin Collection",
+    category: "Collectible", price: 6500, dep: -2,
+    description: "Limited edition gold coins. Inflation hedge.",
+    icon: DollarSign, iconColor: "#f59e0b", iconBg: "#fffbeb",
+    tip: "Gold holds value against inflation. NZ Mint coins carry a premium over spot gold price due to collectibility.",
+  },
+  {
+    name: "Vintage Rolex Submariner (1985)",
+    category: "Collectible", price: 28000, dep: -10,
+    description: "Serviced, original bracelet. Vintage luxury watch.",
+    icon: Star, iconColor: "#6b7280", iconBg: "#f8fafc",
+    tip: "Vintage Rolex watches have massively outperformed stocks over 20 years. But liquidity is low — hard to sell quickly.",
+  },
+  {
+    name: "Original Colin McCahon Painting",
+    category: "Collectible", price: 85000, dep: -6,
+    description: "Authenticated NZ fine art. Museum-quality provenance.",
+    icon: Star, iconColor: "#a78bfa", iconBg: "#faf5ff",
+    tip: "NZ fine art by established artists like McCahon has appreciated significantly at auction. But the market is illiquid and requires expertise.",
+  },
+  {
+    name: "Factory Sealed Nintendo 64 (PAL)",
+    category: "Collectible", price: 3200, dep: -12,
+    description: "New in box, never opened. 1996 PAL version.",
+    icon: Cpu, iconColor: "#76AD25", iconBg: "#e8f5d0",
+    tip: "Sealed retro gaming hardware appreciates because supply is fixed and nostalgia demand grows. Grading services like WATA verify authenticity.",
+  },
+  {
+    name: "Rare NZ Postage Stamp Collection",
+    category: "Collectible", price: 2200, dep: -3,
+    description: "Pre-decimal NZ stamps, expertly catalogued.",
+    icon: BookOpen, iconColor: "#0891b2", iconBg: "#ecfeff",
+    tip: "Philately (stamp collecting) is a niche market but rare NZ stamps have consistent auction demand from specialist collectors.",
+  },
+  {
+    name: "Limited Edition Air Jordan 1 Retro",
+    category: "Collectible", price: 1800, dep: -15,
+    description: "DS (deadstock). Original box. Grail colourway.",
+    icon: ShoppingBag, iconColor: "#EF4444", iconBg: "#fef2f2",
+    tip: "Sneaker resale is a real market. Limited releases can double in value within weeks — but trends shift fast and storage matters.",
+  },
 ];
+
 
 const PROPERTIES = [
   {name:"Auckland Apartment",price:485000,deposit:97000,weeklyRent:460,mortgageWeekly:620,suburb:"Ponsonby"},
@@ -412,8 +498,7 @@ export default function PortfolioPage(){
 
           {/* ASSETS */}
           {tab === "Assets" && (
-            <XPGate gate="buyAsset" label="Assets">
-              <div>
+            <div>
                 {/* Owned assets summary */}
                 {ownedAssets.length > 0 && (
                   <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "18px", marginBottom: 20 }}>
@@ -601,7 +686,7 @@ export default function PortfolioPage(){
                   })}
                 </div>
               </div>
-            </XPGate>
+            </div>
           )}
         </div>
       </div>
