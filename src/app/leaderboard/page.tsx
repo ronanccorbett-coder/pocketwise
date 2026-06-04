@@ -18,17 +18,6 @@ export default function LeaderboardPage() {
 
   const userRank = sorted.findIndex(s => s.userId === user?.id);
 
-  function getDisplayName(userId: string, isMe: boolean): string {
-    if (isMe) return "You";
-    const found = allUsers.find((u: any) => u.id === userId);
-    if (found?.email) {
-      // Show first part of email before @, capitalised
-      const name = found.email.split("@")[0];
-      return name.charAt(0).toUpperCase() + name.slice(1);
-    }
-    return `Student ${userId?.slice(0, 6) ?? "?"}`;
-  }
-
   const rankLabel = (i: number) =>
     i === 0 ? "1st" : i === 1 ? "2nd" : i === 2 ? "3rd" : `#${i + 1}`;
 
