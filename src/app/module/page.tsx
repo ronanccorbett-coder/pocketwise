@@ -31,31 +31,47 @@ type ModuleData = {
 // ── Path generation ───────────────────────────────────────────────────────
 function generateNodes(count: number, svgW: number, svgH: number) {
   const nodes: { x: number; y: number }[] = [];
-  const padX = 70;
-  const padY = 60;
+  const padX = 80;
+  const padY = 70;
   const usableW = svgW - padX * 2;
-  const rowHeight = Math.min(120, (svgH - padY * 2) / Math.max(count - 1, 1));
+  const rowHeight = Math.min(110, (svgH - padY * 2) / Math.max(count - 1, 1));
+  const centerX = padX + usableW / 2;
+  const amp = usableW * 0.38;
 
   for (let i = 0; i < count; i++) {
     const y = padY + i * rowHeight;
-    const phase = (i / Math.max(count - 1, 1)) * Math.PI * 2.5;
-    const x = padX + usableW / 2 + Math.sin(phase) * (usableW * 0.42);
+    // Smooth sine wave — full period over all nodes
+    const t = count <= 1 ? 0 : i / (count - 1);
+    const x = centerX + Math.sin(t * Math.PI * 2.2) * amp;
     nodes.push({ x: Math.round(x), y: Math.round(y) });
   }
   return nodes;
 }
 
-
+// Build a smooth path that passes EXACTLY through every node point
+// Uses Catmull-Rom spline converted to cubic bezier
 function buildPath(pts: { x: number; y: number }[]) {
   if (pts.length < 2) return "";
+  if (pts.length === 2) return `M ${pts[0].x} ${pts[0].y} L ${pts[1].x} ${pts[1].y}`;
+
   let d = `M ${pts[0].x} ${pts[0].y}`;
-  for (let i = 1; i < pts.length; i++) {
-    const p = pts[i - 1], c = pts[i];
-    const mx = (p.x + c.x) / 2;
-    const my = (p.y + c.y) / 2;
-    d += ` Q ${p.x} ${(p.y + c.y) / 2} ${mx} ${my}`;
-    if (i === pts.length - 1) d += ` Q ${c.x} ${(p.y + c.y) / 2} ${c.x} ${c.y}`;
+
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[Math.max(i - 1, 0)];
+    const p1 = pts[i];
+    const p2 = pts[i + 1];
+    const p3 = pts[Math.min(i + 2, pts.length - 1)];
+
+    // Catmull-Rom tension = 0.4 (tighter curve)
+    const t = 0.4;
+    const cp1x = p1.x + (p2.x - p0.x) * t / 2;
+    const cp1y = p1.y + (p2.y - p0.y) * t / 2;
+    const cp2x = p2.x - (p3.x - p1.x) * t / 2;
+    const cp2y = p2.y - (p3.y - p1.y) * t / 2;
+
+    d += ` C ${cp1x.toFixed(1)} ${cp1y.toFixed(1)}, ${cp2x.toFixed(1)} ${cp2y.toFixed(1)}, ${p2.x} ${p2.y}`;
   }
+
   return d;
 }
 
