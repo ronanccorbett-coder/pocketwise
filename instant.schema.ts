@@ -10,6 +10,7 @@ const _schema = i.schema({
 
     userState: i.entity({
       userId:           i.string().indexed(),
+      email:            i.string().optional(),
       xp:               i.number().optional(),
       balance:          i.number().optional(),
       totalEarned:      i.number().optional(),

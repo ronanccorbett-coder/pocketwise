@@ -157,6 +157,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
   const loans     = (loanData?.userLoans ?? []) as Loan[];
   const assets    = (assetData?.userAssets ?? []) as Asset[];
 
+  // Sync email to userState so leaderboard can show names
+  useEffect(() => {
+    if (!authUser || !rawState || !authUser.email) return;
+    if ((rawState as any).email === authUser.email) return;
+    db.transact((db as any).tx.userState[rawState.id].update({ email: authUser.email }));
+  }, [authUser?.email, rawState?.id]);
+
   // Clean up duplicate userState rows — keep the one with the most XP
   const bootstrapRef = useRef(false);
   useEffect(() => {
@@ -182,6 +189,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     db.transact(
       (db as any).tx.userState[id()].update({
         userId: authUser.id,
+        email: authUser.email ?? "",
         xp: 0,
         balance: 5000,
         totalEarned: 5000,
