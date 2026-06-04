@@ -686,6 +686,7 @@ export default function PortfolioPage(){
                   })}
                 </div>
               </div>
+            </div>
           )}
         </div>
       </div>
