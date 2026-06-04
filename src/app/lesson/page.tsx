@@ -797,7 +797,7 @@ function LessonContent() {
             <ChevronLeft size={18} />
           </button>
 
-          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8, mx: "auto" }}>
+          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
               <Zap size={14} color="#f59e0b" />
               <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#f59e0b" }}>{lesson.xpReward} XP</span>
