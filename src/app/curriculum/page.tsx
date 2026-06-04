@@ -4,180 +4,178 @@ import { useRouter } from "next/navigation";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useGame } from "@/lib/gameContext";
-import { BookOpen, Zap, Award, Flame, ChevronRight, Lock, Play } from "lucide-react";
+import { MascotMessage, pickMood } from "@/components/Mascot";
+import { BookOpen, Zap, Award, Flame, ChevronRight, Lock, Play, Star } from "lucide-react";
 
 type Lesson = {
-  filename: string;
-  title: string;
-  order: number;
-  xpReward: number;
-  dayNumber: number;
-  weekNumber: number;
-  bloomsLevel: string;
+  filename: string; title: string; order: number; xpReward: number;
+  dayNumber: number; weekNumber: number; bloomsLevel: string;
 };
-
 type Module = {
-  folder: string;
-  title: string;
-  description?: string;
-  ageTrack: string;
-  yearLevel: string;
-  nceaStandard?: string;
-  nceaCredits?: number;
-  nceaAssessmentType?: string;
-  xpReward: number;
-  colorTheme?: string;
-  isPublished?: boolean;
-  order?: number;
-  lessons: Lesson[];
-  lessonCount: number;
+  folder: string; title: string; description?: string;
+  ageTrack: string; yearLevel: string; nceaStandard?: string;
+  nceaCredits?: number; xpReward: number; colorTheme?: string;
+  isPublished?: boolean; order?: number;
+  lessons: Lesson[]; lessonCount: number;
 };
 
 const LEVEL_GROUPS = [
   { key: "11",    label: "Level 1",        sub: "Year 11 · NCEA Level 1",  color: "#76AD25" },
   { key: "12",    label: "Level 2",        sub: "Year 12 · NCEA Level 2",  color: "#3B82F6" },
   { key: "13",    label: "Level 3",        sub: "Year 13 · NCEA Level 3",  color: "#EF4444" },
-  { key: "extra", label: "Extra Learning", sub: "Beyond the curriculum",   color: "#6b7280" },
+  { key: "extra", label: "Extra Learning", sub: "Beyond the curriculum",   color: "#f59e0b" },
 ];
 
-function trackToGroup(ageTrack: string, yearLevel?: string): string {
-  const combined = `${ageTrack} ${yearLevel || ""}`.toLowerCase();
-  if (combined.includes("11") || ageTrack === "15") return "11";
-  if (combined.includes("12") || ageTrack === "16") return "12";
-  if (combined.includes("13") || ageTrack === "17" || ageTrack === "18") return "13";
-  if (combined.includes("extra")) return "extra";
-  return "extra";
+function getLevel(mod: Module) {
+  if (mod.ageTrack === "extra") return "extra";
+  if (mod.yearLevel?.includes("13")) return "13";
+  if (mod.yearLevel?.includes("12")) return "12";
+  return "11";
 }
 
+const FONT = "Inter, system-ui, sans-serif";
+
+// ── Animated XP bar ──────────────────────────────────────────────────────
+function XPBar({ xp }: { xp: number }) {
+  const milestones = [100, 200, 300, 500, 800, 1500, 3000, 5000];
+  const nextMilestone = milestones.find(m => m > xp) ?? 5000;
+  const prevMilestone = milestones.filter(m => m <= xp).pop() ?? 0;
+  const pct = Math.min(100, ((xp - prevMilestone) / (nextMilestone - prevMilestone)) * 100);
+
+  return (
+    <div style={{ marginBottom: 6 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+          <Zap size={13} color="#f59e0b" fill="#f59e0b" />
+          <span style={{ fontWeight: 800, color: "#f59e0b", fontSize: "0.85rem" }}>{xp.toLocaleString()} XP</span>
+        </div>
+        <span style={{ fontSize: "0.72rem", color: "#8b9dc3" }}>Next: {nextMilestone} XP</span>
+      </div>
+      <div style={{ height: 8, background: "rgba(255,255,255,.1)", borderRadius: 99, overflow: "hidden" }}>
+        <div style={{
+          height: 8, borderRadius: 99, width: `${pct}%`,
+          background: "linear-gradient(90deg, #76AD25, #22c55e)",
+          transition: "width 1s cubic-bezier(.34,1.56,.64,1)",
+          boxShadow: "0 0 8px rgba(118,173,37,.6)",
+        }} />
+      </div>
+    </div>
+  );
+}
+
+// ── Module Card ───────────────────────────────────────────────────────────
 function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: string[] }) {
   const router = useRouter();
   const accent = mod.colorTheme || "#76AD25";
   const totalXp = mod.lessons.reduce((s, l) => s + (l.xpReward || 0), 0) || mod.xpReward || 0;
+  const firstLesson = mod.lessons.find(l => !completedLessons.includes(`${mod.folder}/${l.filename}`)) ?? mod.lessons[0];
+  const completedCount = mod.lessons.filter(l => completedLessons.includes(`${mod.folder}/${l.filename}`)).length;
+  const progressPct = mod.lessonCount > 0 ? Math.round((completedCount / mod.lessonCount) * 100) : 0;
+  const isComplete = completedCount === mod.lessonCount && mod.lessonCount > 0;
 
-  // Find the first incomplete lesson, or first lesson if none completed
-  const firstLesson = mod.lessons.find(l => !completedLessons.includes(`${mod.folder}/${l.filename}`))
-    ?? mod.lessons[0];
-
-  const completedCount = mod.lessons.filter(l =>
-    completedLessons.includes(`${mod.folder}/${l.filename}`)
-  ).length;
-
-  const progressPct = mod.lessonCount > 0
-    ? Math.round((completedCount / mod.lessonCount) * 100)
-    : 0;
-
-  function openLesson(lesson: Lesson) {
-    router.push(`/lesson?folder=${mod.folder}&filename=${lesson.filename}`);
-  }
-
-  function startModule() {
-    router.push(`/module?folder=${mod.folder}`);
-  }
-
-  const btnLabel = completedCount === 0
-    ? "Start Module"
-    : completedCount === mod.lessonCount
-    ? "Review Module"
-    : `Continue (${completedCount}/${mod.lessonCount})`;
+  const btnLabel = completedCount === 0 ? "Start" : isComplete ? "Review" : "Continue";
 
   return (
-    <div style={{
-      background: "#fff", border: "1px solid #e2e8f0",
-      borderRadius: 14, overflow: "hidden",
-      transition: "box-shadow .15s",
-    }}>
-      {/* Colour bar */}
-      <div style={{ height: 4, background: accent }} />
+    <div
+      onClick={() => mod.lessonCount > 0 && router.push(`/module?folder=${mod.folder}`)}
+      style={{
+        background: "#fff",
+        border: `2px solid ${isComplete ? accent : "#e2e8f0"}`,
+        borderRadius: 18,
+        overflow: "hidden",
+        cursor: mod.lessonCount > 0 ? "pointer" : "default",
+        transition: "transform .15s, box-shadow .15s",
+        position: "relative",
+      }}
+      onMouseEnter={e => { if (mod.lessonCount > 0) { (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; (e.currentTarget as HTMLElement).style.boxShadow = `0 8px 28px ${accent}22`; } }}
+      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = ""; }}
+    >
+      {/* Colour band top */}
+      <div style={{ height: 5, background: `linear-gradient(90deg, ${accent}, ${accent}88)` }} />
 
-      <div style={{ padding: "18px 20px" }}>
-        {/* Title row */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10, marginBottom: 8 }}>
-          <div style={{ flex: 1 }}>
-            <h3 style={{ fontWeight: 700, fontSize: "0.95rem", color: "#0d1526", lineHeight: 1.3, marginBottom: 4 }}>
-              {mod.title}
-            </h3>
-            {mod.nceaStandard && (
-              <span style={{
-                background: "#f1f5f9", color: "#475569",
-                padding: "2px 8px", borderRadius: 4,
-                fontSize: "0.7rem", fontWeight: 600,
-              }}>
-                {mod.nceaStandard}
-                {mod.nceaCredits ? ` · ${mod.nceaCredits} credits` : ""}
-                {mod.nceaAssessmentType ? ` · ${mod.nceaAssessmentType}` : ""}
-              </span>
-            )}
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 4, flexShrink: 0 }}>
-            <Zap size={13} color="#f59e0b" />
-            <span style={{ fontWeight: 700, fontSize: "0.78rem", color: "#0d1526" }}>{totalXp} XP</span>
-          </div>
+      {/* Complete badge */}
+      {isComplete && (
+        <div style={{ position: "absolute", top: 14, right: 14, background: accent, color: "#fff", padding: "3px 10px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: ".05em" }}>
+          Complete
         </div>
+      )}
 
-        {/* Description */}
+      <div style={{ padding: "16px 18px 18px" }}>
+        {/* Standard badge */}
+        {mod.nceaStandard && (
+          <div style={{ display: "inline-block", background: `${accent}18`, color: accent, padding: "2px 10px", borderRadius: 6, fontSize: "0.68rem", fontWeight: 700, marginBottom: 8 }}>
+            {mod.nceaStandard}
+          </div>
+        )}
+
+        <h3 style={{ fontWeight: 800, fontSize: "0.975rem", color: "#0d1526", marginBottom: 4, lineHeight: 1.3 }}>
+          {mod.title}
+        </h3>
+
         {mod.description && (
-          <p style={{ fontSize: "0.8rem", color: "#64748b", lineHeight: 1.6, marginBottom: 12 }}>
+          <p style={{ fontSize: "0.78rem", color: "#64748b", lineHeight: 1.5, marginBottom: 12, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
             {mod.description}
           </p>
         )}
 
+        {/* Stats row */}
+        <div style={{ display: "flex", gap: 12, marginBottom: 12 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+            <BookOpen size={12} color="#94a3b8" />
+            <span style={{ fontSize: "0.72rem", color: "#94a3b8" }}>{mod.lessonCount} lessons</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+            <Zap size={12} color="#f59e0b" />
+            <span style={{ fontSize: "0.72rem", color: "#94a3b8" }}>{totalXp} XP</span>
+          </div>
+          {completedCount > 0 && (
+            <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+              <Star size={12} color={accent} fill={accent} />
+              <span style={{ fontSize: "0.72rem", color: accent, fontWeight: 700 }}>{completedCount}/{mod.lessonCount}</span>
+            </div>
+          )}
+        </div>
+
         {/* Progress bar */}
         {mod.lessonCount > 0 && (
-          <div style={{ marginBottom: 12 }}>
-            <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#94a3b8", marginBottom: 4 }}>
-              <span>{completedCount} of {mod.lessonCount} lessons</span>
-              <span>{progressPct}%</span>
-            </div>
-            <div style={{ background: "#f1f5f9", borderRadius: 99, height: 5, overflow: "hidden" }}>
+          <div style={{ marginBottom: 14 }}>
+            <div style={{ height: 6, background: "#f1f5f9", borderRadius: 99, overflow: "hidden" }}>
               <div style={{
-                background: progressPct === 100 ? "#76AD25" : accent,
-                height: 5, borderRadius: 99,
-                width: `${progressPct}%`,
-                transition: "width .4s",
+                height: 6, borderRadius: 99, width: `${progressPct}%`,
+                background: isComplete ? `linear-gradient(90deg, ${accent}, ${accent}88)` : `linear-gradient(90deg, ${accent}88, ${accent}44)`,
+                transition: "width .6s ease",
               }} />
             </div>
           </div>
         )}
 
-        {/* Stats row */}
-        <div style={{ display: "flex", gap: 6, marginBottom: 14, flexWrap: "wrap" }}>
-          <span style={{ background: "#f1f5f9", color: "#475569", padding: "2px 9px", borderRadius: 6, fontSize: "0.72rem", fontWeight: 500 }}>
-            {mod.lessonCount} lesson{mod.lessonCount !== 1 ? "s" : ""}
-          </span>
-          {progressPct === 100 && (
-            <span style={{ background: "#e8f5d0", color: "#3d5a12", padding: "2px 9px", borderRadius: 6, fontSize: "0.72rem", fontWeight: 700 }}>
-              Complete
-            </span>
-          )}
-          {!mod.isPublished && (
-            <span style={{ background: "#fef2f2", color: "#EF4444", padding: "2px 9px", borderRadius: 6, fontSize: "0.72rem", fontWeight: 600 }}>
-              Draft
-            </span>
-          )}
-        </div>
-
-        {/* Open module map */}
+        {/* CTA button */}
         <button
-          onClick={() => router.push(`/module?folder=${mod.folder}`)}
+          onClick={e => { e.stopPropagation(); mod.lessonCount > 0 && router.push(`/module?folder=${mod.folder}`); }}
           disabled={mod.lessonCount === 0}
           style={{
-            width: "100%", padding: "11px 0",
-            background: mod.lessonCount === 0 ? "#f1f5f9" : "#0d1526",
-            color: mod.lessonCount === 0 ? "#94a3b8" : "#fff",
-            border: "none", borderRadius: 8,
-            fontSize: "0.825rem", fontWeight: 700,
+            width: "100%", padding: "10px",
+            background: mod.lessonCount === 0 ? "#f1f5f9" : isComplete ? `${accent}18` : accent,
+            color: mod.lessonCount === 0 ? "#94a3b8" : isComplete ? accent : "#fff",
+            border: isComplete ? `1.5px solid ${accent}40` : "none",
+            borderRadius: 10, fontSize: "0.825rem", fontWeight: 700,
             cursor: mod.lessonCount === 0 ? "not-allowed" : "pointer",
-            fontFamily: "Inter, sans-serif",
+            fontFamily: FONT,
             display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+            transition: "all .15s",
           }}>
-          <Play size={13} />
-          {btnLabel}
+          {mod.lessonCount === 0 ? (
+            <><Lock size={13} /> Coming Soon</>
+          ) : (
+            <><Play size={13} /> {btnLabel} Module</>
+          )}
         </button>
       </div>
     </div>
   );
 }
 
+// ── Main page ─────────────────────────────────────────────────────────────
 export default function CurriculumPage() {
   const { state } = useGame();
   const [modules, setModules] = useState<Module[]>([]);
@@ -186,146 +184,166 @@ export default function CurriculumPage() {
   const [activeLevel, setActiveLevel] = useState("11");
 
   const completedLessons = (state?.completedLessons as string[]) ?? [];
+  const xp = state?.xp ?? 0;
+  const streak = state?.streak ?? 0;
+  const totalLessons = completedLessons.length;
+  const recentlyCompleted = totalLessons > 0 && Date.now() - (state?.lastActivityDate ?? 0) < 60000;
+  const mood = pickMood(xp, streak, recentlyCompleted);
 
   useEffect(() => {
     fetch("/api/modules")
       .then(r => r.json())
       .then(d => {
-        setModules(d.modules || []);
-        if (d.error) setError(d.error);
+        if (d.modules) setModules(d.modules);
+        else setError(d.error ?? "Could not load modules");
         setLoading(false);
       })
-      .catch(() => { setError("Could not load modules."); setLoading(false); });
+      .catch(err => { setError(err.message); setLoading(false); });
   }, []);
 
   const grouped = LEVEL_GROUPS.map(g => ({
     ...g,
-    modules: modules.filter(m => trackToGroup(m.ageTrack, m.yearLevel) === g.key),
+    modules: modules.filter(m => getLevel(m) === g.key).sort((a, b) => (a.order ?? 99) - (b.order ?? 99)),
   }));
 
-  const activeGroup = grouped.find(g => g.key === activeLevel)!;
+  const currentGroup = grouped.find(g => g.key === activeLevel) ?? grouped[0];
+
+  // Overall progress stats
+  const totalModules = modules.length;
+  const completedModules = modules.filter(m =>
+    m.lessons.length > 0 && m.lessons.every(l => completedLessons.includes(`${m.folder}/${l.filename}`))
+  ).length;
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "#f1f5f9" }}>
+      <div style={{ minHeight: "100vh", background: "#f0f4f8", fontFamily: FONT }}>
         <Nav />
 
-        {/* Hero */}
-        <div style={{ background: "linear-gradient(135deg, #0d1526 0%, #111c30 100%)", padding: "32px 2rem" }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-            <h1 style={{ fontSize: "1.5rem", fontWeight: 800, color: "#fff", marginBottom: 4 }}>Curriculum</h1>
-            <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 20 }}>
-              NCEA-aligned financial literacy from Year 11 to Year 13.
-            </p>
-            <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+        {/* Hero with mascot */}
+        <div style={{
+          background: "linear-gradient(135deg, #0d1526 0%, #0f2318 50%, #0d1526 100%)",
+          padding: "24px 1.5rem 28px",
+          position: "relative",
+          overflow: "hidden",
+        }}>
+          {/* Background sparkles */}
+          {[...Array(12)].map((_, i) => (
+            <div key={i} style={{
+              position: "absolute",
+              left: `${(i * 37 + 10) % 100}%`,
+              top: `${(i * 23 + 5) % 100}%`,
+              width: i % 3 === 0 ? 3 : 2,
+              height: i % 3 === 0 ? 3 : 2,
+              borderRadius: "50%",
+              background: i % 2 === 0 ? "#76AD25" : "#f59e0b",
+              opacity: 0.4,
+              animation: `twinkle ${2 + (i % 3)}s ease-in-out infinite`,
+              animationDelay: `${i * 0.3}s`,
+            }} />
+          ))}
+
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            {/* Mascot row */}
+            <div style={{ marginBottom: 20 }}>
+              <MascotMessage mood={mood} xp={xp} streak={streak} />
+            </div>
+
+            {/* XP progress */}
+            <div style={{ background: "rgba(255,255,255,.07)", borderRadius: 14, padding: "14px 18px", marginBottom: 16 }}>
+              <XPBar xp={xp} />
+            </div>
+
+            {/* Stats pills */}
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               {[
-                { Icon: Zap,      val: (state?.xp ?? 0).toLocaleString(),                              label: "Total XP",     color: "#f59e0b" },
-                { Icon: BookOpen, val: completedLessons.length.toString(),                             label: "Lessons Done", color: "#3B82F6" },
-                { Icon: Award,    val: ((state?.badges as string[]) ?? []).length.toString(),          label: "Badges",       color: "#a78bfa" },
-                { Icon: Flame,    val: (state?.streak ?? 0).toString(),                               label: "Day Streak",   color: "#f59e0b" },
-              ].map(s => (
-                <div key={s.label} style={{ background: "rgba(255,255,255,.08)", borderRadius: 12, padding: "10px 18px", textAlign: "center" }}>
-                  <div style={{ display: "flex", justifyContent: "center", marginBottom: 3 }}>
-                    <s.Icon size={14} color={s.color} />
-                  </div>
-                  <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#fff" }}>{s.val}</div>
-                  <div style={{ fontSize: "0.7rem", color: "#8b9dc3" }}>{s.label}</div>
+                { Icon: Flame, val: streak, label: "day streak", color: "#f59e0b", show: streak > 0 },
+                { Icon: BookOpen, val: totalLessons, label: "lessons done", color: "#3B82F6", show: true },
+                { Icon: Award, val: completedModules, label: "modules complete", color: "#76AD25", show: totalModules > 0 },
+                { Icon: Star, val: (state?.badges as string[] ?? []).length, label: "badges", color: "#a78bfa", show: true },
+              ].filter(s => s.show).map(s => (
+                <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 5, background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 99, padding: "5px 12px" }}>
+                  <s.Icon size={13} color={s.color} fill={s.Icon === Flame || s.Icon === Star ? s.color : "none"} />
+                  <span style={{ fontWeight: 800, color: "#fff", fontSize: "0.8rem" }}>{s.val}</span>
+                  <span style={{ color: "#8b9dc3", fontSize: "0.72rem" }}>{s.label}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "28px 1.5rem" }}>
-
-          {/* Level tabs */}
-          <div style={{ display: "flex", gap: 6, marginBottom: 28, flexWrap: "wrap" }}>
+        {/* Level tabs */}
+        <div style={{ background: "#fff", borderBottom: "2px solid #f1f5f9", padding: "0 1.5rem", position: "sticky", top: 56, zIndex: 30 }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 0 }}>
             {grouped.map(g => (
               <button
                 key={g.key}
                 onClick={() => setActiveLevel(g.key)}
                 style={{
-                  padding: "9px 20px", borderRadius: 9999,
-                  background: activeLevel === g.key ? g.color : "#fff",
-                  color: activeLevel === g.key ? "#fff" : "#475569",
-                  border: `1.5px solid ${activeLevel === g.key ? g.color : "#e2e8f0"}`,
-                  fontWeight: 600, fontSize: "0.875rem", cursor: "pointer",
-                  fontFamily: "Inter, sans-serif", transition: "all .12s",
-                  display: "flex", alignItems: "center", gap: 8,
+                  padding: "14px 20px", background: "none", border: "none",
+                  borderBottom: `3px solid ${activeLevel === g.key ? g.color : "transparent"}`,
+                  color: activeLevel === g.key ? g.color : "#94a3b8",
+                  fontWeight: 700, fontSize: "0.85rem", cursor: "pointer",
+                  fontFamily: FONT, transition: "all .15s", whiteSpace: "nowrap",
                 }}>
                 {g.label}
-                <span style={{
-                  background: activeLevel === g.key ? "rgba(255,255,255,.25)" : "#f1f5f9",
-                  color: activeLevel === g.key ? "#fff" : "#64748b",
-                  borderRadius: 99, padding: "1px 7px", fontSize: "0.72rem", fontWeight: 700,
-                }}>
-                  {g.modules.length}
-                </span>
+                {g.modules.length > 0 && (
+                  <span style={{ marginLeft: 6, background: activeLevel === g.key ? g.color : "#f1f5f9", color: activeLevel === g.key ? "#fff" : "#94a3b8", borderRadius: 99, padding: "1px 7px", fontSize: "0.68rem", fontWeight: 800 }}>
+                    {g.modules.length}
+                  </span>
+                )}
               </button>
             ))}
           </div>
+        </div>
 
-          {/* Heading */}
-          <div style={{ marginBottom: 20 }}>
-            <h2 style={{ fontWeight: 800, fontSize: "1.2rem", color: "#0d1526", marginBottom: 3 }}>
-              {activeGroup.label}
-            </h2>
-            <p style={{ fontSize: "0.85rem", color: "#64748b" }}>{activeGroup.sub}</p>
-          </div>
-
-          {/* Loading skeletons */}
+        {/* Module grid */}
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "24px 1.5rem 60px" }}>
           {loading && (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 16 }}>
-              {[1, 2, 3].map(i => (
-                <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, height: 200 }} />
+            <div style={{ textAlign: "center", padding: "60px 0" }}>
+              <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 12 }}>
+                {[0, 1, 2].map(i => (
+                  <div key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: "#76AD25", animation: `pulse 1s ease-in-out infinite`, animationDelay: `${i * 0.2}s` }} />
+                ))}
+              </div>
+              <p style={{ color: "#94a3b8", fontSize: "0.875rem" }}>Loading your curriculum...</p>
+            </div>
+          )}
+
+          {error && (
+            <div style={{ background: "#fff", border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px", textAlign: "center" }}>
+              <div style={{ fontSize: "2rem", marginBottom: 12 }}>🥝</div>
+              <p style={{ color: "#EF4444", fontWeight: 700, marginBottom: 4 }}>Could not load modules</p>
+              <p style={{ color: "#94a3b8", fontSize: "0.825rem" }}>{error}</p>
+            </div>
+          )}
+
+          {!loading && !error && currentGroup.modules.length === 0 && (
+            <div style={{ background: "#fff", border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px", textAlign: "center" }}>
+              <div style={{ fontSize: "3rem", marginBottom: 12 }}>📚</div>
+              <p style={{ color: "#0d1526", fontWeight: 700, fontSize: "1rem", marginBottom: 4 }}>{currentGroup.label} coming soon</p>
+              <p style={{ color: "#94a3b8", fontSize: "0.825rem" }}>Start with Level 1 while we build this out!</p>
+            </div>
+          )}
+
+          {!loading && !error && currentGroup.modules.length > 0 && (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16 }}>
+              {currentGroup.modules.map(mod => (
+                <ModuleCard key={mod.folder} mod={mod} completedLessons={completedLessons} />
               ))}
             </div>
           )}
-
-          {/* Error */}
-          {error && !loading && (
-            <div style={{ background: "#fef2f2", border: "1px solid #fecaca", borderRadius: 12, padding: "16px 20px", marginBottom: 20 }}>
-              <div style={{ fontWeight: 700, color: "#EF4444", fontSize: "0.875rem", marginBottom: 4 }}>
-                Could not load modules
-              </div>
-              <p style={{ fontSize: "0.8rem", color: "#ef4444", opacity: 0.8 }}>{error}</p>
-              <p style={{ fontSize: "0.78rem", color: "#64748b", marginTop: 8 }}>
-                Make sure <code style={{ background: "#f1f5f9", padding: "1px 5px", borderRadius: 4 }}>pocketwise-curriculum</code> is
-                one level above this project, or set <code style={{ background: "#f1f5f9", padding: "1px 5px", borderRadius: 4 }}>CURRICULUM_DIR</code> in .env.local
-              </p>
-            </div>
-          )}
-
-          {/* Modules */}
-          {!loading && activeGroup.modules.length > 0 && (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 16 }}>
-              {activeGroup.modules
-                .sort((a, b) => (a.order || 99) - (b.order || 99))
-                .map(m => (
-                  <ModuleCard
-                    key={m.folder}
-                    mod={m}
-                    completedLessons={completedLessons}
-                  />
-                ))}
-            </div>
-          )}
-
-          {/* Empty state */}
-          {!loading && activeGroup.modules.length === 0 && (
-            <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: "48px", textAlign: "center" }}>
-              <Lock size={32} color="#cbd5e1" style={{ margin: "0 auto 16px", display: "block" }} />
-              <h3 style={{ fontWeight: 700, fontSize: "1rem", color: "#0d1526", marginBottom: 8 }}>
-                No {activeGroup.label} modules yet
-              </h3>
-              <p style={{ color: "#94a3b8", fontSize: "0.875rem", maxWidth: 380, margin: "0 auto" }}>
-                Add module folders starting with{" "}
-                <code style={{ background: "#f1f5f9", padding: "1px 5px", borderRadius: 4 }}>module-</code>{" "}
-                to your curriculum directory and they will appear here automatically.
-              </p>
-            </div>
-          )}
         </div>
+
+        <style>{`
+          @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.5); }
+          }
+          @keyframes pulse {
+            0%, 100% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 1; }
+          }
+        `}</style>
       </div>
     </AuthGuard>
   );
