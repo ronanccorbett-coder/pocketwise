@@ -496,7 +496,6 @@ export function GameProvider({ children }: { children: ReactNode }) {
       canAccess, addXp, addBalance, completeLesson,
       applyForJob, updateStockPrice,
       buyStock, sellStock, buyProperty, takeLoan, buyAsset,
-      casinoWin, casinoLoss, completeOnboarding, signOut,
       casinoWin, casinoLoss, completeOnboarding,
       clearPendingEvent, clearPendingNews, setGoals,
       signOut,
@@ -505,3 +504,15 @@ export function GameProvider({ children }: { children: ReactNode }) {
     </Ctx.Provider>
   );
 }
+
+// ── NZX Stock metadata ────────────────────────────────────────────────────
+export const NZX_STOCKS = [
+  { symbol: "ANZ",  name: "ANZ Banking Group",  sector: "Finance",     basePrice: 29.40, volatility: 0.012, dividendYield: 0.058 },
+  { symbol: "FBU",  name: "Fletcher Building",  sector: "Construction",basePrice: 4.85,  volatility: 0.022, dividendYield: 0.045 },
+  { symbol: "SPK",  name: "Spark New Zealand",  sector: "Telecom",     basePrice: 3.72,  volatility: 0.010, dividendYield: 0.072 },
+  { symbol: "MFT",  name: "Mainfreight",         sector: "Logistics",   basePrice: 68.20, volatility: 0.018, dividendYield: 0.022 },
+  { symbol: "AIR",  name: "Air New Zealand",     sector: "Aviation",    basePrice: 0.71,  volatility: 0.035, dividendYield: 0.000 },
+  { symbol: "MEL",  name: "Meridian Energy",     sector: "Utilities",   basePrice: 5.84,  volatility: 0.009, dividendYield: 0.048 },
+  { symbol: "XRO",  name: "Xero Limited",        sector: "Technology",  basePrice: 142.00,volatility: 0.028, dividendYield: 0.000 },
+  { symbol: "NZX",  name: "NZX Limited",         sector: "Finance",     basePrice: 1.28,  volatility: 0.015, dividendYield: 0.055 },
+];
