@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield, User, Star } from "lucide-react";
+import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield, User, Star, Target } from "lucide-react";
 import { useGame } from "@/lib/gameContext";
 
 const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronan@pocketwise.nz"];
@@ -10,6 +10,7 @@ const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronan@pocketwise.nz"];
 const links = [
   { href: "/curriculum",  label: "Curriculum",  Icon: BookOpen },
   { href: "/activities",  label: "Activities",  Icon: Star },
+  { href: "/goals",       label: "Goals",       Icon: Target },
   { href: "/portfolio",   label: "Portfolio",   Icon: BarChart2 },
   { href: "/jobs",        label: "Jobs",        Icon: Briefcase },
   { href: "/casino",      label: "Casino",      Icon: Spade },

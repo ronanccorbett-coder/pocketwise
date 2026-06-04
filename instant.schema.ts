@@ -24,6 +24,9 @@ const _schema = i.schema({
       currentJobId:     i.string().optional(),
       lastSalaryPaid:   i.number().optional(),
       lastWeeklyTick:   i.number().optional(),
+      pendingLifeEvent: i.string().optional(),
+      pendingNews:      i.string().optional(),
+      goals:            i.string().optional(),
     }),
 
     userStocks: i.entity({

@@ -2,6 +2,7 @@
 import { createContext, useContext, useEffect, useRef, useCallback, ReactNode } from "react";
 import { id } from "@instantdb/react";
 import { db } from "./db";
+import { generateWeeklyNews, generateLifeEvent, shouldFireLifeEvent } from "./events";
 
 // ── XP Gates ──────────────────────────────────────────────────────────────
 export const XP_GATES = {
@@ -43,6 +44,9 @@ export type UserState = {
   currentJobId: string | null;
   lastSalaryPaid: number;
   lastWeeklyTick: number;
+  pendingLifeEvent: string | null;
+  pendingNews: string | null;
+  goals: string | null;
 };
 
 export type Stock = {
@@ -114,6 +118,9 @@ type GameCtx = {
   casinoWin: (amount: number) => void;
   casinoLoss: (amount: number) => void;
   completeOnboarding: (name: string) => void;
+  clearPendingEvent: () => void;
+  clearPendingNews: () => void;
+  setGoals: (goals: { label: string; target: number }[]) => void;
   signOut: () => void;
 };
 
@@ -236,14 +243,34 @@ export function GameProvider({ children }: { children: ReactNode }) {
         const propInvested = properties.reduce((s, p) => s + (p.currentValue ?? 0), 0);
         const totalInvested = stockInvested + propInvested;
 
+        // Fire random life event ~40% of days
+        let lifeEventDelta = 0;
+        let pendingEvent = null;
+        if (shouldFireLifeEvent()) {
+          const ev = generateLifeEvent();
+          lifeEventDelta = ev.balanceChange;
+          pendingEvent = ev;
+        }
+
+        // Fire weekly news ~once every 7 days
+        const daysSinceTick = (now - lastTick) / DAY_MS;
+        let pendingNews = null;
+        if (Math.random() < (daysSinceTick / 7)) {
+          pendingNews = generateWeeklyNews();
+        }
+
+        const finalBalance = Math.max(0, newBalance + lifeEventDelta);
+
         await db.transact([
           (db as any).tx.userState[rawState.id].update({
-            balance: newBalance,
-            totalEarned: (rawState.totalEarned ?? 0) + Math.max(0, balanceDelta),
+            balance: finalBalance,
+            totalEarned: (rawState.totalEarned ?? 0) + Math.max(0, balanceDelta + lifeEventDelta),
             totalDebt,
             totalInvested,
-            netWorth: newBalance + totalInvested - totalDebt,
+            netWorth: finalBalance + totalInvested - totalDebt,
             lastWeeklyTick: now,
+            pendingLifeEvent: pendingEvent ? JSON.stringify(pendingEvent) : null,
+            pendingNews: pendingNews ? JSON.stringify(pendingNews) : null,
           }),
           ...txns,
         ]);
@@ -441,6 +468,21 @@ export function GameProvider({ children }: { children: ReactNode }) {
     db.transact((db as any).tx.userState[sid()].update({ badges }));
   }, [rawState]);
 
+  const clearPendingEvent = useCallback(() => {
+    if (!rawState || !sid()) return;
+    db.transact((db as any).tx.userState[sid()].update({ pendingLifeEvent: null }));
+  }, [rawState]);
+
+  const clearPendingNews = useCallback(() => {
+    if (!rawState || !sid()) return;
+    db.transact((db as any).tx.userState[sid()].update({ pendingNews: null }));
+  }, [rawState]);
+
+  const setGoals = useCallback((goals: { label: string; target: number }[]) => {
+    if (!rawState || !sid()) return;
+    db.transact((db as any).tx.userState[sid()].update({ goals: JSON.stringify(goals) }));
+  }, [rawState]);
+
   const signOut = useCallback(() => { db.auth.signOut(); }, []);
 
   const user: GameUser | null = authUser
@@ -455,20 +497,11 @@ export function GameProvider({ children }: { children: ReactNode }) {
       applyForJob, updateStockPrice,
       buyStock, sellStock, buyProperty, takeLoan, buyAsset,
       casinoWin, casinoLoss, completeOnboarding, signOut,
+      casinoWin, casinoLoss, completeOnboarding,
+      clearPendingEvent, clearPendingNews, setGoals,
+      signOut,
     }}>
       {children}
     </Ctx.Provider>
   );
 }
-
-// ── NZX Stock metadata ────────────────────────────────────────────────────
-export const NZX_STOCKS = [
-  { symbol: "ANZ",  name: "ANZ Banking Group",  sector: "Finance",     basePrice: 29.40, volatility: 0.012, dividendYield: 0.058 },
-  { symbol: "FBU",  name: "Fletcher Building",  sector: "Construction",basePrice: 4.85,  volatility: 0.022, dividendYield: 0.045 },
-  { symbol: "SPK",  name: "Spark New Zealand",  sector: "Telecom",     basePrice: 3.72,  volatility: 0.010, dividendYield: 0.072 },
-  { symbol: "MFT",  name: "Mainfreight",         sector: "Logistics",   basePrice: 68.20, volatility: 0.018, dividendYield: 0.022 },
-  { symbol: "AIR",  name: "Air New Zealand",     sector: "Aviation",    basePrice: 0.71,  volatility: 0.035, dividendYield: 0.000 },
-  { symbol: "MEL",  name: "Meridian Energy",     sector: "Utilities",   basePrice: 5.84,  volatility: 0.009, dividendYield: 0.048 },
-  { symbol: "XRO",  name: "Xero Limited",        sector: "Technology",  basePrice: 142.00,volatility: 0.028, dividendYield: 0.000 },
-  { symbol: "NZX",  name: "NZX Limited",         sector: "Finance",     basePrice: 1.28,  volatility: 0.015, dividendYield: 0.055 },
-];
