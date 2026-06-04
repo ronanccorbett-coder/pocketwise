@@ -679,8 +679,8 @@ function NoHeartsScreen({ onRestart, onLeave }: { onRestart: () => void; onLeave
 function LessonContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const folder = searchParams.get("folder");
-  const filename = searchParams.get("filename");
+  const folder = searchParams?.get("folder") ?? null;
+  const filename = searchParams?.get("filename") ?? null;
   const { completeLesson, state } = useGame();
 
   const [lesson, setLesson]       = useState<LessonData | null>(null);
@@ -693,10 +693,21 @@ function LessonContent() {
 
   useEffect(() => {
     if (!folder || !filename) return;
-    fetch(`/api/lesson?folder=${folder}&filename=${filename}`)
-      .then(r => r.json())
-      .then(d => { setLesson(d); setLoading(false); })
-      .catch(() => setLoading(false));
+    setLoading(true);
+    fetch(`/api/lesson?folder=${encodeURIComponent(folder)}&filename=${encodeURIComponent(filename)}`)
+      .then(r => {
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return r.json();
+      })
+      .then(d => {
+        if (d.error) throw new Error(d.error);
+        setLesson(d);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Lesson load error:", err);
+        setLoading(false);
+      });
   }, [folder, filename]);
 
   const activities = lesson?.activities ?? [];
@@ -786,7 +797,7 @@ function LessonContent() {
             <ChevronLeft size={18} />
           </button>
 
-          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
+          <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 8, mx: "auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
               <Zap size={14} color="#f59e0b" />
               <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#f59e0b" }}>{lesson.xpReward} XP</span>

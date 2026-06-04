@@ -32,7 +32,7 @@ export async function GET(request: Request) {
 
     if (!fs.existsSync(filePath)) {
       return NextResponse.json(
-        { error: `Lesson not found`, debug: { filePath, dir, cwd: process.cwd(), env: process.env.CURRICULUM_DIR } },
+        { error: `Lesson not found` },
         { status: 404 }
       );
     }
