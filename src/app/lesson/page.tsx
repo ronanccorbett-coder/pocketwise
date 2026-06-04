@@ -839,20 +839,16 @@ function LessonContent() {
         <button
           onClick={goNext}
           disabled={!canNext}
+          className={canNext ? "btn-3d-green" : ""}
           style={{
             padding: "14px 36px",
-            background: canNext
-              ? step === activities.length - 1
-                ? "linear-gradient(135deg, #76AD25, #22c55e)"
-                : "#76AD25"
-              : "rgba(255,255,255,.06)",
-            color: canNext ? "#fff" : "#2a3a5c",
+            background: canNext ? undefined : "rgba(255,255,255,.06)",
+            color: canNext ? undefined : "#2a3a5c",
             border: "none", borderRadius: 12,
             fontWeight: 800, fontSize: "0.95rem",
             cursor: canNext ? "pointer" : "not-allowed",
             fontFamily: FONT,
             display: "flex", alignItems: "center", gap: 8,
-            boxShadow: canNext ? "0 4px 20px rgba(118,173,37,.3)" : "none",
             transition: "all .2s",
             minWidth: 140, justifyContent: "center",
           }}>

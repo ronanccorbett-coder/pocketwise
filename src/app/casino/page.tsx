@@ -79,21 +79,57 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
       <div style={{ background: "rgba(0,0,0,.5)", border: "2px solid #f59e0b", borderRadius: 18, padding: "24px", marginBottom: 14 }}>
         <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 18 }}>
           {reels.map((sym, i) => (
-            <div key={i} style={{ width: "28%", aspectRatio: "0.9", background: "#0d2218", border: `1.5px solid ${SYMBOL_COLORS[sym] ?? "#1a4030"}`, borderRadius: 12, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", transition: spinning ? "none" : "all .2s", boxShadow: spinning ? `inset 0 0 20px ${SYMBOL_COLORS[sym] ?? "#1a4030"}44` : "none" }}>
-              <div style={{ fontSize: "1.6rem", fontWeight: 900, color: SYMBOL_COLORS[sym] ?? "#fff", fontFamily: "Inter, sans-serif", lineHeight: 1 }}>{sym === "7X" ? "7" : sym}</div>
-              <div style={{ fontSize: "0.55rem", color: SYMBOL_COLORS[sym] ?? "#8b9dc3", fontWeight: 700, marginTop: 3, textTransform: "uppercase", letterSpacing: ".05em" }}>{SYMBOL_LABELS[sym]}</div>
+            <div key={i} style={{
+              width: "28%", aspectRatio: "0.9",
+              background: spinning ? "#0d2218" : `radial-gradient(circle at 40% 35%, ${SYMBOL_COLORS[sym] ?? "#1a4030"}33, #0d2218)`,
+              border: `2px solid ${spinning ? "#1a4030" : SYMBOL_COLORS[sym] ?? "#1a4030"}`,
+              borderRadius: 12,
+              display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+              transition: "all .25s ease",
+              boxShadow: spinning ? "none" : `0 0 20px ${SYMBOL_COLORS[sym] ?? "#1a4030"}44, inset 0 1px 0 rgba(255,255,255,.1)`,
+              animation: spinning ? `pw-slot-blur 0.08s steps(1) infinite` : result?.win ? `pw-pop 0.4s cubic-bezier(.34,1.56,.64,1)` : "none",
+              animationDelay: spinning ? `${i * 0.05}s` : `${i * 0.1}s`,
+              filter: spinning ? "blur(1px)" : "none",
+              transform: result?.win && !spinning ? "scale(1.05)" : "scale(1)",
+            }}>
+              <div style={{ fontSize: "1.8rem", fontWeight: 900, color: SYMBOL_COLORS[sym] ?? "#fff", fontFamily: "Inter, sans-serif", lineHeight: 1, textShadow: spinning ? "none" : `0 0 12px ${SYMBOL_COLORS[sym]}88` }}>
+                {sym === "7X" ? "7" : sym}
+              </div>
+              <div style={{ fontSize: "0.55rem", color: SYMBOL_COLORS[sym] ?? "#8b9dc3", fontWeight: 700, marginTop: 3, textTransform: "uppercase", letterSpacing: ".05em" }}>
+                {SYMBOL_LABELS[sym]}
+              </div>
             </div>
           ))}
         </div>
-        {result && <div style={{ textAlign: "center", marginBottom: 12, color: result.win ? "#76AD25" : "#EF4444", fontWeight: 700, fontSize: "0.95rem", animation: "fadeIn .3s ease" }}>{result.msg}</div>}
+        {result && (
+          <div style={{
+            textAlign: "center", marginBottom: 12,
+            color: result.win ? "#76AD25" : "#EF4444",
+            fontWeight: 800, fontSize: result.win ? "1.1rem" : "0.95rem",
+            animation: result.win ? "pw-pop 0.4s cubic-bezier(.34,1.56,.64,1)" : "pw-shake 0.4s ease",
+            textShadow: result.win ? "0 0 20px #76AD2588" : "none",
+          }}>
+            {result.win && <span style={{ marginRight: 6, animation: "pw-bounce 0.5s ease infinite alternate", display: "inline-block" }}>★</span>}
+            {result.msg}
+            {result.win && <span style={{ marginLeft: 6, animation: "pw-bounce 0.5s ease 0.1s infinite alternate", display: "inline-block" }}>★</span>}
+          </div>
+        )}
         <div style={{ textAlign: "center", marginBottom: 14 }}>
           <span style={{ color: "#94a3b8", fontSize: "0.875rem" }}>Balance: <strong style={{ color: "#f59e0b" }}>${balance.toFixed(2)}</strong></span>
         </div>
         <div style={{ marginBottom: 14, display: "flex", justifyContent: "center" }}>
           <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 50)} />
         </div>
-        <button onClick={handleSpin} disabled={spinning || balance < bet} style={{ width: "100%", padding: "15px", background: spinning || balance < bet ? "#374151" : "linear-gradient(135deg,#f59e0b,#d97706)", color: spinning || balance < bet ? "#6b7280" : "#000", border: "none", borderRadius: 10, fontSize: "1rem", fontWeight: 900, letterSpacing: ".1em", cursor: spinning || balance < bet ? "not-allowed" : "pointer", fontFamily: FONT }}>
-          {spinning ? "SPINNING..." : `SPIN — $${bet}`}
+        <button onClick={handleSpin} disabled={spinning || balance < bet}
+          className={spinning || balance < bet ? "" : "btn-3d-amber"}
+          style={{ width: "100%", padding: "15px", background: spinning || balance < bet ? "#374151" : undefined, color: spinning || balance < bet ? "#6b7280" : undefined, border: spinning || balance < bet ? "none" : undefined, borderRadius: 10, fontSize: "1rem", fontWeight: 900, letterSpacing: ".1em", cursor: spinning || balance < bet ? "not-allowed" : "pointer", fontFamily: FONT }}>
+          {spinning ? (
+            <span style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
+              <span style={{ display: "inline-block", animation: "pw-spin 0.4s linear infinite" }}>◆</span>
+              SPINNING...
+              <span style={{ display: "inline-block", animation: "pw-spin 0.4s linear infinite reverse" }}>◆</span>
+            </span>
+          ) : `SPIN — $${bet}`}
         </button>
       </div>
       <div style={{ background: "rgba(0,0,0,.4)", border: "1px solid #1a4030", borderRadius: 12, padding: "14px 18px", marginBottom: 10 }}>
@@ -306,13 +342,34 @@ function RouletteGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:n
         {/* Wheel display */}
         <div style={{ textAlign: "center", marginBottom: 20 }}>
           {spinning ? (
-            <div style={{ width: 100, height: 100, borderRadius: "50%", border: "4px solid #f59e0b", background: "conic-gradient(#EF4444,#1f2937,#EF4444,#1f2937,#76AD25,#EF4444,#1f2937,#EF4444)", margin: "0 auto", animation: "spin 0.3s linear infinite" }} />
+            <div style={{ position: "relative", width: 110, height: 110, margin: "0 auto" }}>
+              <div style={{
+                width: 110, height: 110, borderRadius: "50%",
+                background: "conic-gradient(#EF4444 0deg, #1f2937 20deg, #EF4444 40deg, #1f2937 60deg, #76AD25 80deg, #EF4444 100deg, #1f2937 120deg, #EF4444 140deg, #1f2937 160deg, #EF4444 180deg, #1f2937 200deg, #EF4444 220deg, #1f2937 240deg, #EF4444 260deg, #1f2937 280deg, #EF4444 300deg, #1f2937 320deg, #EF4444 340deg, #1f2937 360deg)",
+                border: "4px solid #f59e0b",
+                animation: "pw-spin 0.3s linear infinite",
+                boxShadow: "0 0 30px rgba(245,158,11,.4)",
+              }} />
+              <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ width: 20, height: 20, borderRadius: "50%", background: "#f59e0b", boxShadow: "0 0 10px #f59e0b" }} />
+              </div>
+            </div>
           ) : result ? (
-            <div style={{ width: 100, height: 100, borderRadius: "50%", background: colourMap[result.color], border: "4px solid #f59e0b", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.75rem", fontWeight: 900, color: "#fff", transition: "all .3s" }}>
+            <div style={{
+              width: 110, height: 110, borderRadius: "50%",
+              background: colourMap[result.color],
+              border: "4px solid #f59e0b",
+              margin: "0 auto",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              fontSize: "2rem", fontWeight: 900, color: "#fff",
+              animation: "pw-pop 0.5s cubic-bezier(.34,1.56,.64,1)",
+              boxShadow: `0 0 30px ${colourMap[result.color]}88`,
+              transition: "all .3s"
+            }}>
               {result.num}
             </div>
           ) : (
-            <div style={{ width: 100, height: 100, borderRadius: "50%", background: "rgba(255,255,255,.05)", border: "3px dashed rgba(255,255,255,.15)", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "center", color: "#4a5a7a", fontSize: "0.8rem" }}>
+            <div style={{ width: 110, height: 110, borderRadius: "50%", background: "rgba(255,255,255,.05)", border: "3px dashed rgba(255,255,255,.15)", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "center", color: "#4a5a7a", fontSize: "0.8rem" }}>
               Spin
             </div>
           )}
@@ -535,11 +592,18 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
           <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 6, marginBottom: 14 }}>
             {board.map((cell, i) => (
               <button key={i} onClick={() => reveal(i)} style={{
-                aspectRatio: "1", borderRadius: 8, border: "none", cursor: cell === "hidden" && phase === "play" ? "pointer" : "default",
-                background: cell === "mine" ? "#7f1d1d" : cell === "safe" ? "rgba(118,173,37,.3)" : "rgba(255,255,255,.07)",
-                fontSize: "1.25rem", transition: "all .15s",
-                boxShadow: cell === "safe" ? "0 0 8px rgba(118,173,37,.3)" : "none",
-              }}>
+                aspectRatio: "1", borderRadius: 10, border: "none",
+                cursor: cell === "hidden" && phase === "play" ? "pointer" : "default",
+                background: cell === "mine" ? "linear-gradient(135deg,#7f1d1d,#EF4444)" : cell === "safe" ? "linear-gradient(135deg,#166534,#76AD25)" : "rgba(255,255,255,.07)",
+                fontSize: "1.3rem",
+                transition: "all .15s cubic-bezier(.34,1.56,.64,1)",
+                boxShadow: cell === "safe" ? "0 0 12px rgba(118,173,37,.5), inset 0 1px 0 rgba(255,255,255,.2)" : cell === "mine" ? "0 0 12px rgba(239,68,68,.5)" : "0 2px 4px rgba(0,0,0,.3)",
+                animation: cell !== "hidden" ? "pw-pop 0.3s cubic-bezier(.34,1.56,.64,1)" : "none",
+                transform: cell === "hidden" && phase === "play" ? undefined : undefined,
+              }}
+              onMouseEnter={e => { if (cell === "hidden" && phase === "play") (e.currentTarget as HTMLElement).style.transform = "scale(1.08) translateY(-2px)"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ""; }}
+              >
                 {cell === "mine" ? "✕" : cell === "safe" ? "◆" : ""}
               </button>
             ))}
@@ -619,11 +683,18 @@ function CrashGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
       <div style={{ background: "#0a2118", border: "1px solid #1a4030", borderRadius: 14, padding: "24px", marginBottom: 14 }}>
         {/* Multiplier display */}
         <div style={{ textAlign: "center", marginBottom: 20 }}>
-          <div style={{ fontSize: "4rem", fontWeight: 900, color: phase === "crashed" ? "#EF4444" : phase === "cashed" ? "#76AD25" : "#f59e0b", fontFamily: "monospace", transition: "color .1s" }}>
+          <div style={{
+            fontSize: "4.5rem", fontWeight: 900, fontFamily: "monospace",
+            color: phase === "crashed" ? "#EF4444" : phase === "cashed" ? "#76AD25" : multiplier > 3 ? "#f59e0b" : multiplier > 2 ? "#22d3ee" : "#fff",
+            transition: "color .1s",
+            textShadow: phase === "running" ? `0 0 30px ${multiplier > 3 ? "#f59e0b" : "#22d3ee"}88` : "none",
+            animation: phase === "crashed" ? "pw-shake 0.4s ease" : phase === "running" && multiplier > 5 ? "pw-pulse-glow 0.5s ease infinite" : "none",
+            transform: phase === "running" ? `scale(${Math.min(1 + (multiplier - 1) * 0.02, 1.15)})` : "scale(1)",
+          }}>
             {multiplier.toFixed(2)}x
           </div>
-          {phase === "crashed" && <div style={{ color: "#EF4444", fontWeight: 700 }}>CRASHED at {crashAt.toFixed(2)}x</div>}
-          {phase === "cashed" && <div style={{ color: "#76AD25", fontWeight: 700 }}>Cashed out at {cashedAt?.toFixed(2)}x — won ${(bet * (cashedAt??1)).toFixed(2)}</div>}
+          {phase === "crashed" && <div style={{ color: "#EF4444", fontWeight: 700, animation: "pw-slide-up .3s ease" }}>CRASHED at {crashAt.toFixed(2)}x</div>}
+          {phase === "cashed" && <div style={{ color: "#76AD25", fontWeight: 700, animation: "pw-pop .4s cubic-bezier(.34,1.56,.64,1)" }}>Cashed out at {cashedAt?.toFixed(2)}x — won ${(bet * (cashedAt??1)).toFixed(2)}</div>}
         </div>
 
         {/* History */}
@@ -705,7 +776,7 @@ export default function CasinoPage() {
         <div style={{ maxWidth: 780, margin: "0 auto", padding: "0 1rem 20px" }}>
           <div style={{ background: "rgba(0,0,0,.4)", border: "1px solid #1a4030", borderRadius: 9999, padding: 4, display: "flex", gap: 2, overflowX: "auto" }}>
             {GAME_TABS.map(t => (
-              <button key={t} onClick={() => setGameTab(t)} style={{ padding: "8px 16px", borderRadius: 9999, whiteSpace: "nowrap", background: gameTab === t ? "#f59e0b" : "transparent", color: gameTab === t ? "#000" : "#8b9dc3", border: "none", fontWeight: 700, fontSize: "0.82rem", cursor: "pointer", fontFamily: FONT, transition: "all .15s" }}>
+              <button key={t} onClick={() => setGameTab(t)} style={{ padding: "8px 16px", borderRadius: 9999, whiteSpace: "nowrap", background: gameTab === t ? "#f59e0b" : "transparent", color: gameTab === t ? "#000" : "#8b9dc3", border: "none", fontWeight: 700, fontSize: "0.82rem", cursor: "pointer", fontFamily: FONT, transition: "all .2s cubic-bezier(.34,1.56,.64,1)", transform: gameTab === t ? "scale(1.06)" : "scale(1)", boxShadow: gameTab === t ? "0 4px 14px rgba(245,158,11,.4)" : "none" }}>
                 {t}
               </button>
             ))}

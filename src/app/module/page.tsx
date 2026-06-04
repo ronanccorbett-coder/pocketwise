@@ -295,10 +295,11 @@ function ModuleMapContent() {
 
               const r = isCurrent ? 30 : isDone ? 26 : 22;
               const gradId = isDone ? "nodeGradDone" : isCurrent ? "nodeGradCurrent" : "nodeGradLocked";
+              const scale = isHovered && !isLocked ? 1.12 : isSelected ? 1.08 : 1;
 
               return (
                 <g key={lesson.filename}
-                  style={{ cursor: isLocked ? "not-allowed" : "pointer" }}
+                  style={{ cursor: isLocked ? "not-allowed" : "pointer", transform: `scale(${scale})`, transformOrigin: `${x}px ${y}px`, transition: "transform 0.2s cubic-bezier(.34,1.56,.64,1)" }}
                   onClick={() => {
                     if (!isLocked) setSelectedNode(selectedNode === i ? null : i);
                   }}
@@ -310,6 +311,14 @@ function ModuleMapContent() {
                     <circle cx={x} cy={y} r={r + 16} fill={accent} opacity="0.07">
                       <animate attributeName="r" values={`${r + 10};${r + 22};${r + 10}`} dur="2.5s" repeatCount="indefinite" />
                       <animate attributeName="opacity" values="0.1;0.04;0.1" dur="2.5s" repeatCount="indefinite" />
+                    </circle>
+                  )}
+
+                  {/* Extra pulse ring for current */}
+                  {isCurrent && (
+                    <circle cx={x} cy={y} r={r + 8} fill="none" stroke={accent} strokeWidth="2" opacity="0.5">
+                      <animate attributeName="r" values={`${r};${r+20};${r}`} dur="2s" repeatCount="indefinite" />
+                      <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite" />
                     </circle>
                   )}
 
@@ -443,18 +452,12 @@ function ModuleMapContent() {
             ) : (
               <button
                 onClick={() => router.push(`/lesson?folder=${folder}&filename=${selectedLesson.filename}`)}
+                className={selectedDone ? "btn-3d-ghost" : "btn-3d-green"}
                 style={{
                   width: "100%", padding: "15px",
-                  background: selectedDone
-                    ? "rgba(118,173,37,.15)"
-                    : `linear-gradient(135deg, ${accent}, ${accent}cc)`,
-                  color: selectedDone ? accent : "#fff",
-                  border: selectedDone ? `1px solid ${accent}40` : "none",
                   borderRadius: 14, fontWeight: 800, fontSize: "1rem",
                   cursor: "pointer", fontFamily: FONT,
                   display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-                  boxShadow: selectedDone ? "none" : `0 6px 24px ${accent}44`,
-                  transition: "all .2s",
                 }}>
                 {selectedDone ? (
                   <><Check size={18} /> Review Lesson</>
@@ -462,6 +465,7 @@ function ModuleMapContent() {
                   <>Start Lesson <ChevronRight size={18} /></>
                 )}
               </button>
+            )}
             )}
           </div>
         ) : (
@@ -479,13 +483,11 @@ function ModuleMapContent() {
             {!allDone && currentIdx >= 0 && (
               <button
                 onClick={() => router.push(`/lesson?folder=${folder}&filename=${sorted[currentIdx].filename}`)}
+                className="btn-3d-green"
                 style={{
                   padding: "13px 24px",
-                  background: `linear-gradient(135deg, ${accent}, ${accent}cc)`,
-                  color: "#fff", border: "none", borderRadius: 12,
-                  fontWeight: 800, fontSize: "0.9rem", cursor: "pointer",
+                  borderRadius: 12, fontWeight: 800, fontSize: "0.9rem", cursor: "pointer",
                   fontFamily: FONT, display: "flex", alignItems: "center", gap: 6,
-                  boxShadow: `0 4px 20px ${accent}44`,
                 }}>
                 Continue <ChevronRight size={16} />
               </button>

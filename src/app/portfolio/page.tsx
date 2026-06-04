@@ -592,13 +592,17 @@ export default function PortfolioPage(){
                     const annualDepLoss = ap.price * (ap.dep / 100);
                     const weeklyNet = (ap.income ?? 0) - (annualDepLoss / 52);
                     return (
-                      <div key={ap.name} style={{
-                        background: "#fff",
-                        border: `1.5px solid ${owned ? "#76AD25" : locked ? "#f1f5f9" : "#e2e8f0"}`,
-                        borderRadius: 14, padding: "18px",
-                        opacity: locked ? 0.6 : 1,
-                        position: "relative",
-                      }}>
+                      <div key={ap.name}
+                        className={!locked && !owned ? "pw-lift" : ""}
+                        style={{
+                          background: "#fff",
+                          border: `2px solid ${owned ? "#76AD25" : locked ? "#f1f5f9" : "#e2e8f0"}`,
+                          borderRadius: 14, padding: "18px",
+                          opacity: locked ? 0.6 : 1,
+                          position: "relative",
+                          transition: "all .2s cubic-bezier(.34,1.56,.64,1)",
+                          boxShadow: owned ? "0 4px 16px rgba(118,173,37,.2)" : "0 2px 8px rgba(0,0,0,.04)",
+                        }}>
                         {owned && (
                           <div style={{ position: "absolute", top: 12, right: 12, background: "#76AD25", color: "#fff", padding: "2px 8px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 700 }}>
                             Owned
@@ -669,10 +673,11 @@ export default function PortfolioPage(){
                               if (ok) notify(`Purchased ${ap.name}`);
                               else notify("Insufficient balance");
                             }}
+                            className={!owned && canAfford ? "btn-3d-navy" : ""}
                             style={{
                               width: "100%", padding: "9px",
-                              background: owned ? "#e2e8f0" : canAfford ? "#0d1526" : "#fef2f2",
-                              color: owned ? "#94a3b8" : canAfford ? "#fff" : "#EF4444",
+                              background: owned ? "#e2e8f0" : !canAfford ? "#fef2f2" : undefined,
+                              color: owned ? "#94a3b8" : !canAfford ? "#EF4444" : undefined,
                               border: "none", borderRadius: 8,
                               fontWeight: 600, fontSize: "0.8rem",
                               cursor: owned || !canAfford ? "not-allowed" : "pointer",
