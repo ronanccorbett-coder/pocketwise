@@ -107,7 +107,7 @@ type GameCtx = {
   canAccess: (gate: keyof typeof XP_GATES) => boolean;
   addXp: (amount: number) => void;
   addBalance: (amount: number) => void;
-  completeLesson: (lessonId: string, xpReward: number, cashReward?: number) => void;
+  completeLesson: (lessonId: string, xpReward: number, cashReward?: number, lessonTitle?: string) => void;
   applyForJob: (jobId: string, salary: number) => void;
   updateStockPrice: (stockId: string, newPrice: number) => void;
   buyStock: (symbol: string, name: string, qty: number, price: number) => boolean;
@@ -299,6 +299,11 @@ export function GameProvider({ children }: { children: ReactNode }) {
           }),
           ...txns,
         ]);
+
+        // Fire salary toast if meaningful income
+        if (balanceDelta > 0) {
+          window.dispatchEvent(new CustomEvent("pw:salary", { detail: { amount: balanceDelta } }));
+        }
       } finally {
         tickRef.current = false;
       }
@@ -334,7 +339,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     }));
   }, [rawState]);
 
-  const completeLesson = useCallback((lessonId: string, xpReward: number, cashReward = 50) => {
+  const completeLesson = useCallback((lessonId: string, xpReward: number, cashReward = 50, lessonTitle?: string) => {
     if (!rawState || !sid()) return;
     const completed = (rawState.completedLessons as string[]) ?? [];
     if (completed.includes(lessonId)) return;
@@ -379,6 +384,14 @@ export function GameProvider({ children }: { children: ReactNode }) {
       badges,
       netWorth: newBal + (rawState.totalInvested ?? 0) - (rawState.totalDebt ?? 0),
     }));
+
+    // Fire XP toast
+    window.dispatchEvent(new CustomEvent("pw:xp", { detail: { amount: xpReward, reason: lessonTitle ?? "Lesson complete" } }));
+    // Fire badge toasts for any new badges
+    const prevBadges = rawState.badges as string[] ?? [];
+    badges.filter(b => !prevBadges.includes(b)).forEach(b => {
+      window.dispatchEvent(new CustomEvent("pw:badge", { detail: { name: b.replace(/_/g, " ") } }));
+    });
   }, [rawState]);
 
   const applyForJob = useCallback((jobId: string, salary: number) => {

@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { useGame } from "@/lib/gameContext";
+import { usePathname } from "next/navigation";
 import { LifeEvent, NewsEvent } from "@/lib/events";
 import { X, Zap, DollarSign, TrendingUp, TrendingDown, Newspaper, Trophy, Car, Heart, Briefcase, Users, Star, Package } from "lucide-react";
 import Confetti from "./Confetti";
@@ -222,11 +223,15 @@ export function NewsTicker({ headline, sentiment, onExpand }: { headline: string
 // ── Main overlay manager ──────────────────────────────────────────────────
 export default function EventOverlay() {
   const { state, clearPendingEvent, clearPendingNews, addXp } = useGame();
+  const pathname = usePathname();
   const [shownMilestones, setShownMilestones] = useState<Set<number>>(new Set());
   const [activeMilestone, setActiveMilestone] = useState<typeof MILESTONES[0] | null>(null);
   const [showLife, setShowLife] = useState(false);
   const [showNews, setShowNews] = useState(false);
   const prevNetWorth = useRef(0);
+
+  // Don't show on landing, login, or onboarding pages
+  const suppress = ["/landing", "/login", "/onboarding", "/"].includes(pathname ?? "");
 
   const netWorth = state?.netWorth ?? 0;
   const pendingLife = state?.pendingLifeEvent ? (() => { try { return JSON.parse(state.pendingLifeEvent!); } catch { return null; } })() as LifeEvent | null : null;
@@ -267,9 +272,9 @@ export default function EventOverlay() {
 
   return (
     <>
-      {showLife && pendingLife && <LifeEventModal event={pendingLife} onDismiss={dismissLife} />}
-      {showNews && pendingNews && !showLife && <NewsModal news={pendingNews} onDismiss={dismissNews} />}
-      {activeMilestone && !showLife && !showNews && <MilestoneModal milestone={activeMilestone} onDismiss={() => setActiveMilestone(null)} />}
+      {!suppress && showLife && pendingLife && <LifeEventModal event={pendingLife} onDismiss={dismissLife} />}
+      {!suppress && showNews && pendingNews && !showLife && <NewsModal news={pendingNews} onDismiss={dismissNews} />}
+      {!suppress && activeMilestone && !showLife && !showNews && <MilestoneModal milestone={activeMilestone} onDismiss={() => setActiveMilestone(null)} />}
     </>
   );
 }

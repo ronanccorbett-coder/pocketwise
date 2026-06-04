@@ -3,6 +3,7 @@ import { Suspense, useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { useGame } from "@/lib/gameContext";
+import { SadKiwiOverlay, CornerCelebration } from "@/components/Mascot";
 import Confetti from "@/components/Confetti";
 import XPCounter from "@/components/XPCounter";
 import {
@@ -656,23 +657,7 @@ function CompletionScreen({ lesson, onContinue, onReview }: {
 
 // ── NO HEARTS SCREEN ──────────────────────────────────────────────────────
 function NoHeartsScreen({ onRestart, onLeave }: { onRestart: () => void; onLeave: () => void }) {
-  return (
-    <div style={{ minHeight: "100vh", background: "#0a1628", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
-      <div style={{ display: "flex", gap: 8, marginBottom: 24 }}>
-        {[0, 1, 2].map(i => <Heart key={i} size={36} fill="none" color="#2a3a5c" />)}
-      </div>
-      <h2 style={{ fontWeight: 900, fontSize: "1.75rem", color: "#fff", marginBottom: 8 }}>Out of hearts</h2>
-      <p style={{ color: "#8b9dc3", marginBottom: 32, fontSize: "0.9rem" }}>Don't worry — you can restart and try again.</p>
-      <div style={{ display: "flex", gap: 12 }}>
-        <button onClick={onRestart} style={{ padding: "14px 28px", background: "#EF4444", color: "#fff", border: "none", borderRadius: 12, fontWeight: 700, fontSize: "0.9rem", cursor: "pointer", fontFamily: FONT }}>
-          Try Again
-        </button>
-        <button onClick={onLeave} style={{ padding: "14px 28px", background: "rgba(255,255,255,.08)", color: "#8b9dc3", border: "1px solid rgba(255,255,255,.12)", borderRadius: 12, fontWeight: 600, fontSize: "0.9rem", cursor: "pointer", fontFamily: FONT }}>
-          Leave Lesson
-        </button>
-      </div>
-    </div>
-  );
+  return <SadKiwiOverlay onDismiss={onRestart} onLeave={onLeave} />;
 }
 
 // ── MAIN LESSON CONTENT ────────────────────────────────────────────────────
@@ -737,7 +722,17 @@ function LessonContent() {
 
   function handleComplete() {
     if (!lesson || !folder || !filename) return;
-    completeLesson(`${folder}/${filename}`, lesson.xpReward);
+    completeLesson(`${folder}/${filename}`, lesson.xpReward, 50, lesson.title);
+    // Check if this was the last lesson in the module — fire corner celebration
+    if (lessons && lessons.length > 0) {
+      const completedIds = (state?.completedLessons as string[] ?? []);
+      const allDone = lessons.every((l: any) =>
+        l.filename === filename || completedIds.includes(`${folder}/${l.filename}`)
+      );
+      if (allDone) {
+        window.dispatchEvent(new CustomEvent("pw:module-complete", { detail: { folder } }));
+      }
+    }
     setCompleted(true);
   }
 
