@@ -1,35 +1,45 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-const CURRICULUM_DIR =
-  process.env.CURRICULUM_DIR ||
-  path.join(process.cwd(), "../pocketwise-curriculum");
-
-export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const folder = searchParams.get("folder");
-  const filename = searchParams.get("filename");
-
-  if (!folder || !filename) {
-    return NextResponse.json({ error: "Missing folder or filename" }, { status: 400 });
+function getCurriculumDir(): string {
+  if (process.env.CURRICULUM_DIR) {
+    // If relative, resolve from project root (process.cwd())
+    if (!path.isAbsolute(process.env.CURRICULUM_DIR)) {
+      return path.join(process.cwd(), process.env.CURRICULUM_DIR);
+    }
+    return process.env.CURRICULUM_DIR;
   }
+  // Fallback: look for curriculum-data inside the project
+  const inside = path.join(process.cwd(), "curriculum-data");
+  if (fs.existsSync(inside)) return inside;
+  // Last resort: sibling folder
+  return path.join(process.cwd(), "../pocketwise-curriculum");
+}
 
-  // Sanitise
-  if (folder.includes("..") || filename.includes("..")) {
-    return NextResponse.json({ error: "Invalid path" }, { status: 400 });
-  }
-
-  const filePath = path.join(CURRICULUM_DIR, folder, filename);
-
-  if (!fs.existsSync(filePath)) {
-    return NextResponse.json({ error: "Lesson not found" }, { status: 404 });
-  }
-
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const folder = searchParams.get("folder");
+    const filename = searchParams.get("filename");
+
+    if (!folder || !filename) {
+      return NextResponse.json({ error: "Missing folder or filename" }, { status: 400 });
+    }
+
+    const dir = getCurriculumDir();
+    const filePath = path.join(dir, folder, filename);
+
+    if (!fs.existsSync(filePath)) {
+      return NextResponse.json(
+        { error: `Lesson not found`, debug: { filePath, dir, cwd: process.cwd(), env: process.env.CURRICULUM_DIR } },
+        { status: 404 }
+      );
+    }
+
     const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return NextResponse.json(data);
-  } catch {
-    return NextResponse.json({ error: "Failed to parse lesson" }, { status: 500 });
+  } catch (e: any) {
+    return NextResponse.json({ error: e.message }, { status: 500 });
   }
 }
