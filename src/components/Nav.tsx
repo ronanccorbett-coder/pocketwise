@@ -36,7 +36,7 @@ export default function Nav() {
       position: "sticky", top: 0, zIndex: 50,
     }}>
       <Link href="/curriculum" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-        <Image src="/logo.png" alt="PocketWise" width={30} height={30} style={{ objectFit: "contain" }} />
+        <Image src="/logo.png" alt="PocketWise" width={30} height={30} style={{ objectFit: "contain", mixBlendMode: "multiply" }} />
         <span style={{ fontWeight: 800, fontSize: "1rem", color: "#0d1526" }}>PocketWise</span>
       </Link>
 

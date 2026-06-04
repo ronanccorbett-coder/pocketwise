@@ -25,9 +25,11 @@ function BetSelector({ bet, setBet, max, bets = [1,2,5,10,25,50] }: { bet: numbe
 }
 
 // ── SLOTS ─────────────────────────────────────────────────────────────────
-const SYMBOLS = ["🍒","🍋","🍊","🍇","🔔","⭐","7️⃣","💎"];
+const SYMBOLS = ["CH","LM","OR","GR","BL","ST","7X","DM"];
+const SYMBOL_LABELS: Record<string,string> = { CH:"Cherry", LM:"Lemon", OR:"Orange", GR:"Grape", BL:"Bell", ST:"Star", "7X":"7", DM:"Gem" };
+const SYMBOL_COLORS: Record<string,string> = { CH:"#EF4444", LM:"#f59e0b", OR:"#f97316", GR:"#a78bfa", BL:"#3B82F6", ST:"#f59e0b", "7X":"#EF4444", DM:"#22d3ee" };
 const WEIGHTS  = [22,  18,  16,  14,  12,  10,  5,   3];
-const PAYS: Record<string,number> = { "💎💎💎":100,"7️⃣7️⃣7️⃣":30,"⭐⭐⭐":15,"🔔🔔🔔":8,"🍇🍇🍇":5,"🍊🍊🍊":4,"🍋🍋🍋":3,"🍒🍒🍒":2 };
+const PAYS: Record<string,number> = { "DMDMDM":100,"7X7X7X":30,"STSTST":15,"BLBLBL":8,"GRGRGR":5,"OROROR":4,"LMLMLM":3,"CHCHCH":2 };
 
 function weightedSym() {
   const total = WEIGHTS.reduce((a,b) => a+b, 0);
@@ -45,7 +47,7 @@ function calcWin(reels: string[], bet: number) {
 
 function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(2);
-  const [reels, setReels] = useState(["💎","7️⃣","⭐"]);
+  const [reels, setReels] = useState(["DM","7X","ST"]);
   const [spinning, setSpinning] = useState(false);
   const [result, setResult] = useState<{msg:string;win:boolean}|null>(null);
   const [jackpot] = useState(() => Math.floor(Math.random()*800+400));
@@ -61,7 +63,7 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
         clearInterval(iv);
         const final = spin3(); setReels(final);
         const win = calcWin(final, bet);
-        if (win > 0) { onWin(win); setResult({ msg: `You won $${win.toFixed(2)}! 🎉`, win: true }); }
+        if (win > 0) { onWin(win); setResult({ msg: `You won $${win.toFixed(2)}!`, win: true }); }
         else setResult({ msg: "No win. Better luck next spin.", win: false });
         setSpinning(false);
       }
@@ -77,8 +79,9 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
       <div style={{ background: "rgba(0,0,0,.5)", border: "2px solid #f59e0b", borderRadius: 18, padding: "24px", marginBottom: 14 }}>
         <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 18 }}>
           {reels.map((sym, i) => (
-            <div key={i} style={{ width: "28%", aspectRatio: "0.9", background: "#0d2218", border: "1.5px solid #1a4030", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "2.5rem", transition: spinning ? "none" : "all .2s", boxShadow: spinning ? "inset 0 0 20px rgba(245,158,11,.2)" : "none" }}>
-              {sym}
+            <div key={i} style={{ width: "28%", aspectRatio: "0.9", background: "#0d2218", border: `1.5px solid ${SYMBOL_COLORS[sym] ?? "#1a4030"}`, borderRadius: 12, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", transition: spinning ? "none" : "all .2s", boxShadow: spinning ? `inset 0 0 20px ${SYMBOL_COLORS[sym] ?? "#1a4030"}44` : "none" }}>
+              <div style={{ fontSize: "1.6rem", fontWeight: 900, color: SYMBOL_COLORS[sym] ?? "#fff", fontFamily: "Inter, sans-serif", lineHeight: 1 }}>{sym === "7X" ? "7" : sym}</div>
+              <div style={{ fontSize: "0.55rem", color: SYMBOL_COLORS[sym] ?? "#8b9dc3", fontWeight: 700, marginTop: 3, textTransform: "uppercase", letterSpacing: ".05em" }}>{SYMBOL_LABELS[sym]}</div>
             </div>
           ))}
         </div>
@@ -96,12 +99,17 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
       <div style={{ background: "rgba(0,0,0,.4)", border: "1px solid #1a4030", borderRadius: 12, padding: "14px 18px", marginBottom: 10 }}>
         <div style={{ fontSize: "0.7rem", fontWeight: 700, color: "#8b9dc3", letterSpacing: ".08em", marginBottom: 10 }}>PAY TABLE</div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 16px" }}>
-          {Object.entries(PAYS).map(([combo, mult]) => (
-            <div key={combo} style={{ display: "flex", justifyContent: "space-between", padding: "3px 0", fontSize: "0.8rem" }}>
-              <span style={{ color: "#e2e8f0" }}>{combo}</span>
-              <span style={{ color: "#f59e0b", fontWeight: 700 }}>{mult}x</span>
-            </div>
-          ))}
+          {Object.entries(PAYS).map(([combo, mult]) => {
+            const sym = combo.slice(0, 2);
+            const color = SYMBOL_COLORS[sym] ?? "#f59e0b";
+            const label = SYMBOL_LABELS[sym] ?? sym;
+            return (
+              <div key={combo} style={{ display: "flex", justifyContent: "space-between", padding: "3px 0", fontSize: "0.8rem" }}>
+                <span style={{ color, fontWeight: 700 }}>3× {label}</span>
+                <span style={{ color: "#f59e0b", fontWeight: 700 }}>{mult}x</span>
+              </div>
+            );
+          })}
         </div>
       </div>
       <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 12, padding: "12px 16px" }}>
@@ -219,7 +227,7 @@ function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:
             {/* Player hand */}
             <div style={{ marginBottom: 20 }}>
               <div style={{ fontSize: "0.72rem", color: "#8b9dc3", fontWeight: 700, marginBottom: 8, textTransform: "uppercase" }}>
-                You — {pv} {pv === 21 ? "🎉" : pv > 21 ? "BUST" : ""}
+                You — {pv} {pv === 21 ? "★" : pv > 21 ? "BUST" : ""}
               </div>
               <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                 {playerHand.map((c, i) => <BJCard key={i} card={c} />)}
@@ -379,9 +387,9 @@ function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:num
       if (win) {
         const payout = bet * selected.odds;
         onWin(payout);
+        setResult({ msg: `Winner! ${fixture[outcome === "home" ? "home" : "away"]} won. You win $${payout.toFixed(2)}`, win: true });
         setResult({ msg: `${win ? "✅ Winner!" : ""} ${fixture[outcome === "home" ? "home" : "away"]} won. You win $${payout.toFixed(2)}`, win: true });
-      } else {
-        setResult({ msg: `❌ ${fixture[outcome === "home" ? "home" : "away"]} won. You lose $${bet}.`, win: false });
+        setResult({ msg: `${fixture[outcome === "home" ? "home" : "away"]} won. You lose $${bet}.`, win: false });
       }
       setLoading(false); setSelected(null);
     }, 2000);
@@ -522,8 +530,8 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
               </div>
             </div>
           )}
-          {phase === "lost" && <div style={{ textAlign: "center", color: "#EF4444", fontWeight: 700, marginBottom: 12, fontSize: "1rem" }}>💥 BOOM! You hit a mine. Lost ${bet}</div>}
-          {phase === "cashed" && <div style={{ textAlign: "center", color: "#76AD25", fontWeight: 700, marginBottom: 12, fontSize: "1rem" }}>✅ Cashed out ${(bet * multiplier).toFixed(2)}!</div>}
+          {phase === "lost" && <div style={{ textAlign: "center", color: "#EF4444", fontWeight: 700, marginBottom: 12, fontSize: "1rem" }}>Mine hit! You lost ${bet}</div>}
+          {phase === "cashed" && <div style={{ textAlign: "center", color: "#76AD25", fontWeight: 700, marginBottom: 12, fontSize: "1rem" }}>Cashed out ${(bet * multiplier).toFixed(2)}!</div>}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 6, marginBottom: 14 }}>
             {board.map((cell, i) => (
               <button key={i} onClick={() => reveal(i)} style={{
@@ -532,7 +540,7 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
                 fontSize: "1.25rem", transition: "all .15s",
                 boxShadow: cell === "safe" ? "0 0 8px rgba(118,173,37,.3)" : "none",
               }}>
-                {cell === "mine" ? "💣" : cell === "safe" ? "💎" : ""}
+                {cell === "mine" ? "✕" : cell === "safe" ? "◆" : ""}
               </button>
             ))}
           </div>

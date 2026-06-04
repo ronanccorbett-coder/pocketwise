@@ -120,7 +120,7 @@ type GameCtx = {
   completeOnboarding: (name: string) => void;
   clearPendingEvent: () => void;
   clearPendingNews: () => void;
-  setGoals: (goals: { label: string; target: number }[]) => void;
+  setGoals: (goals: any[]) => void;
   signOut: () => void;
 };
 
@@ -478,7 +478,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
     db.transact((db as any).tx.userState[sid()].update({ pendingNews: null }));
   }, [rawState]);
 
-  const setGoals = useCallback((goals: { label: string; target: number }[]) => {
+  const setGoals = useCallback((goals: any[]) => {
     if (!rawState || !sid()) return;
     db.transact((db as any).tx.userState[sid()].update({ goals: JSON.stringify(goals) }));
   }, [rawState]);

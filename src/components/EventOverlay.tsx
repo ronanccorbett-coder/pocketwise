@@ -2,9 +2,23 @@
 import { useState, useEffect, useRef } from "react";
 import { useGame } from "@/lib/gameContext";
 import { LifeEvent, NewsEvent } from "@/lib/events";
-import { X, Zap, DollarSign, TrendingUp, TrendingDown, Newspaper, Star, Trophy } from "lucide-react";
+import { X, Zap, DollarSign, TrendingUp, TrendingDown, Newspaper, Trophy, Car, Heart, Briefcase, Users, Star, Package } from "lucide-react";
 import Confetti from "./Confetti";
 import XPCounter from "./XPCounter";
+
+const FONT = "Inter, system-ui, sans-serif";
+
+function CategoryIcon({ name, color }: { name: string; color: string }) {
+  const props = { size: 18, color };
+  switch (name) {
+    case "car": return <Car {...props} />;
+    case "health": return <Heart {...props} />;
+    case "work": return <Briefcase {...props} />;
+    case "social": return <Users {...props} />;
+    case "opportunity": return <Star {...props} />;
+    default: return <Package {...props} />;
+  }
+}
 
 const FONT = "Inter, system-ui, sans-serif";
 
@@ -36,7 +50,9 @@ function LifeEventModal({ event, onDismiss }: { event: LifeEvent; onDismiss: () 
         {/* Header */}
         <div style={{ background: `linear-gradient(135deg, ${accent}22, transparent)`, padding: "20px 20px 16px", borderBottom: "1px solid rgba(255,255,255,.06)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ fontSize: "2rem" }}>{event.emoji}</div>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: `${accent}22`, border: `1px solid ${accent}40`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <CategoryIcon name={event.category} color={accent} />
+            </div>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: "0.65rem", color: accent, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 3 }}>
                 Life Event

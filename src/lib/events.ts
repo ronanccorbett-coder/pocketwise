@@ -136,7 +136,7 @@ export type LifeEvent = {
   balanceChange: number;
   xpChange: number;
   category: "car" | "health" | "work" | "social" | "opportunity" | "surprise";
-  emoji: string;
+  icon: string;
   tip: string;
 };
 
@@ -146,49 +146,49 @@ const LIFE_EVENT_POOL: Omit<LifeEvent, "id">[] = [
     title: "Car needs a WOF repair",
     description: "Your car failed its Warrant of Fitness. The mechanic found a cracked windscreen and worn brake pads. Repair bill: $480.",
     type: "expense", balanceChange: -480, xpChange: 10,
-    category: "car", emoji: "🔧",
+    category: "car", icon: "wrench",
     tip: "Always keep an emergency fund. Unexpected car costs are one of the most common financial shocks for young Kiwis.",
   },
   {
     title: "Dentist visit — no insurance",
     description: "A routine checkup revealed two small cavities. Without dental insurance, the bill came to $320 out of pocket.",
     type: "expense", balanceChange: -320, xpChange: 10,
-    category: "health", emoji: "🦷",
+    category: "health", icon: "health",
     tip: "Dental care in NZ is not subsidised for adults. Consider dental insurance or a dedicated savings fund for health costs.",
   },
   {
     title: "Phone screen shattered",
     description: "You dropped your phone on the footpath. No insurance. Screen replacement at iCare in Auckland: $260.",
     type: "expense", balanceChange: -260, xpChange: 5,
-    category: "surprise", emoji: "📱",
+    category: "surprise", icon: "phone",
     tip: "Phone insurance costs about $15/month. One screen replacement costs $260. The maths is worth it.",
   },
   {
     title: "Speeding fine on the Southern Motorway",
     description: "15km/h over the limit on the way to work. NZTA fine: $150. No demerit points this time.",
     type: "expense", balanceChange: -150, xpChange: 5,
-    category: "car", emoji: "🚗",
+    category: "car", icon: "car",
     tip: "Traffic fines are entirely preventable. $150 is about 6 hours of work at minimum wage.",
   },
   {
     title: "Friend's birthday dinner — you offered to pay",
     description: "Big night out in Ponsonby. You generously covered the table. Total: $220.",
     type: "expense", balanceChange: -220, xpChange: 15,
-    category: "social", emoji: "🍽️",
+    category: "social", icon: "social",
     tip: "Social spending is real spending. Budget for it in the 30% wants category so it does not catch you off guard.",
   },
   {
     title: "Gym membership auto-renewed",
     description: "You forgot to cancel your gym membership before the annual renewal. $540 charged to your account.",
     type: "expense", balanceChange: -540, xpChange: 10,
-    category: "surprise", emoji: "💪",
+    category: "surprise", icon: "gym",
     tip: "Set calendar reminders before subscription renewals. Subscriptions you forget about are pure wasted money.",
   },
   {
     title: "Trademe listing fee gone wrong",
     description: "You listed an item for too low a price and it sold before you could cancel. Net loss compared to market value: $180.",
     type: "expense", balanceChange: -180, xpChange: 20,
-    category: "surprise", emoji: "💻",
+    category: "surprise", icon: "laptop",
     tip: "Always research market prices before listing anything for sale. Check what similar items have actually sold for.",
   },
 
@@ -197,42 +197,42 @@ const LIFE_EVENT_POOL: Omit<LifeEvent, "id">[] = [
     title: "Sold old gear on Trademe",
     description: "You finally cleaned out your room and sold old sports equipment, games, and clothes on Trademe. Net proceeds: $340.",
     type: "income", balanceChange: 340, xpChange: 20,
-    category: "opportunity", emoji: "📦",
+    category: "opportunity", icon: "package",
     tip: "Decluttering = money. The average NZ household has over $3,000 worth of unused items that could be sold.",
   },
   {
     title: "Work paid you a surprise bonus",
     description: "Your manager recognised your extra effort this month. Discretionary bonus added to your pay: $250.",
     type: "income", balanceChange: 250, xpChange: 30,
-    category: "work", emoji: "⭐",
+    category: "work", icon: "star",
     tip: "Going above expectations at work is one of the fastest ways to increase your income. Performance bonuses are real.",
   },
   {
     title: "Won a workplace raffle",
     description: "The office Christmas raffle — you won a $150 prezzy card.",
     type: "income", balanceChange: 150, xpChange: 10,
-    category: "surprise", emoji: "🎁",
+    category: "surprise", icon: "gift",
     tip: "Windfall money is a great opportunity to top up your emergency fund or savings before spending it.",
   },
   {
     title: "Cash job over the weekend",
     description: "You helped a neighbour move house and paint a room. Cash in hand: $200.",
     type: "income", balanceChange: 200, xpChange: 15,
-    category: "work", emoji: "🏠",
+    category: "work", icon: "home",
     tip: "Side income adds up fast. Even one cash job per fortnight at $200 equals $5,200 extra per year.",
   },
   {
     title: "Family gifted you money for your birthday",
     description: "Your grandparents sent you $300 for your birthday with a note saying to save it wisely.",
     type: "income", balanceChange: 300, xpChange: 10,
-    category: "social", emoji: "🎂",
+    category: "social", icon: "birthday",
     tip: "Gifts and windfalls are a chance to accelerate your goals. What does your pūtake say to do with this?",
   },
   {
     title: "Tax refund from IRD",
     description: "You were on the wrong tax code last year and overpaid. IRD processed your refund: $420.",
     type: "income", balanceChange: 420, xpChange: 25,
-    category: "opportunity", emoji: "🏛️",
+    category: "opportunity", icon: "bank",
     tip: "Always check your tax code. Using the wrong code is one of the most common and easily fixed money mistakes in NZ.",
   },
 
@@ -241,21 +241,21 @@ const LIFE_EVENT_POOL: Omit<LifeEvent, "id">[] = [
     title: "You negotiated a pay rise",
     description: "You asked for a pay review and made a compelling case. Your employer agreed to a $2/hr increase starting next pay cycle.",
     type: "mixed", balanceChange: 80, xpChange: 50,
-    category: "work", emoji: "💼",
+    category: "work", icon: "work",
     tip: "Negotiating your salary is the highest-return financial skill you can develop. Most people never ask — those who do earn significantly more over their careers.",
   },
   {
     title: "Enrolled in KiwiSaver",
     description: "You finally enrolled in KiwiSaver. Your employer will now contribute 3% on top of your contributions. Long-term wealth building starts now.",
     type: "mixed", balanceChange: 0, xpChange: 75,
-    category: "opportunity", emoji: "🥝",
+    category: "opportunity", icon: "kiwisaver",
     tip: "If you are not in KiwiSaver, you are leaving free money on the table. Your employer must contribute at least 3% on top of your own contributions.",
   },
   {
     title: "Opened a high-interest savings account",
     description: "You moved your emergency fund to a 4.8% savings account. Small action, big long-term impact.",
     type: "mixed", balanceChange: 0, xpChange: 40,
-    category: "opportunity", emoji: "🏦",
+    category: "opportunity", icon: "savings",
     tip: "Money sitting in a transaction account earning 0.1% when savings accounts offer 4.8% is costing you real money every day.",
   },
 ];

@@ -3,24 +3,31 @@ import { useState } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useGame } from "@/lib/gameContext";
-import { Target, Plus, Trash2, Check, DollarSign, Zap, TrendingUp, Home, Car, PiggyBank, Plane, GraduationCap, Star } from "lucide-react";
+import { Target, Plus, Trash2, Check, DollarSign, TrendingUp, Home, Car, PiggyBank, Plane, GraduationCap, Star, Shield, Briefcase, BarChart2, Zap } from "lucide-react";
 
 const FONT = "Inter, system-ui, sans-serif";
 
-type Goal = { label: string; target: number; icon: string; created: number };
+type Goal = { label: string; target: number; iconKey: string; created: number };
+
+const GOAL_ICONS: Record<string, any> = {
+  home: Home, car: Car, plane: Plane, chart: TrendingUp,
+  graduate: GraduationCap, work: Briefcase, shield: Shield,
+  target: Target, savings: PiggyBank, dollar: DollarSign,
+  star: Star, zap: Zap,
+};
 
 const GOAL_TEMPLATES = [
-  { label: "Emergency Fund",        target: 3000,   icon: "🛡️", desc: "3 months of expenses covered" },
-  { label: "House Deposit (20%)",   target: 100000, icon: "🏠", desc: "Auckland apartment deposit" },
-  { label: "New Car",               target: 20000,  icon: "🚗", desc: "Reliable used car outright" },
-  { label: "OE Fund",               target: 15000,  icon: "✈️", desc: "12 months overseas experience" },
-  { label: "Investment Portfolio",  target: 50000,  icon: "📈", desc: "Diversified stocks and funds" },
-  { label: "Student Loan Free",     target: 25000,  icon: "🎓", desc: "Pay off student debt completely" },
-  { label: "KiwiSaver Boost",       target: 10000,  icon: "🥝", desc: "Voluntary top-up for first home" },
-  { label: "Business Startup",      target: 30000,  icon: "💼", desc: "Seed capital for your own venture" },
+  { label: "Emergency Fund",        target: 3000,   iconKey: "shield",   desc: "3 months of expenses covered" },
+  { label: "House Deposit (20%)",   target: 100000, iconKey: "home",     desc: "Auckland apartment deposit" },
+  { label: "New Car",               target: 20000,  iconKey: "car",      desc: "Reliable used car outright" },
+  { label: "OE Fund",               target: 15000,  iconKey: "plane",    desc: "12 months overseas experience" },
+  { label: "Investment Portfolio",  target: 50000,  iconKey: "chart",    desc: "Diversified stocks and funds" },
+  { label: "Student Loan Free",     target: 25000,  iconKey: "graduate", desc: "Pay off student debt completely" },
+  { label: "KiwiSaver Boost",       target: 10000,  iconKey: "savings",  desc: "Voluntary top-up for first home" },
+  { label: "Business Startup",      target: 30000,  iconKey: "work",     desc: "Seed capital for your own venture" },
 ];
 
-const ICON_OPTIONS = ["🏠","🚗","✈️","📈","🎓","💼","🛡️","🎯","🥝","💰","🏋️","🎸","📷","🌏"];
+const ICON_OPTIONS = Object.keys(GOAL_ICONS);
 
 export default function GoalsPage() {
   const { state, setGoals } = useGame();
@@ -35,12 +42,12 @@ export default function GoalsPage() {
   const [showAdd, setShowAdd] = useState(false);
   const [newLabel, setNewLabel] = useState("");
   const [newTarget, setNewTarget] = useState("");
-  const [newIcon, setNewIcon] = useState("🎯");
+  const [newIcon, setNewIcon] = useState("target");
 
   function addGoal(label: string, target: number, icon: string) {
     const updated = [...savedGoals, { label, target, icon, created: Date.now() }];
     setGoals(updated);
-    setShowAdd(false); setNewLabel(""); setNewTarget(""); setNewIcon("🎯");
+    setShowAdd(false); setNewLabel(""); setNewTarget(""); setNewIcon("target");
   }
 
   function removeGoal(i: number) {
@@ -107,10 +114,12 @@ export default function GoalsPage() {
                   <div style={{ marginBottom: 12 }}>
                     <label style={{ display: "block", fontSize: "0.72rem", color: "#64748b", fontWeight: 600, marginBottom: 6 }}>Icon</label>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                      {ICON_OPTIONS.map(ico => (
-                        <button key={ico} onClick={() => setNewIcon(ico)} style={{ width: 36, height: 36, borderRadius: 8, border: `2px solid ${newIcon === ico ? "#76AD25" : "#e2e8f0"}`, background: newIcon === ico ? "#e8f5d0" : "#f8fafc", fontSize: "1.1rem", cursor: "pointer" }}>
-                          {ico}
-                        </button>
+                      {ICON_OPTIONS.map(ico => {
+                        const I = GOAL_ICONS[ico] ?? Target;
+                        return <button key={ico} onClick={() => setNewIcon(ico)} style={{ width: 36, height: 36, borderRadius: 8, border: `2px solid ${newIcon === ico ? "#76AD25" : "#e2e8f0"}`, background: newIcon === ico ? "#e8f5d0" : "#f8fafc", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                          <I size={16} color={newIcon === ico ? "#76AD25" : "#94a3b8"} />
+                        </button>;
+                      }
                       ))}
                     </div>
                   </div>
@@ -154,7 +163,9 @@ export default function GoalsPage() {
                     return (
                       <div key={i} style={{ background: "#fff", border: `1.5px solid ${done ? "#76AD25" : "#e2e8f0"}`, borderRadius: 14, padding: "18px", transition: "border-color .2s" }}>
                         <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 14 }}>
-                          <div style={{ fontSize: "1.75rem", flexShrink: 0 }}>{goal.icon}</div>
+                          <div style={{ width: 36, height: 36, borderRadius: 9, background: "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                              {(() => { const I = GOAL_ICONS[goal.iconKey ?? "target"] ?? Target; return <I size={18} color="#76AD25" />; })()}
+                            </div>
                           <div style={{ flex: 1 }}>
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                               <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#0d1526" }}>{goal.label}</h3>
@@ -195,14 +206,16 @@ export default function GoalsPage() {
                   const alreadyAdded = savedGoals.some(g => g.label === t.label);
                   return (
                     <div key={t.label} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: "12px 14px", display: "flex", alignItems: "center", gap: 10 }}>
-                      <span style={{ fontSize: "1.25rem", flexShrink: 0 }}>{t.icon}</span>
+                      <div style={{ width: 28, height: 28, borderRadius: 7, background: "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      {(() => { const I = GOAL_ICONS[t.iconKey] ?? Target; return <I size={14} color="#76AD25" />; })()}
+                    </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ fontWeight: 600, fontSize: "0.8rem", color: "#0d1526" }}>{t.label}</div>
                         <div style={{ fontSize: "0.7rem", color: "#94a3b8" }}>{t.desc}</div>
                         <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "#76AD25", marginTop: 2 }}>${t.target.toLocaleString()}</div>
                       </div>
                       <button
-                        onClick={() => !alreadyAdded && addGoal(t.label, t.target, t.icon)}
+                        onClick={() => !alreadyAdded && addGoal(t.label, t.target, t.iconKey)}
                         disabled={alreadyAdded}
                         style={{ background: alreadyAdded ? "#f1f5f9" : "#e8f5d0", color: alreadyAdded ? "#94a3b8" : "#5d8a1c", border: "none", borderRadius: 7, padding: "5px 10px", fontSize: "0.72rem", fontWeight: 700, cursor: alreadyAdded ? "default" : "pointer", fontFamily: FONT, flexShrink: 0 }}>
                         {alreadyAdded ? "Added" : "+ Add"}

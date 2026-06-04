@@ -79,7 +79,7 @@ export default function LoginPage() {
 
         {/* Logo */}
         <div style={{ textAlign: "center", marginBottom: 28 }}>
-          <Image src="/logo.png" alt="PocketWise" width={60} height={60} style={{ objectFit: "contain", marginBottom: 10 }} />
+          <Image src="/logo.png" alt="PocketWise" width={60} height={60} style={{ objectFit: "contain", marginBottom: 10, borderRadius: 12, background: "#fff", padding: 4 }} />
           <h1 style={{ fontWeight: 900, fontSize: "1.5rem", color: "#fff", marginBottom: 4 }}>PocketWise</h1>
           <p style={{ color: "#8b9dc3", fontSize: "0.825rem" }}>NZ Financial Literacy Platform</p>
         </div>

@@ -104,7 +104,7 @@ export default function OnboardingPage() {
         {/* Step 0 — Welcome */}
         {step === 0 && (
           <div style={{ textAlign: "center" }}>
-            <Image src="/logo.png" alt="PocketWise" width={80} height={80} style={{ objectFit: "contain", marginBottom: 20 }} />
+            <Image src="/logo.png" alt="PocketWise" width={80} height={80} style={{ objectFit: "contain", marginBottom: 20, borderRadius: 12, background: "#fff", padding: 4 }} />
             <h1 style={{ fontWeight: 900, fontSize: "2.25rem", color: "#fff", marginBottom: 12, lineHeight: 1.1 }}>
               Welcome to<br /><span style={{ color: "#76AD25" }}>PocketWise</span>
             </h1>
