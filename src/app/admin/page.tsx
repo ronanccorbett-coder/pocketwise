@@ -55,10 +55,6 @@ export default function AdminPage() {
   async function rejectTeacher(req: any) {
     await db.transact((db as any).tx.teacherRequests[req.id].update({ status: "rejected", reviewedAt: Date.now() }));
   }
-  const allStocks     = (stockData?.userStocks ?? []) as any[];
-  const allLoans      = (loanData?.userLoans ?? []) as any[];
-  const allProperties = (propData?.userProperties ?? []) as any[];
-  const allClassrooms = (classData?.classrooms ?? []) as any[];
 
   function getUserDisplay(userId: string) {
     const found = allUsers.find((u: any) => u.id === userId);
