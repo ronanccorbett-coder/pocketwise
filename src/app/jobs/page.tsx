@@ -3,8 +3,6 @@ import { useState } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useGame, XP_GATES } from "@/lib/gameContext";
-import { Briefcase, Zap, Trophy, Lock, Check, Star, TrendingUp } from "lucide-react";
-
 import { Briefcase, Zap, Trophy, Lock, Check, Coffee, ShoppingCart, Store, BookOpen, Building, Megaphone, BarChart2, Code, Cpu, TrendingUp } from "lucide-react";
 
 const FONT = "Inter, system-ui, sans-serif";
