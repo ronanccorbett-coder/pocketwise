@@ -10,7 +10,7 @@ import {
   ChevronDown, ChevronUp, RefreshCw, Home,
 } from "lucide-react";
 
-const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronanccorbett@gmail.com"];
+const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronan@pocketwise.nz"];
 
 type AdminTab = "overview" | "users" | "modules" | "permissions";
 
@@ -27,15 +27,34 @@ export default function AdminPage() {
   const [uploading, setUploading] = useState(false);
   const [uploadLog, setUploadLog] = useState<string[]>([]);
 
-  const { data: stateData }   = db.useQuery({ userState: {} });
-  const { data: usersData }   = db.useQuery({ $users: {} });
-  const { data: stockData }   = db.useQuery({ userStocks: {} });
-  const { data: loanData }    = db.useQuery({ userLoans: {} });
-  const { data: propData }    = db.useQuery({ userProperties: {} });
-  const { data: classData }   = db.useQuery({ classrooms: {} });
+  const { data: stateData }    = db.useQuery({ userState: {} });
+  const { data: usersData }    = db.useQuery({ $users: {} });
+  const { data: stockData }    = db.useQuery({ userStocks: {} });
+  const { data: loanData }     = db.useQuery({ userLoans: {} });
+  const { data: propData }     = db.useQuery({ userProperties: {} });
+  const { data: classData }    = db.useQuery({ classrooms: {} });
+  const { data: reqData }      = db.useQuery({ teacherRequests: {} });
 
-  const allStates     = (stateData?.userState ?? []) as any[];
-  const allUsers      = (usersData?.$users ?? []) as any[];
+  const allStates       = (stateData?.userState ?? []) as any[];
+  const allUsers        = (usersData?.$users ?? []) as any[];
+  const allStocks       = (stockData?.userStocks ?? []) as any[];
+  const allLoans        = (loanData?.userLoans ?? []) as any[];
+  const allProperties   = (propData?.userProperties ?? []) as any[];
+  const allClassrooms   = (classData?.classrooms ?? []) as any[];
+  const teacherRequests = (reqData?.teacherRequests ?? []) as any[];
+  const pendingRequests = teacherRequests.filter(r => r.status === "pending");
+
+  async function approveTeacher(req: any) {
+    // Approve the request
+    await db.transact((db as any).tx.teacherRequests[req.id].update({ status: "approved", reviewedAt: Date.now() }));
+    // Find their userState and set teacherApproved
+    const us = allStates.find(s => s.userId === req.userId);
+    if (us) await db.transact((db as any).tx.userState[us.id].update({ teacherApproved: true, role: "teacher" }));
+  }
+
+  async function rejectTeacher(req: any) {
+    await db.transact((db as any).tx.teacherRequests[req.id].update({ status: "rejected", reviewedAt: Date.now() }));
+  }
   const allStocks     = (stockData?.userStocks ?? []) as any[];
   const allLoans      = (loanData?.userLoans ?? []) as any[];
   const allProperties = (propData?.userProperties ?? []) as any[];
@@ -167,7 +186,7 @@ export default function AdminPage() {
         {/* Sidebar */}
         <div style={{ width: 220, background: "#111c30", borderRight: "1px solid #2a3a5c", display: "flex", flexDirection: "column", position: "fixed", top: 0, bottom: 0, left: 0 }}>
           <div style={{ padding: "20px 16px", borderBottom: "1px solid #2a3a5c", display: "flex", alignItems: "center", gap: 10 }}>
-            <Image src="/logo.png" alt="PocketWise" width={28} height={28} style={{ objectFit: "contain" }} />
+            <Image src="/logo.png" alt="PocketWise" width={28} height={28} style={{ objectFit: "contain", borderRadius: 8, background: "transparent" }} />
             <div>
               <div style={{ fontWeight: 800, fontSize: "0.875rem", color: "#fff" }}>PocketWise</div>
               <div style={{ fontSize: "0.68rem", color: "#76AD25", fontWeight: 600 }}>Admin Panel</div>
@@ -285,6 +304,32 @@ export default function AdminPage() {
             <div>
               <h1 style={{ fontWeight: 800, fontSize: "1.4rem", marginBottom: 4 }}>User Management</h1>
               <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 20 }}>Click XP or Balance to edit. Click the arrow to expand full details.</p>
+
+              {/* Teacher Requests */}
+              {pendingRequests.length > 0 && (
+                <div style={{ background: "rgba(59,130,246,.1)", border: "1.5px solid rgba(59,130,246,.3)", borderRadius: 14, padding: "16px 20px", marginBottom: 24 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
+                    <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#3B82F6", animation: "pw-pulse-glow 2s ease infinite", color: "#3B82F6" }} />
+                    <h3 style={{ fontWeight: 800, color: "#60a5fa", fontSize: "0.9rem" }}>Teacher Requests ({pendingRequests.length} pending)</h3>
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    {pendingRequests.map((req: any) => (
+                      <div key={req.id} style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 10, padding: "14px 16px", display: "flex", alignItems: "flex-start", gap: 12 }}>
+                        <div style={{ flex: 1 }}>
+                          <div style={{ fontWeight: 700, color: "#fff", fontSize: "0.875rem" }}>{req.email}</div>
+                          {req.school && <div style={{ fontSize: "0.75rem", color: "#8b9dc3", marginTop: 2 }}>School: {req.school}</div>}
+                          {req.message && <div style={{ fontSize: "0.75rem", color: "#64748b", marginTop: 4, fontStyle: "italic" }}>"{req.message}"</div>}
+                          <div style={{ fontSize: "0.7rem", color: "#4a5a7a", marginTop: 4 }}>{new Date(req.createdAt).toLocaleDateString("en-NZ")}</div>
+                        </div>
+                        <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
+                          <button onClick={() => approveTeacher(req)} className="btn-3d-green" style={{ padding: "7px 16px", fontSize: "0.78rem" }}>Approve</button>
+                          <button onClick={() => rejectTeacher(req)} className="btn-3d-red" style={{ padding: "7px 12px", fontSize: "0.78rem" }}>Reject</button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div style={{ position: "relative", marginBottom: 20, maxWidth: 400 }}>
                 <Search size={15} color="#8b9dc3" style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} />

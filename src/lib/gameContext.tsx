@@ -183,13 +183,20 @@ export function GameProvider({ children }: { children: ReactNode }) {
   // Bootstrap new user — guarded by ref to prevent double-fire
   useEffect(() => {
     if (!authUser || authLoading || stateData === undefined) return;
-    if (allStates.length > 0) return; // already exists
-    if (bootstrapRef.current) return; // already bootstrapping
+    if (allStates.length > 0) return;
+    if (bootstrapRef.current) return;
     bootstrapRef.current = true;
+    // Check if they signed up as teacher (stored pre-login)
+    const pendingRole = typeof window !== "undefined" ? localStorage.getItem("pw_pending_role") : null;
+    const pendingSchool = typeof window !== "undefined" ? localStorage.getItem("pw_pending_school") : null;
+    const pendingMsg = typeof window !== "undefined" ? localStorage.getItem("pw_pending_msg") : null;
+    const isTeacher = pendingRole === "teacher";
     db.transact(
       (db as any).tx.userState[id()].update({
         userId: authUser.id,
         email: authUser.email ?? "",
+        role: isTeacher ? "teacher" : "student",
+        teacherApproved: false,
         xp: 0,
         balance: 5000,
         totalEarned: 5000,
@@ -206,6 +213,23 @@ export function GameProvider({ children }: { children: ReactNode }) {
         lastWeeklyTick: Date.now(),
       })
     );
+    // Submit teacher request
+    if (isTeacher) {
+      db.transact(
+        (db as any).tx.teacherRequests[id()].update({
+          userId: authUser.id,
+          email: authUser.email ?? "",
+          fullName: authUser.email?.split("@")[0] ?? "",
+          school: pendingSchool ?? "",
+          message: pendingMsg ?? "",
+          status: "pending",
+          createdAt: Date.now(),
+        })
+      );
+      localStorage.removeItem("pw_pending_role");
+      localStorage.removeItem("pw_pending_school");
+      localStorage.removeItem("pw_pending_msg");
+    }
   }, [authUser, rawState, authLoading, stateData]);
 
   // ── Daily tick — runs every 60 seconds, triggers if 24hrs have passed ──

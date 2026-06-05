@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield, User, Star, Target } from "lucide-react";
+import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield, User, Star, Target, GraduationCap, Users } from "lucide-react";
 import { useGame } from "@/lib/gameContext";
 
 const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronan@pocketwise.nz"];
@@ -21,7 +21,8 @@ export default function Nav() {
   const path = usePathname();
   const router = useRouter();
   const { state, signOut, user } = useGame();
-  const isAdmin = ADMIN_EMAILS.includes(user?.email ?? "");
+  const isAdmin   = ADMIN_EMAILS.includes(user?.email ?? "");
+  const isTeacher = (state as any)?.role === "teacher" && (state as any)?.teacherApproved === true;
 
   function handleSignOut() {
     signOut();
@@ -68,6 +69,35 @@ export default function Nav() {
           }}>
             <Shield size={14} />
             Admin
+          </Link>
+        )}
+        {isTeacher && (
+          <Link href="/teacher" style={{
+            display: "flex", alignItems: "center", gap: 5,
+            padding: "6px 14px", borderRadius: 8,
+            fontSize: "0.84rem", fontWeight: 700,
+            color: path.startsWith("/teacher") ? "#fff" : "#3B82F6",
+            background: path.startsWith("/teacher") ? "#3B82F6" : "rgba(59,130,246,.1)",
+            border: `1px solid ${path.startsWith("/teacher") ? "#3B82F6" : "rgba(59,130,246,.2)"}`,
+            textDecoration: "none",
+            boxShadow: path.startsWith("/teacher") ? "0 4px 0 #1e3a8a, 0 6px 12px rgba(59,130,246,.3)" : "none",
+            transition: "all .15s",
+          }}>
+            <GraduationCap size={14} />
+            My Class
+          </Link>
+        )}
+        {!isTeacher && (
+          <Link href="/join" style={{
+            display: "flex", alignItems: "center", gap: 5,
+            padding: "6px 12px", borderRadius: 8,
+            fontSize: "0.78rem", fontWeight: 600,
+            color: path.startsWith("/join") ? "#3B82F6" : "#94a3b8",
+            background: path.startsWith("/join") ? "rgba(59,130,246,.1)" : "transparent",
+            textDecoration: "none", transition: "all .15s",
+          }}>
+            <Users size={13} />
+            Join Class
           </Link>
         )}
       </div>
