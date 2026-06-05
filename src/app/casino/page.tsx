@@ -49,7 +49,7 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
   const [bet, setBet] = useState(2);
   const [reels, setReels] = useState(["DM","7X","ST"]);
   const [spinning, setSpinning] = useState(false);
-  const [result, setResult] = useState<{msg:string;win:boolean}|null>(null);
+  const [result, setResult] = useState<{msg:string;win:boolean;tier?:string}|null>(null);
   const [jackpot] = useState(() => Math.floor(Math.random()*800+400));
 
   const handleSpin = useCallback(() => {
@@ -63,7 +63,11 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
         clearInterval(iv);
         const final = spin3(); setReels(final);
         const win = calcWin(final, bet);
-        if (win > 0) { onWin(win); setResult({ msg: `You won $${win.toFixed(2)}!`, win: true }); }
+        if (win > 0) {
+          onWin(win);
+          const tier = win >= bet * 30 ? "JACKPOT" : win >= bet * 10 ? "BIG WIN" : win >= bet * 3 ? "NICE WIN" : "WIN";
+          setResult({ msg: `${tier}! +$${win.toFixed(2)}`, win: true, tier });
+        }
         else setResult({ msg: "No win. Better luck next spin.", win: false });
         setSpinning(false);
       }
@@ -76,7 +80,7 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
         <div style={{ fontSize: "0.7rem", color: "#f59e0b", fontWeight: 700, letterSpacing: ".1em", marginBottom: 4 }}>JACKPOT</div>
         <div style={{ fontSize: "2rem", fontWeight: 900, color: "#f59e0b" }}>${jackpot}</div>
       </div>
-      <div style={{ background: "rgba(0,0,0,.5)", border: "2px solid #f59e0b", borderRadius: 18, padding: "24px", marginBottom: 14 }}>
+      <div className={result?.win ? (result.tier === "JACKPOT" ? "pw-jackpot-flash" : "pw-win-flash") : ""} style={{ background: "rgba(0,0,0,.5)", border: `2px solid ${result?.win ? (result.tier==="JACKPOT"?"#f59e0b":"#76AD25") : "#f59e0b"}`, borderRadius: 18, padding: "24px", marginBottom: 14, transition: "border-color .3s" }}>
         <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 18 }}>
           {reels.map((sym, i) => (
             <div key={i} style={{
@@ -104,14 +108,19 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
         {result && (
           <div style={{
             textAlign: "center", marginBottom: 12,
-            color: result.win ? "#76AD25" : "#EF4444",
-            fontWeight: 800, fontSize: result.win ? "1.1rem" : "0.95rem",
-            animation: result.win ? "pw-pop 0.4s cubic-bezier(.34,1.56,.64,1)" : "pw-shake 0.4s ease",
-            textShadow: result.win ? "0 0 20px #76AD2588" : "none",
+            color: result.win ? (result.tier === "JACKPOT" ? "#f59e0b" : result.tier === "BIG WIN" ? "#22d3ee" : "#76AD25") : "#EF4444",
+            fontWeight: 900,
+            fontSize: result.tier === "JACKPOT" ? "1.5rem" : result.tier === "BIG WIN" ? "1.25rem" : result.win ? "1.1rem" : "0.95rem",
+            animation: result.win
+              ? result.tier === "JACKPOT" ? "pw-jackpot-flash .8s ease, pw-bounce .4s ease infinite alternate"
+              : result.tier === "BIG WIN" ? "pw-pop .4s cubic-bezier(.34,1.56,.64,1), pw-bounce .5s ease 0.4s infinite alternate"
+              : "pw-pop .3s cubic-bezier(.34,1.56,.64,1)"
+              : "pw-shake .4s ease",
+            textShadow: result.tier === "JACKPOT" ? "0 0 30px #f59e0b" : result.tier === "BIG WIN" ? "0 0 20px #22d3ee" : "none",
           }}>
-            {result.win && <span style={{ marginRight: 6, animation: "pw-bounce 0.5s ease infinite alternate", display: "inline-block" }}>★</span>}
+            {result.win && result.tier === "JACKPOT" && <div style={{ fontSize: "0.9rem", letterSpacing: ".15em", marginBottom: 4 }}>★ ★ ★</div>}
             {result.msg}
-            {result.win && <span style={{ marginLeft: 6, animation: "pw-bounce 0.5s ease 0.1s infinite alternate", display: "inline-block" }}>★</span>}
+            {result.win && result.tier === "JACKPOT" && <div style={{ fontSize: "0.9rem", letterSpacing: ".15em", marginTop: 4 }}>★ ★ ★</div>}
           </div>
         )}
         <div style={{ textAlign: "center", marginBottom: 14 }}>
@@ -562,7 +571,7 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
           <p style={{ color: "#64748b", fontSize: "0.85rem", marginBottom: 20 }}>Reveal tiles to multiply your bet. Hit a mine and lose everything.</p>
           <div style={{ marginBottom: 14 }}>
             <label style={{ display: "block", fontSize: "0.75rem", color: "#8b9dc3", marginBottom: 6 }}>Mines: {mineCount}</label>
-            <input type="range" min={1} max={20} value={mineCount} onChange={e => setMineCount(parseInt(e.target.value))} style={{ width: "100%" }} />
+            <input type="range" className="pw-range" min={1} max={20} value={mineCount} onChange={e => setMineCount(parseInt(e.target.value))} style={{ width: "100%" }} />
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.7rem", color: "#4a5a7a" }}><span>1 mine (easy)</span><span>20 mines (reckless)</span></div>
           </div>
           <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
@@ -712,7 +721,7 @@ function CrashGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
           <div>
             <div style={{ marginBottom: 14 }}>
               <label style={{ display: "block", fontSize: "0.75rem", color: "#8b9dc3", marginBottom: 6 }}>Auto cash-out at: {autoCashout.toFixed(1)}x</label>
-              <input type="range" min={1.1} max={10} step={0.1} value={autoCashout} onChange={e => setAutoCashout(parseFloat(e.target.value))} style={{ width: "100%" }} />
+              <input type="range" className="pw-range" min={1.1} max={10} step={0.1} value={autoCashout} onChange={e => setAutoCashout(parseFloat(e.target.value))} style={{ width: "100%" }} />
             </div>
             <div style={{ marginBottom: 16, display: "flex", justifyContent: "center" }}>
               <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 100)} bets={[5,10,25,50,100]} />

@@ -5,19 +5,27 @@ import AuthGuard from "@/components/AuthGuard";
 import { useGame, XP_GATES } from "@/lib/gameContext";
 import { Briefcase, Zap, Trophy, Lock, Check, Star, TrendingUp } from "lucide-react";
 
+import { Briefcase, Zap, Trophy, Lock, Check, Coffee, ShoppingCart, Store, BookOpen, Building, Megaphone, BarChart2, Code, Cpu, TrendingUp } from "lucide-react";
+
 const FONT = "Inter, system-ui, sans-serif";
 
+const JOB_ICONS: Record<string, any> = {
+  barista: Coffee, cashier: ShoppingCart, retail: Store, "teacher-aide": BookOpen,
+  admin: Building, marketing: Megaphone, accounts: BarChart2, developer: Code,
+  engineer: Cpu, analyst: TrendingUp,
+};
+
 const CAREERS = [
-  { id:"barista",      title:"Barista",               company:"Mojo Coffee",      salary:320,  xpReq:XP_GATES.jobEntry,    level:"Entry",    category:"Hospitality", hours:15, icon:"☕" },
-  { id:"cashier",      title:"Supermarket Cashier",   company:"Pak'nSave",        salary:420,  xpReq:XP_GATES.jobEntry,    level:"Entry",    category:"Retail",      hours:20, icon:"🛒" },
-  { id:"retail",       title:"Retail Assistant",      company:"The Warehouse",    salary:380,  xpReq:XP_GATES.jobEntry,    level:"Entry",    category:"Retail",      hours:18, icon:"🏪" },
-  { id:"teacher-aide", title:"Teacher Aide",          company:"Auckland Schools", salary:520,  xpReq:XP_GATES.jobEntry,    level:"Entry",    category:"Education",   hours:25, icon:"📚" },
-  { id:"admin",        title:"Administration Officer",company:"IRD",              salary:680,  xpReq:XP_GATES.jobJunior,   level:"Junior",   category:"Government",  hours:35, icon:"🏛" },
-  { id:"marketing",    title:"Marketing Coordinator", company:"Tourism NZ",       salary:1050, xpReq:XP_GATES.jobGraduate, level:"Graduate", category:"Marketing",   hours:40, icon:"📣" },
-  { id:"accounts",     title:"Accounts Assistant",    company:"Deloitte NZ",      salary:1100, xpReq:XP_GATES.jobGraduate, level:"Graduate", category:"Finance",     hours:40, icon:"📊" },
-  { id:"developer",    title:"Junior Developer",      company:"Xero",             salary:1400, xpReq:XP_GATES.jobGraduate, level:"Graduate", category:"Technology",  hours:40, icon:"💻" },
-  { id:"engineer",     title:"Software Engineer",     company:"Spark NZ",         salary:1800, xpReq:XP_GATES.jobSenior,   level:"Senior",   category:"Technology",  hours:40, icon:"⚡" },
-  { id:"analyst",      title:"Financial Analyst",     company:"ANZ Bank",         salary:1650, xpReq:XP_GATES.jobSenior,   level:"Senior",   category:"Finance",     hours:40, icon:"📈" },
+  { id:"barista",      title:"Barista",               company:"Mojo Coffee",      salary:320,  xpReq:XP_GATES.jobEntry,    level:"Entry",    category:"Hospitality", hours:15 },
+  { id:"cashier",      title:"Supermarket Cashier",   company:"Pak'nSave",        salary:420,  xpReq:XP_GATES.jobEntry,    level:"Entry",    category:"Retail",      hours:20 },
+  { id:"retail",       title:"Retail Assistant",      company:"The Warehouse",    salary:380,  xpReq:XP_GATES.jobEntry,    level:"Entry",    category:"Retail",      hours:18 },
+  { id:"teacher-aide", title:"Teacher Aide",          company:"Auckland Schools", salary:520,  xpReq:XP_GATES.jobEntry,    level:"Entry",    category:"Education",   hours:25 },
+  { id:"admin",        title:"Administration Officer",company:"IRD",              salary:680,  xpReq:XP_GATES.jobJunior,   level:"Junior",   category:"Government",  hours:35 },
+  { id:"marketing",    title:"Marketing Coordinator", company:"Tourism NZ",       salary:1050, xpReq:XP_GATES.jobGraduate, level:"Graduate", category:"Marketing",   hours:40 },
+  { id:"accounts",     title:"Accounts Assistant",    company:"Deloitte NZ",      salary:1100, xpReq:XP_GATES.jobGraduate, level:"Graduate", category:"Finance",     hours:40 },
+  { id:"developer",    title:"Junior Developer",      company:"Xero",             salary:1400, xpReq:XP_GATES.jobGraduate, level:"Graduate", category:"Technology",  hours:40 },
+  { id:"engineer",     title:"Software Engineer",     company:"Spark NZ",         salary:1800, xpReq:XP_GATES.jobSenior,   level:"Senior",   category:"Technology",  hours:40 },
+  { id:"analyst",      title:"Financial Analyst",     company:"ANZ Bank",         salary:1650, xpReq:XP_GATES.jobSenior,   level:"Senior",   category:"Finance",     hours:40 },
 ];
 
 const LEVEL_COLORS: Record<string,string> = { Entry:"#76AD25", Junior:"#3B82F6", Graduate:"#f59e0b", Senior:"#EF4444" };
@@ -179,12 +187,11 @@ export default function JobsPage() {
                       width:48, height:48, borderRadius:12,
                       background:locked ? "#f8fafc" : `${color}15`,
                       display:"flex", alignItems:"center", justifyContent:"center",
-                      fontSize:"1.6rem",
                       boxShadow:!locked && isHovered ? `0 0 16px ${LEVEL_SHADOWS[job.level]}` : "none",
                       transition:"all .2s",
                       transform:isHovered && !locked ? "scale(1.1) rotate(-5deg)" : "scale(1) rotate(0)",
                     }}>
-                      {job.icon}
+                      {(() => { const I = JOB_ICONS[job.id] ?? Briefcase; return <I size={22} color={locked ? "#94a3b8" : color} />; })()}
                     </div>
                     <div>
                       <div style={{ fontWeight:800, fontSize:"0.925rem", color:locked?"#94a3b8":"#0d1526", lineHeight:1.2 }}>{job.title}</div>

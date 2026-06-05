@@ -51,7 +51,7 @@ const MESSAGES: Record<Mood, string[]> = {
   ],
 };
 
-// ── Core Kiwi SVG ──────────────────────────────────────────────────────────
+// ── Clean cute Kiwi SVG ────────────────────────────────────────────────────
 export function KiwiMascot({
   mood = "happy",
   size = 80,
@@ -61,161 +61,152 @@ export function KiwiMascot({
   size?: number;
   animate?: boolean;
 }) {
-  const isSad = mood === "sad";
-  const isExcited = mood === "excited" || mood === "celebrating" || mood === "love";
-  const isSleeping = mood === "sleeping";
+  const isSad        = mood === "sad";
+  const isExcited    = mood === "excited" || mood === "celebrating" || mood === "love";
+  const isSleeping   = mood === "sleeping";
+  const isHappy      = mood === "happy" || mood === "thinking";
 
-  const animStyle = animate
-    ? isExcited
-      ? "kiwi-bounce 0.45s ease-in-out infinite alternate"
-      : isSleeping
-      ? "kiwi-sway 4s ease-in-out infinite"
-      : isSad
-      ? "kiwi-shake 0.5s ease-in-out 3"
-      : "kiwi-float 3s ease-in-out infinite"
-    : "none";
+  const anim = !animate ? "none"
+    : isExcited   ? "kiwi-bounce 0.5s ease-in-out infinite alternate"
+    : isSleeping  ? "kiwi-sway 4s ease-in-out infinite"
+    : isSad       ? "kiwi-shake 0.5s ease 3"
+    : "kiwi-float 3s ease-in-out infinite";
+
+  // Body colour - slightly desaturated when sad
+  const bodyColor  = isSad ? "#7ab020" : "#86bb26";
+  const bellyColor = isSad ? "#b8d870" : "#c8ec50";
+  const darkBody   = isSad ? "#5a8a10" : "#6a9a16";
 
   return (
     <svg
-      width={size}
-      height={size}
-      viewBox="0 0 100 110"
-      style={{ animation: animStyle, filter: "drop-shadow(0 4px 10px rgba(0,0,0,.25))", overflow: "visible" }}
+      width={size} height={size}
+      viewBox="0 0 120 120"
+      style={{ animation: anim, overflow: "visible", filter: "drop-shadow(0 4px 8px rgba(0,0,0,.2))" }}
     >
       <defs>
-        <radialGradient id={`body-${mood}`} cx="50%" cy="40%" r="60%">
-          <stop offset="0%" stopColor={isSad ? "#8fad5a" : "#88c830"} />
-          <stop offset="100%" stopColor={isSad ? "#5a7a20" : "#4a8a10"} />
+        <radialGradient id={`kg-body-${mood}`} cx="45%" cy="35%" r="65%">
+          <stop offset="0%" stopColor={bellyColor} stopOpacity="0.6" />
+          <stop offset="100%" stopColor={darkBody} />
         </radialGradient>
-        <radialGradient id={`belly-${mood}`} cx="50%" cy="30%" r="60%">
-          <stop offset="0%" stopColor={isSad ? "#b8c890" : "#c8e860"} />
-          <stop offset="100%" stopColor={isSad ? "#8aaa58" : "#9fd44a"} />
+        <radialGradient id={`kg-head-${mood}`} cx="40%" cy="30%" r="65%">
+          <stop offset="0%" stopColor={bodyColor} />
+          <stop offset="100%" stopColor={darkBody} />
         </radialGradient>
       </defs>
 
-      {/* === BODY === */}
-      {/* Lower body / rump */}
-      <ellipse cx="50" cy="78" rx="24" ry="20" fill={`url(#body-${mood})`} />
-      {/* Upper body blending into neck */}
-      <ellipse cx="50" cy="62" rx="20" ry="18" fill={`url(#body-${mood})`} />
-      {/* Belly highlight */}
-      <ellipse cx="50" cy="72" rx="13" ry="13" fill={`url(#belly-${mood})`} />
+      {/* ── BODY ── */}
+      {/* Main round body - slightly egg-shaped */}
+      <ellipse cx="60" cy="80" rx="32" ry="28" fill={`url(#kg-body-${mood})`} />
+      {/* Belly highlight - lighter oval */}
+      <ellipse cx="58" cy="83" rx="18" ry="16" fill={bellyColor} opacity="0.55" />
       {/* Body shading */}
-      <ellipse cx="42" cy="68" rx="5" ry="8" fill="rgba(0,0,0,.06)" />
+      <ellipse cx="72" cy="76" rx="8" ry="14" fill={darkBody} opacity="0.2" />
 
-      {/* === FEET === */}
-      {/* Left foot */}
-      <path d="M 33 95 L 26 100 M 33 95 L 30 101 M 33 95 L 34 101" stroke="#d97706" strokeWidth="3.5" strokeLinecap="round" />
-      {/* Right foot */}
-      <path d="M 67 95 L 60 100 M 67 95 L 64 101 M 67 95 L 68 101" stroke="#d97706" strokeWidth="3.5" strokeLinecap="round" />
-      {/* Leg stubs */}
-      <rect x="30" y="90" width="7" height="8" rx="3" fill="#5a9a1a" />
-      <rect x="63" y="90" width="7" height="8" rx="3" fill="#5a9a1a" />
+      {/* ── LEGS ── */}
+      <rect x="45" y="103" width="10" height="10" rx="4" fill={darkBody} />
+      <rect x="65" y="103" width="10" height="10" rx="4" fill={darkBody} />
+      {/* Feet - little 3-toe feet */}
+      <path d="M42 112 L38 116 M42 112 L42 117 M42 112 L46 116" stroke="#d97706" strokeWidth="3" strokeLinecap="round" />
+      <path d="M78 112 L74 116 M78 112 L78 117 M78 112 L82 116" stroke="#d97706" strokeWidth="3" strokeLinecap="round" />
 
-      {/* === HEAD === */}
-      <circle cx="50" cy="40" r="24" fill={`url(#body-${mood})`} />
-      {/* Head shading */}
-      <ellipse cx="44" cy="36" rx="6" ry="10" fill="rgba(0,0,0,.05)" />
+      {/* ── HEAD ── */}
+      <circle cx="60" cy="48" r="30" fill={`url(#kg-head-${mood})`} />
       {/* Head highlight */}
-      <ellipse cx="56" cy="30" rx="7" ry="5" fill="rgba(255,255,255,.12)" />
+      <ellipse cx="50" cy="36" rx="10" ry="7" fill="rgba(255,255,255,.15)" />
 
-      {/* === BEAK === */}
-      <path d="M 68 37 L 88 32 L 68 43 Z" fill="#f59e0b" />
-      <path d="M 68 39.5 L 88 36 L 88 32 L 68 37 Z" fill="#e08800" opacity="0.5" />
+      {/* ── BEAK ── long kiwi beak pointing right ── */}
+      <path d="M 84 44 L 108 38 L 84 52 Z" fill="#e8a020" />
+      {/* Beak ridge */}
+      <path d="M 84 47 L 108 42 L 108 38 L 84 44 Z" fill="#c87010" opacity="0.5" />
       {/* Nostril */}
-      <circle cx="82" cy="34" r="1.5" fill="#b45309" />
+      <circle cx="102" cy="40" r="2" fill="#a05010" />
 
-      {/* === EYES === */}
+      {/* ── EYES ── large friendly eyes ── */}
       {isSleeping ? (
         <>
-          {/* Closed eyes — curved lines */}
-          <path d="M 40 42 Q 43 46 46 42" stroke="#0d1526" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-          <path d="M 54 42 Q 57 46 60 42" stroke="#0d1526" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          {/* Closed crescent eyes */}
+          <path d="M 46 51 Q 50 56 54 51" stroke={darkBody} strokeWidth="3" fill="none" strokeLinecap="round" />
+          <path d="M 64 51 Q 68 56 72 51" stroke={darkBody} strokeWidth="3" fill="none" strokeLinecap="round" />
           {/* Zzz */}
-          <text x="66" y="28" fill="#94a3b8" fontSize="7" fontWeight="bold" fontFamily="Inter,sans-serif">z</text>
-          <text x="72" y="20" fill="#94a3b8" fontSize="9" fontWeight="bold" fontFamily="Inter,sans-serif">z</text>
-          <text x="78" y="13" fill="#94a3b8" fontSize="11" fontWeight="bold" fontFamily="Inter,sans-serif">Z</text>
+          <text x="82" y="32" fill="#8b9dc3" fontSize="9" fontWeight="bold" fontFamily="Inter,sans-serif" opacity="0.8">z</text>
+          <text x="90" y="24" fill="#8b9dc3" fontSize="11" fontWeight="bold" fontFamily="Inter,sans-serif" opacity="0.8">z</text>
+          <text x="99" y="16" fill="#8b9dc3" fontSize="13" fontWeight="bold" fontFamily="Inter,sans-serif" opacity="0.8">Z</text>
         </>
       ) : isSad ? (
         <>
-          {/* Sad droopy eyes */}
-          <ellipse cx="43" cy="41" rx="5" ry="4" fill="#0d1526" />
-          <ellipse cx="57" cy="41" rx="5" ry="4" fill="#0d1526" />
-          <circle cx="44.5" cy="40" r="1.5" fill="white" />
-          <circle cx="58.5" cy="40" r="1.5" fill="white" />
-          {/* Sad eyebrows */}
-          <path d="M 39 35 Q 43 32 46 35" stroke="#0d1526" strokeWidth="2" fill="none" strokeLinecap="round" />
-          <path d="M 54 35 Q 57 32 61 35" stroke="#0d1526" strokeWidth="2" fill="none" strokeLinecap="round" />
-          {/* Tears */}
-          <ellipse cx="40" cy="47" rx="1.5" ry="2.5" fill="#93c5fd" opacity="0.8" />
-          <ellipse cx="60" cy="47" rx="1.5" ry="2.5" fill="#93c5fd" opacity="0.8" />
+          {/* Sad droopy eyes - bigger, still friendly looking */}
+          <circle cx="50" cy="50" r="7" fill="#0d1526" />
+          <circle cx="70" cy="50" r="7" fill="#0d1526" />
+          <circle cx="52" cy="48" r="3" fill="white" />
+          <circle cx="72" cy="48" r="3" fill="white" />
+          <circle cx="53" cy="48.5" r="1.5" fill="#0d1526" />
+          <circle cx="73" cy="48.5" r="1.5" fill="#0d1526" />
+          {/* Worried eyebrows */}
+          <path d="M 44 42 Q 50 38 55 42" stroke={darkBody} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          <path d="M 64 42 Q 69 38 75 42" stroke={darkBody} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          {/* Small tears */}
+          <ellipse cx="47" cy="58" rx="2" ry="3" fill="#93c5fd" opacity="0.7" />
+          <ellipse cx="73" cy="58" rx="2" ry="3" fill="#93c5fd" opacity="0.7" />
         </>
       ) : isExcited ? (
         <>
-          {/* Big excited eyes */}
-          <ellipse cx="43" cy="40" rx="6" ry="7" fill="#0d1526" />
-          <ellipse cx="57" cy="40" rx="6" ry="7" fill="#0d1526" />
-          <circle cx="45" cy="38" r="2" fill="white" />
-          <circle cx="59" cy="38" r="2" fill="white" />
-          {/* Sparkles */}
-          <text x="14" y="24" fill="#f59e0b" fontSize="10" fontFamily="sans-serif">★</text>
-          <text x="66" y="20" fill="#f59e0b" fontSize="8" fontFamily="sans-serif">✦</text>
+          {/* Big sparkling excited eyes */}
+          <circle cx="50" cy="49" r="8" fill="#0d1526" />
+          <circle cx="70" cy="49" r="8" fill="#0d1526" />
+          <circle cx="52.5" cy="46.5" r="3" fill="white" />
+          <circle cx="72.5" cy="46.5" r="3" fill="white" />
+          <circle cx="54.5" cy="47" r="1.5" fill="#0d1526" />
+          <circle cx="74.5" cy="47" r="1.5" fill="#0d1526" />
+          {/* Sparkle stars */}
+          <path d="M 18 26 L 20 20 L 22 26 L 28 28 L 22 30 L 20 36 L 18 30 L 12 28 Z" fill="#f59e0b" opacity="0.9" />
+          <path d="M 98 14 L 100 9 L 102 14 L 107 16 L 102 18 L 100 23 L 98 18 L 93 16 Z" fill="#f59e0b" opacity="0.7" transform="scale(0.7) translate(43 4)" />
         </>
       ) : (
         <>
-          {/* Normal happy eyes */}
-          <ellipse cx="43" cy="41" rx="5" ry="5.5" fill="#0d1526" />
-          <ellipse cx="57" cy="41" rx="5" ry="5.5" fill="#0d1526" />
-          <circle cx="44.5" cy="39.5" r="1.8" fill="white" />
-          <circle cx="58.5" cy="39.5" r="1.8" fill="white" />
+          {/* Normal happy eyes - large, friendly, expressive */}
+          <circle cx="50" cy="50" r="7.5" fill="#0d1526" />
+          <circle cx="70" cy="50" r="7.5" fill="#0d1526" />
+          {/* Large eye shines for cuteness */}
+          <circle cx="52.5" cy="47.5" r="3" fill="white" />
+          <circle cx="72.5" cy="47.5" r="3" fill="white" />
+          <circle cx="54" cy="48" r="1.5" fill="#0d1526" />
+          <circle cx="74" cy="48" r="1.5" fill="#0d1526" />
+          {/* Small lower shine */}
+          <circle cx="53" cy="52" r="1" fill="white" opacity="0.4" />
+          <circle cx="73" cy="52" r="1" fill="white" opacity="0.4" />
         </>
       )}
 
-      {/* === MOUTH === */}
-      {isSleeping ? null : isSad ? (
-        <path d="M 42 52 Q 50 48 58 52" stroke="#0d1526" strokeWidth="2" fill="none" strokeLinecap="round" />
+      {/* ── MOUTH ── */}
+      {!isSleeping && (isSad ? (
+        <path d="M 50 63 Q 60 58 70 63" stroke={darkBody} strokeWidth="2.5" fill="none" strokeLinecap="round" />
       ) : isExcited ? (
         <>
-          <path d="M 40 51 Q 50 60 60 51" stroke="#0d1526" strokeWidth="2.5" fill="#ff6b8a" strokeLinecap="round" />
-          <ellipse cx="50" cy="53" rx="8" ry="4" fill="#ff6b8a" opacity="0.3" />
+          <path d="M 47 62 Q 60 72 73 62" stroke={darkBody} strokeWidth="2.5" fill="rgba(200,80,80,.2)" strokeLinecap="round" />
         </>
+      ) : mood === "thinking" ? (
+        <path d="M 50 63 Q 54 60 60 62 Q 66 60 70 63" stroke={darkBody} strokeWidth="2.5" fill="none" strokeLinecap="round" />
       ) : (
-        <path d="M 41 51 Q 50 58 59 51" stroke="#0d1526" strokeWidth="2" fill="none" strokeLinecap="round" />
-      )}
+        <path d="M 48 62 Q 60 70 72 62" stroke={darkBody} strokeWidth="2.5" fill="none" strokeLinecap="round" />
+      ))}
 
       {/* Love hearts */}
       {mood === "love" && (
         <>
-          <text x="12" y="28" fill="#ec4899" fontSize="12" fontFamily="sans-serif">♥</text>
-          <text x="70" y="22" fill="#ec4899" fontSize="9" fontFamily="sans-serif">♥</text>
+          <path d="M 16 16 C 16 13 12 10 8 14 C 4 10 0 13 0 16 C 0 20 8 26 8 26 C 8 26 16 20 16 16Z" fill="#ec4899" transform="translate(14,10) scale(0.7)" opacity="0.9" />
+          <path d="M 16 16 C 16 13 12 10 8 14 C 4 10 0 13 0 16 C 0 20 8 26 8 26 C 8 26 16 20 16 16Z" fill="#ec4899" transform="translate(90,6) scale(0.5)" opacity="0.7" />
         </>
       )}
 
-      {/* Wing nubs */}
-      <path d="M 26 62 Q 18 55 22 47 Q 28 56 26 62Z" fill="#4a8a10" />
-      <path d="M 74 62 Q 82 55 78 47 Q 72 56 74 62Z" fill="#4a8a10" />
+      {/* ── WING NUBS ── small stubby wings */}
+      <path d="M 28 72 Q 18 64 22 54 Q 30 64 28 72Z" fill={darkBody} opacity="0.8" />
+      <path d="M 92 72 Q 102 64 98 54 Q 90 64 92 72Z" fill={darkBody} opacity="0.8" />
 
       <style>{`
-        @keyframes kiwi-float {
-          0%,100% { transform: translateY(0); }
-          50%      { transform: translateY(-7px); }
-        }
-        @keyframes kiwi-bounce {
-          from { transform: translateY(0) scale(1); }
-          to   { transform: translateY(-10px) scale(1.06); }
-        }
-        @keyframes kiwi-sway {
-          0%,100% { transform: rotate(0deg); }
-          25%     { transform: rotate(-8deg); }
-          75%     { transform: rotate(8deg); }
-        }
-        @keyframes kiwi-shake {
-          0%,100% { transform: translateX(0); }
-          20%     { transform: translateX(-6px); }
-          40%     { transform: translateX(6px); }
-          60%     { transform: translateX(-4px); }
-          80%     { transform: translateX(4px); }
-        }
+        @keyframes kiwi-float  { 0%,100%{transform:translateY(0)}  50%{transform:translateY(-7px)} }
+        @keyframes kiwi-bounce { from{transform:translateY(0) scale(1)} to{transform:translateY(-10px) scale(1.06)} }
+        @keyframes kiwi-sway   { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-7deg)} 75%{transform:rotate(7deg)} }
+        @keyframes kiwi-shake  { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-6px)} 40%{transform:translateX(6px)} 60%{transform:translateX(-4px)} 80%{transform:translateX(4px)} }
       `}</style>
     </svg>
   );
@@ -223,24 +214,13 @@ export function KiwiMascot({
 
 // ── Speech bubble mascot ───────────────────────────────────────────────────
 export function MascotMessage({
-  mood = "happy",
-  xp = 0,
-  streak = 0,
-  name = "",
-}: {
-  mood?: Mood;
-  xp?: number;
-  streak?: number;
-  name?: string;
-}) {
+  mood = "happy", xp = 0, streak = 0, name = "",
+}: { mood?: Mood; xp?: number; streak?: number; name?: string }) {
   const [msgIdx, setMsgIdx] = useState(0);
   const [visible, setVisible] = useState(true);
   const messages = MESSAGES[mood];
 
-  useEffect(() => {
-    setMsgIdx(0);
-    setVisible(true);
-  }, [mood]);
+  useEffect(() => { setMsgIdx(0); setVisible(true); }, [mood]);
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -254,22 +234,13 @@ export function MascotMessage({
     <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
       <KiwiMascot mood={mood} size={80} />
       <div style={{
-        background: "rgba(255,255,255,.13)",
-        border: "1.5px solid rgba(255,255,255,.22)",
-        borderRadius: "4px 16px 16px 16px",
-        padding: "10px 16px",
-        maxWidth: 260,
-        position: "relative",
-        transition: "opacity 0.3s",
-        opacity: visible ? 1 : 0,
+        background: "rgba(255,255,255,.13)", border: "1.5px solid rgba(255,255,255,.22)",
+        borderRadius: "4px 16px 16px 16px", padding: "10px 16px", maxWidth: 260,
+        position: "relative", transition: "opacity 0.3s", opacity: visible ? 1 : 0,
       }}>
-        <div style={{
-          position: "absolute", left: -10, top: 10,
-          width: 0, height: 0,
-          borderTop: "8px solid transparent",
-          borderBottom: "8px solid transparent",
-          borderRight: "10px solid rgba(255,255,255,.22)",
-        }} />
+        <div style={{ position: "absolute", left: -10, top: 10, width: 0, height: 0,
+          borderTop: "8px solid transparent", borderBottom: "8px solid transparent",
+          borderRight: "10px solid rgba(255,255,255,.22)" }} />
         <p style={{ color: "#fff", fontSize: "0.825rem", lineHeight: 1.55, margin: 0, fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
           {name ? messages[msgIdx].replace("Kia ora!", `Kia ora, ${name}!`) : messages[msgIdx]}
         </p>
@@ -281,39 +252,17 @@ export function MascotMessage({
 // ── Corner celebration pop-out ─────────────────────────────────────────────
 export function CornerCelebration({ message, onDone }: { message: string; onDone: () => void }) {
   const [phase, setPhase] = useState<"in"|"hold"|"out">("in");
-
   useEffect(() => {
     const t1 = setTimeout(() => setPhase("hold"), 600);
     const t2 = setTimeout(() => setPhase("out"), 4000);
     const t3 = setTimeout(() => onDone(), 4600);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
-
-  const translateY = phase === "in" ? 120 : phase === "out" ? 120 : 0;
-
+  const ty = phase === "in" ? 120 : phase === "out" ? 120 : 0;
   return (
-    <div style={{
-      position: "fixed",
-      bottom: 24,
-      right: 24,
-      zIndex: 600,
-      display: "flex",
-      alignItems: "flex-end",
-      gap: 10,
-      transform: `translateY(${translateY}px)`,
-      transition: "transform 0.5s cubic-bezier(.34,1.56,.64,1)",
-    }}>
-      <div style={{
-        background: "#0d1526",
-        border: "2px solid #76AD25",
-        borderRadius: "16px 16px 4px 16px",
-        padding: "10px 16px",
-        maxWidth: 200,
-        boxShadow: "0 8px 24px rgba(0,0,0,.4)",
-      }}>
-        <p style={{ color: "#fff", fontSize: "0.825rem", lineHeight: 1.5, margin: 0, fontFamily: "Inter, sans-serif", fontWeight: 600 }}>
-          {message}
-        </p>
+    <div style={{ position:"fixed", bottom:24, right:24, zIndex:600, display:"flex", alignItems:"flex-end", gap:10, transform:`translateY(${ty}px)`, transition:"transform 0.5s cubic-bezier(.34,1.56,.64,1)" }}>
+      <div style={{ background:"#0d1526", border:"2px solid #76AD25", borderRadius:"16px 16px 4px 16px", padding:"10px 16px", maxWidth:200, boxShadow:"0 8px 24px rgba(0,0,0,.4)" }}>
+        <p style={{ color:"#fff", fontSize:"0.825rem", lineHeight:1.5, margin:0, fontFamily:"Inter, sans-serif", fontWeight:600 }}>{message}</p>
       </div>
       <KiwiMascot mood="celebrating" size={80} animate />
     </div>
@@ -323,44 +272,18 @@ export function CornerCelebration({ message, onDone }: { message: string; onDone
 // ── Sad hearts-out overlay ─────────────────────────────────────────────────
 export function SadKiwiOverlay({ onDismiss, onLeave }: { onDismiss: () => void; onLeave?: () => void }) {
   return (
-    <div style={{
-      position: "fixed", inset: 0, zIndex: 800,
-      background: "rgba(7,14,26,.9)",
-      display: "flex", flexDirection: "column",
-      alignItems: "center", justifyContent: "center",
-      animation: "fadeIn .3s ease",
-      fontFamily: "Inter, sans-serif",
-    }}>
-      <div style={{ animation: "slideUp .4s ease", textAlign: "center" }}>
-        <KiwiMascot mood="sad" size={120} animate />
-        <h2 style={{ color: "#fff", fontWeight: 900, fontSize: "1.5rem", marginTop: 16, marginBottom: 8 }}>
-          Out of hearts!
-        </h2>
-        <p style={{ color: "#8b9dc3", fontSize: "0.9rem", marginBottom: 28, lineHeight: 1.6 }}>
-          No worries — even the best investors make mistakes.<br />
-          Try this lesson again when you're ready.
+    <div style={{ position:"fixed", inset:0, zIndex:800, background:"rgba(7,14,26,.92)", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", animation:"pw-fade-in .3s ease", fontFamily:"Inter, sans-serif" }}>
+      <div style={{ animation:"pw-slide-up .4s ease", textAlign:"center" }}>
+        <KiwiMascot mood="sad" size={130} animate />
+        <h2 style={{ color:"#fff", fontWeight:900, fontSize:"1.5rem", marginTop:16, marginBottom:8 }}>Out of hearts!</h2>
+        <p style={{ color:"#8b9dc3", fontSize:"0.9rem", marginBottom:28, lineHeight:1.6 }}>
+          No worries — even the best investors make mistakes.<br />Try this lesson again when you're ready.
         </p>
-        <button
-          onClick={onDismiss}
-          className="btn-3d-green"
-          style={{ padding: "13px 40px", fontSize: "0.95rem", marginRight: 10 }}
-        >
-          Try Again
-        </button>
-        {onLeave && (
-          <button
-            onClick={onLeave}
-            className="btn-3d-ghost"
-            style={{ padding: "13px 24px", fontSize: "0.875rem" }}
-          >
-            Leave Lesson
-          </button>
-        )}
+        <div style={{ display:"flex", gap:10, justifyContent:"center" }}>
+          <button onClick={onDismiss} className="btn-3d-green" style={{ padding:"13px 40px", fontSize:"0.95rem" }}>Try Again</button>
+          {onLeave && <button onClick={onLeave} className="btn-3d-ghost" style={{ padding:"13px 24px", fontSize:"0.875rem" }}>Leave Lesson</button>}
+        </div>
       </div>
-      <style>{`
-        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
-        @keyframes slideUp { from{transform:translateY(30px);opacity:0} to{transform:translateY(0);opacity:1} }
-      `}</style>
     </div>
   );
 }
