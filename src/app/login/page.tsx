@@ -30,6 +30,14 @@ export default function LoginPage() {
   }, [user, router]);
 
   function handleGoogleLogin() {
+    // Save teacher role data before redirect
+    if (role === "teacher") {
+      localStorage.setItem("pw_pending_role", "teacher");
+      localStorage.setItem("pw_pending_school", school);
+      localStorage.setItem("pw_pending_msg", message);
+    } else {
+      localStorage.removeItem("pw_pending_role");
+    }
     const url = db.auth.createAuthorizationURL({
       clientName: "google-web",
       redirectURL: window.location.href,
