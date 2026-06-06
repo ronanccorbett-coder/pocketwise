@@ -1,8 +1,11 @@
 "use client";
+import { useState } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useGame } from "@/lib/gameContext";
-import { Zap, DollarSign, Flame, BookOpen, Trophy, TrendingUp, Award, Target, Briefcase, Calendar } from "lucide-react";
+import { db } from "@/lib/db";
+import { id } from "@instantdb/react";
+import { Zap, DollarSign, Flame, BookOpen, Trophy, TrendingUp, Award, Target, Briefcase, Calendar, GraduationCap, Clock, Send } from "lucide-react";
 
 const BADGE_META: Record<string, { label: string; desc: string; color: string; bg: string }> = {
   onboarded:      { label: "Welcome",        desc: "Completed onboarding",              color: "#76AD25", bg: "#e8f5d0" },
@@ -42,6 +45,37 @@ const CAREERS: Record<string, string> = {
 
 export default function ProfilePage() {
   const { state, stocks, properties, loans, assets, user } = useGame();
+  const [showTeacherForm, setShowTeacherForm] = useState(false);
+  const [school,   setSchool]   = useState("");
+  const [message,  setMessage]  = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted,  setSubmitted]  = useState(false);
+
+  const { data: reqData } = db.useQuery(
+    user ? { teacherRequests: { $: { where: { userId: user.id } } } } : null
+  );
+  const myRequest = (reqData?.teacherRequests ?? [])[0] as any;
+
+  const isTeacher  = (state as any)?.role === "teacher";
+  const isApproved = (state as any)?.teacherApproved === true;
+  const isPending  = myRequest?.status === "pending";
+
+  async function submitTeacherRequest() {
+    if (!user || !school.trim()) return;
+    setSubmitting(true);
+    await db.transact([
+      (db as any).tx.teacherRequests[id()].update({
+        userId: user.id, email: user.email ?? "",
+        fullName: user.email?.split("@")[0] ?? "",
+        school: school.trim(), message: message.trim(),
+        status: "pending", createdAt: Date.now(),
+      }),
+      (db as any).tx.userState[(state as any).id].update({ role: "teacher", teacherApproved: false }),
+    ]);
+    setSubmitting(false);
+    setSubmitted(true);
+    setShowTeacherForm(false);
+  }
 
   if (!state) return (
     <AuthGuard>
@@ -313,6 +347,82 @@ export default function ProfilePage() {
               </div>
             </div>
           </div>
+
+          {/* ── Educator Application Card ── */}
+          {!isApproved && (
+            <div style={{ maxWidth: 860, margin: "0 auto 32px", padding: "0 1.5rem" }}>
+              <div style={{
+                background: isTeacher && isPending
+                  ? "linear-gradient(135deg,#0a1f3a,#0d2848)"
+                  : "linear-gradient(135deg,#0d1526,#0f2318)",
+                border: `1.5px solid ${isPending ? "rgba(59,130,246,.35)" : "rgba(118,173,37,.25)"}`,
+                borderRadius: 16, padding: "20px 24px",
+                display: "flex", alignItems: "flex-start", gap: 16, flexWrap: "wrap",
+              }}>
+                <div style={{ width: 44, height: 44, borderRadius: 12, background: isPending ? "rgba(59,130,246,.15)" : "rgba(118,173,37,.15)", border: `1px solid ${isPending ? "rgba(59,130,246,.3)" : "rgba(118,173,37,.3)"}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  {isPending ? <Clock size={20} color="#60a5fa" /> : <GraduationCap size={20} color="#76AD25" />}
+                </div>
+
+                <div style={{ flex: 1, minWidth: 200 }}>
+                  {isPending ? (
+                    <>
+                      <div style={{ fontWeight: 800, color: "#fff", fontSize: "0.95rem", marginBottom: 4 }}>
+                        Teacher Request Pending
+                      </div>
+                      <p style={{ color: "#4a6a8a", fontSize: "0.8rem", margin: 0, lineHeight: 1.5 }}>
+                        Your request to {myRequest?.school ? `teach at ${myRequest.school}` : "become a teacher"} is awaiting admin approval. You'll get access to the Class Dashboard once approved.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <div style={{ fontWeight: 800, color: "#fff", fontSize: "0.95rem", marginBottom: 4 }}>
+                        Are you a teacher?
+                      </div>
+                      <p style={{ color: "#4a6a8a", fontSize: "0.8rem", margin: 0, lineHeight: 1.5 }}>
+                        Apply for educator access to get a class dashboard, student analytics, class challenges, XP tools and more.
+                      </p>
+                    </>
+                  )}
+                </div>
+
+                {!isPending && !showTeacherForm && !submitted && (
+                  <button onClick={() => setShowTeacherForm(true)} className="btn-3d-green" style={{ padding: "9px 20px", fontSize: "0.82rem", flexShrink: 0 }}>
+                    Apply for Educator Access
+                  </button>
+                )}
+                {(submitted || (isPending && !showTeacherForm)) && (
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, color: "#60a5fa", fontSize: "0.8rem", flexShrink: 0 }}>
+                    <Clock size={14} /> Pending review
+                  </div>
+                )}
+              </div>
+
+              {/* Application form */}
+              {showTeacherForm && (
+                <div style={{ background: "#111c30", border: "1.5px solid rgba(59,130,246,.2)", borderRadius: 14, padding: "20px 24px", marginTop: 10, animation: "pw-slide-up .3s ease" }}>
+                  <h3 style={{ fontWeight: 700, color: "#fff", fontSize: "0.9rem", marginBottom: 14 }}>Educator Application</h3>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    <div>
+                      <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>School *</label>
+                      <input value={school} onChange={e => setSchool(e.target.value)} placeholder="e.g. Auckland Grammar School" className="pw-input" style={{ width: "100%", fontSize: "0.875rem" }} />
+                    </div>
+                    <div>
+                      <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>Message to admin (optional)</label>
+                      <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="Brief note about how you plan to use PocketWise..." rows={2} className="pw-input" style={{ width: "100%", resize: "none", fontSize: "0.875rem" }} />
+                    </div>
+                    <div style={{ display: "flex", gap: 8, marginTop: 4 }}>
+                      <button onClick={submitTeacherRequest} disabled={!school.trim() || submitting} className={school.trim() && !submitting ? "btn-3d-blue" : ""} style={{ flex: 1, padding: "11px", fontSize: "0.875rem", background: !school.trim() ? "#1e3a5f" : undefined, color: !school.trim() ? "#4a6a8a" : undefined, border: "none", borderRadius: 10, fontWeight: 700, cursor: !school.trim() ? "not-allowed" : "pointer", fontFamily: "Inter, sans-serif", display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
+                        <Send size={13} /> {submitting ? "Submitting..." : "Submit Application"}
+                      </button>
+                      <button onClick={() => setShowTeacherForm(false)} className="btn-3d-ghost" style={{ padding: "11px 18px", fontSize: "0.875rem" }}>
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </AuthGuard>
