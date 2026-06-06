@@ -27,7 +27,8 @@ export default function Nav() {
   const router = useRouter();
   const { state, signOut, user } = useGame();
   const isAdmin   = ADMIN_EMAILS.includes(user?.email ?? "");
-  const isTeacher = (state as any)?.role === "teacher" && (state as any)?.teacherApproved === true;
+  const stateAny  = state as any;
+  const isTeacher = stateAny?.role === "teacher" && stateAny?.teacherApproved === true;
 
   function handleSignOut() {
     signOut();
@@ -44,6 +45,11 @@ export default function Nav() {
       <Link href="/curriculum" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
         <Image src="/logo.png" alt="PocketWise" width={30} height={30} style={{ objectFit: "contain", mixBlendMode: "multiply" }} />
         <span style={{ fontWeight: 800, fontSize: "1rem", color: "#0d1526" }}>PocketWise</span>
+        {stateAny?.role && (
+          <span style={{ fontSize: "0.6rem", background: stateAny.teacherApproved ? "#e8f5d0" : "#eff6ff", color: stateAny.teacherApproved ? "#5d8a1c" : "#3B82F6", padding: "1px 6px", borderRadius: 4, fontWeight: 700 }}>
+            {stateAny.role}{stateAny.teacherApproved ? " ✓" : " pending"}
+          </span>
+        )}
       </Link>
 
       <div style={{ display: "flex", alignItems: "center", gap: 2 }}>

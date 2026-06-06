@@ -50,11 +50,27 @@ export default function AdminPage() {
   const pendingRequests = teacherRequests.filter(r => r.status === "pending");
 
   async function approveTeacher(req: any) {
-    // Approve the request
+    // Mark request approved
     await db.transact((db as any).tx.teacherRequests[req.id].update({ status: "approved", reviewedAt: Date.now() }));
-    // Find their userState and set teacherApproved
-    const us = allStates.find(s => s.userId === req.userId);
-    if (us) await db.transact((db as any).tx.userState[us.id].update({ teacherApproved: true, role: "teacher" }));
+    // Find userState by userId OR email (belt and braces)
+    const us = allStates.find(s => s.userId === req.userId) ?? allStates.find(s => s.email === req.email);
+    if (us) {
+      await db.transact((db as any).tx.userState[us.id].update({
+        teacherApproved: true,
+        role: "teacher",
+        // Use pendingNews to notify teacher on next login
+        pendingNews: JSON.stringify({
+          id: "teacher_approved",
+          headline: "Your educator access has been approved!",
+          body: "You now have full access to the Class Dashboard. Click 'My Class' in the navigation bar to create your first class, generate a join code, and start tracking your students.",
+          category: "opportunity",
+          sentiment: "positive",
+          date: Date.now(),
+        }),
+      }));
+    } else {
+      alert(`Could not find userState for ${req.email}. They may need to log in first.`);
+    }
   }
 
   async function rejectTeacher(req: any) {
