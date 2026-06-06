@@ -205,6 +205,13 @@ export default function LoginPage() {
                     </button>
                   </p>
                 )}
+                {tab === "signin" && !role && (
+                  <p style={{ textAlign: "center", margin: 0 }}>
+                    <button onClick={() => { setTab("signup"); setRole("teacher"); setSent(false); setError(""); }} style={{ background: "none", border: "none", color: "#3B82F6", fontWeight: 600, cursor: "pointer", fontFamily: FONT, fontSize: "0.75rem" }}>
+                      Are you a teacher? Register here →
+                    </button>
+                  </p>
+                )}
               </div>
             ) : (
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>

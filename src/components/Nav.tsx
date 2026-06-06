@@ -5,7 +5,12 @@ import Image from "next/image";
 import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield, User, Star, Target, GraduationCap, Users } from "lucide-react";
 import { useGame } from "@/lib/gameContext";
 
-const ADMIN_EMAILS = ["admin@pocketwise.nz", "ronan@pocketwise.nz"];
+const ADMIN_EMAILS = [
+  "admin@pocketwise.nz",
+  "ronan@pocketwise.nz",
+  "ronancorbett@gmail.com",
+  "ronanccorbett@gmail.com",
+];
 
 const links = [
   { href: "/curriculum",  label: "Curriculum",  Icon: BookOpen },
