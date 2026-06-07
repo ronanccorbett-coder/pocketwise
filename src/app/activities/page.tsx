@@ -63,7 +63,7 @@ const BUDGET_SCENARIOS = [
 ];
 
 function BudgetChallenge({ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
-  const scenario = BUDGET_SCENARIOS[Math.floor(Math.random() * BUDGET_SCENARIOS.length)];
+  const [scenario] = useState(() => BUDGET_SCENARIOS[Math.floor(Math.random() * BUDGET_SCENARIOS.length)]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [checked, setChecked] = useState(false);
   const [score, setScore] = useState(0);
@@ -412,7 +412,7 @@ const WORD_CLUES = [
 ];
 
 function WordChallenge({ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
-  const clue = WORD_CLUES[Math.floor(Math.random() * WORD_CLUES.length)];
+  const [clue] = useState(() => WORD_CLUES[Math.floor(Math.random() * WORD_CLUES.length)]);
   const [input, setInput] = useState("");
   const [attempts, setAttempts] = useState(0);
   const [result, setResult] = useState<"correct" | "wrong" | "gave-up" | null>(null);
@@ -540,7 +540,7 @@ function NetWorthChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
       ],
     },
   ];
-  const scenario = scenarios[Math.floor(Math.random() * scenarios.length)];
+  const [scenario] = useState(() => scenarios[Math.floor(Math.random() * scenarios.length)]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [checked, setChecked] = useState(false);
 
