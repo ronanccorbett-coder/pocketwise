@@ -50,27 +50,38 @@ export default function AdminPage() {
   const pendingRequests = teacherRequests.filter(r => r.status === "pending");
 
   async function approveTeacher(req: any) {
-    // Mark request approved
+    // Mark request approved first
     await db.transact((db as any).tx.teacherRequests[req.id].update({ status: "approved", reviewedAt: Date.now() }));
-    // Find userState by userId OR email (belt and braces)
-    const us = allStates.find(s => s.userId === req.userId) ?? allStates.find(s => s.email === req.email);
-    if (us) {
-      await db.transact((db as any).tx.userState[us.id].update({
+
+    // Find ALL userState rows matching this teacher (by userId OR email)
+    const matchingRows = allStates.filter(s =>
+      s.userId === req.userId || s.email === req.email
+    );
+
+    console.log("approveTeacher: req=", req, "matchingRows=", matchingRows, "allStates count=", allStates.length);
+
+    if (matchingRows.length === 0) {
+      alert(`No userState found for ${req.email} (userId: ${req.userId}). Total states loaded: ${allStates.length}. They may need to log in first.`);
+      return;
+    }
+
+    // Update all matching rows
+    const txns = matchingRows.map(us =>
+      (db as any).tx.userState[us.id].update({
         teacherApproved: true,
         role: "teacher",
-        // Use pendingNews to notify teacher on next login
         pendingNews: JSON.stringify({
-          id: "teacher_approved",
+          id: "teacher_approved_" + Date.now(),
           headline: "Your educator access has been approved!",
-          body: "You now have full access to the Class Dashboard. Click 'My Class' in the navigation bar to create your first class, generate a join code, and start tracking your students.",
+          body: "You now have full access to the Class Dashboard. Click 'My Class' in the navigation bar to create your first class and start tracking your students.",
           category: "opportunity",
           sentiment: "positive",
           date: Date.now(),
         }),
-      }));
-    } else {
-      alert(`Could not find userState for ${req.email}. They may need to log in first.`);
-    }
+      })
+    );
+    await db.transact(txns);
+    alert(`Approved! Updated ${matchingRows.length} row(s) for ${req.email}.`);
   }
 
   async function rejectTeacher(req: any) {
@@ -336,7 +347,10 @@ export default function AdminPage() {
                           <div style={{ fontWeight: 700, color: "#fff", fontSize: "0.875rem" }}>{req.email}</div>
                           {req.school && <div style={{ fontSize: "0.75rem", color: "#8b9dc3", marginTop: 2 }}>School: {req.school}</div>}
                           {req.message && <div style={{ fontSize: "0.75rem", color: "#64748b", marginTop: 4, fontStyle: "italic" }}>"{req.message}"</div>}
-                          <div style={{ fontSize: "0.7rem", color: "#4a5a7a", marginTop: 4 }}>{new Date(req.createdAt).toLocaleDateString("en-NZ")}</div>
+                          <div style={{ fontSize: "0.65rem", color: "#4a5a7a", marginTop: 4, fontFamily: "monospace" }}>
+                            userId: {req.userId || "MISSING"} · reqId: {req.id?.slice(0,8)}
+                          </div>
+                          <div style={{ fontSize: "0.7rem", color: "#4a5a7a", marginTop: 2 }}>{new Date(req.createdAt).toLocaleDateString("en-NZ")}</div>
                         </div>
                         <div style={{ display: "flex", gap: 6, flexShrink: 0 }}>
                           <button onClick={() => approveTeacher(req)} className="btn-3d-green" style={{ padding: "7px 16px", fontSize: "0.78rem" }}>Approve</button>
@@ -347,6 +361,33 @@ export default function AdminPage() {
                   </div>
                 </div>
               )}
+
+              {/* Manual teacher approval tool */}
+              <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "16px 20px", marginBottom: 24 }}>
+                <div style={{ fontWeight: 700, color: "#8b9dc3", fontSize: "0.8rem", marginBottom: 10 }}>Manual Teacher Approval (by email)</div>
+                <div style={{ display: "flex", gap: 8 }}>
+                  <input
+                    id="manualApproveEmail"
+                    placeholder="teacher@email.com"
+                    style={{ flex: 1, padding: "8px 12px", background: "#0d1526", border: "1px solid #2a3a5c", borderRadius: 8, color: "#fff", fontFamily: "Inter,sans-serif", fontSize: "0.875rem", outline: "none" }}
+                  />
+                  <button
+                    className="btn-3d-blue"
+                    style={{ padding: "8px 18px", fontSize: "0.8rem" }}
+                    onClick={async () => {
+                      const email = (document.getElementById("manualApproveEmail") as HTMLInputElement)?.value?.trim();
+                      if (!email) return;
+                      const rows = allStates.filter(s => s.email === email);
+                      if (rows.length === 0) { alert(`No userState found for ${email}`); return; }
+                      await db.transact(rows.map(us =>
+                        (db as any).tx.userState[us.id].update({ teacherApproved: true, role: "teacher" })
+                      ));
+                      alert(`Done! Set teacherApproved=true on ${rows.length} row(s) for ${email}`);
+                    }}>
+                    Force Approve
+                  </button>
+                </div>
+              </div>
 
               <div style={{ position: "relative", marginBottom: 20, maxWidth: 400 }}>
                 <Search size={15} color="#8b9dc3" style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }} />
