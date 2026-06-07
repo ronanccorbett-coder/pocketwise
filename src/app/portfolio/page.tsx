@@ -248,63 +248,160 @@ const ASSET_PRODUCTS: AssetProduct[] = [
 
 
 const PROPERTIES = [
-  {name:"Auckland Apartment",price:485000,deposit:97000,weeklyRent:460,mortgageWeekly:620,suburb:"Ponsonby"},
-  {name:"Wellington Terrace",price:620000,deposit:124000,weeklyRent:520,mortgageWeekly:790,suburb:"Te Aro"},
-  {name:"Christchurch Section",price:290000,deposit:58000,weeklyRent:0,mortgageWeekly:370,suburb:"Riccarton"},
-  {name:"Hamilton House",price:580000,deposit:116000,weeklyRent:480,mortgageWeekly:740,suburb:"Flagstaff"},
+  // Rentable residential
+  { name:"Auckland City Apartment",   price:520000, deposit:104000, weeklyRent:560, mortgageWeekly:665, suburb:"CBD",          type:"Apartment",  bedrooms:1, cashflow:-105, info:"Studio apartment in Auckland CBD. High rent but mortgage is higher — negative cashflow. Capital gains potential is strong." },
+  { name:"Ponsonby Apartment",        price:485000, deposit:97000,  weeklyRent:490, mortgageWeekly:620, suburb:"Ponsonby",     type:"Apartment",  bedrooms:2, cashflow:-130, info:"Character apartment in an inner-city suburb. Trendy location means low vacancy risk but tight cashflow." },
+  { name:"Wellington Terrace House",  price:620000, deposit:124000, weeklyRent:540, mortgageWeekly:795, suburb:"Te Aro",       type:"Terrace",    bedrooms:3, cashflow:-255, info:"3-bedroom terrace in central Wellington. Strong rental demand from government workers. Negative cashflow but solid capital growth." },
+  { name:"Hamilton Family Home",      price:580000, deposit:116000, weeklyRent:500, mortgageWeekly:745, suburb:"Flagstaff",    type:"House",      bedrooms:4, cashflow:-245, info:"4-bedroom family home in a fast-growing Hamilton suburb. Good for long-term tenants." },
+  { name:"Christchurch Bungalow",     price:420000, deposit:84000,  weeklyRent:430, mortgageWeekly:540, suburb:"Riccarton",    type:"House",      bedrooms:3, cashflow:-110, info:"Solid 3-bed bungalow. Christchurch has had strong post-earthquake capital growth. Better cashflow than Auckland." },
+  { name:"Dunedin Student Flat",      price:340000, deposit:68000,  weeklyRent:600, mortgageWeekly:435, suburb:"North Dunedin",type:"House",      bedrooms:5, cashflow:+165, info:"5-bedroom student flat near Otago University. High rent per room makes this positively geared — rare in NZ! High management effort." },
+  { name:"Tauranga Beach House",      price:780000, deposit:156000, weeklyRent:680, mortgageWeekly:1000,suburb:"Mount Maunganui",type:"House",     bedrooms:4, cashflow:-320, info:"Holiday home near the beach. Can Airbnb short-term for much higher income but more volatile. Lifestyle investment." },
+  { name:"Rotorua Rental",            price:390000, deposit:78000,  weeklyRent:430, mortgageWeekly:500, suburb:"Rotorua",      type:"House",      bedrooms:3, cashflow:-70,  info:"Affordable rental market. Close to geothermal tourism means good long-term demand. Near breakeven cashflow." },
+  { name:"Palmerston North House",    price:360000, deposit:72000,  weeklyRent:410, mortgageWeekly:460, suburb:"Palmy North",  type:"House",      bedrooms:3, cashflow:-50,  info:"One of NZ's most affordable cities. Almost breakeven cashflow. Good for first investment property." },
+  { name:"Nelson Bach",               price:290000, deposit:58000,  weeklyRent:350, mortgageWeekly:372, suburb:"Nelson",       type:"Bach",       bedrooms:2, cashflow:-22,  info:"Small holiday bach near the beach. Nearly cashflow neutral. Can holiday let in summer for extra income." },
+  { name:"Queenstown Apartment",      price:920000, deposit:184000, weeklyRent:900, mortgageWeekly:1180,suburb:"Queenstown",   type:"Apartment",  bedrooms:2, cashflow:-280, info:"Premium ski/lake resort market. High rents but very expensive. Potential for strong short-term Airbnb income." },
+  { name:"Commercial Retail Unit",    price:450000, deposit:135000, weeklyRent:820, mortgageWeekly:580, suburb:"Auckland",     type:"Commercial", bedrooms:0, cashflow:+240, info:"Small retail shop. Commercial leases are longer (3-5 years) and tenants pay rates/insurance. Better cashflow than residential." },
+  { name:"Industrial Warehouse",      price:680000, deposit:204000, weeklyRent:1100,mortgageWeekly:875, suburb:"South Auckland",type:"Commercial",bedrooms:0, cashflow:+225, info:"Light industrial unit. Strong demand from logistics/storage businesses. Commercial property with good yields." },
 ];
 
 const LOAN_PRODUCTS = [
-  {name:"Student Loan",principal:8000,rate:0,weekly:0,note:"Interest-free while in NZ"},
-  {name:"Car Loan",principal:15000,rate:12.5,weekly:85,note:"Unsecured personal loan"},
-  {name:"Personal Loan",principal:5000,rate:18.9,weekly:55,note:"High interest — use carefully"},
+  { name:"Student Loan",           principal:8000,  rate:0,    weekly:0,   note:"Interest-free while living in NZ. Repayments start at 12% of income over $22,828/yr.",       category:"Education" },
+  { name:"Graduate Student Loan",  principal:25000, rate:0,    weekly:0,   note:"For full degree study. Same interest-free terms. Average NZ student debt is $21k.",           category:"Education" },
+  { name:"Car Loan (Dealership)",  principal:15000, rate:12.5, weekly:85,  note:"Dealer finance is convenient but expensive. Always compare with your bank first.",             category:"Vehicle" },
+  { name:"Car Loan (Bank)",        principal:15000, rate:8.9,  weekly:68,  note:"Bank rates beat dealer finance. Same car, $17/week cheaper — $884 saved per year.",           category:"Vehicle" },
+  { name:"Personal Loan",         principal:5000,  rate:18.9, weekly:55,  note:"High interest unsecured lending. Only use for emergencies. Debt snowballs fast at this rate.", category:"Personal" },
+  { name:"Credit Card",           principal:3000,  rate:22.9, weekly:35,  note:"Most expensive debt available. 22.9% means $3k grows to $3,687 if you only pay minimums.",    category:"Personal" },
+  { name:"KiwiSaver HomeStart",   principal:10000, rate:0,    weekly:0,   note:"Government grant for first home buyers. Up to $10k for existing homes, $20k for new builds.", category:"Home" },
+  { name:"Home Equity Loan",      principal:50000, rate:7.2,  weekly:280, note:"Borrow against your property equity. Lower rate because secured against your home.",           category:"Home" },
+  { name:"Business Loan",         principal:20000, rate:9.5,  weekly:155, note:"For starting or expanding a business. Lender will want a business plan and financial projections.", category:"Business" },
+  { name:"Buy Now Pay Later",     principal:1200,  rate:0,    weekly:50,  note:"0% if paid in full before period ends — then 25.9% kicks in. Designed to make you forget.",   category:"Personal" },
+  { name:"Payday Loan",           principal:500,   rate:365,  weekly:120, note:"WARNING: 365% APR. Predatory lending. $500 borrowed = $690 owed in just 2 weeks. Avoid.",     category:"Personal" },
 ];
 
+
+// ── Info tooltip dot ──────────────────────────────────────────────────────
+function InfoDot({ text }: { text: string }) {
+  return (
+    <span className="pw-tooltip-wrap" style={{ marginLeft: 5, cursor: "help" }}>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ display:"block" }}>
+        <circle cx="7" cy="7" r="6.5" stroke="rgba(255,255,255,.25)" strokeWidth="1"/>
+        <text x="7" y="11" textAnchor="middle" fill="rgba(255,255,255,.5)" fontSize="9" fontWeight="700" fontFamily="Inter,sans-serif">i</text>
+      </svg>
+      <span className="pw-tooltip">{text}</span>
+    </span>
+  );
+}
+
+// Light variant for light backgrounds
+function InfoDotDark({ text }: { text: string }) {
+  return (
+    <span className="pw-tooltip-wrap" style={{ marginLeft: 5, cursor: "help" }}>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ display:"block" }}>
+        <circle cx="7" cy="7" r="6.5" stroke="rgba(0,0,0,.25)" strokeWidth="1"/>
+        <text x="7" y="11" textAnchor="middle" fill="rgba(0,0,0,.4)" fontSize="9" fontWeight="700" fontFamily="Inter,sans-serif">i</text>
+      </svg>
+      <div className="pw-tooltip" style={{ background:"#0d1526" }}>{text}</div>
+    </span>
+  );
+}
+
 // ── Stock Chart ────────────────────────────────────────────────────────────
-function StockChart({ history, isUp, width = 200, height = 60 }: { history: number[]; isUp: boolean; width?: number; height?: number }) {
+function StockChart({ history, isUp, width = 200, height = 60, showLabels = false }: { history: number[]; isUp: boolean; width?: number; height?: number; showLabels?: boolean }) {
   if (history.length < 2) return <div style={{ width, height, background: "#f8fafc", borderRadius: 8 }} />;
   const min = Math.min(...history) * 0.998;
   const max = Math.max(...history) * 1.002;
   const range = max - min || 1;
+  const padTop = showLabels ? 8 : 4;
+  const padBottom = showLabels ? 20 : 4;
+  const padLeft = showLabels ? 48 : 0;
+  const chartW = width - padLeft;
+  const chartH = height - padTop - padBottom;
+
   const pts = history.map((p, i) => {
-    const x = (i / (history.length - 1)) * width;
-    const y = height - ((p - min) / range) * (height - 4) - 2;
+    const x = padLeft + (i / (history.length - 1)) * chartW;
+    const y = padTop + chartH - ((p - min) / range) * chartH;
     return `${x.toFixed(1)},${y.toFixed(1)}`;
   });
   const linePath = `M ${pts.join(" L ")}`;
-  const areaPath = `M 0,${height} L ${pts.join(" L ")} L ${width},${height} Z`;
+  const areaPath = `M ${padLeft},${padTop + chartH} L ${pts.join(" L ")} L ${padLeft + chartW},${padTop + chartH} Z`;
   const color = isUp ? "#76AD25" : "#EF4444";
+  const lastPt = pts[pts.length - 1].split(",");
+
   return (
-    <svg width={width} height={height} style={{ display: "block", overflow: "hidden", borderRadius: 8 }}>
+    <svg width={width} height={height} style={{ display: "block", overflow: "visible" }}>
       <defs>
-        <linearGradient id={`cg-${isUp}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={color} stopOpacity="0.25" />
+        <linearGradient id={`sg-${isUp}-${width}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={color} stopOpacity="0.2" />
           <stop offset="100%" stopColor={color} stopOpacity="0.02" />
         </linearGradient>
+        <clipPath id={`clip-${width}`}>
+          <rect x={padLeft} y={padTop} width={chartW} height={chartH} />
+        </clipPath>
       </defs>
-      <rect width={width} height={height} fill={isUp ? "#f0fdf4" : "#fef2f2"} rx="8" />
-      <path d={areaPath} fill={`url(#cg-${isUp})`} />
-      <path d={linePath} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      {/* Current price dot */}
-      {history.length > 0 && (() => {
-        const last = history[history.length - 1];
-        const x = width;
-        const y = height - ((last - min) / range) * (height - 4) - 2;
-        return <circle cx={x} cy={y} r="3.5" fill={color} filter={`drop-shadow(0 0 4px ${color}88)`} />;
+
+      {/* Background */}
+      <rect x={padLeft} y={padTop} width={chartW} height={chartH} fill={isUp ? "#f0fdf4" : "#fef2f2"} rx="6" />
+
+      {/* Grid lines */}
+      {showLabels && [0, 0.25, 0.5, 0.75, 1].map(t => {
+        const y = padTop + chartH * t;
+        const val = max - t * range;
+        return (
+          <g key={t}>
+            <line x1={padLeft} y1={y} x2={padLeft + chartW} y2={y} stroke="rgba(0,0,0,.06)" strokeWidth="1" strokeDasharray="3,3" />
+            <text x={padLeft - 4} y={y + 4} textAnchor="end" fill="#94a3b8" fontSize="9" fontFamily="Inter,sans-serif">
+              ${val < 10 ? val.toFixed(2) : val.toFixed(0)}
+            </text>
+          </g>
+        );
+      })}
+
+      {/* Time labels */}
+      {showLabels && (() => {
+        const labels = ["80 ticks ago", "60", "40", "20", "Now"];
+        return labels.map((l, i) => {
+          const x = padLeft + (i / (labels.length - 1)) * chartW;
+          return (
+            <text key={l} x={x} y={height - 4} textAnchor="middle" fill="#94a3b8" fontSize="8" fontFamily="Inter,sans-serif">{l}</text>
+          );
+        });
       })()}
+
+      {/* Area fill */}
+      <path d={areaPath} fill={`url(#sg-${isUp}-${width})`} clipPath={`url(#clip-${width})`} />
+
+      {/* Line */}
+      <path d={linePath} fill="none" stroke={color} strokeWidth={showLabels ? 2 : 1.5} strokeLinecap="round" strokeLinejoin="round" clipPath={`url(#clip-${width})`} />
+
+      {/* Current price dot */}
+      <circle cx={parseFloat(lastPt[0])} cy={parseFloat(lastPt[1])} r={showLabels ? 4 : 3} fill={color} style={{ filter: `drop-shadow(0 0 4px ${color}88)` }} />
     </svg>
   );
 }
 
 // ── Stock Market Component ─────────────────────────────────────────────────
-function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, onBuy, onSell }: {
+function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, ready, onBuy, onSell }: {
   prices: any; stocks: any[]; buyQty: Record<string,number>;
   setBuyQty: any; balance: number; marketEvent: string | null;
+  ready: boolean;
   onBuy: (sym:string, name:string, qty:number, price:number) => void;
   onSell: (id:string, price:number) => void;
 }) {
   const [selected, setSelected] = useState<string|null>(null);
   const [justBought, setJustBought] = useState<string|null>(null);
+
+  if (!ready) {
+    return (
+      <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "48px", textAlign: "center" }}>
+        <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 12 }}>
+          {[0,1,2].map(i => (
+            <div key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: "#76AD25", animation: "pw-pulse-glow 1s ease infinite", animationDelay: `${i*0.2}s`, color: "#76AD25" }} />
+          ))}
+        </div>
+        <p style={{ color: "#94a3b8", fontSize: "0.875rem" }}>Loading market history...</p>
+      </div>
+    );
+  }
 
   function handleBuy(sym: string, name: string) {
     const p = prices[sym]; if (!p) return;
@@ -345,7 +442,7 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
               </div>
             </div>
           </div>
-          <StockChart history={selectedPrice.history} isUp={selectedPrice.changePct >= 0} width={560} height={100} />
+          <StockChart history={selectedPrice.history} isUp={selectedPrice.changePct >= 0} width={540} height={120} showLabels />
           <div style={{ display: "flex", gap: 10, marginTop: 14, flexWrap: "wrap" }}>
             {selectedMeta.dividendYield > 0 && (
               <div style={{ background: "rgba(118,173,37,.12)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 8, padding: "6px 12px", fontSize: "0.75rem" }}>
@@ -469,7 +566,7 @@ export default function PortfolioPage(){
     if (owned) updateStockPrice(owned.id, newPrice);
   }, [stocks, updateStockPrice]);
 
-  const { prices, marketEvent } = useStockSimulator(30000, handlePriceUpdate);
+  const { prices, marketEvent, ready: pricesReady } = useStockSimulator(30000, handlePriceUpdate);
 
   function notify(m: string) { setNotif(m); setTimeout(() => setNotif(null), 3500); }
 
@@ -495,7 +592,7 @@ export default function PortfolioPage(){
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "#f1f5f9" }}>
+      <div style={{ minHeight: "100vh", background: "#0d1526" }}>
         <Nav />
 
         {notif && (
@@ -603,6 +700,7 @@ export default function PortfolioPage(){
                 setBuyQty={setBuyQty}
                 balance={balance}
                 marketEvent={marketEvent ?? null}
+                ready={pricesReady}
                 onBuy={(symbol, name, qty, price) => {
                   const ok = buyStock(symbol, name, qty, price);
                   if (ok) notify(`Bought ${qty} ${symbol} @ $${price.toFixed(2)}`);
@@ -613,28 +711,69 @@ export default function PortfolioPage(){
             </XPGate>
           )}
 
-          {tab === "Day Trading" && <XPGate gate="dayTrading" label="Day Trading"><div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "32px", textAlign: "center" }}><h3 style={{ fontWeight: 700, fontSize: "1rem", marginBottom: 8 }}>Day Trading</h3><p style={{ color: "#94a3b8", fontSize: "0.875rem" }}>Advanced trading tools. Keep earning XP to unlock.</p></div></XPGate>}
+          {tab === "Day Trading" && (
+            <div style={{ background: "#fff", border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px 32px", textAlign: "center" }}>
+              <div style={{ width: 56, height: 56, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
+                <BarChart2 size={26} color="#94a3b8" />
+              </div>
+              <h3 style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0d1526", marginBottom: 8 }}>Day Trading</h3>
+              <p style={{ color: "#94a3b8", fontSize: "0.875rem", maxWidth: 320, margin: "0 auto 16px", lineHeight: 1.6 }}>
+                Real-time intraday trading with limit orders, stop losses, and advanced charts. Coming in a future update.
+              </p>
+              <span style={{ background: "#f1f5f9", color: "#94a3b8", padding: "4px 14px", borderRadius: 99, fontSize: "0.75rem", fontWeight: 700 }}>Coming Soon</span>
+            </div>
+          )}
 
           {/* PROPERTY */}
           {tab === "Property" && (
             <XPGate gate="buyProperty" label="Property Market">
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 14 }}>
+              <div style={{ marginBottom: 12 }}>
+                <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:16 }}>
+                  <h3 style={{ fontWeight:700, color:"#fff", fontSize:"0.9rem" }}>NZ Property Market</h3>
+                  <InfoDot text="Property investing means buying real estate to earn rental income and capital gains. You need a 20% deposit upfront." />
+                </div>
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 14 }}>
                 {PROPERTIES.map(prop => {
                   const owned = properties.find(p => p.name === prop.name);
                   const canAfford = balance >= prop.deposit;
                   const net = prop.weeklyRent - prop.mortgageWeekly;
                   return (
-                    <div key={prop.name} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "18px" }}>
-                      <div style={{ fontWeight: 700, fontSize: "0.875rem", marginBottom: 2 }}>{prop.name}</div>
-                      <div style={{ fontSize: "0.75rem", color: "#94a3b8", marginBottom: 12 }}>{prop.suburb}</div>
-                      {[["Price", `$${prop.price.toLocaleString()}`, null], ["20% Deposit", `$${prop.deposit.toLocaleString()}`, canAfford ? "#76AD25" : "#EF4444"], ["Weekly Rent", `$${prop.weeklyRent}/wk`, "#76AD25"], ["Mortgage", `-$${prop.mortgageWeekly}/wk`, "#EF4444"], ["Net cashflow", `${net >= 0 ? "+" : ""}$${net}/wk`, net >= 0 ? "#76AD25" : "#EF4444"]].map(([l, v, c]) => (
-                        <div key={l as string} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.78rem", padding: "3px 0", borderBottom: "1px solid #f8fafc" }}>
-                          <span style={{ color: "#64748b" }}>{l}</span>
-                          <span style={{ fontWeight: 700, color: (c as string) || "#0d1526" }}>{v}</span>
+                    <div key={prop.name} className="pw-dark-card" style={{
+                      background: owned ? "linear-gradient(135deg,#0a2010,#0f2818)" : "#111c30",
+                      border: `1.5px solid ${owned ? "rgba(118,173,37,.3)" : "rgba(255,255,255,.07)"}`,
+                      borderRadius: 16, padding: "18px", position: "relative", overflow: "hidden",
+                    }}>
+                      <div style={{ position:"absolute", top:0, left:0, right:0, height:3, background: net>=0 ? "linear-gradient(90deg,#76AD25,#22c55e)" : "linear-gradient(90deg,#EF4444,#f97316)", borderRadius:"16px 16px 0 0" }}/>
+                      <div style={{ position:"absolute", top:10, right:12, background:"rgba(255,255,255,.06)", color:"#8b9dc3", padding:"2px 8px", borderRadius:99, fontSize:"0.6rem", fontWeight:700 }}>{prop.type}</div>
+                      <div style={{ marginTop:4, marginBottom:10 }}>
+                        <div style={{ fontWeight:800, fontSize:"0.875rem", color:"#fff", display:"flex", alignItems:"center", paddingRight:60 }}>
+                          {prop.name}<InfoDot text={prop.info} />
                         </div>
-                      ))}
-                      <button disabled={!!owned || !canAfford} onClick={() => { const ok = buyProperty(prop.name, prop.price, prop.weeklyRent, prop.mortgageWeekly); if (ok) notify(`Purchased ${prop.name}`); else notify("Insufficient balance for deposit"); }} style={{ width: "100%", marginTop: 12, padding: "8px", background: owned ? "#e2e8f0" : canAfford ? "#0d1526" : "#fef2f2", color: owned ? "#94a3b8" : canAfford ? "#fff" : "#EF4444", border: "none", borderRadius: 8, fontWeight: 600, fontSize: "0.78rem", cursor: owned || !canAfford ? "not-allowed" : "pointer", fontFamily: "Inter, sans-serif" }}>
-                        {owned ? "Already Owned" : !canAfford ? "Insufficient Balance" : "Buy Property"}
+                        <div style={{ fontSize:"0.7rem", color:"#4a6a8a", marginTop:2 }}>{prop.suburb} {prop.bedrooms > 0 ? `· ${prop.bedrooms} bed` : "· Commercial"}</div>
+                      </div>
+                      <div style={{ display:"flex", flexDirection:"column", gap:4, marginBottom:14 }}>
+                        {[
+                          { l:"Purchase Price", v:`$${prop.price.toLocaleString()}`, tip:"The full market value you pay." },
+                          { l:"Deposit (20%)", v:`$${prop.deposit.toLocaleString()}`, c:canAfford?"#76AD25":"#EF4444", tip:"Upfront cash needed. Bank lends the remaining 80%." },
+                          { l:"Weekly Rent", v:prop.weeklyRent>0?`$${prop.weeklyRent}/wk`:"N/A", c:"#76AD25", tip:"Income from tenants each week. Your main revenue stream." },
+                          { l:"Mortgage", v:`-$${prop.mortgageWeekly}/wk`, c:"#EF4444", tip:"Weekly loan repayment to the bank covering interest and principal." },
+                          { l:"Net Cashflow", v:`${net>=0?"+":""}$${net}/wk`, c:net>=0?"#76AD25":"#EF4444", tip:net>=0?"Positive — rent exceeds mortgage. Rare in NZ!":"Negative — you top up the difference. Common in NZ cities." },
+                        ].map(row => (
+                          <div key={row.l} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"4px 0", borderBottom:"1px solid rgba(255,255,255,.04)" }}>
+                            <span style={{ fontSize:"0.73rem", color:"#4a6a8a", display:"flex", alignItems:"center" }}>{row.l}<InfoDot text={row.tip}/></span>
+                            <span style={{ fontWeight:700, fontSize:"0.8rem", color:row.c||"#fff" }}>{row.v}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <button disabled={!!owned||!canAfford} onClick={() => { const ok=buyProperty(prop.name,prop.price,prop.weeklyRent,prop.mortgageWeekly); if(ok)notify(`Purchased ${prop.name}`); else notify("Insufficient balance for deposit"); }}
+                        className={!owned&&canAfford?"btn-3d-green":""}
+                        style={{ width:"100%", padding:"10px", borderRadius:10, fontWeight:700, fontSize:"0.78rem",
+                          background:owned?"rgba(118,173,37,.12)":!canAfford?"rgba(239,68,68,.08)":undefined,
+                          color:owned?"#76AD25":!canAfford?"#EF4444":undefined,
+                          border:owned?"1px solid rgba(118,173,37,.2)":!canAfford?"1px solid rgba(239,68,68,.15)":"none",
+                          cursor:owned||!canAfford?"not-allowed":"pointer", fontFamily:"Inter,sans-serif" }}>
+                        {owned?"Owned":!canAfford?`Need $${(prop.deposit-balance).toLocaleString()} more`:"Purchase Property"}
                       </button>
                     </div>
                   );
@@ -643,28 +782,62 @@ export default function PortfolioPage(){
             </XPGate>
           )}
 
-          {/* LOANS */}
           {tab === "Loans" && (
             <XPGate gate="takeLoan" label="Loans">
               <div>
-                {loans.length > 0 && <div style={{ marginBottom: 20 }}>{loans.map(l => <div key={l.id} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: "14px 18px", marginBottom: 8, display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.82rem" }}><div><div style={{ fontWeight: 700 }}>{l.name}</div><div style={{ color: "#94a3b8", marginTop: 2 }}>{l.interestRate}% p.a. · ${l.weeklyRepayment}/wk</div></div><span style={{ color: "#EF4444", fontWeight: 700 }}>${l.balance.toFixed(0)} owing</span></div>)}</div>}
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
-                  {LOAN_PRODUCTS.map(lp => {
-                    const have = loans.find(l => l.name === lp.name);
-                    return <div key={lp.name} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: "16px" }}>
-                      <div style={{ fontWeight: 700, fontSize: "0.875rem", marginBottom: 3 }}>{lp.name}</div>
-                      <div style={{ fontSize: "0.72rem", color: "#94a3b8", marginBottom: 10 }}>{lp.note}</div>
-                      <div style={{ fontSize: "0.78rem", display: "flex", justifyContent: "space-between", marginBottom: 3 }}><span style={{ color: "#64748b" }}>Amount</span><span style={{ fontWeight: 700 }}>${lp.principal.toLocaleString()}</span></div>
-                      <div style={{ fontSize: "0.78rem", display: "flex", justifyContent: "space-between", marginBottom: 12 }}><span style={{ color: "#64748b" }}>Rate</span><span style={{ fontWeight: 700, color: lp.rate === 0 ? "#76AD25" : "#EF4444" }}>{lp.rate === 0 ? "Interest free" : `${lp.rate}% p.a.`}</span></div>
-                      <button disabled={!!have} onClick={() => { const ok = takeLoan(lp.name, lp.principal, lp.rate, lp.weekly); if (ok) notify(`${lp.name} approved`); }} style={{ width: "100%", padding: "7px", background: have ? "#e2e8f0" : "#0d1526", color: have ? "#94a3b8" : "#fff", border: "none", borderRadius: 7, fontWeight: 600, fontSize: "0.75rem", cursor: have ? "not-allowed" : "pointer", fontFamily: "Inter, sans-serif" }}>{have ? "Active" : "Apply"}</button>
-                    </div>;
-                  })}
-                </div>
+                {loans.length > 0 && (
+                  <div style={{ background:"#111c30", border:"1px solid rgba(255,255,255,.07)", borderRadius:14, padding:"16px 20px", marginBottom:20 }}>
+                    <h3 style={{ fontWeight:700, fontSize:"0.875rem", color:"#fff", marginBottom:12, display:"flex", alignItems:"center", gap:4 }}>Active Loans<InfoDot text="Your current debt. Loans reduce your net worth and require weekly repayments from your balance." /></h3>
+                    {loans.map(l => (
+                      <div key={l.id} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"10px 0", borderBottom:"1px solid rgba(255,255,255,.04)", fontSize:"0.82rem" }}>
+                        <div><div style={{ fontWeight:700, color:"#fff" }}>{l.name}</div><div style={{ color:"#4a6a8a", marginTop:2, fontSize:"0.7rem" }}>{l.interestRate}% p.a. · ${l.weeklyRepayment}/wk</div></div>
+                        <div style={{ textAlign:"right" }}><div style={{ color:"#EF4444", fontWeight:800 }}>${(l.balance??0).toFixed(0)}</div><div style={{ fontSize:"0.62rem", color:"#4a6a8a" }}>owing</div></div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {["Education","Vehicle","Home","Business","Personal"].map(cat => {
+                  const catLoans = LOAN_PRODUCTS.filter(lp => lp.category === cat);
+                  const colors: Record<string,string> = { Education:"#3B82F6", Vehicle:"#f59e0b", Home:"#76AD25", Business:"#a78bfa", Personal:"#EF4444" };
+                  const color = colors[cat];
+                  return (
+                    <div key={cat} style={{ marginBottom:20 }}>
+                      <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:10 }}>
+                        <div style={{ height:3, width:20, background:color, borderRadius:99 }}/>
+                        <h3 style={{ fontWeight:700, color:"#fff", fontSize:"0.85rem" }}>{cat} Loans</h3>
+                        {cat==="Personal" && <span style={{ background:"rgba(239,68,68,.15)", color:"#EF4444", padding:"2px 8px", borderRadius:99, fontSize:"0.62rem", fontWeight:800 }}>HIGH RISK</span>}
+                      </div>
+                      <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))", gap:10 }}>
+                        {catLoans.map(lp => {
+                          const have = loans.find(l => l.name === lp.name);
+                          const isDangerous = lp.rate > 50;
+                          return (
+                            <div key={lp.name} className="pw-dark-card" style={{ padding:"16px", borderColor:isDangerous?"rgba(239,68,68,.25)":"rgba(255,255,255,.07)" }}>
+                              <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:8 }}>
+                                <div style={{ fontWeight:800, fontSize:"0.875rem", color:"#fff", display:"flex", alignItems:"center", gap:4, flex:1 }}>{lp.name}<InfoDot text={lp.note}/></div>
+                                {have && <span style={{ background:"rgba(239,68,68,.15)", color:"#EF4444", padding:"2px 7px", borderRadius:99, fontSize:"0.6rem", fontWeight:800 }}>Active</span>}
+                              </div>
+                              <div style={{ display:"flex", gap:14, marginBottom:12 }}>
+                                <div><div style={{ fontSize:"0.6rem", color:"#4a6a8a", textTransform:"uppercase" }}>Amount</div><div style={{ fontWeight:800, color:"#fff" }}>${lp.principal.toLocaleString()}</div></div>
+                                <div><div style={{ fontSize:"0.6rem", color:"#4a6a8a", textTransform:"uppercase", display:"flex", alignItems:"center" }}>Rate<InfoDot text="Annual interest rate. Higher = more expensive debt." /></div><div style={{ fontWeight:800, color:lp.rate===0?"#76AD25":lp.rate>20?"#EF4444":"#f59e0b" }}>{lp.rate===0?"0%":lp.rate>100?`${lp.rate}% ⚠`:`${lp.rate}%`}</div></div>
+                                {lp.weekly>0&&<div><div style={{ fontSize:"0.6rem", color:"#4a6a8a", textTransform:"uppercase" }}>Weekly</div><div style={{ fontWeight:800, color:"#EF4444" }}>-${lp.weekly}</div></div>}
+                              </div>
+                              <button disabled={!!have} onClick={() => { const ok=takeLoan(lp.name,lp.principal,lp.rate,lp.weekly); if(ok)notify(`${lp.name} approved`); }}
+                                className={!have?(isDangerous?"btn-3d-red":"btn-3d-navy"):""}
+                                style={{ width:"100%", padding:"9px", borderRadius:9, fontWeight:700, fontSize:"0.78rem", background:have?"rgba(255,255,255,.05)":undefined, color:have?"#4a6a8a":undefined, border:"none", cursor:have?"not-allowed":"pointer", fontFamily:"Inter,sans-serif" }}>
+                                {have?"Active":"Apply Now"}
+                              </button>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </XPGate>
           )}
 
-          {/* ASSETS */}
           {tab === "Assets" && (
             <div>
                 {/* Owned assets summary */}
