@@ -380,10 +380,9 @@ function StockChart({ history, isUp, width = 200, height = 60, showLabels = fals
 }
 
 // ── Stock Market Component ─────────────────────────────────────────────────
-function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, ready, onBuy, onSell }: {
+function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, onBuy, onSell }: {
   prices: any; stocks: any[]; buyQty: Record<string,number>;
   setBuyQty: any; balance: number; marketEvent: string | null;
-  ready: boolean;
   onBuy: (sym:string, name:string, qty:number, price:number) => void;
   onSell: (id:string, price:number) => void;
 }) {
@@ -700,7 +699,6 @@ export default function PortfolioPage(){
                 setBuyQty={setBuyQty}
                 balance={balance}
                 marketEvent={marketEvent ?? null}
-                ready={pricesReady}
                 onBuy={(symbol, name, qty, price) => {
                   const ok = buyStock(symbol, name, qty, price);
                   if (ok) notify(`Bought ${qty} ${symbol} @ $${price.toFixed(2)}`);
