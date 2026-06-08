@@ -389,19 +389,6 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
   const [selected, setSelected] = useState<string|null>(null);
   const [justBought, setJustBought] = useState<string|null>(null);
 
-  if (!ready) {
-    return (
-      <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "48px", textAlign: "center" }}>
-        <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 12 }}>
-          {[0,1,2].map(i => (
-            <div key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: "#76AD25", animation: "pw-pulse-glow 1s ease infinite", animationDelay: `${i*0.2}s`, color: "#76AD25" }} />
-          ))}
-        </div>
-        <p style={{ color: "#94a3b8", fontSize: "0.875rem" }}>Loading market history...</p>
-      </div>
-    );
-  }
-
   function handleBuy(sym: string, name: string) {
     const p = prices[sym]; if (!p) return;
     const qty = buyQty[sym] || 1;
