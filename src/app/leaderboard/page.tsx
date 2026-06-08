@@ -1,6 +1,7 @@
 "use client";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
+import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
 import { db } from "@/lib/db";
 import { Trophy, Zap, Flame } from "lucide-react";
@@ -8,6 +9,25 @@ import { Trophy, Zap, Flame } from "lucide-react";
 const COLORS = ["#EF4444","#3B82F6","#76AD25","#6b7280","#3B82F6","#f59e0b","#0891b2","#76AD25"];
 
 export default function LeaderboardPage() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   const { user, state } = useGame();
   const { data } = db.useQuery({ userState: {} });
 
@@ -35,7 +55,7 @@ export default function LeaderboardPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
+      <div style={{ minHeight: "100vh", background: T.bg }}>
         <Nav />
 
         <div style={{ background: "linear-gradient(135deg,#0d1526,#111c30)", padding: "28px 2rem" }}>
@@ -44,7 +64,7 @@ export default function LeaderboardPage() {
               <Trophy size={22} color="#f59e0b" />
               <h1 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#fff" }}>Leaderboard</h1>
             </div>
-            <p style={{ color: "#8b9dc3", fontSize: "0.875rem" }}>Top students ranked by XP earned</p>
+            <p style={{ color: T.text2, fontSize: "0.875rem" }}>Top students ranked by XP earned</p>
             {userRank >= 0 && (
               <div style={{ marginTop: 10, display: "inline-block", background: "rgba(118,173,37,.15)", color: "#76AD25", border: "1px solid rgba(118,173,37,.3)", padding: "4px 14px", borderRadius: 99, fontSize: "0.78rem", fontWeight: 700 }}>
                 You are ranked {rankLabel(userRank)}
@@ -61,8 +81,8 @@ export default function LeaderboardPage() {
           </div>
 
           {sorted.length === 0 ? (
-            <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "48px", textAlign: "center" }}>
-              <p style={{ color: "var(--text3)", fontSize: "0.875rem" }}>No students on the leaderboard yet. Complete lessons to appear here.</p>
+            <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "48px", textAlign: "center" }}>
+              <p style={{ color: T.text3, fontSize: "0.875rem" }}>No students on the leaderboard yet. Complete lessons to appear here.</p>
             </div>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -82,11 +102,11 @@ export default function LeaderboardPage() {
                       {getInitials(s)}
                     </div>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--text)" }}>
+                      <div style={{ fontWeight: 600, fontSize: "0.875rem", color: T.text }}>
                         {getDisplayName(s, isMe)}
                         {isMe && <span style={{ color: "#76AD25", fontSize: "0.75rem", fontWeight: 500, marginLeft: 6 }}>(You)</span>}
                       </div>
-                      <div style={{ fontSize: "0.75rem", color: "var(--text3)", marginTop: 1 }}>
+                      <div style={{ fontSize: "0.75rem", color: T.text3, marginTop: 1 }}>
                         {(s.completedLessons?.length ?? 0)} lessons completed
                       </div>
                     </div>

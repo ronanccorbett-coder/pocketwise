@@ -1,4 +1,5 @@
 "use client";
+import { useTheme } from "@/lib/theme";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -22,6 +23,25 @@ type AdminTab = "overview" | "users" | "modules" | "permissions";
 type EditField = { userId: string; field: "xp" | "balance"; value: string };
 
 export default function AdminPage() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   const { user, isLoading } = db.useAuth();
   const router = useRouter();
   const [tab, setTab]             = useState<AdminTab>("overview");
@@ -100,16 +120,16 @@ export default function AdminPage() {
   }
 
   if (isLoading) return (
-    <div style={{ minHeight: "100vh", background: "#0d1526", display: "flex", alignItems: "center", justifyContent: "center" }}>
-      <div style={{ color: "#8b9dc3" }}>Loading...</div>
+    <div style={{ minHeight: "100vh", background: T.bg, display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div style={{ color: T.text2 }}>Loading...</div>
     </div>
   );
 
   if (!user || !ADMIN_EMAILS.includes(user.email ?? "")) return (
-    <div style={{ minHeight: "100vh", background: "#0d1526", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
+    <div style={{ minHeight: "100vh", background: T.bg, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
       <Shield size={48} color="#EF4444" />
       <h1 style={{ color: "#fff", fontWeight: 800, fontSize: "1.5rem" }}>Access Denied</h1>
-      <p style={{ color: "#8b9dc3" }}>You do not have permission to view this page.</p>
+      <p style={{ color: T.text2 }}>You do not have permission to view this page.</p>
       <button onClick={() => router.push("/curriculum")} style={{ background: "#76AD25", color: "#fff", border: "none", borderRadius: 8, padding: "10px 24px", fontWeight: 700, cursor: "pointer", fontFamily: "Inter, sans-serif" }}>
         Go to Curriculum
       </button>
@@ -201,10 +221,10 @@ export default function AdminPage() {
   const s = { fontFamily: "Inter, sans-serif" };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0d1526", color: "#e2e8f0", ...s }}>
+    <div style={{ minHeight: "100vh", background: T.bg, color: "#e2e8f0", ...s }}>
 
       {notif && (
-        <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 100, background: "#1a2540", color: "#fff", padding: "12px 20px", borderRadius: 10, fontSize: "0.85rem", fontWeight: 600, border: "1px solid #76AD25" }}>
+        <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 100, background: T.bg3, color: "#fff", padding: "12px 20px", borderRadius: 10, fontSize: "0.85rem", fontWeight: 600, border: "1px solid #76AD25" }}>
           {notif}
         </div>
       )}
@@ -212,7 +232,7 @@ export default function AdminPage() {
       <div style={{ display: "flex", minHeight: "100vh" }}>
 
         {/* Sidebar */}
-        <div style={{ width: 220, background: "#111c30", borderRight: "1px solid #2a3a5c", display: "flex", flexDirection: "column", position: "fixed", top: 0, bottom: 0, left: 0 }}>
+        <div style={{ width: 220, background: T.card, borderRight: "1px solid #2a3a5c", display: "flex", flexDirection: "column", position: "fixed", top: 0, bottom: 0, left: 0 }}>
           <div style={{ padding: "20px 16px", borderBottom: "1px solid #2a3a5c", display: "flex", alignItems: "center", gap: 10 }}>
             <Image src="/logo.png" alt="PocketWise" width={28} height={28} style={{ objectFit: "contain", borderRadius: 8, background: "transparent" }} />
             <div>
@@ -238,7 +258,7 @@ export default function AdminPage() {
             <button onClick={() => router.push("/curriculum")} style={{
               width: "100%", display: "flex", alignItems: "center", gap: 10,
               padding: "10px 12px", borderRadius: 8, marginTop: 8,
-              background: "transparent", color: "#8b9dc3",
+              background: "transparent", color: T.text2,
               border: "1px solid transparent", fontWeight: 600, fontSize: "0.825rem",
               cursor: "pointer", ...s, textAlign: "left",
             }}>
@@ -248,13 +268,13 @@ export default function AdminPage() {
 
           <div style={{ padding: "12px 8px", borderTop: "1px solid #2a3a5c" }}>
             <div style={{ padding: "8px 12px", marginBottom: 4 }}>
-              <div style={{ fontSize: "0.7rem", color: "#8b9dc3", marginBottom: 2 }}>Signed in as</div>
+              <div style={{ fontSize: "0.7rem", color: T.text2, marginBottom: 2 }}>Signed in as</div>
               <div style={{ fontSize: "0.78rem", color: "#fff", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{user.email}</div>
             </div>
             <button onClick={() => { db.auth.signOut(); router.push("/login"); }} style={{
               width: "100%", display: "flex", alignItems: "center", gap: 10,
               padding: "10px 12px", borderRadius: 8,
-              background: "transparent", color: "#8b9dc3",
+              background: "transparent", color: T.text2,
               border: "none", fontWeight: 600, fontSize: "0.825rem",
               cursor: "pointer", ...s,
             }}>
@@ -270,7 +290,7 @@ export default function AdminPage() {
           {tab === "overview" && (
             <div>
               <h1 style={{ fontWeight: 800, fontSize: "1.4rem", marginBottom: 4 }}>Dashboard Overview</h1>
-              <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 24 }}>Real-time platform statistics</p>
+              <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 24 }}>Real-time platform statistics</p>
 
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 14, marginBottom: 28 }}>
                 {[
@@ -281,22 +301,22 @@ export default function AdminPage() {
                   { label: "Lessons Completed", val: totalLessons,                  Icon: BookOpen,   color: "#3B82F6", bg: "rgba(59,130,246,.1)" },
                   { label: "Classes",           val: allClassrooms.length,          Icon: Award,      color: "#a78bfa", bg: "rgba(167,139,250,.1)" },
                 ].map(stat => (
-                  <div key={stat.label} style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "18px" }}>
+                  <div key={stat.label} style={{ background: T.bg3, border: "1px solid #2a3a5c", borderRadius: 12, padding: "18px" }}>
                     <div style={{ width: 36, height: 36, borderRadius: 9, background: stat.bg, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
                       <stat.Icon size={17} color={stat.color} />
                     </div>
                     <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#fff" }}>{stat.val}</div>
-                    <div style={{ fontSize: "0.75rem", color: "#8b9dc3", marginTop: 2 }}>{stat.label}</div>
+                    <div style={{ fontSize: "0.75rem", color: T.text2, marginTop: 2 }}>{stat.label}</div>
                   </div>
                 ))}
               </div>
 
-              <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, overflow: "hidden" }}>
+              <div style={{ background: T.bg3, border: "1px solid #2a3a5c", borderRadius: 12, overflow: "hidden" }}>
                 <div style={{ padding: "14px 20px", borderBottom: "1px solid #2a3a5c", fontWeight: 700, fontSize: "0.9rem" }}>
                   Top 10 Students by XP
                 </div>
                 {allStates.length === 0 && (
-                  <div style={{ padding: "32px", textAlign: "center", color: "#8b9dc3", fontSize: "0.875rem" }}>No users yet.</div>
+                  <div style={{ padding: "32px", textAlign: "center", color: T.text2, fontSize: "0.875rem" }}>No users yet.</div>
                 )}
                 {allStates
                   .sort((a: any, b: any) => (b.xp ?? 0) - (a.xp ?? 0))
@@ -304,14 +324,14 @@ export default function AdminPage() {
                   .map((u: any, i: number) => (
                     <div key={u.id} style={{ display: "flex", alignItems: "center", gap: 14, padding: "12px 20px", borderBottom: "1px solid #1a2540" }}>
                       <div style={{ width: 28, fontWeight: 800, fontSize: "0.82rem", color: i < 3 ? "#f59e0b" : "#8b9dc3" }}>#{i + 1}</div>
-                      <div style={{ width: 34, height: 34, borderRadius: "50%", background: "#2a3a5c", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "0.75rem", color: "#8b9dc3", flexShrink: 0 }}>
+                      <div style={{ width: 34, height: 34, borderRadius: "50%", background: "#2a3a5c", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "0.75rem", color: T.text2, flexShrink: 0 }}>
                         {getUserInitials(u.userId)}
                       </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ fontSize: "0.825rem", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                           {getUserDisplay(u.userId)}
                         </div>
-                        <div style={{ fontSize: "0.72rem", color: "#8b9dc3", marginTop: 1 }}>{u.completedLessons?.length ?? 0} lessons</div>
+                        <div style={{ fontSize: "0.72rem", color: T.text2, marginTop: 1 }}>{u.completedLessons?.length ?? 0} lessons</div>
                       </div>
                       <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
                         <Zap size={13} color="#f59e0b" />
@@ -331,7 +351,7 @@ export default function AdminPage() {
           {tab === "users" && (
             <div>
               <h1 style={{ fontWeight: 800, fontSize: "1.4rem", marginBottom: 4 }}>User Management</h1>
-              <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 20 }}>Click XP or Balance to edit. Click the arrow to expand full details.</p>
+              <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 20 }}>Click XP or Balance to edit. Click the arrow to expand full details.</p>
 
               {/* Teacher Requests */}
               {pendingRequests.length > 0 && (
@@ -342,11 +362,11 @@ export default function AdminPage() {
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     {pendingRequests.map((req: any) => (
-                      <div key={req.id} style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 10, padding: "14px 16px", display: "flex", alignItems: "flex-start", gap: 12 }}>
+                      <div key={req.id} style={{ background: T.bg3, border: "1px solid #2a3a5c", borderRadius: 10, padding: "14px 16px", display: "flex", alignItems: "flex-start", gap: 12 }}>
                         <div style={{ flex: 1 }}>
                           <div style={{ fontWeight: 700, color: "#fff", fontSize: "0.875rem" }}>{req.email}</div>
-                          {req.school && <div style={{ fontSize: "0.75rem", color: "#8b9dc3", marginTop: 2 }}>School: {req.school}</div>}
-                          {req.message && <div style={{ fontSize: "0.75rem", color: "#64748b", marginTop: 4, fontStyle: "italic" }}>"{req.message}"</div>}
+                          {req.school && <div style={{ fontSize: "0.75rem", color: T.text2, marginTop: 2 }}>School: {req.school}</div>}
+                          {req.message && <div style={{ fontSize: "0.75rem", color: T.text2, marginTop: 4, fontStyle: "italic" }}>"{req.message}"</div>}
                           <div style={{ fontSize: "0.65rem", color: "#4a5a7a", marginTop: 4, fontFamily: "monospace" }}>
                             userId: {req.userId || "MISSING"} · reqId: {req.id?.slice(0,8)}
                           </div>
@@ -363,13 +383,13 @@ export default function AdminPage() {
               )}
 
               {/* Manual teacher approval tool */}
-              <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "16px 20px", marginBottom: 24 }}>
-                <div style={{ fontWeight: 700, color: "#8b9dc3", fontSize: "0.8rem", marginBottom: 10 }}>Manual Teacher Approval (by email)</div>
+              <div style={{ background: T.bg3, border: "1px solid #2a3a5c", borderRadius: 12, padding: "16px 20px", marginBottom: 24 }}>
+                <div style={{ fontWeight: 700, color: T.text2, fontSize: "0.8rem", marginBottom: 10 }}>Manual Teacher Approval (by email)</div>
                 <div style={{ display: "flex", gap: 8 }}>
                   <input
                     id="manualApproveEmail"
                     placeholder="teacher@email.com"
-                    style={{ flex: 1, padding: "8px 12px", background: "#0d1526", border: "1px solid #2a3a5c", borderRadius: 8, color: "#fff", fontFamily: "Inter,sans-serif", fontSize: "0.875rem", outline: "none" }}
+                    style={{ flex: 1, padding: "8px 12px", background: T.bg, border: "1px solid #2a3a5c", borderRadius: 8, color: "#fff", fontFamily: "Inter,sans-serif", fontSize: "0.875rem", outline: "none" }}
                   />
                   <button
                     className="btn-3d-blue"
@@ -396,13 +416,13 @@ export default function AdminPage() {
                   placeholder="Search by email or ID..."
                   value={search}
                   onChange={e => setSearch(e.target.value)}
-                  style={{ width: "100%", background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 9, padding: "10px 14px 10px 36px", color: "#fff", ...s, fontSize: "0.875rem", outline: "none" }}
+                  style={{ width: "100%", background: T.bg3, border: "1px solid #2a3a5c", borderRadius: 9, padding: "10px 14px 10px 36px", color: "#fff", ...s, fontSize: "0.875rem", outline: "none" }}
                 />
               </div>
 
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {filteredUsers.length === 0 && (
-                  <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "48px", textAlign: "center", color: "#8b9dc3" }}>
+                  <div style={{ background: T.bg3, border: "1px solid #2a3a5c", borderRadius: 12, padding: "48px", textAlign: "center", color: T.text2 }}>
                     No users found.
                   </div>
                 )}
@@ -415,11 +435,11 @@ export default function AdminPage() {
                   const initials = getUserInitials(u.userId);
 
                   return (
-                    <div key={u.id} style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, overflow: "hidden" }}>
+                    <div key={u.id} style={{ background: T.bg3, border: "1px solid #2a3a5c", borderRadius: 12, overflow: "hidden" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 18px", flexWrap: "wrap" }}>
 
                         {/* Avatar */}
-                        <div style={{ width: 38, height: 38, borderRadius: "50%", background: "#2a3a5c", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "0.78rem", color: "#8b9dc3", flexShrink: 0 }}>
+                        <div style={{ width: 38, height: 38, borderRadius: "50%", background: "#2a3a5c", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "0.78rem", color: T.text2, flexShrink: 0 }}>
                           {initials}
                         </div>
 
@@ -428,7 +448,7 @@ export default function AdminPage() {
                           <div style={{ fontWeight: 600, fontSize: "0.875rem", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                             {displayName}
                           </div>
-                          <div style={{ fontSize: "0.72rem", color: "#8b9dc3", marginTop: 1 }}>
+                          <div style={{ fontSize: "0.72rem", color: T.text2, marginTop: 1 }}>
                             {u.completedLessons?.length ?? 0} lessons · {u.streak ?? 0} day streak · {u.badges?.length ?? 0} badges
                           </div>
                         </div>
@@ -442,7 +462,7 @@ export default function AdminPage() {
                                 value={editing.value}
                                 onChange={e => setEditing({ ...editing, value: e.target.value })}
                                 autoFocus
-                                style={{ width: 70, background: "#0d1526", border: "1px solid #76AD25", borderRadius: 6, padding: "4px 6px", color: "#fff", ...s, fontSize: "0.8rem", outline: "none" }}
+                                style={{ width: 70, background: T.bg, border: "1px solid #76AD25", borderRadius: 6, padding: "4px 6px", color: "#fff", ...s, fontSize: "0.8rem", outline: "none" }}
                               />
                               <button onClick={saveEdit} style={{ background: "#76AD25", border: "none", borderRadius: 5, padding: "5px 7px", cursor: "pointer" }}><Check size={12} color="#fff" /></button>
                               <button onClick={() => setEditing(null)} style={{ background: "#EF4444", border: "none", borderRadius: 5, padding: "5px 7px", cursor: "pointer" }}><X size={12} color="#fff" /></button>
@@ -465,7 +485,7 @@ export default function AdminPage() {
                                 value={editing.value}
                                 onChange={e => setEditing({ ...editing, value: e.target.value })}
                                 autoFocus
-                                style={{ width: 80, background: "#0d1526", border: "1px solid #76AD25", borderRadius: 6, padding: "4px 6px", color: "#fff", ...s, fontSize: "0.8rem", outline: "none" }}
+                                style={{ width: 80, background: T.bg, border: "1px solid #76AD25", borderRadius: 6, padding: "4px 6px", color: "#fff", ...s, fontSize: "0.8rem", outline: "none" }}
                               />
                               <button onClick={saveEdit} style={{ background: "#76AD25", border: "none", borderRadius: 5, padding: "5px 7px", cursor: "pointer" }}><Check size={12} color="#fff" /></button>
                               <button onClick={() => setEditing(null)} style={{ background: "#EF4444", border: "none", borderRadius: 5, padding: "5px 7px", cursor: "pointer" }}><X size={12} color="#fff" /></button>
@@ -492,7 +512,7 @@ export default function AdminPage() {
 
                       {/* Expanded details */}
                       {isExpanded && (
-                        <div style={{ borderTop: "1px solid #2a3a5c", padding: "14px 18px", background: "#111c30" }}>
+                        <div style={{ borderTop: "1px solid #2a3a5c", padding: "14px 18px", background: T.card }}>
                           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: 8, marginBottom: 12 }}>
                             {[
                               { label: "Net Worth",      val: `$${(u.netWorth ?? 0).toFixed(0)}` },
@@ -502,28 +522,28 @@ export default function AdminPage() {
                               { label: "Job",            val: u.currentJobId?.split(":")?.[0] ?? "None" },
                               { label: "Badges",         val: (u.badges ?? []).length.toString() },
                             ].map(stat => (
-                              <div key={stat.label} style={{ background: "#1a2540", borderRadius: 8, padding: "8px 12px" }}>
-                                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginBottom: 2 }}>{stat.label}</div>
+                              <div key={stat.label} style={{ background: T.bg3, borderRadius: 8, padding: "8px 12px" }}>
+                                <div style={{ fontSize: "0.68rem", color: T.text2, marginBottom: 2 }}>{stat.label}</div>
                                 <div style={{ fontSize: "0.825rem", fontWeight: 600 }}>{stat.val}</div>
                               </div>
                             ))}
                           </div>
 
-                          <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "#8b9dc3", marginBottom: 6, textTransform: "uppercase", letterSpacing: ".04em" }}>
+                          <div style={{ fontSize: "0.72rem", fontWeight: 700, color: T.text2, marginBottom: 6, textTransform: "uppercase", letterSpacing: ".04em" }}>
                             Completed Lessons ({u.completedLessons?.length ?? 0})
                           </div>
                           <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 10 }}>
                             {(u.completedLessons ?? []).length === 0
                               ? <span style={{ fontSize: "0.78rem", color: "#4a5a7a" }}>None yet</span>
                               : (u.completedLessons ?? []).slice(0, 20).map((l: string) => (
-                                <span key={l} style={{ background: "#2a3a5c", color: "#94a3b8", padding: "2px 8px", borderRadius: 4, fontSize: "0.68rem" }}>{l}</span>
+                                <span key={l} style={{ background: "#2a3a5c", color: T.text3, padding: "2px 8px", borderRadius: 4, fontSize: "0.68rem" }}>{l}</span>
                               ))
                             }
                           </div>
 
                           {userStocks.length > 0 && (
                             <>
-                              <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "#8b9dc3", marginBottom: 6, textTransform: "uppercase", letterSpacing: ".04em" }}>
+                              <div style={{ fontSize: "0.72rem", fontWeight: 700, color: T.text2, marginBottom: 6, textTransform: "uppercase", letterSpacing: ".04em" }}>
                                 Stocks ({userStocks.length})
                               </div>
                               <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 10 }}>
@@ -538,7 +558,7 @@ export default function AdminPage() {
 
                           {userLoans.length > 0 && (
                             <>
-                              <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "#8b9dc3", marginBottom: 6, textTransform: "uppercase", letterSpacing: ".04em" }}>
+                              <div style={{ fontSize: "0.72rem", fontWeight: 700, color: T.text2, marginBottom: 6, textTransform: "uppercase", letterSpacing: ".04em" }}>
                                 Loans ({userLoans.length})
                               </div>
                               <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
@@ -563,12 +583,12 @@ export default function AdminPage() {
           {tab === "modules" && (
             <div>
               <h1 style={{ fontWeight: 800, fontSize: "1.4rem", marginBottom: 4 }}>Module Management</h1>
-              <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 24 }}>Upload lesson JSON files to add or update curriculum content</p>
+              <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 24 }}>Upload lesson JSON files to add or update curriculum content</p>
 
-              <div style={{ background: "#1a2540", border: "2px dashed #2a3a5c", borderRadius: 14, padding: "40px", textAlign: "center", marginBottom: 24 }}>
+              <div style={{ background: T.bg3, border: "2px dashed #2a3a5c", borderRadius: 14, padding: "40px", textAlign: "center", marginBottom: 24 }}>
                 <Upload size={32} color="#8b9dc3" style={{ margin: "0 auto 12px", display: "block" }} />
                 <h3 style={{ fontWeight: 700, marginBottom: 6 }}>Upload Module Files</h3>
-                <p style={{ color: "#8b9dc3", fontSize: "0.825rem", marginBottom: 20 }}>
+                <p style={{ color: T.text2, fontSize: "0.825rem", marginBottom: 20 }}>
                   Upload module.json and lesson-X.json files directly.
                 </p>
                 <label style={{ display: "inline-block", padding: "10px 24px", background: uploading ? "#2a3a5c" : "#76AD25", color: "#fff", borderRadius: 8, fontWeight: 700, fontSize: "0.875rem", cursor: uploading ? "not-allowed" : "pointer" }}>
@@ -578,8 +598,8 @@ export default function AdminPage() {
               </div>
 
               {uploadLog.length > 0 && (
-                <div style={{ background: "#111c30", border: "1px solid #2a3a5c", borderRadius: 12, padding: "16px", marginBottom: 24 }}>
-                  <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "#8b9dc3", marginBottom: 8, textTransform: "uppercase" }}>Upload Log</div>
+                <div style={{ background: T.card, border: "1px solid #2a3a5c", borderRadius: 12, padding: "16px", marginBottom: 24 }}>
+                  <div style={{ fontSize: "0.75rem", fontWeight: 700, color: T.text2, marginBottom: 8, textTransform: "uppercase" }}>Upload Log</div>
                   {uploadLog.map((line, i) => (
                     <div key={i} style={{ fontSize: "0.78rem", fontFamily: "monospace", color: line.includes("Failed") || line.includes("Error") ? "#EF4444" : "#76AD25", padding: "2px 0" }}>
                       {line}
@@ -594,15 +614,15 @@ export default function AdminPage() {
           {tab === "permissions" && (
             <div>
               <h1 style={{ fontWeight: 800, fontSize: "1.4rem", marginBottom: 4 }}>Permissions</h1>
-              <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 24 }}>Admin access management</p>
+              <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 24 }}>Admin access management</p>
 
-              <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "20px", marginBottom: 16 }}>
+              <div style={{ background: T.bg3, border: "1px solid #2a3a5c", borderRadius: 12, padding: "20px", marginBottom: 16 }}>
                 <h3 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: 12 }}>Admin Emails</h3>
-                <p style={{ color: "#8b9dc3", fontSize: "0.8rem", marginBottom: 14, lineHeight: 1.6 }}>
-                  To add more admins, update the ADMIN_EMAILS array at the top of <code style={{ background: "#0d1526", padding: "1px 5px", borderRadius: 4 }}>src/app/admin/page.tsx</code>.
+                <p style={{ color: T.text2, fontSize: "0.8rem", marginBottom: 14, lineHeight: 1.6 }}>
+                  To add more admins, update the ADMIN_EMAILS array at the top of <code style={{ background: T.bg, padding: "1px 5px", borderRadius: 4 }}>src/app/admin/page.tsx</code>.
                 </p>
                 {ADMIN_EMAILS.map(email => (
-                  <div key={email} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: "#111c30", borderRadius: 8, marginBottom: 6 }}>
+                  <div key={email} style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 14px", background: T.card, borderRadius: 8, marginBottom: 6 }}>
                     <Shield size={14} color="#76AD25" />
                     <span style={{ fontSize: "0.875rem", fontWeight: 600 }}>{email}</span>
                     <span style={{ marginLeft: "auto", background: "rgba(118,173,37,.15)", color: "#76AD25", padding: "2px 8px", borderRadius: 99, fontSize: "0.7rem", fontWeight: 700 }}>Admin</span>
@@ -610,7 +630,7 @@ export default function AdminPage() {
                 ))}
               </div>
 
-              <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "20px" }}>
+              <div style={{ background: T.bg3, border: "1px solid #2a3a5c", borderRadius: 12, padding: "20px" }}>
                 <h3 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: 12 }}>All Registered Users ({allUsers.length})</h3>
                 {allUsers.map((u: any) => (
                   <div key={u.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 14px", borderBottom: "1px solid #2a3a5c" }}>

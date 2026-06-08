@@ -2,6 +2,7 @@
 import { Suspense, useState, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
+import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
 import { Zap, Lock, Check, Star, ArrowLeft, Flame, ChevronRight } from "lucide-react";
 
@@ -106,6 +107,19 @@ function UnlockBurst({ x, y, color, onDone }: { x: number; y: number; color: str
 
 // ── Module Map Page ────────────────────────────────────────────────────────
 function ModuleMapContent() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:     isDark ? "#060d1a" : "#f0f4f8",
+    bg2:    isDark ? "#111c30" : "#ffffff",
+    text:   isDark ? "#ffffff" : "#0d1526",
+    text2:  isDark ? "#8b9dc3" : "#475569",
+    text3:  isDark ? "#4a6a8a" : "#94a3b8",
+    card:   isDark ? "#111c30" : "#ffffff",
+    border: isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    shadow: isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.1)",
+    green:  isDark ? "#76AD25" : "#5a9a1a",
+    accent: isDark ? "#f59e0b" : "#d97706",
+  };
   const searchParams = useSearchParams();
   const router = useRouter();
   const folder = searchParams.get("folder");
@@ -199,7 +213,7 @@ function ModuleMapContent() {
             width: Math.random() > 0.8 ? 2 : 1,
             height: Math.random() > 0.8 ? 2 : 1,
             borderRadius: "50%",
-            background: "#fff",
+            background: T.card,
             opacity: Math.random() * 0.6 + 0.1,
           }} />
         ))}
@@ -435,7 +449,7 @@ function ModuleMapContent() {
                   {selectedLesson.title}
                 </h3>
                 {selectedLesson.bloomsLevel && (
-                  <div style={{ fontSize: "0.72rem", color: "#64748b", marginTop: 4 }}>{selectedLesson.bloomsLevel}</div>
+                  <div style={{ fontSize: "0.72rem", color: T.text2, marginTop: 4 }}>{selectedLesson.bloomsLevel}</div>
                 )}
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 4, background: "rgba(245,158,11,.15)", padding: "4px 12px", borderRadius: 99, marginLeft: 12, flexShrink: 0 }}>
@@ -465,6 +479,7 @@ function ModuleMapContent() {
                   <>Start Lesson <ChevronRight size={18} /></>
                 )}
               </button>
+            )}
             )}
           </div>
         ) : (

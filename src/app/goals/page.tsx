@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
+import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
 import { db } from "@/lib/db";
 import { id } from "@instantdb/react";
@@ -120,6 +121,25 @@ function AnimatedNumber({ value, prefix = "", suffix = "" }: { value: number; pr
 }
 
 export default function GoalsPage() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   const { state, setGoals } = useGame();
   const balance  = state?.balance ?? 0;
   const netWorth = state?.netWorth ?? 0;
@@ -172,11 +192,11 @@ export default function GoalsPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "#0d1526", fontFamily: FONT }}>
+      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: FONT }}>
         <Nav />
 
         {/* ── Hero ── */}
-        <div style={{ background: "linear-gradient(135deg,#0d1526 0%,#0f2318 55%,#0d1526 100%)", borderBottom: "1px solid rgba(255,255,255,.06)", padding: "28px 1.5rem 24px", position: "relative", overflow: "hidden" }}>
+        <div style={{ background: "linear-gradient(135deg,#0d1526 0%,#0f2318 55%,#0d1526 100%)", borderBottom: `1px solid ${T.border}`, padding: "28px 1.5rem 24px", position: "relative", overflow: "hidden" }}>
           {[...Array(12)].map((_, i) => (
             <div key={i} style={{ position: "absolute", left: `${(i*29+5)%100}%`, top: `${(i*41+8)%100}%`, width: 2, height: 2, borderRadius: "50%", background: "#76AD25", opacity: 0.2, animation: `pw-float ${2+i%3}s ease-in-out infinite`, animationDelay: `${i*0.25}s`, pointerEvents: "none" }} />
           ))}
@@ -185,7 +205,7 @@ export default function GoalsPage() {
               <Target size={24} color="#76AD25" />
               <h1 style={{ fontSize: "1.5rem", fontWeight: 900, color: "#fff" }}>Financial Goals</h1>
             </div>
-            <p style={{ color: "#4a6a8a", fontSize: "0.875rem", marginBottom: 22 }}>Set targets. Watch them fill up as your wealth grows.</p>
+            <p style={{ color: T.text3, fontSize: "0.875rem", marginBottom: 22 }}>Set targets. Watch them fill up as your wealth grows.</p>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
               {[
                 { label: "Net Worth",  val: netWorth,          prefix: "$", Icon: TrendingUp, color: "#76AD25" },
@@ -193,10 +213,10 @@ export default function GoalsPage() {
                 { label: "Goals Set",  val: savedGoals.length, prefix: "",  Icon: Target,     color: "#f59e0b" },
                 { label: "Completed",  val: goalsCompleted,    prefix: "",  Icon: Trophy,     color: "#a78bfa" },
               ].map(s => (
-                <div key={s.label} style={{ background: "rgba(255,255,255,.07)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 12, padding: "10px 16px", display: "flex", alignItems: "center", gap: 8 }}>
+                <div key={s.label} style={{ background: T.input, border: `1px solid ${T.border2}`, borderRadius: 12, padding: "10px 16px", display: "flex", alignItems: "center", gap: 8 }}>
                   <s.Icon size={15} color={s.color} />
                   <div>
-                    <div style={{ fontSize: "0.6rem", color: "#4a6a8a", textTransform: "uppercase", letterSpacing: ".04em" }}>{s.label}</div>
+                    <div style={{ fontSize: "0.6rem", color: T.text3, textTransform: "uppercase", letterSpacing: ".04em" }}>{s.label}</div>
                     <div style={{ fontWeight: 900, color: "#fff", fontSize: "1rem" }}>
                       <AnimatedNumber value={s.val} prefix={s.prefix} />
                     </div>
@@ -221,10 +241,10 @@ export default function GoalsPage() {
 
               {/* ── Add form ── */}
               {showAdd && (
-                <div style={{ background: "#111c30", border: "1.5px solid rgba(118,173,37,.3)", borderRadius: 18, padding: "20px", marginBottom: 16, animation: "pw-slide-up .3s ease" }}>
+                <div style={{ background: T.card, border: "1.5px solid rgba(118,173,37,.3)", borderRadius: 18, padding: "20px", marginBottom: 16, animation: "pw-slide-up .3s ease" }}>
                   <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#fff", marginBottom: 16 }}>New Goal</h3>
                   <div style={{ marginBottom: 14 }}>
-                    <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 8, textTransform: "uppercase", letterSpacing: ".04em" }}>Choose Icon</label>
+                    <label style={{ display: "block", fontSize: "0.7rem", color: T.text2, fontWeight: 600, marginBottom: 8, textTransform: "uppercase", letterSpacing: ".04em" }}>Choose Icon</label>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                       {ICON_OPTIONS.map(ico => {
                         const I = GOAL_ICONS[ico]; const c = GOAL_COLORS[ico]; const sel = newIcon === ico;
@@ -246,11 +266,11 @@ export default function GoalsPage() {
                   </div>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 14 }}>
                     <div>
-                      <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>Goal Name</label>
+                      <label style={{ display: "block", fontSize: "0.7rem", color: T.text2, fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>Goal Name</label>
                       <input value={newLabel} onChange={e => setNewLabel(e.target.value)} placeholder="e.g. Emergency Fund" className="pw-input" style={{ width: "100%", fontSize: "0.875rem" }} />
                     </div>
                     <div>
-                      <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>Target ($NZD)</label>
+                      <label style={{ display: "block", fontSize: "0.7rem", color: T.text2, fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>Target ($NZD)</label>
                       <input type="number" value={newTarget} onChange={e => setNewTarget(e.target.value)} placeholder="10000" className="pw-input" style={{ width: "100%", fontSize: "0.875rem" }} />
                     </div>
                   </div>
@@ -266,11 +286,11 @@ export default function GoalsPage() {
 
               {/* ── Empty state ── */}
               {savedGoals.length === 0 && !showAdd && (
-                <div style={{ background: "#111c30", border: "2px dashed rgba(255,255,255,.08)", borderRadius: 18, padding: "52px 32px", textAlign: "center", animation: "pw-fade-in .4s ease" }}>
+                <div style={{ background: T.card, border: "2px dashed rgba(255,255,255,.08)", borderRadius: 18, padding: "52px 32px", textAlign: "center", animation: "pw-fade-in .4s ease" }}>
                   <div style={{ width: 60, height: 60, borderRadius: "50%", background: "rgba(118,173,37,.08)", border: "1px solid rgba(118,173,37,.15)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
                     <Target size={26} color="#1e4a2a" />
                   </div>
-                  <p style={{ color: "#4a6a8a", fontSize: "0.875rem", marginBottom: 20 }}>No goals yet. Pick a template or create your own.</p>
+                  <p style={{ color: T.text3, fontSize: "0.875rem", marginBottom: 20 }}>No goals yet. Pick a template or create your own.</p>
                   <button onClick={() => setShowAdd(true)} className="btn-3d-green" style={{ padding: "11px 28px", fontSize: "0.875rem" }}>Set Your First Goal</button>
                 </div>
               )}
@@ -325,7 +345,7 @@ export default function GoalsPage() {
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                             <div>
                               <h3 style={{ fontWeight: 800, fontSize: "0.95rem", color: "#fff", lineHeight: 1.2 }}>{goal.label}</h3>
-                              <div style={{ fontSize: "0.72rem", color: "#4a6a8a", marginTop: 2 }}>
+                              <div style={{ fontSize: "0.72rem", color: T.text3, marginTop: 2 }}>
                                 Target: <span style={{ color: c.accent, fontWeight: 700 }}>${goal.target.toLocaleString()}</span>
                                 {!done && <span style={{ marginLeft: 10, color: "#EF4444" }}>Need ${remaining.toLocaleString()} more</span>}
                               </div>
@@ -346,7 +366,7 @@ export default function GoalsPage() {
 
                           {/* Progress bar */}
                           <div style={{ marginTop: 10 }}>
-                            <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 99, height: 8, overflow: "hidden", position: "relative" }}>
+                            <div style={{ background: T.input, borderRadius: 99, height: 8, overflow: "hidden", position: "relative" }}>
                               <div style={{
                                 height: 8, borderRadius: 99,
                                 background: done ? `linear-gradient(90deg, ${c.accent}, ${c.accent}cc)` : `linear-gradient(90deg, ${c.accent}88, ${c.accent})`,
@@ -360,7 +380,7 @@ export default function GoalsPage() {
                               </div>
                             </div>
                             <div style={{ display: "flex", justifyContent: "space-between", marginTop: 5, fontSize: "0.68rem" }}>
-                              <span style={{ color: "#4a6a8a" }}><AnimatedNumber value={Math.round(netWorth)} prefix="$" /> net worth</span>
+                              <span style={{ color: T.text3 }}><AnimatedNumber value={Math.round(netWorth)} prefix="$" /> net worth</span>
                               <span style={{ fontWeight: 800, color: done ? c.accent : "#fff" }}>{Math.round(progress)}%</span>
                             </div>
                           </div>
@@ -381,7 +401,7 @@ export default function GoalsPage() {
                 const Icon = GOAL_ICONS[t.iconKey] ?? Target;
                 return (
                   <div key={t.label} style={{
-                    background: "#111c30", border: `1.5px solid ${added ? "rgba(118,173,37,.25)" : "rgba(255,255,255,.06)"}`,
+                    background: T.card, border: `1.5px solid ${added ? "rgba(118,173,37,.25)" : "rgba(255,255,255,.06)"}`,
                     borderRadius: 14, padding: "11px 14px", display: "flex", alignItems: "center", gap: 10,
                     opacity: added ? 0.7 : 1, transition: "all .18s cubic-bezier(.34,1.56,.64,1)",
                     cursor: added ? "default" : "pointer",
@@ -393,7 +413,7 @@ export default function GoalsPage() {
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ fontWeight: 700, fontSize: "0.78rem", color: "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{t.label}</div>
-                      <div style={{ fontSize: "0.65rem", color: "#4a6a8a" }}>{t.desc} · <span style={{ color: c.accent, fontWeight: 700 }}>${t.target.toLocaleString()}</span></div>
+                      <div style={{ fontSize: "0.65rem", color: T.text3 }}>{t.desc} · <span style={{ color: c.accent, fontWeight: 700 }}>${t.target.toLocaleString()}</span></div>
                     </div>
                     <button
                       onClick={() => !added && addGoal(t.label, t.target, t.iconKey)}

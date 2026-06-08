@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
+import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
 import Confetti from "@/components/Confetti";
 import XPCounter from "@/components/XPCounter";
@@ -62,7 +63,10 @@ const BUDGET_SCENARIOS = [
   },
 ];
 
-function BudgetChallenge({ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
+function BudgetChallenge({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
   const [scenario] = useState(() => BUDGET_SCENARIOS[Math.floor(Math.random() * BUDGET_SCENARIOS.length)]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [checked, setChecked] = useState(false);
@@ -91,8 +95,8 @@ function BudgetChallenge({ onComplete, onBack }: { onComplete: (xp: number) => v
 
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, paddingBottom: 100 }}>
-      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: "1px solid rgba(255,255,255,.06)", padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff", display: "flex" }}>
+      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}`, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
+        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff", display: "flex" }}>
           <X size={16} />
         </button>
         <div>
@@ -106,10 +110,10 @@ function BudgetChallenge({ onComplete, onBack }: { onComplete: (xp: number) => v
       </div>
 
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "24px 20px" }}>
-        <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 14, padding: "16px 20px", marginBottom: 24, border: "1px solid rgba(255,255,255,.08)" }}>
-          <div style={{ fontSize: "0.72rem", color: "#8b9dc3", marginBottom: 4 }}>Weekly take-home income</div>
+        <div style={{ background: T.input, borderRadius: 14, padding: "16px 20px", marginBottom: 24, border: `1px solid ${T.border}` }}>
+          <div style={{ fontSize: "0.72rem", color: T.text2, marginBottom: 4 }}>Weekly take-home income</div>
           <div style={{ fontSize: "1.75rem", fontWeight: 900, color: "#76AD25" }}>${scenario.income}</div>
-          <div style={{ fontSize: "0.78rem", color: "#8b9dc3", marginTop: 4 }}>Drag each expense into the right category: Need, Want, or Save</div>
+          <div style={{ fontSize: "0.78rem", color: T.text2, marginTop: 4 }}>Drag each expense into the right category: Need, Want, or Save</div>
         </div>
 
         {/* Category totals */}
@@ -121,7 +125,7 @@ function BudgetChallenge({ onComplete, onBack }: { onComplete: (xp: number) => v
               <div key={cat} style={{ flex: 1, background: catBg[cat], border: `1px solid ${catColors[cat]}30`, borderRadius: 10, padding: "10px", textAlign: "center" }}>
                 <div style={{ fontSize: "0.65rem", color: catColors[cat], fontWeight: 700, textTransform: "uppercase", marginBottom: 2 }}>{cat}</div>
                 <div style={{ fontSize: "1rem", fontWeight: 800, color: "#fff" }}>${total}</div>
-                <div style={{ fontSize: "0.65rem", color: "#8b9dc3" }}>{pct}%</div>
+                <div style={{ fontSize: "0.65rem", color: T.text2 }}>{pct}%</div>
               </div>
             );
           })}
@@ -186,7 +190,10 @@ const INTEREST_QUESTIONS = [
   { question: "A $1,000 KiwiSaver contribution grows at 6% for 5 years. What is the final value?", principal: 1000, rate: 6, years: 5, answer: 1338.23 },
 ];
 
-function InterestChallenge({ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
+function InterestChallenge({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
   const [qIdx, setQIdx] = useState(0);
   const [principal, setPrincipal] = useState("");
   const [rate, setRate] = useState("");
@@ -217,12 +224,12 @@ function InterestChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
     }
   }
 
-  const inputStyle = { width: "100%", background: "rgba(255,255,255,.07)", border: "1.5px solid rgba(255,255,255,.12)", borderRadius: 10, padding: "12px 14px", color: "#fff", fontFamily: FONT, fontSize: "0.95rem", outline: "none" } as React.CSSProperties;
+  const inputStyle = { width: "100%", background: T.input, border: "1.5px solid rgba(255,255,255,.12)", borderRadius: 10, padding: "12px 14px", color: "#fff", fontFamily: FONT, fontSize: "0.95rem", outline: "none" } as React.CSSProperties;
 
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, paddingBottom: 40 }}>
-      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: "1px solid rgba(255,255,255,.06)", padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
+      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}`, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
+        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
           <X size={16} />
         </button>
         <div>
@@ -239,8 +246,8 @@ function InterestChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
           <p style={{ color: "#e2e8f0", fontSize: "0.95rem", lineHeight: 1.7 }}>{q.question}</p>
         </div>
 
-        <div style={{ background: "rgba(255,255,255,.04)", borderRadius: 14, padding: "18px 20px", border: "1px solid rgba(255,255,255,.08)", marginBottom: 20 }}>
-          <div style={{ fontSize: "0.72rem", color: "#8b9dc3", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 12 }}>
+        <div style={{ background: "rgba(255,255,255,.04)", borderRadius: 14, padding: "18px 20px", border: `1px solid ${T.border}`, marginBottom: 20 }}>
+          <div style={{ fontSize: "0.72rem", color: T.text2, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 12 }}>
             Formula: A = P × (1 + r)ⁿ
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -250,7 +257,7 @@ function InterestChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
               { label: "Years (n)", val: years, set: setYears, placeholder: String(q.years) },
             ].map(f => (
               <div key={f.label}>
-                <label style={{ fontSize: "0.75rem", color: "#8b9dc3", display: "block", marginBottom: 5 }}>{f.label}</label>
+                <label style={{ fontSize: "0.75rem", color: T.text2, display: "block", marginBottom: 5 }}>{f.label}</label>
                 <input type="number" value={f.val} onChange={e => f.set(e.target.value)} placeholder={f.placeholder} disabled={checked} style={inputStyle} />
               </div>
             ))}
@@ -265,11 +272,11 @@ function InterestChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
           <div>
             <div style={{ background: Math.abs((result ?? 0) - q.answer) < 1 ? "rgba(118,173,37,.1)" : "rgba(239,68,68,.08)", border: `1px solid ${Math.abs((result ?? 0) - q.answer) < 1 ? "rgba(118,173,37,.3)" : "rgba(239,68,68,.2)"}`, borderRadius: 12, padding: "16px", marginBottom: 14 }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-                <span style={{ color: "#8b9dc3", fontSize: "0.825rem" }}>Your answer</span>
+                <span style={{ color: T.text2, fontSize: "0.825rem" }}>Your answer</span>
                 <span style={{ fontWeight: 700, color: "#fff" }}>${result?.toFixed(2)}</span>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <span style={{ color: "#8b9dc3", fontSize: "0.825rem" }}>Correct answer</span>
+                <span style={{ color: T.text2, fontSize: "0.825rem" }}>Correct answer</span>
                 <span style={{ fontWeight: 700, color: "#76AD25" }}>${q.answer.toFixed(2)}</span>
               </div>
             </div>
@@ -295,7 +302,10 @@ const QUIZ_QUESTIONS = [
   { q: "If you earn $60,000 per year in NZ, approximately what tax rate applies to income above $48,000?", options: ["17.5%", "30%", "33%", "39%"], correct: 1, exp: "NZ income between $48,001 and $70,000 is taxed at 30%. This is a marginal rate — only the income in that band is taxed at 30%." },
 ];
 
-function NZQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
+function NZQuiz({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
   const [qIdx, setQIdx] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [locked, setLocked] = useState(false);
@@ -329,7 +339,7 @@ function NZQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onBa
         <Star size={36} color="#76AD25" fill="#76AD25" />
       </div>
       <h2 style={{ fontWeight: 900, fontSize: "1.75rem", color: "#fff", marginBottom: 8 }}>{score}/{QUIZ_QUESTIONS.length} Correct</h2>
-      <p style={{ color: "#8b9dc3", marginBottom: 24, fontSize: "0.9rem" }}>
+      <p style={{ color: T.text2, marginBottom: 24, fontSize: "0.9rem" }}>
         {score >= 6 ? "Excellent NZ financial knowledge!" : score >= 4 ? "Good effort — keep learning!" : "Keep studying — you'll get there!"}
       </p>
       <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(245,158,11,.15)", border: "1px solid rgba(245,158,11,.3)", borderRadius: 12, padding: "12px 24px", marginBottom: 28 }}>
@@ -344,16 +354,16 @@ function NZQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onBa
 
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT }}>
-      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: "1px solid rgba(255,255,255,.06)" }}>
-        <div style={{ height: 5, background: "rgba(255,255,255,.06)" }}>
+      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}` }}>
+        <div style={{ height: 5, background: T.input }}>
           <div style={{ height: 5, background: "#76AD25", width: `${progress}%`, transition: "width .4s", borderRadius: "0 99px 99px 0" }} />
         </div>
         <div style={{ padding: "14px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-          <button onClick={onBack} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
+          <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
             <X size={16} />
           </button>
           <div style={{ fontWeight: 700, color: "#fff" }}>NZ Finance Quiz</div>
-          <div style={{ marginLeft: "auto", fontSize: "0.8rem", color: "#8b9dc3" }}>{qIdx + 1}/{QUIZ_QUESTIONS.length}</div>
+          <div style={{ marginLeft: "auto", fontSize: "0.8rem", color: T.text2 }}>{qIdx + 1}/{QUIZ_QUESTIONS.length}</div>
         </div>
       </div>
 
@@ -374,7 +384,7 @@ function NZQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onBa
                 fontWeight: 600, fontSize: "0.9rem", cursor: locked ? "default" : "pointer",
                 fontFamily: FONT, display: "flex", alignItems: "center", gap: 12, transition: "all .12s",
               }}>
-                <span style={{ width: 28, height: 28, borderRadius: "50%", background: "rgba(255,255,255,.08)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: 800, flexShrink: 0 }}>
+                <span style={{ width: 28, height: 28, borderRadius: "50%", background: "rgba(128,128,128,.08)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem", fontWeight: 800, flexShrink: 0 }}>
                   {String.fromCharCode(65 + i)}
                 </span>
                 {opt}
@@ -385,7 +395,7 @@ function NZQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onBa
           })}
         </div>
         {locked && (
-          <div style={{ background: selected === q.correct ? "rgba(118,173,37,.08)" : "rgba(239,68,68,.06)", border: `1px solid ${selected === q.correct ? "rgba(118,173,37,.25)" : "rgba(239,68,68,.2)"}`, borderRadius: 12, padding: "14px 18px", marginBottom: 16, fontSize: "0.85rem", color: "#cbd5e1", lineHeight: 1.6, animation: "fadeIn 0.3s ease" }}>
+          <div style={{ background: selected === q.correct ? "rgba(118,173,37,.08)" : "rgba(239,68,68,.06)", border: `1px solid ${selected === q.correct ? "rgba(118,173,37,.25)" : "rgba(239,68,68,.2)"}`, borderRadius: 12, padding: "14px 18px", marginBottom: 16, fontSize: "0.85rem", color: T.text3, lineHeight: 1.6, animation: "fadeIn 0.3s ease" }}>
             {q.exp}
           </div>
         )}
@@ -411,7 +421,10 @@ const WORD_CLUES = [
   { word: "KIWISAVER", clue: "New Zealand's workplace savings scheme", hint: "K _ _ _ _ _ _ _ _ " },
 ];
 
-function WordChallenge({ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
+function WordChallenge({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
   const [clue] = useState(() => WORD_CLUES[Math.floor(Math.random() * WORD_CLUES.length)]);
   const [input, setInput] = useState("");
   const [attempts, setAttempts] = useState(0);
@@ -432,8 +445,8 @@ function WordChallenge({ onComplete, onBack }: { onComplete: (xp: number) => voi
 
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT }}>
-      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: "1px solid rgba(255,255,255,.06)", padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
+      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}`, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
+        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
           <X size={16} />
         </button>
         <div>
@@ -464,7 +477,7 @@ function WordChallenge({ onComplete, onBack }: { onComplete: (xp: number) => voi
         <div style={{ background: "rgba(167,139,250,.08)", border: "1px solid rgba(167,139,250,.2)", borderRadius: 14, padding: "20px", marginBottom: 28 }}>
           <div style={{ fontSize: "0.7rem", color: "#a78bfa", fontWeight: 700, textTransform: "uppercase", marginBottom: 8 }}>Clue</div>
           <p style={{ color: "#e2e8f0", fontSize: "1rem", lineHeight: 1.6 }}>{clue.clue}</p>
-          <div style={{ marginTop: 12, fontSize: "0.78rem", color: "#8b9dc3" }}>Hint: {clue.hint}</div>
+          <div style={{ marginTop: 12, fontSize: "0.78rem", color: T.text2 }}>Hint: {clue.hint}</div>
         </div>
 
         {!result ? (
@@ -474,7 +487,7 @@ function WordChallenge({ onComplete, onBack }: { onComplete: (xp: number) => voi
                 <div key={i} style={{ flex: 1, height: 4, borderRadius: 99, background: i < attempts ? "#EF4444" : "rgba(255,255,255,.1)" }} />
               ))}
             </div>
-            <div style={{ fontSize: "0.75rem", color: "#8b9dc3", marginBottom: 16 }}>{3 - attempts} attempts remaining</div>
+            <div style={{ fontSize: "0.75rem", color: T.text2, marginBottom: 16 }}>{3 - attempts} attempts remaining</div>
             <input
               type="text"
               value={input}
@@ -482,13 +495,13 @@ function WordChallenge({ onComplete, onBack }: { onComplete: (xp: number) => voi
               onKeyDown={e => e.key === "Enter" && input.trim() && submit()}
               placeholder="Type your answer..."
               autoFocus
-              style={{ width: "100%", background: "rgba(255,255,255,.07)", border: "1.5px solid rgba(255,255,255,.15)", borderRadius: 12, padding: "14px", color: "#fff", fontFamily: FONT, fontSize: "1rem", outline: "none", marginBottom: 12, textTransform: "uppercase", letterSpacing: "0.1em", textAlign: "center" }}
+              style={{ width: "100%", background: T.input, border: "1.5px solid rgba(255,255,255,.15)", borderRadius: 12, padding: "14px", color: "#fff", fontFamily: FONT, fontSize: "1rem", outline: "none", marginBottom: 12, textTransform: "uppercase", letterSpacing: "0.1em", textAlign: "center" }}
             />
             <div style={{ display: "flex", gap: 8 }}>
               <button onClick={submit} disabled={!input.trim()} style={{ flex: 2, padding: "13px", background: input.trim() ? "#a78bfa" : "rgba(255,255,255,.06)", color: "#fff", border: "none", borderRadius: 12, fontWeight: 800, fontSize: "0.9rem", cursor: input.trim() ? "pointer" : "not-allowed", fontFamily: FONT }}>
                 Submit
               </button>
-              <button onClick={() => setResult("gave-up")} style={{ flex: 1, padding: "13px", background: "rgba(255,255,255,.05)", color: "#8b9dc3", border: "1px solid rgba(255,255,255,.08)", borderRadius: 12, fontWeight: 600, fontSize: "0.85rem", cursor: "pointer", fontFamily: FONT }}>
+              <button onClick={() => setResult("gave-up")} style={{ flex: 1, padding: "13px", background: "rgba(255,255,255,.05)", color: T.text2, border: `1px solid ${T.border}`, borderRadius: 12, fontWeight: 600, fontSize: "0.85rem", cursor: "pointer", fontFamily: FONT }}>
                 Give Up
               </button>
             </div>
@@ -513,7 +526,10 @@ function WordChallenge({ onComplete, onBack }: { onComplete: (xp: number) => voi
 }
 
 // ── Net Worth Tracker Challenge ───────────────────────────────────────────
-function NetWorthChallenge({ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
+function NetWorthChallenge({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
   const scenarios = [
     {
       name: "Wiremu's Finances",
@@ -557,8 +573,8 @@ function NetWorthChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
 
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, paddingBottom: 100 }}>
-      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: "1px solid rgba(255,255,255,.06)", padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
+      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}`, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
+        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
           <X size={16} />
         </button>
         <div>
@@ -571,7 +587,7 @@ function NetWorthChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
       </div>
 
       <div style={{ maxWidth: 520, margin: "0 auto", padding: "24px 20px" }}>
-        <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 20 }}>Label each item as an Asset or Liability to calculate the net worth.</p>
+        <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 20 }}>Label each item as an Asset or Liability to calculate the net worth.</p>
 
         {/* Live net worth display */}
         <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
@@ -581,7 +597,7 @@ function NetWorthChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
             { label: "Net Worth", val: userNW, color: userNW >= 0 ? "#76AD25" : "#EF4444", bg: "rgba(255,255,255,.05)" },
           ].map(s => (
             <div key={s.label} style={{ flex: 1, background: s.bg, borderRadius: 10, padding: "10px", textAlign: "center" }}>
-              <div style={{ fontSize: "0.65rem", color: "#8b9dc3", fontWeight: 700, textTransform: "uppercase", marginBottom: 2 }}>{s.label}</div>
+              <div style={{ fontSize: "0.65rem", color: T.text2, fontWeight: 700, textTransform: "uppercase", marginBottom: 2 }}>{s.label}</div>
               <div style={{ fontSize: "0.95rem", fontWeight: 800, color: s.color }}>${s.val.toLocaleString()}</div>
             </div>
           ))}
@@ -596,7 +612,7 @@ function NetWorthChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
                   <span style={{ fontSize: "0.875rem", fontWeight: 600, color: "#fff" }}>{item.label}</span>
                   <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                    <span style={{ fontWeight: 700, color: "#8b9dc3" }}>${item.amount.toLocaleString()}</span>
+                    <span style={{ fontWeight: 700, color: T.text2 }}>${item.amount.toLocaleString()}</span>
                     {checked && (isCorrect ? <Check size={14} color="#76AD25" /> : <span style={{ fontSize: "0.68rem", color: "#EF4444" }}>→ {item.type}</span>)}
                   </div>
                 </div>
@@ -624,9 +640,9 @@ function NetWorthChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
         ) : (
           <div>
             <div style={{ background: "rgba(255,255,255,.05)", borderRadius: 12, padding: "16px", marginBottom: 16, textAlign: "center" }}>
-              <div style={{ fontSize: "0.8rem", color: "#8b9dc3", marginBottom: 4 }}>Correct Net Worth</div>
+              <div style={{ fontSize: "0.8rem", color: T.text2, marginBottom: 4 }}>Correct Net Worth</div>
               <div style={{ fontSize: "1.5rem", fontWeight: 900, color: correctNW >= 0 ? "#76AD25" : "#EF4444" }}>${correctNW.toLocaleString()}</div>
-              <div style={{ fontSize: "0.8rem", color: "#8b9dc3", marginTop: 4 }}>{correctCount}/{scenario.items.length} items correct</div>
+              <div style={{ fontSize: "0.8rem", color: T.text2, marginTop: 4 }}>{correctCount}/{scenario.items.length} items correct</div>
             </div>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginBottom: 16 }}>
               <Zap size={16} color="#f59e0b" />
@@ -643,7 +659,10 @@ function NetWorthChallenge({ onComplete, onBack }: { onComplete: (xp: number) =>
 }
 
 // ── Daily Spending Diary ──────────────────────────────────────────────────
-function SpendingDiary({ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
+function SpendingDiary({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
   const [entries, setEntries] = useState<{ desc: string; amount: string; category: string }[]>([
     { desc: "", amount: "", category: "Food" }
   ]);
@@ -662,8 +681,8 @@ function SpendingDiary({ onComplete, onBack }: { onComplete: (xp: number) => voi
 
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, paddingBottom: 100 }}>
-      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: "1px solid rgba(255,255,255,.06)", padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
+      <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}`, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
+        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#fff" }}>
           <X size={16} />
         </button>
         <div>
@@ -676,13 +695,13 @@ function SpendingDiary({ onComplete, onBack }: { onComplete: (xp: number) => voi
       </div>
 
       <div style={{ maxWidth: 520, margin: "0 auto", padding: "24px 20px" }}>
-        <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 20 }}>Record everything you spent today. Be honest — this is for your own benefit.</p>
+        <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 20 }}>Record everything you spent today. Be honest — this is for your own benefit.</p>
 
         {!submitted ? (
           <>
             <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 14 }}>
               {entries.map((entry, i) => (
-                <div key={i} style={{ background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.08)", borderRadius: 12, padding: "12px 14px", display: "flex", gap: 8, alignItems: "center" }}>
+                <div key={i} style={{ background: "rgba(255,255,255,.05)", border: `1px solid ${T.border}`, borderRadius: 12, padding: "12px 14px", display: "flex", gap: 8, alignItems: "center" }}>
                   <input
                     placeholder="What did you spend on?"
                     value={entry.desc}
@@ -690,7 +709,7 @@ function SpendingDiary({ onComplete, onBack }: { onComplete: (xp: number) => voi
                     style={{ flex: 2, background: "none", border: "none", color: "#fff", fontFamily: FONT, fontSize: "0.85rem", outline: "none" }}
                   />
                   <div style={{ display: "flex", alignItems: "center", gap: 2, flexShrink: 0 }}>
-                    <span style={{ color: "#8b9dc3", fontSize: "0.85rem" }}>$</span>
+                    <span style={{ color: T.text2, fontSize: "0.85rem" }}>$</span>
                     <input
                       type="number"
                       placeholder="0.00"
@@ -699,19 +718,19 @@ function SpendingDiary({ onComplete, onBack }: { onComplete: (xp: number) => voi
                       style={{ width: 64, background: "none", border: "none", color: "#fff", fontFamily: FONT, fontSize: "0.85rem", outline: "none" }}
                     />
                   </div>
-                  <select value={entry.category} onChange={e => setEntries(en => en.map((r, j) => j === i ? { ...r, category: e.target.value } : r))} style={{ background: "#111c30", border: "1px solid rgba(255,255,255,.1)", borderRadius: 7, color: "#8b9dc3", fontFamily: FONT, fontSize: "0.72rem", padding: "4px 6px", outline: "none" }}>
+                  <select value={entry.category} onChange={e => setEntries(en => en.map((r, j) => j === i ? { ...r, category: e.target.value } : r))} style={{ background: T.card, border: `1px solid ${T.border2}`, borderRadius: 7, color: T.text2, fontFamily: FONT, fontSize: "0.72rem", padding: "4px 6px", outline: "none" }}>
                     {cats.map(c => <option key={c}>{c}</option>)}
                   </select>
                 </div>
               ))}
             </div>
 
-            <button onClick={addRow} style={{ width: "100%", padding: "10px", background: "rgba(255,255,255,.05)", color: "#8b9dc3", border: "1px dashed rgba(255,255,255,.12)", borderRadius: 10, fontWeight: 600, fontSize: "0.85rem", cursor: "pointer", fontFamily: FONT, marginBottom: 20 }}>
+            <button onClick={addRow} style={{ width: "100%", padding: "10px", background: "rgba(255,255,255,.05)", color: T.text2, border: "1px dashed rgba(255,255,255,.12)", borderRadius: 10, fontWeight: 600, fontSize: "0.85rem", cursor: "pointer", fontFamily: FONT, marginBottom: 20 }}>
               + Add another item
             </button>
 
             <div style={{ background: "rgba(255,255,255,.05)", borderRadius: 12, padding: "14px", marginBottom: 16, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{ color: "#8b9dc3", fontSize: "0.875rem" }}>Total spent today</span>
+              <span style={{ color: T.text2, fontSize: "0.875rem" }}>Total spent today</span>
               <span style={{ fontWeight: 900, fontSize: "1.25rem", color: "#fff" }}>${total.toFixed(2)}</span>
             </div>
 
@@ -725,7 +744,7 @@ function SpendingDiary({ onComplete, onBack }: { onComplete: (xp: number) => voi
               <div style={{ fontWeight: 700, color: "#22c55e", marginBottom: 12 }}>Today's Breakdown</div>
               {catTotals.map(c => (
                 <div key={c.cat} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.875rem", padding: "4px 0", borderBottom: "1px solid rgba(255,255,255,.05)" }}>
-                  <span style={{ color: "var(--text3)" }}>{c.cat}</span>
+                  <span style={{ color: T.text3 }}>{c.cat}</span>
                   <span style={{ fontWeight: 700, color: "#fff" }}>${c.total.toFixed(2)}</span>
                 </div>
               ))}
@@ -734,7 +753,7 @@ function SpendingDiary({ onComplete, onBack }: { onComplete: (xp: number) => voi
                 <span style={{ fontWeight: 900, color: "#22c55e" }}>${total.toFixed(2)}</span>
               </div>
             </div>
-            <div style={{ background: "rgba(255,255,255,.04)", borderRadius: 12, padding: "14px", marginBottom: 20, fontSize: "0.825rem", color: "#8b9dc3", lineHeight: 1.6 }}>
+            <div style={{ background: "rgba(255,255,255,.04)", borderRadius: 12, padding: "14px", marginBottom: 20, fontSize: "0.825rem", color: T.text2, lineHeight: 1.6 }}>
               Great habit. Tracking daily spending is the foundation of every budget. Most people are surprised by how much small purchases add up over a week.
             </div>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6, marginBottom: 16 }}>
@@ -819,7 +838,7 @@ function XPCelebration({ xp, onDone }: { xp: number; onDone: () => void }) {
       <div style={{ fontSize: "3.5rem", fontWeight: 900, color: "#fff", lineHeight: 1 }}>
         +<XPCounter target={xp} />
       </div>
-      <div style={{ fontSize: "1.1rem", color: "#8b9dc3", marginBottom: 32, marginTop: 4 }}>XP earned</div>
+      <div style={{ fontSize: "1.1rem", color: T.text2, marginBottom: 32, marginTop: 4 }}>XP earned</div>
       <button onClick={onDone} style={{ padding: "14px 40px", background: "#76AD25", color: "#fff", border: "none", borderRadius: 12, fontWeight: 800, fontSize: "1rem", cursor: "pointer", fontFamily: FONT, boxShadow: "0 4px 20px rgba(118,173,37,.4)" }}>
         Continue
       </button>
@@ -829,6 +848,25 @@ function XPCelebration({ xp, onDone }: { xp: number; onDone: () => void }) {
 
 // ── Main Activities Hub ───────────────────────────────────────────────────
 export default function ActivitiesPage() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   const [filter, setFilter] = useState("all");
   const [activeActivity, setActiveActivity] = useState<ActivityDef | null>(null);
   const [celebration, setCelebration] = useState<number | null>(null);
@@ -856,7 +894,7 @@ export default function ActivitiesPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
+      <div style={{ minHeight: "100vh", background: T.bg }}>
         <Nav />
 
         {/* Hero */}
@@ -866,7 +904,7 @@ export default function ActivitiesPage() {
               <Star size={22} color="#f59e0b" fill="#f59e0b" />
               <h1 style={{ fontWeight: 900, fontSize: "1.4rem", color: "#fff", fontFamily: FONT }}>Activities</h1>
             </div>
-            <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 18, fontFamily: FONT }}>Earn XP through quizzes, simulations, and daily challenges</p>
+            <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 18, fontFamily: FONT }}>Earn XP through quizzes, simulations, and daily challenges</p>
             <div style={{ display: "flex", gap: 12 }}>
               <div style={{ background: "rgba(245,158,11,.15)", border: "1px solid rgba(245,158,11,.25)", borderRadius: 10, padding: "10px 16px", display: "flex", alignItems: "center", gap: 6 }}>
                 <Zap size={15} color="#f59e0b" />
@@ -875,7 +913,7 @@ export default function ActivitiesPage() {
                   <div style={{ fontWeight: 900, color: "#fff", fontSize: "1rem", fontFamily: FONT }}>{xp.toLocaleString()}</div>
                 </div>
               </div>
-              <div style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 10, padding: "10px 16px", display: "flex", alignItems: "center", gap: 6 }}>
+              <div style={{ background: "rgba(128,128,128,.08)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 10, padding: "10px 16px", display: "flex", alignItems: "center", gap: 6 }}>
                 <Star size={15} color="#a78bfa" />
                 <div>
                   <div style={{ fontSize: "0.65rem", color: "#a78bfa", fontWeight: 700, textTransform: "uppercase" }}>Activities</div>
@@ -908,7 +946,7 @@ export default function ActivitiesPage() {
               const Icon = activity.Icon;
               return (
                 <div key={activity.id} style={{
-                  background: "var(--card-bg)", border: `1.5px solid ${locked ? "#f1f5f9" : "#e2e8f0"}`,
+                  background: T.card, border: `1.5px solid ${locked ? "#f1f5f9" : "#e2e8f0"}`,
                   borderRadius: 16, padding: "20px", opacity: locked ? 0.65 : 1,
                   display: "flex", flexDirection: "column", gap: 0,
                   transition: "transform .15s, box-shadow .15s",
@@ -925,7 +963,7 @@ export default function ActivitiesPage() {
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 3 }}>
-                        <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: "var(--text)", fontFamily: FONT }}>{activity.title}</h3>
+                        <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: T.text, fontFamily: FONT }}>{activity.title}</h3>
                         {activity.badge && !locked && (
                           <span style={{ background: activity.badge === "Daily" ? "#e8f5d0" : activity.badge === "Hot" ? "#fef2f2" : "#f0f9ff", color: activity.badge === "Daily" ? "#5d8a1c" : activity.badge === "Hot" ? "#ef4444" : "#0284c7", padding: "1px 7px", borderRadius: 99, fontSize: "0.62rem", fontWeight: 700 }}>
                             {activity.badge}
@@ -939,16 +977,16 @@ export default function ActivitiesPage() {
                         </div>
                         <div style={{ display: "flex", alignItems: "center", gap: 3 }}>
                           <Timer size={11} color="#94a3b8" />
-                          <span style={{ fontSize: "0.72rem", color: "var(--text3)" }}>{activity.estimatedMins} min</span>
+                          <span style={{ fontSize: "0.72rem", color: T.text3 }}>{activity.estimatedMins} min</span>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <p style={{ fontSize: "0.8rem", color: "var(--text2)", lineHeight: 1.6, flex: 1, fontFamily: FONT, marginBottom: 14 }}>
+                  <p style={{ fontSize: "0.8rem", color: T.text2, lineHeight: 1.6, flex: 1, fontFamily: FONT, marginBottom: 14 }}>
                     {activity.description}
                   </p>
                   {locked ? (
-                    <div style={{ background: "var(--bg3)", borderRadius: 8, padding: "8px 12px", fontSize: "0.75rem", color: "var(--text3)", display: "flex", alignItems: "center", gap: 4 }}>
+                    <div style={{ background: T.bg3, borderRadius: 8, padding: "8px 12px", fontSize: "0.75rem", color: T.text3, display: "flex", alignItems: "center", gap: 4 }}>
                       <Lock size={11} /> Requires {activity.xpRequired} XP to unlock
                     </div>
                   ) : (

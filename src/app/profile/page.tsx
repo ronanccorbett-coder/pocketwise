@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
+import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
 import { db } from "@/lib/db";
 import { id } from "@instantdb/react";
@@ -44,6 +45,25 @@ const CAREERS: Record<string, string> = {
 };
 
 export default function ProfilePage() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   const { state, stocks, properties, loans, assets, user } = useGame();
   const [showTeacherForm, setShowTeacherForm] = useState(false);
   const [school,   setSchool]   = useState("");
@@ -79,10 +99,10 @@ export default function ProfilePage() {
 
   if (!state) return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
+      <div style={{ minHeight: "100vh", background: T.bg }}>
         <Nav />
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "60vh" }}>
-          <p style={{ color: "var(--text3)" }}>Loading profile...</p>
+          <p style={{ color: T.text3 }}>Loading profile...</p>
         </div>
       </div>
     </AuthGuard>
@@ -113,7 +133,7 @@ export default function ProfilePage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
+      <div style={{ minHeight: "100vh", background: T.bg }}>
         <Nav />
 
         {/* Hero */}
@@ -135,7 +155,7 @@ export default function ProfilePage() {
                 <h1 style={{ fontWeight: 800, fontSize: "1.4rem", color: "#fff", marginBottom: 4 }}>
                   {user?.email?.split("@")[0] ?? "Student"}
                 </h1>
-                <p style={{ color: "#8b9dc3", fontSize: "0.825rem", marginBottom: 14 }}>
+                <p style={{ color: T.text2, fontSize: "0.825rem", marginBottom: 14 }}>
                   {user?.email}
                 </p>
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
@@ -174,18 +194,18 @@ export default function ProfilePage() {
                   { label: "Day Streak",       val: streak,                       Icon: Flame,     color: "#EF4444",bg: "#fef2f2" },
                   { label: "Badges",           val: badges.length,                Icon: Award,     color: "#a78bfa",bg: "#faf5ff" },
                 ].map(s => (
-                  <div key={s.label} style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 12, padding: "14px" }}>
+                  <div key={s.label} style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 12, padding: "14px" }}>
                     <div style={{ width: 32, height: 32, borderRadius: 8, background: s.bg, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 8 }}>
                       <s.Icon size={15} color={s.color} />
                     </div>
-                    <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--text)" }}>{s.val}</div>
-                    <div style={{ fontSize: "0.7rem", color: "var(--text3)", marginTop: 2 }}>{s.label}</div>
+                    <div style={{ fontSize: "1.1rem", fontWeight: 800, color: T.text }}>{s.val}</div>
+                    <div style={{ fontSize: "0.7rem", color: T.text3, marginTop: 2 }}>{s.label}</div>
                   </div>
                 ))}
               </div>
 
               {/* XP progress */}
-              <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "20px" }}>
+              <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "20px" }}>
                 <h3 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: 14, display: "flex", alignItems: "center", gap: 6 }}>
                   <Target size={15} color="#76AD25" /> XP Progress
                 </h3>
@@ -202,10 +222,10 @@ export default function ProfilePage() {
                       <div style={{ flex: 1 }}>
                         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
                           <span style={{ fontSize: "0.78rem", fontWeight: 600, color: u.done ? "#0d1526" : "#94a3b8" }}>{u.label}</span>
-                          <span style={{ fontSize: "0.7rem", color: "var(--text3)" }}>{u.xp === 0 ? "Free" : `${u.xp} XP`}</span>
+                          <span style={{ fontSize: "0.7rem", color: T.text3 }}>{u.xp === 0 ? "Free" : `${u.xp} XP`}</span>
                         </div>
                         {!u.done && nextUnlock?.xp === u.xp && (
-                          <div style={{ background: "var(--bg)", borderRadius: 99, height: 4, overflow: "hidden" }}>
+                          <div style={{ background: T.bg, borderRadius: 99, height: 4, overflow: "hidden" }}>
                             <div style={{ background: "#76AD25", height: 4, borderRadius: 99, width: `${xpProgress}%`, transition: "width .4s" }} />
                           </div>
                         )}
@@ -216,12 +236,12 @@ export default function ProfilePage() {
               </div>
 
               {/* Badges */}
-              <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "20px" }}>
+              <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "20px" }}>
                 <h3 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: 14, display: "flex", alignItems: "center", gap: 6 }}>
                   <Trophy size={15} color="#f59e0b" /> Badges ({badges.length})
                 </h3>
                 {badges.length === 0 ? (
-                  <p style={{ color: "var(--text3)", fontSize: "0.825rem" }}>No badges yet. Complete lessons to earn your first badge.</p>
+                  <p style={{ color: T.text3, fontSize: "0.825rem" }}>No badges yet. Complete lessons to earn your first badge.</p>
                 ) : (
                   <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 10 }}>
                     {badges.map(badge => {
@@ -229,8 +249,8 @@ export default function ProfilePage() {
                       return (
                         <div key={badge} style={{ background: meta.bg, border: `1px solid ${meta.color}30`, borderRadius: 10, padding: "12px", textAlign: "center" }}>
                           <Award size={22} color={meta.color} style={{ margin: "0 auto 6px", display: "block" }} />
-                          <div style={{ fontWeight: 700, fontSize: "0.78rem", color: "var(--text)" }}>{meta.label}</div>
-                          <div style={{ fontSize: "0.68rem", color: "var(--text2)", marginTop: 2 }}>{meta.desc}</div>
+                          <div style={{ fontWeight: 700, fontSize: "0.78rem", color: T.text }}>{meta.label}</div>
+                          <div style={{ fontSize: "0.68rem", color: T.text2, marginTop: 2 }}>{meta.desc}</div>
                         </div>
                       );
                     })}
@@ -238,14 +258,14 @@ export default function ProfilePage() {
                 )}
 
                 {/* Locked badges */}
-                <div style={{ marginTop: 14, paddingTop: 14, borderTop: "1px solid #f1f5f9" }}>
-                  <div style={{ fontSize: "0.72rem", color: "var(--text3)", fontWeight: 600, marginBottom: 8, textTransform: "uppercase", letterSpacing: ".04em" }}>
+                <div style={{ marginTop: 14, paddingTop: 14, borderTop: `1px solid ${T.border}` }}>
+                  <div style={{ fontSize: "0.72rem", color: T.text3, fontWeight: 600, marginBottom: 8, textTransform: "uppercase", letterSpacing: ".04em" }}>
                     Locked
                   </div>
                   <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                     {Object.entries(BADGE_META).filter(([key]) => !badges.includes(key)).map(([key, meta]) => (
-                      <div key={key} style={{ background: "var(--bg3)", border: "1px solid var(--border)", borderRadius: 8, padding: "6px 10px", opacity: 0.6 }}>
-                        <div style={{ fontSize: "0.72rem", color: "var(--text2)", fontWeight: 600 }}>{meta.label}</div>
+                      <div key={key} style={{ background: T.bg3, border: `1px solid ${T.border}`, borderRadius: 8, padding: "6px 10px", opacity: 0.6 }}>
+                        <div style={{ fontSize: "0.72rem", color: T.text2, fontWeight: 600 }}>{meta.label}</div>
                       </div>
                     ))}
                   </div>
@@ -257,63 +277,63 @@ export default function ProfilePage() {
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
 
               {/* Current job */}
-              <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "18px" }}>
+              <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "18px" }}>
                 <h3 style={{ fontWeight: 700, fontSize: "0.875rem", marginBottom: 12, display: "flex", alignItems: "center", gap: 6 }}>
                   <Briefcase size={14} color="#3B82F6" /> Career
                 </h3>
                 {currentJobLabel ? (
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: "0.875rem", color: "var(--text)", marginBottom: 2 }}>
+                    <div style={{ fontWeight: 700, fontSize: "0.875rem", color: T.text, marginBottom: 2 }}>
                       {currentJobLabel.split("—")[0].trim()}
                     </div>
-                    <div style={{ fontSize: "0.78rem", color: "var(--text2)", marginBottom: 8 }}>
+                    <div style={{ fontSize: "0.78rem", color: T.text2, marginBottom: 8 }}>
                       {currentJobLabel.split("—")[1]?.trim()}
                     </div>
-                    <div style={{ display: "inline-flex", alignItems: "center", gap: 4, background: "var(--green-dim)", padding: "4px 10px", borderRadius: 99 }}>
+                    <div style={{ display: "inline-flex", alignItems: "center", gap: 4, background: isDark ? "rgba(118,173,37,.12)" : "rgba(90,154,26,.08)", padding: "4px 10px", borderRadius: 99 }}>
                       <DollarSign size={12} color="#76AD25" />
                       <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#5d8a1c" }}>${currentJobSalary}/day</span>
                     </div>
                   </div>
                 ) : (
-                  <p style={{ color: "var(--text3)", fontSize: "0.825rem" }}>No job yet. Visit the Career Centre to apply.</p>
+                  <p style={{ color: T.text3, fontSize: "0.825rem" }}>No job yet. Visit the Career Centre to apply.</p>
                 )}
               </div>
 
               {/* Portfolio summary */}
-              <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "18px" }}>
+              <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "18px" }}>
                 <h3 style={{ fontWeight: 700, fontSize: "0.875rem", marginBottom: 12, display: "flex", alignItems: "center", gap: 6 }}>
                   <TrendingUp size={14} color="#76AD25" /> Portfolio
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.8rem" }}>
-                    <span style={{ color: "var(--text2)" }}>Cash</span>
+                    <span style={{ color: T.text2 }}>Cash</span>
                     <span style={{ fontWeight: 700, color: "#76AD25" }}>${balance.toFixed(0)}</span>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.8rem" }}>
-                    <span style={{ color: "var(--text2)" }}>Stocks ({stocks.length})</span>
+                    <span style={{ color: T.text2 }}>Stocks ({stocks.length})</span>
                     <span style={{ fontWeight: 700, color: "#3B82F6" }}>
                       ${stocks.reduce((s, st) => s + (st.currentValue ?? 0) * (st.quantity ?? 0), 0).toFixed(0)}
                     </span>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.8rem" }}>
-                    <span style={{ color: "var(--text2)" }}>Property ({properties.length})</span>
+                    <span style={{ color: T.text2 }}>Property ({properties.length})</span>
                     <span style={{ fontWeight: 700, color: "#a78bfa" }}>
                       ${properties.reduce((s, p) => s + (p.currentValue ?? 0), 0).toFixed(0)}
                     </span>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.8rem" }}>
-                    <span style={{ color: "var(--text2)" }}>Assets ({assets.length})</span>
+                    <span style={{ color: T.text2 }}>Assets ({assets.length})</span>
                     <span style={{ fontWeight: 700, color: "#6b7280" }}>
                       ${assets.reduce((s, a) => s + (a.currentValue ?? 0), 0).toFixed(0)}
                     </span>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.8rem" }}>
-                    <span style={{ color: "var(--text2)" }}>Debt ({loans.length} loans)</span>
+                    <span style={{ color: T.text2 }}>Debt ({loans.length} loans)</span>
                     <span style={{ fontWeight: 700, color: "#EF4444" }}>
                       -${loans.reduce((s, l) => s + (l.balance ?? 0), 0).toFixed(0)}
                     </span>
                   </div>
-                  <div style={{ height: 1, background: "var(--bg)", margin: "4px 0" }} />
+                  <div style={{ height: 1, background: T.bg, margin: "4px 0" }} />
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.875rem" }}>
                     <span style={{ fontWeight: 700 }}>Net Worth</span>
                     <span style={{ fontWeight: 800, color: netWorth >= 5000 ? "#76AD25" : "#EF4444" }}>
@@ -324,18 +344,18 @@ export default function ProfilePage() {
               </div>
 
               {/* Account info */}
-              <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "18px" }}>
+              <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "18px" }}>
                 <h3 style={{ fontWeight: 700, fontSize: "0.875rem", marginBottom: 12, display: "flex", alignItems: "center", gap: 6 }}>
                   <Calendar size={14} color="#94a3b8" /> Account
                 </h3>
-                <div style={{ fontSize: "0.78rem", color: "var(--text2)", display: "flex", flexDirection: "column", gap: 6 }}>
+                <div style={{ fontSize: "0.78rem", color: T.text2, display: "flex", flexDirection: "column", gap: 6 }}>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span>Email</span>
-                    <span style={{ fontWeight: 600, color: "var(--text)" }}>{user?.email}</span>
+                    <span style={{ fontWeight: 600, color: T.text }}>{user?.email}</span>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span>Last active</span>
-                    <span style={{ fontWeight: 600, color: "var(--text)" }}>
+                    <span style={{ fontWeight: 600, color: T.text }}>
                       {joinedDaysAgo === 0 ? "Today" : `${joinedDaysAgo}d ago`}
                     </span>
                   </div>
@@ -369,7 +389,7 @@ export default function ProfilePage() {
                       <div style={{ fontWeight: 800, color: "#fff", fontSize: "0.95rem", marginBottom: 4 }}>
                         Teacher Request Pending
                       </div>
-                      <p style={{ color: "#4a6a8a", fontSize: "0.8rem", margin: 0, lineHeight: 1.5 }}>
+                      <p style={{ color: T.text3, fontSize: "0.8rem", margin: 0, lineHeight: 1.5 }}>
                         Your request to {myRequest?.school ? `teach at ${myRequest.school}` : "become a teacher"} is awaiting admin approval. You'll get access to the Class Dashboard once approved.
                       </p>
                     </>
@@ -378,7 +398,7 @@ export default function ProfilePage() {
                       <div style={{ fontWeight: 800, color: "#fff", fontSize: "0.95rem", marginBottom: 4 }}>
                         Are you a teacher?
                       </div>
-                      <p style={{ color: "#4a6a8a", fontSize: "0.8rem", margin: 0, lineHeight: 1.5 }}>
+                      <p style={{ color: T.text3, fontSize: "0.8rem", margin: 0, lineHeight: 1.5 }}>
                         Apply for educator access to get a class dashboard, student analytics, class challenges, XP tools and more.
                       </p>
                     </>
@@ -399,15 +419,15 @@ export default function ProfilePage() {
 
               {/* Application form */}
               {showTeacherForm && (
-                <div style={{ background: "#111c30", border: "1.5px solid rgba(59,130,246,.2)", borderRadius: 14, padding: "20px 24px", marginTop: 10, animation: "pw-slide-up .3s ease" }}>
+                <div style={{ background: T.card, border: "1.5px solid rgba(59,130,246,.2)", borderRadius: 14, padding: "20px 24px", marginTop: 10, animation: "pw-slide-up .3s ease" }}>
                   <h3 style={{ fontWeight: 700, color: "#fff", fontSize: "0.9rem", marginBottom: 14 }}>Educator Application</h3>
                   <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     <div>
-                      <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>School *</label>
+                      <label style={{ display: "block", fontSize: "0.7rem", color: T.text2, fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>School *</label>
                       <input value={school} onChange={e => setSchool(e.target.value)} placeholder="e.g. Auckland Grammar School" className="pw-input" style={{ width: "100%", fontSize: "0.875rem" }} />
                     </div>
                     <div>
-                      <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>Message to admin (optional)</label>
+                      <label style={{ display: "block", fontSize: "0.7rem", color: T.text2, fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>Message to admin (optional)</label>
                       <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="Brief note about how you plan to use PocketWise..." rows={2} className="pw-input" style={{ width: "100%", resize: "none", fontSize: "0.875rem" }} />
                     </div>
                     <div style={{ display: "flex", gap: 8, marginTop: 4 }}>

@@ -1,4 +1,5 @@
 "use client";
+import { useTheme } from "@/lib/theme";
 import { useState } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
@@ -46,6 +47,25 @@ function UnlockBurst({ color }: { color: string }) {
 }
 
 export default function JobsPage() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   const { state, applyForJob } = useGame();
   const [justApplied, setJustApplied] = useState<string|null>(null);
   const [hoveredId, setHoveredId] = useState<string|null>(null);
@@ -79,7 +99,7 @@ export default function JobsPage() {
             </div>
             <p style={{ color:"#8b9dc3", fontSize:"0.875rem", marginBottom:20 }}>Earn a real weekly salary. More XP unlocks better jobs.</p>
             <div style={{ display:"flex", gap:10, flexWrap:"wrap" }}>
-              <div style={{ background:"rgba(255,255,255,.08)", border:"1px solid rgba(255,255,255,.1)", borderRadius:12, padding:"12px 20px", display:"flex", alignItems:"center", gap:8 }}>
+              <div style={{ background:"rgba(255,255,255,.08)", border:`1px solid ${T.border2}`, borderRadius:12, padding:"12px 20px", display:"flex", alignItems:"center", gap:8 }}>
                 <Zap size={16} color="#f59e0b" fill="#f59e0b" />
                 <div>
                   <div style={{ fontSize:"0.65rem", color:"#8b9dc3" }}>YOUR XP</div>
@@ -100,7 +120,7 @@ export default function JobsPage() {
         </div>
 
         {/* XP tier tracker */}
-        <div style={{ background:"#fff", borderBottom:"1px solid #f1f5f9", padding:"14px 2rem" }}>
+        <div style={{ background:"#fff", borderBottom:`1px solid ${T.border}`, padding:"14px 2rem" }}>
           <div style={{ maxWidth:960, margin:"0 auto", display:"flex", alignItems:"center", gap:0 }}>
             {[
               { label:"Entry",    req:0,                     desc:"Any student" },

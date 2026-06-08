@@ -1,4 +1,5 @@
 "use client";
+import { useTheme } from "@/lib/theme";
 import { useState, useCallback } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
@@ -306,8 +307,11 @@ function InfoDotDark({ text }: { text: string }) {
 }
 
 // ── Stock Chart ────────────────────────────────────────────────────────────
-function StockChart({ history, isUp, width = 200, height = 60, showLabels = false }: { history: number[]; isUp: boolean; width?: number; height?: number; showLabels?: boolean }) {
-  if (history.length < 2) return <div style={{ width, height, background: "#f8fafc", borderRadius: 8 }} />;
+function StockChart({
+  history, isUp, width = 200, height = 60, showLabels = false }: { history: number[]; isUp: boolean; width?: number; height?: number; showLabels?: boolean }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+  if (history.length < 2) return <div style={{ width, height, background: T.bg3, borderRadius: 8 }} />;
   const min = Math.min(...history) * 0.998;
   const max = Math.max(...history) * 1.002;
   const range = max - min || 1;
@@ -340,7 +344,7 @@ function StockChart({ history, isUp, width = 200, height = 60, showLabels = fals
       </defs>
 
       {/* Background */}
-      <rect x={padLeft} y={padTop} width={chartW} height={chartH} fill={isUp ? "#f0fdf4" : "#fef2f2"} rx="6" />
+      <rect x={padLeft} y={padTop} width={chartW} height={chartH} fill={isDark ? (isUp ? "rgba(118,173,37,.08)" : "rgba(239,68,68,.08)") : (isUp ? "#f0fdf4" : "#fef2f2")} rx="6" />
 
       {/* Grid lines */}
       {showLabels && [0, 0.25, 0.5, 0.75, 1].map(t => {
@@ -380,7 +384,10 @@ function StockChart({ history, isUp, width = 200, height = 60, showLabels = fals
 }
 
 // ── Stock Market Component ─────────────────────────────────────────────────
-function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, onBuy, onSell }: {
+function StockMarket({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ prices, stocks, buyQty, setBuyQty, balance, marketEvent, onBuy, onSell }: {
   prices: any; stocks: any[]; buyQty: Record<string,number>;
   setBuyQty: any; balance: number; marketEvent: string | null;
   onBuy: (sym:string, name:string, qty:number, price:number) => void;
@@ -412,14 +419,14 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
 
       {/* Big chart for selected stock */}
       {selected && selectedPrice && selectedMeta && (
-        <div style={{ background: "#0d1526", border: "1.5px solid #1e3a5f", borderRadius: 16, padding: "20px", marginBottom: 16, animation: "pw-pop .3s ease" }}>
+        <div style={{ background: T.bg, border: "1.5px solid #1e3a5f", borderRadius: 16, padding: "20px", marginBottom: 16, animation: "pw-pop .3s ease" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ background: "#1e3a5f", borderRadius: 8, padding: "4px 10px", fontWeight: 900, fontSize: "0.85rem", color: "#60a5fa" }}>{selectedMeta.symbol}</div>
                 <span style={{ color: "#fff", fontWeight: 700, fontSize: "1rem" }}>{selectedMeta.name}</span>
               </div>
-              <div style={{ fontSize: "0.72rem", color: "#64748b", marginTop: 4 }}>{selectedMeta.sector} · NZX</div>
+              <div style={{ fontSize: "0.72rem", color: T.text2, marginTop: 4 }}>{selectedMeta.sector} · NZX</div>
             </div>
             <div style={{ textAlign: "right" }}>
               <div style={{ fontSize: "1.75rem", fontWeight: 900, color: "#fff", lineHeight: 1 }}>${selectedPrice.price.toFixed(2)}</div>
@@ -432,33 +439,33 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
           <div style={{ display: "flex", gap: 10, marginTop: 14, flexWrap: "wrap" }}>
             {selectedMeta.dividendYield > 0 && (
               <div style={{ background: "rgba(118,173,37,.12)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 8, padding: "6px 12px", fontSize: "0.75rem" }}>
-                <span style={{ color: "#8b9dc3" }}>Dividend yield: </span>
+                <span style={{ color: T.text2 }}>Dividend yield: </span>
                 <span style={{ color: "#76AD25", fontWeight: 700 }}>{(selectedMeta.dividendYield * 100).toFixed(1)}% p.a.</span>
               </div>
             )}
-            <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 8, padding: "6px 12px", fontSize: "0.75rem" }}>
-              <span style={{ color: "#8b9dc3" }}>52w range: </span>
+            <div style={{ background: T.input, borderRadius: 8, padding: "6px 12px", fontSize: "0.75rem" }}>
+              <span style={{ color: T.text2 }}>52w range: </span>
               <span style={{ color: "#fff", fontWeight: 700 }}>${(selectedPrice.price * 0.82).toFixed(2)} – ${(selectedPrice.price * 1.18).toFixed(2)}</span>
             </div>
             {selectedOwned && (
               <div style={{ background: "rgba(118,173,37,.12)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 8, padding: "6px 12px", fontSize: "0.75rem" }}>
-                <span style={{ color: "#8b9dc3" }}>You own: </span>
+                <span style={{ color: T.text2 }}>You own: </span>
                 <span style={{ color: "#76AD25", fontWeight: 700 }}>{selectedOwned.quantity} shares (${((selectedOwned.quantity ?? 0) * selectedPrice.price).toFixed(0)})</span>
               </div>
             )}
           </div>
           {/* Buy controls */}
           <div style={{ marginTop: 14, display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-            <div style={{ display: "flex", alignItems: "center", background: "rgba(255,255,255,.06)", borderRadius: 10, overflow: "hidden", border: "1px solid rgba(255,255,255,.1)" }}>
-              <button onClick={() => setBuyQty((q: any) => ({ ...q, [selected]: Math.max(1, (q[selected]||1) - 1) }))} className="btn-3d-ghost" style={{ padding: "8px 14px", borderRadius: 0, boxShadow: "none", border: "none", borderRight: "1px solid rgba(255,255,255,.1)" }}><Minus size={13} /></button>
+            <div style={{ display: "flex", alignItems: "center", background: T.input, borderRadius: 10, overflow: "hidden", border: `1px solid ${T.border2}` }}>
+              <button onClick={() => setBuyQty((q: any) => ({ ...q, [selected]: Math.max(1, (q[selected]||1) - 1) }))} className="btn-3d-ghost" style={{ padding: "8px 14px", borderRadius: 0, boxShadow: "none", border: "none", borderRight: `1px solid ${T.border2}` }}><Minus size={13} /></button>
               <input type="number" value={buyQty[selected]||1} min={1} max={999}
                 onChange={e => setBuyQty((q: any) => ({ ...q, [selected]: Math.max(1, parseInt(e.target.value)||1) }))}
                 className="pw-input"
                 style={{ width: 60, textAlign: "center", border: "none", borderRadius: 0, background: "transparent" }} />
-              <button onClick={() => setBuyQty((q: any) => ({ ...q, [selected]: (q[selected]||1) + 1 }))} className="btn-3d-ghost" style={{ padding: "8px 14px", borderRadius: 0, boxShadow: "none", border: "none", borderLeft: "1px solid rgba(255,255,255,.1)" }}><Plus size={13} /></button>
+              <button onClick={() => setBuyQty((q: any) => ({ ...q, [selected]: (q[selected]||1) + 1 }))} className="btn-3d-ghost" style={{ padding: "8px 14px", borderRadius: 0, boxShadow: "none", border: "none", borderLeft: `1px solid ${T.border2}` }}><Plus size={13} /></button>
             </div>
             <div style={{ flex: 1, minWidth: 100 }}>
-              <div style={{ fontSize: "0.7rem", color: "#64748b" }}>Total cost</div>
+              <div style={{ fontSize: "0.7rem", color: T.text2 }}>Total cost</div>
               <div style={{ fontWeight: 800, color: "#fff", fontSize: "0.95rem" }}>${((buyQty[selected]||1) * selectedPrice.price).toFixed(2)}</div>
             </div>
             <button
@@ -478,12 +485,12 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
       )}
 
       {/* Stock list */}
-      <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, overflow: "hidden" }}>
-        <div style={{ padding: "14px 20px", borderBottom: "1px solid #f1f5f9", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <h2 style={{ fontWeight: 800, fontSize: "0.95rem", color: "#0d1526" }}>NZX Live Prices</h2>
+      <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, overflow: "hidden" }}>
+        <div style={{ padding: "14px 20px", borderBottom: `1px solid ${T.border}`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <h2 style={{ fontWeight: 800, fontSize: "0.95rem", color: T.text }}>NZX Live Prices</h2>
           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#76AD25", animation: "pw-pulse-glow 2s ease infinite", color: "#76AD25" }} />
-            <span style={{ fontSize: "0.7rem", color: "#94a3b8" }}>Updates every 30s</span>
+            <span style={{ fontSize: "0.7rem", color: T.text3 }}>Updates every 30s</span>
           </div>
         </div>
         {NZX_STOCKS.map(meta => {
@@ -510,14 +517,14 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
               </div>
               {/* Name */}
               <div style={{ flex: 1, minWidth: 100 }}>
-                <div style={{ fontWeight: 600, fontSize: "0.85rem", color: "#0d1526" }}>{meta.name}</div>
-                <div style={{ fontSize: "0.7rem", color: "#94a3b8", marginTop: 1 }}>{meta.sector}</div>
+                <div style={{ fontWeight: 600, fontSize: "0.85rem", color: T.text }}>{meta.name}</div>
+                <div style={{ fontSize: "0.7rem", color: T.text3, marginTop: 1 }}>{meta.sector}</div>
               </div>
               {/* Mini chart */}
               <StockChart history={p.history} isUp={isUp} width={120} height={36} />
               {/* Price + change */}
               <div style={{ textAlign: "right", minWidth: 80 }}>
-                <div style={{ fontWeight: 800, fontSize: "0.9rem", color: "#0d1526" }}>${p.price.toFixed(2)}</div>
+                <div style={{ fontWeight: 800, fontSize: "0.9rem", color: T.text }}>${p.price.toFixed(2)}</div>
                 <div style={{ fontSize: "0.72rem", color: isUp ? "#76AD25" : "#EF4444", fontWeight: 700 }}>
                   {isUp ? "▲" : "▼"} {Math.abs(p.changePct).toFixed(2)}%
                 </div>
@@ -538,6 +545,25 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
 }
 
 export default function PortfolioPage(){
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   const [tab, setTab]     = useState<Tab>("Overview");
   const [buyQty, setBuyQty] = useState<Record<string,number>>({});
   const [notif, setNotif]   = useState<string|null>(null);
@@ -578,11 +604,11 @@ export default function PortfolioPage(){
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "#0d1526" }}>
+      <div style={{ minHeight: "100vh", background: T.bg }}>
         <Nav />
 
         {notif && (
-          <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 100, background: "#0d1526", color: "#fff", padding: "12px 20px", borderRadius: 10, fontSize: "0.85rem", fontWeight: 600, border: "1px solid #76AD25", boxShadow: "0 4px 20px rgba(0,0,0,.3)", maxWidth: 320 }}>
+          <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 100, background: T.bg, color: "#fff", padding: "12px 20px", borderRadius: 10, fontSize: "0.85rem", fontWeight: 600, border: "1px solid #76AD25", boxShadow: "0 4px 20px rgba(0,0,0,.3)", maxWidth: 320 }}>
             {notif}
           </div>
         )}
@@ -595,22 +621,22 @@ export default function PortfolioPage(){
                 <BarChart2 size={22} color="#76AD25" />
                 <h1 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#fff" }}>PocketWise Portfolio</h1>
               </div>
-              <p style={{ color: "#8b9dc3", fontSize: "0.85rem" }}>Simulate real investing with virtual NZD. Learn by doing.</p>
+              <p style={{ color: T.text2, fontSize: "0.85rem" }}>Simulate real investing with virtual NZD. Learn by doing.</p>
             </div>
             <div style={{ display: "flex", gap: 10 }}>
-              <div style={{ background: "rgba(255,255,255,.08)", borderRadius: 12, padding: "12px 20px", textAlign: "center" }}>
-                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginBottom: 2 }}>Cash Balance</div>
+              <div style={{ background: "rgba(128,128,128,.08)", borderRadius: 12, padding: "12px 20px", textAlign: "center" }}>
+                <div style={{ fontSize: "0.68rem", color: T.text2, marginBottom: 2 }}>Cash Balance</div>
                 <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#76AD25" }}>${balance.toFixed(2)}</div>
-                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginTop: 2 }}>Virtual NZD</div>
+                <div style={{ fontSize: "0.68rem", color: T.text2, marginTop: 2 }}>Virtual NZD</div>
               </div>
-              <div style={{ background: "rgba(255,255,255,.08)", borderRadius: 12, padding: "12px 18px", textAlign: "center" }}>
-                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginBottom: 2 }}>Net Worth</div>
+              <div style={{ background: "rgba(128,128,128,.08)", borderRadius: 12, padding: "12px 18px", textAlign: "center" }}>
+                <div style={{ fontSize: "0.68rem", color: T.text2, marginBottom: 2 }}>Net Worth</div>
                 <div style={{ fontSize: "1.4rem", fontWeight: 800, color: netWorth >= 5000 ? "#76AD25" : "#EF4444" }}>${netWorth.toFixed(0)}</div>
               </div>
-              <div style={{ background: "rgba(255,255,255,.08)", borderRadius: 12, padding: "12px 18px", textAlign: "center" }}>
-                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginBottom: 2 }}>Streak</div>
+              <div style={{ background: "rgba(128,128,128,.08)", borderRadius: 12, padding: "12px 18px", textAlign: "center" }}>
+                <div style={{ fontSize: "0.68rem", color: T.text2, marginBottom: 2 }}>Streak</div>
                 <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#f59e0b" }}>{state?.streak ?? 0}</div>
-                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginTop: 2 }}>{Math.max(1, state?.streak ?? 1)}x XP</div>
+                <div style={{ fontSize: "0.68rem", color: T.text2, marginTop: 2 }}>{Math.max(1, state?.streak ?? 1)}x XP</div>
               </div>
             </div>
           </div>
@@ -622,7 +648,7 @@ export default function PortfolioPage(){
             {TABS.map(t => (
               <button key={t} onClick={() => setTab(t)} style={{
                 padding: "7px 16px", borderRadius: 9999,
-                background: tab === t ? "var(--bg)" : "var(--card-bg)",
+                background: tab === t ? T.bg : T.card,
                 color: tab === t ? "#fff" : "#475569",
                 border: `1px solid ${tab === t ? "#0d1526" : "#e2e8f0"}`,
                 fontWeight: 600, fontSize: "0.8rem", cursor: "pointer",
@@ -642,19 +668,19 @@ export default function PortfolioPage(){
                   { label: "Total Debt",      val: `$${totalDebt.toFixed(2)}`,     color: "#EF4444", Icon: AlertTriangle, bg: "#fef2f2", ic: "#EF4444" },
                   { label: "Net Worth",       val: `$${netWorth.toFixed(2)}`,      color: netWorth >= 5000 ? "#76AD25" : "#EF4444", Icon: Wallet, bg: "#e8f5d0", ic: "#76AD25" },
                 ].map(c => (
-                  <div key={c.label} style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "18px" }}>
+                  <div key={c.label} style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "18px" }}>
                     <div style={{ width: 36, height: 36, borderRadius: 9, background: c.bg, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
                       <c.Icon size={17} color={c.ic} />
                     </div>
-                    <div style={{ fontSize: "0.78rem", color: "#94a3b8", marginBottom: 4 }}>{c.label}</div>
+                    <div style={{ fontSize: "0.78rem", color: T.text3, marginBottom: 4 }}>{c.label}</div>
                     <div style={{ fontSize: "1.2rem", fontWeight: 800, color: c.color }}>{c.val}</div>
                   </div>
                 ))}
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-                <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "20px" }}>
+                <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "20px" }}>
                   <h3 style={{ fontWeight: 700, marginBottom: 12, fontSize: "0.9rem" }}>Active Holdings</h3>
-                  {stocks.length === 0 ? <p style={{ color: "#94a3b8", fontSize: "0.825rem" }}>No investments yet. Head to Markets.</p>
+                  {stocks.length === 0 ? <p style={{ color: T.text3, fontSize: "0.825rem" }}>No investments yet. Head to Markets.</p>
                   : stocks.map(s => {
                     const live = prices[s.symbol];
                     const gain = live ? (live.price - s.purchasePrice) * s.quantity : 0;
@@ -664,9 +690,9 @@ export default function PortfolioPage(){
                     </div>;
                   })}
                 </div>
-                <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "20px" }}>
+                <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "20px" }}>
                   <h3 style={{ fontWeight: 700, marginBottom: 12, fontSize: "0.9rem" }}>Active Loans</h3>
-                  {loans.length === 0 ? <p style={{ color: "#94a3b8", fontSize: "0.825rem" }}>No loans. You are debt-free.</p>
+                  {loans.length === 0 ? <p style={{ color: T.text3, fontSize: "0.825rem" }}>No loans. You are debt-free.</p>
                   : loans.map(l => <div key={l.id} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: "1px solid #f8fafc", fontSize: "0.82rem" }}>
                     <span style={{ fontWeight: 600 }}>{l.name}</span>
                     <span style={{ color: "#EF4444", fontWeight: 600 }}>${l.balance.toFixed(0)}</span>
@@ -697,15 +723,15 @@ export default function PortfolioPage(){
           )}
 
           {tab === "Day Trading" && (
-            <div style={{ background: "#fff", border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px 32px", textAlign: "center" }}>
-              <div style={{ width: 56, height: 56, background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
+            <div style={{ background: T.card, border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px 32px", textAlign: "center" }}>
+              <div style={{ width: 56, height: 56, background: T.bg3, border: `1px solid ${T.border}`, borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
                 <BarChart2 size={26} color="#94a3b8" />
               </div>
-              <h3 style={{ fontWeight: 800, fontSize: "1.1rem", color: "#0d1526", marginBottom: 8 }}>Day Trading</h3>
-              <p style={{ color: "#94a3b8", fontSize: "0.875rem", maxWidth: 320, margin: "0 auto 16px", lineHeight: 1.6 }}>
+              <h3 style={{ fontWeight: 800, fontSize: "1.1rem", color: T.text, marginBottom: 8 }}>Day Trading</h3>
+              <p style={{ color: T.text3, fontSize: "0.875rem", maxWidth: 320, margin: "0 auto 16px", lineHeight: 1.6 }}>
                 Real-time intraday trading with limit orders, stop losses, and advanced charts. Coming in a future update.
               </p>
-              <span style={{ background: "#f1f5f9", color: "#94a3b8", padding: "4px 14px", borderRadius: 99, fontSize: "0.75rem", fontWeight: 700 }}>Coming Soon</span>
+              <span style={{ background: T.bg3, color: T.text3, padding: "4px 14px", borderRadius: 99, fontSize: "0.75rem", fontWeight: 700 }}>Coming Soon</span>
             </div>
           )}
 
@@ -771,7 +797,7 @@ export default function PortfolioPage(){
             <XPGate gate="takeLoan" label="Loans">
               <div>
                 {loans.length > 0 && (
-                  <div style={{ background:"#111c30", border:"1px solid rgba(255,255,255,.07)", borderRadius:14, padding:"16px 20px", marginBottom:20 }}>
+                  <div style={{ background:"#111c30", border:`1px solid ${T.border}`, borderRadius:14, padding:"16px 20px", marginBottom:20 }}>
                     <h3 style={{ fontWeight:700, fontSize:"0.875rem", color:"#fff", marginBottom:12, display:"flex", alignItems:"center", gap:4 }}>Active Loans<InfoDot text="Your current debt. Loans reduce your net worth and require weekly repayments from your balance." /></h3>
                     {loans.map(l => (
                       <div key={l.id} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"10px 0", borderBottom:"1px solid rgba(255,255,255,.04)", fontSize:"0.82rem" }}>
@@ -827,7 +853,7 @@ export default function PortfolioPage(){
             <div>
                 {/* Owned assets summary */}
                 {ownedAssets.length > 0 && (
-                  <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "18px", marginBottom: 20 }}>
+                  <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "18px", marginBottom: 20 }}>
                     <h3 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: 14 }}>Your Assets</h3>
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10, marginBottom: 14 }}>
                       {ownedAssets.map(a => {
@@ -835,27 +861,27 @@ export default function PortfolioPage(){
                         const Icon = meta?.icon ?? Package;
                         const annualLoss = (a.currentValue ?? 0) * ((meta?.dep ?? 10) / 100);
                         return (
-                          <div key={a.id} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 10, padding: "12px" }}>
+                          <div key={a.id} style={{ background: T.bg3, border: `1px solid ${T.border}`, borderRadius: 10, padding: "12px" }}>
                             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
                               <div style={{ width: 30, height: 30, borderRadius: 7, background: meta?.iconBg ?? "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                                 <Icon size={14} color={meta?.iconColor ?? "#64748b"} />
                               </div>
                               <div>
-                                <div style={{ fontWeight: 700, fontSize: "0.78rem", color: "#0d1526" }}>{a.name}</div>
-                                <div style={{ fontSize: "0.68rem", color: "#94a3b8" }}>{a.category}</div>
+                                <div style={{ fontWeight: 700, fontSize: "0.78rem", color: T.text }}>{a.name}</div>
+                                <div style={{ fontSize: "0.68rem", color: T.text3 }}>{a.category}</div>
                               </div>
                             </div>
                             <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", marginBottom: 2 }}>
-                              <span style={{ color: "#64748b" }}>Current value</span>
-                              <span style={{ fontWeight: 700, color: "#0d1526" }}>${(a.currentValue ?? 0).toFixed(0)}</span>
+                              <span style={{ color: T.text2 }}>Current value</span>
+                              <span style={{ fontWeight: 700, color: T.text }}>${(a.currentValue ?? 0).toFixed(0)}</span>
                             </div>
                             <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem", marginBottom: 2 }}>
-                              <span style={{ color: "#64748b" }}>Annual loss</span>
+                              <span style={{ color: T.text2 }}>Annual loss</span>
                               <span style={{ fontWeight: 700, color: "#EF4444" }}>-${annualLoss.toFixed(0)}</span>
                             </div>
                             {meta?.income && (
                               <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.75rem" }}>
-                                <span style={{ color: "#64748b" }}>Weekly income</span>
+                                <span style={{ color: T.text2 }}>Weekly income</span>
                                 <span style={{ fontWeight: 700, color: "#76AD25" }}>+${meta.income}/wk</span>
                               </div>
                             )}
@@ -865,16 +891,16 @@ export default function PortfolioPage(){
                     </div>
                     <div style={{ display: "flex", gap: 12, padding: "12px", background: "#f0fdf4", borderRadius: 10, border: "1px solid #bbf7d0" }}>
                       <div style={{ textAlign: "center", flex: 1 }}>
-                        <div style={{ fontSize: "0.68rem", color: "#64748b", marginBottom: 2 }}>Total Value</div>
-                        <div style={{ fontWeight: 800, color: "#0d1526", fontSize: "0.9rem" }}>${totalAssetValue.toFixed(0)}</div>
+                        <div style={{ fontSize: "0.68rem", color: T.text2, marginBottom: 2 }}>Total Value</div>
+                        <div style={{ fontWeight: 800, color: T.text, fontSize: "0.9rem" }}>${totalAssetValue.toFixed(0)}</div>
                       </div>
                       <div style={{ textAlign: "center", flex: 1 }}>
-                        <div style={{ fontSize: "0.68rem", color: "#64748b", marginBottom: 2 }}>Weekly Income</div>
+                        <div style={{ fontSize: "0.68rem", color: T.text2, marginBottom: 2 }}>Weekly Income</div>
                         <div style={{ fontWeight: 800, color: "#76AD25", fontSize: "0.9rem" }}>${weeklyAssetIncome}/wk</div>
                       </div>
                       <div style={{ textAlign: "center", flex: 1 }}>
-                        <div style={{ fontSize: "0.68rem", color: "#64748b", marginBottom: 2 }}>Assets Owned</div>
-                        <div style={{ fontWeight: 800, color: "#0d1526", fontSize: "0.9rem" }}>{ownedAssets.length}</div>
+                        <div style={{ fontSize: "0.68rem", color: T.text2, marginBottom: 2 }}>Assets Owned</div>
+                        <div style={{ fontWeight: 800, color: T.text, fontSize: "0.9rem" }}>{ownedAssets.length}</div>
                       </div>
                     </div>
                   </div>
@@ -895,7 +921,7 @@ export default function PortfolioPage(){
                     ))}
                   </div>
                   <div style={{ marginLeft: "auto", display: "flex", gap: 4, alignItems: "center" }}>
-                    <span style={{ fontSize: "0.75rem", color: "#64748b" }}>Sort by:</span>
+                    <span style={{ fontSize: "0.75rem", color: T.text2 }}>Sort by:</span>
                     {[["price", "Price"], ["income", "Income"], ["dep", "Depreciation"]].map(([val, label]) => (
                       <button key={val} onClick={() => setAssetSort(val as any)} style={{
                         padding: "4px 10px", borderRadius: 6,
@@ -922,7 +948,7 @@ export default function PortfolioPage(){
                       <div key={ap.name}
                         className={!locked && !owned ? "pw-lift" : ""}
                         style={{
-                          background: "#fff",
+                          background: T.card,
                           border: `2px solid ${owned ? "#76AD25" : locked ? "#f1f5f9" : "#e2e8f0"}`,
                           borderRadius: 14, padding: "18px",
                           opacity: locked ? 0.6 : 1,
@@ -946,35 +972,35 @@ export default function PortfolioPage(){
                             <Icon size={20} color={ap.iconColor} />
                           </div>
                           <div>
-                            <div style={{ fontWeight: 700, fontSize: "0.875rem", color: "#0d1526" }}>{ap.name}</div>
-                            <div style={{ fontSize: "0.72rem", color: "#94a3b8" }}>{ap.category}</div>
+                            <div style={{ fontWeight: 700, fontSize: "0.875rem", color: T.text }}>{ap.name}</div>
+                            <div style={{ fontSize: "0.72rem", color: T.text3 }}>{ap.category}</div>
                           </div>
                         </div>
 
-                        <p style={{ fontSize: "0.78rem", color: "#64748b", lineHeight: 1.5, marginBottom: 12 }}>{ap.description}</p>
+                        <p style={{ fontSize: "0.78rem", color: T.text2, lineHeight: 1.5, marginBottom: 12 }}>{ap.description}</p>
 
                         <div style={{ display: "flex", flexDirection: "column", gap: 4, marginBottom: 12 }}>
                           <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.78rem" }}>
-                            <span style={{ color: "#64748b" }}>Purchase price</span>
+                            <span style={{ color: T.text2 }}>Purchase price</span>
                             <span style={{ fontWeight: 700 }}>${ap.price.toLocaleString()}</span>
                           </div>
                           <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.78rem" }}>
-                            <span style={{ color: "#64748b", display: "flex", alignItems: "center", gap: 3 }}>
+                            <span style={{ color: T.text2, display: "flex", alignItems: "center", gap: 3 }}>
                               <TrendingDown size={11} /> Depreciation
                             </span>
                             <span style={{ fontWeight: 700, color: "#EF4444" }}>-{ap.dep}%/yr (${annualDepLoss.toFixed(0)}/yr)</span>
                           </div>
                           {ap.income && (
                             <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.78rem" }}>
-                              <span style={{ color: "#64748b", display: "flex", alignItems: "center", gap: 3 }}>
+                              <span style={{ color: T.text2, display: "flex", alignItems: "center", gap: 3 }}>
                                 <DollarSign size={11} /> Weekly income
                               </span>
                               <span style={{ fontWeight: 700, color: "#76AD25" }}>+${ap.income}/wk</span>
                             </div>
                           )}
                           {ap.income && (
-                            <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.78rem", paddingTop: 4, borderTop: "1px solid #f1f5f9" }}>
-                              <span style={{ color: "#64748b" }}>Net weekly</span>
+                            <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.78rem", paddingTop: 4, borderTop: `1px solid ${T.border}` }}>
+                              <span style={{ color: T.text2 }}>Net weekly</span>
                               <span style={{ fontWeight: 700, color: weeklyNet >= 0 ? "#76AD25" : "#EF4444" }}>
                                 {weeklyNet >= 0 ? "+" : ""}${weeklyNet.toFixed(0)}/wk
                               </span>
@@ -988,7 +1014,7 @@ export default function PortfolioPage(){
                         </div>
 
                         {locked ? (
-                          <div style={{ background: "#f1f5f9", borderRadius: 8, padding: "8px", textAlign: "center", fontSize: "0.75rem", color: "#94a3b8" }}>
+                          <div style={{ background: T.bg3, borderRadius: 8, padding: "8px", textAlign: "center", fontSize: "0.75rem", color: T.text3 }}>
                             <Zap size={12} style={{ display: "inline", marginRight: 4 }} />
                             Requires {ap.xpReq} XP
                           </div>

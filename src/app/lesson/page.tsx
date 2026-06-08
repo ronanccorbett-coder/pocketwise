@@ -2,6 +2,7 @@
 import { Suspense, useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
+import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
 import { SadKiwiOverlay, CornerCelebration } from "@/components/Mascot";
 import Confetti from "@/components/Confetti";
@@ -94,7 +95,7 @@ function SlideActivity({ a }: { a: Activity }) {
       <div style={{
         background: "rgba(255,255,255,.06)", borderRadius: 16,
         padding: "24px 28px",
-        fontSize: "0.95rem", color: "#cbd5e1", lineHeight: 1.9,
+        fontSize: "0.95rem", color: T.text3, lineHeight: 1.9,
         whiteSpace: "pre-wrap",
         border: "1px solid rgba(255,255,255,.08)",
       }}>
@@ -193,7 +194,7 @@ function QuizActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => void;
               marginTop: 14, padding: "14px 18px", borderRadius: 12,
               background: answers[qi] === q.correctIndex ? "rgba(118,173,37,.12)" : "rgba(239,68,68,.1)",
               border: `1px solid ${answers[qi] === q.correctIndex ? "rgba(118,173,37,.3)" : "rgba(239,68,68,.25)"}`,
-              fontSize: "0.875rem", color: "#cbd5e1", lineHeight: 1.6,
+              fontSize: "0.875rem", color: T.text3, lineHeight: 1.6,
               animation: "fadeIn 0.3s ease",
             }}>
               {q.explanation}
@@ -263,7 +264,7 @@ function TrueFalseActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => 
         })}
       </div>
       {locked && a.explanation && (
-        <div style={{ marginTop: 16, padding: "14px 18px", borderRadius: 12, background: answered === correct ? "rgba(118,173,37,.12)" : "rgba(239,68,68,.1)", border: `1px solid ${answered === correct ? "rgba(118,173,37,.3)" : "rgba(239,68,68,.25)"}`, fontSize: "0.875rem", color: "#cbd5e1", lineHeight: 1.6, animation: "fadeIn 0.3s ease" }}>
+        <div style={{ marginTop: 16, padding: "14px 18px", borderRadius: 12, background: answered === correct ? "rgba(118,173,37,.12)" : "rgba(239,68,68,.1)", border: `1px solid ${answered === correct ? "rgba(118,173,37,.3)" : "rgba(239,68,68,.25)"}`, fontSize: "0.875rem", color: T.text3, lineHeight: 1.6, animation: "fadeIn 0.3s ease" }}>
           {a.explanation}
         </div>
       )}
@@ -479,7 +480,7 @@ function VocabActivity({ a, vocab }: { a: Activity; vocab: { term: string; defin
         {vocab.map((v, i) => (
           <div key={i} onClick={() => setFlipped(s => { const n = new Set(s); n.has(i) ? n.delete(i) : n.add(i); return n; })} style={{ background: flipped.has(i) ? "rgba(118,173,37,.12)" : "rgba(255,255,255,.06)", border: `1.5px solid ${flipped.has(i) ? "rgba(118,173,37,.4)" : "rgba(255,255,255,.1)"}`, borderRadius: 14, padding: "18px", cursor: "pointer", minHeight: 100, display: "flex", flexDirection: "column", justifyContent: "center", transition: "all .2s" }}>
             {flipped.has(i) ? (
-              <p style={{ color: "#cbd5e1", fontSize: "0.875rem", lineHeight: 1.6 }}>{v.definition}</p>
+              <p style={{ color: T.text3, fontSize: "0.875rem", lineHeight: 1.6 }}>{v.definition}</p>
             ) : (
               <div style={{ fontWeight: 700, fontSize: "1rem", color: "#fff" }}>{v.term}</div>
             )}
@@ -501,11 +502,11 @@ function ScenarioActivity({ a }: { a: Activity }) {
       <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#fff", marginBottom: 20 }}>{a.title}</h2>
       <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 14, padding: "20px", marginBottom: 16, border: "1px solid rgba(255,255,255,.08)" }}>
         <div style={{ fontSize: "0.7rem", fontWeight: 700, color: "#8b9dc3", textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 10 }}>Setup</div>
-        <p style={{ color: "#cbd5e1", fontSize: "0.9rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.setup}</p>
+        <p style={{ color: T.text3, fontSize: "0.9rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.setup}</p>
       </div>
       <div style={{ background: "rgba(59,130,246,.08)", borderRadius: 14, padding: "20px", marginBottom: 16, border: "1px solid rgba(59,130,246,.2)" }}>
         <div style={{ fontSize: "0.7rem", fontWeight: 700, color: "#3B82F6", textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 10 }}>Your Challenge</div>
-        <p style={{ color: "#cbd5e1", fontSize: "0.9rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.challenge}</p>
+        <p style={{ color: T.text3, fontSize: "0.9rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.challenge}</p>
       </div>
       {(a.hints ?? []).length > 0 && (
         <div style={{ marginBottom: 16 }}>
@@ -524,7 +525,7 @@ function ScenarioActivity({ a }: { a: Activity }) {
       {showSolution && a.solution && (
         <div style={{ background: "rgba(118,173,37,.08)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 14, padding: "20px", animation: "fadeIn 0.3s ease" }}>
           <div style={{ fontSize: "0.7rem", fontWeight: 700, color: "#76AD25", textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 10 }}>Worked Solution</div>
-          <p style={{ color: "#cbd5e1", fontSize: "0.875rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.solution}</p>
+          <p style={{ color: T.text3, fontSize: "0.875rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.solution}</p>
         </div>
       )}
     </div>
@@ -541,7 +542,7 @@ function ReflectionActivity({ a }: { a: Activity }) {
       </div>
       <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#fff", marginBottom: 20 }}>{a.title}</h2>
       <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 14, padding: "20px", marginBottom: 20, border: "1px solid rgba(255,255,255,.08)" }}>
-        <p style={{ color: "#cbd5e1", fontSize: "0.9rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.prompt}</p>
+        <p style={{ color: T.text3, fontSize: "0.9rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.prompt}</p>
       </div>
       <textarea value={text} onChange={e => setText(e.target.value)} placeholder="Write your thoughts here..." rows={5} style={{ width: "100%", background: "rgba(255,255,255,.06)", border: "1.5px solid rgba(255,255,255,.12)", borderRadius: 12, padding: "16px", color: "#fff", fontFamily: FONT, fontSize: "0.9rem", resize: "vertical", outline: "none" }} onFocus={e => e.target.style.borderColor = "#76AD25"} onBlur={e => e.target.style.borderColor = "rgba(255,255,255,.12)"} />
       {a.nceaLink && <p style={{ fontSize: "0.78rem", color: "#8b9dc3", marginTop: 10, fontStyle: "italic" }}>{a.nceaLink}</p>}
@@ -566,7 +567,7 @@ function DiscussionActivity({ a }: { a: Activity }) {
           {a.guidingQuestions!.map((q, i) => (
             <div key={i} style={{ display: "flex", gap: 10, padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,.06)" }}>
               <span style={{ color: "#7dd3fc", fontWeight: 700, flexShrink: 0 }}>{i + 1}.</span>
-              <p style={{ color: "#94a3b8", fontSize: "0.875rem", lineHeight: 1.6 }}>{q}</p>
+              <p style={{ color: T.text3, fontSize: "0.875rem", lineHeight: 1.6 }}>{q}</p>
             </div>
           ))}
         </div>
@@ -723,7 +724,16 @@ function LessonContent() {
   function handleComplete() {
     if (!lesson || !folder || !filename) return;
     completeLesson(`${folder}/${filename}`, lesson.xpReward, 50, lesson.title);
-
+    // Check if this was the last lesson in the module — fire corner celebration
+    if (lessons && lessons.length > 0) {
+      const completedIds = (state?.completedLessons as string[] ?? []);
+      const allDone = lessons.every((l: any) =>
+        l.filename === filename || completedIds.includes(`${folder}/${l.filename}`)
+      );
+      if (allDone) {
+        window.dispatchEvent(new CustomEvent("pw:module-complete", { detail: { folder } }));
+      }
+    }
     setCompleted(true);
   }
 
@@ -867,6 +877,25 @@ function LessonContent() {
 }
 
 export default function LessonPage() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   return (
     <Suspense fallback={
       <div style={{ minHeight: "100vh", background: "#0a1628", display: "flex", alignItems: "center", justifyContent: "center" }}>

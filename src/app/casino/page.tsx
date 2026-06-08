@@ -2,6 +2,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
+import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
 import { DollarSign, TrendingUp, TrendingDown, Zap } from "lucide-react";
 
@@ -13,13 +14,13 @@ const FONT = "Inter, system-ui, sans-serif";
 function BetSelector({ bet, setBet, max, bets = [1,2,5,10,25,50] }: { bet: number; setBet: (n: number) => void; max: number; bets?: number[] }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", justifyContent: "center" }}>
-      <span style={{ color: "#94a3b8", fontSize: "0.82rem" }}>Bet:</span>
+      <span style={{ color: T.text3, fontSize: "0.82rem" }}>Bet:</span>
       {bets.filter(b => b <= Math.max(max, 1)).map(b => (
         <button key={b} onClick={() => setBet(b)} style={{ padding: "5px 12px", borderRadius: 9999, background: bet === b ? "#f59e0b" : "rgba(255,255,255,.08)", color: bet === b ? "#000" : "#94a3b8", border: `1px solid ${bet === b ? "#f59e0b" : "#1a4030"}`, fontWeight: 700, fontSize: "0.78rem", cursor: "pointer", fontFamily: FONT }}>
           ${b}
         </button>
       ))}
-      <input type="number" value={bet} min={1} max={max} onChange={e => setBet(Math.min(max, Math.max(1, parseInt(e.target.value)||1)))} style={{ width: 64, padding: "5px 8px", borderRadius: 8, background: "rgba(255,255,255,.06)", border: "1px solid #1a4030", color: "#fff", fontFamily: FONT, fontSize: "0.78rem", outline: "none" }} />
+      <input type="number" value={bet} min={1} max={max} onChange={e => setBet(Math.min(max, Math.max(1, parseInt(e.target.value)||1)))} style={{ width: 64, padding: "5px 8px", borderRadius: 8, background: T.input, border: "1px solid #1a4030", color: "#fff", fontFamily: FONT, fontSize: "0.78rem", outline: "none" }} />
     </div>
   );
 }
@@ -45,7 +46,10 @@ function calcWin(reels: string[], bet: number) {
   return 0;
 }
 
-function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
+function SlotsGame({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(2);
   const [reels, setReels] = useState(["DM","7X","ST"]);
   const [spinning, setSpinning] = useState(false);
@@ -124,7 +128,7 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
           </div>
         )}
         <div style={{ textAlign: "center", marginBottom: 14 }}>
-          <span style={{ color: "#94a3b8", fontSize: "0.875rem" }}>Balance: <strong style={{ color: "#f59e0b" }}>${balance.toFixed(2)}</strong></span>
+          <span style={{ color: T.text3, fontSize: "0.875rem" }}>Balance: <strong style={{ color: "#f59e0b" }}>${balance.toFixed(2)}</strong></span>
         </div>
         <div style={{ marginBottom: 14, display: "flex", justifyContent: "center" }}>
           <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 50)} />
@@ -142,7 +146,7 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
         </button>
       </div>
       <div style={{ background: "rgba(0,0,0,.4)", border: "1px solid #1a4030", borderRadius: 12, padding: "14px 18px", marginBottom: 10 }}>
-        <div style={{ fontSize: "0.7rem", fontWeight: 700, color: "#8b9dc3", letterSpacing: ".08em", marginBottom: 10 }}>PAY TABLE</div>
+        <div style={{ fontSize: "0.7rem", fontWeight: 700, color: T.text2, letterSpacing: ".08em", marginBottom: 10 }}>PAY TABLE</div>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 16px" }}>
           {Object.entries(PAYS).map(([combo, mult]) => {
             const sym = combo.slice(0, 2);
@@ -159,7 +163,7 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
       </div>
       <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 12, padding: "12px 16px" }}>
         <div style={{ fontWeight: 700, color: "#fca5a5", fontSize: "0.82rem", marginBottom: 4 }}>RTP: 85% — House Edge: 15%</div>
-        <p style={{ color: "#94a3b8", fontSize: "0.78rem", lineHeight: 1.6 }}>For every $100 wagered, the machine pays back $85 on average. Each spin is independent — a losing streak does not increase your odds of winning.</p>
+        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>For every $100 wagered, the machine pays back $85 on average. Each spin is independent — a losing streak does not increase your odds of winning.</p>
       </div>
     </div>
   );
@@ -186,7 +190,10 @@ function BJCard({ card, hidden }: { card: string; hidden?: boolean }) {
   );
 }
 
-function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
+function BlackjackGame({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(5);
   const [deck, setDeck] = useState<string[]>([]);
   const [playerHand, setPlayerHand] = useState<string[]>([]);
@@ -250,7 +257,7 @@ function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:
         {phase === "bet" ? (
           <div style={{ textAlign: "center" }}>
             <h3 style={{ color: "#fff", fontWeight: 700, marginBottom: 8 }}>Place Your Bet</h3>
-            <p style={{ color: "#64748b", fontSize: "0.85rem", marginBottom: 20 }}>Beat the dealer. Get closer to 21 without going over.</p>
+            <p style={{ color: T.text2, fontSize: "0.85rem", marginBottom: 20 }}>Beat the dealer. Get closer to 21 without going over.</p>
             <div style={{ marginBottom: 20 }}>
               <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 100)} bets={[5,10,25,50,100]} />
             </div>
@@ -262,7 +269,7 @@ function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:
           <div>
             {/* Dealer hand */}
             <div style={{ marginBottom: 20 }}>
-              <div style={{ fontSize: "0.72rem", color: "#8b9dc3", fontWeight: 700, marginBottom: 8, textTransform: "uppercase" }}>
+              <div style={{ fontSize: "0.72rem", color: T.text2, fontWeight: 700, marginBottom: 8, textTransform: "uppercase" }}>
                 Dealer {!hideDealer ? `— ${dv}` : ""}
               </div>
               <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
@@ -271,7 +278,7 @@ function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:
             </div>
             {/* Player hand */}
             <div style={{ marginBottom: 20 }}>
-              <div style={{ fontSize: "0.72rem", color: "#8b9dc3", fontWeight: 700, marginBottom: 8, textTransform: "uppercase" }}>
+              <div style={{ fontSize: "0.72rem", color: T.text2, fontWeight: 700, marginBottom: 8, textTransform: "uppercase" }}>
                 You — {pv} {pv === 21 ? "★" : pv > 21 ? "BUST" : ""}
               </div>
               <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
@@ -300,7 +307,7 @@ function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:
       </div>
       <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 12, padding: "12px 16px" }}>
         <div style={{ fontWeight: 700, color: "#fca5a5", fontSize: "0.82rem", marginBottom: 4 }}>House Edge: ~0.5% with perfect strategy</div>
-        <p style={{ color: "#94a3b8", fontSize: "0.78rem", lineHeight: 1.6 }}>Blackjack has the lowest house edge of any casino game — but only if you play perfectly. Most players make mistakes and give the house 2-4%. Always stand on 17+, double on 11.</p>
+        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>Blackjack has the lowest house edge of any casino game — but only if you play perfectly. Most players make mistakes and give the house 2-4%. Always stand on 17+, double on 11.</p>
       </div>
     </div>
   );
@@ -309,7 +316,10 @@ function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:
 // ── ROULETTE ──────────────────────────────────────────────────────────────
 const RED_NUMS = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
 
-function RouletteGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
+function RouletteGame({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(5);
   const [betType, setBetType] = useState<"red"|"black"|"odd"|"even"|"1-18"|"19-36"|null>(null);
   const [spinning, setSpinning] = useState(false);
@@ -413,7 +423,7 @@ function RouletteGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:n
       </div>
       <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 12, padding: "12px 16px" }}>
         <div style={{ fontWeight: 700, color: "#fca5a5", fontSize: "0.82rem", marginBottom: 4 }}>House Edge: 2.7% (European Roulette)</div>
-        <p style={{ color: "#94a3b8", fontSize: "0.78rem", lineHeight: 1.6 }}>Even-money bets like Red/Black win just under 50% of the time — not 50% — because of the green zero. That small edge is how casinos profit from millions of spins.</p>
+        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>Even-money bets like Red/Black win just under 50% of the time — not 50% — because of the green zero. That small edge is how casinos profit from millions of spins.</p>
       </div>
     </div>
   );
@@ -428,7 +438,10 @@ const NZ_FIXTURES = [
   { home: "Silver Ferns", away: "Australia Diamonds", sport: "Netball", oddsHome: 1.80, oddsAway: 2.10, oddsDraw: null },
 ];
 
-function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
+function SportsGame({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(10);
   const [selected, setSelected] = useState<{fixture:number;pick:"home"|"away"|"draw";odds:number}|null>(null);
   const [result, setResult] = useState<{msg:string;win:boolean}|null>(null);
@@ -466,10 +479,10 @@ function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:num
       <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 14 }}>
         {NZ_FIXTURES.map((f, fi) => (
           <div key={fi} style={{ background: "#0a2118", border: "1px solid #1a4030", borderRadius: 12, padding: "14px" }}>
-            <div style={{ fontSize: "0.65rem", color: "#64748b", fontWeight: 700, textTransform: "uppercase", marginBottom: 6 }}>{f.sport}</div>
+            <div style={{ fontSize: "0.65rem", color: T.text2, fontWeight: 700, textTransform: "uppercase", marginBottom: 6 }}>{f.sport}</div>
             <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
               <span style={{ flex: 1, fontWeight: 600, fontSize: "0.875rem", color: "#fff" }}>{f.home}</span>
-              <span style={{ fontSize: "0.72rem", color: "#64748b" }}>vs</span>
+              <span style={{ fontSize: "0.72rem", color: T.text2 }}>vs</span>
               <span style={{ flex: 1, fontWeight: 600, fontSize: "0.875rem", color: "#fff", textAlign: "right" }}>{f.away}</span>
             </div>
             <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
@@ -495,14 +508,14 @@ function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:num
       )}
       {selected && (
         <div style={{ background: "#0a2118", border: "1px solid #f59e0b", borderRadius: 12, padding: "14px", marginBottom: 12 }}>
-          <div style={{ fontSize: "0.8rem", color: "#8b9dc3", marginBottom: 8 }}>
+          <div style={{ fontSize: "0.8rem", color: T.text2, marginBottom: 8 }}>
             Bet slip: <strong style={{ color: "#fff" }}>{NZ_FIXTURES[selected.fixture][selected.pick === "home" ? "home" : selected.pick === "away" ? "away" : "home"]} ({selected.pick})</strong> @ {selected.odds.toFixed(2)}
           </div>
           <div style={{ marginBottom: 12, display: "flex", justifyContent: "center" }}>
             <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 200)} bets={[5,10,25,50,100,200]} />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.82rem", marginBottom: 10 }}>
-            <span style={{ color: "#8b9dc3" }}>Potential return</span>
+            <span style={{ color: T.text2 }}>Potential return</span>
             <span style={{ fontWeight: 700, color: "#76AD25" }}>${(bet * selected.odds).toFixed(2)}</span>
           </div>
           <button onClick={placeBet} disabled={loading} style={{ width: "100%", padding: "12px", background: loading ? "#374151" : "#f59e0b", color: loading ? "#6b7280" : "#000", border: "none", borderRadius: 9, fontWeight: 800, fontSize: "0.9rem", cursor: loading ? "not-allowed" : "pointer", fontFamily: FONT }}>
@@ -512,14 +525,17 @@ function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:num
       )}
       <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 12, padding: "12px 16px" }}>
         <div style={{ fontWeight: 700, color: "#fca5a5", fontSize: "0.82rem", marginBottom: 4 }}>The Overround: How Bookies Always Win</div>
-        <p style={{ color: "#94a3b8", fontSize: "0.78rem", lineHeight: 1.6 }}>Notice how the odds don't add up to 100%? The total implied probability is always over 100% — that's the bookmaker's margin (overround), typically 5-15%. Over thousands of bets, this guarantees profit.</p>
+        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>Notice how the odds don't add up to 100%? The total implied probability is always over 100% — that's the bookmaker's margin (overround), typically 5-15%. Over thousands of bets, this guarantees profit.</p>
       </div>
     </div>
   );
 }
 
 // ── MINES ─────────────────────────────────────────────────────────────────
-function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
+function MinesGame({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(5);
   const [mineCount, setMineCount] = useState(5);
   const [board, setBoard] = useState<("hidden"|"safe"|"mine")[]>(Array(25).fill("hidden"));
@@ -568,9 +584,9 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
       {phase === "bet" && (
         <div style={{ background: "#0a2118", border: "1px solid #1a4030", borderRadius: 14, padding: "24px", marginBottom: 14 }}>
           <h3 style={{ color: "#fff", fontWeight: 700, marginBottom: 4 }}>Mines</h3>
-          <p style={{ color: "#64748b", fontSize: "0.85rem", marginBottom: 20 }}>Reveal tiles to multiply your bet. Hit a mine and lose everything.</p>
+          <p style={{ color: T.text2, fontSize: "0.85rem", marginBottom: 20 }}>Reveal tiles to multiply your bet. Hit a mine and lose everything.</p>
           <div style={{ marginBottom: 14 }}>
-            <label style={{ display: "block", fontSize: "0.75rem", color: "#8b9dc3", marginBottom: 6 }}>Mines: {mineCount}</label>
+            <label style={{ display: "block", fontSize: "0.75rem", color: T.text2, marginBottom: 6 }}>Mines: {mineCount}</label>
             <input type="range" className="pw-range" min={1} max={20} value={mineCount} onChange={e => setMineCount(parseInt(e.target.value))} style={{ width: "100%" }} />
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.7rem", color: "#4a5a7a" }}><span>1 mine (easy)</span><span>20 mines (reckless)</span></div>
           </div>
@@ -587,11 +603,11 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
           {phase === "play" && (
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
               <div>
-                <div style={{ fontSize: "0.7rem", color: "#8b9dc3" }}>Current multiplier</div>
+                <div style={{ fontSize: "0.7rem", color: T.text2 }}>Current multiplier</div>
                 <div style={{ fontSize: "1.5rem", fontWeight: 900, color: "#f59e0b" }}>{multiplier}x</div>
               </div>
               <div style={{ textAlign: "right" }}>
-                <div style={{ fontSize: "0.7rem", color: "#8b9dc3" }}>Cash out value</div>
+                <div style={{ fontSize: "0.7rem", color: T.text2 }}>Cash out value</div>
                 <div style={{ fontSize: "1.1rem", fontWeight: 700, color: "#76AD25" }}>${(bet * multiplier).toFixed(2)}</div>
               </div>
             </div>
@@ -631,14 +647,17 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
       )}
       <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 12, padding: "12px 16px" }}>
         <div style={{ fontWeight: 700, color: "#fca5a5", fontSize: "0.82rem", marginBottom: 4 }}>Greed is the enemy</div>
-        <p style={{ color: "#94a3b8", fontSize: "0.78rem", lineHeight: 1.6 }}>Every tile you reveal feels like a win — but your risk of ruin grows with every click. Knowing when to walk away is the most important financial skill in any gamble.</p>
+        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>Every tile you reveal feels like a win — but your risk of ruin grows with every click. Knowing when to walk away is the most important financial skill in any gamble.</p>
       </div>
     </div>
   );
 }
 
 // ── CRASH ─────────────────────────────────────────────────────────────────
-function CrashGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
+function CrashGame({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(5);
   const [autoCashout, setAutoCashout] = useState(2.0);
   const [phase, setPhase] = useState<"bet"|"running"|"crashed"|"cashed">("bet");
@@ -720,7 +739,7 @@ function CrashGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
         {phase === "bet" || phase === "crashed" || phase === "cashed" ? (
           <div>
             <div style={{ marginBottom: 14 }}>
-              <label style={{ display: "block", fontSize: "0.75rem", color: "#8b9dc3", marginBottom: 6 }}>Auto cash-out at: {autoCashout.toFixed(1)}x</label>
+              <label style={{ display: "block", fontSize: "0.75rem", color: T.text2, marginBottom: 6 }}>Auto cash-out at: {autoCashout.toFixed(1)}x</label>
               <input type="range" className="pw-range" min={1.1} max={10} step={0.1} value={autoCashout} onChange={e => setAutoCashout(parseFloat(e.target.value))} style={{ width: "100%" }} />
             </div>
             <div style={{ marginBottom: 16, display: "flex", justifyContent: "center" }}>
@@ -738,7 +757,7 @@ function CrashGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
       </div>
       <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 12, padding: "12px 16px" }}>
         <div style={{ fontWeight: 700, color: "#fca5a5", fontSize: "0.82rem", marginBottom: 4 }}>FOMO: The Most Expensive Emotion</div>
-        <p style={{ color: "#94a3b8", fontSize: "0.78rem", lineHeight: 1.6 }}>Crash games are designed to make you hold too long. The multiplier climbing feels amazing — right until it doesn't. Set an auto cash-out target and stick to it. Discipline beats instinct every time.</p>
+        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>Crash games are designed to make you hold too long. The multiplier climbing feels amazing — right until it doesn't. Set an auto cash-out target and stick to it. Discipline beats instinct every time.</p>
       </div>
       <style>{`@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.01)} }`}</style>
     </div>
@@ -747,35 +766,54 @@ function CrashGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
 
 // ── MAIN CASINO PAGE ──────────────────────────────────────────────────────
 export default function CasinoPage() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   const { state, casinoWin, casinoLoss } = useGame();
   const balance = state?.balance ?? 5000;
   const [gameTab, setGameTab] = useState<GameTab>("Slots");
 
   const stats = [
     { label: "Balance", val: `$${balance.toFixed(2)}`, color: "#f59e0b" },
-    { label: "Session", val: gameTab, color: "#8b9dc3" },
+    { label: "Session", val: gameTab, color: T.text2 },
   ];
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "radial-gradient(ellipse at top, #0a2118 0%, #060d0a 100%)" }}>
+      <div style={{ minHeight: "100vh", background: T.bg }}>
         <Nav />
 
         <div style={{ padding: "28px 1rem 16px", textAlign: "center", maxWidth: 780, margin: "0 auto" }}>
           <h1 style={{ fontSize: "clamp(1.5rem,4vw,2.25rem)", fontWeight: 900, color: "#fff", marginBottom: 6, fontFamily: FONT }}>
             PocketWise Casino
           </h1>
-          <p style={{ color: "#64748b", fontSize: "0.875rem", marginBottom: 16, fontFamily: FONT }}>
+          <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 16, fontFamily: FONT }}>
             Learn why the house always wins — with your real portfolio balance at stake.
           </p>
           <div style={{ display: "inline-flex", gap: 16, background: "rgba(0,0,0,.3)", border: "1px solid #1a4030", borderRadius: 12, padding: "10px 20px" }}>
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "0.65rem", color: "#8b9dc3", textTransform: "uppercase", letterSpacing: ".05em" }}>Balance</div>
+              <div style={{ fontSize: "0.65rem", color: T.text2, textTransform: "uppercase", letterSpacing: ".05em" }}>Balance</div>
               <div style={{ fontWeight: 800, color: "#f59e0b", fontSize: "1.1rem", fontFamily: FONT }}>${balance.toFixed(2)}</div>
             </div>
             <div style={{ width: 1, background: "#1a4030" }} />
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: "0.65rem", color: "#8b9dc3", textTransform: "uppercase", letterSpacing: ".05em" }}>Game</div>
+              <div style={{ fontSize: "0.65rem", color: T.text2, textTransform: "uppercase", letterSpacing: ".05em" }}>Game</div>
               <div style={{ fontWeight: 800, color: "#fff", fontSize: "1.1rem", fontFamily: FONT }}>{gameTab}</div>
             </div>
           </div>

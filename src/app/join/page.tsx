@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { db } from "@/lib/db";
+import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
 import { id } from "@instantdb/react";
 import { Users, Check, AlertCircle, BookOpen } from "lucide-react";
@@ -11,6 +12,25 @@ import { Users, Check, AlertCircle, BookOpen } from "lucide-react";
 const FONT = "Inter, system-ui, sans-serif";
 
 export default function JoinClassPage() {
+  const { isDark } = useTheme();
+  const T = {
+    bg:      isDark ? "#0d1526" : "#f0f4f8",
+    bg2:     isDark ? "#111c30" : "#ffffff",
+    bg3:     isDark ? "#1a2540" : "#f8fafc",
+    text:    isDark ? "#ffffff" : "#0d1526",
+    text2:   isDark ? "#8b9dc3" : "#475569",
+    text3:   isDark ? "#4a6a8a" : "#94a3b8",
+    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
+    card:    isDark ? "#111c30" : "#ffffff",
+    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
+    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
+    green:   isDark ? "#76AD25" : "#5a9a1a",
+    accent:  isDark ? "#f59e0b" : "#d97706",
+    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
+  };
+
   const { user, state } = useGame();
   const router = useRouter();
   const [code, setCode]         = useState("");
@@ -47,7 +67,7 @@ export default function JoinClassPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "#0d1526", fontFamily: FONT }}>
+      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: FONT }}>
         <Nav />
         <div style={{ maxWidth: 600, margin: "0 auto", padding: "40px 1.5rem" }}>
 
@@ -57,8 +77,8 @@ export default function JoinClassPage() {
           </div>
 
           {/* Join form */}
-          <div style={{ background: "#111c30", border: "1.5px solid rgba(59,130,246,.2)", borderRadius: 18, padding: "24px", marginBottom: 24 }}>
-            <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 16 }}>Enter the 6-character code your teacher gave you.</p>
+          <div style={{ background: T.card, border: "1.5px solid rgba(59,130,246,.2)", borderRadius: 18, padding: "24px", marginBottom: 24 }}>
+            <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 16 }}>Enter the 6-character code your teacher gave you.</p>
             <div style={{ display: "flex", gap: 10 }}>
               <input
                 value={code}
@@ -83,13 +103,13 @@ export default function JoinClassPage() {
               <h2 style={{ fontWeight: 700, color: "#fff", fontSize: "0.9rem", marginBottom: 12 }}>My Classes</h2>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {myClasses.map((cls: any) => (
-                  <div key={cls.id} style={{ background: "#111c30", border: "1px solid rgba(255,255,255,.06)", borderRadius: 14, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
+                  <div key={cls.id} style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
                     <div style={{ width: 40, height: 40, borderRadius: 10, background: "rgba(59,130,246,.15)", border: "1px solid rgba(59,130,246,.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                       <BookOpen size={18} color="#60a5fa" />
                     </div>
                     <div style={{ flex: 1 }}>
                       <div style={{ fontWeight: 700, color: "#fff", fontSize: "0.875rem" }}>{cls.name}</div>
-                      <div style={{ fontSize: "0.72rem", color: "#4a6a8a" }}>{cls.subject} · {cls.yearLevel}</div>
+                      <div style={{ fontSize: "0.72rem", color: T.text3 }}>{cls.subject} · {cls.yearLevel}</div>
                       {cls.announcement && (
                         <div style={{ fontSize: "0.72rem", color: "#60a5fa", marginTop: 4, display: "flex", alignItems: "center", gap: 4 }}>
                           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#3B82F6", flexShrink: 0 }} />
