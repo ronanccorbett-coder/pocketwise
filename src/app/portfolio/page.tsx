@@ -478,7 +478,7 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
       )}
 
       {/* Stock list */}
-      <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, overflow: "hidden" }}>
+      <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, overflow: "hidden" }}>
         <div style={{ padding: "14px 20px", borderBottom: "1px solid #f1f5f9", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <h2 style={{ fontWeight: 800, fontSize: "0.95rem", color: "#0d1526" }}>NZX Live Prices</h2>
           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
@@ -622,7 +622,7 @@ export default function PortfolioPage(){
             {TABS.map(t => (
               <button key={t} onClick={() => setTab(t)} style={{
                 padding: "7px 16px", borderRadius: 9999,
-                background: tab === t ? "#0d1526" : "#fff",
+                background: tab === t ? "var(--bg)" : "var(--card-bg)",
                 color: tab === t ? "#fff" : "#475569",
                 border: `1px solid ${tab === t ? "#0d1526" : "#e2e8f0"}`,
                 fontWeight: 600, fontSize: "0.8rem", cursor: "pointer",
@@ -642,7 +642,7 @@ export default function PortfolioPage(){
                   { label: "Total Debt",      val: `$${totalDebt.toFixed(2)}`,     color: "#EF4444", Icon: AlertTriangle, bg: "#fef2f2", ic: "#EF4444" },
                   { label: "Net Worth",       val: `$${netWorth.toFixed(2)}`,      color: netWorth >= 5000 ? "#76AD25" : "#EF4444", Icon: Wallet, bg: "#e8f5d0", ic: "#76AD25" },
                 ].map(c => (
-                  <div key={c.label} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "18px" }}>
+                  <div key={c.label} style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "18px" }}>
                     <div style={{ width: 36, height: 36, borderRadius: 9, background: c.bg, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
                       <c.Icon size={17} color={c.ic} />
                     </div>
@@ -652,7 +652,7 @@ export default function PortfolioPage(){
                 ))}
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-                <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "20px" }}>
+                <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "20px" }}>
                   <h3 style={{ fontWeight: 700, marginBottom: 12, fontSize: "0.9rem" }}>Active Holdings</h3>
                   {stocks.length === 0 ? <p style={{ color: "#94a3b8", fontSize: "0.825rem" }}>No investments yet. Head to Markets.</p>
                   : stocks.map(s => {
@@ -664,7 +664,7 @@ export default function PortfolioPage(){
                     </div>;
                   })}
                 </div>
-                <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "20px" }}>
+                <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "20px" }}>
                   <h3 style={{ fontWeight: 700, marginBottom: 12, fontSize: "0.9rem" }}>Active Loans</h3>
                   {loans.length === 0 ? <p style={{ color: "#94a3b8", fontSize: "0.825rem" }}>No loans. You are debt-free.</p>
                   : loans.map(l => <div key={l.id} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: "1px solid #f8fafc", fontSize: "0.82rem" }}>
@@ -827,7 +827,7 @@ export default function PortfolioPage(){
             <div>
                 {/* Owned assets summary */}
                 {ownedAssets.length > 0 && (
-                  <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "18px", marginBottom: 20 }}>
+                  <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "18px", marginBottom: 20 }}>
                     <h3 style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: 14 }}>Your Assets</h3>
                     <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 10, marginBottom: 14 }}>
                       {ownedAssets.map(a => {

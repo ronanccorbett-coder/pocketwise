@@ -35,7 +35,7 @@ export default function LeaderboardPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "#f1f5f9" }}>
+      <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
         <Nav />
 
         <div style={{ background: "linear-gradient(135deg,#0d1526,#111c30)", padding: "28px 2rem" }}>
@@ -61,8 +61,8 @@ export default function LeaderboardPage() {
           </div>
 
           {sorted.length === 0 ? (
-            <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "48px", textAlign: "center" }}>
-              <p style={{ color: "#94a3b8", fontSize: "0.875rem" }}>No students on the leaderboard yet. Complete lessons to appear here.</p>
+            <div style={{ background: "var(--card-bg)", border: "1px solid var(--border)", borderRadius: 14, padding: "48px", textAlign: "center" }}>
+              <p style={{ color: "var(--text3)", fontSize: "0.875rem" }}>No students on the leaderboard yet. Complete lessons to appear here.</p>
             </div>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -82,11 +82,11 @@ export default function LeaderboardPage() {
                       {getInitials(s)}
                     </div>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontWeight: 600, fontSize: "0.875rem", color: "#0d1526" }}>
+                      <div style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--text)" }}>
                         {getDisplayName(s, isMe)}
                         {isMe && <span style={{ color: "#76AD25", fontSize: "0.75rem", fontWeight: 500, marginLeft: 6 }}>(You)</span>}
                       </div>
-                      <div style={{ fontSize: "0.75rem", color: "#94a3b8", marginTop: 1 }}>
+                      <div style={{ fontSize: "0.75rem", color: "var(--text3)", marginTop: 1 }}>
                         {(s.completedLessons?.length ?? 0)} lessons completed
                       </div>
                     </div>

@@ -79,7 +79,7 @@ function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: 
     <div
       onClick={() => mod.lessonCount > 0 && router.push(`/module?folder=${mod.folder}`)}
       style={{
-        background: "#fff",
+        background: "var(--card-bg)",
         border: `2px solid ${isComplete ? accent : "#e2e8f0"}`,
         borderRadius: 18,
         overflow: "hidden",
@@ -108,12 +108,12 @@ function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: 
           </div>
         )}
 
-        <h3 style={{ fontWeight: 800, fontSize: "0.975rem", color: "#0d1526", marginBottom: 4, lineHeight: 1.3 }}>
+        <h3 style={{ fontWeight: 800, fontSize: "0.975rem", color: "var(--text)", marginBottom: 4, lineHeight: 1.3 }}>
           {mod.title}
         </h3>
 
         {mod.description && (
-          <p style={{ fontSize: "0.78rem", color: "#64748b", lineHeight: 1.5, marginBottom: 12, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+          <p style={{ fontSize: "0.78rem", color: "var(--text2)", lineHeight: 1.5, marginBottom: 12, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
             {mod.description}
           </p>
         )}
@@ -122,11 +122,11 @@ function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: 
         <div style={{ display: "flex", gap: 12, marginBottom: 12 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
             <BookOpen size={12} color="#94a3b8" />
-            <span style={{ fontSize: "0.72rem", color: "#94a3b8" }}>{mod.lessonCount} lessons</span>
+            <span style={{ fontSize: "0.72rem", color: "var(--text3)" }}>{mod.lessonCount} lessons</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
             <Zap size={12} color="#f59e0b" />
-            <span style={{ fontSize: "0.72rem", color: "#94a3b8" }}>{totalXp} XP</span>
+            <span style={{ fontSize: "0.72rem", color: "var(--text3)" }}>{totalXp} XP</span>
           </div>
           {completedCount > 0 && (
             <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
@@ -139,7 +139,7 @@ function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: 
         {/* Progress bar */}
         {mod.lessonCount > 0 && (
           <div style={{ marginBottom: 14 }}>
-            <div style={{ height: 6, background: "#f1f5f9", borderRadius: 99, overflow: "hidden" }}>
+            <div style={{ height: 6, background: "var(--bg3)", borderRadius: 99, overflow: "hidden" }}>
               <div style={{
                 height: 6, borderRadius: 99, width: `${progressPct}%`,
                 background: isComplete ? `linear-gradient(90deg, ${accent}, ${accent}88)` : `linear-gradient(90deg, ${accent}88, ${accent}44)`,
@@ -216,7 +216,7 @@ export default function CurriculumPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "#f0f4f8", fontFamily: FONT }}>
+      <div style={{ minHeight: "100vh", background: "var(--bg)", fontFamily: FONT }}>
         <Nav />
 
         {/* Hero with mascot */}
@@ -272,7 +272,7 @@ export default function CurriculumPage() {
         </div>
 
         {/* Level tabs */}
-        <div style={{ background: "#fff", borderBottom: "2px solid #f1f5f9", padding: "0 1.5rem", position: "sticky", top: 56, zIndex: 30 }}>
+        <div style={{ background: "var(--card-bg)", borderBottom: "2px solid #f1f5f9", padding: "0 1.5rem", position: "sticky", top: 56, zIndex: 30 }}>
           <div style={{ maxWidth: 900, margin: "0 auto", display: "flex", gap: 0 }}>
             {grouped.map(g => (
               <button
@@ -305,23 +305,23 @@ export default function CurriculumPage() {
                   <div key={i} style={{ width: 10, height: 10, borderRadius: "50%", background: "#76AD25", animation: `pulse 1s ease-in-out infinite`, animationDelay: `${i * 0.2}s` }} />
                 ))}
               </div>
-              <p style={{ color: "#94a3b8", fontSize: "0.875rem" }}>Loading your curriculum...</p>
+              <p style={{ color: "var(--text3)", fontSize: "0.875rem" }}>Loading your curriculum...</p>
             </div>
           )}
 
           {error && (
-            <div style={{ background: "#fff", border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px", textAlign: "center" }}>
+            <div style={{ background: "var(--card-bg)", border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px", textAlign: "center" }}>
               <div style={{ fontSize: "2rem", marginBottom: 12 }}>🥝</div>
               <p style={{ color: "#EF4444", fontWeight: 700, marginBottom: 4 }}>Could not load modules</p>
-              <p style={{ color: "#94a3b8", fontSize: "0.825rem" }}>{error}</p>
+              <p style={{ color: "var(--text3)", fontSize: "0.825rem" }}>{error}</p>
             </div>
           )}
 
           {!loading && !error && currentGroup.modules.length === 0 && (
-            <div style={{ background: "#fff", border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px", textAlign: "center" }}>
+            <div style={{ background: "var(--card-bg)", border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px", textAlign: "center" }}>
               <div style={{ fontSize: "3rem", marginBottom: 12 }}>📚</div>
-              <p style={{ color: "#0d1526", fontWeight: 700, fontSize: "1rem", marginBottom: 4 }}>{currentGroup.label} coming soon</p>
-              <p style={{ color: "#94a3b8", fontSize: "0.825rem" }}>Start with Level 1 while we build this out!</p>
+              <p style={{ color: "var(--text)", fontWeight: 700, fontSize: "1rem", marginBottom: 4 }}>{currentGroup.label} coming soon</p>
+              <p style={{ color: "var(--text3)", fontSize: "0.825rem" }}>Start with Level 1 while we build this out!</p>
             </div>
           )}
 

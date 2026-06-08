@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield, User, Star, Target, GraduationCap, Users } from "lucide-react";
+import { BookOpen, BarChart2, Briefcase, Spade, Trophy, LogOut, Zap, DollarSign, Shield, User, Star, Target, GraduationCap, Users, Sun, Moon } from "lucide-react";
 import { useGame } from "@/lib/gameContext";
+import { useTheme } from "@/lib/theme";
 
 const ADMIN_EMAILS = [
   "admin@pocketwise.nz",
@@ -26,6 +27,7 @@ export default function Nav() {
   const path = usePathname();
   const router = useRouter();
   const { state, signOut, user } = useGame();
+  const { isDark, toggle } = useTheme();
   const isAdmin   = ADMIN_EMAILS.includes(user?.email ?? "");
   const stateAny  = state as any;
   const isTeacher = stateAny?.role === "teacher" && stateAny?.teacherApproved === true;
@@ -37,16 +39,16 @@ export default function Nav() {
 
   return (
     <nav style={{
-      background: "#fff", borderBottom: "1px solid #e2e8f0",
+      background: "var(--nav-bg)", borderBottom: "1px solid var(--nav-border)",
+      backdropFilter: "blur(12px)",
       height: 56, display: "flex", alignItems: "center",
       justifyContent: "space-between", padding: "0 1.5rem",
       position: "sticky", top: 0, zIndex: 50,
     }}>
       <Link href="/curriculum" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-        <Image src="/logo.png" alt="PocketWise" width={30} height={30} style={{ objectFit: "contain", mixBlendMode: "multiply" }} />
-        <span style={{ fontWeight: 800, fontSize: "1rem", color: "#0d1526" }}>PocketWise</span>
+        <Image src="/logo.png" alt="PocketWise" width={30} height={30} style={{ objectFit: "contain", ...(isDark ? { filter: "brightness(10)" } : { mixBlendMode: "multiply" as any }) }} />
+        <span style={{ fontWeight: 800, fontSize: "1rem", color: "var(--text)" }}>PocketWise</span>
         {stateAny?.role && (
-          <span style={{ fontSize: "0.6rem", background: stateAny.teacherApproved ? "#e8f5d0" : "#eff6ff", color: stateAny.teacherApproved ? "#5d8a1c" : "#3B82F6", padding: "1px 6px", borderRadius: 4, fontWeight: 700 }}>
             {stateAny.role}{stateAny.teacherApproved ? " ✓" : " pending"}
           </span>
         )}
@@ -60,8 +62,8 @@ export default function Nav() {
               display: "flex", alignItems: "center", gap: 5,
               padding: "6px 12px", borderRadius: 8,
               fontSize: "0.84rem", fontWeight: 500,
-              color: active ? "#0d1526" : "#64748b",
-              background: active ? "#f1f5f9" : "transparent",
+              color: active ? "var(--text)" : "var(--nav-text)",
+              background: active ? "var(--nav-active)" : "transparent",
               textDecoration: "none",
             }}>
               <Icon size={14} />
@@ -74,7 +76,7 @@ export default function Nav() {
             display: "flex", alignItems: "center", gap: 5,
             padding: "6px 12px", borderRadius: 8,
             fontSize: "0.84rem", fontWeight: 500,
-            color: path.startsWith("/admin") ? "#76AD25" : "#64748b",
+            color: path.startsWith("/admin") ? "#76AD25" : "var(--nav-text)",
             background: path.startsWith("/admin") ? "#e8f5d0" : "transparent",
             textDecoration: "none",
           }}>
@@ -127,14 +129,26 @@ export default function Nav() {
           </span>
         </div>
         <Link href="/profile" style={{
-          background: path.startsWith("/profile") ? "#f1f5f9" : "none",
+          background: path.startsWith("/profile") ? "var(--nav-active)" : "none",
           border: "none", cursor: "pointer", color: "#94a3b8",
           padding: 6, borderRadius: 6, display: "flex", alignItems: "center",
           textDecoration: "none",
         }}>
           <User size={15} color={path.startsWith("/profile") ? "#0d1526" : "#94a3b8"} />
         </Link>
-        <button onClick={handleSignOut} style={{ background: "none", border: "none", cursor: "pointer", color: "#94a3b8", padding: 6, borderRadius: 6, display: "flex", alignItems: "center" }} title="Sign out">
+        {/* Theme toggle */}
+        <button
+          onClick={toggle}
+          className="pw-theme-toggle"
+          title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+          aria-label="Toggle theme"
+        >
+          <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: isDark ? "flex-start" : "flex-end", padding: "0 4px", pointerEvents: "none" }}>
+            {isDark ? <Moon size={10} color="#f59e0b" /> : <Sun size={10} color="#d97706" />}
+          </div>
+        </button>
+
+        <button onClick={handleSignOut} style={{ background: "none", border: "none", cursor: "pointer", color: "var(--text3)", padding: 6, borderRadius: 6, display: "flex", alignItems: "center" }} title="Sign out">
           <LogOut size={15} />
         </button>
       </div>

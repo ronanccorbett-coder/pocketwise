@@ -725,7 +725,7 @@ function SpendingDiary({ onComplete, onBack }: { onComplete: (xp: number) => voi
               <div style={{ fontWeight: 700, color: "#22c55e", marginBottom: 12 }}>Today's Breakdown</div>
               {catTotals.map(c => (
                 <div key={c.cat} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.875rem", padding: "4px 0", borderBottom: "1px solid rgba(255,255,255,.05)" }}>
-                  <span style={{ color: "#94a3b8" }}>{c.cat}</span>
+                  <span style={{ color: "var(--text3)" }}>{c.cat}</span>
                   <span style={{ fontWeight: 700, color: "#fff" }}>${c.total.toFixed(2)}</span>
                 </div>
               ))}
@@ -856,7 +856,7 @@ export default function ActivitiesPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "#f1f5f9" }}>
+      <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
         <Nav />
 
         {/* Hero */}
@@ -908,7 +908,7 @@ export default function ActivitiesPage() {
               const Icon = activity.Icon;
               return (
                 <div key={activity.id} style={{
-                  background: "#fff", border: `1.5px solid ${locked ? "#f1f5f9" : "#e2e8f0"}`,
+                  background: "var(--card-bg)", border: `1.5px solid ${locked ? "#f1f5f9" : "#e2e8f0"}`,
                   borderRadius: 16, padding: "20px", opacity: locked ? 0.65 : 1,
                   display: "flex", flexDirection: "column", gap: 0,
                   transition: "transform .15s, box-shadow .15s",
@@ -925,7 +925,7 @@ export default function ActivitiesPage() {
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 3 }}>
-                        <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#0d1526", fontFamily: FONT }}>{activity.title}</h3>
+                        <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: "var(--text)", fontFamily: FONT }}>{activity.title}</h3>
                         {activity.badge && !locked && (
                           <span style={{ background: activity.badge === "Daily" ? "#e8f5d0" : activity.badge === "Hot" ? "#fef2f2" : "#f0f9ff", color: activity.badge === "Daily" ? "#5d8a1c" : activity.badge === "Hot" ? "#ef4444" : "#0284c7", padding: "1px 7px", borderRadius: 99, fontSize: "0.62rem", fontWeight: 700 }}>
                             {activity.badge}
@@ -939,16 +939,16 @@ export default function ActivitiesPage() {
                         </div>
                         <div style={{ display: "flex", alignItems: "center", gap: 3 }}>
                           <Timer size={11} color="#94a3b8" />
-                          <span style={{ fontSize: "0.72rem", color: "#94a3b8" }}>{activity.estimatedMins} min</span>
+                          <span style={{ fontSize: "0.72rem", color: "var(--text3)" }}>{activity.estimatedMins} min</span>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <p style={{ fontSize: "0.8rem", color: "#64748b", lineHeight: 1.6, flex: 1, fontFamily: FONT, marginBottom: 14 }}>
+                  <p style={{ fontSize: "0.8rem", color: "var(--text2)", lineHeight: 1.6, flex: 1, fontFamily: FONT, marginBottom: 14 }}>
                     {activity.description}
                   </p>
                   {locked ? (
-                    <div style={{ background: "#f8fafc", borderRadius: 8, padding: "8px 12px", fontSize: "0.75rem", color: "#94a3b8", display: "flex", alignItems: "center", gap: 4 }}>
+                    <div style={{ background: "var(--bg3)", borderRadius: 8, padding: "8px 12px", fontSize: "0.75rem", color: "var(--text3)", display: "flex", alignItems: "center", gap: 4 }}>
                       <Lock size={11} /> Requires {activity.xpRequired} XP to unlock
                     </div>
                   ) : (
