@@ -1,0 +1,56 @@
+{
+  "title": "Project — Your Complete Personal Financial Plan",
+  "order": 7,
+  "dayNumber": 7,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Apply and Create",
+  "nceaFocus": "Extra Learning",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Build a complete personal financial plan for a NZ school leaver entering the workforce",
+    "Include net pay calculation, 50/30/20 budget, savings goals, and compound interest projection",
+    "Peer review using practical personal finance criteria"
+  ],
+  "vocabulary": [
+    { "term": "Personal financial plan", "definition": "A comprehensive document covering income, expenses, savings goals, debt strategy, and long-term financial objectives for an individual." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Your Complete Financial Plan — What to Include",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the five-part plan structure. Tick the parts you have already practised in this module. Star the part you find most challenging.",
+      "content": "Your project for this module is to build a complete personal financial plan for a fictional NZ school leaver. The plan has five parts.\n\nPart 1 — Income and Net Pay: State the character's job, hourly rate, and hours per week. Calculate gross weekly pay, PAYE (using tax brackets), and KiwiSaver deduction. Calculate net weekly pay and convert to monthly net income.\n\nPart 2 — Monthly Budget: Apply the 50/30/20 rule. List at least four items in each category (needs, wants, savings) with realistic NZ dollar figures. Calculate total expenses and monthly surplus or deficit.\n\nPart 3 — Savings Goals: State two specific SMART financial goals. Calculate how long it will take to achieve each goal based on the savings allocation from Part 2.\n\nPart 4 — Compound Interest Projection: Choose a savings amount and interest rate. Use A = P(1+r)^n to project what the savings will be worth after 5 years and after 10 years with compound interest.\n\nPart 5 — KiwiSaver Plan: Calculate the combined annual KiwiSaver contribution (employee + employer). State which fund type is recommended and why. Project the approximate balance after 10 years using 5% average growth (simplified).\n\nAll figures must be specific NZD amounts. Every calculation must be shown."
+    },
+    {
+      "type": "slide",
+      "title": "Reference Character — If You Need One",
+      "estimatedMinutes": 4,
+      "notePrompt": "If using your own character, skip this slide. If using the reference character, copy the key details into your notes before starting.",
+      "content": "Reference character for your project if you have not created your own:\n\nLiam, 18, has just finished school in Christchurch. He has accepted a full-time job as a warehouse assistant at $23.15 per hour, 40 hours per week. He lives with his parents and pays $100 per week board. No student loan. Enrolled in KiwiSaver at 3%.\n\nLiam's goals:\n— Build a $3,000 emergency fund within 10 months\n— Save $6,000 for a used car within 2 years\n— Understand his KiwiSaver and switch to a growth fund\n\nChristchurch context (relevant for your budget):\nBoard: $100/week ($433/month)\nTransport: bus or bike — $40 to $60/month\nPhone: $35 to $45/month\nGroceries (personal contribution to household): $80 to $120/month\nEating out in Christchurch: generally lower cost than Auckland or Wellington\n\nFor Liam's net pay calculation:\nGross weekly: $23.15 x 40 = $926\nAnnual gross: $926 x 52 = $48,152\nPAYE: $14,000 x 10.5% = $1,470 + $34,152 x 17.5% = $5,976.60 = $7,446.60 annual / $143.20 weekly\nKiwiSaver 3%: $27.78/week\nNet weekly: $755.02\nNet monthly: $755.02 x 4.33 = $3,269.24"
+    },
+    {
+      "type": "scenario",
+      "title": "Complete Personal Financial Plan — Full Project Session",
+      "estimatedMinutes": 30,
+      "nceaLevel": "Achieved",
+      "setup": "Use your own character or the Liam reference character above. Build a complete five-part personal financial plan covering all areas from this module.",
+      "challenge": "Write your complete personal financial plan:\n\nPart 1 — Net Pay:\nCalculate gross weekly pay, PAYE (show tax bracket working), KiwiSaver deduction, net weekly pay, and net monthly income.\n\nPart 2 — Monthly Budget (50/30/20):\nList at least 4 items per category with NZD figures. Calculate category totals and surplus/deficit.\n\nPart 3 — Savings Goals:\nWrite two SMART goals. Calculate months to reach each goal from the savings allocation.\n\nPart 4 — Compound Interest Projection:\nChoose a savings amount from the budget. Apply A = P(1+r)^n at 4.5% per annum. Project the 5-year and 10-year balance.\n\nPart 5 — KiwiSaver:\nCalculate combined annual contributions. State fund type recommendation. Project approximate 10-year balance at 5% average annual growth on cumulative contributions.",
+      "hints": [
+        "Part 1: Annual gross = hourly rate x hours x 52. PAYE: first $14,000 at 10.5%, remainder at 17.5%. Divide annual PAYE by 52 for weekly figure.",
+        "Part 4: Start with the monthly savings amount from Part 2. Convert to annual. Use A = P(1+r)^n where n = 5 and n = 10.",
+        "Part 5: Annual contributions = gross annual x 3% (employee) + gross annual x 3% (employer). For 10-year projection, use: Future value of annual contributions = C x [(1+r)^n - 1] / r where C is annual contribution and r = 0.05."
+      ],
+      "solution": "Sample plan for Liam in Christchurch:\n\nPart 1 — Net Pay:\nGross weekly: $23.15 x 40 = $926.00\nAnnual gross: $48,152\nPAYE: $14,000 x 10.5% = $1,470 + $34,152 x 17.5% = $5,976.60 = $7,446.60 annual = $143.20/week\nKiwiSaver 3%: $926 x 3% = $27.78/week\nNet weekly: $926.00 - $143.20 - $27.78 = $755.02\nNet monthly: $755.02 x 4.33 = $3,269.24\n\nPart 2 — Monthly Budget:\nTargets: Needs 50% = $1,634.62, Wants 30% = $980.77, Savings 20% = $653.85\n\nNEEDS:\nBoard: $433.00 ($100/wk x 4.33)\nPhone: $40.00\nTransport (bus): $55.00\nPersonal groceries: $100.00\nPersonal care: $45.00\nTotal needs: $673.00 (20.6% — well under 50% due to living at home)\n\nWANTS:\nEating out: $200.00\nEntertainment/social: $150.00\nClothing: $120.00\nStreaming services: $25.00\nSports/gym: $50.00\nTotal wants: $545.00 (16.7%)\n\nIRREGULAR PROVISION: $50.00\n\nSAVINGS:\nEmergency fund: $400.00\nCar savings: $250.00\nTotal savings: $650.00\n\nTotal: $673 + $545 + $50 + $650 = $1,918\nMonthly surplus: $3,269.24 - $1,918 = $1,351.24 (unallocated — Liam should increase savings or wants allocation)\n\nRevised savings (redirecting surplus): Emergency fund $700, Car $600, KiwiSaver topped up = total savings $1,300 (39.8% of income — excellent position)\n\nPart 3 — Savings Goals:\nGoal 1: $3,000 emergency fund within 10 months. Saving $700/month: $3,000 ÷ $700 = 4.3 months. Achieved in approximately 4.5 months — well within 10-month target.\nGoal 2: $6,000 car within 24 months. Saving $600/month after emergency fund is full: After 4.5 months, $600 x 4.5 = $2,700 already saved toward car. Remaining $3,300 ÷ $600 = 5.5 months. Total time: 4.5 + 5.5 = 10 months. Well within 24-month target.\n\nPart 4 — Compound Interest Projection:\nLiam puts $650/month into savings = $7,800/year. For this projection, use a lump sum of $7,800 initial deposit at 4.5%.\n5-year projection: A = $7,800 x (1.045)^5 = $7,800 x 1.2462 = $9,720.36\n10-year projection: A = $7,800 x (1.045)^10 = $7,800 x 1.5530 = $12,113.40\nIf he keeps adding $7,800/year and compounds, the 10-year future value with annual contributions = $7,800 x [(1.045)^10 - 1] / 0.045 = $7,800 x 12.288 = $95,846. A powerful illustration of consistent saving.\n\nPart 5 — KiwiSaver:\nEmployee 3% of $48,152 = $1,444.56/year\nEmployer 3% = $1,444.56/year\nGovernment member tax credit: up to $521/year\nTotal annual: approximately $3,410\nFund recommendation: Growth fund. At 18 with 47 years to 65, growth maximises long-term returns and there is ample time to recover from any market downturns.\n10-year projection at 5% growth on contributions: $3,410 x [(1.05)^10 - 1] / 0.05 = $3,410 x 12.578 = $42,891. After 10 years, Liam's KiwiSaver balance could be approximately $42,000 to $50,000 including investment returns."
+    },
+    {
+      "type": "reflection",
+      "title": "Peer Review — Personal Finance Plan",
+      "estimatedMinutes": 7,
+      "prompt": "Exchange your completed plan with a classmate. Check their plan against these criteria and give feedback:\n\n1. Net pay calculation: Are all three deductions shown (PAYE, KiwiSaver)? Are the tax brackets applied correctly?\n2. Budget: Are at least four items in each category? Do the totals add up? Is the surplus or deficit calculated?\n3. Savings goals: Are they SMART — specific amount, specific timeframe?\n4. Compound interest: Is the formula used correctly? Are the 5-year and 10-year figures both calculated?\n5. KiwiSaver: Are both employee and employer contributions calculated? Is a fund type recommended with a reason?\n\nWrite two specific pieces of feedback: one strength and one specific improvement. 'Looks good' is not useful feedback. 'The compound interest calculation uses the right formula but n should be 5, not 12 — months not years' is useful feedback.",
+      "nceaLink": "Extra Learning — no NCEA credits. But building this plan and getting peer feedback on it is direct practice for real financial decisions you will face in the next 1 to 2 years."
+    }
+  ]
+}

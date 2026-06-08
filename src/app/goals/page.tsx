@@ -1,9 +1,15 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useGame } from "@/lib/gameContext";
-import { Target, Plus, Trash2, Check, DollarSign, TrendingUp, Home, Car, PiggyBank, Plane, GraduationCap, Star, Shield, Briefcase, BarChart2, Zap } from "lucide-react";
+import { db } from "@/lib/db";
+import { id } from "@instantdb/react";
+import {
+  Target, Plus, Trash2, Check, DollarSign, TrendingUp, Home, Car,
+  PiggyBank, Plane, GraduationCap, Star, Shield, Briefcase, Zap, Trophy,
+  Send, ChevronRight,
+} from "lucide-react";
 
 const FONT = "Inter, system-ui, sans-serif";
 
@@ -16,22 +22,106 @@ const GOAL_ICONS: Record<string, any> = {
   star: Star, zap: Zap,
 };
 
+const GOAL_COLORS: Record<string, { accent: string; shadow: string; glow: string }> = {
+  home:     { accent: "#3B82F6", shadow: "rgba(59,130,246,.35)",  glow: "#3B82F6" },
+  car:      { accent: "#f59e0b", shadow: "rgba(245,158,11,.35)",  glow: "#f59e0b" },
+  plane:    { accent: "#22d3ee", shadow: "rgba(34,211,238,.35)",  glow: "#22d3ee" },
+  chart:    { accent: "#76AD25", shadow: "rgba(118,173,37,.35)",  glow: "#76AD25" },
+  graduate: { accent: "#a78bfa", shadow: "rgba(167,139,250,.35)", glow: "#a78bfa" },
+  work:     { accent: "#f97316", shadow: "rgba(249,115,22,.35)",  glow: "#f97316" },
+  shield:   { accent: "#76AD25", shadow: "rgba(118,173,37,.35)",  glow: "#76AD25" },
+  target:   { accent: "#EF4444", shadow: "rgba(239,68,68,.35)",   glow: "#EF4444" },
+  savings:  { accent: "#06b6d4", shadow: "rgba(6,182,212,.35)",   glow: "#06b6d4" },
+  dollar:   { accent: "#76AD25", shadow: "rgba(118,173,37,.35)",  glow: "#76AD25" },
+  star:     { accent: "#f59e0b", shadow: "rgba(245,158,11,.35)",  glow: "#f59e0b" },
+  zap:      { accent: "#f59e0b", shadow: "rgba(245,158,11,.35)",  glow: "#f59e0b" },
+};
+
 const GOAL_TEMPLATES = [
-  { label: "Emergency Fund",        target: 3000,   iconKey: "shield",   desc: "3 months of expenses covered" },
-  { label: "House Deposit (20%)",   target: 100000, iconKey: "home",     desc: "Auckland apartment deposit" },
-  { label: "New Car",               target: 20000,  iconKey: "car",      desc: "Reliable used car outright" },
-  { label: "OE Fund",               target: 15000,  iconKey: "plane",    desc: "12 months overseas experience" },
-  { label: "Investment Portfolio",  target: 50000,  iconKey: "chart",    desc: "Diversified stocks and funds" },
-  { label: "Student Loan Free",     target: 25000,  iconKey: "graduate", desc: "Pay off student debt completely" },
-  { label: "KiwiSaver Boost",       target: 10000,  iconKey: "savings",  desc: "Voluntary top-up for first home" },
-  { label: "Business Startup",      target: 30000,  iconKey: "work",     desc: "Seed capital for your own venture" },
+  { label: "Emergency Fund",       target: 3000,   iconKey: "shield",   desc: "3 months expenses" },
+  { label: "House Deposit (20%)",  target: 100000, iconKey: "home",     desc: "Auckland apartment" },
+  { label: "New Car",              target: 20000,  iconKey: "car",      desc: "Reliable used car" },
+  { label: "OE Fund",              target: 15000,  iconKey: "plane",    desc: "12 months overseas" },
+  { label: "Investment Portfolio", target: 50000,  iconKey: "chart",    desc: "Diversified stocks" },
+  { label: "Student Loan Free",    target: 25000,  iconKey: "graduate", desc: "Pay off debt" },
+  { label: "KiwiSaver Boost",      target: 10000,  iconKey: "savings",  desc: "First home top-up" },
+  { label: "Business Startup",     target: 30000,  iconKey: "work",     desc: "Seed capital" },
 ];
 
 const ICON_OPTIONS = Object.keys(GOAL_ICONS);
 
+// ── Animated ring ──────────────────────────────────────────────────────────
+function Ring({ pct, color, size = 72, thickness = 7 }: { pct: number; color: string; size?: number; thickness?: number }) {
+  const r = (size - thickness) / 2;
+  const circ = 2 * Math.PI * r;
+  const dash = Math.min(pct / 100, 1) * circ;
+  return (
+    <svg width={size} height={size} style={{ transform: "rotate(-90deg)", flexShrink: 0 }}>
+      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,.06)" strokeWidth={thickness} />
+      <circle cx={size/2} cy={size/2} r={r} fill="none"
+        stroke={color} strokeWidth={thickness}
+        strokeDasharray={`${dash} ${circ}`}
+        strokeLinecap="round"
+        style={{ transition: "stroke-dasharray 1.2s cubic-bezier(.34,1.56,.64,1)", filter: `drop-shadow(0 0 8px ${color}88)` }}
+      />
+    </svg>
+  );
+}
+
+// ── Particle burst ─────────────────────────────────────────────────────────
+function Burst({ color, trigger }: { color: string; trigger: boolean }) {
+  if (!trigger) return null;
+  return (
+    <div style={{ position: "absolute", inset: 0, pointerEvents: "none", borderRadius: 18, overflow: "hidden" }}>
+      {[...Array(10)].map((_, i) => (
+        <div key={i} style={{
+          position: "absolute", top: "50%", left: "50%",
+          width: i % 2 === 0 ? 8 : 5, height: i % 2 === 0 ? 8 : 5,
+          borderRadius: "50%", background: color,
+          animation: `pw-star-burst 0.7s cubic-bezier(.34,1.56,.64,1) forwards`,
+          animationDelay: `${i * 0.04}s`,
+          transform: `rotate(${i * 36}deg) translateX(${20 + (i % 3) * 12}px)`,
+        }} />
+      ))}
+    </div>
+  );
+}
+
+// ── Animated number ────────────────────────────────────────────────────────
+function AnimatedNumber({ value, prefix = "", suffix = "" }: { value: number; prefix?: string; suffix?: string }) {
+  const [display, setDisplay] = useState(value);
+  const [key, setKey] = useState(0);
+  const prev = useRef(value);
+
+  useEffect(() => {
+    if (value !== prev.current) {
+      prev.current = value;
+      setKey(k => k + 1);
+      const start = display;
+      const diff = value - start;
+      const dur = 800;
+      const startTime = performance.now();
+      const step = (now: number) => {
+        const t = Math.min((now - startTime) / dur, 1);
+        const ease = 1 - Math.pow(1 - t, 3);
+        setDisplay(Math.round(start + diff * ease));
+        if (t < 1) requestAnimationFrame(step);
+        else setDisplay(value);
+      };
+      requestAnimationFrame(step);
+    }
+  }, [value]);
+
+  return (
+    <span key={key} style={{ display: "inline-block", animation: "pw-count-update .4s ease" }}>
+      {prefix}{display.toLocaleString()}{suffix}
+    </span>
+  );
+}
+
 export default function GoalsPage() {
   const { state, setGoals } = useGame();
-  const balance = state?.balance ?? 0;
+  const balance  = state?.balance ?? 0;
   const netWorth = state?.netWorth ?? 0;
 
   const savedGoals: Goal[] = (() => {
@@ -39,53 +129,77 @@ export default function GoalsPage() {
     catch { return []; }
   })();
 
-  const [showAdd, setShowAdd] = useState(false);
-  const [newLabel, setNewLabel] = useState("");
-  const [newTarget, setNewTarget] = useState("");
-  const [newIcon, setNewIcon] = useState("target");
+  const [showAdd,    setShowAdd]    = useState(false);
+  const [newLabel,   setNewLabel]   = useState("");
+  const [newTarget,  setNewTarget]  = useState("");
+  const [newIcon,    setNewIcon]    = useState("target");
+  const [justAdded,  setJustAdded]  = useState<number | null>(null);
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [prevNW,     setPrevNW]     = useState(netWorth);
+  const [nwPing,     setNWPing]     = useState<number[]>([]);
 
-  function addGoal(label: string, target: number, icon: string) {
-    const updated = [...savedGoals, { label, target, icon, created: Date.now() }];
+  // Detect net worth increases and ping affected goals
+  useEffect(() => {
+    if (netWorth > prevNW) {
+      const pinged = savedGoals.reduce<number[]>((acc, g, i) => {
+        const wasBelowNow = prevNW < g.target && netWorth >= g.target;
+        const isCloser = Math.floor(netWorth / g.target * 10) > Math.floor(prevNW / g.target * 10);
+        if (wasBelowNow || isCloser) acc.push(i);
+        return acc;
+      }, []);
+      if (pinged.length) {
+        setNWPing(pinged);
+        setTimeout(() => setNWPing([]), 1200);
+      }
+    }
+    setPrevNW(netWorth);
+  }, [netWorth]);
+
+  function addGoal(label: string, target: number, iconKey: string) {
+    const updated = [...savedGoals, { label, target, iconKey, created: Date.now() }];
     setGoals(updated);
+    setJustAdded(updated.length - 1);
+    setTimeout(() => setJustAdded(null), 1500);
     setShowAdd(false); setNewLabel(""); setNewTarget(""); setNewIcon("target");
+    window.dispatchEvent(new CustomEvent("pw:xp", { detail: { amount: 5, reason: "Goal set!" } }));
   }
 
-  function removeGoal(i: number) {
-    const updated = savedGoals.filter((_, j) => j !== i);
-    setGoals(updated);
-  }
+  function removeGoal(i: number) { setGoals(savedGoals.filter((_, j) => j !== i)); }
 
-  function pct(target: number) { return Math.min(100, Math.round((netWorth / target) * 100)); }
+  function pct(target: number) { return Math.min(100, (netWorth / target) * 100); }
 
-  const totalGoalValue = savedGoals.reduce((s, g) => s + g.target, 0);
   const goalsCompleted = savedGoals.filter(g => netWorth >= g.target).length;
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: "#f1f5f9", fontFamily: FONT }}>
+      <div style={{ minHeight: "100vh", background: "#0d1526", fontFamily: FONT }}>
         <Nav />
 
-        {/* Hero */}
-        <div style={{ background: "linear-gradient(135deg, #0d1526, #111c30)", padding: "28px 1.5rem" }}>
-          <div style={{ maxWidth: 860, margin: "0 auto" }}>
+        {/* ── Hero ── */}
+        <div style={{ background: "linear-gradient(135deg,#0d1526 0%,#0f2318 55%,#0d1526 100%)", borderBottom: "1px solid rgba(255,255,255,.06)", padding: "28px 1.5rem 24px", position: "relative", overflow: "hidden" }}>
+          {[...Array(12)].map((_, i) => (
+            <div key={i} style={{ position: "absolute", left: `${(i*29+5)%100}%`, top: `${(i*41+8)%100}%`, width: 2, height: 2, borderRadius: "50%", background: "#76AD25", opacity: 0.2, animation: `pw-float ${2+i%3}s ease-in-out infinite`, animationDelay: `${i*0.25}s`, pointerEvents: "none" }} />
+          ))}
+          <div style={{ maxWidth: 920, margin: "0 auto", position: "relative" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
-              <Target size={22} color="#76AD25" />
-              <h1 style={{ fontWeight: 900, fontSize: "1.4rem", color: "#fff" }}>Financial Goals</h1>
+              <Target size={24} color="#76AD25" />
+              <h1 style={{ fontSize: "1.5rem", fontWeight: 900, color: "#fff" }}>Financial Goals</h1>
             </div>
-            <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 20 }}>Set targets. Track progress. Build wealth with purpose.</p>
-
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <p style={{ color: "#4a6a8a", fontSize: "0.875rem", marginBottom: 22 }}>Set targets. Watch them fill up as your wealth grows.</p>
+            <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
               {[
-                { label: "Net Worth",       val: `$${netWorth.toFixed(0)}`,   Icon: TrendingUp, color: "#76AD25" },
-                { label: "Cash Balance",    val: `$${balance.toFixed(0)}`,    Icon: DollarSign, color: "#3B82F6" },
-                { label: "Goals Set",       val: savedGoals.length,           Icon: Target,     color: "#f59e0b" },
-                { label: "Goals Reached",   val: goalsCompleted,              Icon: Check,      color: "#a78bfa" },
+                { label: "Net Worth",  val: netWorth,          prefix: "$", Icon: TrendingUp, color: "#76AD25" },
+                { label: "Cash",       val: balance,           prefix: "$", Icon: DollarSign, color: "#3B82F6" },
+                { label: "Goals Set",  val: savedGoals.length, prefix: "",  Icon: Target,     color: "#f59e0b" },
+                { label: "Completed",  val: goalsCompleted,    prefix: "",  Icon: Trophy,     color: "#a78bfa" },
               ].map(s => (
-                <div key={s.label} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 12, padding: "12px 18px", display: "flex", alignItems: "center", gap: 10 }}>
-                  <s.Icon size={16} color={s.color} />
+                <div key={s.label} style={{ background: "rgba(255,255,255,.07)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 12, padding: "10px 16px", display: "flex", alignItems: "center", gap: 8 }}>
+                  <s.Icon size={15} color={s.color} />
                   <div>
-                    <div style={{ fontSize: "0.65rem", color: "#8b9dc3", textTransform: "uppercase", letterSpacing: ".04em" }}>{s.label}</div>
-                    <div style={{ fontWeight: 800, color: "#fff", fontSize: "1rem" }}>{s.val}</div>
+                    <div style={{ fontSize: "0.6rem", color: "#4a6a8a", textTransform: "uppercase", letterSpacing: ".04em" }}>{s.label}</div>
+                    <div style={{ fontWeight: 900, color: "#fff", fontSize: "1rem" }}>
+                      <AnimatedNumber value={s.val} prefix={s.prefix} />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -93,147 +207,226 @@ export default function GoalsPage() {
           </div>
         </div>
 
-        <div style={{ maxWidth: 860, margin: "0 auto", padding: "24px 1.5rem" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: 20, alignItems: "start" }}>
+        <div style={{ maxWidth: 920, margin: "0 auto", padding: "24px 1.5rem 60px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 300px", gap: 20, alignItems: "start" }}>
 
-            {/* Active goals */}
+            {/* ── Left: goals ── */}
             <div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                <h2 style={{ fontWeight: 700, fontSize: "1rem", color: "#0d1526" }}>Your Goals</h2>
-                <button onClick={() => setShowAdd(s => !s)} style={{ display: "flex", alignItems: "center", gap: 6, padding: "8px 16px", background: "#76AD25", color: "#fff", border: "none", borderRadius: 8, fontWeight: 700, fontSize: "0.8rem", cursor: "pointer", fontFamily: FONT }}>
-                  <Plus size={14} /> Add Goal
+                <h2 style={{ fontWeight: 700, fontSize: "1rem", color: "#fff" }}>Your Goals</h2>
+                <button onClick={() => setShowAdd(s => !s)} className="btn-3d-green" style={{ padding: "8px 18px", fontSize: "0.8rem", display: "flex", alignItems: "center", gap: 6 }}>
+                  <Plus size={14} /> {showAdd ? "Cancel" : "Add Goal"}
                 </button>
               </div>
 
-              {/* Add goal form */}
+              {/* ── Add form ── */}
               {showAdd && (
-                <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "18px", marginBottom: 14 }}>
-                  <h3 style={{ fontWeight: 700, fontSize: "0.875rem", marginBottom: 14, color: "#0d1526" }}>New Goal</h3>
-
-                  {/* Icon picker */}
-                  <div style={{ marginBottom: 12 }}>
-                    <label style={{ display: "block", fontSize: "0.72rem", color: "#64748b", fontWeight: 600, marginBottom: 6 }}>Icon</label>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                <div style={{ background: "#111c30", border: "1.5px solid rgba(118,173,37,.3)", borderRadius: 18, padding: "20px", marginBottom: 16, animation: "pw-slide-up .3s ease" }}>
+                  <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#fff", marginBottom: 16 }}>New Goal</h3>
+                  <div style={{ marginBottom: 14 }}>
+                    <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 8, textTransform: "uppercase", letterSpacing: ".04em" }}>Choose Icon</label>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                       {ICON_OPTIONS.map(ico => {
-                        const I = GOAL_ICONS[ico] ?? Target;
-                        return <button key={ico} onClick={() => setNewIcon(ico)} style={{ width: 36, height: 36, borderRadius: 8, border: `2px solid ${newIcon === ico ? "#76AD25" : "#e2e8f0"}`, background: newIcon === ico ? "#e8f5d0" : "#f8fafc", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                          <I size={16} color={newIcon === ico ? "#76AD25" : "#94a3b8"} />
-                        </button>;
+                        const I = GOAL_ICONS[ico]; const c = GOAL_COLORS[ico]; const sel = newIcon === ico;
+                        return (
+                          <button key={ico} onClick={() => setNewIcon(ico)} style={{
+                            width: 40, height: 40, borderRadius: 10,
+                            border: `2px solid ${sel ? c.accent : "rgba(255,255,255,.1)"}`,
+                            background: sel ? `${c.accent}22` : "rgba(255,255,255,.05)",
+                            cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+                            transition: "all .15s cubic-bezier(.34,1.56,.64,1)",
+                            transform: sel ? "scale(1.2)" : "scale(1)",
+                            boxShadow: sel ? `0 0 14px ${c.shadow}` : "none",
+                          }}>
+                            <I size={16} color={sel ? c.accent : "#64748b"} />
+                          </button>
+                        );
                       })}
                     </div>
                   </div>
-
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 14 }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 14 }}>
                     <div>
-                      <label style={{ display: "block", fontSize: "0.72rem", color: "#64748b", fontWeight: 600, marginBottom: 5 }}>Goal Name</label>
-                      <input value={newLabel} onChange={e => setNewLabel(e.target.value)} placeholder="e.g. Emergency Fund" style={{ width: "100%", padding: "9px 12px", border: "1px solid #e2e8f0", borderRadius: 8, fontFamily: FONT, fontSize: "0.875rem", outline: "none", color: "#0d1526" }} />
+                      <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>Goal Name</label>
+                      <input value={newLabel} onChange={e => setNewLabel(e.target.value)} placeholder="e.g. Emergency Fund" className="pw-input" style={{ width: "100%", fontSize: "0.875rem" }} />
                     </div>
                     <div>
-                      <label style={{ display: "block", fontSize: "0.72rem", color: "#64748b", fontWeight: 600, marginBottom: 5 }}>Target ($)</label>
-                      <input type="number" value={newTarget} onChange={e => setNewTarget(e.target.value)} placeholder="e.g. 10000" style={{ width: "100%", padding: "9px 12px", border: "1px solid #e2e8f0", borderRadius: 8, fontFamily: FONT, fontSize: "0.875rem", outline: "none", color: "#0d1526" }} />
+                      <label style={{ display: "block", fontSize: "0.7rem", color: "#8b9dc3", fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>Target ($NZD)</label>
+                      <input type="number" value={newTarget} onChange={e => setNewTarget(e.target.value)} placeholder="10000" className="pw-input" style={{ width: "100%", fontSize: "0.875rem" }} />
                     </div>
                   </div>
-
                   <div style={{ display: "flex", gap: 8 }}>
-                    <button onClick={() => { if (newLabel && newTarget) addGoal(newLabel, parseFloat(newTarget), newIcon); }} disabled={!newLabel || !newTarget} style={{ flex: 1, padding: "10px", background: newLabel && newTarget ? "#76AD25" : "#e2e8f0", color: newLabel && newTarget ? "#fff" : "#94a3b8", border: "none", borderRadius: 8, fontWeight: 700, fontSize: "0.875rem", cursor: newLabel && newTarget ? "pointer" : "not-allowed", fontFamily: FONT }}>
+                    <button onClick={() => { if (newLabel && newTarget) addGoal(newLabel, parseFloat(newTarget), newIcon); }} disabled={!newLabel || !newTarget}
+                      className={newLabel && newTarget ? "btn-3d-green" : ""} style={{ flex: 1, padding: "11px", fontSize: "0.875rem", background: !newLabel || !newTarget ? "#1e3a5f" : undefined, color: !newLabel || !newTarget ? "#4a6a8a" : undefined, border: "none", borderRadius: 10, fontWeight: 700, cursor: !newLabel || !newTarget ? "not-allowed" : "pointer", fontFamily: FONT }}>
                       Save Goal
                     </button>
-                    <button onClick={() => setShowAdd(false)} style={{ padding: "10px 16px", background: "#f1f5f9", color: "#64748b", border: "none", borderRadius: 8, fontWeight: 600, fontSize: "0.875rem", cursor: "pointer", fontFamily: FONT }}>
-                      Cancel
-                    </button>
+                    <button onClick={() => setShowAdd(false)} className="btn-3d-ghost" style={{ padding: "11px 18px", fontSize: "0.875rem" }}>Cancel</button>
                   </div>
                 </div>
               )}
 
-              {savedGoals.length === 0 && !showAdd ? (
-                <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 14, padding: "48px", textAlign: "center" }}>
-                  <Target size={36} color="#e2e8f0" style={{ margin: "0 auto 12px", display: "block" }} />
-                  <p style={{ color: "#94a3b8", fontSize: "0.875rem", marginBottom: 16 }}>No goals set yet. Add your first goal or pick from the templates.</p>
-                  <button onClick={() => setShowAdd(true)} style={{ padding: "10px 24px", background: "#76AD25", color: "#fff", border: "none", borderRadius: 8, fontWeight: 700, fontSize: "0.875rem", cursor: "pointer", fontFamily: FONT }}>
-                    Set a Goal
-                  </button>
+              {/* ── Empty state ── */}
+              {savedGoals.length === 0 && !showAdd && (
+                <div style={{ background: "#111c30", border: "2px dashed rgba(255,255,255,.08)", borderRadius: 18, padding: "52px 32px", textAlign: "center", animation: "pw-fade-in .4s ease" }}>
+                  <div style={{ width: 60, height: 60, borderRadius: "50%", background: "rgba(118,173,37,.08)", border: "1px solid rgba(118,173,37,.15)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
+                    <Target size={26} color="#1e4a2a" />
+                  </div>
+                  <p style={{ color: "#4a6a8a", fontSize: "0.875rem", marginBottom: 20 }}>No goals yet. Pick a template or create your own.</p>
+                  <button onClick={() => setShowAdd(true)} className="btn-3d-green" style={{ padding: "11px 28px", fontSize: "0.875rem" }}>Set Your First Goal</button>
                 </div>
-              ) : (
-                <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                  {savedGoals.map((goal, i) => {
-                    const progress = pct(goal.target);
-                    const done = progress >= 100;
-                    const remaining = Math.max(0, goal.target - netWorth);
-                    return (
-                      <div key={i} style={{ background: "#fff", border: `1.5px solid ${done ? "#76AD25" : "#e2e8f0"}`, borderRadius: 14, padding: "18px", transition: "border-color .2s" }}>
-                        <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 14 }}>
-                          <div style={{ width: 36, height: 36, borderRadius: 9, background: "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                              {(() => { const I = GOAL_ICONS[goal.iconKey ?? "target"] ?? Target; return <I size={18} color="#76AD25" />; })()}
-                            </div>
-                          <div style={{ flex: 1 }}>
-                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                              <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#0d1526" }}>{goal.label}</h3>
-                              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                                {done && <span style={{ background: "#e8f5d0", color: "#5d8a1c", padding: "2px 8px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 700 }}>Complete!</span>}
-                                <button onClick={() => removeGoal(i)} style={{ background: "none", border: "none", cursor: "pointer", color: "#e2e8f0", padding: 2 }}>
-                                  <Trash2 size={14} />
-                                </button>
-                              </div>
-                            </div>
-                            <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.78rem", color: "#64748b", marginTop: 2 }}>
-                              <span>Target: <strong style={{ color: "#0d1526" }}>${goal.target.toLocaleString()}</strong></span>
-                              {!done && <span>Still need: <strong style={{ color: "#EF4444" }}>${remaining.toLocaleString()}</strong></span>}
-                            </div>
+              )}
+
+              {/* ── Goal cards ── */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {savedGoals.map((goal, i) => {
+                  const progress  = pct(goal.target);
+                  const done      = progress >= 100;
+                  const remaining = Math.max(0, goal.target - netWorth);
+                  const c         = GOAL_COLORS[goal.iconKey] ?? GOAL_COLORS.target;
+                  const Icon      = GOAL_ICONS[goal.iconKey] ?? Target;
+                  const isHov     = hoveredIdx === i;
+                  const isNew     = justAdded === i;
+                  const isPinging = nwPing.includes(i);
+
+                  return (
+                    <div key={i}
+                      onMouseEnter={() => setHoveredIdx(i)}
+                      onMouseLeave={() => setHoveredIdx(null)}
+                      style={{
+                        background: done ? `linear-gradient(135deg,#0a2010,#0f2a18)` : "#111c30",
+                        border: `2px solid ${done ? c.accent : isHov ? `${c.accent}55` : "rgba(255,255,255,.06)"}`,
+                        borderRadius: 18, padding: "20px", position: "relative", overflow: "hidden",
+                        transition: "all .2s cubic-bezier(.34,1.56,.64,1)",
+                        transform: isPinging ? "scale(1.025)" : isHov ? "translateY(-3px) scale(1.005)" : "none",
+                        boxShadow: done ? `0 8px 32px ${c.shadow}, 0 0 0 1px ${c.accent}22`
+                          : isPinging ? `0 0 0 4px ${c.accent}44, 0 8px 24px ${c.shadow}`
+                          : isHov ? `0 8px 28px rgba(0,0,0,.4), 0 0 0 1px ${c.accent}22`
+                          : "0 2px 8px rgba(0,0,0,.3)",
+                        animation: isNew ? "pw-unlock .6s cubic-bezier(.34,1.56,.64,1)" : isPinging ? "pw-goal-ping .8s ease" : "none",
+                      }}>
+
+                      {/* Top colour strip */}
+                      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${c.accent}, ${c.accent}44)`, borderRadius: "18px 18px 0 0" }} />
+
+                      {/* Particle burst */}
+                      <Burst color={c.accent} trigger={isNew && done} />
+
+                      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                        {/* Ring with icon */}
+                        <div style={{ position: "relative", flexShrink: 0 }}>
+                          <Ring pct={progress} color={c.accent} size={68} />
+                          <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            {done
+                              ? <Check size={18} color={c.accent} style={{ filter: `drop-shadow(0 0 6px ${c.accent})` }} />
+                              : <Icon size={16} color={c.accent} />}
                           </div>
                         </div>
 
-                        {/* Progress bar */}
-                        <div style={{ background: "#f1f5f9", borderRadius: 99, height: 10, overflow: "hidden", marginBottom: 6 }}>
-                          <div style={{ height: 10, borderRadius: 99, background: done ? "#76AD25" : "linear-gradient(90deg, #76AD25, #22c55e)", width: `${progress}%`, transition: "width 0.6s ease" }} />
-                        </div>
-                        <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", color: "#94a3b8" }}>
-                          <span>${netWorth.toFixed(0)} net worth</span>
-                          <span style={{ fontWeight: 700, color: done ? "#76AD25" : "#0d1526" }}>{progress}%</span>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                            <div>
+                              <h3 style={{ fontWeight: 800, fontSize: "0.95rem", color: "#fff", lineHeight: 1.2 }}>{goal.label}</h3>
+                              <div style={{ fontSize: "0.72rem", color: "#4a6a8a", marginTop: 2 }}>
+                                Target: <span style={{ color: c.accent, fontWeight: 700 }}>${goal.target.toLocaleString()}</span>
+                                {!done && <span style={{ marginLeft: 10, color: "#EF4444" }}>Need ${remaining.toLocaleString()} more</span>}
+                              </div>
+                            </div>
+                            <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
+                              {done && (
+                                <span style={{ background: `${c.accent}22`, color: c.accent, padding: "3px 10px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 800, border: `1px solid ${c.accent}44`, animation: "pw-pop .4s ease" }}>
+                                  Complete!
+                                </span>
+                              )}
+                              <button onClick={() => removeGoal(i)} style={{ background: "rgba(239,68,68,.1)", border: "1px solid rgba(239,68,68,.15)", borderRadius: 7, width: 28, height: 28, cursor: "pointer", color: "#EF4444", display: "flex", alignItems: "center", justifyContent: "center", transition: "all .15s" }}
+                                onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = "rgba(239,68,68,.25)"}
+                                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = "rgba(239,68,68,.1)"}>
+                                <Trash2 size={12} />
+                              </button>
+                            </div>
+                          </div>
 
-            {/* Templates sidebar */}
-            <div>
-              <h2 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#0d1526", marginBottom: 12 }}>Goal Templates</h2>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                {GOAL_TEMPLATES.map(t => {
-                  const alreadyAdded = savedGoals.some(g => g.label === t.label);
-                  return (
-                    <div key={t.label} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: "12px 14px", display: "flex", alignItems: "center", gap: 10 }}>
-                      <div style={{ width: 28, height: 28, borderRadius: 7, background: "#f1f5f9", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                      {(() => { const I = GOAL_ICONS[t.iconKey] ?? Target; return <I size={14} color="#76AD25" />; })()}
-                    </div>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontWeight: 600, fontSize: "0.8rem", color: "#0d1526" }}>{t.label}</div>
-                        <div style={{ fontSize: "0.7rem", color: "#94a3b8" }}>{t.desc}</div>
-                        <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "#76AD25", marginTop: 2 }}>${t.target.toLocaleString()}</div>
+                          {/* Progress bar */}
+                          <div style={{ marginTop: 10 }}>
+                            <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 99, height: 8, overflow: "hidden", position: "relative" }}>
+                              <div style={{
+                                height: 8, borderRadius: 99,
+                                background: done ? `linear-gradient(90deg, ${c.accent}, ${c.accent}cc)` : `linear-gradient(90deg, ${c.accent}88, ${c.accent})`,
+                                width: `${progress}%`,
+                                transition: "width 1.2s cubic-bezier(.34,1.56,.64,1)",
+                                boxShadow: `0 0 10px ${c.accent}66`,
+                                position: "relative",
+                              }}>
+                                {/* Shimmer on progress bar */}
+                                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent)", animation: "pw-shimmer 2s infinite", backgroundSize: "200% 100%" }} />
+                              </div>
+                            </div>
+                            <div style={{ display: "flex", justifyContent: "space-between", marginTop: 5, fontSize: "0.68rem" }}>
+                              <span style={{ color: "#4a6a8a" }}><AnimatedNumber value={Math.round(netWorth)} prefix="$" /> net worth</span>
+                              <span style={{ fontWeight: 800, color: done ? c.accent : "#fff" }}>{Math.round(progress)}%</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <button
-                        onClick={() => !alreadyAdded && addGoal(t.label, t.target, t.iconKey)}
-                        disabled={alreadyAdded}
-                        style={{ background: alreadyAdded ? "#f1f5f9" : "#e8f5d0", color: alreadyAdded ? "#94a3b8" : "#5d8a1c", border: "none", borderRadius: 7, padding: "5px 10px", fontSize: "0.72rem", fontWeight: 700, cursor: alreadyAdded ? "default" : "pointer", fontFamily: FONT, flexShrink: 0 }}>
-                        {alreadyAdded ? "Added" : "+ Add"}
-                      </button>
                     </div>
                   );
                 })}
               </div>
+            </div>
+
+            {/* ── Sidebar: templates ── */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              <h2 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#fff", marginBottom: 4 }}>Quick Add</h2>
+              {GOAL_TEMPLATES.map(t => {
+                const added = savedGoals.some(g => g.label === t.label);
+                const c = GOAL_COLORS[t.iconKey];
+                const Icon = GOAL_ICONS[t.iconKey] ?? Target;
+                return (
+                  <div key={t.label} style={{
+                    background: "#111c30", border: `1.5px solid ${added ? "rgba(118,173,37,.25)" : "rgba(255,255,255,.06)"}`,
+                    borderRadius: 14, padding: "11px 14px", display: "flex", alignItems: "center", gap: 10,
+                    opacity: added ? 0.7 : 1, transition: "all .18s cubic-bezier(.34,1.56,.64,1)",
+                    cursor: added ? "default" : "pointer",
+                  }}
+                    onMouseEnter={e => { if (!added) (e.currentTarget as HTMLElement).style.cssText += `transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.4),0 0 0 1px ${c.accent}22;border-color:${c.accent}44`; }}
+                    onMouseLeave={e => { if (!added) (e.currentTarget as HTMLElement).style.cssText += `transform:none;box-shadow:none;border-color:rgba(255,255,255,.06)`; }}>
+                    <div style={{ width: 34, height: 34, borderRadius: 9, background: `${c.accent}18`, border: `1px solid ${c.accent}33`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <Icon size={15} color={c.accent} />
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontWeight: 700, fontSize: "0.78rem", color: "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{t.label}</div>
+                      <div style={{ fontSize: "0.65rem", color: "#4a6a8a" }}>{t.desc} · <span style={{ color: c.accent, fontWeight: 700 }}>${t.target.toLocaleString()}</span></div>
+                    </div>
+                    <button
+                      onClick={() => !added && addGoal(t.label, t.target, t.iconKey)}
+                      disabled={added}
+                      className={!added ? "btn-3d-green" : ""}
+                      style={{ padding: "5px 10px", fontSize: "0.7rem", fontWeight: 700, background: added ? "rgba(118,173,37,.12)" : undefined, color: added ? "#76AD25" : undefined, border: added ? "1px solid rgba(118,173,37,.2)" : "none", borderRadius: 7, cursor: added ? "default" : "pointer", fontFamily: FONT, flexShrink: 0 }}>
+                      {added ? <Check size={12} /> : "+ Add"}
+                    </button>
+                  </div>
+                );
+              })}
 
               {/* Tip */}
-              <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 12, padding: "14px", marginTop: 14 }}>
-                <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "#76AD25", marginBottom: 6, textTransform: "uppercase", letterSpacing: ".04em" }}>Goal-Setting Tip</div>
-                <p style={{ fontSize: "0.78rem", color: "#64748b", lineHeight: 1.6 }}>
-                  Research shows people who write down specific financial goals are 42% more likely to achieve them. Your net worth is tracked automatically — as it grows, your goals update in real time.
+              <div style={{ background: "linear-gradient(135deg,#0a2010,#0f2818)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 14, padding: "16px", marginTop: 4 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
+                  <Zap size={13} color="#76AD25" fill="#76AD25" />
+                  <span style={{ fontSize: "0.68rem", fontWeight: 800, color: "#76AD25", textTransform: "uppercase", letterSpacing: ".05em" }}>Did you know?</span>
+                </div>
+                <p style={{ fontSize: "0.775rem", color: "#4a8a6a", lineHeight: 1.6, margin: 0 }}>
+                  People who write down specific goals are 42% more likely to achieve them. Your net worth bar updates in real time as you earn and invest.
                 </p>
               </div>
             </div>
           </div>
         </div>
+
+        <style>{`
+          @keyframes pw-goal-ping {
+            0%   { transform: scale(1);    box-shadow: 0 0 0 0 currentColor; }
+            50%  { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(118,173,37,0); }
+            100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(118,173,37,0); }
+          }
+        `}</style>
       </div>
     </AuthGuard>
   );

@@ -1,0 +1,128 @@
+{
+  "title": "NCEA External Exam Practice",
+  "order": 8,
+  "dayNumber": 8,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 120,
+  "bloomsLevel": "Apply, Analyse, and Evaluate",
+  "nceaFocus": "AS92031: Full external exam practice — all achievement levels from Achieved through Excellence under timed conditions",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Complete a full AS92031-style external exam question under timed conditions",
+    "Apply the five-part viability report structure to a new NZ scenario",
+    "Identify where the response meets each achievement level"
+  ],
+  "vocabulary": [
+    { "term": "Exam conditions", "definition": "Working independently, within a fixed time, using only the information provided in the exam scenario." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Before You Begin — Exam Approach",
+      "estimatedMinutes": 3,
+      "notePrompt": "Write the five-part structure from memory before reading the scenario. Then read the scenario and underline all dollar figures.",
+      "content": "This is your AS92031 external exam practice session. You have 35 minutes for the written task and 10 minutes for the module review quiz.\n\nBefore writing anything, follow this approach.\n\nRead the scenario completely — do not start writing until you have read every sentence. Key figures often appear throughout the text, not just in the income statement.\n\nIdentify the key numbers: total revenue, total expenses, net profit or loss, reserves, and any trend information given.\n\nPlan your response. Two minutes of planning saves five minutes of rewriting. Know what you will say for each of the five parts before you begin.\n\nWork in order. Parts 1 and 2 (Achieved) first — these are the foundation. Parts 3 and 4 (Merit) second. Part 5 (Excellence) last.\n\nSuggested time allocation: Parts 1 and 2: 8 minutes. Parts 3 and 4: 12 minutes. Part 5: 12 minutes. Review: 3 minutes.\n\nWrite every dollar figure you calculate. Show your working. The exam rewards specificity."
+    },
+    {
+      "type": "scenario",
+      "title": "NCEA External Exam Practice — Aroha's Tourism Business",
+      "estimatedMinutes": 35,
+      "nceaLevel": "Achieved to Excellence",
+      "setup": "Aroha runs a small cultural tourism business in Rotorua called TeTaonga Tours. She offers guided cultural experiences combining Māori culture with Rotorua's geothermal attractions, serving both domestic NZ visitors and international tourists.\n\nAnnual Income Statement:\n\nRevenue:\nInternational tourists: $148,000\nDomestic visitors: $62,000\nSchool group programmes: $24,000\nTotal Revenue: $234,000\n\nCost of Services (COGS):\nGuide wages (2 part-time guides): $54,000\nTransport (fuel and vehicle running costs): $18,000\nCultural materials and koha: $8,400\nTotal COGS: $80,400\n\nGross Profit: $153,600\nGross Profit Margin: 65.6%\n\nOperating Expenses:\nAroha's owner salary: $72,000\nMarketing and tourism listings: $14,800\nInsurance: $6,200\nVehicle maintenance: $9,600\nLicensing and permits: $3,600\nDepreciation: $5,800\nTotal Operating Expenses: $112,000\n\nNet Profit: $41,600\nNet Profit Margin: 17.8%\nReserves: $65,000\n\nContext: International tourism has been recovering strongly since 2022 and now represents 63.2% of TeTaonga's total revenue. Aroha has been approached by two large Australian tour operators who want to send groups of 40+ tourists. Each operator wants to pay $55 per person for Aroha's tours. Her current average revenue per international visitor is $78 per person. If she accepts the $55 group rate, she could double her international tourist numbers.",
+      "challenge": "This is your AS92031 external exam practice task.\n\nPart A — Achieved:\n1. Describe TeTaonga Tours' revenue, expenses, and net profit. Calculate the gross profit margin and net profit margin.\n2. State whether TeTaonga Tours is currently financially viable. Justify with at least two pieces of financial evidence.\n\nPart B — Merit:\n3. Explain how TWO internal factors affect TeTaonga Tours' financial viability. Show the mechanism with dollar figures.\n4. Explain how ONE external factor affects viability. Propose TWO improvement strategies with estimated financial impacts.\n\nPart C — Excellence:\n5. Analyse the relationship between Aroha's high dependence on international tourists and the proposed $55 group rate decision. How do these two factors interact?\n6. Evaluate the extent to which accepting the $55 group rate would improve TeTaonga Tours' financial viability. Calculate the financial impact and assess whether this fully achieves improved viability under different assumptions.",
+      "hints": [
+        "For Part A Q1: Gross profit margin = $153,600 divided by $234,000. Net profit margin = $41,600 divided by $234,000.",
+        "For Part C Q6: Current international visitors = $148,000 divided by $78 per person = approximately 1,897 visitors. If numbers double to 3,794 at $55 each, new international revenue = 3,794 multiplied by $55 = $208,670. COGS scales with visitor numbers. Current COGS per visitor = $80,400 divided by approximately 3,000 total visitors = $26.80 per visitor. Additional COGS = 1,897 additional visitors multiplied by $26.80 = approximately $50,840.",
+        "For the relationship analysis in Q5: Consider what happens if one or both Australian operators withdraw their bookings after Aroha becomes dependent on their volume."
+      ],
+      "solution": "Part A:\n\n1. Revenue, expenses, and profit:\nTeTaonga Tours earns $234,000 in total annual revenue from three sources: international tourists $148,000 (63.2%), domestic visitors $62,000 (26.5%), and school groups $24,000 (10.3%). After COGS of $80,400, gross profit is $153,600. Gross profit margin = $153,600 divided by $234,000 = 65.6%. After operating expenses of $112,000, net profit is $41,600. Net profit margin = $41,600 divided by $234,000 = 17.8%.\n\n2. Viability assessment: TeTaonga Tours is financially viable. Two pieces of evidence: First, the business generates a net profit of $41,600 — revenue exceeds all expenses by $41,600, confirming the business model is self-sustaining. Second, the 17.8% net profit margin provides substantial resilience — revenue could fall by approximately 17.8% ($41,652) before reaching breakeven, meaning the business can absorb meaningful shocks without becoming non-viable. Reserves of $65,000 provide additional security equivalent to approximately 1.6 years of current net profit.\n\nPart B:\n\n3. Internal factors:\n(1) Revenue diversification: TeTaonga earns from three customer segments — international (63.2%), domestic (26.5%), and schools (10.3%). This diversification reduces single-segment dependence. If international tourism slows, domestic and school revenue of $86,000 continues, covering a large proportion of operating expenses. This diversification is a significant internal viability strength.\n\n(2) High owner salary relative to revenue: Aroha's owner salary of $72,000 represents 30.8% of total revenue and 64.3% of total operating expenses. This is the single largest cost line. If revenue fell by 15% ($35,100), net profit would fall from $41,600 to approximately $6,500. If revenue fell by 20% ($46,800), the business would move toward a loss. The high fixed owner salary means TeTaonga's viability is sensitive to revenue reductions — a 17.8% revenue fall is all it takes to reach breakeven.\n\n4. External factor: Recovery of international tourism: The strong recovery in international tourism since 2022 has driven TeTaonga's international revenue to $148,000 — its highest ever. This external trend has been the primary driver of the business's current strong viability. However, international tourism is volatile — a global economic downturn, an exchange rate movement making NZ more expensive, or a travel disruption could reverse this trend. If international revenue fell by 25% ($37,000), net profit would fall to approximately $4,600 — close to breakeven.\n\nStrategy 1 — Develop premium domestic packages: The domestic visitor segment ($62,000) has growth potential. Aroha could develop premium private cultural immersion experiences for NZ families at $180 per person versus the current average of approximately $72. If 50 additional domestic premium bookings per year are achieved at $180 each = $9,000 additional revenue with minimal incremental cost, net profit improves by approximately $7,000.\n\nStrategy 2 — School group expansion: School groups currently contribute $24,000. Increasing to 12 schools per year from the current level (estimated 8 schools) at an average of $2,400 per school adds $9,600 in revenue with incremental costs of $3,200, improving net profit by $6,400.\n\nPart C:\n\n5. Relationship between international revenue dependence and the group rate decision:\nInternational tourists already represent 63.2% of TeTaonga's revenue. Accepting the Australian operators' group rate of $55 versus the current average of $78 per international visitor would deepen this dependence — the volume doubling would likely make the two Australian operators responsible for the majority of international bookings.\n\nThese two factors — existing international concentration and the group rate deepening that concentration — interact to create a compound vulnerability: TeTaonga would become structurally dependent on two Australian operators who, by virtue of controlling most of the volume, would gain significant bargaining power. If one operator withdrew (as happened widely to NZ tourism businesses during COVID-19), TeTaonga could lose 30% to 40% of its total revenue at once. The group rate decision does not just reduce per-person revenue — it changes the nature of the business from diverse-source to concentrated-dependency.\n\n6. Extent analysis — impact of accepting the $55 group rate:\n\nCurrent international visitors: $148,000 divided by $78 = approximately 1,897 visitors.\n\nIf numbers double to 3,794 at $55 per person:\nNew international revenue: 3,794 multiplied by $55 = $208,670\nAdditional visitors: 1,897\nAdditional COGS (at $26.80 per visitor): 1,897 multiplied by $26.80 = $50,840\nNew total COGS: $80,400 plus $50,840 = $131,240\nNew total revenue: $208,670 plus $62,000 plus $24,000 = $294,670\nNew gross profit: $294,670 minus $131,240 = $163,430\nOperating expenses: $112,000 (assumed largely fixed)\nNew net profit: $163,430 minus $112,000 = $51,430\n\nAt the full doubling scenario, the group rate decision improves net profit from $41,600 to $51,430 — an increase of $9,830. This represents improved viability.\n\nHowever, this is a conditional improvement. First, it requires the two operators to actually deliver the doubled volume. If only 50% additional visitors arrive (948 additional instead of 1,897), the improvement is approximately half — net profit rises to approximately $46,500 — still an improvement but a smaller one. Second, the COGS scaling assumption is linear — in practice, doubling visitor numbers may require hiring additional guide staff (increasing the $54,000 guide wages) or adding transport capacity, both of which would increase COGS faster than the linear estimate. If additional staffing adds $12,000, the net improvement falls from $9,830 to approximately negative $2,170 — the group rate actually reduces profitability.\n\nConclusion: The group rate decision would improve financial viability under the full volume scenario if COGS scales as assumed. However, Aroha should cap group operator bookings at no more than 40% of total revenue to prevent dangerous revenue concentration. Accepting the deal without a volume cap risks trading a 17.8% net margin for higher absolute revenue at the cost of structural vulnerability — which is not an improvement in genuine financial viability."
+    },
+    {
+      "type": "quiz",
+      "title": "Full Module Review Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved to Excellence",
+      "questions": [
+        {
+          "question": "TeTaonga Tours has revenue of $234,000 and net profit of $41,600. What is the net profit margin?",
+          "options": ["11.4%", "17.8%", "65.6%", "34.4%"],
+          "correctIndex": 1,
+          "explanation": "Net profit margin = $41,600 divided by $234,000 multiplied by 100 = 17.8%. This is a healthy margin for a small NZ tourism business — it means revenue could fall by 17.8% before the business reaches breakeven. The 65.6% figure is the gross profit margin, not the net profit margin."
+        },
+        {
+          "question": "Accepting the $55 group rate and doubling visitor numbers increases net profit from $41,600 to $51,430. Which Excellence-level evaluation is most accurate?",
+          "options": [
+            "The group rate is a good decision because profit increases.",
+            "The group rate improves profit by $9,830 and should be accepted.",
+            "The group rate conditionally improves viability — at full volume and linear COGS scaling, net profit rises to $51,430. However, if additional staffing is required ($12,000), the improvement disappears. More critically, dependence on two Australian operators deepens revenue concentration risk, potentially threatening viability if either operator withdraws.",
+            "The group rate reduces per-person revenue so it is not viable."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is Excellence level. It evaluates the extent of improvement (conditional on volume and COGS assumptions), stress-tests one assumption (additional staffing cost), and identifies the deeper risk (concentration of revenue). Options A and B note the profit improvement without evaluation. Option D makes a simple per-unit calculation without considering the volume effect."
+        },
+        {
+          "question": "Which of the following best demonstrates an Achieved-level viability assessment for TeTaonga Tours?",
+          "options": [
+            "TeTaonga Tours is doing well.",
+            "TeTaonga Tours has good revenue.",
+            "TeTaonga Tours is financially viable — it generates a net profit of $41,600 on revenue of $234,000, a 17.8% margin. Reserves of $65,000 provide additional resilience.",
+            "TeTaonga Tours should keep operating."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C meets the Achieved requirement: it states the viability verdict (viable), provides two specific data points (net profit $41,600, revenue $234,000), includes the margin (17.8%), and references reserves ($65,000) as a second piece of supporting evidence. Options A, B, and D make claims without any financial data — they do not meet the Achieved standard."
+        },
+        {
+          "question": "TeTaonga Tours' owner salary is $72,000 — 30.8% of revenue. Which Merit-level explanation correctly explains how this affects viability?",
+          "options": [
+            "The owner salary is an internal factor.",
+            "The high salary reduces profit.",
+            "Aroha's owner salary of $72,000 represents 30.8% of revenue. Because this is a large fixed cost, a 17.8% fall in revenue would reduce net profit to near zero — the business reaches breakeven at approximately $192,400 in revenue. If revenue falls below this level, the business makes a loss despite its current healthy position.",
+            "Aroha should reduce her salary."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is Merit level. It names the specific dollar figure ($72,000) and percentage (30.8%), explains the mechanism (large fixed cost reduces flexibility), and calculates the specific impact (breakeven at approximately $192,400 revenue, or a 17.8% revenue fall). Options A and B are Achieved level at best — they identify the factor without explaining the mechanism. Option D is a recommendation, not an explanation."
+        },
+        {
+          "question": "At the Excellence level in AS92031, students must analyse TWO things. What are they?",
+          "options": [
+            "The revenue sources and the expense categories",
+            "The internal factors and the external factors",
+            "The relationship between factors affecting viability, and the extent to which proposed improvements would achieve financial viability",
+            "The gross profit margin and the net profit margin"
+          ],
+          "correctIndex": 2,
+          "explanation": "The two Excellence requirements are: (1) analyse the relationship between factors — showing how internal and external factors interact and compound their effects, and (2) analyse the extent to which proposed improvements would achieve financial viability — evaluating whether strategies fully, partially, or conditionally restore viability. Options A, B, and D describe Achieved-level or Merit-level skills."
+        },
+        {
+          "question": "The Nelson Aquatics Club has a net deficit of $7,895 and reserves of $18,400. How many months until reserves are exhausted?",
+          "options": ["14.3 months", "18.4 months", "28.0 months", "7.9 months"],
+          "correctIndex": 2,
+          "explanation": "$18,400 divided by $7,895 = 2.33 years. 2.33 multiplied by 12 = approximately 28 months. The club has approximately 2.3 years before reserves run out at the current deficit rate — enough time to act, but the urgency is real and increasing if the deficit grows."
+        },
+        {
+          "question": "Which improvement strategy is a revenue growth strategy rather than a cost reduction strategy?",
+          "options": [
+            "Renegotiating a lower club pool hire cost",
+            "Reducing the head coach to part-time",
+            "Expanding the learn-to-swim programme with two additional sessions per week at $18 per student",
+            "Switching to a cheaper equipment supplier"
+          ],
+          "correctIndex": 2,
+          "explanation": "Expanding the learn-to-swim programme adds new revenue — it is a revenue growth strategy. Renegotiating pool hire, reducing the coach to part-time, and switching suppliers are all cost reduction strategies. Revenue growth improves viability by increasing the income side of the equation. Cost reduction improves it by reducing the expense side. Both can restore viability but through different mechanisms."
+        },
+        {
+          "question": "Which of the following best analyses the RELATIONSHIP between two factors affecting Wiremu's dairy viability?",
+          "options": [
+            "Pak'nSave is external and high wages are internal.",
+            "Both factors make the dairy less viable.",
+            "Pak'nSave's entry reduces revenue by $28,000. This external impact is amplified by the internal factor of high fixed costs — wages $58,000 and rent $38,400 cannot be reduced to absorb the revenue loss, so every dollar of lost revenue reduces the deficit directly. If fixed costs were $20,000 lower, the same revenue loss would still leave the dairy profitable. The internal cost structure amplifies the damage from the external competitive threat.",
+            "Wiremu should deal with both problems separately."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C analyses the relationship between the factors — external revenue loss amplified by internal fixed cost inflexibility. It provides a counterfactual (lower fixed costs would maintain profitability), explains the mechanism (fixed costs cannot absorb revenue losses), and draws a conclusion (the internal structure amplifies external damage). This is the Excellence move in AS92031."
+        }
+      ]
+    }
+  ]
+}

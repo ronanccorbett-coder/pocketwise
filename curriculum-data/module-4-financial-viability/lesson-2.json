@@ -1,0 +1,133 @@
+{
+  "title": "Reading Financial Statements for Viability",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "AS92031: Describe revenue, expenses, and profit or loss using actual figures from a NZ organisation's financial data",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Read and interpret a basic income statement for a NZ organisation",
+    "Calculate gross profit, net profit, and profit margin from given figures",
+    "Identify which revenue and expense lines most significantly affect viability"
+  ],
+  "vocabulary": [
+    { "term": "Income statement", "definition": "A financial document showing an organisation's revenue, expenses, and profit or loss over a specific period. Also called a profit and loss statement or P&L." },
+    { "term": "Gross profit margin", "definition": "Gross profit expressed as a percentage of revenue. Shows how many cents of every sales dollar remain after direct production costs." },
+    { "term": "Net profit margin", "definition": "Net profit expressed as a percentage of revenue. Shows how many cents of every sales dollar remain after all costs." },
+    { "term": "Cost of goods sold (COGS)", "definition": "The direct costs of producing the goods or services sold. For a café: ingredients. For a retailer: cost of stock purchased for resale." },
+    { "term": "Operating expenses", "definition": "All costs of running the organisation not directly tied to production — rent, wages, utilities, insurance, marketing, depreciation." },
+    { "term": "Depreciation", "definition": "The annual reduction in the value of a fixed asset such as equipment, vehicles, or fittings. Treated as an expense in the income statement even though no cash is paid." },
+    { "term": "Margin of safety", "definition": "The amount revenue can fall before the organisation reaches breakeven and starts making a loss. A larger margin of safety means greater financial resilience." }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Recap — Financial Viability Basics",
+      "estimatedMinutes": 4,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "An organisation has revenue of $85,000 and expenses of $91,000. Which statement is correct?",
+          "options": [
+            "The organisation is financially viable because it has revenue of $85,000",
+            "The organisation has a deficit of $6,000 and is not currently financially viable",
+            "The organisation is financially viable because $85,000 is a large revenue figure",
+            "The organisation is financially viable because expenses will eventually decrease on their own"
+          ],
+          "correctIndex": 1,
+          "explanation": "Revenue $85,000 minus expenses $91,000 equals a deficit of negative $6,000. The organisation is spending $6,000 more per year than it earns. This is not financially viable — it will exhaust reserves at $6,000 per year. Having large revenue does not determine viability; the relationship between revenue and expenses does."
+        },
+        {
+          "question": "Which of the following is an INTERNAL factor that could negatively affect financial viability?",
+          "options": [
+            "A new competitor entering the market",
+            "A rise in the government minimum wage",
+            "The organisation's management failing to track monthly expenses against budget",
+            "A natural disaster damaging the organisation's premises"
+          ],
+          "correctIndex": 2,
+          "explanation": "Failing to track expenses against budget is an internal management factor — it is within the organisation's control. New competitors, minimum wage increases, and natural disasters are all external factors the organisation cannot directly control. Poor internal financial management can threaten viability even when external conditions are favourable."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "Reading an Income Statement",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the income statement structure into your notes. Label each section clearly. Highlight the two expense lines that represent the biggest risk to viability.",
+      "content": "In the AS92031 external exam, you will be given financial data about a NZ organisation. You need to work with it quickly and accurately. Here is what a complete income statement looks like.\n\nRevenue:\nSales income          $320,000\nGrant income           $12,000\nHire income             $8,000\nTotal Revenue:        $340,000\n\nCost of Goods Sold:\nIngredients and stock  $98,000\nTotal COGS:            $98,000\n\nGross Profit:         $242,000\nGross Profit Margin:  $242,000 divided by $340,000 = 71.2%\n\nOperating Expenses:\nWages and salaries    $148,000\nRent                   $42,000\nUtilities              $14,500\nInsurance               $6,200\nMarketing               $4,800\nDepreciation            $8,000\nTotal Opex:           $223,500\n\nNet Profit:            $18,500\nNet Profit Margin:    $18,500 divided by $340,000 = 5.4%\n\nFrom this statement you can see that wages are the largest single cost at 43.5% of revenue. Rent is the second largest at 12.4%. A 10% wage increase adds $14,800 to annual costs — reducing net profit from $18,500 to $3,700. The thin 5.4% net margin means any significant cost shock or revenue fall threatens viability."
+    },
+    {
+      "type": "slide",
+      "title": "Identifying the Most Significant Lines",
+      "estimatedMinutes": 4,
+      "notePrompt": "Using the income statement above, calculate each major expense as a percentage of total revenue. Which single expense would cause the most damage if it increased by 10%? Show your working.",
+      "content": "Not all revenue and expense lines have equal impact on viability. Understanding which lines matter most is a key analytical skill in AS92031.\n\nIn the sample income statement, wages of $148,000 are 43.5% of total revenue. A 10% wages increase adds $14,800 to annual costs. On a net profit of $18,500, that leaves only $3,700 — a near-total elimination of profit from a single cost movement.\n\nRent at $42,000 is 12.4% of revenue. A 20% rent increase at lease renewal adds $8,400 per year — cutting net profit from $18,500 to $10,100.\n\nIngredients at $98,000 are 28.8% of revenue. A 5% food price increase adds $4,900 — reducing net profit to $13,600.\n\nThe pattern is clear: when the net profit margin is thin, even small percentage changes in major cost lines can dramatically reduce or eliminate profitability. This is why viability is not a static condition — it requires constant management.\n\nFor AS92031, when you identify factors affecting viability, you should also estimate their financial impact. Saying 'wages are a significant expense' earns fewer marks than saying 'wages of $148,000 represent 43.5% of revenue — a 10% wage increase would reduce net profit from $18,500 to $3,700, leaving the organisation highly exposed to any further cost pressure.'"
+    },
+    {
+      "type": "truefalse",
+      "statement": "Gross profit margin is always higher than net profit margin for the same organisation in the same period.",
+      "correctAnswer": true,
+      "explanation": "True. Gross profit is calculated before operating expenses are deducted. Net profit is calculated after all expenses. Since operating expenses are always positive, net profit is always lower than gross profit — meaning net profit margin is always lower than gross profit margin. For example, a gross margin of 71.2% with operating expenses of 65.7% of revenue produces a net margin of only 5.4%.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Worked Example — KickStart Sports Full Income Statement",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy this income statement. Calculate: (1) gross profit margin, (2) net profit margin, (3) how much revenue would need to fall before KickStart makes a loss. Show all working.",
+      "content": "Tama owns KickStart Sports, a sports equipment retail shop in Napier. Here is his complete annual income statement.\n\nRevenue:\nEquipment sales: $285,000\nEquipment hire: $18,000\nTotal Revenue: $303,000\n\nCost of Goods Sold: $162,000\nGross Profit: $141,000\nGross Profit Margin: $141,000 divided by $303,000 = 46.5%\n\nOperating Expenses:\nWages: $78,000\nRent: $36,000\nUtilities: $8,400\nInsurance: $5,200\nMarketing: $3,600\nDepreciation: $4,000\nTotal Operating Expenses: $135,200\n\nNet Profit: $141,000 minus $135,200 = $5,800\nNet Profit Margin: $5,800 divided by $303,000 = 1.9%\n\nMargin of safety calculation: At the current gross margin of 46.5%, Tama needs revenue of approximately $290,753 just to cover all costs ($135,200 fixed costs divided by 0.465 gross margin ratio plus $162,000 COGS adjusted... simpler: breakeven revenue = Total expenses divided by (1 minus COGS ratio). COGS ratio = $162,000 divided by $303,000 = 53.5%. Breakeven = $135,200 divided by (1 minus 0.535) = $135,200 divided by 0.465 = $290,753. Margin of safety = $303,000 minus $290,753 = $12,247, or just 4% of revenue. KickStart Sports is only 4% above its breakeven point."
+    },
+    {
+      "type": "typed",
+      "question": "KickStart Sports has revenue of $303,000 and COGS of $162,000. What is the gross profit in dollars?",
+      "acceptedAnswers": ["$141,000", "141000", "141,000"],
+      "placeholder": "Type the gross profit here...",
+      "hint": "Gross profit = Revenue minus Cost of Goods Sold.",
+      "explanation": "Gross profit = $303,000 minus $162,000 = $141,000. This represents a 46.5% gross margin — for every dollar of revenue, Tama keeps 46.5 cents after paying for the equipment he sells. However, operating expenses of $135,200 consume almost all of this gross profit, leaving only $5,800 net profit — a 1.9% net margin that makes KickStart Sports financially fragile.",
+      "estimatedMinutes": 4
+    },
+    {
+      "type": "slide",
+      "title": "Reading Between the Lines — Trends and Context",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: Why is a single year's income statement not always enough to assess viability? What additional information would you want to know?",
+      "content": "A single income statement tells you the current position. But financial viability is about the future as well as the present. To assess viability properly, you need to read the context around the numbers.\n\nTrend matters. An organisation making $5,800 net profit this year but $24,800 two years ago is on a dangerous trajectory. Revenue falling by $18,000 over two years, with costs largely unchanged, signals a structural problem — not a one-off bad year.\n\nReserves matter. An organisation making a small loss but holding $42,000 in reserves is in a very different position from one making the same loss with no reserves. The reserves determine how long the organisation can survive while implementing a recovery strategy.\n\nDebt levels matter. An organisation earning $5,800 net profit with no debt is viable. The same organisation with a $60,000 bank loan at 9% per annum ($5,400 annual interest) is absorbing most of its profit in interest payments — viability is much more precarious.\n\nContext also includes what the organisation has done in response. Has management identified the problem and begun addressing it? Has a new competitor emerged, or has customer behaviour shifted permanently? The story behind the numbers matters for a complete viability assessment.\n\nIn the AS92031 external exam, the scenario will usually give you context clues alongside the financial data. Read them carefully. The context is not decoration — it is evidence."
+    },
+    {
+      "type": "slide",
+      "title": "Viability Versus Solvency — Knowing the Difference",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the difference between viability and solvency in your own words. Give an example of an organisation that might be viable but temporarily insolvent.",
+      "content": "Two terms that are easy to confuse in financial viability analysis are viability and solvency. They are related but distinct.\n\nFinancial viability is about the long-term ability to generate enough revenue to cover costs. An organisation is viable if its business model works — if it consistently earns more than it spends over time.\n\nSolvency is about the short-term ability to pay debts as they fall due. An organisation is solvent if it has enough cash or liquid assets to meet its immediate obligations.\n\nAn organisation can be viable but temporarily insolvent. For example, a seasonal business like a Queenstown ski hire shop earns most of its revenue in winter. In March (between seasons), it might not have enough cash to pay a supplier invoice — it is temporarily insolvent. But over the full year, it earns well above its costs — it is viable. The cash flow timing is the problem, not the business model.\n\nConversely, an organisation can be insolvent and non-viable simultaneously — it cannot pay its current bills AND its long-term earning model is broken.\n\nFor AS92031, when you assess viability, you are primarily asking the long-term question: does this organisation earn enough to sustain itself? Solvency issues — cash flow timing — are a related but separate concern. Both can appear in exam scenarios, so it is worth knowing the distinction."
+    },
+    {
+      "type": "scenario",
+      "title": "Income Statement Interpretation — Wiremu's Dairy",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Wiremu owns a corner dairy in Manurewa, South Auckland. Here is his financial summary for the current year.\n\nRevenue:\nGroceries and snacks: $284,000\nLotto terminal commissions: $22,000\nPhone top-up commissions: $8,400\nATM transaction fees: $3,600\nTotal Revenue: $318,000\n\nCost of Goods Sold (stock): $196,000\nGross Profit: $122,000\n\nOperating Expenses:\nWiremu's wages (owner-operator): $58,000\nRent: $38,400\nUtilities: $12,800\nInsurance: $5,600\nSecurity system: $2,400\nAccounting and licensing: $3,200\nDepreciation: $4,800\nTotal Operating Expenses: $125,200\n\nNet Loss: negative $3,200\nReserves: $42,000\n\nContext: Two years ago, Wiremu's revenue was $346,000 and he earned a net profit of $24,800. A new Pak'nSave opened 1.2km away approximately 18 months ago.",
+      "challenge": "1. Calculate the gross profit margin and net profit margin (or loss margin) for the current year.\n2. Identify the two largest expense items and calculate each as a percentage of total revenue.\n3. State whether the dairy is currently financially viable. Use at least two pieces of financial evidence including reference to the reserves and the trend.\n4. Calculate how long the reserves of $42,000 would last at the current rate of annual loss.",
+      "hints": [
+        "Gross profit margin = Gross profit divided by Revenue multiplied by 100.",
+        "For Q3: Consider both the current loss AND the trajectory — revenue has fallen from $346,000 to $318,000 in approximately two years.",
+        "For Q4: Months of reserves = (Reserves divided by Annual loss) multiplied by 12."
+      ],
+      "solution": "1. Gross profit margin: $122,000 divided by $318,000 multiplied by 100 = 38.4%.\nNet loss margin: negative $3,200 divided by $318,000 multiplied by 100 = negative 1.0%.\n\n2. Two largest expenses:\nWiremu's wages: $58,000 divided by $318,000 = 18.2% of revenue.\nRent: $38,400 divided by $318,000 = 12.1% of revenue.\n\n3. Viability assessment: The dairy is currently NOT financially viable. It is generating a net loss of $3,200, meaning expenses exceed revenue. Two pieces of evidence: First, the current annual deficit of $3,200 indicates the business model is not covering its costs at current revenue levels. Second, the trend is deeply concerning — revenue has fallen from $346,000 two years ago to $318,000 now, a decline of $28,000, while the business has moved from a $24,800 profit to a $3,200 loss. This trajectory suggests viability is deteriorating, not stable. The $42,000 in reserves provides a buffer but does not make the business viable — it just extends how long it can survive while losing money.\n\n4. Reserves runway: $42,000 divided by $3,200 = 13.1 years at the current loss rate. However, if the revenue decline continues (losing approximately $14,000 per year in revenue as seen over two years), the annual loss will grow significantly — shortening this runway considerably."
+    },
+    {
+      "type": "discussion",
+      "title": "What Should Wiremu Do?",
+      "estimatedMinutes": 8,
+      "prompt": "Wiremu's dairy is making a $3,200 annual loss and his revenue has been declining since Pak'nSave opened nearby. He has $42,000 in reserves and has operated the dairy for 7 years. What options does he have, and which would you recommend he pursue?",
+      "guidingQuestions": [
+        "What can a corner dairy offer that a large supermarket like Pak'nSave cannot? How could Wiremu use these advantages to win back or attract customers?",
+        "Which of Wiremu's expenses are fixed and difficult to reduce? Which could potentially be lowered?",
+        "If Wiremu does nothing, what does his financial position look like in 3 years based on the current trend?"
+      ]
+    }
+  ]
+}

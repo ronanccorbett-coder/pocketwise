@@ -1,0 +1,127 @@
+{
+  "title": "Merit Skills — How Factors Affect Viability and Improvement Strategies",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "AS92031: Examine financial viability — explain how internal and external factors affect viability and how the organisation could improve its financial viability",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain how specific internal factors affect an organisation's financial viability with dollar figures",
+    "Explain how specific external factors affect viability through a specific mechanism",
+    "Propose and explain concrete improvement strategies with estimated financial impacts"
+  ],
+  "vocabulary": [
+    { "term": "Merit-level explanation", "definition": "Going beyond naming a factor to showing the specific mechanism by which it affects the profit line. Includes dollar figures that trace the impact from cause to financial outcome." },
+    { "term": "Revenue growth strategy", "definition": "An action to increase income — adding products, expanding the customer base, raising prices, or finding new revenue streams." },
+    { "term": "Cost reduction strategy", "definition": "An action to decrease expenses — renegotiating leases, finding cheaper suppliers, reducing staff hours, or eliminating non-essential costs." },
+    { "term": "Contribution margin", "definition": "The revenue remaining after variable costs are deducted. Each unit of contribution goes toward covering fixed costs and then generating profit." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Merit Shift — From Naming to Explaining",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the Achieved version and the Merit version of the same factor. What specific words or elements are added in the Merit version?",
+      "content": "The difference between Achieved and Merit in AS92031 is the difference between naming a factor and explaining how it actually affects viability.\n\nAchieved level: 'An external factor affecting KickStart Sports is rising wages due to minimum wage increases.'\n\nMerit level: 'The NZ minimum wage increased from $22.70 to $23.15 per hour in April 2024. This adds $0.45 multiplied by 20 hours multiplied by 52 weeks = $468 per year to the wage cost for Tama's part-time employee. Combined with any further pay review for Tama himself, total wage costs could rise from $78,000 toward $82,000. Given KickStart Sports' current net profit of only $5,800, a $4,000 wage increase would reduce net profit to $1,800 — a margin of just 0.6% that makes the business vulnerable to any further cost pressure or revenue softening.'\n\nThe Merit explanation names the specific dollar amounts, shows the calculation, traces how the factor flows through to the profit line, and assesses the significance of the impact. That chain of reasoning is what earns Merit marks in AS92031.\n\nEvery time you introduce a factor, follow it with: 'This affects viability by...' — then show the numbers. That phrase is your signal to yourself that you are writing at Merit level."
+    },
+    {
+      "type": "slide",
+      "title": "How Internal Factors Affect Viability — Mechanisms",
+      "estimatedMinutes": 4,
+      "notePrompt": "Choose ONE internal factor and write a Merit-level explanation (3 sentences, one dollar figure) of how it affects the viability of a business you know or can imagine.",
+      "content": "Here are the key internal factors and the specific mechanism by which each one affects financial viability.\n\nPoor cost management reduces net profit directly. If Tama allows electricity bills to creep from $8,400 to $10,800 per year through poor energy management — not turning off displays overnight, running an ageing refrigerator — net profit falls from $5,800 to $3,400. A $2,400 cost increase consumes 41% of net profit.\n\nLow pricing erodes gross margin. If Tama prices equipment at a 30% gross margin instead of his current 46.5%, COGS would need to be recalculated — effectively, he would be selling $303,000 of goods for less profit per item. At 30% gross margin on $285,000 equipment sales, gross profit from equipment would be $285,000 multiplied by 30% = $85,500 compared to $123,525 currently. Net profit would disappear entirely.\n\nLow revenue diversification creates vulnerability. Tama's hire service earns $18,000 and is a protective second income stream. If equipment sales fall sharply due to competition, hire income continues. An organisation with only one revenue source has no such buffer.\n\nInadequate reserves means no financial cushion. Tama has no reserves mentioned — a single broken display cabinet ($3,000 repair) or a theft could push him immediately into a cash flow crisis, forcing him to take on debt at the worst possible time."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A business can always improve its financial viability by raising its prices, because higher prices mean more revenue.",
+      "correctAnswer": false,
+      "explanation": "False. Raising prices improves viability only if the revenue gain outweighs any reduction in sales volume. If customers are price-sensitive and switch to competitors, sales volume falls — potentially reducing total revenue even as the per-unit price rises. For example, if KickStart Sports raises equipment prices by 10% but loses 15% of customers, revenue actually falls. The net effect of a price increase depends on price elasticity of demand in that market.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "How External Factors Affect Viability — Mechanisms",
+      "estimatedMinutes": 4,
+      "notePrompt": "For each of the three external factors in this slide, write the specific dollar figure that shows the impact on KickStart Sports' net profit of $5,800.",
+      "content": "External factors affect viability through specific mechanisms. Here are three of the most important, each traced to the profit line.\n\nInflation on supplier costs: If KickStart Sports' equipment supplier raises wholesale prices by 8%, Tama's COGS rises from $162,000 to $174,960 — an increase of $12,960. If Tama cannot pass this on through higher retail prices, net profit falls from $5,800 to a loss of $7,160. Inflation compresses gross margins whenever organisations cannot fully pass on cost increases.\n\nMinimum wage increases: The $0.45 per hour increase in April 2024 adds $468 per year to one part-time employee's wages. On a net profit of $5,800, this is an 8.1% reduction — modest in isolation but significant as part of a pattern of rising costs.\n\nNew competition: A national chain sports retailer opening in Napier could undercut Tama's equipment prices by 10%, drawing away customers. If equipment sales fall by 15% (from $285,000 to $242,250), and COGS falls proportionally (to $137,700), gross profit falls from $141,000 to approximately $122,550. After operating expenses of $135,200, the result is a loss of $12,650 — a viability-threatening outcome caused entirely by the entry of a single external competitor."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Factor to Its Financial Impact",
+      "estimatedMinutes": 6,
+      "pairs": [
+        { "item": "Supplier raises wholesale prices by 8%", "zone": "Increases COGS, reduces gross profit" },
+        { "item": "Owner fails to renegotiate lower rent", "zone": "Keeps fixed costs unnecessarily high" },
+        { "item": "New national competitor enters the market", "zone": "Reduces sales revenue through customer loss" },
+        { "item": "Government raises minimum wage", "zone": "Increases wage expense, reduces net profit" },
+        { "item": "Owner diversifies into a new product line", "zone": "Adds new revenue stream, improves resilience" },
+        { "item": "Organisation builds cash reserves over three years", "zone": "Creates financial buffer against unexpected costs" }
+      ],
+      "explanation": "Every factor affecting viability works through a specific financial mechanism. Identifying the mechanism — how the factor flows to the profit line — is the Merit-level skill. Cost increases reduce profit. Revenue reductions reduce profit. Strategic decisions like diversification and building reserves improve resilience. In your exam, always name the factor AND trace its specific impact to the revenue, cost, or profit line.",
+      "estimatedMinutes": 6
+    },
+    {
+      "type": "slide",
+      "title": "Improvement Strategies — Specific and Quantified",
+      "estimatedMinutes": 4,
+      "notePrompt": "List the five improvement strategy types from this slide. For KickStart Sports with a net profit of $5,800, estimate the annual dollar improvement each strategy could realistically achieve.",
+      "content": "At Merit level in AS92031, you must propose specific improvement strategies and explain how they would improve viability. Vague strategies earn no marks. Specific, quantified strategies earn Merit.\n\nRevenue diversification: Add a new income stream. Tama could introduce school holiday sports coaching — 30 students at $180 per week for 4 school holiday periods = $21,600 additional annual revenue. Estimated additional costs: $12,000. Net improvement: $9,600. This would nearly triple his current net profit.\n\nCost reduction through renegotiation: Tama's rent of $36,000 per year is 11.9% of revenue. If he can negotiate a 10% reduction at lease renewal, he saves $3,600 per year — increasing net profit by 62%.\n\nPrice review: If Tama raises equipment prices by 5% (from an average of, say, $50 to $52.50 per item) and customer numbers are maintained, revenue rises by $14,250 — significantly improving viability if demand is not price-sensitive.\n\nSupplier renegotiation: Finding a cheaper equipment supplier or negotiating a volume discount could reduce COGS. A 3% improvement in COGS (saving $4,860 per year) would add the same directly to net profit.\n\nReserves building: Tama should allocate a minimum of $500 per month to a business savings account. This does not directly improve the income statement but protects viability by creating a buffer against unexpected costs."
+    },
+    {
+      "type": "scenario",
+      "title": "Merit Scenario — KickStart Sports Under Pressure",
+      "estimatedMinutes": 14,
+      "nceaLevel": "Merit",
+      "setup": "Following on from KickStart Sports. Two events have occurred this year.\n\nEvent 1 (External): A national chain, SportsPower, has opened in Napier with equipment prices approximately 12% lower. Tama estimates he has already lost 10% of his equipment sales volume.\n\nEvent 2 (External): The minimum wage increased from $22.70 to $23.15 per hour. Tama's part-time employee works 20 hours per week.\n\nUpdated financial position:\nEquipment sales: $285,000 multiplied by 90% = $256,500\nHire service: $18,000 (unchanged)\nNew total revenue: $274,500\nCOGS (proportional): $162,000 multiplied by 90% = $145,800\nNew gross profit: $274,500 minus $145,800 = $128,700\nWage increase: $0.45 multiplied by 20 hrs multiplied by 52 weeks = $468\nNew total wages: $78,468\nAll other operating expenses unchanged.\nNew total operating expenses: $135,668\nNew net result: $128,700 minus $135,668 = negative $6,968 (loss)",
+      "challenge": "1. Describe KickStart Sports' new financial position. Is it currently financially viable?\n2. Explain how the SportsPower competitor affects KickStart Sports' financial viability. Use specific figures.\n3. Explain how the minimum wage increase affects KickStart Sports' financial viability. Use specific figures.\n4. Propose TWO specific improvement strategies for Tama. For each strategy, explain the mechanism and estimate the annual financial impact.",
+      "hints": [
+        "For Q1: Compare the new net loss to the previous net profit. State the total change in financial position.",
+        "For Q2 and Q3: Use Merit language — 'This affects viability by...' followed by specific dollar calculations.",
+        "For Q4: Choose strategies realistic for a small NZ sports retailer. Quantify the impact where possible."
+      ],
+      "solution": "1. New financial position: KickStart Sports is no longer financially viable. It now makes a net loss of $6,968, compared to a net profit of $5,800 previously. The total deterioration in financial position is $12,768 ($5,800 surplus swinging to $6,968 loss). Revenue has fallen from $303,000 to $274,500 and expenses have increased slightly. Without intervention, the business will continue to lose money.\n\n2. How SportsPower affects viability: SportsPower's lower prices have attracted 10% of KickStart's equipment customers, reducing equipment revenue by $28,500 (from $285,000 to $256,500). This revenue loss reduces gross profit — COGS falls proportionally by $16,200 but revenue falls by $28,500, so gross profit decreases by $12,300 (from $141,000 to $128,700). Since operating expenses are largely fixed at $135,200, this $12,300 gross profit reduction flows directly to the net result, contributing the majority of the swing from $5,800 profit to $6,968 loss. SportsPower's entry has fundamentally changed KickStart Sports' viability by removing a substantial portion of its revenue base.\n\n3. How the minimum wage increase affects viability: The $0.45 per hour increase adds $0.45 multiplied by 20 hours multiplied by 52 weeks = $468 per year to KickStart's wage costs. This raises total wages from $78,000 to $78,468. While $468 is modest in absolute terms, it adds to an already deteriorating position — every additional cost increase reduces the prospect of returning to profit. As part of a pattern of rising external costs, the minimum wage increase contributes to the compounding pressure on viability.\n\n4. Improvement strategies:\nStrategy 1 — Expand the hire service: KickStart's hire revenue of $18,000 is unaffected by SportsPower because the chain does not offer hire. Tama should invest approximately $4,000 in additional hire inventory (additional bikes, racquets, camping gear) and actively market to schools, sports clubs, and Napier's growing tourist market. If hire revenue doubles from $18,000 to $36,000 with incremental costs of $5,000, the net contribution improvement is $13,000 — more than recovering the current loss and returning to a $6,032 surplus.\n\nStrategy 2 — Specialise and differentiate: Rather than competing with SportsPower on price across all product lines, Tama should focus on products, brands, and services SportsPower does not carry — specialist footwear fitting, local club uniform customisation, and premium equipment brands not available in national chains. This protects margins and leverages Tama's local expertise. Targeting local sports clubs for bulk uniform orders at a 35% margin could generate $15,000 in new annual revenue ($10,500 gross profit after COGS), significantly improving viability."
+    },
+    {
+      "type": "quiz",
+      "title": "Merit Analysis Check",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Merit",
+      "questions": [
+        {
+          "question": "Which of the following best explains how SportsPower affects KickStart Sports' financial viability at the Merit level?",
+          "options": [
+            "Competition from SportsPower is bad for KickStart Sports.",
+            "SportsPower is an external factor affecting KickStart Sports.",
+            "SportsPower's lower prices have drawn 10% of customers away, reducing equipment revenue by $28,500 and gross profit by $12,300. Since operating expenses are fixed, this $12,300 reduction flows directly to net profit — turning a $5,800 profit into part of a $6,968 loss.",
+            "KickStart Sports should lower its prices to compete with SportsPower."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is Merit level. It traces the mechanism: competitor action causes customer loss, customer loss causes revenue reduction ($28,500), revenue reduction causes gross profit reduction ($12,300), fixed costs mean the gross profit reduction equals the net profit impact. It provides specific figures throughout. Options A and B name the factor without explaining the mechanism. Option D is a recommendation, not an explanation of impact."
+        },
+        {
+          "question": "Tama introduces school holiday coaching generating $21,600 revenue with $12,000 costs. What is the improvement to KickStart's financial position?",
+          "options": [
+            "$21,600 improvement",
+            "$12,000 improvement",
+            "$9,600 improvement",
+            "$33,600 improvement"
+          ],
+          "correctIndex": 2,
+          "explanation": "Net improvement = Additional revenue minus additional costs = $21,600 minus $12,000 = $9,600. This is the amount by which net profit improves. $21,600 is the gross revenue not the net improvement. $12,000 is only the cost. $33,600 would be adding revenue and costs together rather than subtracting."
+        }
+      ]
+    },
+    {
+      "type": "typed",
+      "question": "KickStart Sports' part-time employee works 20 hours per week. The minimum wage rises from $22.70 to $23.15. What is the annual wage cost increase in dollars?",
+      "acceptedAnswers": ["$468", "468"],
+      "placeholder": "Type the annual increase here...",
+      "hint": "Wage increase per hour multiplied by hours per week multiplied by 52 weeks.",
+      "explanation": "$23.15 minus $22.70 = $0.45 per hour increase. $0.45 multiplied by 20 hours = $9.00 per week. $9.00 multiplied by 52 weeks = $468 per year. While modest in isolation, this illustrates how external government wage policy directly increases internal costs — reducing net profit by $468 on what was already a thin $5,800 profit margin.",
+      "estimatedMinutes": 4
+    }
+  ]
+}

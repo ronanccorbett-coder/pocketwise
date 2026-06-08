@@ -1,0 +1,120 @@
+{
+  "title": "Your Money, Your Life — Why Personal Finance Matters",
+  "order": 1,
+  "dayNumber": 1,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Remember and Understand",
+  "nceaFocus": "Extra Learning",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain why personal financial management matters for NZ students",
+    "Understand the difference between gross pay and net pay",
+    "Identify the key NZ tax codes and when each applies"
+  ],
+  "vocabulary": [
+    { "term": "Gross pay", "definition": "The total amount earned before any deductions — before PAYE tax, KiwiSaver, and student loan repayments are taken out." },
+    { "term": "Net pay", "definition": "The amount that actually arrives in your bank account after all deductions. Also called take-home pay." },
+    { "term": "PAYE", "definition": "Pay As You Earn. The NZ system where employers deduct income tax from wages each pay period and send it directly to IRD on behalf of the employee." },
+    { "term": "KiwiSaver", "definition": "New Zealand's voluntary retirement savings scheme. Employees contribute 3%, 4%, 6%, 8%, or 10% of gross pay. Employers contribute a minimum of 3% on top." },
+    { "term": "Tax code", "definition": "A code on your IR330 form that tells your employer how much tax to deduct. The most common codes are M (main job) and S (secondary job)." },
+    { "term": "50/30/20 rule", "definition": "A simple budgeting framework: 50% of take-home pay for needs, 30% for wants, and 20% for savings and debt repayment." },
+    { "term": "IRD number", "definition": "Your unique tax identification number in New Zealand. Required before starting work. Without one, employers must deduct tax at the maximum no-notification rate of 45 cents in every dollar." },
+    { "term": "Member tax credit", "definition": "A government contribution to your KiwiSaver account of up to $521 per year if you contribute at least $1,042 from your own pay annually." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Nobody Teaches You This Stuff",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: What do you already know about managing money? What two questions do you most want answered by the end of this module?",
+      "content": "Here is a fact that might surprise you: most adults in New Zealand were never formally taught how to manage money. They learned — or did not learn — by trial and error. By overspending on things they did not need. By not understanding their payslip. By not knowing that KiwiSaver contributions from age 18 compound into a very different retirement than contributions from age 35.\n\nThis module is about changing that for you.\n\nPersonal money management is not about being boring or tight. It is about having the skills to make intentional choices. The difference between arriving at 25 with $8,000 in savings and a KiwiSaver balance building nicely versus arriving at 25 with $4,000 in credit card debt wondering where your money went is not luck — it is knowledge and habits.\n\nOver the next two weeks, we are going to cover what you actually need to know. How to read your payslip and understand the deductions. How to build a budget based on what NZ students and young workers actually spend. How savings accounts and compound interest quietly build wealth over time. How to use the 50/30/20 rule as a practical framework.\n\nNone of this requires an accounting degree. It just requires knowing the basics and making a few deliberate decisions early. Let us start."
+    },
+    {
+      "type": "slide",
+      "title": "Gross Pay vs Net Pay — The Payslip Explained",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a payslip diagram: Gross Pay at the top. Below it, list and subtract PAYE, KiwiSaver, and student loan (if applicable) to reach Net Pay. Add example dollar figures from Tama's scenario.",
+      "content": "Tama starts his first job at Pak'nSave at $23.15 per hour for 35 hours per week. He calculates his weekly income: 35 multiplied by $23.15 = $810.25 gross. Excited, he checks his bank on payday and sees $663 has arrived. What happened to the other $147.25?\n\nDeductions happened. Here is what comes out of every NZ employee's pay.\n\nPAYE (income tax): IRD takes income tax each pay period. Tama's annual gross is $810.25 multiplied by 52 = $42,133. Tax on the first $14,000 = $1,470 (at 10.5%). Tax on the remaining $28,133 = $4,923 (at 17.5%). Total annual PAYE = $6,393. Weekly PAYE = $6,393 divided by 52 = $122.94.\n\nKiwiSaver at 3%: $810.25 multiplied by 3% = $24.31 per week. This money goes into Tama's own retirement account — it is not lost.\n\nNet pay calculation: $810.25 minus $122.94 minus $24.31 = $663.00.\n\nBonus: Tama's employer also contributes $24.31 per week to his KiwiSaver on top of his gross pay — free money going to his future. He does not see it in his take-home pay but it is growing in his account every week."
+    },
+    {
+      "type": "truefalse",
+      "statement": "KiwiSaver deductions taken from your wages are money you lose permanently.",
+      "correctAnswer": false,
+      "explanation": "False. KiwiSaver deductions go directly into your personal retirement account — they are your money, saved for later. Your employer adds another 3% on top, and the government contributes up to $521 per year if you meet the threshold. You can access your KiwiSaver at age 65, or earlier for a first home purchase. It is one of the best uses of your income, not a loss.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "NZ Tax Codes — Getting It Right from Day One",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the five most common NZ tax codes and when each one applies. Which would you use for a weekend job at a café while studying?",
+      "content": "When you start a new job in NZ, your employer gives you an IR330 tax code declaration form. Getting this right matters — the wrong code means either owing IRD money at year end or overpaying and waiting for a refund.\n\nM: Your main job, no student loan. The standard code for your primary employment. Applies the correct progressive tax rate.\n\nM SL: Your main job, and you have a student loan. Same as M but adds 12 cents per dollar repayment on income above the $24,128 annual threshold.\n\nS: Secondary job, no student loan. For a second workplace — your weekend job on top of a weekday job. Tax deducted at a flat 17.5%.\n\nS SL: Secondary job with student loan.\n\nSB: Secondary job where your total income across all jobs will be under $14,000 per year. Tax at 10.5%.\n\nFor most NZ students with one casual job, M or M SL is correct. If you pick up shifts at a second employer, use S for that job. Using M on a secondary job under-deducts tax and creates a bill at year end. Take two minutes to fill in the IR330 correctly — it saves significant stress later.\n\nYou can also manage your tax code and check if you have paid the right amount via myIR at ird.govt.nz."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Tax Code to the Situation",
+      "estimatedMinutes": 5,
+      "pairs": [
+        { "item": "Primary job, no student loan", "zone": "M" },
+        { "item": "Primary job, has a student loan", "zone": "M SL" },
+        { "item": "Second job, no student loan", "zone": "S" },
+        { "item": "Second job, has student loan", "zone": "S SL" },
+        { "item": "Second job, total income under $14,000 expected", "zone": "SB" }
+      ],
+      "explanation": "Using the wrong tax code is one of the most common mistakes NZ young workers make. If you use M on a second job, you will not have enough tax deducted and will owe IRD at year end. Fill in your IR330 carefully for every new job. If unsure, the IRD website has a tax code tool, or call 0800 227 774.",
+      "estimatedMinutes": 5
+    },
+    {
+      "type": "slide",
+      "title": "The 50/30/20 Rule — A Simple Framework",
+      "estimatedMinutes": 4,
+      "notePrompt": "Using Tama's net weekly pay of $663, calculate his weekly 50/30/20 allocation. Convert to monthly figures (multiply by 4.33). Does this feel realistic for a young person in your city?",
+      "content": "The 50/30/20 rule gives you a simple starting framework for how to allocate your take-home pay. It does not require a spreadsheet or financial advisor — just three numbers.\n\n50% goes to NEEDS. These are the things you cannot avoid — rent or board, groceries, transport to work, phone, power, insurance. If you live at home and pay board, your needs figure might be quite low. If you are renting in Auckland, needs might consume closer to 65%.\n\n30% goes to WANTS. Things that make life enjoyable but are not strictly essential — eating out, streaming services, clothing beyond basics, hobbies, social activities.\n\n20% goes to SAVINGS and DEBT REPAYMENT. Building an emergency fund, saving toward a goal, or paying down debt faster than the minimum.\n\nUsing Tama's net pay of $663 per week:\n50% needs = $331.50 per week\n30% wants = $198.90 per week\n20% savings = $132.60 per week\n\nMonthly equivalent (multiplied by 4.33):\nNeeds: $1,435.40\nWants: $860.84\nSavings: $573.89\n\nThe 50/30/20 is a starting point, not a rigid rule. Adjust the ratios to your circumstances. The key insight is that savings should be intentional and proportional — not whatever happens to be left over."
+    },
+    {
+      "type": "slide",
+      "title": "Getting Set Up — Three Things Before Your First Job",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the three things you need to set up before starting your first NZ job. What happens if you forget each one?",
+      "content": "Before you start your first NZ job, get three things sorted. This takes about 30 minutes total and saves a lot of problems later.\n\nFirst: Your IRD number. Without one, your employer must deduct tax at the no-notification rate of 45 cents in every dollar — the absolute maximum. Apply at ird.govt.nz, at an AA centre, or at a PostShop. It takes a few days to process. Apply before your start date, not after.\n\nSecond: A NZ bank account for wages. ANZ, ASB, BNZ, Kiwibank, and Westpac all offer free accounts for students and young people. You need this set up so your employer can deposit wages via direct credit. Most banks can open accounts online in under 10 minutes.\n\nThird: Your KiwiSaver decision. If you are 18 or over starting a new job, your employer automatically enrols you in KiwiSaver unless you opt out within 56 days. You choose your contribution rate — 3% qualifies for the employer match — and select a fund provider. If you do nothing, you are enrolled with a default provider and 3% rate. Choosing deliberately is better than defaulting, especially choosing your fund type (growth funds perform better long-term for young people).\n\nThese three admin steps take less time than a Netflix episode. Do them first. The financial consequences of getting them wrong can last months."
+    },
+    {
+      "type": "typed",
+      "question": "Tama earns $810.25 gross per week and contributes 3% to KiwiSaver. His employer also contributes 3%. What is the total weekly amount going into Tama's KiwiSaver from both sources?",
+      "acceptedAnswers": ["$48.62", "48.62", "$48.61", "48.61"],
+      "placeholder": "Type the total weekly KiwiSaver amount...",
+      "hint": "Tama's contribution = 3% of gross. Employer contribution = another 3% of gross. Add both together.",
+      "explanation": "Tama's 3% = $810.25 multiplied by 0.03 = $24.3075 ≈ $24.31. Employer's 3% = another $24.31. Total = $48.62 per week going into Tama's KiwiSaver. Over a year that is $48.62 multiplied by 52 = $2,528.24 — just from one job at minimum wage. This grows further with investment returns.",
+      "estimatedMinutes": 4
+    },
+    {
+      "type": "quiz",
+      "title": "Pay and Setup — Knowledge Check",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Tama earns $810.25 gross per week. PAYE is $122.94 and KiwiSaver is $24.31. What is his net weekly pay?",
+          "options": ["$622.69", "$663.00", "$687.31", "$810.25"],
+          "correctIndex": 1,
+          "explanation": "$810.25 minus $122.94 minus $24.31 = $663.00. This is Tama's take-home pay. PAYE goes to IRD. KiwiSaver goes to his retirement account. Both are deductions from gross but serve very different purposes."
+        },
+        {
+          "question": "Using the 50/30/20 rule, what is the recommended monthly savings amount for someone with a net monthly income of $2,532?",
+          "options": ["$1,266.00", "$759.60", "$506.40", "$253.20"],
+          "correctIndex": 2,
+          "explanation": "20% of $2,532 = $2,532 multiplied by 0.20 = $506.40 per month for savings and debt repayment. $1,266 is 50% (needs). $759.60 is 30% (wants). Saving 20% of take-home pay consistently is one of the most powerful financial habits you can build."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "What Would You Do With $663 Per Week?",
+      "estimatedMinutes": 5,
+      "prompt": "Imagine you are Tama — $663 arrives in your account every week. Write down honestly how you would spend it. Then apply the 50/30/20 framework and check whether your spending matches the recommended split. What would you need to change? What is the hardest thing to cut back on? Is there anything you realise you would happily spend less on?",
+      "nceaLink": "Extra Learning — no NCEA credits. The goal is practical life skills. Every habit you build now around budgeting and saving compounds over time exactly like interest does."
+    }
+  ]
+}

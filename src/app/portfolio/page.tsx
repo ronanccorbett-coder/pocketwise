@@ -566,7 +566,7 @@ export default function PortfolioPage(){
     if (owned) updateStockPrice(owned.id, newPrice);
   }, [stocks, updateStockPrice]);
 
-  const { prices, marketEvent, ready: pricesReady } = useStockSimulator(30000, handlePriceUpdate);
+  const { prices, marketEvent } = useStockSimulator(30000, handlePriceUpdate);
 
   function notify(m: string) { setNotif(m); setTimeout(() => setNotif(null), 3500); }
 

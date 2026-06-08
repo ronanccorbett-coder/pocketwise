@@ -1,0 +1,107 @@
+{
+  "title": "Renting and Flatting — What You Need to Know",
+  "order": 6,
+  "dayNumber": 6,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Understand the upfront and ongoing costs of renting in NZ",
+    "Compare rental costs across NZ cities using 2025 figures",
+    "Know key tenant rights under the Residential Tenancies Act"
+  ],
+  "vocabulary": [
+    { "term": "Bond", "definition": "A security deposit of usually 4 weeks rent paid at the start of a tenancy. Held by Tenancy Services, not the landlord. Returned at the end if the property is undamaged and rent is fully paid." },
+    { "term": "Tenancy agreement", "definition": "A legal contract between landlord and tenant. In NZ, governed by the Residential Tenancies Act. States rent, bond, notice periods, and responsibilities of both parties." },
+    { "term": "Periodic tenancy", "definition": "A tenancy with no fixed end date. Tenants give 28 days notice to leave. Landlords must give 63 days notice (or 42 days if they or a family member will move in)." },
+    { "term": "Fixed-term tenancy", "definition": "A tenancy for a set period, usually 12 months. Cannot easily be ended early by either party without mutual agreement." },
+    { "term": "Tenancy Services", "definition": "The NZ government service that holds rental bonds, mediates disputes between landlords and tenants, and provides information on tenancy rights. Website: tenancy.govt.nz." },
+    { "term": "Contents insurance", "definition": "Insurance covering your personal belongings inside a rented property. Landlords insure the building — tenants must arrange their own contents cover. Costs approximately $15 to $30 per month for a young renter." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Real Cost of Moving Out",
+      "estimatedMinutes": 4,
+      "notePrompt": "List all the upfront costs of moving into a flat. Estimate the total cash needed on day one to move into a $380/week room in Wellington.",
+      "content": "Moving out of home is one of the biggest financial transitions young NZ people face. Most significantly underestimate how much cash they need on day one.\n\nUpfront costs when you sign a tenancy agreement:\n\nBond: Usually 4 weeks rent. On a $380/week room in Wellington, bond = $1,520. This is held by Tenancy Services and returned at the end if the property is left in good condition and rent is fully paid. It is not the landlord's spending money.\n\nRent in advance: Most landlords require 2 weeks advance rent at signing. At $380/week, that is $760.\n\nFurniture and basics: Moving into an unfurnished flat requires a bed, desk, kitchen basics. Budget $500 to $1,500 for second-hand items from Trade Me and Facebook Marketplace.\n\nConnection fees: Some power companies charge a connection deposit for new accounts. Internet setup may include a modem delivery fee.\n\nTotal day-one cash needed for a $380/week Wellington room:\nBond $1,520 + advance rent $760 + basics $1,000 = $3,280 minimum.\n\nThis is why building a dedicated 'moving out fund' of $3,500 to $4,000 before looking for a flat is essential. Without this, many young people take on credit card debt just to move in — starting their independent life already in the red."
+    },
+    {
+      "type": "slide",
+      "title": "NZ Rental Costs by City — 2025 Figures",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the city comparison table. For Auckland at $400/week per room, what percentage of Tama's net monthly income of $2,873 goes to rent alone?",
+      "content": "Rental costs vary enormously across New Zealand. Here are approximate median weekly rents for a room in a shared flat in 2025.\n\nAuckland (inner suburbs — Ponsonby, Mt Eden, Parnell): $380 to $520 per week per room.\nAuckland (outer suburbs — Manukau, Henderson, Papakura): $270 to $380 per week.\nWellington (CBD and inner — Te Aro, Newtown, Aro Valley): $300 to $450 per week.\nChristchurch: $220 to $330 per week. Generally the most affordable of the main centres.\nDunedin: $180 to $280 per week. Cheapest of the main NZ cities for renters.\nHamilton: $220 to $310 per week.\nTauranga: $260 to $360 per week.\nNapier/Hastings: $220 to $290 per week.\n\nEntire flat (not room):\nAuckland 2-bedroom: $700 to $950 per week — shared two ways = $350 to $475 each.\nWellington 2-bedroom: $600 to $800 per week.\nChristchurch 2-bedroom: $500 to $650 per week.\n\nRule of thumb: aim to keep total housing costs (rent + power + internet) under 35% of net income. In Auckland at $400/week rent, you need net income of at least $1,143 per week to stay at 35% — more than most entry-level wages. Auckland housing is genuinely challenging for young workers."
+    },
+    {
+      "type": "truefalse",
+      "statement": "In New Zealand, a landlord can keep your full bond if you leave before the end of a fixed-term tenancy.",
+      "correctAnswer": false,
+      "explanation": "False. Your bond is held by Tenancy Services, not the landlord. The landlord cannot take it without applying to the Tenancy Tribunal and proving a valid claim — for example, unpaid rent or damage beyond fair wear and tear. Leaving early may breach your tenancy agreement and result in costs, but the landlord cannot simply keep the bond. Always check tenancy.govt.nz if you have a dispute about your bond.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Total Flatting Costs — Beyond Rent",
+      "estimatedMinutes": 4,
+      "notePrompt": "Add up all of Jordan's monthly Auckland housing costs. What percentage of his $3,283 net monthly income is this? Is it sustainable long-term?",
+      "content": "Rent is the biggest housing cost but not the only one. Here is a realistic monthly breakdown for Jordan sharing a Ponsonby flat with three flatmates at $380/week per person.\n\nRent: $380 x 4.33 = $1,645.40/month\nPower (whole flat ~$350-450/month, shared 4 ways): $90/month each\nInternet ($75-100/month, shared 4 ways): $22/month each\nContents insurance (strongly recommended): $20/month\nFlat supplies (toilet paper, cleaning products, shared condiments): $25/month\nTotal monthly housing costs: $1,802.40\n\n$1,802.40 ÷ $3,283 net monthly income = 54.9% of income to housing.\n\nThis exceeds the recommended 35%. This is a genuine financial challenge for young Aucklanders on entry-level wages. Options to manage this:\n\n1. Choose outer suburbs (Manukau, Henderson) where rooms are $270 to $320/week — saving $260 to $390/month on rent alone.\n2. Share with more flatmates (3-bedroom split 3 ways vs 4 ways makes little difference but helps).\n3. Negotiate. Landlords sometimes accept slightly lower rent for good tenants who pay consistently and care for the property.\n4. Accept that Auckland requires a higher percentage of income on housing until income rises — but protect the savings habit regardless by automating transfers on payday."
+    },
+    {
+      "type": "slide",
+      "title": "Your Rights as a NZ Tenant",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down four key tenant rights. Why is knowing these rights financially important — how could they save you money?",
+      "content": "Understanding your legal rights as a tenant protects you financially. The Residential Tenancies Act 2019 (as amended in 2021) governs all NZ residential tenancies.\n\nKey rights to know:\n\nLandlords must maintain properties. They are required to maintain heating, insulation, weathertightness, drainage, and sanitary facilities. If the property is unhealthy or in disrepair, you can request repairs in writing. Tenancy Services can order repairs if the landlord does not act.\n\nBond must be lodged with Tenancy Services within 23 working days. If your landlord has not lodged it, they may be committing an offence. Check your bond status free at tenancy.govt.nz.\n\nLandlords must give notice before entry. Except in genuine emergencies, minimum 24 hours written notice is required before a landlord can enter your property.\n\nRent increases are regulated. In 2025, landlords can increase rent no more than once every 12 months and must give 60 days written notice of any increase.\n\nNo retaliatory action. A landlord cannot end your tenancy, reduce services, or raise rent in response to you exercising your legal rights (e.g. requesting repairs, complaining about conditions).\n\nFree dispute resolution: Tenancy Services provides free mediation for landlord-tenant disputes. If mediation fails, the Tenancy Tribunal can issue binding orders. Use these services — they exist specifically to protect renters."
+    },
+    {
+      "type": "slide",
+      "title": "The Tenancy Agreement — What to Check Before Signing",
+      "estimatedMinutes": 4,
+      "notePrompt": "List five things you should check in a tenancy agreement before signing. Why is each one financially important?",
+      "content": "Never sign a tenancy agreement without reading it properly. Here is what to check.\n\n1. Weekly rent and payment method. Confirm the exact weekly amount and how it is to be paid. Bank transfer is safest — it creates a clear record. Paying cash to a landlord is risky if no receipts are provided.\n\n2. Bond amount. Should be no more than 4 weeks rent. Anything higher is illegal in NZ. Make sure it matches what is written in the agreement.\n\n3. Fixed-term or periodic. A 12-month fixed term means you are committed to that property for 12 months — even if you lose your job or need to leave for other reasons. Understand what you are committing to.\n\n4. What is included. Is the property furnished or unfurnished? Are utilities included in the rent or additional? Is the internet already connected?\n\n5. Property condition report. You should receive a property inspection report at the start of the tenancy. Read it carefully and note any existing damage — if it is not recorded and appears later, you could be unfairly charged. Take photos on day one and email them to yourself for a timestamp.\n\n6. Landlord contact details and emergency maintenance process. Who do you call if the hot water fails on a Sunday night? Make sure this is clear before you need it."
+    },
+    {
+      "type": "scenario",
+      "title": "Moving Out Scenario — Can Mia Afford Wellington?",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Mia is 19, currently in Hamilton living at home paying $150/week board. Net monthly income: $2,532. She has been offered a Wellington job at the same rate but 38 hours per week.\n\nNew Wellington net income: 38 hours x $23.15 = $879.70 gross/week. After PAYE ~$128 and KiwiSaver ~$26.39 = net $725.31/week = $3,140.59/month.\n\nWellington flat costs (sharing 3-bedroom in Newtown):\nRent: $335/week = $1,450.55/month\nPower share: $75/month\nInternet share: $22/month\nGroceries: $300/month\nMetlink transport: $90/month\nPhone: $45/month\nContents insurance: $20/month",
+      "challenge": "1. Calculate Mia's total monthly expenses in Wellington.\n2. Calculate her monthly surplus or deficit.\n3. What percentage of net monthly income goes to housing (rent + power + internet)?\n4. Mia needs 4 weeks bond plus 2 weeks advance rent to move in. Calculate the total upfront cost.\n5. Mia has $1,900 in savings. Can she afford to move? What should she do?",
+      "hints": [
+        "Q1: Add all monthly costs listed.",
+        "Q3: Housing = rent + power + internet only.",
+        "Q4: 4 weeks bond = 4 x $335. 2 weeks advance = 2 x $335."
+      ],
+      "solution": "1. Total monthly expenses:\nRent: $1,450.55\nPower: $75.00\nInternet: $22.00\nGroceries: $300.00\nTransport: $90.00\nPhone: $45.00\nContents insurance: $20.00\nTotal: $2,002.55\n\n2. Monthly surplus: $3,140.59 - $2,002.55 = $1,138.04 — a healthy surplus allowing $1,138 for wants, savings, and irregular expenses.\n\n3. Housing percentage: ($1,450.55 + $75 + $22) ÷ $3,140.59 = $1,547.55 ÷ $3,140.59 = 49.3% of net income. This slightly exceeds the 35% target but is manageable in Wellington's context where rents are high relative to entry wages.\n\n4. Upfront moving costs:\n4 weeks bond: 4 x $335 = $1,340\n2 weeks advance rent: 2 x $335 = $670\nTotal upfront: $2,010\n\n5. Can Mia afford to move? With $1,900 in savings, Mia is $110 short of just the upfront costs — and she also needs money for furniture if the flat is unfurnished, plus living costs during her first pay cycle. She cannot comfortably move right now.\n\nRecommendation: Mia should save an additional $1,500 to $2,000 (approximately 3 to 4 months at her current Hamilton savings rate) before committing. She should confirm whether the Wellington flat is furnished. She could also ask the new employer if they offer a relocation contribution — some Wellington employers do. If the career opportunity is time-sensitive, Mia could ask family for a short-term loan of $500 to bridge the gap with a clear repayment plan."
+    },
+    {
+      "type": "quiz",
+      "title": "Renting Knowledge Check",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A landlord asks for 6 weeks bond on a $350/week Wellington flat. What is correct under NZ tenancy law?",
+          "options": [
+            "This is fine — landlords can set any bond amount.",
+            "This is illegal — bond cannot exceed 4 weeks rent in NZ.",
+            "This is fine for furnished properties.",
+            "Bond limits only apply in Auckland."
+          ],
+          "correctIndex": 1,
+          "explanation": "Under the Residential Tenancies Act, bond cannot exceed 4 weeks rent for residential tenancies in NZ. Six weeks bond on a $350/week flat would be $2,100 — the legal maximum is 4 weeks = $1,400. If a landlord requests more than 4 weeks bond, they are breaking the law. Report it to Tenancy Services."
+        },
+        {
+          "question": "What is the minimum notice a landlord must give before entering your rental property in NZ (except in genuine emergencies)?",
+          "options": ["No notice required", "12 hours", "24 hours", "48 hours"],
+          "correctIndex": 2,
+          "explanation": "Under the Residential Tenancies Act, landlords must give at least 24 hours written notice before entering a rental property, except in genuine emergencies (e.g. fire, serious damage). This is your legal right as a tenant. If a landlord enters without notice, they may be liable for a penalty under the Act."
+        }
+      ]
+    }
+  ]
+}

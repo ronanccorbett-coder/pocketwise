@@ -1,0 +1,110 @@
+{
+  "title": "Week 1 Challenge — Complete Viability Assessment",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 100,
+  "bloomsLevel": "Apply and Analyse",
+  "nceaFocus": "AS92031: Synthesising revenue/expense description, viability assessment, factor analysis, and improvement strategies into a complete Achieved-to-Merit response",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Apply all Week 1 viability skills to a complete NZ scenario independently",
+    "Write a full viability report at the Achieved to Merit level with specific figures throughout",
+    "Identify what is needed to move from Merit toward Excellence in AS92031"
+  ],
+  "vocabulary": [
+    { "term": "Financial sustainability", "definition": "The long-term ability of an organisation to maintain adequate revenue relative to expenses. Emphasises ongoing future performance rather than just the current snapshot." },
+    { "term": "Sensitivity analysis", "definition": "Testing how the financial position changes under different scenarios — for example, what happens to net profit if revenue falls by 10% or wages rise by 5%." },
+    { "term": "Compounding factors", "definition": "When two or more factors combine to create a larger negative effect than either would cause alone. Identifying compounding is an Excellence-level skill in AS92031." }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Week 1 Recap Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved to Merit",
+      "questions": [
+        {
+          "question": "A community theatre has revenue of $99,000 and expenses of $92,500. What is the net surplus margin?",
+          "options": ["5.2%", "6.6%", "8.1%", "93.4%"],
+          "correctIndex": 1,
+          "explanation": "Net surplus = $99,000 minus $92,500 = $6,500. Net surplus margin = $6,500 divided by $99,000 multiplied by 100 = 6.6%. This is a modest margin — viable but without much buffer against income reductions or cost increases."
+        },
+        {
+          "question": "A business has gross profit of $141,000 and operating expenses of $135,200. What is its net profit?",
+          "options": ["$141,000", "$5,800", "$276,200", "$135,200"],
+          "correctIndex": 1,
+          "explanation": "Net profit = Gross profit minus Operating expenses = $141,000 minus $135,200 = $5,800. Gross profit is the intermediate figure after COGS. Net profit is what remains after all expenses. $276,200 would be adding gross profit and operating expenses together — incorrect. $135,200 and $141,000 are the expense and gross profit figures respectively, not the net result."
+        },
+        {
+          "question": "Which viability assessment best meets the AS92031 Achieved requirement?",
+          "options": [
+            "The business makes money.",
+            "The business has revenue and expenses.",
+            "KickStart Sports is currently financially viable — it generates a net profit of $5,800 on revenue of $303,000, a 1.9% net margin. However, this thin margin leaves minimal buffer against cost increases or revenue falls.",
+            "The business should improve its finances."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C meets the Achieved requirement: it states whether the organisation is viable (yes), provides specific figures (net profit $5,800, revenue $303,000, margin 1.9%), and acknowledges the margin of safety concern. Achieved requires a viability statement supported by data — not a vague assertion."
+        },
+        {
+          "question": "An external factor increases KickStart Sports' COGS by $12,000 per year. Revenue stays at $303,000. What happens to net profit?",
+          "options": [
+            "Net profit increases by $12,000",
+            "Net profit is unchanged",
+            "Net profit decreases by $12,000 — from $5,800 to a loss of $6,200",
+            "Net profit decreases by $6,000"
+          ],
+          "correctIndex": 2,
+          "explanation": "If revenue is constant and COGS increases by $12,000, gross profit decreases by $12,000. If operating expenses are unchanged, net profit also decreases by $12,000 — from $5,800 to negative $6,200. A cost increase flows directly and fully to the net result when revenue does not change."
+        },
+        {
+          "question": "A community theatre's $18,000 council grant is not renewed. New revenue: $81,000. Expenses: $92,500. What is the annual deficit?",
+          "options": ["$6,500", "$11,500", "$18,000", "$99,000"],
+          "correctIndex": 1,
+          "explanation": "$81,000 minus $92,500 = negative $11,500 deficit. The grant loss turns a $6,500 surplus into an $11,500 deficit — a swing of $24,500 in the financial position. This illustrates the significant risk of dependence on a single grant source for a community organisation."
+        },
+        {
+          "question": "Which improvement strategy is a revenue growth strategy rather than a cost reduction strategy?",
+          "options": [
+            "Renegotiating a lower lease rent",
+            "Reducing the marketing budget",
+            "Introducing holiday sports coaching generating $21,600 in new annual revenue",
+            "Switching to a cheaper equipment supplier"
+          ],
+          "correctIndex": 2,
+          "explanation": "Introducing coaching generates new income — it is a revenue growth strategy. Renegotiating rent and switching suppliers reduce costs. Reducing marketing is also cost-cutting. Revenue growth strategies improve viability by increasing the income side of the equation; cost-cutting improves it by reducing the expense side. Both are valid approaches but have different risks and mechanisms."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "Week 1 Challenge — Wiremu's Corner Dairy Full Analysis",
+      "estimatedMinutes": 20,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "Revisiting Wiremu's corner dairy in Manurewa with full financial context.\n\nRevenue:\nGroceries and snacks: $284,000\nLotto terminal commissions: $22,000\nPhone top-up commissions: $8,400\nATM transaction fees: $3,600\nTotal Revenue: $318,000\n\nCOGS (stock): $196,000\nGross Profit: $122,000 (38.4% margin)\n\nOperating Expenses:\nWiremu's wages: $58,000\nRent: $38,400\nUtilities: $12,800\nInsurance: $5,600\nSecurity: $2,400\nAccounting and licensing: $3,200\nDepreciation: $4,800\nTotal Operating Expenses: $125,200\n\nNet Loss: negative $3,200\nReserves: $42,000\n\nContext: Revenue two years ago was $346,000 with net profit of $24,800. A Pak'nSave opened 1.2km away approximately 18 months ago. Wiremu estimates he lost approximately $28,000 in annual grocery sales due to the Pak'nSave opening.",
+      "challenge": "Write a complete Achieved-to-Merit viability report covering all of the following:\n\n1. Describe the dairy's revenue, expenses, and net loss with specific figures.\n2. State whether the dairy is currently financially viable. Support with at least two pieces of evidence.\n3. Identify TWO internal factors and TWO external factors affecting viability.\n4. Explain how the Pak'nSave opening specifically affects the dairy's viability. Include the financial impact calculation.\n5. Propose TWO specific improvement strategies. For each, explain the mechanism and estimate the annual financial improvement.",
+      "hints": [
+        "For Q2: Use both the current loss figure AND the trend — revenue fell from $346,000 to $318,000 as supporting evidence.",
+        "For Q4: The $28,000 grocery sales loss at a 38.4% gross margin reduces gross profit by approximately $10,752. Show this calculation.",
+        "For Q5: Corner dairies have advantages over large supermarkets — convenience, extended hours, community relationships, speciality products. Build your strategies around these."
+      ],
+      "solution": "1. Revenue, expenses, and net loss:\nWiremu's dairy earns total revenue of $318,000 from four sources: grocery and snack sales ($284,000 — 89.3% of revenue), Lotto commissions ($22,000 — 6.9%), phone top-up commissions ($8,400 — 2.6%), and ATM fees ($3,600 — 1.1%). COGS for stock is $196,000, producing gross profit of $122,000 at a 38.4% margin. After operating expenses of $125,200, the dairy incurs a net loss of $3,200.\n\n2. Viability assessment: The dairy is currently NOT financially viable. Two pieces of evidence: First, the business is generating a net loss of $3,200 — expenses exceed revenue, meaning it is not self-sustaining at current trading levels. Second, the revenue trend is deeply concerning — revenue has fallen from $346,000 two years ago to $318,000 now, a decline of $28,000 (8.1%), while the business has swung from a $24,800 net profit to a $3,200 net loss. This trajectory suggests structural deterioration, not a one-off bad year. The $42,000 in reserves provides a buffer but does not make the business viable — it extends how long Wiremu can sustain operations while losing money.\n\n3. Internal and external factors:\nInternal factor 1 — Revenue diversification: Wiremu earns from four income streams (groceries, Lotto, phone top-ups, ATM fees). This partially protects viability — the $34,000 in non-grocery income is unaffected by the Pak'nSave competition and continues to contribute to covering costs.\nInternal factor 2 — High fixed wage cost: Wiremu pays himself $58,000 per year — 18.2% of total revenue and the single largest expense. These wages are relatively fixed, meaning any revenue reduction directly reduces the surplus without a corresponding cost offset.\n\nExternal factor 1 — Pak'nSave competition: The large supermarket has drawn approximately $28,000 in grocery revenue away from Wiremu's dairy, directly contributing to the current loss. This is a permanent structural change, not a temporary disruption.\nExternal factor 2 — Rising wholesale costs: Grocery wholesale price inflation increases Wiremu's COGS relative to his selling prices, compressing his 38.4% gross margin. If COGS rises by 3% due to supplier price increases, annual stock costs increase by approximately $5,880 — further worsening the loss.\n\n4. How the Pak'nSave opening affects viability:\nThe Pak'nSave's lower prices have drawn approximately $28,000 of grocery revenue away from Wiremu's dairy. At a gross margin of 38.4%, the $28,000 revenue loss reduces gross profit by approximately $28,000 multiplied by 38.4% = $10,752. Two years ago, gross profit was approximately $346,000 multiplied by 38.4% = $132,864. This year it is $122,000 — a reduction of approximately $10,864, closely matching the calculation. This gross profit reduction, with fixed costs largely unchanged, has turned the $24,800 net profit of two years ago into a $3,200 net loss today. The Pak'nSave opening is the primary driver of the viability deterioration.\n\n5. Improvement strategies:\nStrategy 1 — Extended hours targeting convenience shoppers: Pak'nSave closes at 9pm. Wiremu could extend to 11pm seven days per week, targeting late-night convenience purchases (snacks, drinks, emergency grocery items) that are typically less price-sensitive and carry higher margins. If extended hours generate an additional $600 per week in high-margin sales (estimated $31,200 additional annual revenue at approximately 50% gross margin = $15,600 additional gross profit), and incremental costs are $8,000 (power, part-time staff), the net improvement is approximately $7,600 — turning the $3,200 loss into a $4,400 profit.\n\nStrategy 2 — Introduce community-specific product lines: Pak'nSave's standardised national range does not cater specifically to the Manurewa Pacific and Māori community. Wiremu could stock culturally specific products popular in the community — Pacific island staples, specific NZ-made products, and brands with strong community loyalty. Products with higher margins and loyal repeat customers improve gross profit without requiring large volume. If this generates $12,000 in additional annual revenue at a 50% margin ($6,000 gross profit) with $1,500 in incremental costs, the net improvement is $4,500 — further strengthening the path to viability."
+    },
+    {
+      "type": "slide",
+      "title": "What Does Excellence Look Like in AS92031?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the two Excellence requirements for AS92031. Give one example of each using the dairy scenario.",
+      "content": "You have now completed Merit-level analysis in this standard. Here is what Excellence requires — and as always, it is a different kind of thinking, not just more writing.\n\nAt Achieved: Describe revenue, expenses, profit or loss, and factors. State whether the organisation is viable.\n\nAt Merit: Explain how factors affect viability. Propose specific improvement strategies.\n\nAt Excellence: Two additional things.\n\nFirst — Analyse the RELATIONSHIP between factors. Show how they interact and compound. For Wiremu's dairy: the Pak'nSave entry (external) reduces revenue. But the damage is amplified because Wiremu's fixed cost structure (internal — high wages and rent) provides no offsetting flexibility. If his costs were lower, the same revenue loss would still leave him profitable. The two factors work together — the external factor exploits the vulnerability created by the internal cost structure.\n\nSecond — Analyse the EXTENT to which proposed improvements would achieve financial viability. Would Strategy 1 fully restore viability? Partially? Under what assumptions? 'Strategy 1 is projected to add $7,600 to net profit, turning the $3,200 loss into a $4,400 profit — fully restoring viability if the $600 per week in late-night sales is achieved. However, if late-night sales are only $350 per week (possible in winter months), the net improvement falls to approximately $3,250 — reducing the loss to negative $950 rather than achieving full viability. Strategy 2 would then be needed to fully close the gap.'\n\nWe practise these two Excellence moves in Week 2."
+    },
+    {
+      "type": "reflection",
+      "title": "Your Project — Organisation Introduction",
+      "estimatedMinutes": 5,
+      "prompt": "For your AS92031 project, you will select a real or fictional NZ organisation and produce a complete financial viability analysis. Start planning now. Write three to four sentences covering: What organisation will you analyse? What are its approximate revenue sources and major expenses? Is it currently viable based on what you know? What factor most significantly affects its viability? The more specific you are now, the easier the project will be to complete.",
+      "nceaLink": "Your project directly mirrors the AS92031 external exam structure. Practising the full viability report — from describing revenue and expenses through to evaluating improvement strategies — is the most effective preparation for the external exam."
+    }
+  ]
+}

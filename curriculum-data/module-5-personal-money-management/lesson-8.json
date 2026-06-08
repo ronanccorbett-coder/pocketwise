@@ -1,0 +1,104 @@
+{
+  "title": "Module Review — Money Habits That Last",
+  "order": 8,
+  "dayNumber": 8,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Apply and Evaluate",
+  "nceaFocus": "Extra Learning",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Demonstrate mastery of personal money management concepts from the full module",
+    "Apply budgeting, net pay, interest, and debt knowledge to a new scenario",
+    "Reflect on which habits to implement personally"
+  ],
+  "vocabulary": [
+    { "term": "Financial independence", "definition": "Having enough savings and income to cover your living expenses without relying on others or going into debt. Not the same as being rich — it means having choices." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "What You Now Know — Module Summary",
+      "estimatedMinutes": 4,
+      "notePrompt": "Without looking at your notes, write down the six most important things you learned in this module. Then check against this summary — what did you miss?",
+      "content": "This module covered the practical money skills every NZ young person needs. Here is what you now know.\n\n1. Gross pay vs net pay: Your take-home pay is gross minus PAYE tax, KiwiSaver contribution, and any student loan deductions. Knowing your net pay is the starting point for every budget.\n\n2. Tax codes: M for your main job, S for a second job. Getting these right prevents an end-of-year tax bill from IRD.\n\n3. The 50/30/20 rule: 50% needs, 30% wants, 20% savings. A simple framework that creates financial balance. Adjust ratios to your circumstances — but never reduce savings below 10% if you can avoid it.\n\n4. Pay yourself first: Automate savings on payday. Do not save what is left — save first and live on what remains.\n\n5. Compound interest: Interest on interest. Use A = P(1+r)^n. Starting early at 18 versus 28 can produce $450,000 more at retirement — from the same monthly contributions.\n\n6. Consumer debt: Credit cards at 22% per annum and payday loans are expensive. Use the avalanche method to clear debt. BNPL is fine if paid on time, dangerous if not. Build savings before making large purchases wherever possible.\n\n7. Renting: You need 4 to 6 weeks cash upfront to move into a flat. Bond is legally capped at 4 weeks rent. Know your rights under the Residential Tenancies Act.\n\n8. KiwiSaver: Enrol, choose a growth fund under age 40, contribute at least 3%. Let compound interest and employer contributions do the heavy lifting."
+    },
+    {
+      "type": "scenario",
+      "title": "Final Assessment — Ethan's First Year of Work",
+      "estimatedMinutes": 25,
+      "nceaLevel": "Achieved",
+      "setup": "Ethan is 19 and has been working full-time for 6 months at a Rotorua tourism company. He earns $24.50 per hour (slightly above minimum wage due to a quick promotion) for 40 hours per week. He rents a room in a Rotorua flat at $280 per week. He is enrolled in KiwiSaver at 3%. He has a $1,200 credit card balance at 21% per annum that he accumulated before getting this job.\n\nEthan's monthly spending (self-reported):\nRent: $1,212.40/month ($280/wk x 4.33)\nPower share: $70/month\nGroceries: $280/month\nEating out: $350/month\nPhone: $45/month\nPetrol: $110/month\nStreaming services: $30/month\nClothing: $120/month\nSocial activities: $180/month\nCredit card minimum: $35/month\nTotal spending: $2,432.40",
+      "challenge": "1. Calculate Ethan's gross weekly pay, annual PAYE (first $14,000 at 10.5%, rest at 17.5%), weekly PAYE, KiwiSaver deduction, and net weekly and monthly pay.\n2. Apply the 50/30/20 rule to Ethan's net monthly income. What should his needs, wants, and savings targets be?\n3. Categorise each of Ethan's spending items as a Need or Want.\n4. Is Ethan currently saving anything? Show the calculation.\n5. Calculate the monthly interest charge on Ethan's $1,200 credit card at 21% per annum.\n6. If Ethan can redirect $200 per month from wants to extra credit card repayment (total monthly payment $235), how many months to repay the $1,200 (simplified — divide balance by monthly payment, ignoring interest accumulation)?\n7. Write a one-page financial plan summary for Ethan: what should he do in the next 3 months to improve his position?",
+      "hints": [
+        "Q1: Gross = $24.50 x 40 = $980/week. Annual = $980 x 52 = $50,960. PAYE: $14,000 x 10.5% = $1,470 + $36,960 x 17.5% = $6,468 = $7,938 annual / $152.65 weekly. KiwiSaver: $980 x 3% = $29.40.",
+        "Q4: Net monthly - total spending = savings. If negative, he is spending more than he earns.",
+        "Q5: Monthly interest = $1,200 x (21% ÷ 12).",
+        "Q7: Prioritise stopping the credit card interest haemorrhage first, then set up automated savings."
+      ],
+      "solution": "1. Net pay calculation:\nGross weekly: $24.50 x 40 = $980.00\nAnnual gross: $980 x 52 = $50,960\nPAYE: $14,000 x 10.5% = $1,470 + $36,960 x 17.5% = $6,468 = $7,938 annual\nWeekly PAYE: $7,938 ÷ 52 = $152.65\nKiwiSaver 3%: $980 x 0.03 = $29.40\nNet weekly: $980.00 - $152.65 - $29.40 = $797.95\nNet monthly: $797.95 x 4.33 = $3,455.12\n\n2. 50/30/20 targets:\nNeeds (50%): $1,727.56\nWants (30%): $1,036.54\nSavings (20%): $691.02\n\n3. Categorisation:\nNeeds: Rent $1,212.40, Power $70, Groceries $280, Phone $45, Petrol $110, Credit card minimum $35 = $1,752.40\nWants: Eating out $350, Streaming $30, Clothing $120, Social $180 = $680\n\n4. Current savings: $3,455.12 - $2,432.40 = $1,022.72 unaccounted surplus. But stated savings = $0. Ethan is likely spending the $1,022 surplus on untracked purchases (similar to Anika). His actual disposable after stated expenses is $1,022.72 but all of it disappears.\n\n5. Monthly credit card interest: $1,200 x (0.21 ÷ 12) = $1,200 x 0.0175 = $21.00 per month. His $35 minimum payment means only $14 reduces the principal each month.\n\n6. Months to repay $1,200 at $235/month: $1,200 ÷ $235 = 5.1 months. Approximately 5 to 6 months including interest. Much better than the minimum repayment trajectory.\n\n7. Three-month financial plan for Ethan:\n\nMonth 1 — Attack the credit card and find the leak:\nSet up bank transaction alerts and review every purchase for 2 weeks. Identify where the $1,022 untracked monthly spending goes. Increase credit card payment to $235/month (minimum $35 plus $200 from reduced eating out). Reduce eating out from $350 to $150 ($200 saving). Set up automatic $300 transfer to a separate savings account on payday.\n\nMonth 2 — Build the system:\nCredit card balance now approximately $985 (after $235 payment and interest). Continue extra repayments. Emergency fund building with $300/month auto-transfer. Review the untracked spending data — identify 2 to 3 categories to cap.\n\nMonth 3 — Clear the credit card and redirect:\nAt $235/month, credit card should be approximately $750 by end of month 3. Keep the attack going. Once the card is clear (approximately month 5), redirect the full $235 to savings — now saving $535/month (15.5% of net). Cut up or freeze the credit card to avoid re-accumulating balance.\n\nLong-term: Switch KiwiSaver from default fund to growth fund (check with provider — takes 2 minutes online). Set a 12-month savings goal once debt is cleared: $3,000 emergency fund by month 8 from today."
+    },
+    {
+      "type": "quiz",
+      "title": "Full Module Review Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Ethan earns $980 gross per week. KiwiSaver is 3% and PAYE is $152.65. What is his net weekly pay?",
+          "options": ["$797.95", "$827.35", "$950.60", "$980.00"],
+          "correctIndex": 0,
+          "explanation": "$980.00 - $152.65 - $29.40 (3% KiwiSaver) = $797.95 net weekly. KiwiSaver = $980 x 0.03 = $29.40. Both deductions reduce take-home pay but serve different purposes — PAYE funds public services, KiwiSaver builds personal retirement wealth."
+        },
+        {
+          "question": "Using the 50/30/20 rule, what percentage of net income should go to savings and debt repayment?",
+          "options": ["10%", "15%", "20%", "25%"],
+          "correctIndex": 2,
+          "explanation": "The 50/30/20 rule allocates 20% of take-home pay to savings and debt repayment. For Ethan with $3,455 monthly net income, this is $691 per month. Consistently saving 20% of income from the start of your working life is one of the most powerful long-term financial habits."
+        },
+        {
+          "question": "A $1,200 credit card debt at 21% per annum. Monthly interest charge?",
+          "options": ["$21.00", "$25.20", "$10.50", "$252.00"],
+          "correctIndex": 0,
+          "explanation": "$1,200 x (0.21 ÷ 12) = $1,200 x 0.0175 = $21.00 per month. Of Ethan's $35 minimum payment, $21 goes to interest and only $14 reduces the principal. At this rate it takes many years and hundreds of dollars in interest to repay. Extra repayments make a dramatic difference."
+        },
+        {
+          "question": "You deposit $5,000 at 4.5% compounded annually. Using A = P(1+r)^n, what is your balance after 3 years?",
+          "options": ["$5,675.00", "$5,703.40", "$5,688.20", "$5,750.00"],
+          "correctIndex": 1,
+          "explanation": "A = $5,000 x (1.045)^3 = $5,000 x 1.14084 = $5,704.20 (minor rounding gives $5,703.40). With simple interest it would be $5,000 + $5,000 x 4.5% x 3 = $5,675. Compounding adds approximately $28 extra over 3 years on this amount."
+        },
+        {
+          "question": "Which NZ resource provides free financial mentoring by phone?",
+          "options": ["IRD (0800 775 247)", "MoneyTalks (0800 345 123)", "Commerce Commission", "RBNZ"],
+          "correctIndex": 1,
+          "explanation": "MoneyTalks (0800 345 123) is the NZ government's free financial helpline offering advice from trained financial mentors. IRD handles tax and KiwiSaver queries. The Commerce Commission enforces consumer law. The RBNZ sets monetary policy. MoneyTalks is specifically for personal financial guidance, budgeting help, and debt management."
+        },
+        {
+          "question": "Under NZ tenancy law, what is the maximum bond a landlord can charge?",
+          "options": ["2 weeks rent", "4 weeks rent", "6 weeks rent", "There is no legal maximum"],
+          "correctIndex": 1,
+          "explanation": "Under the Residential Tenancies Act, bond cannot exceed 4 weeks rent for standard residential tenancies. This protects tenants from landlords demanding large upfront sums. If asked for more than 4 weeks bond, the landlord is acting illegally — report it to Tenancy Services."
+        },
+        {
+          "question": "Zoe earns $926 gross per week and contributes 3% KiwiSaver. Her employer contributes another 3%. What is the combined weekly KiwiSaver amount from both sources?",
+          "options": ["$27.78", "$55.56", "$83.34", "$13.89"],
+          "correctIndex": 1,
+          "explanation": "Employee 3%: $926 x 0.03 = $27.78. Employer 3%: another $27.78. Combined: $55.56 per week. This is $55.56 building in Zoe's KiwiSaver account every week — $2,889 per year — without counting investment returns. Over 47 working years this grows to over $1 million with consistent growth fund returns."
+        },
+        {
+          "question": "What is the 'pay yourself first' principle?",
+          "options": [
+            "Pay all your bills before spending on wants",
+            "Transfer your savings amount automatically on payday before spending on anything else",
+            "Keep all your earnings for yourself and pay board last",
+            "Always pay cash rather than using cards"
+          ],
+          "correctIndex": 1,
+          "explanation": "Pay yourself first means automating a savings transfer on payday — before spending on wants — so savings happen regardless of willpower. Most people save what is left after spending. Pay yourself first reverses this: live on what is left after saving. This single habit is responsible for more financial success stories than almost any other personal finance principle."
+        }
+      ]
+    }
+  ]
+}

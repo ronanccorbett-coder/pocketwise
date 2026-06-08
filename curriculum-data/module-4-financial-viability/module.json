@@ -1,0 +1,28 @@
+{
+  "title": "Financial Viability",
+  "description": "Students learn how to assess whether a New Zealand organisation is financially viable, analyse the factors affecting viability, and evaluate strategies for improvement.",
+  "ageTrack": "15",
+  "yearLevel": "Year 11",
+  "nceaStandard": "AS92031",
+  "nceaStandardTitle": "Demonstrate understanding of the financial viability of an organisation",
+  "nceaCredits": 5,
+  "nceaAssessmentType": "External",
+  "durationWeeks": 2,
+  "sessionsPerWeek": 4,
+  "minutesPerSession": 45,
+  "xpReward": 740,
+  "iconName": "chart-bar",
+  "colorTheme": "#e3a008",
+  "isPublished": true,
+  "order": 4,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "AS92031 is a Year 11 external standard worth 5 credits. Students assess the financial viability of NZ organisations by describing revenue, expenses and profit or loss, identifying factors affecting viability, and at Merit and Excellence levels explaining how those factors work and evaluating whether proposed improvements would restore viability.",
+  "learningObjectives": [
+    "Describe the revenue, expenses, and profit or loss of a NZ organisation using actual figures",
+    "Describe internal and external factors that affect an organisation's financial viability",
+    "State whether an organisation is financially viable with supporting data",
+    "Explain how internal and external factors affect viability and how the organisation could improve its financial viability",
+    "Analyse the relationship between factors affecting viability and evaluate the extent to which proposed improvements would achieve financial viability"
+  ],
+  "assessmentTask": "Students are given a scenario describing a NZ organisation's financial position. They must describe revenue, expenses, and profit or loss with specific figures, describe factors affecting viability, and state whether the organisation is financially viable. At Merit level they explain how factors affect viability and propose specific improvements. At Excellence level they analyse the relationship between factors and evaluate the extent to which improvements would achieve viability."
+}
