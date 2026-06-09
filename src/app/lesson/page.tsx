@@ -740,16 +740,7 @@ function LessonContent() {
   function handleComplete() {
     if (!lesson || !folder || !filename) return;
     completeLesson(`${folder}/${filename}`, lesson.xpReward, 50, lesson.title);
-    // Check if this was the last lesson in the module — fire corner celebration
-    if (lessons && lessons.length > 0) {
-      const completedIds = (state?.completedLessons as string[] ?? []);
-      const allDone = lessons.every((l: any) =>
-        l.filename === filename || completedIds.includes(`${folder}/${l.filename}`)
-      );
-      if (allDone) {
-        window.dispatchEvent(new CustomEvent("pw:module-complete", { detail: { folder } }));
-      }
-    }
+    window.dispatchEvent(new CustomEvent("pw:module-complete", { detail: { folder } }));
     setCompleted(true);
   }
 
