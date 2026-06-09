@@ -12,6 +12,8 @@ const FONT = "Inter, system-ui, sans-serif";
 
 // ── Shared bet selector ───────────────────────────────────────────────────
 function BetSelector({ bet, setBet, max, bets = [1,2,5,10,25,50] }: { bet: number; setBet: (n: number) => void; max: number; bets?: number[] }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", justifyContent: "center" }}>
       <span style={{ color: T.text3, fontSize: "0.82rem" }}>Bet:</span>
@@ -181,6 +183,8 @@ function handVal(hand: string[]) {
 }
 
 function BJCard({ card, hidden }: { card: string; hidden?: boolean }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const isRed = ["H","D"].includes(card.slice(-1));
   return (
     <div style={{ width: 52, height: 76, borderRadius: 8, background: hidden ? "#1a4030" : "#fff", border: "1.5px solid rgba(255,255,255,.2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: hidden ? "1.5rem" : "1.25rem", fontWeight: 900, color: hidden ? "#1a4030" : "#1a1a1a", boxShadow: "0 2px 8px rgba(0,0,0,.4)", flexShrink: 0 }}>
