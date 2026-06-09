@@ -46,10 +46,9 @@ function calcWin(reels: string[], bet: number) {
   return 0;
 }
 
-function SlotsGame({ balance, onWin, onLoss }: {
+function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
- balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(2);
   const [reels, setReels] = useState(["DM","7X","ST"]);
   const [spinning, setSpinning] = useState(false);
@@ -190,10 +189,9 @@ function BJCard({ card, hidden }: { card: string; hidden?: boolean }) {
   );
 }
 
-function BlackjackGame({ balance, onWin, onLoss }: {
+function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
- balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(5);
   const [deck, setDeck] = useState<string[]>([]);
   const [playerHand, setPlayerHand] = useState<string[]>([]);
@@ -316,10 +314,9 @@ function BlackjackGame({ balance, onWin, onLoss }: {
 // ── ROULETTE ──────────────────────────────────────────────────────────────
 const RED_NUMS = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
 
-function RouletteGame({ balance, onWin, onLoss }: {
+function RouletteGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
- balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(5);
   const [betType, setBetType] = useState<"red"|"black"|"odd"|"even"|"1-18"|"19-36"|null>(null);
   const [spinning, setSpinning] = useState(false);
@@ -438,10 +435,9 @@ const NZ_FIXTURES = [
   { home: "Silver Ferns", away: "Australia Diamonds", sport: "Netball", oddsHome: 1.80, oddsAway: 2.10, oddsDraw: null },
 ];
 
-function SportsGame({ balance, onWin, onLoss }: {
+function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
- balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(10);
   const [selected, setSelected] = useState<{fixture:number;pick:"home"|"away"|"draw";odds:number}|null>(null);
   const [result, setResult] = useState<{msg:string;win:boolean}|null>(null);
@@ -532,10 +528,9 @@ function SportsGame({ balance, onWin, onLoss }: {
 }
 
 // ── MINES ─────────────────────────────────────────────────────────────────
-function MinesGame({ balance, onWin, onLoss }: {
+function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
- balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(5);
   const [mineCount, setMineCount] = useState(5);
   const [board, setBoard] = useState<("hidden"|"safe"|"mine")[]>(Array(25).fill("hidden"));
@@ -654,10 +649,9 @@ function MinesGame({ balance, onWin, onLoss }: {
 }
 
 // ── CRASH ─────────────────────────────────────────────────────────────────
-function CrashGame({ balance, onWin, onLoss }: {
+function CrashGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
- balance: number; onWin: (n:number)=>void; onLoss: (n:number)=>void }) {
   const [bet, setBet] = useState(5);
   const [autoCashout, setAutoCashout] = useState(2.0);
   const [phase, setPhase] = useState<"bet"|"running"|"crashed"|"cashed">("bet");
