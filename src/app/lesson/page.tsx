@@ -81,6 +81,8 @@ function HeartsBar({ hearts, maxHearts = 3 }: { hearts: number; maxHearts?: numb
 
 // ── SLIDE ─────────────────────────────────────────────────────────────────
 function SlideActivity({ a }: { a: Activity }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   return (
     <div style={{ animation: "slideIn 0.3s ease-out" }}>
       <div style={{
@@ -468,6 +470,8 @@ function TypedActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => void
 
 // ── VOCABULARY ────────────────────────────────────────────────────────────
 function VocabActivity({ a, vocab }: { a: Activity; vocab: { term: string; definition: string }[] }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [flipped, setFlipped] = useState<Set<number>>(new Set());
   return (
     <div style={{ animation: "slideIn 0.3s ease-out" }}>
@@ -493,6 +497,8 @@ function VocabActivity({ a, vocab }: { a: Activity; vocab: { term: string; defin
 
 // ── SCENARIO ──────────────────────────────────────────────────────────────
 function ScenarioActivity({ a }: { a: Activity }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [showSolution, setShowSolution] = useState(false);
   return (
     <div style={{ animation: "slideIn 0.3s ease-out" }}>
@@ -534,6 +540,8 @@ function ScenarioActivity({ a }: { a: Activity }) {
 
 // ── REFLECTION ────────────────────────────────────────────────────────────
 function ReflectionActivity({ a }: { a: Activity }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [text, setText] = useState("");
   return (
     <div style={{ animation: "slideIn 0.3s ease-out" }}>
@@ -552,6 +560,8 @@ function ReflectionActivity({ a }: { a: Activity }) {
 
 // ── DISCUSSION ────────────────────────────────────────────────────────────
 function DiscussionActivity({ a }: { a: Activity }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   return (
     <div style={{ animation: "slideIn 0.3s ease-out" }}>
       <div style={{ background: "rgba(14,165,233,.12)", borderRadius: 6, padding: "3px 12px", display: "inline-block", marginBottom: 20, fontSize: "0.72rem", fontWeight: 700, color: "#7dd3fc", textTransform: "uppercase", letterSpacing: ".06em" }}>
@@ -663,6 +673,8 @@ function NoHeartsScreen({ onRestart, onLeave }: { onRestart: () => void; onLeave
 
 // ── MAIN LESSON CONTENT ────────────────────────────────────────────────────
 function LessonContent() {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const searchParams = useSearchParams();
   const router = useRouter();
   const folder = searchParams?.get("folder") ?? null;
