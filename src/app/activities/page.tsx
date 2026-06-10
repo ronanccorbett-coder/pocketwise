@@ -657,7 +657,15 @@ function NetWorthChallenge({
   const [scenario] = useState(() => scenarios[Math.floor(Math.random() * scenarios.length)]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   
-
+  if (alreadyDone) return (
+    <div style={{ background: T.card, border: `1.5px solid ${T.border}`, borderRadius: 18, padding: "40px 32px", textAlign: "center" }}>
+      <div style={{ fontSize: "2.5rem", marginBottom: 12 }}>✅</div>
+      <h3 style={{ fontWeight: 800, color: T.text, fontSize: "1.1rem", marginBottom: 8 }}>Budget tracked today!</h3>
+      <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 20, lineHeight: 1.6 }}>You've already completed the Budget Tracker today. Come back tomorrow for a new scenario and more XP.</p>
+      <div style={{ background: isDark ? "rgba(118,173,37,.1)" : "rgba(90,154,26,.08)", border: `1px solid ${isDark ? "rgba(118,173,37,.2)" : "rgba(90,154,26,.15)"}`, borderRadius: 10, padding: "10px 16px", fontSize: "0.82rem", color: T.green, marginBottom: 20 }}>Next reset: midnight tonight</div>
+      <button onClick={onBack} className="btn-3d-green" style={{ padding: "11px 32px", fontSize: "0.875rem" }}>Back to Activities</button>
+    </div>
+  );
   const [checked, setChecked] = useState(false);
 
   const correctAssets = scenario.items.filter(i => i.type === "asset").reduce((s, i) => s + i.amount, 0);
