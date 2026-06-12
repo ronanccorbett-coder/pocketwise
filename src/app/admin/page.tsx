@@ -81,38 +81,37 @@ export default function AdminPage() {
   const pendingRequests = teacherRequests.filter(r => r.status === "pending");
 
   async function approveTeacher(req: any) {
-    // Mark request approved first
+    // 1. Mark request approved
     await db.transact((db as any).tx.teacherRequests[req.id].update({ status: "approved", reviewedAt: Date.now() }));
+    // 2. Try to update userState
+    await forceApproveByEmail(req.email);
+  }
 
-    // Find ALL userState rows matching this teacher (by userId OR email)
-    const matchingRows = allStates.filter(s =>
-      s.userId === req.userId || s.email === req.email
+  async function forceApproveByEmail(email: string) {
+    if (!email) return;
+    const matching = allStates.filter((s: any) =>
+      s.email === email || s.userId === allStates.find((u: any) => u.email === email)?.userId
     );
-
-    console.log("approveTeacher: req=", req, "matchingRows=", matchingRows, "allStates count=", allStates.length);
-
-    if (matchingRows.length === 0) {
-      alert(`No userState found for ${req.email} (userId: ${req.userId}). Total states loaded: ${allStates.length}. They may need to log in first.`);
+    console.log("forceApproveByEmail:", email, "allStates:", allStates.length, "matching:", matching.length);
+    if (matching.length === 0) {
+      alert(`No userState row found for ${email}. Make sure they have logged in at least once. allStates has ${allStates.length} rows total.`);
       return;
     }
-
-    // Update all matching rows
-    const txns = matchingRows.map(us =>
-      (db as any).tx.userState[us.id].update({
-        teacherApproved: true,
-        role: "teacher",
-        pendingNews: JSON.stringify({
-          id: "teacher_approved_" + Date.now(),
-          headline: "Your educator access has been approved!",
-          body: "You now have full access to the Class Dashboard. Click 'My Class' in the navigation bar to create your first class and start tracking your students.",
-          category: "opportunity",
-          sentiment: "positive",
-          date: Date.now(),
-        }),
-      })
-    );
-    await db.transact(txns);
-    alert(`Approved! Updated ${matchingRows.length} row(s) for ${req.email}.`);
+    const approvalData = {
+      teacherApproved: true,
+      role: "teacher",
+      email: email,
+      pendingNews: JSON.stringify({
+        id: "teacher_approved_" + Date.now(),
+        headline: "Your educator access has been approved!",
+        body: "You now have full access to the Class Dashboard. Click My Class in the navigation bar to get started.",
+        category: "opportunity",
+        sentiment: "positive",
+        date: Date.now(),
+      }),
+    };
+    await db.transact(matching.map((us: any) => (db as any).tx.userState[us.id].update(approvalData)));
+    alert(`Done — set teacherApproved=true on ${matching.length} row(s) for ${email}`);
   }
 
   async function rejectTeacher(req: any) {
@@ -393,6 +392,23 @@ export default function AdminPage() {
                 </div>
               )}
 
+              {/* Debug: userState roles */}
+              <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "14px 20px", marginBottom: 16 }}>
+                <div style={{ fontWeight: 700, color: "#8b9dc3", fontSize: "0.78rem", marginBottom: 8 }}>
+                  UserState rows with role/teacher data ({allStates.filter((s:any) => s.role || s.email).length} have email or role)
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 4, maxHeight: 140, overflowY: "auto" }}>
+                  {allStates.filter((s:any) => s.email).map((s:any) => (
+                    <div key={s.id} style={{ display: "flex", gap: 10, fontSize: "0.72rem", alignItems: "center" }}>
+                      <span style={{ color: "#fff", minWidth: 200, overflow: "hidden", textOverflow: "ellipsis" }}>{s.email}</span>
+                      <span style={{ background: s.role === "teacher" ? "rgba(59,130,246,.2)" : "rgba(255,255,255,.05)", color: s.role === "teacher" ? "#60a5fa" : "#4a6a8a", padding: "1px 6px", borderRadius: 4, fontSize: "0.65rem" }}>{s.role ?? "student"}</span>
+                      <span style={{ background: s.teacherApproved ? "rgba(118,173,37,.2)" : "rgba(255,255,255,.05)", color: s.teacherApproved ? "#76AD25" : "#4a6a8a", padding: "1px 6px", borderRadius: 4, fontSize: "0.65rem" }}>{s.teacherApproved ? "approved" : "not approved"}</span>
+                      <button onClick={() => forceApproveByEmail(s.email)} style={{ background: "rgba(118,173,37,.15)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 4, padding: "2px 8px", color: "#76AD25", fontSize: "0.65rem", cursor: "pointer", fontFamily: "Inter,sans-serif" }}>Approve</button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Manual teacher approval tool */}
               <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "16px 20px", marginBottom: 24 }}>
                 <div style={{ fontWeight: 700, color: "#8b9dc3", fontSize: "0.8rem", marginBottom: 10 }}>Manual Teacher Approval (by email)</div>
@@ -408,12 +424,7 @@ export default function AdminPage() {
                     onClick={async () => {
                       const email = (document.getElementById("manualApproveEmail") as HTMLInputElement)?.value?.trim();
                       if (!email) return;
-                      const rows = allStates.filter(s => s.email === email);
-                      if (rows.length === 0) { alert(`No userState found for ${email}`); return; }
-                      await db.transact(rows.map(us =>
-                        (db as any).tx.userState[us.id].update({ teacherApproved: true, role: "teacher" })
-                      ));
-                      alert(`Done! Set teacherApproved=true on ${rows.length} row(s) for ${email}`);
+                      await forceApproveByEmail(email);
                     }}>
                     Force Approve
                   </button>
