@@ -997,6 +997,18 @@ function XPCelebration({ xp, onDone }: { xp: number; onDone: () => void }) {
 }
 
 // ── Main Activities Hub ───────────────────────────────────────────────────
+
+const ACTIVITIES: ActivityDef[] = [
+  { id:"nz-quiz", title:"NZ Finance Quiz", description:"8 questions on NZ-specific financial concepts.", xpReward:80, xpRequired:0, category:"knowledge", estimatedMins:5, Icon:Brain, iconColor:"#76AD25", iconBg:"#e8f5d0", badge:"Hot", component:NZQuiz },
+  { id:"budget-challenge", title:"Budget Challenge", description:"Sort NZ expenses into Needs, Wants, and Savings. Once per day.", xpReward:75, xpRequired:0, category:"simulation", estimatedMins:6, Icon:PiggyBank, iconColor:"#3B82F6", iconBg:"#eff6ff", badge:"Daily", component:BudgetChallenge },
+  { id:"net-worth", title:"Net Worth Tracker", description:"Label each item as asset or liability and calculate net worth.", xpReward:65, xpRequired:50, category:"simulation", estimatedMins:5, Icon:TrendingUp, iconColor:"#f59e0b", iconBg:"#fffbeb", component:NetWorthChallenge },
+  { id:"interest-calc", title:"Compound Interest", description:"Calculate real NZ savings using compound interest formula.", xpReward:60, xpRequired:100, category:"challenge", estimatedMins:7, Icon:Calculator, iconColor:"#a78bfa", iconBg:"#faf5ff", component:InterestChallenge },
+  { id:"word-challenge", title:"Financial Word Guess", description:"Guess the financial term from a clue. 25 different words.", xpReward:40, xpRequired:0, category:"daily", estimatedMins:2, Icon:BookOpen, iconColor:"#ec4899", iconBg:"#fdf2f8", badge:"Quick", component:WordChallenge },
+  { id:"spending-diary", title:"Daily Spending Diary", description:"Log today's spending and see your breakdown. Saves across sessions.", xpReward:30, xpRequired:0, category:"daily", estimatedMins:3, Icon:Target, iconColor:"#22c55e", iconBg:"#f0fdf4", badge:"Daily", component:SpendingDiary },
+];
+
+const CAT_LABELS: Record<string,string> = { all:"All", knowledge:"Knowledge", simulation:"Simulation", challenge:"Challenge", daily:"Daily" };
+
 export default function ActivitiesPage() {
   const { isDark } = useTheme();
   const T = {
