@@ -11,8 +11,8 @@ const _schema = i.schema({
     userState: i.entity({
       userId:           i.string().indexed(),
       email:            i.string().optional(),
-      role:             i.string().optional(),       // "student" | "teacher"
-      teacherApproved:  i.boolean().optional(),      // set by admin
+      role:             i.string().optional(),
+      teacherApproved:  i.boolean().optional(),
       xp:               i.number().optional(),
       balance:          i.number().optional(),
       totalEarned:      i.number().optional(),
@@ -80,7 +80,7 @@ const _schema = i.schema({
       fullName:    i.string().optional(),
       school:      i.string().optional(),
       message:     i.string().optional(),
-      status:      i.string().optional(), // "pending" | "approved" | "rejected"
+      status:      i.string().optional(),
       createdAt:   i.number().optional(),
       reviewedAt:  i.number().optional(),
     }),
@@ -95,11 +95,12 @@ const _schema = i.schema({
       description:     i.string().optional(),
       subject:         i.string().optional(),
       yearLevel:       i.string().optional(),
-      announcement:    i.string().optional(),         // latest announcement text
+      announcement:    i.string().optional(),
       announcedAt:     i.number().optional(),
-      xpMultiplier:    i.number().optional(),         // class-wide XP boost (1.0 default)
-      assignedModules: i.json().optional(),           // array of folder names
-      challenge:       i.string().optional(),         // JSON of current challenge
+      xpMultiplier:    i.number().optional(),
+      assignedModules: i.json().optional(),
+      challenge:       i.string().optional(),
+      subscriptionId:  i.string().optional(),  // linked subscription
     }),
 
     classEnrollments: i.entity({
@@ -114,6 +115,20 @@ const _schema = i.schema({
       authorEmail: i.string().optional(),
       text:        i.string().optional(),
       createdAt:   i.number().optional(),
+    }),
+
+    // ── Subscription plans ────────────────────────────────────────────────
+    subscriptions: i.entity({
+      planCode:      i.string().unique().indexed(), // the code teacher enters
+      ownerEmail:    i.string().indexed().optional(),
+      ownerId:       i.string().indexed().optional(),
+      classroomId:   i.string().indexed().optional(),
+      status:        i.string().optional(), // "active" | "expired" | "unused"
+      plan:          i.string().optional(), // "trial" | "monthly" | "annual"
+      activatedAt:   i.number().optional(),
+      expiresAt:     i.number().optional(),
+      studentLimit:  i.number().optional(), // max students (default 35)
+      createdAt:     i.number().optional(),
     }),
   },
 });

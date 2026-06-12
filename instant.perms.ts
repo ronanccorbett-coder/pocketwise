@@ -73,6 +73,14 @@ const rules = {
       delete: "auth.id != null",
     },
   },
+  subscriptions: {
+    allow: {
+      view:   "auth.id != null",
+      create: "auth.id != null",
+      update: "auth.id != null",
+      delete: "auth.id != null",
+    },
+  },
 } satisfies InstantRules;
 
 export default rules;
