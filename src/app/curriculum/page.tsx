@@ -39,6 +39,8 @@ const FONT = "Inter, system-ui, sans-serif";
 
 // ── Animated XP bar ──────────────────────────────────────────────────────
 function XPBar({ xp }: { xp: number }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const milestones = [100, 200, 300, 500, 800, 1500, 3000, 5000];
   const nextMilestone = milestones.find(m => m > xp) ?? 5000;
   const prevMilestone = milestones.filter(m => m <= xp).pop() ?? 0;
@@ -67,6 +69,8 @@ function XPBar({ xp }: { xp: number }) {
 
 // ── Module Card ───────────────────────────────────────────────────────────
 function ModuleCard({ mod, completedLessons, isAssigned = false }: { mod: Module; completedLessons: string[]; isAssigned?: boolean }) {
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const router = useRouter();
   const accent = mod.colorTheme || "#76AD25";
   const totalXp = mod.lessons.reduce((s, l) => s + (l.xpReward || 0), 0) || mod.xpReward || 0;
