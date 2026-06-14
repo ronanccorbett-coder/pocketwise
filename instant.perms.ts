@@ -4,8 +4,8 @@ const rules = {
   userState: {
     allow: {
       view:   "auth.id != null",
-      create: "auth.id != null && data.userId == auth.id",
-      update: "auth.id != null && data.userId == auth.id",
+      create: "auth.id != null",
+      update: "auth.id != null",  // open — admin needs to update other users
       delete: "auth.id != null && data.userId == auth.id",
     },
   },
