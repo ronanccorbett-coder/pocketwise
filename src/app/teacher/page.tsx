@@ -608,7 +608,7 @@ export default function TeacherPage() {
                       {subError && <div style={{ fontSize: "0.78rem", color: "#EF4444", display: "flex", alignItems: "center", gap: 5 }}><AlertCircle size={12} />{subError}</div>}
                       {subSuccess && <div style={{ fontSize: "0.78rem", color: "#76AD25", display: "flex", alignItems: "center", gap: 5 }}><Check size={12} />{subSuccess}</div>}
                       <div style={{ marginTop: 12, background: T.bg3, borderRadius: 8, padding: "10px 12px", fontSize: "0.75rem", color: T.text3 }}>
-                        Contact <span style={{ color: "#76AD25" }}>hello@pocketwisenz.com</span> to get a plan code.
+                        Contact <span style={{ color: "#76AD25" }}>ronanccorbett@gmail.com</span> to get a plan code.
                       </div>
                     </div>
                   )}
