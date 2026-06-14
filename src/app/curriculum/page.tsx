@@ -5,8 +5,9 @@ import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
+import { db } from "@/lib/db";
 import { MascotMessage, pickMood } from "@/components/Mascot";
-import { BookOpen, Zap, Award, Flame, ChevronRight, Lock, Play, Star } from "lucide-react";
+import { BookOpen, Zap, Award, Flame, ChevronRight, Lock, Play, Star, Megaphone } from "lucide-react";
 
 type Lesson = {
   filename: string; title: string; order: number; xpReward: number;
@@ -38,8 +39,6 @@ const FONT = "Inter, system-ui, sans-serif";
 
 // ── Animated XP bar ──────────────────────────────────────────────────────
 function XPBar({ xp }: { xp: number }) {
-  const { isDark } = useTheme();
-  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const milestones = [100, 200, 300, 500, 800, 1500, 3000, 5000];
   const nextMilestone = milestones.find(m => m > xp) ?? 5000;
   const prevMilestone = milestones.filter(m => m <= xp).pop() ?? 0;
@@ -67,9 +66,7 @@ function XPBar({ xp }: { xp: number }) {
 }
 
 // ── Module Card ───────────────────────────────────────────────────────────
-function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: string[] }) {
-  const { isDark } = useTheme();
-  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+function ModuleCard({ mod, completedLessons, isAssigned = false }: { mod: Module; completedLessons: string[]; isAssigned?: boolean }) {
   const router = useRouter();
   const accent = mod.colorTheme || "#76AD25";
   const totalXp = mod.lessons.reduce((s, l) => s + (l.xpReward || 0), 0) || mod.xpReward || 0;
@@ -114,7 +111,14 @@ function ModuleCard({ mod, completedLessons }: { mod: Module; completedLessons: 
         )}
 
         <h3 style={{ fontWeight: 800, fontSize: "0.975rem", color: T.text, marginBottom: 4, lineHeight: 1.3 }}>
-          {mod.title}
+          <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+            <span>{mod.title}</span>
+            {isAssigned && (
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 3, background: "rgba(245,158,11,.15)", color: "#f59e0b", padding: "2px 8px", borderRadius: 99, fontSize: "0.62rem", fontWeight: 800, border: "1px solid rgba(245,158,11,.25)", flexShrink: 0 }}>
+                <Star size={9} fill="#f59e0b" color="#f59e0b" /> Assigned
+              </span>
+            )}
+          </div>
         </h3>
 
         {mod.description && (
@@ -201,11 +205,22 @@ export default function CurriculumPage() {
     strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
   };
 
-  const { state } = useGame();
+  const { state, user } = useGame();
   const [modules, setModules] = useState<Module[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [activeLevel, setActiveLevel] = useState("11");
+
+  // Fetch class assigned modules
+  const { data: enrollData } = db.useQuery(
+    user ? { classEnrollments: { $: { where: { studentEmail: user.email ?? "" } } } } : null
+  );
+  const { data: classData } = db.useQuery({ classrooms: {} });
+  const enrollments   = (enrollData?.classEnrollments ?? []) as any[];
+  const allClassrooms = (classData?.classrooms ?? []) as any[];
+  const myClassrooms  = enrollments.map(e => allClassrooms.find((c: any) => c.id === e.classroomId)).filter(Boolean);
+  const assignedModules: string[] = myClassrooms.flatMap((cls: any) => (cls.assignedModules as string[]) ?? []);
+  const classAnnouncement = myClassrooms[0]?.announcement ?? null;
 
   const completedLessons = (state?.completedLessons as string[]) ?? [];
   const xp = state?.xp ?? 0;
@@ -227,7 +242,14 @@ export default function CurriculumPage() {
 
   const grouped = LEVEL_GROUPS.map(g => ({
     ...g,
-    modules: modules.filter(m => getLevel(m) === g.key).sort((a, b) => (a.order ?? 99) - (b.order ?? 99)),
+    modules: modules
+      .filter(m => getLevel(m) === g.key)
+      .sort((a, b) => {
+        const aAssigned = assignedModules.includes(a.folder) ? 0 : 1;
+        const bAssigned = assignedModules.includes(b.folder) ? 0 : 1;
+        if (aAssigned !== bAssigned) return aAssigned - bAssigned;
+        return (a.order ?? 99) - (b.order ?? 99);
+      }),
   }));
 
   const currentGroup = grouped.find(g => g.key === activeLevel) ?? grouped[0];
@@ -341,6 +363,16 @@ export default function CurriculumPage() {
             </div>
           )}
 
+          {classAnnouncement && (
+            <div style={{ background: "rgba(59,130,246,.08)", border: "1px solid rgba(59,130,246,.15)", borderRadius: 12, padding: "12px 16px", marginBottom: 16, display: "flex", alignItems: "flex-start", gap: 10, animation: "pw-slide-up .3s ease" }}>
+              <Megaphone size={15} color="#60a5fa" style={{ flexShrink: 0, marginTop: 2 }} />
+              <div>
+                <div style={{ fontSize: "0.68rem", color: "#60a5fa", fontWeight: 700, marginBottom: 3, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>Teacher Announcement</div>
+                <div style={{ color: T.text, fontSize: "0.82rem", lineHeight: 1.5 }}>{classAnnouncement}</div>
+              </div>
+            </div>
+          )}
+
           {!loading && !error && currentGroup.modules.length === 0 && (
             <div style={{ background: T.card, border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px", textAlign: "center" }}>
               <div style={{ fontSize: "3rem", marginBottom: 12 }}>📚</div>
@@ -349,13 +381,43 @@ export default function CurriculumPage() {
             </div>
           )}
 
-          {!loading && !error && currentGroup.modules.length > 0 && (
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16 }}>
-              {currentGroup.modules.map(mod => (
-                <ModuleCard key={mod.folder} mod={mod} completedLessons={completedLessons} />
-              ))}
-            </div>
-          )}
+          {!loading && !error && currentGroup.modules.length > 0 && (() => {
+            const assigned   = currentGroup.modules.filter(m => assignedModules.includes(m.folder));
+            const unassigned = currentGroup.modules.filter(m => !assignedModules.includes(m.folder));
+            return (
+              <div>
+                {assigned.length > 0 && (
+                  <>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                      <Star size={13} color="#f59e0b" fill="#f59e0b" />
+                      <span style={{ fontSize: "0.72rem", fontWeight: 700, color: "#f59e0b", textTransform: "uppercase" as const, letterSpacing: ".05em" }}>Assigned by your teacher</span>
+                      <div style={{ flex: 1, height: 1, background: "rgba(245,158,11,.2)" }} />
+                    </div>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16, marginBottom: unassigned.length > 0 ? 24 : 0 }}>
+                      {assigned.map(mod => (
+                        <ModuleCard key={mod.folder} mod={mod} completedLessons={completedLessons} isAssigned />
+                      ))}
+                    </div>
+                  </>
+                )}
+                {unassigned.length > 0 && (
+                  <>
+                    {assigned.length > 0 && (
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                        <span style={{ fontSize: "0.72rem", fontWeight: 700, color: T.text3, textTransform: "uppercase" as const, letterSpacing: ".05em" }}>All modules</span>
+                        <div style={{ flex: 1, height: 1, background: T.border }} />
+                      </div>
+                    )}
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16 }}>
+                      {unassigned.map(mod => (
+                        <ModuleCard key={mod.folder} mod={mod} completedLessons={completedLessons} isAssigned={false} />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            );
+          })()}
         </div>
 
         <style>{`
