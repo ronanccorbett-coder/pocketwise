@@ -89,29 +89,44 @@ export default function AdminPage() {
 
   async function forceApproveByEmail(email: string) {
     if (!email) return;
-    const matching = allStates.filter((s: any) =>
-      s.email === email || s.userId === allStates.find((u: any) => u.email === email)?.userId
-    );
-    console.log("forceApproveByEmail:", email, "allStates:", allStates.length, "matching:", matching.length);
+
+    // Try from allStates first
+    let matching = allStates.filter((s: any) => s.email === email);
+
+    // If not found in allStates, try a fresh query
     if (matching.length === 0) {
-      alert(`No userState row found for ${email}. Make sure they have logged in at least once. allStates has ${allStates.length} rows total.`);
+      alert(`Not found in loaded data (${allStates.length} rows). Trying direct write via known row IDs... Check console.`);
+      console.log("All states:", allStates.map((s:any) => ({ id: s.id, email: s.email, userId: s.userId })));
       return;
     }
+
     const approvalData = {
       teacherApproved: true,
       role: "teacher",
       email: email,
-      pendingNews: JSON.stringify({
-        id: "teacher_approved_" + Date.now(),
-        headline: "Your educator access has been approved!",
-        body: "You now have full access to the Class Dashboard. Click My Class in the navigation bar to get started.",
-        category: "opportunity",
-        sentiment: "positive",
-        date: Date.now(),
-      }),
     };
-    await db.transact(matching.map((us: any) => (db as any).tx.userState[us.id].update(approvalData)));
-    alert(`Done — set teacherApproved=true on ${matching.length} row(s) for ${email}`);
+
+    console.log("Approving:", matching.map((s:any) => s.id));
+    try {
+      await db.transact(matching.map((us: any) => (db as any).tx.userState[us.id].update(approvalData)));
+      alert(`Done — wrote teacherApproved=true on ${matching.length} row(s) for ${email}. Check InstantDB Explorer to confirm.`);
+    } catch(e: any) {
+      alert(`Write FAILED: ${e.message ?? String(e)}`);
+      console.error(e);
+    }
+  }
+
+  async function forceApproveById(rowId: string) {
+    if (!rowId) return;
+    try {
+      await db.transact((db as any).tx.userState[rowId].update({
+        teacherApproved: true,
+        role: "teacher",
+      }));
+      alert(`Done — wrote teacherApproved=true on row ${rowId}`);
+    } catch(e: any) {
+      alert(`Write FAILED: ${e.message ?? String(e)}`);
+    }
   }
 
   async function rejectTeacher(req: any) {
@@ -399,11 +414,12 @@ export default function AdminPage() {
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 4, maxHeight: 140, overflowY: "auto" }}>
                   {allStates.filter((s:any) => s.email).map((s:any) => (
-                    <div key={s.id} style={{ display: "flex", gap: 10, fontSize: "0.72rem", alignItems: "center" }}>
-                      <span style={{ color: "#fff", minWidth: 200, overflow: "hidden", textOverflow: "ellipsis" }}>{s.email}</span>
-                      <span style={{ background: s.role === "teacher" ? "rgba(59,130,246,.2)" : "rgba(255,255,255,.05)", color: s.role === "teacher" ? "#60a5fa" : "#4a6a8a", padding: "1px 6px", borderRadius: 4, fontSize: "0.65rem" }}>{s.role ?? "student"}</span>
-                      <span style={{ background: s.teacherApproved ? "rgba(118,173,37,.2)" : "rgba(255,255,255,.05)", color: s.teacherApproved ? "#76AD25" : "#4a6a8a", padding: "1px 6px", borderRadius: 4, fontSize: "0.65rem" }}>{s.teacherApproved ? "approved" : "not approved"}</span>
-                      <button onClick={() => forceApproveByEmail(s.email)} style={{ background: "rgba(118,173,37,.15)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 4, padding: "2px 8px", color: "#76AD25", fontSize: "0.65rem", cursor: "pointer", fontFamily: "Inter,sans-serif" }}>Approve</button>
+                    <div key={s.id} style={{ display: "flex", gap: 8, fontSize: "0.7rem", alignItems: "center", flexWrap: "wrap" }}>
+                      <span style={{ color: "#fff", minWidth: 180, overflow: "hidden", textOverflow: "ellipsis" }}>{s.email ?? "no email"}</span>
+                      <span style={{ color: "#4a5a7a", fontFamily: "monospace", fontSize: "0.6rem" }}>{s.id?.slice(0,8)}</span>
+                      <span style={{ background: s.role === "teacher" ? "rgba(59,130,246,.2)" : "rgba(255,255,255,.05)", color: s.role === "teacher" ? "#60a5fa" : "#4a6a8a", padding: "1px 6px", borderRadius: 4, fontSize: "0.62rem" }}>{s.role ?? "student"}</span>
+                      <span style={{ background: s.teacherApproved ? "rgba(118,173,37,.2)" : "rgba(255,255,255,.05)", color: s.teacherApproved ? "#76AD25" : "#4a6a8a", padding: "1px 6px", borderRadius: 4, fontSize: "0.62rem" }}>{s.teacherApproved ? "✓ approved" : "not approved"}</span>
+                      <button onClick={() => forceApproveById(s.id)} style={{ background: "rgba(118,173,37,.15)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 4, padding: "2px 8px", color: "#76AD25", fontSize: "0.62rem", cursor: "pointer", fontFamily: "Inter,sans-serif" }}>Approve by ID</button>
                     </div>
                   ))}
                 </div>
