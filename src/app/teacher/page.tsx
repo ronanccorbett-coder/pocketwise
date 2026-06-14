@@ -711,7 +711,7 @@ export default function TeacherPage() {
                   ) : (
                     <div>
                       <p style={{ color: T.text3, fontSize: "0.78rem", marginBottom: 14, lineHeight: 1.5 }}>
-                        Enter your plan code to activate PocketWise for this class. Students won't be able to access the platform until the subscription is active.
+                        Enter your plan code to activate PocketWise for this class. Students will not be able to access the platform until the subscription is active.
                       </p>
                       <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
                         <input value={planCodeInput} onChange={e => { setPlanCodeInput(e.target.value.toUpperCase()); setSubError(""); }} placeholder="XXXX-XXXX-XXXX" className="pw-input" style={{ flex: 1, fontSize: "1rem", letterSpacing: ".1em", fontWeight: 800 }} onKeyDown={e => { if (e.key === "Enter") activateSubscription(); }} />
