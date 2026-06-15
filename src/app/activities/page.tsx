@@ -67,7 +67,7 @@ function BudgetChallenge({
   onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
 
   const { isDark } = useTheme();
-  const T = { bg: isDark?T.bg:T.bg, bg2: isDark?T.card:T.card, bg3: isDark?T.bg3:T.bg3, card: isDark?T.card:T.card, text: isDark?T.card:T.bg, text2: isDark?T.text2:T.text2, text3: isDark?T.text3:T.text3, border: isDark?T.input:"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?T.input:T.bg3, inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [scenario] = useState(() => BUDGET_SCENARIOS[Math.floor(Math.random() * BUDGET_SCENARIOS.length)]);
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [checked, setChecked] = useState(false);
@@ -195,7 +195,7 @@ function InterestChallenge({
   onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
 
   const { isDark } = useTheme();
-  const T = { bg: isDark?T.bg:T.bg, bg2: isDark?T.card:T.card, bg3: isDark?T.bg3:T.bg3, card: isDark?T.card:T.card, text: isDark?T.card:T.bg, text2: isDark?T.text2:T.text2, text3: isDark?T.text3:T.text3, border: isDark?T.input:"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?T.input:T.bg3, inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [qIdx, setQIdx] = useState(0);
   const [principal, setPrincipal] = useState("");
   const [rate, setRate] = useState("");
@@ -308,7 +308,7 @@ function NZQuiz({
   onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
 
   const { isDark } = useTheme();
-  const T = { bg: isDark?T.bg:T.bg, bg2: isDark?T.card:T.card, bg3: isDark?T.bg3:T.bg3, card: isDark?T.card:T.card, text: isDark?T.card:T.bg, text2: isDark?T.text2:T.text2, text3: isDark?T.text3:T.text3, border: isDark?T.input:"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?T.input:T.bg3, inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [qIdx, setQIdx] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [locked, setLocked] = useState(false);
@@ -428,7 +428,7 @@ function WordChallenge({
   onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
 
   const { isDark } = useTheme();
-  const T = { bg: isDark?T.bg:T.bg, bg2: isDark?T.card:T.card, bg3: isDark?T.bg3:T.bg3, card: isDark?T.card:T.card, text: isDark?T.card:T.bg, text2: isDark?T.text2:T.text2, text3: isDark?T.text3:T.text3, border: isDark?T.input:"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?T.input:T.bg3, inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [clue] = useState(() => WORD_CLUES[Math.floor(Math.random() * WORD_CLUES.length)]);
   const [input, setInput] = useState("");
   const [attempts, setAttempts] = useState(0);
@@ -534,7 +534,7 @@ function NetWorthChallenge({
   onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
 
   const { isDark } = useTheme();
-  const T = { bg: isDark?T.bg:T.bg, bg2: isDark?T.card:T.card, bg3: isDark?T.bg3:T.bg3, card: isDark?T.card:T.card, text: isDark?T.card:T.bg, text2: isDark?T.text2:T.text2, text3: isDark?T.text3:T.text3, border: isDark?T.input:"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?T.input:T.bg3, inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const scenarios = [
     {
       name: "Wiremu's Finances",
@@ -668,7 +668,7 @@ function SpendingDiary({
   onComplete, onBack }: { onComplete: (xp: number) => void; onBack: () => void }) {
 
   const { isDark } = useTheme();
-  const T = { bg: isDark?T.bg:T.bg, bg2: isDark?T.card:T.card, bg3: isDark?T.bg3:T.bg3, card: isDark?T.card:T.card, text: isDark?T.card:T.bg, text2: isDark?T.text2:T.text2, text3: isDark?T.text3:T.text3, border: isDark?T.input:"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?T.input:T.bg3, inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [entries, setEntries] = useState<{ desc: string; amount: string; category: string }[]>([
     { desc: "", amount: "", category: "Food" }
   ]);
@@ -835,7 +835,7 @@ const CAT_LABELS: Record<string, string> = {
 // ── XP Celebration overlay ────────────────────────────────────────────────
 function XPCelebration({ xp, onDone }: { xp: number; onDone: () => void }) {
   const { isDark } = useTheme();
-  const T = { bg: isDark?T.bg:T.bg, bg2: isDark?T.card:T.card, bg3: isDark?T.bg3:T.bg3, card: isDark?T.card:T.card, text: isDark?T.card:T.bg, text2: isDark?T.text2:T.text2, text3: isDark?T.text3:T.text3, border: isDark?T.input:"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?T.input:T.bg3, inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 1000, background: "rgba(6,13,26,.92)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", fontFamily: FONT }}>
       <Confetti active />
@@ -857,23 +857,7 @@ function XPCelebration({ xp, onDone }: { xp: number; onDone: () => void }) {
 // ── Main Activities Hub ───────────────────────────────────────────────────
 export default function ActivitiesPage() {
   const { isDark } = useTheme();
-  const T = {
-    bg:      isDark ? T.bg : T.bg,
-    bg2:     isDark ? T.card : T.card,
-    bg3:     isDark ? T.bg3 : T.bg3,
-    text:    isDark ? T.card : T.bg,
-    text2:   isDark ? T.text2 : T.text2,
-    text3:   isDark ? T.text3 : T.text3,
-    border:  isDark ? T.input : "rgba(0,0,0,.08)",
-    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
-    card:    isDark ? T.card : T.card,
-    input:   isDark ? T.input : T.bg3,
-    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
-    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
-    green:   isDark ? "#76AD25" : "#5a9a1a",
-    accent:  isDark ? "#f59e0b" : "#d97706",
-    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
-  };
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
 
   const [filter, setFilter] = useState("all");
   const [activeActivity, setActiveActivity] = useState<ActivityDef | null>(null);
@@ -967,7 +951,7 @@ export default function ActivitiesPage() {
                 >
                   <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 12 }}>
                     <div style={{ width: 46, height: 46, borderRadius: 12, background: activity.iconBg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                      {locked ? <Lock size={20} color=T.text3 /> : <Icon size={22} color={activity.iconColor} />}
+                      {locked ? <Lock size={20} color={T.text}3 /> : <Icon size={22} color={activity.iconColor} />}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 3 }}>
@@ -984,7 +968,7 @@ export default function ActivitiesPage() {
                           <span style={{ fontSize: "0.75rem", fontWeight: 700, color: "#f59e0b" }}>Up to {activity.xpReward} XP</span>
                         </div>
                         <div style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                          <Timer size={11} color=T.text3 />
+                          <Timer size={11} color={T.text}3 />
                           <span style={{ fontSize: "0.72rem", color: T.text3 }}>{activity.estimatedMins} min</span>
                         </div>
                       </div>

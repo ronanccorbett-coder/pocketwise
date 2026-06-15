@@ -58,7 +58,7 @@ function Ring({ pct, color, size = 72, thickness = 7 }: { pct: number; color: st
   const dash = Math.min(pct / 100, 1) * circ;
   return (
     <svg width={size} height={size} style={{ transform: "rotate(-90deg)", flexShrink: 0 }}>
-      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke=T.input strokeWidth={thickness} />
+      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={T.input} strokeWidth={thickness} />
       <circle cx={size/2} cy={size/2} r={r} fill="none"
         stroke={color} strokeWidth={thickness}
         strokeDasharray={`${dash} ${circ}`}
@@ -122,23 +122,7 @@ function AnimatedNumber({ value, prefix = "", suffix = "" }: { value: number; pr
 
 export default function GoalsPage() {
   const { isDark } = useTheme();
-  const T = {
-    bg:      isDark ? T.bg : T.bg,
-    bg2:     isDark ? T.card : T.card,
-    bg3:     isDark ? T.bg3 : T.bg3,
-    text:    isDark ? T.card : T.bg,
-    text2:   isDark ? T.text2 : T.text2,
-    text3:   isDark ? T.text3 : T.text3,
-    border:  isDark ? T.input : "rgba(0,0,0,.08)",
-    border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
-    card:    isDark ? T.card : T.card,
-    input:   isDark ? T.input : T.bg3,
-    inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
-    shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
-    green:   isDark ? "#76AD25" : "#5a9a1a",
-    accent:  isDark ? "#f59e0b" : "#d97706",
-    strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
-  };
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
 
   const { state, setGoals } = useGame();
   const balance  = state?.balance ?? 0;
