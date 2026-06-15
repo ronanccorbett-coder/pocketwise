@@ -69,7 +69,7 @@ function BudgetChallenge({
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [scenario] = useState(() => BUDGET_SCENARIOS[Math.floor(Math.random() * BUDGET_SCENARIOS.length)]);
-  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [answers, setAnswers] = useState({} as Record<number,string>);
   const [checked, setChecked] = useState(false);
   const [score, setScore] = useState(0);
 
@@ -562,7 +562,7 @@ function NetWorthChallenge({
     },
   ];
   const [scenario] = useState(() => scenarios[Math.floor(Math.random() * scenarios.length)]);
-  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [answers, setAnswers] = useState({} as Record<number,string>);
   const [checked, setChecked] = useState(false);
 
   const correctAssets = scenario.items.filter(i => i.type === "asset").reduce((s, i) => s + i.amount, 0);
@@ -693,7 +693,7 @@ function SpendingDiary({
         </button>
         <div>
           <div style={{ fontSize: "0.7rem", color: "#22c55e", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em" }}>Daily Diary</div>
-          <div style={{ fontWeight: 700, color: "#fff" }}>Track Today's Spending</div>
+          <div style={{ fontWeight: 700, color: "#fff" }}>Track Daily Spending</div>
         </div>
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 4 }}>
           <Zap size={14} color="#f59e0b" /><span style={{ fontWeight: 700, color: "#f59e0b", fontSize: "0.85rem" }}>30 XP</span>
@@ -747,7 +747,7 @@ function SpendingDiary({
         ) : (
           <div>
             <div style={{ background: "rgba(34,197,94,.08)", border: "1px solid rgba(34,197,94,.2)", borderRadius: 14, padding: "20px", marginBottom: 16 }}>
-              <div style={{ fontWeight: 700, color: "#22c55e", marginBottom: 12 }}>Today's Breakdown</div>
+              <div style={{ fontWeight: 700, color: "#22c55e", marginBottom: 12 }}>Daily Breakdown</div>
               {catTotals.map(c => (
                 <div key={c.cat} style={{ display: "flex", justifyContent: "space-between", fontSize: "0.875rem", padding: "4px 0", borderBottom: "1px solid rgba(255,255,255,.05)" }}>
                   <span style={{ color: T.text3 }}>{c.cat}</span>
@@ -860,7 +860,7 @@ export default function ActivitiesPage() {
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
 
   const [filter, setFilter] = useState("all");
-  const [activeActivity, setActiveActivity] = useState<ActivityDef | null>(null);
+  const [activeActivity, setActiveActivity] = useState(null as ActivityDef | null);
   const [celebration, setCelebration] = useState<number | null>(null);
   const { state, addXp } = useGame();
   const xp = state?.xp ?? 0;
