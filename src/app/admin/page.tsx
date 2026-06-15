@@ -9,6 +9,7 @@ import {
   Search, Zap, DollarSign, Edit2, Check, X,
   Upload, Shield, TrendingUp, Award,
   ChevronDown, ChevronUp, RefreshCw, Home,
+  Plus, Trash2, FileJson, Eye, EyeOff, Download, Save, AlertCircle, GraduationCap,
 } from "lucide-react";
 
 const ADMIN_EMAILS = [
@@ -25,9 +26,9 @@ type EditField = { userId: string; field: "xp" | "balance"; value: string };
 export default function AdminPage() {
   const { user, isLoading } = db.useAuth();
   const router = useRouter();
-  const [tab, setTab]             = useState("overview" as AdminTab);
+  const [tab, setTab]             = useState<AdminTab>("overview");
   const [search, setSearch]       = useState("");
-  const [editing, setEditing]     = useState(null as EditField | null);
+  const [editing, setEditing]     = useState<EditField | null>(null);
   const [expandedUser, setExpandedUser] = useState<string | null>(null);
   const [notif, setNotif]         = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
@@ -46,7 +47,91 @@ export default function AdminPage() {
   const [newPlanType, setNewPlanType]   = useState("monthly");
   const [newPlanLimit, setNewPlanLimit] = useState(35);
   const [genLoading, setGenLoading]     = useState(false);
-  const [genCode, setGenCode]           = useState("");
+  const [genCode, setGenCode]           = useState("");  const [genCode, setGenCode]           = useState("");
+
+  // ── Module editor state ─────────────────────────────────────────────────
+  // Fetched modules come from /api/modules listing
+  const [modulesData, setModulesData]   = useState<any[]>([]);
+  const [modLoading, setModLoading]     = useState(false);
+  const [selectedMod, setSelectedMod]   = useState<any>(null);
+  const [selectedLesson, setSelectedLesson] = useState<any>(null);
+  const [editorMode, setEditorMode]     = useState<"list"|"edit-module"|"edit-lesson"|"create-module"|"create-lesson">("list");
+  const [editingJson, setEditingJson]   = useState("");
+  const [jsonError, setJsonError]       = useState("");
+  const [moduleFilter, setModuleFilter] = useState("");
+  const [savingModule, setSavingModule] = useState(false);
+  const [deleteConfirm, setDeleteConfirm] = useState<string|null>(null);
+
+  async function loadModules() {
+    setModLoading(true);
+    try {
+      const res = await fetch("/api/modules");
+      if (res.ok) { const d = await res.json(); setModulesData(d.modules ?? []); }
+    } catch(e) { setModulesData([]); }
+    setModLoading(false);
+  }
+
+  async function loadModule(folder: string) {
+    try {
+      const res = await fetch(`/api/modules?folder=${encodeURIComponent(folder)}`);
+      if (res.ok) { const d = await res.json(); setSelectedMod(d); return d; }
+    } catch(e) {}
+    return null;
+  }
+
+  async function saveJson(folder: string, filename: string, jsonStr: string) {
+    setSavingModule(true); setJsonError("");
+    try {
+      JSON.parse(jsonStr); // validate
+    } catch(e: any) { setJsonError("Invalid JSON: " + e.message); setSavingModule(false); return; }
+    try {
+      const res = await fetch("/api/admin/upload-module", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ folder, filename, content: jsonStr }),
+      });
+      if (res.ok) { notify("Saved!"); await loadModules(); }
+      else { setJsonError("Save failed: " + (await res.text())); }
+    } catch(e: any) { setJsonError("Save failed: " + e.message); }
+    setSavingModule(false);
+  }
+
+  async function deleteModule(folder: string) {
+    try {
+      await fetch(`/api/admin/upload-module?folder=${encodeURIComponent(folder)}`, { method: "DELETE" });
+      notify("Module deleted");
+      setSelectedMod(null); setEditorMode("list"); await loadModules();
+    } catch(e) { notify("Delete failed"); }
+    setDeleteConfirm(null);
+  }
+
+  async function deleteLesson(folder: string, filename: string) {
+    try {
+      await fetch(`/api/admin/upload-module?folder=${encodeURIComponent(folder)}&filename=${encodeURIComponent(filename)}`, { method: "DELETE" });
+      notify("Lesson deleted");
+      setSelectedLesson(null); setEditorMode("edit-module");
+      const mod = await loadModule(folder); setSelectedMod(mod);
+    } catch(e) { notify("Delete failed"); }
+    setDeleteConfirm(null);
+  }
+
+  function downloadJson(data: any, filename: string) {
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = filename; a.click();
+  }
+
+  const BLANK_MODULE = {
+    folder: "module-X-title", title: "Module Title", description: "Module description.",
+    level: "Year 11", nceaStandard: "AS92028", xpReward: 200, colorTheme: "#76AD25", order: 99,
+    lessons: [],
+  };
+
+  const BLANK_LESSON = {
+    id: "mX-l1", title: "Lesson Title", order: 1, xpReward: 25, filename: "lesson-1.json",
+    activities: [
+      { type: "slide", id: "s1", title: "Slide title", content: "Slide content here.", notePrompt: "Reflection prompt." },
+      { type: "quiz", id: "q1", questions: [{ question: "Question?", options: ["A","B","C","D"], correctIndex: 0, explanation: "Explanation." }] },
+    ],
+  };
 
   function generatePlanCode() {
     const seg = () => Math.random().toString(36).substring(2,6).toUpperCase();
@@ -675,33 +760,215 @@ export default function AdminPage() {
           {/* MODULES */}
           {tab === "modules" && (
             <div>
-              <h1 style={{ fontWeight: 800, fontSize: "1.4rem", marginBottom: 4 }}>Module Management</h1>
-              <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 24 }}>Upload lesson JSON files to add or update curriculum content</p>
-
-              <div style={{ background: "#1a2540", border: "2px dashed #2a3a5c", borderRadius: 14, padding: "40px", textAlign: "center", marginBottom: 24 }}>
-                <Upload size={32} color="#8b9dc3" style={{ margin: "0 auto 12px", display: "block" }} />
-                <h3 style={{ fontWeight: 700, marginBottom: 6 }}>Upload Module Files</h3>
-                <p style={{ color: "#8b9dc3", fontSize: "0.825rem", marginBottom: 20 }}>
-                  Upload module.json and lesson-X.json files directly.
-                </p>
-                <label style={{ display: "inline-block", padding: "10px 24px", background: uploading ? "#2a3a5c" : "#76AD25", color: "#fff", borderRadius: 8, fontWeight: 700, fontSize: "0.875rem", cursor: uploading ? "not-allowed" : "pointer" }}>
-                  {uploading ? "Uploading..." : "Choose JSON Files"}
-                  <input type="file" accept=".json" multiple onChange={handleModuleUpload} style={{ display: "none" }} disabled={uploading} />
-                </label>
+              {/* Header */}
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20, flexWrap: "wrap", gap: 10 }}>
+                <div>
+                  <h1 style={{ fontWeight: 800, fontSize: "1.4rem", marginBottom: 2 }}>Module Manager</h1>
+                  <p style={{ color: "#8b9dc3", fontSize: "0.82rem" }}>Upload, edit, and manage all curriculum content</p>
+                </div>
+                <div style={{ display: "flex", gap: 8 }}>
+                  <button onClick={() => { setEditorMode("list"); loadModules(); }} style={{ padding: "8px 14px", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 8, color: "#8b9dc3", fontWeight: 600, fontSize: "0.78rem", cursor: "pointer", fontFamily: "Inter,sans-serif", display: "flex", alignItems: "center", gap: 5 }}>
+                    <RefreshCw size={13} /> Refresh
+                  </button>
+                  <button onClick={() => { setEditingJson(JSON.stringify(BLANK_MODULE, null, 2)); setEditorMode("create-module"); setJsonError(""); }} className="btn-3d-green" style={{ padding: "8px 16px", fontSize: "0.82rem", display: "flex", alignItems: "center", gap: 5 }}>
+                    <Plus size={13} /> New Module
+                  </button>
+                  <label className="btn-3d-blue" style={{ padding: "8px 16px", fontSize: "0.82rem", display: "inline-flex", alignItems: "center", gap: 5, cursor: "pointer" }}>
+                    <Upload size={13} /> Upload JSON
+                    <input type="file" accept=".json" multiple style={{ display: "none" }} onChange={handleModuleUpload} />
+                  </label>
+                </div>
               </div>
 
+              {/* Upload log */}
               {uploadLog.length > 0 && (
-                <div style={{ background: "#111c30", border: "1px solid #2a3a5c", borderRadius: 12, padding: "16px", marginBottom: 24 }}>
-                  <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "#8b9dc3", marginBottom: 8, textTransform: "uppercase" }}>Upload Log</div>
-                  {uploadLog.map((line, i) => (
-                    <div key={i} style={{ fontSize: "0.78rem", fontFamily: "monospace", color: line.includes("Failed") || line.includes("Error") ? "#EF4444" : "#76AD25", padding: "2px 0" }}>
-                      {line}
+                <div style={{ background: "#111c30", border: "1px solid #2a3a5c", borderRadius: 10, padding: "12px 16px", marginBottom: 16, fontSize: "0.75rem", fontFamily: "monospace" }}>
+                  {uploadLog.map((l, i) => <div key={i} style={{ color: l.includes("Error") || l.includes("Failed") ? "#EF4444" : "#76AD25", padding: "1px 0" }}>{l}</div>)}
+                </div>
+              )}
+
+              {/* List view */}
+              {editorMode === "list" && (
+                <div>
+                  {modLoading ? (
+                    <div style={{ textAlign: "center", padding: "40px", color: "#8b9dc3" }}>Loading modules...</div>
+                  ) : modulesData.length === 0 ? (
+                    <div style={{ background: "#1a2540", border: "2px dashed #2a3a5c", borderRadius: 14, padding: "48px", textAlign: "center" }}>
+                      <FileJson size={40} color="#4a6a8a" style={{ margin: "0 auto 12px", display: "block" }} />
+                      <p style={{ color: "#8b9dc3", marginBottom: 16 }}>No modules loaded yet. Click Refresh or upload JSON files.</p>
+                      <button onClick={loadModules} className="btn-3d-green" style={{ padding: "10px 24px", fontSize: "0.875rem" }}>Load Modules</button>
                     </div>
-                  ))}
+                  ) : (
+                    <div>
+                      <input value={moduleFilter} onChange={e => setModuleFilter(e.target.value)} placeholder="Filter modules..." className="pw-input" style={{ width: "100%", marginBottom: 14, fontSize: "0.875rem" }} />
+                      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                        {modulesData.filter(m => !moduleFilter || m.title?.toLowerCase().includes(moduleFilter.toLowerCase()) || m.folder?.includes(moduleFilter)).map((mod: any) => (
+                          <div key={mod.folder} style={{ background: "#111c30", border: "1px solid #2a3a5c", borderRadius: 12, padding: "14px 16px", display: "flex", alignItems: "center", gap: 12 }}>
+                            <div style={{ width: 12, height: 12, borderRadius: "50%", background: mod.colorTheme || "#76AD25", flexShrink: 0 }} />
+                            <div style={{ flex: 1, minWidth: 0 }}>
+                              <div style={{ fontWeight: 700, fontSize: "0.9rem" }}>{mod.title}</div>
+                              <div style={{ fontSize: "0.72rem", color: "#8b9dc3", marginTop: 2 }}>{mod.folder} · {mod.lessons?.length ?? 0} lessons · {mod.level}</div>
+                            </div>
+                            <div style={{ display: "flex", gap: 6 }}>
+                              <button onClick={() => downloadJson(mod, `${mod.folder}.json`)} style={{ padding: "5px 10px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 6, color: "#8b9dc3", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.72rem", display: "flex", alignItems: "center", gap: 4 }}>
+                                <Download size={11} /> JSON
+                              </button>
+                              <button onClick={async () => { const m = await loadModule(mod.folder); setSelectedMod(m); setEditingJson(JSON.stringify(m, null, 2)); setEditorMode("edit-module"); setJsonError(""); }} style={{ padding: "5px 10px", background: "rgba(59,130,246,.12)", border: "1px solid rgba(59,130,246,.25)", borderRadius: 6, color: "#60a5fa", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.72rem", display: "flex", alignItems: "center", gap: 4 }}>
+                                <Edit2 size={11} /> Edit
+                              </button>
+                              {deleteConfirm === mod.folder ? (
+                                <div style={{ display: "flex", gap: 4 }}>
+                                  <button onClick={() => deleteModule(mod.folder)} style={{ padding: "5px 10px", background: "rgba(239,68,68,.15)", border: "1px solid rgba(239,68,68,.3)", borderRadius: 6, color: "#EF4444", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.72rem" }}>Confirm</button>
+                                  <button onClick={() => setDeleteConfirm(null)} style={{ padding: "5px 10px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 6, color: "#8b9dc3", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.72rem" }}>Cancel</button>
+                                </div>
+                              ) : (
+                                <button onClick={() => setDeleteConfirm(mod.folder)} style={{ padding: "5px 10px", background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 6, color: "#EF4444", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.72rem", display: "flex", alignItems: "center", gap: 4 }}>
+                                  <Trash2 size={11} /> Delete
+                                </button>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* Edit module view */}
+              {(editorMode === "edit-module" || editorMode === "create-module") && selectedMod !== null || editorMode === "create-module" ? (
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+                    <button onClick={() => { setEditorMode("list"); setSelectedMod(null); setJsonError(""); }} style={{ padding: "6px 12px", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 7, color: "#8b9dc3", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.78rem" }}>
+                      Back
+                    </button>
+                    <h2 style={{ fontWeight: 700, fontSize: "1rem" }}>{editorMode === "create-module" ? "Create New Module" : `Editing: ${selectedMod?.title ?? ""}`}</h2>
+                    {editorMode === "edit-module" && selectedMod && (
+                      <button onClick={() => { setEditingJson(JSON.stringify(BLANK_LESSON, null, 2)); setEditorMode("create-lesson"); setJsonError(""); }} className="btn-3d-green" style={{ marginLeft: "auto", padding: "7px 14px", fontSize: "0.78rem", display: "flex", alignItems: "center", gap: 5 }}>
+                        <Plus size={12} /> Add Lesson
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Lesson list for existing module */}
+                  {editorMode === "edit-module" && selectedMod?.lessons?.length > 0 && (
+                    <div style={{ marginBottom: 16 }}>
+                      <div style={{ fontSize: "0.72rem", color: "#8b9dc3", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", marginBottom: 8 }}>Lessons ({selectedMod.lessons.length})</div>
+                      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                        {selectedMod.lessons.map((lesson: any) => (
+                          <div key={lesson.filename} style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 9, padding: "10px 12px", display: "flex", alignItems: "center", gap: 10 }}>
+                            <div style={{ width: 26, height: 26, borderRadius: "50%", background: "rgba(118,173,37,.15)", border: "1px solid rgba(118,173,37,.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.72rem", fontWeight: 800, color: "#76AD25", flexShrink: 0 }}>{lesson.order}</div>
+                            <div style={{ flex: 1 }}>
+                              <div style={{ fontWeight: 600, fontSize: "0.82rem" }}>{lesson.title}</div>
+                              <div style={{ fontSize: "0.68rem", color: "#8b9dc3" }}>{lesson.filename} · {lesson.activities?.length ?? 0} activities · {lesson.xpReward} XP</div>
+                            </div>
+                            <div style={{ display: "flex", gap: 5 }}>
+                              <button onClick={() => { setSelectedLesson(lesson); setEditingJson(JSON.stringify(lesson, null, 2)); setEditorMode("edit-lesson"); setJsonError(""); }} style={{ padding: "4px 9px", background: "rgba(59,130,246,.1)", border: "1px solid rgba(59,130,246,.2)", borderRadius: 5, color: "#60a5fa", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.68rem" }}>Edit</button>
+                              <button onClick={() => downloadJson(lesson, lesson.filename)} style={{ padding: "4px 9px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 5, color: "#8b9dc3", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.68rem" }}>DL</button>
+                              {deleteConfirm === lesson.filename ? (
+                                <>
+                                  <button onClick={() => deleteLesson(selectedMod.folder, lesson.filename)} style={{ padding: "4px 9px", background: "rgba(239,68,68,.12)", border: "1px solid rgba(239,68,68,.25)", borderRadius: 5, color: "#EF4444", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.68rem" }}>Sure?</button>
+                                  <button onClick={() => setDeleteConfirm(null)} style={{ padding: "4px 9px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 5, color: "#8b9dc3", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.68rem" }}>No</button>
+                                </>
+                              ) : (
+                                <button onClick={() => setDeleteConfirm(lesson.filename)} style={{ padding: "4px 9px", background: "rgba(239,68,68,.06)", border: "1px solid rgba(239,68,68,.15)", borderRadius: 5, color: "#EF4444", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.68rem" }}>Del</button>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* JSON editor */}
+                  <div>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                      <div style={{ fontSize: "0.72rem", color: "#8b9dc3", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em" }}>
+                        {editorMode === "create-module" ? "module.json" : `module.json`}
+                      </div>
+                      <div style={{ display: "flex", gap: 6 }}>
+                        <button onClick={() => { try { setEditingJson(JSON.stringify(JSON.parse(editingJson), null, 2)); setJsonError(""); } catch(e: any) { setJsonError(e.message); } }} style={{ padding: "4px 10px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 6, color: "#8b9dc3", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.72rem" }}>Format</button>
+                        <button onClick={() => { const parsed = (() => { try { return JSON.parse(editingJson); } catch{ return null; } })(); if(parsed) downloadJson(parsed, "module.json"); }} style={{ padding: "4px 10px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 6, color: "#8b9dc3", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.72rem" }}>Download</button>
+                      </div>
+                    </div>
+                    <textarea
+                      value={editingJson}
+                      onChange={e => { setEditingJson(e.target.value); setJsonError(""); }}
+                      spellCheck={false}
+                      style={{ width: "100%", minHeight: 360, background: "#080e1e", border: `1.5px solid ${jsonError ? "#EF4444" : "#2a3a5c"}`, borderRadius: 10, color: "#e2e8f0", fontFamily: "monospace", fontSize: "0.78rem", padding: "14px", lineHeight: 1.6, outline: "none", resize: "vertical" }}
+                    />
+                    {jsonError && <div style={{ color: "#EF4444", fontSize: "0.75rem", marginTop: 6, display: "flex", alignItems: "center", gap: 5 }}><AlertCircle size={12} />{jsonError}</div>}
+                    <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+                      <button
+                        onClick={() => {
+                          try {
+                            const parsed = JSON.parse(editingJson);
+                            const folder = parsed.folder || selectedMod?.folder || "module-new";
+                            const filename = "module.json";
+                            saveJson(folder, filename, editingJson);
+                          } catch(e: any) { setJsonError("Invalid JSON: " + e.message); }
+                        }}
+                        disabled={savingModule}
+                        className={!savingModule ? "btn-3d-green" : ""}
+                        style={{ padding: "10px 24px", fontSize: "0.875rem", display: "flex", alignItems: "center", gap: 6, background: savingModule ? "#1a2540" : undefined, color: savingModule ? "#8b9dc3" : undefined, border: "none", borderRadius: 10, fontWeight: 700, cursor: savingModule ? "not-allowed" : "pointer", fontFamily: "Inter,sans-serif" }}>
+                        <Save size={14} /> {savingModule ? "Saving..." : "Save Module"}
+                      </button>
+                      <button onClick={() => { setEditorMode("list"); setSelectedMod(null); setJsonError(""); }} style={{ padding: "10px 20px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 10, color: "#8b9dc3", fontWeight: 600, fontSize: "0.875rem", cursor: "pointer", fontFamily: "Inter,sans-serif" }}>Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
+
+              {/* Edit lesson view */}
+              {(editorMode === "edit-lesson" || editorMode === "create-lesson") && (
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+                    <button onClick={() => { setEditorMode("edit-module"); setSelectedLesson(null); setJsonError(""); }} style={{ padding: "6px 12px", background: "rgba(255,255,255,.06)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 7, color: "#8b9dc3", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.78rem" }}>Back</button>
+                    <h2 style={{ fontWeight: 700, fontSize: "1rem" }}>{editorMode === "create-lesson" ? "Create New Lesson" : `Editing: ${selectedLesson?.title ?? ""}`}</h2>
+                  </div>
+                  <div style={{ background: "#0d1a2e", border: "1px solid #1a3050", borderRadius: 10, padding: "12px 14px", marginBottom: 12, fontSize: "0.75rem", color: "#8b9dc3", lineHeight: 1.6 }}>
+                    <strong style={{ color: "#76AD25" }}>Activity types:</strong> slide, quiz, truefalse, dragdrop, typed, matching
+                    {" · "}Each activity needs a unique <code style={{ background: "#111c30", padding: "1px 4px", borderRadius: 3 }}>id</code>
+                    {" · "}Slides need <code style={{ background: "#111c30", padding: "1px 4px", borderRadius: 3 }}>notePrompt</code>
+                    {" · "}Quiz needs <code style={{ background: "#111c30", padding: "1px 4px", borderRadius: 3 }}>correctIndex</code>
+                  </div>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                    <div style={{ fontSize: "0.72rem", color: "#8b9dc3", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em" }}>
+                      {editorMode === "create-lesson" ? "New lesson JSON" : selectedLesson?.filename}
+                    </div>
+                    <div style={{ display: "flex", gap: 6 }}>
+                      <button onClick={() => { try { setEditingJson(JSON.stringify(JSON.parse(editingJson), null, 2)); } catch(e: any){ setJsonError(e.message); } }} style={{ padding: "4px 10px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 6, color: "#8b9dc3", cursor: "pointer", fontFamily: "Inter,sans-serif", fontSize: "0.72rem" }}>Format</button>
+                    </div>
+                  </div>
+                  <textarea
+                    value={editingJson}
+                    onChange={e => { setEditingJson(e.target.value); setJsonError(""); }}
+                    spellCheck={false}
+                    style={{ width: "100%", minHeight: 440, background: "#080e1e", border: `1.5px solid ${jsonError ? "#EF4444" : "#2a3a5c"}`, borderRadius: 10, color: "#e2e8f0", fontFamily: "monospace", fontSize: "0.78rem", padding: "14px", lineHeight: 1.6, outline: "none", resize: "vertical" }}
+                  />
+                  {jsonError && <div style={{ color: "#EF4444", fontSize: "0.75rem", marginTop: 6, display: "flex", alignItems: "center", gap: 5 }}><AlertCircle size={12} />{jsonError}</div>}
+                  <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
+                    <button
+                      onClick={() => {
+                        try {
+                          const parsed = JSON.parse(editingJson);
+                          const folder = selectedMod?.folder ?? "module-new";
+                          const filename = parsed.filename || selectedLesson?.filename || "lesson-1.json";
+                          saveJson(folder, filename, editingJson);
+                        } catch(e: any) { setJsonError("Invalid JSON: " + e.message); }
+                      }}
+                      disabled={savingModule}
+                      className={!savingModule ? "btn-3d-green" : ""}
+                      style={{ padding: "10px 24px", fontSize: "0.875rem", display: "flex", alignItems: "center", gap: 6, background: savingModule ? "#1a2540" : undefined, color: savingModule ? "#8b9dc3" : undefined, border: "none", borderRadius: 10, fontWeight: 700, cursor: savingModule ? "not-allowed" : "pointer", fontFamily: "Inter,sans-serif" }}>
+                      <Save size={14} /> {savingModule ? "Saving..." : "Save Lesson"}
+                    </button>
+                    <button onClick={() => { setEditorMode("edit-module"); setSelectedLesson(null); setJsonError(""); }} style={{ padding: "10px 20px", background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 10, color: "#8b9dc3", fontWeight: 600, fontSize: "0.875rem", cursor: "pointer", fontFamily: "Inter,sans-serif" }}>Cancel</button>
+                  </div>
                 </div>
               )}
             </div>
           )}
+
 
           {/* PERMISSIONS */}
           {tab === "permissions" && (
