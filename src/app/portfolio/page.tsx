@@ -1,4 +1,5 @@
 "use client";
+import PortfolioTutorial from "@/components/PortfolioTutorial";
 import { useTheme } from "@/lib/theme";
 import { useState, useCallback } from "react";
 import Nav from "@/components/Nav";
@@ -621,13 +622,7 @@ export default function PortfolioPage(){
     .filter(ap => ownedAssets.find(a => a.name === ap.name) && ap.income)
     .reduce((s, ap) => s + (ap.income ?? 0), 0);
 
-  const filteredAssets = ASSET_PRODUCTS
-    .filter(ap => assetCat === "All" || ap.category === assetCat)
-    .sort((a, b) => {
-      if (assetSort === "price") return a.price - b.price;
-      if (assetSort === "income") return (b.income ?? 0) - (a.income ?? 0);
-      return a.dep - b.dep;
-    });
+  const filteredAssets = ASSET_PRODUCTS.filter(ap => assetCat === "All" || ap.category === assetCat).sort((a, b) => assetSort === "price" ? a.price - b.price : assetSort === "income" ? (b.income ?? 0) - (a.income ?? 0) : a.dep - b.dep);
 
   return (
     <AuthGuard>
