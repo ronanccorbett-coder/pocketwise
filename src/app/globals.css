@@ -532,3 +532,76 @@ input[type="number"].pw-input::-webkit-inner-spin-button { opacity: 0; }
   content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
   border: 6px solid transparent; border-top-color: var(--border2);
 }
+
+/* ── Light mode card style ─────────────────────────────────────────────── */
+[data-theme="light"] .pw-dark-card {
+  background: #ffffff;
+  border-color: rgba(0,0,0,.08);
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+[data-theme="light"] .pw-dark-card:hover {
+  border-color: rgba(0,0,0,.14);
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+}
+
+/* ── Light mode input ──────────────────────────────────────────────────── */
+[data-theme="light"] .pw-input {
+  background: #ffffff;
+  border-color: rgba(0,0,0,.14);
+  color: #0d1526;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.04);
+}
+[data-theme="light"] .pw-input:focus {
+  border-color: #5a9a1a;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.04), 0 0 0 3px rgba(90,154,26,.12);
+}
+
+/* ── Nav active link light mode ────────────────────────────────────────── */
+[data-theme="light"] .pw-nav-link-active {
+  background: #f1f5f9;
+  color: #0d1526;
+}
+
+/* ── Tab pills light mode ──────────────────────────────────────────────── */
+[data-theme="light"] .pw-tab-active {
+  background: #ffffff;
+  color: #0d1526;
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+}
+
+/* ── 3D buttons light mode adjustments ────────────────────────────────── */
+[data-theme="light"] .btn-3d-ghost {
+  background: #f8fafc;
+  color: #475569;
+  border: 1.5px solid rgba(0,0,0,.12);
+  box-shadow: 0 3px 0 rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.05);
+}
+[data-theme="light"] .btn-3d-ghost:hover {
+  background: #f1f5f9;
+}
+
+/* ── Tooltip light mode ────────────────────────────────────────────────── */
+[data-theme="light"] .pw-tooltip-wrap .pw-tooltip {
+  background: #0d1526;
+  border-color: rgba(0,0,0,.15);
+  color: #e2e8f0;
+}
+[data-theme="light"] .pw-tooltip-wrap .pw-tooltip::after {
+  border-top-color: rgba(0,0,0,.15);
+}
+
+/* ── Range slider light mode ───────────────────────────────────────────── */
+[data-theme="light"] input[type="range"].pw-range {
+  background: rgba(0,0,0,.08);
+}
+
+/* ── Score bars and progress ───────────────────────────────────────────── */
+[data-theme="light"] .pw-progress-track {
+  background: rgba(0,0,0,.08);
+}
+
+/* ── Notification / toast ──────────────────────────────────────────────── */
+[data-theme="light"] .pw-toast {
+  background: #0d1526;
+  color: #ffffff;
+}

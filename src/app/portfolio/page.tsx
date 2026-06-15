@@ -1,8 +1,8 @@
 "use client";
 import PortfolioTutorial from "@/components/PortfolioTutorial";
+import DayTradingTerminal from "@/components/DayTradingTerminal";
 import { useTheme } from "@/lib/theme";
 import { useState, useCallback } from "react";
-import { useRouter } from "next/navigation";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useGame, NZX_STOCKS } from "@/lib/gameContext";
@@ -565,7 +565,6 @@ export default function PortfolioPage(){
   };
 
   const [tab, setTab]     = useState("Overview" as Tab);
-  const router = useRouter();
   const [buyQty, setBuyQty] = useState({} as Record<string,number>);
   const [notif, setNotif]   = useState(null as string|null);
   const [assetCat, setAssetCat] = useState("All");
@@ -745,17 +744,8 @@ export default function PortfolioPage(){
           )}
 
           {tab === "Day Trading" && (
-            <div style={{ background: T.card, border: `1.5px solid ${T.border}`, borderRadius: 16, padding: "48px 32px", textAlign: "center" }}>
-              <div style={{ width: 64, height: 64, background: "rgba(245,158,11,.1)", border: "1.5px solid rgba(245,158,11,.25)", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
-                <BarChart2 size={30} color="#f59e0b" />
-              </div>
-              <h3 style={{ fontWeight: 800, fontSize: "1.2rem", color: T.text, marginBottom: 8 }}>Day Trading Terminal</h3>
-              <p style={{ color: T.text2, fontSize: "0.875rem", maxWidth: 360, margin: "0 auto 24px", lineHeight: 1.7 }}>
-                Real-time candlestick charts, market and limit orders, stop loss, take profit, leverage up to 10x, and live P&L tracking across 7 instruments including NZX stocks, Gold, NZD/USD and Bitcoin.
-              </p>
-              <button onClick={() => router.push("/daytrading")} className="btn-3d-amber" style={{ padding: "13px 36px", fontSize: "0.95rem", display: "inline-flex", alignItems: "center", gap: 8 }}>
-                <BarChart2 size={16} /> Open Trading Terminal
-              </button>
+            <div style={{ position: "relative" }}>
+              <DayTradingTerminal />
             </div>
           )}
 

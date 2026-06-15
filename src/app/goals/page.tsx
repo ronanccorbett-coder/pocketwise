@@ -58,7 +58,7 @@ function Ring({ pct, color, size = 72, thickness = 7 }: { pct: number; color: st
   const dash = Math.min(pct / 100, 1) * circ;
   return (
     <svg width={size} height={size} style={{ transform: "rotate(-90deg)", flexShrink: 0 }}>
-      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke="rgba(255,255,255,.06)" strokeWidth={thickness} />
+      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke=T.input strokeWidth={thickness} />
       <circle cx={size/2} cy={size/2} r={r} fill="none"
         stroke={color} strokeWidth={thickness}
         strokeDasharray={`${dash} ${circ}`}
@@ -90,8 +90,6 @@ function Burst({ color, trigger }: { color: string; trigger: boolean }) {
 
 // ── Animated number ────────────────────────────────────────────────────────
 function AnimatedNumber({ value, prefix = "", suffix = "" }: { value: number; prefix?: string; suffix?: string }) {
-  const { isDark } = useTheme();
-  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [display, setDisplay] = useState(value);
   const [key, setKey] = useState(0);
   const prev = useRef(value);
@@ -125,16 +123,16 @@ function AnimatedNumber({ value, prefix = "", suffix = "" }: { value: number; pr
 export default function GoalsPage() {
   const { isDark } = useTheme();
   const T = {
-    bg:      isDark ? "#0d1526" : "#f0f4f8",
-    bg2:     isDark ? "#111c30" : "#ffffff",
-    bg3:     isDark ? "#1a2540" : "#f8fafc",
-    text:    isDark ? "#ffffff" : "#0d1526",
-    text2:   isDark ? "#8b9dc3" : "#475569",
-    text3:   isDark ? "#4a6a8a" : "#94a3b8",
-    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    bg:      isDark ? T.bg : T.bg,
+    bg2:     isDark ? T.card : T.card,
+    bg3:     isDark ? T.bg3 : T.bg3,
+    text:    isDark ? T.card : T.bg,
+    text2:   isDark ? T.text2 : T.text2,
+    text3:   isDark ? T.text3 : T.text3,
+    border:  isDark ? T.input : "rgba(0,0,0,.08)",
     border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
-    card:    isDark ? "#111c30" : "#ffffff",
-    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    card:    isDark ? T.card : T.card,
+    input:   isDark ? T.input : T.bg3,
     inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
     shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
     green:   isDark ? "#76AD25" : "#5a9a1a",
@@ -260,7 +258,7 @@ export default function GoalsPage() {
                             transform: sel ? "scale(1.2)" : "scale(1)",
                             boxShadow: sel ? `0 0 14px ${c.shadow}` : "none",
                           }}>
-                            <I size={16} color={sel ? c.accent : "#64748b"} />
+                            <I size={16} color={sel ? c.accent : T.text2} />
                           </button>
                         );
                       })}
@@ -278,7 +276,7 @@ export default function GoalsPage() {
                   </div>
                   <div style={{ display: "flex", gap: 8 }}>
                     <button onClick={() => { if (newLabel && newTarget) addGoal(newLabel, parseFloat(newTarget), newIcon); }} disabled={!newLabel || !newTarget}
-                      className={newLabel && newTarget ? "btn-3d-green" : ""} style={{ flex: 1, padding: "11px", fontSize: "0.875rem", background: !newLabel || !newTarget ? "#1e3a5f" : undefined, color: !newLabel || !newTarget ? "#4a6a8a" : undefined, border: "none", borderRadius: 10, fontWeight: 700, cursor: !newLabel || !newTarget ? "not-allowed" : "pointer", fontFamily: FONT }}>
+                      className={newLabel && newTarget ? "btn-3d-green" : ""} style={{ flex: 1, padding: "11px", fontSize: "0.875rem", background: !newLabel || !newTarget ? "#1e3a5f" : undefined, color: !newLabel || !newTarget ? T.text3 : undefined, border: "none", borderRadius: 10, fontWeight: 700, cursor: !newLabel || !newTarget ? "not-allowed" : "pointer", fontFamily: FONT }}>
                       Save Goal
                     </button>
                     <button onClick={() => setShowAdd(false)} className="btn-3d-ghost" style={{ padding: "11px 18px", fontSize: "0.875rem" }}>Cancel</button>
@@ -314,8 +312,8 @@ export default function GoalsPage() {
                       onMouseEnter={() => setHoveredIdx(i)}
                       onMouseLeave={() => setHoveredIdx(null)}
                       style={{
-                        background: done ? `linear-gradient(135deg,#0a2010,#0f2a18)` : "#111c30",
-                        border: `2px solid ${done ? c.accent : isHov ? `${c.accent}55` : "rgba(255,255,255,.06)"}`,
+                        background: done ? `linear-gradient(135deg,#0a2010,#0f2a18)` : T.card,
+                        border: `2px solid ${done ? c.accent : isHov ? `${c.accent}55` : T.input}`,
                         borderRadius: 18, padding: "20px", position: "relative", overflow: "hidden",
                         transition: "all .2s cubic-bezier(.34,1.56,.64,1)",
                         transform: isPinging ? "scale(1.025)" : isHov ? "translateY(-3px) scale(1.005)" : "none",
@@ -403,7 +401,7 @@ export default function GoalsPage() {
                 const Icon = GOAL_ICONS[t.iconKey] ?? Target;
                 return (
                   <div key={t.label} style={{
-                    background: T.card, border: `1.5px solid ${added ? "rgba(118,173,37,.25)" : "rgba(255,255,255,.06)"}`,
+                    background: T.card, border: `1.5px solid ${added ? "rgba(118,173,37,.25)" : T.input}`,
                     borderRadius: 14, padding: "11px 14px", display: "flex", alignItems: "center", gap: 10,
                     opacity: added ? 0.7 : 1, transition: "all .18s cubic-bezier(.34,1.56,.64,1)",
                     cursor: added ? "default" : "pointer",

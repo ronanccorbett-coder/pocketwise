@@ -1,0 +1,94 @@
+{
+  "id": "m2-l1",
+  "title": "What is a Budget?",
+  "order": 1,
+  "xpReward": 25,
+  "filename": "lesson-1.json",
+  "activities": [
+    {
+      "type": "slide",
+      "id": "m2l1-s1",
+      "title": "Money in, money out",
+      "content": "A **budget** is a plan for your money. It tells you how much money is coming in (income) and how much is going out (expenses) over a set period — usually a week or month.\n\nWithout a budget, most people spend first and wonder later why they have nothing left. A budget flips this — you decide in advance where every dollar goes.",
+      "notePrompt": "In your own words, what is the main purpose of a budget?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l1-s2",
+      "title": "Why most Kiwis don't budget",
+      "content": "Research shows only about **1 in 3 New Zealanders** regularly tracks their spending. Common reasons people give:\n\n- \"I don't earn enough to budget\" (backwards — you need it more)\n- \"It takes too much time\" (modern apps take 10 minutes a week)\n- \"I know roughly where my money goes\" (most people are wrong by 30-40%)\n\nThe truth: budgeting isn't about restriction. It's about knowing what you have so you can spend confidently on what matters.",
+      "notePrompt": "What is one excuse you have used (or heard) for not budgeting?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l1-s3",
+      "title": "The basics: Income vs Expenses",
+      "content": "Every budget has two sides:\n\n**Income** — money coming in:\n- Wages from work\n- Government support (student allowance, Working for Families)\n- Interest on savings\n- Other sources\n\n**Expenses** — money going out:\n- Rent, food, power, phone\n- Entertainment, clothing, transport\n- Savings and investments (yes, these count as expenses in a budget!)\n\nIf income > expenses = **surplus** (good!)\nIf expenses > income = **deficit** (danger!)",
+      "notePrompt": "List two of your personal income sources and two regular expenses."
+    },
+    {
+      "type": "quiz",
+      "id": "m2l1-q1",
+      "questions": [
+        {
+          "question": "Tama earns $520/week and spends $490/week. What is his budget situation?",
+          "options": ["Deficit of $30", "Surplus of $30", "Balanced budget", "Cannot tell"],
+          "correctIndex": 1,
+          "explanation": "Surplus = Income minus Expenses = $520 - $490 = $30 surplus per week. This is positive — Tama has money left over."
+        },
+        {
+          "question": "Which of the following is NOT a reason why budgeting is important?",
+          "options": ["It shows you where your money goes", "It prevents all unexpected expenses", "It helps you save towards goals", "It reduces financial stress"],
+          "correctIndex": 1,
+          "explanation": "Budgeting cannot prevent unexpected expenses — emergencies happen. But it CAN help you build an emergency fund to handle them when they do."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "id": "m2l1-s4",
+      "title": "Zero-based budgeting",
+      "content": "One popular method is **zero-based budgeting**: every dollar of income is assigned a job until you reach zero unallocated dollars.\n\nExample:\n- Income: $600/week\n- Rent: -$180\n- Food: -$100\n- Transport: -$40\n- Phone: -$30\n- Entertainment: -$50\n- Savings: -$100\n- Emergency fund: -$50\n- Clothing: -$50\n= $0 remaining\n\nEvery dollar has a purpose. Nothing is 'floating' where it gets spent without intention.",
+      "notePrompt": "Could you apply zero-based budgeting to your current income? What categories would you include?"
+    },
+    {
+      "type": "truefalse",
+      "id": "m2l1-tf1",
+      "questions": [
+        { "statement": "A budget is only useful if you earn a lot of money.", "answer": false, "explanation": "Budgets are actually MORE important when money is tight, not less. They help you make every dollar count." },
+        { "statement": "Savings should be included as a line item in your budget.", "answer": true, "explanation": "Treating savings as an expense that must be 'paid' each week — ideally before you spend on anything else — is key to building wealth." },
+        { "statement": "A budget deficit means you are spending more than you earn.", "answer": true, "explanation": "A deficit means outgoings exceed income. Sustained deficits lead to debt accumulation." }
+      ]
+    },
+    {
+      "type": "slide",
+      "id": "m2l1-s5",
+      "title": "Building your first budget",
+      "content": "Steps to create a budget:\n\n1. **Track your income** — list every dollar coming in weekly/monthly\n2. **List fixed expenses** — rent, phone plan, subscriptions (same every month)\n3. **Estimate variable expenses** — food, fuel, entertainment (vary week to week)\n4. **Add savings goals** — emergency fund, holiday, item you want\n5. **Check the balance** — if you have a deficit, find what to cut\n6. **Review weekly** — compare what you planned vs what actually happened\n\nMost people find their first budget is an eye-opener — especially on food and entertainment spending.",
+      "notePrompt": "What do you think would be your biggest budget category after rent? How much do you think you spend on it per week?"
+    },
+    {
+      "type": "dragdrop",
+      "id": "m2l1-dd1",
+      "instruction": "Sort these items into Income or Expense",
+      "items": [
+        { "text": "Weekly wages from café job", "category": "Income" },
+        { "text": "Student allowance from StudyLink", "category": "Income" },
+        { "text": "Weekly KiwiSaver contribution", "category": "Expense" },
+        { "text": "Afterpay repayment", "category": "Expense" },
+        { "text": "Interest earned on savings account", "category": "Income" },
+        { "text": "Bus pass (monthly)", "category": "Expense" },
+        { "text": "Selling old clothes on TradeMe", "category": "Income" },
+        { "text": "Netflix subscription", "category": "Expense" }
+      ],
+      "categories": ["Income", "Expense"]
+    },
+    {
+      "type": "slide",
+      "id": "m2l1-s6",
+      "title": "Lesson summary",
+      "content": "**Key points from this lesson:**\n\n- A budget is a plan that allocates your income to expenses, savings and goals\n- Income minus expenses = surplus (positive) or deficit (negative)\n- Zero-based budgeting assigns every dollar a purpose\n- Budgets work for everyone, regardless of income level\n- Savings should be treated as a non-negotiable expense\n\nIn the next lesson, you will learn the 50/30/20 rule — a simple framework used by millions of people worldwide.",
+      "notePrompt": "What is one thing you want to change about how you currently manage money?"
+    }
+  ]
+}

@@ -11,16 +11,16 @@ const COLORS = ["#EF4444","#3B82F6","#76AD25","#6b7280","#3B82F6","#f59e0b","#08
 export default function LeaderboardPage() {
   const { isDark } = useTheme();
   const T = {
-    bg:      isDark ? "#0d1526" : "#f0f4f8",
-    bg2:     isDark ? "#111c30" : "#ffffff",
-    bg3:     isDark ? "#1a2540" : "#f8fafc",
-    text:    isDark ? "#ffffff" : "#0d1526",
-    text2:   isDark ? "#8b9dc3" : "#475569",
-    text3:   isDark ? "#4a6a8a" : "#94a3b8",
-    border:  isDark ? "rgba(255,255,255,.07)" : "rgba(0,0,0,.08)",
+    bg:      isDark ? T.bg : T.bg,
+    bg2:     isDark ? T.card : T.card,
+    bg3:     isDark ? T.bg3 : T.bg3,
+    text:    isDark ? T.card : T.bg,
+    text2:   isDark ? T.text2 : T.text2,
+    text3:   isDark ? T.text3 : T.text3,
+    border:  isDark ? T.input : "rgba(0,0,0,.08)",
     border2: isDark ? "rgba(255,255,255,.14)" : "rgba(0,0,0,.16)",
-    card:    isDark ? "#111c30" : "#ffffff",
-    input:   isDark ? "rgba(255,255,255,.06)" : "#f8fafc",
+    card:    isDark ? T.card : T.card,
+    input:   isDark ? T.input : T.bg3,
     inputBorder: isDark ? "rgba(255,255,255,.12)" : "rgba(0,0,0,.14)",
     shadow:  isDark ? "rgba(0,0,0,.4)" : "rgba(0,0,0,.08)",
     green:   isDark ? "#76AD25" : "#5a9a1a",
@@ -58,11 +58,11 @@ export default function LeaderboardPage() {
       <div style={{ minHeight: "100vh", background: T.bg }}>
         <Nav />
 
-        <div style={{ background: "linear-gradient(135deg,#0d1526,#111c30)", padding: "28px 2rem" }}>
+        <div style={{ background: `linear-gradient(135deg, ${T.bg} 0%, ${T.bg2} 100%)`, padding: "28px 2rem" }}>
           <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 8 }}>
               <Trophy size={22} color="#f59e0b" />
-              <h1 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#fff" }}>Leaderboard</h1>
+              <h1 style={{ fontSize: "1.4rem", fontWeight: 800, color: T.text }}>Leaderboard</h1>
             </div>
             <p style={{ color: T.text2, fontSize: "0.875rem" }}>Top students ranked by XP earned</p>
             {userRank >= 0 && (
@@ -76,7 +76,7 @@ export default function LeaderboardPage() {
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "24px 1.5rem" }}>
           <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
             {["All Students", "This Week"].map((t, i) => (
-              <button key={t} style={{ padding: "7px 18px", borderRadius: 9999, background: i === 0 ? "#0d1526" : "#fff", color: i === 0 ? "#fff" : "#475569", border: `1px solid ${i === 0 ? "#0d1526" : "#e2e8f0"}`, fontWeight: 600, fontSize: "0.875rem", cursor: "pointer", fontFamily: "Inter, sans-serif" }}>{t}</button>
+              <button key={t} style={{ padding: "7px 18px", borderRadius: 9999, background: i === 0 ? T.bg : "#fff", color: i === 0 ? "#fff" : T.text2, border: `1px solid ${i === 0 ? T.bg : "#e2e8f0"}`, fontWeight: 600, fontSize: "0.875rem", cursor: "pointer", fontFamily: "Inter, sans-serif" }}>{t}</button>
             ))}
           </div>
 
@@ -90,12 +90,12 @@ export default function LeaderboardPage() {
                 const isMe = s.userId === user?.id;
                 return (
                   <div key={s.id ?? i} style={{
-                    background: isMe ? "#f0fdf4" : "#fff",
+                    background: isMe ? (isDark ? "rgba(118,173,37,.08)" : "#f0fdf4") : T.card,
                     border: `1px solid ${isMe ? "#76AD25" : i < 3 ? "#e2e8f0" : "#e2e8f0"}`,
                     borderRadius: 12, padding: "14px 18px",
                     display: "flex", alignItems: "center", gap: 12,
                   }}>
-                    <div style={{ width: 36, textAlign: "center", fontWeight: 800, fontSize: "0.82rem", color: i === 0 ? "#f59e0b" : i === 1 ? "#94a3b8" : i === 2 ? "#cd7f32" : "#94a3b8" }}>
+                    <div style={{ width: 36, textAlign: "center", fontWeight: 800, fontSize: "0.82rem", color: i === 0 ? "#f59e0b" : i === 1 ? T.text3 : i === 2 ? "#cd7f32" : T.text3 }}>
                       {rankLabel(i)}
                     </div>
                     <div style={{ width: 34, height: 34, borderRadius: "50%", background: COLORS[i % COLORS.length], display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 700, fontSize: "0.78rem", flexShrink: 0 }}>

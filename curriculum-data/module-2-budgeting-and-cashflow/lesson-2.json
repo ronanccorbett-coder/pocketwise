@@ -1,0 +1,100 @@
+{
+  "id": "m2-l2",
+  "title": "The 50/30/20 Rule",
+  "order": 2,
+  "xpReward": 25,
+  "filename": "lesson-2.json",
+  "activities": [
+    {
+      "type": "slide",
+      "id": "m2l2-s1",
+      "title": "A simple framework for any income",
+      "content": "The **50/30/20 rule** was popularised by US Senator Elizabeth Warren in her book 'All Your Worth'. It divides your **after-tax income** into three buckets:\n\n- **50%** → Needs (essentials)\n- **30%** → Wants (lifestyle)\n- **20%** → Savings and debt repayment\n\nIt's a starting point, not a rigid law. Adjust the percentages for your situation — especially in Auckland where rent can exceed 50% alone.",
+      "notePrompt": "Before learning more, estimate what percentage of your money goes to needs, wants and savings currently."
+    },
+    {
+      "type": "slide",
+      "id": "m2l2-s2",
+      "title": "The 50% — Needs",
+      "content": "**Needs** are expenses you must pay to live and work:\n\n- Rent or mortgage payments\n- Groceries (basic food, not restaurant meals)\n- Utilities: power, water, internet\n- Transport to work (bus pass, petrol for commute)\n- Minimum debt repayments\n- Health insurance / essential medicines\n- Phone plan (basic, not latest iPhone)\n\nIf your needs exceed 50% of income — which is common in NZ cities — you need to either increase income, reduce costs (flatmates, cheaper suburb), or adjust the ratio.",
+      "notePrompt": "List your current 'Needs'. Do they add up to more or less than 50% of your income?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l2-s3",
+      "title": "The 30% — Wants",
+      "content": "**Wants** are things that improve quality of life but are not essential:\n\n- Dining out and takeaways\n- Netflix, Spotify, gaming subscriptions\n- New clothes beyond basic needs\n- Gym membership\n- Hobbies and entertainment\n- Holidays\n- Upgrades (latest phone, nicer car)\n\n**The grey area:** Is a gym membership a want or need? Is internet a want or need? You decide based on your life. The key question: *Could you survive without it?*",
+      "notePrompt": "What is your biggest 'Want' expense each week? Is there anything you could cut from this category?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l2-s4",
+      "title": "The 20% — Savings and Debt",
+      "content": "**Savings and debt repayment** — the wealth-building bucket:\n\n- Emergency fund (target: 3 months expenses)\n- KiwiSaver contributions\n- Savings for short-term goals (car, holiday, laptop)\n- Investment portfolio\n- Extra debt repayments (above minimums)\n\n**Pay yourself first:** Set up an automatic transfer the moment your pay arrives — before you can spend it. Even $20/week adds up to $1,040 per year.",
+      "notePrompt": "Do you currently save 20% of your income? If not, what percentage do you think is realistic right now?"
+    },
+    {
+      "type": "quiz",
+      "id": "m2l2-q1",
+      "questions": [
+        {
+          "question": "Aroha earns $640/week after tax. According to the 50/30/20 rule, how much should go to savings and debt?",
+          "options": ["$96/week", "$128/week", "$192/week", "$320/week"],
+          "correctIndex": 1,
+          "explanation": "20% of $640 = $128/week. This goes to savings, KiwiSaver top-ups, and paying down debt faster than the minimum."
+        },
+        {
+          "question": "Which of the following is a NEED, not a want?",
+          "options": ["Weekly takeaways", "Gym membership", "Rent payments", "Spotify subscription"],
+          "correctIndex": 2,
+          "explanation": "Rent is essential housing — a need. Takeaways, gym, and Spotify improve life but aren't essential for survival."
+        },
+        {
+          "question": "The 50/30/20 rule should be applied to which type of income?",
+          "options": ["Gross (before tax) income", "Net (after tax) income", "Either works equally well", "Only applies to full-time workers"],
+          "correctIndex": 1,
+          "explanation": "Always use after-tax (net) income — the money that actually lands in your account. Tax comes out before you can spend anything."
+        }
+      ]
+    },
+    {
+      "type": "typed",
+      "id": "m2l2-t1",
+      "prompt": "Hemi earns $780/week after tax as a trade apprentice. Using the 50/30/20 rule, calculate how much should go to: (a) Needs, (b) Wants, (c) Savings. Then name one specific expense he might have in each category.",
+      "sampleAnswer": "(a) Needs: 50% x $780 = $390/week. Example: Rent $200, groceries $100, petrol $90. (b) Wants: 30% x $780 = $234/week. Example: Gym $40, Xbox games $30, dining out $164. (c) Savings: 20% x $780 = $156/week. Example: Emergency fund $50, KiwiSaver top-up $50, house deposit savings $56.",
+      "hint": "Multiply $780 by 0.5, 0.3, and 0.2 to find each category amount."
+    },
+    {
+      "type": "truefalse",
+      "id": "m2l2-tf1",
+      "questions": [
+        { "statement": "If rent takes up 60% of your income, you should cut your savings to 10% to compensate.", "answer": false, "explanation": "If needs exceed 50%, the solution is to reduce needs (flatmates, cheaper rent) or increase income — not cut savings. Cutting savings hurts your future financial security." },
+        { "statement": "The 50/30/20 rule is the only correct way to budget.", "answer": false, "explanation": "It is a useful starting framework but everyone's situation is different. Some people use 70/20/10, others use zero-based budgeting. Find what works for you." },
+        { "statement": "Paying off high-interest debt faster than required counts as part of your 20%.", "answer": true, "explanation": "Extra debt repayments belong in the savings/debt bucket. Paying off 22% credit card debt faster is like earning a 22% guaranteed return." }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "id": "m2l2-dd1",
+      "instruction": "Categorise each expense using the 50/30/20 rule (Need, Want, or Savings)",
+      "items": [
+        { "text": "Rent to flatmates ($160/wk)", "category": "Need" },
+        { "text": "Groceries ($85/wk)", "category": "Need" },
+        { "text": "Eating out Saturday night ($50)", "category": "Want" },
+        { "text": "KiwiSaver 3% contribution", "category": "Savings" },
+        { "text": "Bus pass to work ($45/wk)", "category": "Need" },
+        { "text": "Concert tickets ($120)", "category": "Want" },
+        { "text": "Emergency fund deposit ($50/wk)", "category": "Savings" },
+        { "text": "Afterpay for new shoes", "category": "Want" }
+      ],
+      "categories": ["Need", "Want", "Savings"]
+    },
+    {
+      "type": "slide",
+      "id": "m2l2-s5",
+      "title": "Adapting the rule to NZ life",
+      "content": "The 50/30/20 rule was designed in the US where housing is cheaper relative to income. In NZ — especially Auckland — some adaptations make sense:\n\n**High rent situation** (rent > 35% of income):\nTry 65/15/20 — cut wants before savings\n\n**Part-time student** (irregular income):\nBudget based on your lowest expected income, save windfalls\n\n**High debt load** (student loan + car):\nConsider 50/20/30 — temporarily boost debt repayment\n\nThe percentages flex. The principle doesn't: always save something, always cover essentials, enjoy life in between.",
+      "notePrompt": "Given your actual income and expenses, what modified version of the rule would work for you? Suggest your own percentages."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "folder": "module-2-budgeting-and-cashflow",
+  "title": "Budgeting & Cashflow",
+  "description": "Learn how to manage your money with a real budget, understand the 50/30/20 rule, and build financial habits that actually stick.",
+  "level": "Year 11",
+  "nceaStandard": "AS92028",
+  "xpReward": 200,
+  "colorTheme": "#3B82F6",
+  "order": 2,
+  "lessons": [
+    { "filename": "lesson-1.json", "title": "What is a Budget?", "order": 1, "xpReward": 25 },
+    { "filename": "lesson-2.json", "title": "The 50/30/20 Rule", "order": 2, "xpReward": 25 },
+    { "filename": "lesson-3.json", "title": "Fixed vs Variable Expenses", "order": 3, "xpReward": 25 },
+    { "filename": "lesson-4.json", "title": "Income Sources in NZ", "order": 4, "xpReward": 25 },
+    { "filename": "lesson-5.json", "title": "Cash vs Digital Money", "order": 5, "xpReward": 25 },
+    { "filename": "lesson-6.json", "title": "Emergency Funds", "order": 6, "xpReward": 25 },
+    { "filename": "lesson-7.json", "title": "Budgeting Apps and Tools", "order": 7, "xpReward": 25 },
+    { "filename": "lesson-8.json", "title": "Budget Challenge", "order": 8, "xpReward": 25 }
+  ]
+}
