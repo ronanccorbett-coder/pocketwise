@@ -47,7 +47,7 @@ export default function AdminPage() {
   const [newPlanType, setNewPlanType]   = useState("monthly");
   const [newPlanLimit, setNewPlanLimit] = useState(35);
   const [genLoading, setGenLoading]     = useState(false);
-  const [genCode, setGenCode]           = useState("");  const [genCode, setGenCode]           = useState("");
+  const [genCode, setGenCode]           = useState("");
 
   // ── Module editor state ─────────────────────────────────────────────────
   // Fetched modules come from /api/modules listing
