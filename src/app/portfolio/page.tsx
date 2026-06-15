@@ -595,7 +595,7 @@ export default function PortfolioPage(){
   }
 
   function tryOpenTab(tab: Tab) {
-    const tutorialSections: Partial<Record<Tab, string>> = {
+    const tutorialSections: {[key: string]: string} = {
       Markets: "Markets", Property: "Property", Loans: "Loans", Assets: "Assets",
     };
     const ts = tutorialSections[tab];
