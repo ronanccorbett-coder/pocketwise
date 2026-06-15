@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { useGame } from "@/lib/gameContext";
+
 import { ChevronRight, TrendingUp, Trophy, BookOpen, Zap, DollarSign, Home } from "lucide-react";
 
 const FONT = "Inter, system-ui, sans-serif";
@@ -49,7 +49,6 @@ const SLIDES = [
 export default function OnboardingPage() {
   const [step, setStep]     = useState(0);
   const [exiting, setExit]  = useState(false);
-  const { addBadge }        = useGame();
   const router              = useRouter();
   const slide = SLIDES[step];
 
@@ -58,7 +57,7 @@ export default function OnboardingPage() {
       setExit(true);
       setTimeout(() => { setStep(s => s + 1); setExit(false); }, 250);
     } else {
-      addBadge("onboarded");
+      localStorage.setItem("pw_onboarded", "1");
       router.replace("/curriculum");
     }
   }

@@ -63,7 +63,8 @@ export default function AuthGuard({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (isLoading) return;
     if (!user) { router.replace("/login"); return; }
-    if (state && !(state.badges as string[])?.includes("onboarded") && path !== "/onboarding") {
+    const hasOnboarded = typeof window !== "undefined" && localStorage.getItem("pw_onboarded") === "1";
+    if (state && !hasOnboarded && path !== "/onboarding") {
       router.replace("/onboarding");
     }
   }, [user, isLoading, state, path, router]);
