@@ -48,11 +48,7 @@ export default function Nav() {
       <Link href="/curriculum" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
         <Image src="/logo.png" alt="PocketWise" width={30} height={30} style={{ objectFit: "contain", ...(isDark ? { filter: "brightness(10)" } : { mixBlendMode: "multiply" as any }) }} />
         <span style={{ fontWeight: 800, fontSize: "1rem", color: "var(--text)" }}>PocketWise</span>
-        {stateAny?.role && (
-          <span style={{ fontSize: "0.6rem", background: stateAny.teacherApproved ? "var(--green-dim)" : "rgba(59,130,246,.1)", color: stateAny.teacherApproved ? "var(--green)" : "#3B82F6", padding: "1px 6px", borderRadius: 4, fontWeight: 700 }}>
-            {stateAny.role}{stateAny.teacherApproved ? " ✓" : " pending"}
-          </span>
-        )}
+
       </Link>
 
       <div style={{ display: "flex", alignItems: "center", gap: 2 }}>

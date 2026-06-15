@@ -3,270 +3,140 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useGame } from "@/lib/gameContext";
-import { ChevronRight, Zap, DollarSign, BookOpen, Trophy, Briefcase, Spade, Check } from "lucide-react";
+import { ChevronRight, TrendingUp, Trophy, BookOpen, Zap, DollarSign, Home } from "lucide-react";
 
-const STEPS = [
+const FONT = "Inter, system-ui, sans-serif";
+
+const SLIDES = [
   {
-    id: "welcome",
     title: "Welcome to PocketWise",
-    subtitle: "New Zealand's financial literacy platform",
-    content: null,
+    subtitle: "NZ financial literacy for the real world",
+    body: "PocketWise teaches you how money actually works — investing, property, debt, budgeting and more. You earn XP for every lesson, unlock new tools, and compete on the class leaderboard.",
+    icon: "logo",
+    color: "#76AD25",
+    items: [
+      { Icon: BookOpen, text: "Work through structured lessons aligned to NCEA Commerce" },
+      { Icon: Zap, text: "Earn XP and level up as you learn" },
+      { Icon: Trophy, text: "Compete with your class on the leaderboard" },
+    ],
   },
   {
-    id: "what",
-    title: "What is PocketWise?",
-    subtitle: "A gamified financial education platform built for NZ students",
-    content: null,
+    title: "Your Virtual Finances",
+    subtitle: "Start with $5,000 and grow your wealth",
+    body: "You start with $5,000 in virtual cash. Get a job, invest in the NZX stock market, buy property, manage loans, and build a portfolio. Every decision teaches you something real.",
+    icon: "finance",
+    color: "#3B82F6",
+    items: [
+      { Icon: DollarSign, text: "Invest in real NZX-listed companies" },
+      { Icon: Home, text: "Buy and rent out investment properties" },
+      { Icon: TrendingUp, text: "Watch your net worth grow over time" },
+    ],
   },
   {
-    id: "features",
-    title: "Here's what you can do",
-    subtitle: "Everything you need to master money",
-    content: null,
+    title: "You are ready",
+    subtitle: "Start your first lesson now",
+    body: "Your teacher has set up your class. Work through the modules, complete activities, and check back daily to keep your streak alive. Good luck — and remember, the best investment you can make is in your own knowledge.",
+    icon: "ready",
+    color: "#f59e0b",
+    items: [
+      { Icon: BookOpen, text: "Start with Module 1 in the Curriculum tab" },
+      { Icon: Zap, text: "Complete activities for bonus XP" },
+      { Icon: Trophy, text: "Check the Leaderboard to see your rank" },
+    ],
   },
-  {
-    id: "xp",
-    title: "How XP works",
-    subtitle: "Earn XP to unlock more features",
-    content: null,
-  },
-  {
-    id: "ready",
-    title: "You're all set",
-    subtitle: "Your $5,000 virtual NZD is waiting",
-    content: null,
-  },
-];
-
-const FEATURES = [
-  { Icon: BookOpen,  color: "#76AD25", bg: "#e8f5d0", title: "NCEA Curriculum",    desc: "20 modules aligned to Year 11-13 standards" },
-  { Icon: DollarSign,color: "#3B82F6", bg: "#eff6ff", title: "Virtual Portfolio",  desc: "Buy stocks, property and assets with $5,000 NZD" },
-  { Icon: Briefcase, color: "#f59e0b", bg: "#fffbeb", title: "Career Centre",      desc: "Apply for jobs and earn a weekly salary" },
-  { Icon: Spade,     color: "#EF4444", bg: "#fef2f2", title: "Casino Simulator",   desc: "Learn why the house always wins" },
-  { Icon: Trophy,    color: "#a78bfa", bg: "#faf5ff", title: "Leaderboard",        desc: "Compete with students across NZ" },
-];
-
-const XP_UNLOCKS = [
-  { xp: 0,    label: "Start here",      desc: "Curriculum access, basic portfolio" },
-  { xp: 100,  label: "Buy Stocks",      desc: "Invest in NZX companies" },
-  { xp: 150,  label: "Buy Assets",      desc: "Cars, tech, equipment" },
-  { xp: 300,  label: "Take Loans",      desc: "Borrow and manage debt" },
-  { xp: 500,  label: "Day Trading",     desc: "Advanced trading tools" },
-  { xp: 800,  label: "Property Market", desc: "Buy NZ houses and earn rent" },
 ];
 
 export default function OnboardingPage() {
-  const [step, setStep] = useState(0);
-  const [name, setName] = useState("");
-  const { completeOnboarding, state } = useGame();
-  const router = useRouter();
+  const [step, setStep]     = useState(0);
+  const [exiting, setExit]  = useState(false);
+  const { addBadge }        = useGame();
+  const router              = useRouter();
+  const slide = SLIDES[step];
 
   function next() {
-    if (step < STEPS.length - 1) {
-      setStep(s => s + 1);
+    if (step < SLIDES.length - 1) {
+      setExit(true);
+      setTimeout(() => { setStep(s => s + 1); setExit(false); }, 250);
     } else {
-      completeOnboarding(name);
+      addBadge("onboarded");
       router.replace("/curriculum");
     }
   }
 
-  const currentStep = STEPS[step];
-  const progress = ((step) / (STEPS.length - 1)) * 100;
-
   return (
-    <div className="plus-grid" style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "1rem" }}>
+    <div style={{ minHeight: "100vh", background: "linear-gradient(135deg, #0d1526 0%, #0a1f38 50%, #0d1526 100%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "2rem", fontFamily: FONT, position: "relative", overflow: "hidden" }}>
 
-      {/* Progress bar */}
-      <div style={{ width: "100%", maxWidth: 560, marginBottom: 32 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-          {STEPS.map((s, i) => (
-            <div key={s.id} style={{
-              width: 28, height: 28, borderRadius: "50%",
-              background: i <= step ? "#76AD25" : "rgba(255,255,255,.1)",
-              border: `2px solid ${i <= step ? "#76AD25" : "rgba(255,255,255,.2)"}`,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              transition: "all .3s",
-            }}>
-              {i < step
-                ? <Check size={13} color="#fff" />
-                : <span style={{ fontSize: "0.7rem", fontWeight: 700, color: i === step ? "#fff" : "#8b9dc3" }}>{i + 1}</span>
-              }
-            </div>
-          ))}
-        </div>
-        <div style={{ background: "rgba(255,255,255,.1)", borderRadius: 99, height: 3 }}>
-          <div style={{ background: "#76AD25", height: 3, borderRadius: 99, width: `${progress}%`, transition: "width .4s" }} />
-        </div>
+      {/* Background particles */}
+      {[...Array(12)].map((_, i) => (
+        <div key={i} style={{ position: "fixed", left: `${(i * 29 + 5) % 100}%`, top: `${(i * 41 + 8) % 100}%`, width: 2, height: 2, borderRadius: "50%", background: slide.color, opacity: 0.2, animation: `pw-float ${2 + i % 3}s ease-in-out infinite`, animationDelay: `${i * 0.3}s`, pointerEvents: "none" }} />
+      ))}
+
+      {/* Step dots */}
+      <div style={{ display: "flex", gap: 8, marginBottom: 32, position: "relative", zIndex: 1 }}>
+        {SLIDES.map((_, i) => (
+          <div key={i} style={{ width: i === step ? 28 : 8, height: 8, borderRadius: 99, background: i <= step ? slide.color : "rgba(255,255,255,.12)", transition: "all .4s cubic-bezier(.34,1.56,.64,1)", boxShadow: i === step ? `0 0 12px ${slide.color}88` : "none" }} />
+        ))}
       </div>
 
-      <div style={{ width: "100%", maxWidth: 560 }}>
-
-        {/* Step 0 — Welcome */}
-        {step === 0 && (
-          <div style={{ textAlign: "center" }}>
-            <Image src="/logo.png" alt="PocketWise" width={80} height={80} style={{ objectFit: "contain", marginBottom: 20, borderRadius: 12, background: "#fff", padding: 4 }} />
-            <h1 style={{ fontWeight: 900, fontSize: "2.25rem", color: "#fff", marginBottom: 12, lineHeight: 1.1 }}>
-              Welcome to<br /><span style={{ color: "#76AD25" }}>PocketWise</span>
-            </h1>
-            <p style={{ color: "#8b9dc3", fontSize: "1rem", lineHeight: 1.7, marginBottom: 32, maxWidth: 400, margin: "0 auto 32px" }}>
-              New Zealand's gamified financial literacy platform. Learn real money skills while earning XP, building a portfolio, and competing with students across the country.
-            </p>
-            <div style={{ background: "rgba(118,173,37,.1)", border: "1px solid rgba(118,173,37,.3)", borderRadius: 12, padding: "16px 20px", marginBottom: 32, display: "inline-flex", alignItems: "center", gap: 12 }}>
-              <DollarSign size={20} color="#76AD25" />
-              <div style={{ textAlign: "left" }}>
-                <div style={{ fontWeight: 700, color: "#fff", fontSize: "0.9rem" }}>Your starting balance</div>
-                <div style={{ color: "#76AD25", fontWeight: 800, fontSize: "1.25rem" }}>$5,000.00 Virtual NZD</div>
-              </div>
+      {/* Card */}
+      <div style={{
+        width: "100%", maxWidth: 480, position: "relative", zIndex: 1,
+        opacity: exiting ? 0 : 1, transform: exiting ? "translateY(12px)" : "translateY(0)",
+        transition: "opacity .25s ease, transform .25s ease",
+      }}>
+        {/* Icon area */}
+        <div style={{ textAlign: "center", marginBottom: 28 }}>
+          {slide.icon === "logo" ? (
+            <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 80, height: 80, borderRadius: 22, background: `${slide.color}18`, border: `2px solid ${slide.color}33`, marginBottom: 0 }}>
+              <Image src="/logo.png" alt="PocketWise" width={52} height={52} style={{ objectFit: "contain", filter: "brightness(10)" }} />
             </div>
-          </div>
-        )}
-
-        {/* Step 1 — What is PocketWise */}
-        {step === 1 && (
-          <div>
-            <h2 style={{ fontWeight: 900, fontSize: "1.75rem", color: "#fff", marginBottom: 8, textAlign: "center" }}>
-              {currentStep.title}
-            </h2>
-            <p style={{ color: "#8b9dc3", textAlign: "center", marginBottom: 28 }}>{currentStep.subtitle}</p>
-            <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 16, padding: "24px", marginBottom: 16 }}>
-              <p style={{ color: "#e2e8f0", fontSize: "0.925rem", lineHeight: 1.8, marginBottom: 16 }}>
-                PocketWise is built around the NZ school curriculum. You complete lessons, earn XP, and unlock real financial simulations — stocks, property, jobs, and even a casino to learn why gambling is a bad idea.
-              </p>
-              <p style={{ color: "#e2e8f0", fontSize: "0.925rem", lineHeight: 1.8, marginBottom: 16 }}>
-                Every dollar you earn, every stock you buy, and every loan you take is tracked in your virtual portfolio. Make good decisions and grow your wealth. Make bad ones and learn why.
-              </p>
-              <p style={{ color: "#8b9dc3", fontSize: "0.825rem", lineHeight: 1.7 }}>
-                All content is aligned to NCEA Level 1, 2, and 3 Commerce standards — so what you learn here directly supports your assessments.
-              </p>
+          ) : slide.icon === "finance" ? (
+            <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 80, height: 80, borderRadius: 22, background: `${slide.color}18`, border: `2px solid ${slide.color}33` }}>
+              <TrendingUp size={38} color={slide.color} />
             </div>
-          </div>
-        )}
+          ) : (
+            <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 80, height: 80, borderRadius: 22, background: `${slide.color}18`, border: `2px solid ${slide.color}33` }}>
+              <Trophy size={38} color={slide.color} />
+            </div>
+          )}
+        </div>
 
-        {/* Step 2 — Features */}
-        {step === 2 && (
-          <div>
-            <h2 style={{ fontWeight: 900, fontSize: "1.75rem", color: "#fff", marginBottom: 8, textAlign: "center" }}>
-              {currentStep.title}
-            </h2>
-            <p style={{ color: "#8b9dc3", textAlign: "center", marginBottom: 24 }}>{currentStep.subtitle}</p>
-            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {FEATURES.map(f => (
-                <div key={f.title} style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "14px 18px", display: "flex", alignItems: "center", gap: 14 }}>
-                  <div style={{ width: 42, height: 42, borderRadius: 10, background: f.bg, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <f.Icon size={19} color={f.color} />
-                  </div>
-                  <div>
-                    <div style={{ fontWeight: 700, color: "#fff", fontSize: "0.9rem" }}>{f.title}</div>
-                    <div style={{ color: "#8b9dc3", fontSize: "0.8rem", marginTop: 2 }}>{f.desc}</div>
-                  </div>
+        {/* Content */}
+        <div style={{ background: "#111c30", border: `1.5px solid ${slide.color}25`, borderRadius: 20, padding: "28px 24px", animation: "pw-slide-up .4s ease" }}>
+          <div style={{ fontSize: "0.7rem", color: slide.color, fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: ".08em", marginBottom: 6 }}>{slide.subtitle}</div>
+          <h1 style={{ color: "#fff", fontWeight: 900, fontSize: "1.4rem", marginBottom: 12, lineHeight: 1.2 }}>{slide.title}</h1>
+          <p style={{ color: "#8b9dc3", fontSize: "0.875rem", lineHeight: 1.7, marginBottom: 22 }}>{slide.body}</p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 24 }}>
+            {slide.items.map((item, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 12, background: "rgba(255,255,255,.04)", border: "1px solid rgba(255,255,255,.06)", borderRadius: 10, padding: "10px 14px", animation: `pw-slide-up .4s ease ${i * 0.08}s both` }}>
+                <div style={{ width: 32, height: 32, borderRadius: 8, background: `${slide.color}18`, border: `1px solid ${slide.color}30`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <item.Icon size={15} color={slide.color} />
                 </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Step 3 — XP system */}
-        {step === 3 && (
-          <div>
-            <h2 style={{ fontWeight: 900, fontSize: "1.75rem", color: "#fff", marginBottom: 8, textAlign: "center" }}>
-              {currentStep.title}
-            </h2>
-            <p style={{ color: "#8b9dc3", textAlign: "center", marginBottom: 24 }}>{currentStep.subtitle}</p>
-            <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 16, padding: "20px", marginBottom: 16 }}>
-              <p style={{ color: "#8b9dc3", fontSize: "0.825rem", marginBottom: 16 }}>
-                Complete lessons to earn XP. More XP unlocks more features. Here is what each level unlocks:
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                {XP_UNLOCKS.map((u, i) => (
-                  <div key={u.xp} style={{ display: "flex", alignItems: "center", gap: 12, padding: "10px 14px", background: "#111c30", borderRadius: 9, border: "1px solid #2a3a5c" }}>
-                    <div style={{
-                      width: 52, height: 24, borderRadius: 99,
-                      background: i === 0 ? "rgba(118,173,37,.2)" : "rgba(245,158,11,.15)",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      flexShrink: 0,
-                    }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: 3 }}>
-                        <Zap size={11} color={i === 0 ? "#76AD25" : "#f59e0b"} />
-                        <span style={{ fontSize: "0.68rem", fontWeight: 800, color: i === 0 ? "#76AD25" : "#f59e0b" }}>
-                          {u.xp === 0 ? "Free" : u.xp}
-                        </span>
-                      </div>
-                    </div>
-                    <div>
-                      <div style={{ fontWeight: 700, fontSize: "0.825rem", color: "#fff" }}>{u.label}</div>
-                      <div style={{ fontSize: "0.72rem", color: "#8b9dc3", marginTop: 1 }}>{u.desc}</div>
-                    </div>
-                  </div>
-                ))}
+                <span style={{ color: "#c8d5e8", fontSize: "0.83rem", lineHeight: 1.4 }}>{item.text}</span>
               </div>
-            </div>
+            ))}
           </div>
-        )}
 
-        {/* Step 4 — Ready */}
-        {step === 4 && (
-          <div style={{ textAlign: "center" }}>
-            <div style={{ fontSize: "4rem", marginBottom: 16 }}>
-              <Check size={64} color="#76AD25" style={{ margin: "0 auto", display: "block" }} />
-            </div>
-            <h2 style={{ fontWeight: 900, fontSize: "2rem", color: "#fff", marginBottom: 12 }}>
-              {currentStep.title}
-            </h2>
-            <p style={{ color: "#8b9dc3", fontSize: "0.95rem", lineHeight: 1.7, marginBottom: 32 }}>
-              Your account is ready. Head to the curriculum to start your first lesson and earn your first XP.
-            </p>
-            <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginBottom: 32 }}>
-              {[
-                { Icon: Zap,         val: "0 XP",    label: "Starting XP",     color: "#f59e0b" },
-                { Icon: DollarSign,  val: "$5,000",  label: "Starting Balance", color: "#76AD25" },
-                { Icon: Trophy,      val: "0",       label: "Badges Earned",    color: "#a78bfa" },
-              ].map(s => (
-                <div key={s.label} style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "16px 20px", textAlign: "center", minWidth: 120 }}>
-                  <s.Icon size={18} color={s.color} style={{ margin: "0 auto 6px", display: "block" }} />
-                  <div style={{ fontWeight: 800, fontSize: "1.1rem", color: s.color }}>{s.val}</div>
-                  <div style={{ fontSize: "0.72rem", color: "#8b9dc3", marginTop: 2 }}>{s.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+          <button onClick={next} style={{
+            width: "100%", padding: "14px", borderRadius: 12,
+            background: slide.color, color: "#fff", border: "none",
+            fontWeight: 800, fontSize: "0.95rem", cursor: "pointer",
+            fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+            boxShadow: `0 5px 0 ${slide.color}88, 0 8px 20px ${slide.color}40`,
+            transition: "transform .08s, box-shadow .08s",
+          }}
+            onMouseDown={e => { (e.currentTarget as HTMLElement).style.transform = "translateY(4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "none"; }}
+            onMouseUp={e => { (e.currentTarget as HTMLElement).style.transform = ""; (e.currentTarget as HTMLElement).style.boxShadow = `0 5px 0 ${slide.color}88`; }}>
+            {step < SLIDES.length - 1 ? "Next" : "Get Started"} <ChevronRight size={18} />
+          </button>
 
-        {/* Navigation */}
-        <div style={{ display: "flex", justifyContent: step === 0 ? "center" : "space-between", alignItems: "center", marginTop: 28 }}>
           {step > 0 && (
-            <button onClick={() => setStep(s => s - 1)} style={{
-              background: "rgba(255,255,255,.08)", color: "#8b9dc3",
-              border: "1px solid rgba(255,255,255,.15)", borderRadius: 10,
-              padding: "12px 24px", fontWeight: 600, fontSize: "0.9rem",
-              cursor: "pointer", fontFamily: "Inter, sans-serif",
-            }}>
+            <button onClick={() => { setExit(true); setTimeout(() => { setStep(s => s - 1); setExit(false); }, 250); }} style={{ width: "100%", marginTop: 10, padding: "10px", background: "none", border: "none", color: "#4a6a8a", fontSize: "0.82rem", cursor: "pointer", fontFamily: FONT }}>
               Back
             </button>
           )}
-          <button onClick={next} style={{
-            background: "#76AD25", color: "#fff",
-            border: "none", borderRadius: 10,
-            padding: "12px 32px", fontWeight: 700, fontSize: "0.9rem",
-            cursor: "pointer", fontFamily: "Inter, sans-serif",
-            display: "flex", alignItems: "center", gap: 8,
-            minWidth: 160, justifyContent: "center",
-          }}>
-            {step === STEPS.length - 1 ? "Start Learning" : "Next"}
-            {step < STEPS.length - 1 && <ChevronRight size={16} />}
-          </button>
         </div>
-
-        {/* Skip */}
-        {step < STEPS.length - 1 && (
-          <div style={{ textAlign: "center", marginTop: 16 }}>
-            <button onClick={() => {
-              completeOnboarding(name);
-              router.replace("/curriculum");
-            }} style={{ background: "none", border: "none", color: "#4a5a7a", fontSize: "0.78rem", cursor: "pointer", fontFamily: "Inter, sans-serif" }}>
-              Skip tour
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -379,7 +379,7 @@ export default function CurriculumPage() {
 
           {!loading && !error && currentGroup.modules.length === 0 && (
             <div style={{ background: T.card, border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px", textAlign: "center" }}>
-              <div style={{ fontSize: "3rem", marginBottom: 12 }}>📚</div>
+              <BookOpen size={44} color={T.text3} style={{ display: "block", margin: "0 auto 12px" }} />
               <p style={{ color: T.text, fontWeight: 700, fontSize: "1rem", marginBottom: 4 }}>{currentGroup.label} coming soon</p>
               <p style={{ color: T.text3, fontSize: "0.825rem" }}>Start with Level 1 while we build this out!</p>
             </div>

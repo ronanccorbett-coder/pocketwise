@@ -3,7 +3,6 @@ import { useTheme } from "@/lib/theme";
 import { useState, useCallback } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
-import XPGate from "@/components/XPGate";
 import { useGame, NZX_STOCKS } from "@/lib/gameContext";
 import { useStockSimulator, sparklinePath } from "@/lib/stockSimulator";
 import {
@@ -384,14 +383,15 @@ function StockChart({
 }
 
 // ── Stock Market Component ─────────────────────────────────────────────────
-function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, onBuy, onSell }: {
+function StockMarket({
+  const { isDark } = useTheme();
+  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
+ prices, stocks, buyQty, setBuyQty, balance, marketEvent, onBuy, onSell }: {
   prices: any; stocks: any[]; buyQty: Record<string,number>;
   setBuyQty: any; balance: number; marketEvent: string | null;
   onBuy: (sym:string, name:string, qty:number, price:number) => void;
   onSell: (id:string, price:number) => void;
 }) {
-  const { isDark } = useTheme();
-  const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const [selected, setSelected] = useState<string|null>(null);
   const [justBought, setJustBought] = useState<string|null>(null);
 
@@ -579,6 +579,35 @@ export default function PortfolioPage(){
 
   const { prices, marketEvent } = useStockSimulator(30000, handlePriceUpdate);
 
+  const [activeTutorial, setActiveTutorial] = useState<string | null>(null);
+  const [completedTutorials, setCompletedTutorials] = useState<string[]>(() => {
+    try { return JSON.parse(localStorage.getItem("pw_tutorials_done") ?? "[]"); } catch { return []; }
+  });
+
+  function completeTutorial(section: string) {
+    const updated = [...completedTutorials, section];
+    setCompletedTutorials(updated);
+    localStorage.setItem("pw_tutorials_done", JSON.stringify(updated));
+    setActiveTutorial(null);
+  }
+
+  function needsTutorial(section: string) {
+    return !completedTutorials.includes(section);
+  }
+
+  function tryOpenTab(tab: Tab) {
+    const tutorialSections: Partial<Record<Tab, string>> = {
+      Markets: "Markets", Property: "Property", Loans: "Loans", Assets: "Assets",
+    };
+    const ts = tutorialSections[tab];
+    if (ts && needsTutorial(ts)) {
+      setActiveTutorial(ts);
+      setTab(tab);
+    } else {
+      setTab(tab);
+    }
+  }
+
   function notify(m: string) { setNotif(m); setTimeout(() => setNotif(null), 3500); }
 
   const balance       = state?.balance ?? 5000;
@@ -645,7 +674,7 @@ export default function PortfolioPage(){
           {/* Tabs */}
           <div style={{ display: "flex", gap: 6, marginBottom: 24, flexWrap: "wrap" }}>
             {TABS.map(t => (
-              <button key={t} onClick={() => setTab(t)} style={{
+              <button key={t} onClick={() => tryOpenTab(t as Tab)} style={{
                 padding: "7px 16px", borderRadius: 9999,
                 background: tab === t ? T.bg : T.card,
                 color: tab === t ? "#fff" : "#475569",
@@ -703,8 +732,7 @@ export default function PortfolioPage(){
 
           {/* MARKETS */}
           {tab === "Markets" && (
-            <XPGate gate="buyStock" label="Stock Market">
-              <StockMarket
+            <StockMarket
                 prices={prices}
                 stocks={stocks}
                 buyQty={buyQty}
@@ -718,7 +746,6 @@ export default function PortfolioPage(){
                 }}
                 onSell={(id, price) => sellStock(id, price)}
               />
-            </XPGate>
           )}
 
           {tab === "Day Trading" && (
@@ -736,8 +763,7 @@ export default function PortfolioPage(){
 
           {/* PROPERTY */}
           {tab === "Property" && (
-            <XPGate gate="buyProperty" label="Property Market">
-              <div style={{ marginBottom: 12 }}>
+            <div style={{ marginBottom: 12 }}>
                 <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:16 }}>
                   <h3 style={{ fontWeight:700, color:"#fff", fontSize:"0.9rem" }}>NZ Property Market</h3>
                   <InfoDot text="Property investing means buying real estate to earn rental income and capital gains. You need a 20% deposit upfront." />
@@ -789,12 +815,10 @@ export default function PortfolioPage(){
                   );
                 })}
               </div>
-            </XPGate>
           )}
 
           {tab === "Loans" && (
-            <XPGate gate="takeLoan" label="Loans">
-              <div>
+            <div>
                 {loans.length > 0 && (
                   <div style={{ background:"#111c30", border:`1px solid ${T.border}`, borderRadius:14, padding:"16px 20px", marginBottom:20 }}>
                     <h3 style={{ fontWeight:700, fontSize:"0.875rem", color:"#fff", marginBottom:12, display:"flex", alignItems:"center", gap:4 }}>Active Loans<InfoDot text="Your current debt. Loans reduce your net worth and require weekly repayments from your balance." /></h3>
@@ -845,7 +869,6 @@ export default function PortfolioPage(){
                   );
                 })}
               </div>
-            </XPGate>
           )}
 
           {tab === "Assets" && (
@@ -1046,6 +1069,12 @@ export default function PortfolioPage(){
           )}
         </div>
       </div>
+      {activeTutorial && (
+        <PortfolioTutorial
+          section={activeTutorial}
+          onComplete={() => completeTutorial(activeTutorial)}
+        />
+      )}
     </AuthGuard>
   );
 }
