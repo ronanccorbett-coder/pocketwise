@@ -236,7 +236,7 @@ export default function PortfolioTutorial({ section, onComplete }: TutorialProps
       fontFamily: FONT, animation: "pw-fade-in .3s ease",
     }}>
       <div style={{
-        background: T.card, border: `1.5px solid ${tutorial.color}33`,
+        background: "#111c30", border: `1.5px solid ${tutorial.color}33`,
         borderRadius: 22, width: "100%", maxWidth: 560,
         boxShadow: `0 24px 64px rgba(0,0,0,.5), 0 0 0 1px ${tutorial.color}22`,
         transform: entered ? "translateY(0) scale(1)" : "translateY(24px) scale(0.97)",
@@ -246,7 +246,7 @@ export default function PortfolioTutorial({ section, onComplete }: TutorialProps
       }}>
 
         {/* Progress bar */}
-        <div style={{ height: 3, background: T.bg3 }}>
+        <div style={{ height: 3, background: "#1a2540" }}>
           <div style={{ height: 3, background: tutorial.color, width: `${pct}%`, transition: "width .5s cubic-bezier(.34,1.56,.64,1)", boxShadow: `0 0 8px ${tutorial.color}` }} />
         </div>
 
@@ -257,9 +257,9 @@ export default function PortfolioTutorial({ section, onComplete }: TutorialProps
           </div>
           <div>
             <div style={{ fontSize: "0.65rem", color: tutorial.color, fontWeight: 700, textTransform: "uppercase" as const, letterSpacing: ".06em" }}>Tutorial — {tutorial.title}</div>
-            <div style={{ fontWeight: 800, color: T.text, fontSize: "0.9rem" }}>{slide.title}</div>
+            <div style={{ fontWeight: 800, color: "#ffffff", fontSize: "0.9rem" }}>{slide.title}</div>
           </div>
-          <div style={{ marginLeft: "auto", fontSize: "0.72rem", color: T.text3, flexShrink: 0 }}>{step + 1} / {total}</div>
+          <div style={{ marginLeft: "auto", fontSize: "0.72rem", color: "#4a6a8a", flexShrink: 0 }}>{step + 1} / {total}</div>
         </div>
 
         {/* Body */}
@@ -267,7 +267,7 @@ export default function PortfolioTutorial({ section, onComplete }: TutorialProps
 
           {!isQuiz ? (
             <>
-              <p style={{ color: T.text2, fontSize: "0.9rem", lineHeight: 1.7, marginBottom: 16 }}>{slide.content}</p>
+              <p style={{ color: "#8b9dc3", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: 16 }}>{slide.content}</p>
               {slide.highlight && (
                 <div style={{ background: `${tutorial.color}12`, border: `1.5px solid ${tutorial.color}30`, borderRadius: 12, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10 }}>
                   <Zap size={15} color={tutorial.color} fill={tutorial.color} style={{ flexShrink: 0 }} />
@@ -277,15 +277,15 @@ export default function PortfolioTutorial({ section, onComplete }: TutorialProps
             </>
           ) : (
             <>
-              <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 16 }}>{slide.content}</p>
-              <div style={{ background: T.bg3, border: `1px solid ${T.border}`, borderRadius: 12, padding: "14px 16px", marginBottom: 14 }}>
-                <div style={{ fontWeight: 700, color: T.text, fontSize: "0.875rem", marginBottom: 12 }}>{slide.quiz!.q}</div>
+              <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 16 }}>{slide.content}</p>
+              <div style={{ background: "#1a2540", border: `1px solid ${"rgba(255,255,255,.07)"}`, borderRadius: 12, padding: "14px 16px", marginBottom: 14 }}>
+                <div style={{ fontWeight: 700, color: "#ffffff", fontSize: "0.875rem", marginBottom: 12 }}>{slide.quiz!.q}</div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                   {slide.quiz!.options.map((opt, i) => {
                     const isCorrect = i === slide.quiz!.correct;
                     const isSelected = quizAnswer === i;
                     const showResult = quizAnswer !== null;
-                    let bg = T.bg3, border = T.border, color = T.text2;
+                    let bg = "#1a2540", border = "rgba(255,255,255,.07)", color = "#8b9dc3";
                     if (showResult && isCorrect) { bg = "rgba(118,173,37,.15)"; border = "rgba(118,173,37,.4)"; color = "#76AD25"; }
                     else if (showResult && isSelected && !isCorrect) { bg = "rgba(239,68,68,.1)"; border = "rgba(239,68,68,.3)"; color = "#EF4444"; }
                     return (
@@ -297,7 +297,7 @@ export default function PortfolioTutorial({ section, onComplete }: TutorialProps
                         fontFamily: FONT, transition: "all .25s",
                         display: "flex", alignItems: "center", gap: 8,
                       }}>
-                        <span style={{ width: 22, height: 22, borderRadius: "50%", background: showResult && isCorrect ? "rgba(118,173,37,.2)" : showResult && isSelected ? "rgba(239,68,68,.15)" : T.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.7rem", fontWeight: 800, flexShrink: 0, color: showResult && isCorrect ? "#76AD25" : showResult && isSelected ? "#EF4444" : T.text3 }}>
+                        <span style={{ width: 22, height: 22, borderRadius: "50%", background: showResult && isCorrect ? "rgba(118,173,37,.2)" : showResult && isSelected ? "rgba(239,68,68,.15)" : "#0d1526", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.7rem", fontWeight: 800, flexShrink: 0, color: showResult && isCorrect ? "#76AD25" : showResult && isSelected ? "#EF4444" : "#4a6a8a" }}>
                           {showResult && isCorrect ? <Check size={12} /> : String.fromCharCode(65 + i)}
                         </span>
                         {opt}
@@ -306,7 +306,7 @@ export default function PortfolioTutorial({ section, onComplete }: TutorialProps
                   })}
                 </div>
                 {quizAnswer !== null && (
-                  <div style={{ marginTop: 12, padding: "10px 12px", background: quizAnswer === slide.quiz!.correct ? "rgba(118,173,37,.08)" : "rgba(239,68,68,.06)", borderRadius: 8, fontSize: "0.78rem", color: T.text2, lineHeight: 1.5, animation: "pw-slide-up .3s ease" }}>
+                  <div style={{ marginTop: 12, padding: "10px 12px", background: quizAnswer === slide.quiz!.correct ? "rgba(118,173,37,.08)" : "rgba(239,68,68,.06)", borderRadius: 8, fontSize: "0.78rem", color: "#8b9dc3", lineHeight: 1.5, animation: "pw-slide-up .3s ease" }}>
                     <strong style={{ color: quizAnswer === slide.quiz!.correct ? "#76AD25" : "#EF4444" }}>
                       {quizAnswer === slide.quiz!.correct ? "Correct!" : "Not quite —"}
                     </strong>{" "}
@@ -327,20 +327,20 @@ export default function PortfolioTutorial({ section, onComplete }: TutorialProps
 
         {/* Footer */}
         <div style={{ padding: "0 24px 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <button onClick={() => { if (step > 0) { setStep(s => s - 1); setQuiz(null); setQuizDone(false); } }} disabled={step === 0} style={{ display: "flex", alignItems: "center", gap: 6, background: "none", border: "none", color: step === 0 ? T.text3 : T.text2, fontWeight: 600, fontSize: "0.82rem", cursor: step === 0 ? "default" : "pointer", fontFamily: FONT }}>
+          <button onClick={() => { if (step > 0) { setStep(s => s - 1); setQuiz(null); setQuizDone(false); } }} disabled={step === 0} style={{ display: "flex", alignItems: "center", gap: 6, background: "none", border: "none", color: step === 0 ? "#4a6a8a" : "#8b9dc3", fontWeight: 600, fontSize: "0.82rem", cursor: step === 0 ? "default" : "pointer", fontFamily: FONT }}>
             <ChevronLeft size={16} /> Back
           </button>
 
           {/* Step dots */}
           <div style={{ display: "flex", gap: 5 }}>
             {tutorial.slides.map((_, i) => (
-              <div key={i} style={{ width: i === step ? 20 : 7, height: 7, borderRadius: 99, background: i < step ? tutorial.color : i === step ? tutorial.color : T.border, transition: "all .3s cubic-bezier(.34,1.56,.64,1)", opacity: i < step ? 0.5 : 1 }} />
+              <div key={i} style={{ width: i === step ? 20 : 7, height: 7, borderRadius: 99, background: i < step ? tutorial.color : i === step ? tutorial.color : "rgba(255,255,255,.07)", transition: "all .3s cubic-bezier(.34,1.56,.64,1)", opacity: i < step ? 0.5 : 1 }} />
             ))}
           </div>
 
           <button onClick={next} disabled={!canNext} className={canNext ? "btn-3d-green" : ""} style={{
             padding: "9px 20px", fontSize: "0.85rem", fontWeight: 700, display: "flex", alignItems: "center", gap: 6,
-            background: !canNext ? T.bg3 : undefined, color: !canNext ? T.text3 : undefined,
+            background: !canNext ? "#1a2540" : undefined, color: !canNext ? "#4a6a8a" : undefined,
             border: "none", borderRadius: 10, cursor: !canNext ? "not-allowed" : "pointer", fontFamily: FONT,
           }}>
             {isLast ? <><Check size={14} /> Start Trading</> : <>Next <ChevronRight size={14} /></>}

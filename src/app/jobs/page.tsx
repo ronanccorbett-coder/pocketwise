@@ -80,25 +80,25 @@ export default function JobsPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight:"100vh", background:T.bg, fontFamily:FONT }}>
+      <div style={{ minHeight:"100vh", background:"#0d1526", fontFamily:FONT }}>
         <Nav />
 
         {/* Hero */}
-        <div style={{ background:`linear-gradient(135deg, ${T.bg} 0%, ${T.bg2} 60%, ${T.bg} 100%)`, padding:"28px 2rem", position:"relative", overflow:"hidden", borderBottom:`1px solid ${T.border}` }}>
+        <div style={{ background:`linear-gradient(135deg, ${"#0d1526"} 0%, ${"#111c30"} 60%, ${"#0d1526"} 100%)`, padding:"28px 2rem", position:"relative", overflow:"hidden", borderBottom:`1px solid ${"rgba(255,255,255,.07)"}` }}>
           {[...Array(12)].map((_,i) => (
             <div key={i} style={{ position:"absolute", left:`${(i*23+5)%100}%`, top:`${(i*31+10)%100}%`, width:2, height:2, borderRadius:"50%", background:"#76AD25", opacity:0.2, animation:`pw-float ${2.5+i%3}s ease-in-out infinite`, animationDelay:`${i*0.2}s`, pointerEvents:"none" }} />
           ))}
           <div style={{ maxWidth:960, margin:"0 auto", position:"relative" }}>
             <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:6 }}>
               <Briefcase size={24} color="#3B82F6" />
-              <h1 style={{ fontSize:"1.5rem", fontWeight:900, color:T.text }}>Career Centre</h1>
+              <h1 style={{ fontSize:"1.5rem", fontWeight:900, color:"#ffffff" }}>Career Centre</h1>
             </div>
-            <p style={{ color:T.text2, fontSize:"0.875rem", marginBottom:20 }}>Earn a real weekly salary. More XP unlocks better jobs.</p>
+            <p style={{ color:"#8b9dc3", fontSize:"0.875rem", marginBottom:20 }}>Earn a real weekly salary. More XP unlocks better jobs.</p>
             <div style={{ display:"flex", gap:10, flexWrap:"wrap" }}>
-              <div style={{ background:isDark?"rgba(255,255,255,.06)":"rgba(0,0,0,.04)", border:`1px solid ${T.border2}`, borderRadius:12, padding:"12px 20px", display:"flex", alignItems:"center", gap:8 }}>
+              <div style={{ background:isDark?"rgba(255,255,255,.06)":"rgba(0,0,0,.04)", border:`1px solid ${"rgba(255,255,255,.14)"}`, borderRadius:12, padding:"12px 20px", display:"flex", alignItems:"center", gap:8 }}>
                 <Zap size={16} color="#f59e0b" fill="#f59e0b" />
                 <div>
-                  <div style={{ fontSize:"0.65rem", color:T.text2 }}>YOUR XP</div>
+                  <div style={{ fontSize:"0.65rem", color:"#8b9dc3" }}>YOUR XP</div>
                   <div style={{ fontWeight:900, color:"#f59e0b", fontSize:"1.1rem" }}>{xp.toLocaleString()}</div>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function JobsPage() {
                   <Trophy size={16} color="#76AD25" />
                   <div>
                     <div style={{ fontSize:"0.65rem", color:"#76AD25" }}>CURRENT JOB</div>
-                    <div style={{ fontWeight:700, color:T.text, fontSize:"0.875rem" }}>{currentJob.title} · ${currentJob.salary}/wk</div>
+                    <div style={{ fontWeight:700, color:"#ffffff", fontSize:"0.875rem" }}>{currentJob.title} · ${currentJob.salary}/wk</div>
                   </div>
                 </div>
               )}
@@ -116,7 +116,7 @@ export default function JobsPage() {
         </div>
 
         {/* XP tier tracker */}
-        <div style={{ background:T.card, borderBottom:`1px solid ${T.border}`, padding:"14px 2rem" }}>
+        <div style={{ background:"#111c30", borderBottom:`1px solid ${"rgba(255,255,255,.07)"}`, padding:"14px 2rem" }}>
           <div style={{ maxWidth:960, margin:"0 auto", display:"flex", alignItems:"center" }}>
             {[
               { label:"Entry",    req:0,                    desc:"Any student" },
@@ -131,19 +131,19 @@ export default function JobsPage() {
                   <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:3 }}>
                     <div style={{
                       width:36, height:36, borderRadius:"50%",
-                      background:unlocked ? color : T.bg3,
-                      border:`2px solid ${unlocked ? color : T.border}`,
+                      background:unlocked ? color : "#1a2540",
+                      border:`2px solid ${unlocked ? color : "rgba(255,255,255,.07)"}`,
                       display:"flex", alignItems:"center", justifyContent:"center",
                       boxShadow:unlocked ? `0 0 14px ${LEVEL_SHADOWS[tier.label]}` : "none",
                       transition:"all .4s cubic-bezier(.34,1.56,.64,1)",
                     }}>
-                      {unlocked ? <Check size={15} color="#fff" /> : <Lock size={13} color={T.text3} />}
+                      {unlocked ? <Check size={15} color="#fff" /> : <Lock size={13} color={"#4a6a8a"} />}
                     </div>
-                    <div style={{ fontSize:"0.65rem", fontWeight:700, color:unlocked ? color : T.text3, whiteSpace:"nowrap" }}>{tier.label}</div>
-                    <div style={{ fontSize:"0.6rem", color:T.text3 }}>{tier.desc}</div>
+                    <div style={{ fontSize:"0.65rem", fontWeight:700, color:unlocked ? color : "#4a6a8a", whiteSpace:"nowrap" }}>{tier.label}</div>
+                    <div style={{ fontSize:"0.6rem", color:"#4a6a8a" }}>{tier.desc}</div>
                   </div>
                   {i < arr.length - 1 && (
-                    <div style={{ flex:1, height:3, background:unlocked ? color : T.bg3, borderRadius:99, transition:"background .4s ease", margin:"0 4px", marginBottom:24 }} />
+                    <div style={{ flex:1, height:3, background:unlocked ? color : "#1a2540", borderRadius:99, transition:"background .4s ease", margin:"0 4px", marginBottom:24 }} />
                   )}
                 </div>
               );
@@ -167,30 +167,30 @@ export default function JobsPage() {
                   onMouseEnter={() => !locked && setHoveredId(job.id)}
                   onMouseLeave={() => setHoveredId("")}
                   style={{
-                    background:T.card,
-                    border:`2px solid ${isCurrent ? color : locked ? T.border : isHovered ? color : T.border}`,
+                    background:"#111c30",
+                    border:`2px solid ${isCurrent ? color : locked ? "rgba(255,255,255,.07)" : isHovered ? color : "rgba(255,255,255,.07)"}`,
                     borderRadius:16,
                     padding:"18px 18px 16px",
                     position:"relative",
                     overflow:"hidden",
                     transition:"all .2s cubic-bezier(.34,1.56,.64,1)",
                     transform:locked ? "none" : isHovered ? "translateY(-4px) scale(1.01)" : "translateY(0) scale(1)",
-                    boxShadow:locked ? "none" : isHovered ? `0 12px 32px ${LEVEL_SHADOWS[job.level]}` : isCurrent ? `0 4px 16px ${LEVEL_SHADOWS[job.level]}` : `0 2px 8px ${T.shadow}`,
+                    boxShadow:locked ? "none" : isHovered ? `0 12px 32px ${LEVEL_SHADOWS[job.level]}` : isCurrent ? `0 4px 16px ${LEVEL_SHADOWS[job.level]}` : `0 2px 8px ${"rgba(0,0,0,.4)"}`,
                     animation:justDone ? "pw-unlock 0.6s cubic-bezier(.34,1.56,.64,1)" : "none",
                     opacity:locked ? 0.65 : 1,
                   }}>
 
                   {/* Colour strip */}
-                  <div style={{ position:"absolute", top:0, left:0, right:0, height:4, background:locked ? T.border : `linear-gradient(90deg,${color},${color}66)`, transition:"all .3s" }} />
+                  <div style={{ position:"absolute", top:0, left:0, right:0, height:4, background:locked ? "rgba(255,255,255,.07)" : `linear-gradient(90deg,${color},${color}66)`, transition:"all .3s" }} />
 
                   {/* Lock / hired badge */}
                   {locked && (
-                    <div style={{ position:"absolute", top:12, right:12, background:T.bg3, border:`1px solid ${T.border}`, borderRadius:"50%", width:28, height:28, display:"flex", alignItems:"center", justifyContent:"center" }}>
-                      <Lock size={13} color={T.text3} />
+                    <div style={{ position:"absolute", top:12, right:12, background:"#1a2540", border:`1px solid ${"rgba(255,255,255,.07)"}`, borderRadius:"50%", width:28, height:28, display:"flex", alignItems:"center", justifyContent:"center" }}>
+                      <Lock size={13} color={"#4a6a8a"} />
                     </div>
                   )}
                   {isCurrent && (
-                    <div style={{ position:"absolute", top:10, right:10, background:color, color: T.text, padding:"2px 10px", borderRadius:99, fontSize:"0.62rem", fontWeight:800, textTransform:"uppercase" as const, letterSpacing:".04em", animation:"pw-pop .4s ease" }}>
+                    <div style={{ position:"absolute", top:10, right:10, background:color, color: "#ffffff", padding:"2px 10px", borderRadius:99, fontSize:"0.62rem", fontWeight:800, textTransform:"uppercase" as const, letterSpacing:".04em", animation:"pw-pop .4s ease" }}>
                       Hired
                     </div>
                   )}
@@ -199,38 +199,38 @@ export default function JobsPage() {
                   <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:12, marginTop:8 }}>
                     <div style={{
                       width:48, height:48, borderRadius:12,
-                      background:locked ? T.bg3 : `${color}18`,
-                      border:`1.5px solid ${locked ? T.border : color + "33"}`,
+                      background:locked ? "#1a2540" : `${color}18`,
+                      border:`1.5px solid ${locked ? "rgba(255,255,255,.07)" : color + "33"}`,
                       display:"flex", alignItems:"center", justifyContent:"center",
                       transition:"all .2s",
                       transform:isHovered && !locked ? "scale(1.1) rotate(-5deg)" : "scale(1) rotate(0)",
                     }}>
-                      {(() => { const I = JOB_ICONS[job.id] ?? Briefcase; return <I size={22} color={locked ? T.text3 : color} />; })()}
+                      {(() => { const I = JOB_ICONS[job.id] ?? Briefcase; return <I size={22} color={locked ? "#4a6a8a" : color} />; })()}
                     </div>
                     <div>
-                      <div style={{ fontWeight:800, fontSize:"0.925rem", color:locked ? T.text3 : T.text, lineHeight:1.2 }}>{job.title}</div>
-                      <div style={{ fontSize:"0.75rem", color:T.text2, marginTop:2 }}>{job.company}</div>
+                      <div style={{ fontWeight:800, fontSize:"0.925rem", color:locked ? "#4a6a8a" : "#ffffff", lineHeight:1.2 }}>{job.title}</div>
+                      <div style={{ fontSize:"0.75rem", color:"#8b9dc3", marginTop:2 }}>{job.company}</div>
                     </div>
                   </div>
 
                   {/* Tags */}
                   <div style={{ display:"flex", flexWrap:"wrap", gap:5, marginBottom:14 }}>
                     <span style={{ background:`${color}18`, color:color, padding:"3px 10px", borderRadius:99, fontSize:"0.68rem", fontWeight:700 }}>{job.level}</span>
-                    <span style={{ background:T.bg3, color:T.text2, padding:"3px 10px", borderRadius:99, fontSize:"0.68rem" }}>{job.category}</span>
-                    <span style={{ background:T.bg3, color:T.text2, padding:"3px 10px", borderRadius:99, fontSize:"0.68rem" }}>{job.hours}h/wk</span>
+                    <span style={{ background:"#1a2540", color:"#8b9dc3", padding:"3px 10px", borderRadius:99, fontSize:"0.68rem" }}>{job.category}</span>
+                    <span style={{ background:"#1a2540", color:"#8b9dc3", padding:"3px 10px", borderRadius:99, fontSize:"0.68rem" }}>{job.hours}h/wk</span>
                   </div>
 
                   {/* Salary */}
                   <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:14 }}>
                     <div>
-                      <div style={{ fontSize:"0.65rem", color:T.text3, textTransform:"uppercase" as const, letterSpacing:".04em" }}>Weekly salary</div>
-                      <div style={{ fontSize:"1.3rem", fontWeight:900, color:locked ? T.text3 : color }}>
+                      <div style={{ fontSize:"0.65rem", color:"#4a6a8a", textTransform:"uppercase" as const, letterSpacing:".04em" }}>Weekly salary</div>
+                      <div style={{ fontSize:"1.3rem", fontWeight:900, color:locked ? "#4a6a8a" : color }}>
                         ${job.salary.toLocaleString()}
                       </div>
                     </div>
                     {job.xpReq > 0 && (
                       <div style={{ textAlign:"right" as const }}>
-                        <div style={{ fontSize:"0.65rem", color:T.text3 }}>Required</div>
+                        <div style={{ fontSize:"0.65rem", color:"#4a6a8a" }}>Required</div>
                         <div style={{ display:"flex", alignItems:"center", gap:3 }}>
                           <Zap size={12} color={locked ? "#EF4444" : "#76AD25"} />
                           <span style={{ fontSize:"0.8rem", fontWeight:700, color:locked ? "#EF4444" : "#76AD25" }}>{job.xpReq.toLocaleString()} XP</span>
@@ -246,9 +246,9 @@ export default function JobsPage() {
                     className={!locked && !isCurrent ? "btn-3d-green" : ""}
                     style={{
                       width:"100%", padding:"11px",
-                      background:isCurrent ? `${color}18` : locked ? T.bg3 : undefined,
-                      color:isCurrent ? color : locked ? T.text3 : undefined,
-                      border:isCurrent ? `1.5px solid ${color}40` : locked ? `1px solid ${T.border}` : undefined,
+                      background:isCurrent ? `${color}18` : locked ? "#1a2540" : undefined,
+                      color:isCurrent ? color : locked ? "#4a6a8a" : undefined,
+                      border:isCurrent ? `1.5px solid ${color}40` : locked ? `1px solid ${"rgba(255,255,255,.07)"}` : undefined,
                       borderRadius:10, fontSize:"0.85rem", fontWeight:700,
                       cursor:locked || isCurrent ? "not-allowed" : "pointer", fontFamily:FONT,
                       display:"flex", alignItems:"center", justifyContent:"center", gap:6,

@@ -55,16 +55,16 @@ export default function LeaderboardPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: T.bg }}>
+      <div style={{ minHeight: "100vh", background: "#0d1526" }}>
         <Nav />
 
-        <div style={{ background: `linear-gradient(135deg, ${T.bg} 0%, ${T.bg2} 100%)`, padding: "28px 2rem" }}>
+        <div style={{ background: `linear-gradient(135deg, ${"#0d1526"} 0%, ${"#111c30"} 100%)`, padding: "28px 2rem" }}>
           <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 8 }}>
               <Trophy size={22} color="#f59e0b" />
-              <h1 style={{ fontSize: "1.4rem", fontWeight: 800, color: T.text }}>Leaderboard</h1>
+              <h1 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#ffffff" }}>Leaderboard</h1>
             </div>
-            <p style={{ color: T.text2, fontSize: "0.875rem" }}>Top students ranked by XP earned</p>
+            <p style={{ color: "#8b9dc3", fontSize: "0.875rem" }}>Top students ranked by XP earned</p>
             {userRank >= 0 && (
               <div style={{ marginTop: 10, display: "inline-block", background: "rgba(118,173,37,.15)", color: "#76AD25", border: "1px solid rgba(118,173,37,.3)", padding: "4px 14px", borderRadius: 99, fontSize: "0.78rem", fontWeight: 700 }}>
                 You are ranked {rankLabel(userRank)}
@@ -76,13 +76,13 @@ export default function LeaderboardPage() {
         <div style={{ maxWidth: 680, margin: "0 auto", padding: "24px 1.5rem" }}>
           <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
             {["All Students", "This Week"].map((t, i) => (
-              <button key={t} style={{ padding: "7px 18px", borderRadius: 9999, background: i === 0 ? T.bg : "#fff", color: i === 0 ? "#fff" : T.text2, border: `1px solid ${i === 0 ? T.bg : "#e2e8f0"}`, fontWeight: 600, fontSize: "0.875rem", cursor: "pointer", fontFamily: "Inter, sans-serif" }}>{t}</button>
+              <button key={t} style={{ padding: "7px 18px", borderRadius: 9999, background: i === 0 ? "#0d1526" : "#fff", color: i === 0 ? "#fff" : "#8b9dc3", border: `1px solid ${i === 0 ? "#0d1526" : "#e2e8f0"}`, fontWeight: 600, fontSize: "0.875rem", cursor: "pointer", fontFamily: "Inter, sans-serif" }}>{t}</button>
             ))}
           </div>
 
           {sorted.length === 0 ? (
-            <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "48px", textAlign: "center" }}>
-              <p style={{ color: T.text3, fontSize: "0.875rem" }}>No students on the leaderboard yet. Complete lessons to appear here.</p>
+            <div style={{ background: "#111c30", border: `1px solid ${"rgba(255,255,255,.07)"}`, borderRadius: 14, padding: "48px", textAlign: "center" }}>
+              <p style={{ color: "#4a6a8a", fontSize: "0.875rem" }}>No students on the leaderboard yet. Complete lessons to appear here.</p>
             </div>
           ) : (
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -90,23 +90,23 @@ export default function LeaderboardPage() {
                 const isMe = s.userId === user?.id;
                 return (
                   <div key={s.id ?? i} style={{
-                    background: isMe ? (isDark ? "rgba(118,173,37,.08)" : "#f0fdf4") : T.card,
+                    background: isMe ? (isDark ? "rgba(118,173,37,.08)" : "#f0fdf4") : "#111c30",
                     border: `1px solid ${isMe ? "#76AD25" : i < 3 ? "#e2e8f0" : "#e2e8f0"}`,
                     borderRadius: 12, padding: "14px 18px",
                     display: "flex", alignItems: "center", gap: 12,
                   }}>
-                    <div style={{ width: 36, textAlign: "center", fontWeight: 800, fontSize: "0.82rem", color: i === 0 ? "#f59e0b" : i === 1 ? T.text3 : i === 2 ? "#cd7f32" : T.text3 }}>
+                    <div style={{ width: 36, textAlign: "center", fontWeight: 800, fontSize: "0.82rem", color: i === 0 ? "#f59e0b" : i === 1 ? "#4a6a8a" : i === 2 ? "#cd7f32" : "#4a6a8a" }}>
                       {rankLabel(i)}
                     </div>
-                    <div style={{ width: 34, height: 34, borderRadius: "50%", background: COLORS[i % COLORS.length], display: "flex", alignItems: "center", justifyContent: "center", color: T.text, fontWeight: 700, fontSize: "0.78rem", flexShrink: 0 }}>
+                    <div style={{ width: 34, height: 34, borderRadius: "50%", background: COLORS[i % COLORS.length], display: "flex", alignItems: "center", justifyContent: "center", color: "#ffffff", fontWeight: 700, fontSize: "0.78rem", flexShrink: 0 }}>
                       {getInitials(s)}
                     </div>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontWeight: 600, fontSize: "0.875rem", color: T.text }}>
+                      <div style={{ fontWeight: 600, fontSize: "0.875rem", color: "#ffffff" }}>
                         {getDisplayName(s, isMe)}
                         {isMe && <span style={{ color: "#76AD25", fontSize: "0.75rem", fontWeight: 500, marginLeft: 6 }}>(You)</span>}
                       </div>
-                      <div style={{ fontSize: "0.75rem", color: T.text3, marginTop: 1 }}>
+                      <div style={{ fontSize: "0.75rem", color: "#4a6a8a", marginTop: 1 }}>
                         {(s.completedLessons?.length ?? 0)} lessons completed
                       </div>
                     </div>

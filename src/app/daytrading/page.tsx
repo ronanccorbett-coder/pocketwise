@@ -274,40 +274,40 @@ export default function DayTradingPage() {
 
   return (
     <AuthGuard>
-      <div style={{ minHeight: "100vh", background: T.bg, fontFamily: FONT, display: "flex", flexDirection: "column" }}>
+      <div style={{ minHeight: "100vh", background: "#0d1526", fontFamily: FONT, display: "flex", flexDirection: "column" }}>
         <Nav />
 
         {/* Notification */}
         {notification && (
-          <div style={{ position: "fixed", top: 68, right: 16, zIndex: 600, background: T.card, border: `1px solid ${T.border}`, borderRadius: 10, padding: "10px 16px", fontSize: "0.82rem", color: T.text, boxShadow: "0 8px 24px rgba(0,0,0,.3)", animation: "pw-slide-up .3s ease", maxWidth: 320 }}>
+          <div style={{ position: "fixed", top: 68, right: 16, zIndex: 600, background: "#111c30", border: `1px solid ${"rgba(255,255,255,.07)"}`, borderRadius: 10, padding: "10px 16px", fontSize: "0.82rem", color: "#ffffff", boxShadow: "0 8px 24px rgba(0,0,0,.3)", animation: "pw-slide-up .3s ease", maxWidth: 320 }}>
             {notification}
           </div>
         )}
 
         {/* Top bar */}
-        <div style={{ background: T.panel, borderBottom: `1px solid ${T.border}`, padding: "0 1rem", display: "flex", alignItems: "center", gap: 0, overflowX: "auto" as const }}>
+        <div style={{ background: T.panel, borderBottom: `1px solid ${"rgba(255,255,255,.07)"}`, padding: "0 1rem", display: "flex", alignItems: "center", gap: 0, overflowX: "auto" as const }}>
           {INSTRUMENTS.map(inst => (
             <button key={inst.symbol} onClick={() => setSelectedSymbol(inst.symbol)} style={{
               padding: "10px 16px", background: "none", border: "none", cursor: "pointer",
               borderBottom: selectedSymbol === inst.symbol ? `2px solid ${T.gold}` : "2px solid transparent",
-              color: selectedSymbol === inst.symbol ? T.text : T.text3,
+              color: selectedSymbol === inst.symbol ? "#ffffff" : "#4a6a8a",
               fontWeight: selectedSymbol === inst.symbol ? 700 : 500,
               fontSize: "0.78rem", fontFamily: FONT, whiteSpace: "nowrap" as const,
               transition: "all .15s",
             }}>
-              <span style={{ color: selectedSymbol === inst.symbol ? T.gold : T.text2, fontWeight: 800 }}>{inst.symbol}</span>
-              <span style={{ marginLeft: 6, fontSize: "0.68rem", color: T.text3 }}>{inst.type}</span>
+              <span style={{ color: selectedSymbol === inst.symbol ? T.gold : "#8b9dc3", fontWeight: 800 }}>{inst.symbol}</span>
+              <span style={{ marginLeft: 6, fontSize: "0.68rem", color: "#4a6a8a" }}>{inst.type}</span>
             </button>
           ))}
           <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 16, padding: "0 8px", flexShrink: 0 }}>
             <div>
-              <div style={{ fontSize: "0.62rem", color: T.text3 }}>Balance</div>
-              <div style={{ fontWeight: 800, color: T.text, fontSize: "0.875rem" }}>${balance.toFixed(2)}</div>
+              <div style={{ fontSize: "0.62rem", color: "#4a6a8a" }}>Balance</div>
+              <div style={{ fontWeight: 800, color: "#ffffff", fontSize: "0.875rem" }}>${balance.toFixed(2)}</div>
             </div>
             {openPositions.length > 0 && (
               <div>
-                <div style={{ fontSize: "0.62rem", color: T.text3 }}>Unrealised P&L</div>
-                <div style={{ fontWeight: 800, color: totalPnL >= 0 ? T.green : T.red, fontSize: "0.875rem" }}>
+                <div style={{ fontSize: "0.62rem", color: "#4a6a8a" }}>Unrealised P&L</div>
+                <div style={{ fontWeight: 800, color: totalPnL >= 0 ? "#76AD25" : T.red, fontSize: "0.875rem" }}>
                   {totalPnL >= 0 ? "+" : ""}${totalPnL.toFixed(2)}
                 </div>
               </div>
@@ -322,27 +322,27 @@ export default function DayTradingPage() {
           <div style={{ display: "flex", flexDirection: "column", overflow: "hidden" }}>
 
             {/* Price header */}
-            <div style={{ background: T.panel, borderBottom: `1px solid ${T.border}`, padding: "10px 16px", display: "flex", alignItems: "center", gap: 16 }}>
+            <div style={{ background: T.panel, borderBottom: `1px solid ${"rgba(255,255,255,.07)"}`, padding: "10px 16px", display: "flex", alignItems: "center", gap: 16 }}>
               <div>
-                <div style={{ fontWeight: 800, color: T.text, fontSize: "1.4rem", lineHeight: 1 }}>{price.toFixed(decimals)}</div>
+                <div style={{ fontWeight: 800, color: "#ffffff", fontSize: "1.4rem", lineHeight: 1 }}>{price.toFixed(decimals)}</div>
                 <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 3 }}>
-                  <span style={{ color: changePct >= 0 ? T.green : T.red, fontWeight: 700, fontSize: "0.82rem", display: "flex", alignItems: "center", gap: 3 }}>
+                  <span style={{ color: changePct >= 0 ? "#76AD25" : T.red, fontWeight: 700, fontSize: "0.82rem", display: "flex", alignItems: "center", gap: 3 }}>
                     {changePct >= 0 ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
                     {changePct >= 0 ? "+" : ""}{changePct.toFixed(3)}%
                   </span>
-                  <span style={{ color: T.text3, fontSize: "0.72rem" }}>{change >= 0 ? "+" : ""}{change.toFixed(decimals)}</span>
+                  <span style={{ color: "#4a6a8a", fontSize: "0.72rem" }}>{change >= 0 ? "+" : ""}{change.toFixed(decimals)}</span>
                 </div>
               </div>
               <div style={{ display: "flex", gap: 14 }}>
                 {[
                   { l: "BID", v: bid.toFixed(decimals), c: T.red },
-                  { l: "ASK", v: ask.toFixed(decimals), c: T.green },
-                  { l: "SPREAD", v: (ask - bid).toFixed(decimals), c: T.text2 },
-                  { l: "HIGH", v: candles.length > 0 ? Math.max(...candles.slice(-60).map(c => c.h)).toFixed(decimals) : "-", c: T.green },
+                  { l: "ASK", v: ask.toFixed(decimals), c: "#76AD25" },
+                  { l: "SPREAD", v: (ask - bid).toFixed(decimals), c: "#8b9dc3" },
+                  { l: "HIGH", v: candles.length > 0 ? Math.max(...candles.slice(-60).map(c => c.h)).toFixed(decimals) : "-", c: "#76AD25" },
                   { l: "LOW",  v: candles.length > 0 ? Math.min(...candles.slice(-60).map(c => c.l)).toFixed(decimals) : "-", c: T.red },
                 ].map(s => (
                   <div key={s.l}>
-                    <div style={{ fontSize: "0.6rem", color: T.text3, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>{s.l}</div>
+                    <div style={{ fontSize: "0.6rem", color: "#4a6a8a", textTransform: "uppercase" as const, letterSpacing: ".04em" }}>{s.l}</div>
                     <div style={{ fontWeight: 700, color: s.c, fontSize: "0.82rem", fontFamily: "monospace" }}>{s.v}</div>
                   </div>
                 ))}
@@ -355,10 +355,10 @@ export default function DayTradingPage() {
             </div>
 
             {/* Bottom tabs */}
-            <div style={{ background: T.panel, borderTop: `1px solid ${T.border}` }}>
-              <div style={{ display: "flex", borderBottom: `1px solid ${T.border}` }}>
+            <div style={{ background: T.panel, borderTop: `1px solid ${"rgba(255,255,255,.07)"}` }}>
+              <div style={{ display: "flex", borderBottom: `1px solid ${"rgba(255,255,255,.07)"}` }}>
                 {(["positions", "orders"] as const).map(t => (
-                  <button key={t} onClick={() => setActiveTab(t)} style={{ padding: "8px 16px", background: "none", border: "none", borderBottom: activeTab === t ? `2px solid ${T.gold}` : "2px solid transparent", color: activeTab === t ? T.text : T.text3, fontWeight: activeTab === t ? 700 : 500, fontSize: "0.78rem", cursor: "pointer", fontFamily: FONT, textTransform: "capitalize" as const }}>
+                  <button key={t} onClick={() => setActiveTab(t)} style={{ padding: "8px 16px", background: "none", border: "none", borderBottom: activeTab === t ? `2px solid ${T.gold}` : "2px solid transparent", color: activeTab === t ? "#ffffff" : "#4a6a8a", fontWeight: activeTab === t ? 700 : 500, fontSize: "0.78rem", cursor: "pointer", fontFamily: FONT, textTransform: "capitalize" as const }}>
                     {t} {t === "positions" && openPositions.length > 0 && `(${openPositions.length})`}
                   </button>
                 ))}
@@ -366,31 +366,31 @@ export default function DayTradingPage() {
               <div style={{ maxHeight: 160, overflowY: "auto" as const, padding: "8px" }}>
                 {activeTab === "positions" && (
                   openPositions.length === 0
-                    ? <div style={{ textAlign: "center", color: T.text3, fontSize: "0.78rem", padding: "16px 0" }}>No open positions</div>
+                    ? <div style={{ textAlign: "center", color: "#4a6a8a", fontSize: "0.78rem", padding: "16px 0" }}>No open positions</div>
                     : openPositions.map(o => (
-                      <div key={o.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "6px 8px", borderRadius: 7, background: T.bg3, marginBottom: 4, fontSize: "0.75rem" }}>
-                        <span style={{ background: o.side === "buy" ? "rgba(38,166,154,.15)" : "rgba(239,83,80,.12)", color: o.side === "buy" ? T.green : T.red, padding: "2px 7px", borderRadius: 4, fontWeight: 800, fontSize: "0.65rem" }}>{o.side.toUpperCase()}</span>
-                        <span style={{ fontWeight: 700, color: T.text }}>{o.symbol}</span>
-                        <span style={{ color: T.text2 }}>x{o.qty}</span>
-                        <span style={{ color: T.text3 }}>@ {o.price.toFixed(decimals)}</span>
-                        <span style={{ fontWeight: 700, color: (o.pnl ?? 0) >= 0 ? T.green : T.red, marginLeft: "auto" }}>
+                      <div key={o.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "6px 8px", borderRadius: 7, background: "#1a2540", marginBottom: 4, fontSize: "0.75rem" }}>
+                        <span style={{ background: o.side === "buy" ? "rgba(38,166,154,.15)" : "rgba(239,83,80,.12)", color: o.side === "buy" ? "#76AD25" : T.red, padding: "2px 7px", borderRadius: 4, fontWeight: 800, fontSize: "0.65rem" }}>{o.side.toUpperCase()}</span>
+                        <span style={{ fontWeight: 700, color: "#ffffff" }}>{o.symbol}</span>
+                        <span style={{ color: "#8b9dc3" }}>x{o.qty}</span>
+                        <span style={{ color: "#4a6a8a" }}>@ {o.price.toFixed(decimals)}</span>
+                        <span style={{ fontWeight: 700, color: (o.pnl ?? 0) >= 0 ? "#76AD25" : T.red, marginLeft: "auto" }}>
                           {(o.pnl ?? 0) >= 0 ? "+" : ""}${(o.pnl ?? 0).toFixed(2)}
                         </span>
                         {o.sl && <span style={{ color: T.red, fontSize: "0.65rem" }}>SL:{o.sl.toFixed(decimals)}</span>}
-                        {o.tp && <span style={{ color: T.green, fontSize: "0.65rem" }}>TP:{o.tp.toFixed(decimals)}</span>}
+                        {o.tp && <span style={{ color: "#76AD25", fontSize: "0.65rem" }}>TP:{o.tp.toFixed(decimals)}</span>}
                         <button onClick={() => closePosition(o)} style={{ background: "rgba(239,83,80,.12)", border: "1px solid rgba(239,83,80,.25)", borderRadius: 5, padding: "3px 8px", color: T.red, fontSize: "0.65rem", fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Close</button>
                       </div>
                     ))
                 )}
                 {activeTab === "orders" && (
                   orders.filter(o => o.status === "filled" || o.status === "cancelled").length === 0
-                    ? <div style={{ textAlign: "center", color: T.text3, fontSize: "0.78rem", padding: "16px 0" }}>No closed orders</div>
+                    ? <div style={{ textAlign: "center", color: "#4a6a8a", fontSize: "0.78rem", padding: "16px 0" }}>No closed orders</div>
                     : orders.filter(o => o.status !== "open").slice(0, 20).map(o => (
-                      <div key={o.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "6px 8px", borderRadius: 7, background: T.bg3, marginBottom: 4, fontSize: "0.75rem" }}>
-                        <span style={{ background: o.side === "buy" ? "rgba(38,166,154,.1)" : "rgba(239,83,80,.1)", color: o.side === "buy" ? T.green : T.red, padding: "2px 7px", borderRadius: 4, fontWeight: 800, fontSize: "0.65rem" }}>{o.side.toUpperCase()}</span>
-                        <span style={{ fontWeight: 700, color: T.text }}>{o.symbol}</span>
-                        <span style={{ color: T.text2 }}>x{o.qty} @ {o.price.toFixed(decimals)}</span>
-                        <span style={{ fontWeight: 700, color: (o.pnl ?? 0) >= 0 ? T.green : T.red, marginLeft: "auto" }}>
+                      <div key={o.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "6px 8px", borderRadius: 7, background: "#1a2540", marginBottom: 4, fontSize: "0.75rem" }}>
+                        <span style={{ background: o.side === "buy" ? "rgba(38,166,154,.1)" : "rgba(239,83,80,.1)", color: o.side === "buy" ? "#76AD25" : T.red, padding: "2px 7px", borderRadius: 4, fontWeight: 800, fontSize: "0.65rem" }}>{o.side.toUpperCase()}</span>
+                        <span style={{ fontWeight: 700, color: "#ffffff" }}>{o.symbol}</span>
+                        <span style={{ color: "#8b9dc3" }}>x{o.qty} @ {o.price.toFixed(decimals)}</span>
+                        <span style={{ fontWeight: 700, color: (o.pnl ?? 0) >= 0 ? "#76AD25" : T.red, marginLeft: "auto" }}>
                           {(o.pnl ?? 0) >= 0 ? "+" : ""}${(o.pnl ?? 0).toFixed(2)}
                         </span>
                       </div>
@@ -401,22 +401,22 @@ export default function DayTradingPage() {
           </div>
 
           {/* Right: order panel */}
-          <div style={{ background: T.panel, borderLeft: `1px solid ${T.border}`, display: "flex", flexDirection: "column", overflow: "auto" as const }}>
+          <div style={{ background: T.panel, borderLeft: `1px solid ${"rgba(255,255,255,.07)"}`, display: "flex", flexDirection: "column", overflow: "auto" as const }}>
 
             {/* Buy/Sell toggle */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-              <button onClick={() => setSide("buy")} style={{ padding: "14px", background: side === "buy" ? "rgba(38,166,154,.15)" : "transparent", color: side === "buy" ? T.green : T.text3, fontWeight: 800, fontSize: "0.9rem", border: "none", borderBottom: `2px solid ${side === "buy" ? T.green : "transparent"}`, cursor: "pointer", fontFamily: FONT, transition: "all .15s" }}>BUY</button>
-              <button onClick={() => setSide("sell")} style={{ padding: "14px", background: side === "sell" ? "rgba(239,83,80,.12)" : "transparent", color: side === "sell" ? T.red : T.text3, fontWeight: 800, fontSize: "0.9rem", border: "none", borderBottom: `2px solid ${side === "sell" ? T.red : "transparent"}`, cursor: "pointer", fontFamily: FONT, transition: "all .15s" }}>SELL</button>
+              <button onClick={() => setSide("buy")} style={{ padding: "14px", background: side === "buy" ? "rgba(38,166,154,.15)" : "transparent", color: side === "buy" ? "#76AD25" : "#4a6a8a", fontWeight: 800, fontSize: "0.9rem", border: "none", borderBottom: `2px solid ${side === "buy" ? "#76AD25" : "transparent"}`, cursor: "pointer", fontFamily: FONT, transition: "all .15s" }}>BUY</button>
+              <button onClick={() => setSide("sell")} style={{ padding: "14px", background: side === "sell" ? "rgba(239,83,80,.12)" : "transparent", color: side === "sell" ? T.red : "#4a6a8a", fontWeight: 800, fontSize: "0.9rem", border: "none", borderBottom: `2px solid ${side === "sell" ? T.red : "transparent"}`, cursor: "pointer", fontFamily: FONT, transition: "all .15s" }}>SELL</button>
             </div>
 
             <div style={{ padding: "16px", display: "flex", flexDirection: "column", gap: 14, flex: 1 }}>
 
               {/* Order type */}
               <div>
-                <label style={{ display: "block", fontSize: "0.65rem", color: T.text3, fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>Order Type</label>
-                <div style={{ display: "flex", background: T.bg3, borderRadius: 8, padding: 3, gap: 2 }}>
+                <label style={{ display: "block", fontSize: "0.65rem", color: "#4a6a8a", fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>Order Type</label>
+                <div style={{ display: "flex", background: "#1a2540", borderRadius: 8, padding: 3, gap: 2 }}>
                   {(["market", "limit", "stop"] as const).map(t => (
-                    <button key={t} onClick={() => setOrderType(t)} style={{ flex: 1, padding: "6px 4px", borderRadius: 6, background: orderType === t ? T.card : "transparent", color: orderType === t ? T.text : T.text3, fontWeight: orderType === t ? 700 : 500, fontSize: "0.72rem", border: "none", cursor: "pointer", fontFamily: FONT, transition: "all .15s", textTransform: "capitalize" as const }}>
+                    <button key={t} onClick={() => setOrderType(t)} style={{ flex: 1, padding: "6px 4px", borderRadius: 6, background: orderType === t ? "#111c30" : "transparent", color: orderType === t ? "#ffffff" : "#4a6a8a", fontWeight: orderType === t ? 700 : 500, fontSize: "0.72rem", border: "none", cursor: "pointer", fontFamily: FONT, transition: "all .15s", textTransform: "capitalize" as const }}>
                       {t}
                     </button>
                   ))}
@@ -425,18 +425,18 @@ export default function DayTradingPage() {
 
               {/* Quantity */}
               <div>
-                <label style={{ display: "block", fontSize: "0.65rem", color: T.text3, fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>Quantity</label>
-                <div style={{ display: "flex", alignItems: "center", background: T.bg3, border: `1px solid ${T.border}`, borderRadius: 8, overflow: "hidden" }}>
-                  <button onClick={() => setQty(q => Math.max(1, q - 1))} style={{ padding: "8px 12px", background: "none", border: "none", color: T.text2, cursor: "pointer", display: "flex" }}><Minus size={14} /></button>
-                  <input type="number" value={qty} min={1} onChange={e => setQty(Math.max(1, parseInt(e.target.value) || 1))} style={{ flex: 1, background: "none", border: "none", color: T.text, fontFamily: "monospace", fontSize: "0.9rem", fontWeight: 700, textAlign: "center" as const, outline: "none" }} />
-                  <button onClick={() => setQty(q => q + 1)} style={{ padding: "8px 12px", background: "none", border: "none", color: T.text2, cursor: "pointer", display: "flex" }}><Plus size={14} /></button>
+                <label style={{ display: "block", fontSize: "0.65rem", color: "#4a6a8a", fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>Quantity</label>
+                <div style={{ display: "flex", alignItems: "center", background: "#1a2540", border: `1px solid ${"rgba(255,255,255,.07)"}`, borderRadius: 8, overflow: "hidden" }}>
+                  <button onClick={() => setQty(q => Math.max(1, q - 1))} style={{ padding: "8px 12px", background: "none", border: "none", color: "#8b9dc3", cursor: "pointer", display: "flex" }}><Minus size={14} /></button>
+                  <input type="number" value={qty} min={1} onChange={e => setQty(Math.max(1, parseInt(e.target.value) || 1))} style={{ flex: 1, background: "none", border: "none", color: "#ffffff", fontFamily: "monospace", fontSize: "0.9rem", fontWeight: 700, textAlign: "center" as const, outline: "none" }} />
+                  <button onClick={() => setQty(q => q + 1)} style={{ padding: "8px 12px", background: "none", border: "none", color: "#8b9dc3", cursor: "pointer", display: "flex" }}><Plus size={14} /></button>
                 </div>
               </div>
 
               {/* Limit/Stop price */}
               {orderType !== "market" && (
                 <div>
-                  <label style={{ display: "block", fontSize: "0.65rem", color: T.text3, fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>{orderType === "limit" ? "Limit Price" : "Stop Price"}</label>
+                  <label style={{ display: "block", fontSize: "0.65rem", color: "#4a6a8a", fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>{orderType === "limit" ? "Limit Price" : "Stop Price"}</label>
                   <input type="number" value={limitPx} step="0.0001" onChange={e => setLimitPx(parseFloat(e.target.value))} className="pw-input" style={{ width: "100%", fontSize: "0.875rem", fontFamily: "monospace" }} />
                 </div>
               )}
@@ -449,13 +449,13 @@ export default function DayTradingPage() {
 
               {/* Take Profit */}
               <div>
-                <label style={{ display: "block", fontSize: "0.65rem", color: T.green, fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>Take Profit</label>
-                <input type="number" value={tpPx} step="0.0001" onChange={e => setTpPx(parseFloat(e.target.value))} style={{ width: "100%", padding: "8px 12px", background: "rgba(38,166,154,.06)", border: `1px solid rgba(38,166,154,.2)`, borderRadius: 8, color: T.green, fontFamily: "monospace", fontSize: "0.875rem", outline: "none" }} />
+                <label style={{ display: "block", fontSize: "0.65rem", color: "#76AD25", fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>Take Profit</label>
+                <input type="number" value={tpPx} step="0.0001" onChange={e => setTpPx(parseFloat(e.target.value))} style={{ width: "100%", padding: "8px 12px", background: "rgba(38,166,154,.06)", border: `1px solid rgba(38,166,154,.2)`, borderRadius: 8, color: "#76AD25", fontFamily: "monospace", fontSize: "0.875rem", outline: "none" }} />
               </div>
 
               {/* Leverage */}
               <div>
-                <label style={{ display: "block", fontSize: "0.65rem", color: T.text3, fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>Leverage: {leverage}x</label>
+                <label style={{ display: "block", fontSize: "0.65rem", color: "#4a6a8a", fontWeight: 600, marginBottom: 6, textTransform: "uppercase" as const, letterSpacing: ".04em" }}>Leverage: {leverage}x</label>
                 <input type="range" min={1} max={10} step={1} value={leverage} onChange={e => setLeverage(parseInt(e.target.value))} className="pw-range" style={{ width: "100%" }} />
                 {leverage > 3 && (
                   <div style={{ marginTop: 6, display: "flex", alignItems: "center", gap: 5, fontSize: "0.68rem", color: T.red }}>
@@ -465,20 +465,20 @@ export default function DayTradingPage() {
               </div>
 
               {/* Order summary */}
-              <div style={{ background: T.bg3, border: `1px solid ${T.border}`, borderRadius: 8, padding: "10px 12px" }}>
+              <div style={{ background: "#1a2540", border: `1px solid ${"rgba(255,255,255,.07)"}`, borderRadius: 8, padding: "10px 12px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", marginBottom: 4 }}>
-                  <span style={{ color: T.text3 }}>Execution price</span>
-                  <span style={{ fontWeight: 700, color: T.text, fontFamily: "monospace" }}>
+                  <span style={{ color: "#4a6a8a" }}>Execution price</span>
+                  <span style={{ fontWeight: 700, color: "#ffffff", fontFamily: "monospace" }}>
                     {orderType === "market" ? (side === "buy" ? ask : bid).toFixed(decimals) : limitPx.toFixed(decimals)}
                   </span>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem", marginBottom: 4 }}>
-                  <span style={{ color: T.text3 }}>Position size</span>
-                  <span style={{ fontWeight: 700, color: T.text }}>{qty} units x {leverage}x</span>
+                  <span style={{ color: "#4a6a8a" }}>Position size</span>
+                  <span style={{ fontWeight: 700, color: "#ffffff" }}>{qty} units x {leverage}x</span>
                 </div>
                 <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.72rem" }}>
-                  <span style={{ color: T.text3 }}>Required margin</span>
-                  <span style={{ fontWeight: 700, color: orderType === "market" && ((side === "buy" ? ask : bid) * qty) > balance ? T.red : T.text, fontFamily: "monospace" }}>
+                  <span style={{ color: "#4a6a8a" }}>Required margin</span>
+                  <span style={{ fontWeight: 700, color: orderType === "market" && ((side === "buy" ? ask : bid) * qty) > balance ? T.red : "#ffffff", fontFamily: "monospace" }}>
                     ${((orderType === "market" ? (side === "buy" ? ask : bid) : limitPx) * qty).toFixed(2)}
                   </span>
                 </div>
@@ -487,8 +487,8 @@ export default function DayTradingPage() {
               {/* Place order button */}
               <button onClick={placeOrder} style={{
                 width: "100%", padding: "14px",
-                background: side === "buy" ? T.green : T.red,
-                color: T.text, border: "none", borderRadius: 10,
+                background: side === "buy" ? "#76AD25" : T.red,
+                color: "#ffffff", border: "none", borderRadius: 10,
                 fontWeight: 900, fontSize: "0.95rem", cursor: "pointer",
                 fontFamily: FONT, letterSpacing: ".02em",
                 boxShadow: `0 4px 0 ${side === "buy" ? "#1a7a72" : "#b52d2a"}, 0 6px 16px ${side === "buy" ? "rgba(38,166,154,.3)" : "rgba(239,83,80,.3)"}`,
@@ -500,7 +500,7 @@ export default function DayTradingPage() {
               </button>
 
               {/* Educational note */}
-              <div style={{ background: "rgba(245,158,11,.06)", border: "1px solid rgba(245,158,11,.15)", borderRadius: 8, padding: "10px 12px", fontSize: "0.72rem", color: T.text2, lineHeight: 1.5 }}>
+              <div style={{ background: "rgba(245,158,11,.06)", border: "1px solid rgba(245,158,11,.15)", borderRadius: 8, padding: "10px 12px", fontSize: "0.72rem", color: "#8b9dc3", lineHeight: 1.5 }}>
                 <strong style={{ color: T.gold }}>Learning note:</strong> This is a simulation. Real trading involves broker fees, slippage, and much more volatility. Never invest money you cannot afford to lose.
               </div>
             </div>
