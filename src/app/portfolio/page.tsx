@@ -2,6 +2,7 @@
 import PortfolioTutorial from "@/components/PortfolioTutorial";
 import { useTheme } from "@/lib/theme";
 import { useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useGame, NZX_STOCKS } from "@/lib/gameContext";
@@ -564,6 +565,7 @@ export default function PortfolioPage(){
   };
 
   const [tab, setTab]     = useState("Overview" as Tab);
+  const router = useRouter();
   const [buyQty, setBuyQty] = useState({} as Record<string,number>);
   const [notif, setNotif]   = useState(null as string|null);
   const [assetCat, setAssetCat] = useState("All");
@@ -743,15 +745,17 @@ export default function PortfolioPage(){
           )}
 
           {tab === "Day Trading" && (
-            <div style={{ background: T.card, border: "2px dashed #e2e8f0", borderRadius: 16, padding: "48px 32px", textAlign: "center" }}>
-              <div style={{ width: 56, height: 56, background: T.bg3, border: `1px solid ${T.border}`, borderRadius: 14, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
-                <BarChart2 size={26} color="#94a3b8" />
+            <div style={{ background: T.card, border: `1.5px solid ${T.border}`, borderRadius: 16, padding: "48px 32px", textAlign: "center" }}>
+              <div style={{ width: 64, height: 64, background: "rgba(245,158,11,.1)", border: "1.5px solid rgba(245,158,11,.25)", borderRadius: 16, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
+                <BarChart2 size={30} color="#f59e0b" />
               </div>
-              <h3 style={{ fontWeight: 800, fontSize: "1.1rem", color: T.text, marginBottom: 8 }}>Day Trading</h3>
-              <p style={{ color: T.text3, fontSize: "0.875rem", maxWidth: 320, margin: "0 auto 16px", lineHeight: 1.6 }}>
-                Real-time intraday trading with limit orders, stop losses, and advanced charts. Coming in a future update.
+              <h3 style={{ fontWeight: 800, fontSize: "1.2rem", color: T.text, marginBottom: 8 }}>Day Trading Terminal</h3>
+              <p style={{ color: T.text2, fontSize: "0.875rem", maxWidth: 360, margin: "0 auto 24px", lineHeight: 1.7 }}>
+                Real-time candlestick charts, market and limit orders, stop loss, take profit, leverage up to 10x, and live P&L tracking across 7 instruments including NZX stocks, Gold, NZD/USD and Bitcoin.
               </p>
-              <span style={{ background: T.bg3, color: T.text3, padding: "4px 14px", borderRadius: 99, fontSize: "0.75rem", fontWeight: 700 }}>Coming Soon</span>
+              <button onClick={() => router.push("/daytrading")} className="btn-3d-amber" style={{ padding: "13px 36px", fontSize: "0.95rem", display: "inline-flex", alignItems: "center", gap: 8 }}>
+                <BarChart2 size={16} /> Open Trading Terminal
+              </button>
             </div>
           )}
 
