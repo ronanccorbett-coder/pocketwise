@@ -757,11 +757,10 @@ export default function PortfolioPage(){
 
           {/* PROPERTY */}
           {tab === "Property" && (
-            <div style={{ marginBottom: 12 }}>
-                <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:16 }}>
-                  <h3 style={{ fontWeight:700, color:"#fff", fontSize:"0.9rem" }}>NZ Property Market</h3>
-                  <InfoDot text="Property investing means buying real estate to earn rental income and capital gains. You need a 20% deposit upfront." />
-                </div>
+            <div>
+              <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:16 }}>
+                <h3 style={{ fontWeight:700, color:T.text, fontSize:"0.9rem" }}>NZ Property Market</h3>
+                <InfoDot text="Property investing means buying real estate to earn rental income and capital gains. You need a 20% deposit upfront." />
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 14 }}>
                 {PROPERTIES.map(prop => {
@@ -809,6 +808,7 @@ export default function PortfolioPage(){
                   );
                 })}
               </div>
+            </div>
           )}
 
           {tab === "Loans" && (
