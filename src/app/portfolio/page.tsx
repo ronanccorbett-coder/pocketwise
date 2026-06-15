@@ -392,8 +392,8 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
 }) {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
-  const [selected, setSelected] = useState<string|null>(null);
-  const [justBought, setJustBought] = useState<string|null>(null);
+  const [selected, setSelected] = useState(null as string|null);
+  const [justBought, setJustBought] = useState(null as string|null);
 
   function handleBuy(sym: string, name: string) {
     const p = prices[sym]; if (!p) return;
@@ -563,11 +563,11 @@ export default function PortfolioPage(){
     strip:   isDark ? "rgba(255,255,255,.03)" : "rgba(0,0,0,.02)",
   };
 
-  const [tab, setTab]     = useState<Tab>("Overview");
-  const [buyQty, setBuyQty] = useState<Record<string,number>>({});
-  const [notif, setNotif]   = useState<string|null>(null);
+  const [tab, setTab]     = useState("Overview" as Tab);
+  const [buyQty, setBuyQty] = useState({} as Record<string,number>);
+  const [notif, setNotif]   = useState(null as string|null);
   const [assetCat, setAssetCat] = useState("All");
-  const [assetSort, setAssetSort] = useState<"price"|"income"|"dep">("price");
+  const [assetSort, setAssetSort] = useState("price" as "price"|"income"|"dep");
 
   const { state, stocks, properties, loans, assets, buyStock, sellStock,
     buyProperty, takeLoan, buyAsset, canAccess, updateStockPrice } = useGame();
@@ -579,7 +579,7 @@ export default function PortfolioPage(){
 
   const { prices, marketEvent } = useStockSimulator(30000, handlePriceUpdate);
 
-  const [activeTutorial, setActiveTutorial] = useState<string | null>(null);
+  const [activeTutorial, setActiveTutorial] = useState(null as string | null);
   const [completedTutorials, setCompletedTutorials] = useState<string[]>(() => {
     try { return JSON.parse(localStorage.getItem("pw_tutorials_done") ?? "[]"); } catch { return []; }
   });
