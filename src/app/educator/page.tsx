@@ -15,7 +15,7 @@ function genCode() {
 
 export default function EducatorPage() {
   const { user } = useGame();
-  const [tab, setTab] = useState<Tab>("home");
+  const [tab, setTab] = useState("home" as Tab);
   const [className, setClassName] = useState("");
   const [copied, setCopied] = useState<string | null>(null);
   const [notif, setNotif] = useState<string | null>(null);

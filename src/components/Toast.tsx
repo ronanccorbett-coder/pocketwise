@@ -111,7 +111,7 @@ function ToastItem({ toast, onRemove }: { toast: Toast; onRemove: () => void }) 
 }
 
 export function ToastContainer() {
-  const [toasts, setToasts] = useState<Toast[]>([]);
+  const [toasts, setToasts] = useState([] as Toast[]);
 
   const addToast = useCallback((t: Omit<Toast, "id">) => {
     const id = Math.random().toString(36).slice(2);

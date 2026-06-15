@@ -43,7 +43,7 @@ export default function TeacherPage() {
   };
 
   const { user, state } = useGame();
-  const [tab, setTab] = useState<Tab>("overview");
+  const [tab, setTab] = useState("overview" as Tab);
 
   const { data: classData }    = db.useQuery(user ? { classrooms: { $: { where: { ownerId: user.id } } } } : null);
   const { data: enrollData }   = db.useQuery({ classEnrollments: {} });
@@ -390,7 +390,7 @@ export default function TeacherPage() {
                     </div>
                     {studentStates.slice().sort((a: any, b: any) => (b.xp ?? 0) - (a.xp ?? 0)).slice(0, 5).map((st: any, i: number) => (
                       <div key={st.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderBottom: i < 4 ? `1px solid ${T.border}` : "none" }}>
-                        <div style={{ width: 24, height: 24, borderRadius: "50%", background: i === 0 ? "#f59e0b" : i === 1 ? "#94a3b8" : i === 2 ? "#b45309" : T.bg3, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontWeight: 800, color: "#fff", flexShrink: 0 }}>{i + 1}</div>
+                        <div style={{ width: 24, height: 24, borderRadius: "50%", background: i === 0 ? "#f59e0b" : i === 1 ? "#94a3b8" : i === 2 ? "#b45309" : T.bg3, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.68rem", fontWeight: 800, color: T.text, flexShrink: 0 }}>{i + 1}</div>
                         <div style={{ flex: 1, fontWeight: 600, color: T.text, fontSize: "0.8rem" }}>{st.email?.split("@")[0]}</div>
                         <div style={{ display: "flex", alignItems: "center", gap: 3 }}>
                           <Zap size={11} color="#f59e0b" fill="#f59e0b" />
@@ -440,7 +440,7 @@ export default function TeacherPage() {
                     </div>
                     {studentStates.slice().sort((a: any, b: any) => (b.xp ?? 0) - (a.xp ?? 0)).map((st: any, i: number) => (
                       <div key={st.id} style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 20px", borderBottom: `1px solid ${T.border}` }}>
-                        <div style={{ width: 36, height: 36, borderRadius: "50%", background: `hsl(${(i * 47) % 360}, 55%, 35%)`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, color: "#fff", fontSize: "0.78rem", flexShrink: 0 }}>
+                        <div style={{ width: 36, height: 36, borderRadius: "50%", background: `hsl(${(i * 47) % 360}, 55%, 35%)`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, color: T.text, fontSize: "0.78rem", flexShrink: 0 }}>
                           {st.email?.slice(0, 2).toUpperCase()}
                         </div>
                         <div style={{ flex: 1, minWidth: 0 }}>
@@ -579,8 +579,8 @@ export default function TeacherPage() {
                           { label: "Days left", val: `${Math.ceil((activeSub.expiresAt - Date.now()) / 86400000)}d` },
                         ].map(s => (
                           <div key={s.label} style={{ background: "rgba(118,173,37,.08)", borderRadius: 8, padding: "8px 12px" }}>
-                            <div style={{ fontSize: "0.6rem", color: "#4a6a8a", textTransform: "uppercase" as const }}>{s.label}</div>
-                            <div style={{ fontWeight: 700, color: "#fff", fontSize: "0.82rem" }}>{s.val}</div>
+                            <div style={{ fontSize: "0.6rem", color: T.text3, textTransform: "uppercase" as const }}>{s.label}</div>
+                            <div style={{ fontWeight: 700, color: T.text, fontSize: "0.82rem" }}>{s.val}</div>
                           </div>
                         ))}
                       </div>
@@ -663,9 +663,9 @@ export default function TeacherPage() {
                   <div style={{ background: "linear-gradient(135deg,#0a2010,#0f2818)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 14, padding: "20px" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
                       <Users size={16} color="#76AD25" />
-                      <h3 style={{ fontWeight: 700, color: "#fff", fontSize: "0.9rem" }}>Student Join Code</h3>
+                      <h3 style={{ fontWeight: 700, color: T.text, fontSize: "0.9rem" }}>Student Join Code</h3>
                     </div>
-                    <p style={{ color: "#4a6a8a", fontSize: "0.78rem", marginBottom: 16 }}>Share this code with students to join this class.</p>
+                    <p style={{ color: T.text3, fontSize: "0.78rem", marginBottom: 16 }}>Share this code with students to join this class.</p>
                     <div style={{ textAlign: "center", background: "rgba(118,173,37,.1)", border: "2px solid rgba(118,173,37,.3)", borderRadius: 12, padding: "20px" }}>
                       <div style={{ fontWeight: 900, fontSize: "2.5rem", color: "#76AD25", letterSpacing: ".3em", fontFamily: "monospace" }}>{activeClass.joinCode}</div>
                       <button onClick={copyCode} className="btn-3d-green" style={{ marginTop: 14, padding: "9px 24px", fontSize: "0.82rem", display: "inline-flex", alignItems: "center", gap: 6 }}>

@@ -146,13 +146,13 @@ export default function ProfilePage() {
                 width: 72, height: 72, borderRadius: "50%",
                 background: "#76AD25", display: "flex", alignItems: "center",
                 justifyContent: "center", fontWeight: 800, fontSize: "1.5rem",
-                color: "#fff", flexShrink: 0, border: "3px solid rgba(255,255,255,.2)",
+                color: T.text, flexShrink: 0, border: "3px solid rgba(255,255,255,.2)",
               }}>
                 {user?.email?.[0]?.toUpperCase() ?? "S"}
               </div>
 
               <div style={{ flex: 1 }}>
-                <h1 style={{ fontWeight: 800, fontSize: "1.4rem", color: "#fff", marginBottom: 4 }}>
+                <h1 style={{ fontWeight: 800, fontSize: "1.4rem", color: T.text, marginBottom: 4 }}>
                   {user?.email?.split("@")[0] ?? "Student"}
                 </h1>
                 <p style={{ color: T.text2, fontSize: "0.825rem", marginBottom: 14 }}>
@@ -386,16 +386,16 @@ export default function ProfilePage() {
                 <div style={{ flex: 1, minWidth: 200 }}>
                   {isPending ? (
                     <>
-                      <div style={{ fontWeight: 800, color: "#fff", fontSize: "0.95rem", marginBottom: 4 }}>
+                      <div style={{ fontWeight: 800, color: T.text, fontSize: "0.95rem", marginBottom: 4 }}>
                         Teacher Request Pending
                       </div>
                       <p style={{ color: T.text3, fontSize: "0.8rem", margin: 0, lineHeight: 1.5 }}>
-                        Your request to {myRequest?.school ? `teach at ${myRequest.school}` : "become a teacher"} is awaiting admin approval. You'll get access to the Class Dashboard once approved.
+                        Your request to {myRequest?.school ? `teach at ${myRequest.school}` : "become a teacher"} is awaiting admin approval. You will get access to the Class Dashboard once approved.
                       </p>
                     </>
                   ) : (
                     <>
-                      <div style={{ fontWeight: 800, color: "#fff", fontSize: "0.95rem", marginBottom: 4 }}>
+                      <div style={{ fontWeight: 800, color: T.text, fontSize: "0.95rem", marginBottom: 4 }}>
                         Are you a teacher?
                       </div>
                       <p style={{ color: T.text3, fontSize: "0.8rem", margin: 0, lineHeight: 1.5 }}>
@@ -420,7 +420,7 @@ export default function ProfilePage() {
               {/* Application form */}
               {showTeacherForm && (
                 <div style={{ background: T.card, border: "1.5px solid rgba(59,130,246,.2)", borderRadius: 14, padding: "20px 24px", marginTop: 10, animation: "pw-slide-up .3s ease" }}>
-                  <h3 style={{ fontWeight: 700, color: "#fff", fontSize: "0.9rem", marginBottom: 14 }}>Educator Application</h3>
+                  <h3 style={{ fontWeight: 700, color: T.text, fontSize: "0.9rem", marginBottom: 14 }}>Educator Application</h3>
                   <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     <div>
                       <label style={{ display: "block", fontSize: "0.7rem", color: T.text2, fontWeight: 600, marginBottom: 5, textTransform: "uppercase", letterSpacing: ".04em" }}>School *</label>

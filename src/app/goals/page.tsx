@@ -187,7 +187,7 @@ export default function GoalsPage() {
           <div style={{ maxWidth: 920, margin: "0 auto", position: "relative" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
               <Target size={24} color="#76AD25" />
-              <h1 style={{ fontSize: "1.5rem", fontWeight: 900, color: "#fff" }}>Financial Goals</h1>
+              <h1 style={{ fontSize: "1.5rem", fontWeight: 900, color: T.text }}>Financial Goals</h1>
             </div>
             <p style={{ color: T.text3, fontSize: "0.875rem", marginBottom: 22 }}>Set targets. Watch them fill up as your wealth grows.</p>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
@@ -201,7 +201,7 @@ export default function GoalsPage() {
                   <s.Icon size={15} color={s.color} />
                   <div>
                     <div style={{ fontSize: "0.6rem", color: T.text3, textTransform: "uppercase", letterSpacing: ".04em" }}>{s.label}</div>
-                    <div style={{ fontWeight: 900, color: "#fff", fontSize: "1rem" }}>
+                    <div style={{ fontWeight: 900, color: T.text, fontSize: "1rem" }}>
                       <AnimatedNumber value={s.val} prefix={s.prefix} />
                     </div>
                   </div>
@@ -217,7 +217,7 @@ export default function GoalsPage() {
             {/* ── Left: goals ── */}
             <div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                <h2 style={{ fontWeight: 700, fontSize: "1rem", color: "#fff" }}>Your Goals</h2>
+                <h2 style={{ fontWeight: 700, fontSize: "1rem", color: T.text }}>Your Goals</h2>
                 <button onClick={() => setShowAdd(s => !s)} className="btn-3d-green" style={{ padding: "8px 18px", fontSize: "0.8rem", display: "flex", alignItems: "center", gap: 6 }}>
                   <Plus size={14} /> {showAdd ? "Cancel" : "Add Goal"}
                 </button>
@@ -226,7 +226,7 @@ export default function GoalsPage() {
               {/* ── Add form ── */}
               {showAdd && (
                 <div style={{ background: T.card, border: "1.5px solid rgba(118,173,37,.3)", borderRadius: 18, padding: "20px", marginBottom: 16, animation: "pw-slide-up .3s ease" }}>
-                  <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#fff", marginBottom: 16 }}>New Goal</h3>
+                  <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: T.text, marginBottom: 16 }}>New Goal</h3>
                   <div style={{ marginBottom: 14 }}>
                     <label style={{ display: "block", fontSize: "0.7rem", color: T.text2, fontWeight: 600, marginBottom: 8, textTransform: "uppercase", letterSpacing: ".04em" }}>Choose Icon</label>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -328,7 +328,7 @@ export default function GoalsPage() {
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                             <div>
-                              <h3 style={{ fontWeight: 800, fontSize: "0.95rem", color: "#fff", lineHeight: 1.2 }}>{goal.label}</h3>
+                              <h3 style={{ fontWeight: 800, fontSize: "0.95rem", color: T.text, lineHeight: 1.2 }}>{goal.label}</h3>
                               <div style={{ fontSize: "0.72rem", color: T.text3, marginTop: 2 }}>
                                 Target: <span style={{ color: c.accent, fontWeight: 700 }}>${goal.target.toLocaleString()}</span>
                                 {!done && <span style={{ marginLeft: 10, color: "#EF4444" }}>Need ${remaining.toLocaleString()} more</span>}
@@ -378,7 +378,7 @@ export default function GoalsPage() {
 
             {/* ── Sidebar: templates ── */}
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              <h2 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#fff", marginBottom: 4 }}>Quick Add</h2>
+              <h2 style={{ fontWeight: 700, fontSize: "0.9rem", color: T.text, marginBottom: 4 }}>Quick Add</h2>
               {GOAL_TEMPLATES.map(t => {
                 const added = savedGoals.some(g => g.label === t.label);
                 const c = GOAL_COLORS[t.iconKey];
@@ -396,7 +396,7 @@ export default function GoalsPage() {
                       <Icon size={15} color={c.accent} />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontWeight: 700, fontSize: "0.78rem", color: "#fff", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{t.label}</div>
+                      <div style={{ fontWeight: 700, fontSize: "0.78rem", color: T.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{t.label}</div>
                       <div style={{ fontSize: "0.65rem", color: T.text3 }}>{t.desc} · <span style={{ color: c.accent, fontWeight: 700 }}>${t.target.toLocaleString()}</span></div>
                     </div>
                     <button

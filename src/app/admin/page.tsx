@@ -25,9 +25,9 @@ type EditField = { userId: string; field: "xp" | "balance"; value: string };
 export default function AdminPage() {
   const { user, isLoading } = db.useAuth();
   const router = useRouter();
-  const [tab, setTab]             = useState<AdminTab>("overview");
+  const [tab, setTab]             = useState("overview" as AdminTab);
   const [search, setSearch]       = useState("");
-  const [editing, setEditing]     = useState<EditField | null>(null);
+  const [editing, setEditing]     = useState(null as EditField | null);
   const [expandedUser, setExpandedUser] = useState<string | null>(null);
   const [notif, setNotif]         = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);

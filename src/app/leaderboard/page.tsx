@@ -98,7 +98,7 @@ export default function LeaderboardPage() {
                     <div style={{ width: 36, textAlign: "center", fontWeight: 800, fontSize: "0.82rem", color: i === 0 ? "#f59e0b" : i === 1 ? T.text3 : i === 2 ? "#cd7f32" : T.text3 }}>
                       {rankLabel(i)}
                     </div>
-                    <div style={{ width: 34, height: 34, borderRadius: "50%", background: COLORS[i % COLORS.length], display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 700, fontSize: "0.78rem", flexShrink: 0 }}>
+                    <div style={{ width: 34, height: 34, borderRadius: "50%", background: COLORS[i % COLORS.length], display: "flex", alignItems: "center", justifyContent: "center", color: T.text, fontWeight: 700, fontSize: "0.78rem", flexShrink: 0 }}>
                       {getInitials(s)}
                     </div>
                     <div style={{ flex: 1 }}>

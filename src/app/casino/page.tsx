@@ -22,7 +22,7 @@ function BetSelector({ bet, setBet, max, bets = [1,2,5,10,25,50] }: { bet: numbe
           ${b}
         </button>
       ))}
-      <input type="number" value={bet} min={1} max={max} onChange={e => setBet(Math.min(max, Math.max(1, parseInt(e.target.value)||1)))} style={{ width: 64, padding: "5px 8px", borderRadius: 8, background: T.input, border: "1px solid #1a4030", color: "#fff", fontFamily: FONT, fontSize: "0.78rem", outline: "none" }} />
+      <input type="number" value={bet} min={1} max={max} onChange={e => setBet(Math.min(max, Math.max(1, parseInt(e.target.value)||1)))} style={{ width: 64, padding: "5px 8px", borderRadius: 8, background: T.input, border: "1px solid #1a4030", color: T.text, fontFamily: FONT, fontSize: "0.78rem", outline: "none" }} />
     </div>
   );
 }
@@ -258,7 +258,7 @@ function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:
       <div style={{ background: "#0a2118", border: "1px solid #1a4030", borderRadius: 18, padding: "24px", marginBottom: 14 }}>
         {phase === "bet" ? (
           <div style={{ textAlign: "center" }}>
-            <h3 style={{ color: "#fff", fontWeight: 700, marginBottom: 8 }}>Place Your Bet</h3>
+            <h3 style={{ color: T.text, fontWeight: 700, marginBottom: 8 }}>Place Your Bet</h3>
             <p style={{ color: T.text2, fontSize: "0.85rem", marginBottom: 20 }}>Beat the dealer. Get closer to 21 without going over.</p>
             <div style={{ marginBottom: 20 }}>
               <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 100)} bets={[5,10,25,50,100]} />
@@ -294,8 +294,8 @@ function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:
             )}
             {phase === "play" && (
               <div style={{ display: "flex", gap: 8 }}>
-                <button onClick={hit} style={{ flex: 1, padding: "12px", background: "#3B82F6", color: "#fff", border: "none", borderRadius: 9, fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Hit</button>
-                <button onClick={stand} style={{ flex: 1, padding: "12px", background: "#64748b", color: "#fff", border: "none", borderRadius: 9, fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Stand</button>
+                <button onClick={hit} style={{ flex: 1, padding: "12px", background: "#3B82F6", color: T.text, border: "none", borderRadius: 9, fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Hit</button>
+                <button onClick={stand} style={{ flex: 1, padding: "12px", background: "#64748b", color: T.text, border: "none", borderRadius: 9, fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Stand</button>
                 {canDouble && <button onClick={double} style={{ flex: 1, padding: "12px", background: "#f59e0b", color: "#000", border: "none", borderRadius: 9, fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Double</button>}
               </div>
             )}
@@ -381,7 +381,7 @@ function RouletteGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:n
               border: "4px solid #f59e0b",
               margin: "0 auto",
               display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: "2rem", fontWeight: 900, color: "#fff",
+              fontSize: "2rem", fontWeight: 900, color: T.text,
               animation: "pw-pop 0.5s cubic-bezier(.34,1.56,.64,1)",
               boxShadow: `0 0 30px ${colourMap[result.color]}88`,
               transition: "all .3s"
@@ -400,7 +400,7 @@ function RouletteGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:n
         {history.length > 0 && (
           <div style={{ display: "flex", gap: 5, marginBottom: 16, flexWrap: "wrap", justifyContent: "center" }}>
             {history.map((h,i) => (
-              <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", background: colourMap[h.color], display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: "#fff" }}>{h.num}</div>
+              <div key={i} style={{ width: 28, height: 28, borderRadius: "50%", background: colourMap[h.color], display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: T.text }}>{h.num}</div>
             ))}
           </div>
         )}
@@ -481,9 +481,9 @@ function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:num
           <div key={fi} style={{ background: "#0a2118", border: "1px solid #1a4030", borderRadius: 12, padding: "14px" }}>
             <div style={{ fontSize: "0.65rem", color: T.text2, fontWeight: 700, textTransform: "uppercase", marginBottom: 6 }}>{f.sport}</div>
             <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-              <span style={{ flex: 1, fontWeight: 600, fontSize: "0.875rem", color: "#fff" }}>{f.home}</span>
+              <span style={{ flex: 1, fontWeight: 600, fontSize: "0.875rem", color: T.text }}>{f.home}</span>
               <span style={{ fontSize: "0.72rem", color: T.text2 }}>vs</span>
-              <span style={{ flex: 1, fontWeight: 600, fontSize: "0.875rem", color: "#fff", textAlign: "right" }}>{f.away}</span>
+              <span style={{ flex: 1, fontWeight: 600, fontSize: "0.875rem", color: T.text, textAlign: "right" }}>{f.away}</span>
             </div>
             <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
               <button onClick={() => setSelected({ fixture: fi, pick: "home", odds: f.oddsHome })} style={{ flex: 1, padding: "7px", borderRadius: 7, background: selected?.fixture === fi && selected.pick === "home" ? "#f59e0b" : "rgba(255,255,255,.06)", color: selected?.fixture === fi && selected.pick === "home" ? "#000" : "#e2e8f0", border: "none", fontWeight: 700, fontSize: "0.78rem", cursor: "pointer", fontFamily: FONT }}>
@@ -509,7 +509,7 @@ function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:num
       {selected && (
         <div style={{ background: "#0a2118", border: "1px solid #f59e0b", borderRadius: 12, padding: "14px", marginBottom: 12 }}>
           <div style={{ fontSize: "0.8rem", color: T.text2, marginBottom: 8 }}>
-            Bet slip: <strong style={{ color: "#fff" }}>{NZ_FIXTURES[selected.fixture][selected.pick === "home" ? "home" : selected.pick === "away" ? "away" : "home"]} ({selected.pick})</strong> @ {selected.odds.toFixed(2)}
+            Bet slip: <strong style={{ color: T.text }}>{NZ_FIXTURES[selected.fixture][selected.pick === "home" ? "home" : selected.pick === "away" ? "away" : "home"]} ({selected.pick})</strong> @ {selected.odds.toFixed(2)}
           </div>
           <div style={{ marginBottom: 12, display: "flex", justifyContent: "center" }}>
             <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 200)} bets={[5,10,25,50,100,200]} />
@@ -525,7 +525,7 @@ function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:num
       )}
       <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 12, padding: "12px 16px" }}>
         <div style={{ fontWeight: 700, color: "#fca5a5", fontSize: "0.82rem", marginBottom: 4 }}>The Overround: How Bookies Always Win</div>
-        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>Notice how the odds don't add up to 100%? The total implied probability is always over 100% — that's the bookmaker's margin (overround), typically 5-15%. Over thousands of bets, this guarantees profit.</p>
+        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>Notice how the odds do not add up to 100%? The total implied probability is always over 100% — that is the bookmaker's margin (overround), typically 5-15%. Over thousands of bets, this guarantees profit.</p>
       </div>
     </div>
   );
@@ -582,7 +582,7 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
     <div>
       {phase === "bet" && (
         <div style={{ background: "#0a2118", border: "1px solid #1a4030", borderRadius: 14, padding: "24px", marginBottom: 14 }}>
-          <h3 style={{ color: "#fff", fontWeight: 700, marginBottom: 4 }}>Mines</h3>
+          <h3 style={{ color: T.text, fontWeight: 700, marginBottom: 4 }}>Mines</h3>
           <p style={{ color: T.text2, fontSize: "0.85rem", marginBottom: 20 }}>Reveal tiles to multiply your bet. Hit a mine and lose everything.</p>
           <div style={{ marginBottom: 14 }}>
             <label style={{ display: "block", fontSize: "0.75rem", color: T.text2, marginBottom: 6 }}>Mines: {mineCount}</label>
@@ -633,7 +633,7 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
             ))}
           </div>
           {phase === "play" && safeCount > 0 && (
-            <button onClick={cashOut} style={{ width: "100%", padding: "12px", background: "#76AD25", color: "#fff", border: "none", borderRadius: 9, fontWeight: 800, cursor: "pointer", fontFamily: FONT }}>
+            <button onClick={cashOut} style={{ width: "100%", padding: "12px", background: "#76AD25", color: T.text, border: "none", borderRadius: 9, fontWeight: 800, cursor: "pointer", fontFamily: FONT }}>
               Cash Out ${(bet * multiplier).toFixed(2)}
             </button>
           )}
@@ -748,14 +748,14 @@ function CrashGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
             </button>
           </div>
         ) : (
-          <button onClick={manualCashout} style={{ width: "100%", padding: "14px", background: "#76AD25", color: "#fff", border: "none", borderRadius: 10, fontWeight: 900, fontSize: "1rem", cursor: "pointer", fontFamily: FONT, animation: "pulse 1s infinite" }}>
+          <button onClick={manualCashout} style={{ width: "100%", padding: "14px", background: "#76AD25", color: T.text, border: "none", borderRadius: 10, fontWeight: 900, fontSize: "1rem", cursor: "pointer", fontFamily: FONT, animation: "pulse 1s infinite" }}>
             CASH OUT ${(bet * multiplier).toFixed(2)}
           </button>
         )}
       </div>
       <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 12, padding: "12px 16px" }}>
         <div style={{ fontWeight: 700, color: "#fca5a5", fontSize: "0.82rem", marginBottom: 4 }}>FOMO: The Most Expensive Emotion</div>
-        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>Crash games are designed to make you hold too long. The multiplier climbing feels amazing — right until it doesn't. Set an auto cash-out target and stick to it. Discipline beats instinct every time.</p>
+        <p style={{ color: T.text3, fontSize: "0.78rem", lineHeight: 1.6 }}>Crash games are designed to make you hold too long. The multiplier climbing feels amazing — right until it does not. Set an auto cash-out target and stick to it. Discipline beats instinct every time.</p>
       </div>
       <style>{`@keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.01)} }`}</style>
     </div>
@@ -785,7 +785,7 @@ export default function CasinoPage() {
 
   const { state, casinoWin, casinoLoss } = useGame();
   const balance = state?.balance ?? 5000;
-  const [gameTab, setGameTab] = useState<GameTab>("Slots");
+  const [gameTab, setGameTab] = useState("Slots" as GameTab);
 
   const stats = [
     { label: "Balance", val: `$${balance.toFixed(2)}`, color: "#f59e0b" },
@@ -798,7 +798,7 @@ export default function CasinoPage() {
         <Nav />
 
         <div style={{ padding: "28px 1rem 16px", textAlign: "center", maxWidth: 780, margin: "0 auto" }}>
-          <h1 style={{ fontSize: "clamp(1.5rem,4vw,2.25rem)", fontWeight: 900, color: "#fff", marginBottom: 6, fontFamily: FONT }}>
+          <h1 style={{ fontSize: "clamp(1.5rem,4vw,2.25rem)", fontWeight: 900, color: T.text, marginBottom: 6, fontFamily: FONT }}>
             PocketWise Casino
           </h1>
           <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 16, fontFamily: FONT }}>
@@ -812,7 +812,7 @@ export default function CasinoPage() {
             <div style={{ width: 1, background: "#1a4030" }} />
             <div style={{ textAlign: "center" }}>
               <div style={{ fontSize: "0.65rem", color: T.text2, textTransform: "uppercase", letterSpacing: ".05em" }}>Game</div>
-              <div style={{ fontWeight: 800, color: "#fff", fontSize: "1.1rem", fontFamily: FONT }}>{gameTab}</div>
+              <div style={{ fontWeight: 800, color: T.text, fontSize: "1.1rem", fontFamily: FONT }}>{gameTab}</div>
             </div>
           </div>
         </div>

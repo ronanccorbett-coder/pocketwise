@@ -190,7 +190,7 @@ export default function JobsPage() {
                     </div>
                   )}
                   {isCurrent && (
-                    <div style={{ position:"absolute", top:10, right:10, background:color, color:"#fff", padding:"2px 10px", borderRadius:99, fontSize:"0.62rem", fontWeight:800, textTransform:"uppercase" as const, letterSpacing:".04em", animation:"pw-pop .4s ease" }}>
+                    <div style={{ position:"absolute", top:10, right:10, background:color, color: T.text, padding:"2px 10px", borderRadius:99, fontSize:"0.62rem", fontWeight:800, textTransform:"uppercase" as const, letterSpacing:".04em", animation:"pw-pop .4s ease" }}>
                       Hired
                     </div>
                   )}

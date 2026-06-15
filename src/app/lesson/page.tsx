@@ -52,7 +52,7 @@ function XPFloat({ show }: { show: boolean }) {
     <div style={{
       position: "fixed", top: "40%", left: "50%", transform: `translate(-50%, ${show ? "-60px" : "0px"})`,
       opacity: show ? 1 : 0, transition: "all 0.6s ease-out",
-      background: "#76AD25", color: "#fff", fontWeight: 800,
+      background: "#76AD25", color: T.text, fontWeight: 800,
       fontSize: "1.1rem", padding: "8px 20px", borderRadius: 99,
       zIndex: 200, pointerEvents: "none",
       display: "flex", alignItems: "center", gap: 6,
@@ -91,7 +91,7 @@ function SlideActivity({ a }: { a: Activity }) {
         fontSize: "0.72rem", fontWeight: 700, color: "#76AD25",
         textTransform: "uppercase", letterSpacing: ".06em",
       }}>Reading</div>
-      <h2 style={{ fontWeight: 800, fontSize: "clamp(1.2rem, 3vw, 1.6rem)", color: "#fff", marginBottom: 24, lineHeight: 1.3 }}>
+      <h2 style={{ fontWeight: 800, fontSize: "clamp(1.2rem, 3vw, 1.6rem)", color: T.text, marginBottom: 24, lineHeight: 1.3 }}>
         {a.title}
       </h2>
       <div style={{
@@ -151,7 +151,7 @@ function QuizActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => void;
       </div>
       {questions.map((q, qi) => (
         <div key={qi} style={{ marginBottom: 32 }}>
-          <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#fff", marginBottom: 20, lineHeight: 1.4 }}>
+          <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: T.text, marginBottom: 20, lineHeight: 1.4 }}>
             {q.question}
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -245,7 +245,7 @@ function TrueFalseActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => 
       <div style={{ background: "rgba(245,158,11,.15)", borderRadius: 6, padding: "3px 12px", display: "inline-block", marginBottom: 20, fontSize: "0.72rem", fontWeight: 700, color: "#f59e0b", textTransform: "uppercase", letterSpacing: ".06em" }}>
         True or False
       </div>
-      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.4rem)", color: "#fff", marginBottom: 32, lineHeight: 1.4 }}>
+      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.4rem)", color: T.text, marginBottom: 32, lineHeight: 1.4 }}>
         {a.statement}
       </h2>
       <div style={{ display: "flex", gap: 14 }}>
@@ -306,10 +306,10 @@ function DragDropActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => v
       <div style={{ background: "rgba(167,139,250,.15)", borderRadius: 6, padding: "3px 12px", display: "inline-block", marginBottom: 20, fontSize: "0.72rem", fontWeight: 700, color: "#a78bfa", textTransform: "uppercase", letterSpacing: ".06em" }}>
         Drag and Drop
       </div>
-      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#fff", marginBottom: 8, lineHeight: 1.4 }}>
+      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: T.text, marginBottom: 8, lineHeight: 1.4 }}>
         {a.title ?? "Match each item to the correct category"}
       </h2>
-      <p style={{ color: "#8b9dc3", fontSize: "0.825rem", marginBottom: 20 }}>Drag items into the correct boxes</p>
+      <p style={{ color: T.text2, fontSize: "0.825rem", marginBottom: 20 }}>Drag items into the correct boxes</p>
 
       {/* Unplaced items pool */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, minHeight: 50, padding: "12px", background: "rgba(255,255,255,.04)", borderRadius: 12, border: "1.5px dashed rgba(255,255,255,.12)", marginBottom: 20 }}
@@ -327,7 +327,7 @@ function DragDropActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => v
             style={{
               padding: "8px 16px", background: "rgba(255,255,255,.1)",
               border: "1.5px solid rgba(255,255,255,.2)", borderRadius: 8,
-              color: "#fff", fontWeight: 600, fontSize: "0.875rem",
+              color: T.text, fontWeight: 600, fontSize: "0.875rem",
               cursor: "grab", userSelect: "none",
               opacity: dragging === item ? 0.4 : 1,
             }}>
@@ -359,7 +359,7 @@ function DragDropActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => v
                 background: zoneCorrect ? "rgba(118,173,37,.1)" : zoneWrong ? "rgba(239,68,68,.08)" : "rgba(255,255,255,.04)",
                 minHeight: 54, display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap",
               }}>
-              <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#8b9dc3", flexShrink: 0, minWidth: 100 }}>{zone}</span>
+              <span style={{ fontSize: "0.8rem", fontWeight: 700, color: T.text2, flexShrink: 0, minWidth: 100 }}>{zone}</span>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, flex: 1 }}>
                 {itemsHere.map(item => (
                   <div key={item}
@@ -382,7 +382,7 @@ function DragDropActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => v
       </div>
 
       {!checked && placed.length > 0 && (
-        <button onClick={check} style={{ width: "100%", padding: "14px", background: "#76AD25", color: "#fff", border: "none", borderRadius: 12, fontWeight: 700, fontSize: "0.9rem", cursor: "pointer", fontFamily: FONT }}>
+        <button onClick={check} style={{ width: "100%", padding: "14px", background: "#76AD25", color: T.text, border: "none", borderRadius: 12, fontWeight: 700, fontSize: "0.9rem", cursor: "pointer", fontFamily: FONT }}>
           Check Answer
         </button>
       )}
@@ -431,7 +431,7 @@ function TypedActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => void
       <div style={{ background: "rgba(14,165,233,.15)", borderRadius: 6, padding: "3px 12px", display: "inline-block", marginBottom: 20, fontSize: "0.72rem", fontWeight: 700, color: "#7dd3fc", textTransform: "uppercase", letterSpacing: ".06em" }}>
         Type Your Answer
       </div>
-      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.35rem)", color: "#fff", marginBottom: 28, lineHeight: 1.4 }}>
+      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.35rem)", color: T.text, marginBottom: 28, lineHeight: 1.4 }}>
         {a.question}
       </h2>
       <input
@@ -447,14 +447,14 @@ function TypedActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => void
           width: "100%", padding: "16px 20px",
           background: result === "correct" ? "rgba(118,173,37,.15)" : result === "wrong" ? "rgba(239,68,68,.1)" : "rgba(255,255,255,.07)",
           border: `2px solid ${result === "correct" ? "#76AD25" : result === "wrong" ? "#EF4444" : "rgba(255,255,255,.15)"}`,
-          borderRadius: 12, color: "#fff", fontFamily: FONT, fontSize: "1rem",
+          borderRadius: 12, color: T.text, fontFamily: FONT, fontSize: "1rem",
           outline: "none", marginBottom: 12, transition: "all .2s",
           animation: result === "wrong" && attempts < 2 ? "shake 0.4s ease" : "none",
         }}
       />
-      {a.hint && !result && <p style={{ fontSize: "0.8rem", color: "#8b9dc3", marginBottom: 16, fontStyle: "italic" }}>Hint: {a.hint}</p>}
+      {a.hint && !result && <p style={{ fontSize: "0.8rem", color: T.text2, marginBottom: 16, fontStyle: "italic" }}>Hint: {a.hint}</p>}
       {result === null && (
-        <button onClick={submit} disabled={!value.trim()} style={{ width: "100%", padding: "14px", background: value.trim() ? "#76AD25" : "rgba(255,255,255,.08)", color: "#fff", border: "none", borderRadius: 12, fontWeight: 700, fontSize: "0.9rem", cursor: value.trim() ? "pointer" : "not-allowed", fontFamily: FONT }}>
+        <button onClick={submit} disabled={!value.trim()} style={{ width: "100%", padding: "14px", background: value.trim() ? "#76AD25" : "rgba(255,255,255,.08)", color: T.text, border: "none", borderRadius: 12, fontWeight: 700, fontSize: "0.9rem", cursor: value.trim() ? "pointer" : "not-allowed", fontFamily: FONT }}>
           Submit
         </button>
       )}
@@ -482,15 +482,15 @@ function VocabActivity({ a, vocab }: { a: Activity; vocab: { term: string; defin
       <div style={{ background: "rgba(167,139,250,.15)", borderRadius: 6, padding: "3px 12px", display: "inline-block", marginBottom: 20, fontSize: "0.72rem", fontWeight: 700, color: "#a78bfa", textTransform: "uppercase", letterSpacing: ".06em" }}>
         Key Terms
       </div>
-      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#fff", marginBottom: 6 }}>{a.title ?? "Vocabulary"}</h2>
-      <p style={{ color: "#8b9dc3", fontSize: "0.825rem", marginBottom: 24 }}>Tap each card to see the definition</p>
+      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: T.text, marginBottom: 6 }}>{a.title ?? "Vocabulary"}</h2>
+      <p style={{ color: T.text2, fontSize: "0.825rem", marginBottom: 24 }}>Tap each card to see the definition</p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 12 }}>
         {vocab.map((v, i) => (
           <div key={i} onClick={() => setFlipped(s => { const n = new Set(s); n.has(i) ? n.delete(i) : n.add(i); return n; })} style={{ background: flipped.has(i) ? "rgba(118,173,37,.12)" : "rgba(255,255,255,.06)", border: `1.5px solid ${flipped.has(i) ? "rgba(118,173,37,.4)" : "rgba(255,255,255,.1)"}`, borderRadius: 14, padding: "18px", cursor: "pointer", minHeight: 100, display: "flex", flexDirection: "column", justifyContent: "center", transition: "all .2s" }}>
             {flipped.has(i) ? (
               <p style={{ color: T.text3, fontSize: "0.875rem", lineHeight: 1.6 }}>{v.definition}</p>
             ) : (
-              <div style={{ fontWeight: 700, fontSize: "1rem", color: "#fff" }}>{v.term}</div>
+              <div style={{ fontWeight: 700, fontSize: "1rem", color: T.text }}>{v.term}</div>
             )}
           </div>
         ))}
@@ -509,9 +509,9 @@ function ScenarioActivity({ a }: { a: Activity }) {
       <div style={{ background: "rgba(245,158,11,.15)", borderRadius: 6, padding: "3px 12px", display: "inline-block", marginBottom: 20, fontSize: "0.72rem", fontWeight: 700, color: "#f59e0b", textTransform: "uppercase", letterSpacing: ".06em" }}>
         Scenario {a.nceaLevel ? `· ${a.nceaLevel}` : ""}
       </div>
-      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#fff", marginBottom: 20 }}>{a.title}</h2>
+      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: T.text, marginBottom: 20 }}>{a.title}</h2>
       <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 14, padding: "20px", marginBottom: 16, border: "1px solid rgba(255,255,255,.08)" }}>
-        <div style={{ fontSize: "0.7rem", fontWeight: 700, color: "#8b9dc3", textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 10 }}>Setup</div>
+        <div style={{ fontSize: "0.7rem", fontWeight: 700, color: T.text2, textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 10 }}>Setup</div>
         <p style={{ color: T.text3, fontSize: "0.9rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.setup}</p>
       </div>
       <div style={{ background: "rgba(59,130,246,.08)", borderRadius: 14, padding: "20px", marginBottom: 16, border: "1px solid rgba(59,130,246,.2)" }}>
@@ -528,7 +528,7 @@ function ScenarioActivity({ a }: { a: Activity }) {
         </div>
       )}
       {a.solution && (
-        <button onClick={() => setShowSolution(s => !s)} style={{ background: "rgba(255,255,255,.07)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 10, padding: "10px 20px", color: "#8b9dc3", fontWeight: 600, fontSize: "0.85rem", cursor: "pointer", fontFamily: FONT, marginBottom: 12 }}>
+        <button onClick={() => setShowSolution(s => !s)} style={{ background: "rgba(255,255,255,.07)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 10, padding: "10px 20px", color: T.text2, fontWeight: 600, fontSize: "0.85rem", cursor: "pointer", fontFamily: FONT, marginBottom: 12 }}>
           {showSolution ? "Hide Solution" : "Show Solution"}
         </button>
       )}
@@ -552,12 +552,12 @@ function ReflectionActivity({ a }: { a: Activity }) {
       <div style={{ background: "rgba(239,68,68,.12)", borderRadius: 6, padding: "3px 12px", display: "inline-block", marginBottom: 20, fontSize: "0.72rem", fontWeight: 700, color: "#fca5a5", textTransform: "uppercase", letterSpacing: ".06em" }}>
         Reflection
       </div>
-      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#fff", marginBottom: 20 }}>{a.title}</h2>
+      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: T.text, marginBottom: 20 }}>{a.title}</h2>
       <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 14, padding: "20px", marginBottom: 20, border: "1px solid rgba(255,255,255,.08)" }}>
         <p style={{ color: T.text3, fontSize: "0.9rem", lineHeight: 1.75, whiteSpace: "pre-wrap" }}>{a.prompt}</p>
       </div>
-      <textarea value={text} onChange={e => setText(e.target.value)} placeholder="Write your thoughts here..." rows={5} style={{ width: "100%", background: "rgba(255,255,255,.06)", border: "1.5px solid rgba(255,255,255,.12)", borderRadius: 12, padding: "16px", color: "#fff", fontFamily: FONT, fontSize: "0.9rem", resize: "vertical", outline: "none" }} onFocus={e => e.target.style.borderColor = "#76AD25"} onBlur={e => e.target.style.borderColor = "rgba(255,255,255,.12)"} />
-      {a.nceaLink && <p style={{ fontSize: "0.78rem", color: "#8b9dc3", marginTop: 10, fontStyle: "italic" }}>{a.nceaLink}</p>}
+      <textarea value={text} onChange={e => setText(e.target.value)} placeholder="Write your thoughts here..." rows={5} style={{ width: "100%", background: "rgba(255,255,255,.06)", border: "1.5px solid rgba(255,255,255,.12)", borderRadius: 12, padding: "16px", color: T.text, fontFamily: FONT, fontSize: "0.9rem", resize: "vertical", outline: "none" }} onFocus={e => e.target.style.borderColor = "#76AD25"} onBlur={e => e.target.style.borderColor = "rgba(255,255,255,.12)"} />
+      {a.nceaLink && <p style={{ fontSize: "0.78rem", color: T.text2, marginTop: 10, fontStyle: "italic" }}>{a.nceaLink}</p>}
     </div>
   );
 }
@@ -571,13 +571,13 @@ function DiscussionActivity({ a }: { a: Activity }) {
       <div style={{ background: "rgba(14,165,233,.12)", borderRadius: 6, padding: "3px 12px", display: "inline-block", marginBottom: 20, fontSize: "0.72rem", fontWeight: 700, color: "#7dd3fc", textTransform: "uppercase", letterSpacing: ".06em" }}>
         Group Discussion
       </div>
-      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: "#fff", marginBottom: 20 }}>{a.title ?? "Discussion"}</h2>
+      <h2 style={{ fontWeight: 700, fontSize: "clamp(1rem, 2.5vw, 1.3rem)", color: T.text, marginBottom: 20 }}>{a.title ?? "Discussion"}</h2>
       <div style={{ background: "rgba(255,255,255,.06)", borderRadius: 14, padding: "22px", marginBottom: 20, border: "1px solid rgba(255,255,255,.08)" }}>
         <p style={{ color: "#e2e8f0", fontSize: "1rem", lineHeight: 1.75, fontWeight: 600 }}>{a.prompt}</p>
       </div>
       {(a.guidingQuestions ?? []).length > 0 && (
         <div>
-          <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "#8b9dc3", textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 12 }}>Guiding Questions</div>
+          <div style={{ fontSize: "0.72rem", fontWeight: 700, color: T.text2, textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 12 }}>Guiding Questions</div>
           {a.guidingQuestions!.map((q, i) => (
             <div key={i} style={{ display: "flex", gap: 10, padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,.06)" }}>
               <span style={{ color: "#7dd3fc", fontWeight: 700, flexShrink: 0 }}>{i + 1}.</span>
@@ -618,10 +618,10 @@ function CompletionScreen({ lesson, onContinue, onReview }: {
         <div style={{ fontSize: "0.875rem", color: "#76AD25", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 8 }}>
           Lesson Complete
         </div>
-        <h1 style={{ fontWeight: 900, fontSize: "2rem", color: "#fff", marginBottom: 6, lineHeight: 1.2 }}>
+        <h1 style={{ fontWeight: 900, fontSize: "2rem", color: T.text, marginBottom: 6, lineHeight: 1.2 }}>
           {lesson.title}
         </h1>
-        <p style={{ color: "#8b9dc3", fontSize: "0.9rem", marginBottom: 36 }}>{lesson.nceaFocus}</p>
+        <p style={{ color: T.text2, fontSize: "0.9rem", marginBottom: 36 }}>{lesson.nceaFocus}</p>
 
         {/* Stats */}
         <div style={{ display: "flex", gap: 12, justifyContent: "center", marginBottom: 36, flexWrap: "wrap" }}>
@@ -630,7 +630,7 @@ function CompletionScreen({ lesson, onContinue, onReview }: {
               <Zap size={16} color="#76AD25" />
               <span style={{ fontSize: "0.75rem", color: "#76AD25", fontWeight: 700 }}>XP EARNED</span>
             </div>
-            <div style={{ fontSize: "1.75rem", fontWeight: 900, color: "#fff" }}>
+            <div style={{ fontSize: "1.75rem", fontWeight: 900, color: T.text }}>
               +<XPCounter target={lesson.xpReward} />
             </div>
           </div>
@@ -640,7 +640,7 @@ function CompletionScreen({ lesson, onContinue, onReview }: {
               <Flame size={16} color="#f59e0b" />
               <span style={{ fontSize: "0.75rem", color: "#f59e0b", fontWeight: 700 }}>STREAK</span>
             </div>
-            <div style={{ fontSize: "1.75rem", fontWeight: 900, color: "#fff" }}>
+            <div style={{ fontSize: "1.75rem", fontWeight: 900, color: T.text }}>
               {state?.streak ?? 1}
             </div>
           </div>
@@ -650,7 +650,7 @@ function CompletionScreen({ lesson, onContinue, onReview }: {
               <BookOpen size={16} color="#3B82F6" />
               <span style={{ fontSize: "0.75rem", color: "#3B82F6", fontWeight: 700 }}>LESSONS</span>
             </div>
-            <div style={{ fontSize: "1.75rem", fontWeight: 900, color: "#fff" }}>
+            <div style={{ fontSize: "1.75rem", fontWeight: 900, color: T.text }}>
               {(state?.completedLessons as string[] ?? []).length}
             </div>
           </div>
@@ -658,10 +658,10 @@ function CompletionScreen({ lesson, onContinue, onReview }: {
 
         {/* Buttons */}
         <div style={{ display: "flex", gap: 12, justifyContent: "center" }}>
-          <button onClick={onContinue} style={{ display: "flex", alignItems: "center", gap: 8, padding: "14px 32px", background: "#76AD25", color: "#fff", border: "none", borderRadius: 12, fontWeight: 700, fontSize: "1rem", cursor: "pointer", fontFamily: FONT, boxShadow: "0 4px 20px rgba(118,173,37,.4)" }}>
+          <button onClick={onContinue} style={{ display: "flex", alignItems: "center", gap: 8, padding: "14px 32px", background: "#76AD25", color: T.text, border: "none", borderRadius: 12, fontWeight: 700, fontSize: "1rem", cursor: "pointer", fontFamily: FONT, boxShadow: "0 4px 20px rgba(118,173,37,.4)" }}>
             Continue <ArrowRight size={18} />
           </button>
-          <button onClick={onReview} style={{ padding: "14px 24px", background: "rgba(255,255,255,.08)", color: "#8b9dc3", border: "1px solid rgba(255,255,255,.12)", borderRadius: 12, fontWeight: 600, fontSize: "0.9rem", cursor: "pointer", fontFamily: FONT }}>
+          <button onClick={onReview} style={{ padding: "14px 24px", background: "rgba(255,255,255,.08)", color: T.text2, border: "1px solid rgba(255,255,255,.12)", borderRadius: 12, fontWeight: 600, fontSize: "0.9rem", cursor: "pointer", fontFamily: FONT }}>
             Review
           </button>
         </div>
@@ -685,7 +685,7 @@ function LessonContent() {
   const filename = searchParams?.get("filename") ?? null;
   const { completeLesson, state } = useGame();
 
-  const [lesson, setLesson]       = useState<LessonData | null>(null);
+  const [lesson, setLesson]       = useState(null as LessonData | null);
   const [loading, setLoading]     = useState(true);
   const [step, setStep]           = useState(0);
   const [passedSteps, setPassedSteps] = useState<Set<number>>(new Set());
@@ -753,15 +753,15 @@ function LessonContent() {
     <div style={{ minHeight: "100vh", background: "#0a1628", display: "flex", alignItems: "center", justifyContent: "center" }}>
       <div style={{ textAlign: "center" }}>
         <div style={{ width: 40, height: 40, border: "3px solid rgba(118,173,37,.2)", borderTopColor: "#76AD25", borderRadius: "50%", animation: "spin 0.8s linear infinite", margin: "0 auto 16px" }} />
-        <p style={{ color: "#8b9dc3", fontSize: "0.875rem" }}>Loading lesson...</p>
+        <p style={{ color: T.text2, fontSize: "0.875rem" }}>Loading lesson...</p>
       </div>
     </div>
   );
 
   if (!lesson) return (
     <div style={{ minHeight: "100vh", background: "#0a1628", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 16 }}>
-      <p style={{ color: "#8b9dc3" }}>Lesson not found.</p>
-      <button onClick={() => router.push("/curriculum")} style={{ padding: "10px 20px", background: "#76AD25", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: FONT, fontWeight: 700 }}>
+      <p style={{ color: T.text2 }}>Lesson not found.</p>
+      <button onClick={() => router.push("/curriculum")} style={{ padding: "10px 20px", background: "#76AD25", color: T.text, border: "none", borderRadius: 8, cursor: "pointer", fontFamily: FONT, fontWeight: 700 }}>
         Back to Curriculum
       </button>
     </div>
@@ -796,7 +796,7 @@ function LessonContent() {
 
         {/* Nav row */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 0" }}>
-          <button onClick={() => router.push("/curriculum")} style={{ display: "flex", alignItems: "center", gap: 5, color: "#8b9dc3", background: "none", border: "none", cursor: "pointer", fontSize: "0.85rem", fontFamily: FONT, padding: 0 }}>
+          <button onClick={() => router.push("/curriculum")} style={{ display: "flex", alignItems: "center", gap: 5, color: T.text2, background: "none", border: "none", cursor: "pointer", fontSize: "0.85rem", fontFamily: FONT, padding: 0 }}>
             <ChevronLeft size={18} />
           </button>
 
@@ -806,7 +806,7 @@ function LessonContent() {
               <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#f59e0b" }}>{lesson.xpReward} XP</span>
             </div>
             <span style={{ color: "#2a3a5c" }}>·</span>
-            <span style={{ fontSize: "0.78rem", color: "#8b9dc3" }}>{step + 1}/{activities.length}</span>
+            <span style={{ fontSize: "0.78rem", color: T.text2 }}>{step + 1}/{activities.length}</span>
           </div>
 
           <HeartsBar hearts={hearts} />
@@ -906,7 +906,7 @@ export default function LessonPage() {
   return (
     <Suspense fallback={
       <div style={{ minHeight: "100vh", background: "#0a1628", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <div style={{ color: "#8b9dc3" }}>Loading...</div>
+        <div style={{ color: T.text2 }}>Loading...</div>
       </div>
     }>
       <LessonContent />

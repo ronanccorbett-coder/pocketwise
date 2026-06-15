@@ -349,7 +349,7 @@ export default function DayTradingTerminal() {
   };
 
   const [sym, setSym]             = useState("NZX50");
-  const [candles, setCandles]     = useState<Candle[]>([]);
+  const [candles, setCandles]     = useState([] as Candle[]);
   const [simState, setSimState]   = useState<any>(null);
   const [side, setSide]           = useState<"buy"|"sell">("buy");
   const [orderType, setOrderType] = useState<"market"|"limit"|"stop">("market");
@@ -358,7 +358,7 @@ export default function DayTradingTerminal() {
   const [slPrice, setSlPrice]     = useState(0);
   const [tpPrice, setTpPrice]     = useState(0);
   const [leverage, setLeverage]   = useState(1);
-  const [orders, setOrders]       = useState<Order[]>([]);
+  const [orders, setOrders]       = useState([] as Order[]);
   const [activePanel, setActivePanel] = useState<"positions"|"history">("positions");
   const [notif, setNotif]         = useState<string|null>(null);
   const [showTutorial, setShowTutorial] = useState(() => localStorage.getItem("pw_dt_tutorial") !== "1");
@@ -629,7 +629,7 @@ export default function DayTradingTerminal() {
             </div>
 
             {/* Place order */}
-            <button onClick={placeOrder} style={{ width:"100%", padding:"12px", background:side==="buy"?T.green:T.red, color:"#fff", border:"none", borderRadius:10, fontWeight:900, fontSize:"0.9rem", cursor:"pointer", fontFamily:FONT, boxShadow:`0 4px 0 ${side==="buy"?"#1a7a72":"#b52d2a"}, 0 6px 16px ${side==="buy"?"rgba(38,166,154,.3)":"rgba(239,83,80,.3)"}`, transition:"transform .08s, box-shadow .08s" }}
+            <button onClick={placeOrder} style={{ width:"100%", padding:"12px", background:side==="buy"?T.green:T.red, color: T.text, border:"none", borderRadius:10, fontWeight:900, fontSize:"0.9rem", cursor:"pointer", fontFamily:FONT, boxShadow:`0 4px 0 ${side==="buy"?"#1a7a72":"#b52d2a"}, 0 6px 16px ${side==="buy"?"rgba(38,166,154,.3)":"rgba(239,83,80,.3)"}`, transition:"transform .08s, box-shadow .08s" }}
               onMouseDown={e=>{(e.currentTarget as any).style.transform="translateY(3px)";(e.currentTarget as any).style.boxShadow="none";}}
               onMouseUp={e=>{(e.currentTarget as any).style.transform="";(e.currentTarget as any).style.boxShadow=`0 4px 0 ${side==="buy"?"#1a7a72":"#b52d2a"}`;}} >
               {side==="buy"?"Buy":"Sell"} {inst.symbol}

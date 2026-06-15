@@ -28,7 +28,7 @@ type Order  = { id: string; symbol: string; side: "buy"|"sell"; type: "market"|"
 
 function useSimulator(symbol: string) {
   const inst = INSTRUMENTS.find(i => i.symbol === symbol) ?? INSTRUMENTS[0];
-  const [candles, setCandles] = useState<Candle[]>([]);
+  const [candles, setCandles] = useState([] as Candle[]);
   const [tick, setTick]       = useState(0);
   const priceRef = useRef(inst.basePrice);
 
@@ -184,7 +184,7 @@ export default function DayTradingPage() {
   const [slPx,      setSlPx]      = useState(0);
   const [tpPx,      setTpPx]      = useState(0);
   const [leverage,  setLeverage]  = useState(1);
-  const [orders,    setOrders]    = useState<Order[]>([]);
+  const [orders,    setOrders]    = useState([] as Order[]);
   const [activeTab, setActiveTab] = useState<"chart"|"orders"|"positions">("chart");
   const [notification, setNotif]  = useState<string|null>(null);
   const [chartWidth, setChartWidth] = useState(600);
@@ -488,7 +488,7 @@ export default function DayTradingPage() {
               <button onClick={placeOrder} style={{
                 width: "100%", padding: "14px",
                 background: side === "buy" ? T.green : T.red,
-                color: "#fff", border: "none", borderRadius: 10,
+                color: T.text, border: "none", borderRadius: 10,
                 fontWeight: 900, fontSize: "0.95rem", cursor: "pointer",
                 fontFamily: FONT, letterSpacing: ".02em",
                 boxShadow: `0 4px 0 ${side === "buy" ? "#1a7a72" : "#b52d2a"}, 0 6px 16px ${side === "buy" ? "rgba(38,166,154,.3)" : "rgba(239,83,80,.3)"}`,

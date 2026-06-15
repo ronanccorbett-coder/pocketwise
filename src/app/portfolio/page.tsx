@@ -424,12 +424,12 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ background: "#1e3a5f", borderRadius: 8, padding: "4px 10px", fontWeight: 900, fontSize: "0.85rem", color: "#60a5fa" }}>{selectedMeta.symbol}</div>
-                <span style={{ color: "#fff", fontWeight: 700, fontSize: "1rem" }}>{selectedMeta.name}</span>
+                <span style={{ color: T.text, fontWeight: 700, fontSize: "1rem" }}>{selectedMeta.name}</span>
               </div>
               <div style={{ fontSize: "0.72rem", color: T.text2, marginTop: 4 }}>{selectedMeta.sector} · NZX</div>
             </div>
             <div style={{ textAlign: "right" }}>
-              <div style={{ fontSize: "1.75rem", fontWeight: 900, color: "#fff", lineHeight: 1 }}>${selectedPrice.price.toFixed(2)}</div>
+              <div style={{ fontSize: "1.75rem", fontWeight: 900, color: T.text, lineHeight: 1 }}>${selectedPrice.price.toFixed(2)}</div>
               <div style={{ fontSize: "0.82rem", fontWeight: 700, color: selectedPrice.changePct >= 0 ? "#76AD25" : "#EF4444", marginTop: 2 }}>
                 {selectedPrice.changePct >= 0 ? "+" : ""}{selectedPrice.changePct.toFixed(2)}%
               </div>
@@ -445,7 +445,7 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
             )}
             <div style={{ background: T.input, borderRadius: 8, padding: "6px 12px", fontSize: "0.75rem" }}>
               <span style={{ color: T.text2 }}>52w range: </span>
-              <span style={{ color: "#fff", fontWeight: 700 }}>${(selectedPrice.price * 0.82).toFixed(2)} – ${(selectedPrice.price * 1.18).toFixed(2)}</span>
+              <span style={{ color: T.text, fontWeight: 700 }}>${(selectedPrice.price * 0.82).toFixed(2)} – ${(selectedPrice.price * 1.18).toFixed(2)}</span>
             </div>
             {selectedOwned && (
               <div style={{ background: "rgba(118,173,37,.12)", border: "1px solid rgba(118,173,37,.2)", borderRadius: 8, padding: "6px 12px", fontSize: "0.75rem" }}>
@@ -466,7 +466,7 @@ function StockMarket({ prices, stocks, buyQty, setBuyQty, balance, marketEvent, 
             </div>
             <div style={{ flex: 1, minWidth: 100 }}>
               <div style={{ fontSize: "0.7rem", color: T.text2 }}>Total cost</div>
-              <div style={{ fontWeight: 800, color: "#fff", fontSize: "0.95rem" }}>${((buyQty[selected]||1) * selectedPrice.price).toFixed(2)}</div>
+              <div style={{ fontWeight: 800, color: T.text, fontSize: "0.95rem" }}>${((buyQty[selected]||1) * selectedPrice.price).toFixed(2)}</div>
             </div>
             <button
               onClick={() => handleBuy(selected, selectedMeta.name)}
@@ -631,7 +631,7 @@ export default function PortfolioPage(){
         <Nav />
 
         {notif && (
-          <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 100, background: T.bg, color: "#fff", padding: "12px 20px", borderRadius: 10, fontSize: "0.85rem", fontWeight: 600, border: "1px solid #76AD25", boxShadow: "0 4px 20px rgba(0,0,0,.3)", maxWidth: 320 }}>
+          <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 100, background: T.bg, color: T.text, padding: "12px 20px", borderRadius: 10, fontSize: "0.85rem", fontWeight: 600, border: "1px solid #76AD25", boxShadow: "0 4px 20px rgba(0,0,0,.3)", maxWidth: 320 }}>
             {notif}
           </div>
         )}
@@ -642,7 +642,7 @@ export default function PortfolioPage(){
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
                 <BarChart2 size={22} color="#76AD25" />
-                <h1 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#fff" }}>PocketWise Portfolio</h1>
+                <h1 style={{ fontSize: "1.4rem", fontWeight: 800, color: T.text }}>PocketWise Portfolio</h1>
               </div>
               <p style={{ color: T.text2, fontSize: "0.85rem" }}>Simulate real investing with virtual NZD. Learn by doing.</p>
             </div>
@@ -768,12 +768,12 @@ export default function PortfolioPage(){
                       borderRadius: 16, padding: "18px", position: "relative", overflow: "hidden",
                     }}>
                       <div style={{ position:"absolute", top:0, left:0, right:0, height:3, background: net>=0 ? "linear-gradient(90deg,#76AD25,#22c55e)" : "linear-gradient(90deg,#EF4444,#f97316)", borderRadius:"16px 16px 0 0" }}/>
-                      <div style={{ position:"absolute", top:10, right:12, background:"rgba(255,255,255,.06)", color:"#8b9dc3", padding:"2px 8px", borderRadius:99, fontSize:"0.6rem", fontWeight:700 }}>{prop.type}</div>
+                      <div style={{ position:"absolute", top:10, right:12, background:"rgba(255,255,255,.06)", color: T.text2, padding:"2px 8px", borderRadius:99, fontSize:"0.6rem", fontWeight:700 }}>{prop.type}</div>
                       <div style={{ marginTop:4, marginBottom:10 }}>
-                        <div style={{ fontWeight:800, fontSize:"0.875rem", color:"#fff", display:"flex", alignItems:"center", paddingRight:60 }}>
+                        <div style={{ fontWeight:800, fontSize:"0.875rem", color: T.text, display:"flex", alignItems:"center", paddingRight:60 }}>
                           {prop.name}<InfoDot text={prop.info} />
                         </div>
-                        <div style={{ fontSize:"0.7rem", color:"#4a6a8a", marginTop:2 }}>{prop.suburb} {prop.bedrooms > 0 ? `· ${prop.bedrooms} bed` : "· Commercial"}</div>
+                        <div style={{ fontSize:"0.7rem", color: T.text3, marginTop:2 }}>{prop.suburb} {prop.bedrooms > 0 ? `· ${prop.bedrooms} bed` : "· Commercial"}</div>
                       </div>
                       <div style={{ display:"flex", flexDirection:"column", gap:4, marginBottom:14 }}>
                         {[
@@ -784,7 +784,7 @@ export default function PortfolioPage(){
                           { l:"Net Cashflow", v:`${net>=0?"+":""}$${net}/wk`, c:net>=0?"#76AD25":"#EF4444", tip:net>=0?"Positive — rent exceeds mortgage. Rare in NZ!":"Negative — you top up the difference. Common in NZ cities." },
                         ].map(row => (
                           <div key={row.l} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"4px 0", borderBottom:"1px solid rgba(255,255,255,.04)" }}>
-                            <span style={{ fontSize:"0.73rem", color:"#4a6a8a", display:"flex", alignItems:"center" }}>{row.l}<InfoDot text={row.tip}/></span>
+                            <span style={{ fontSize:"0.73rem", color: T.text3, display:"flex", alignItems:"center" }}>{row.l}<InfoDot text={row.tip}/></span>
                             <span style={{ fontWeight:700, fontSize:"0.8rem", color:row.c||"#fff" }}>{row.v}</span>
                           </div>
                         ))}
@@ -809,11 +809,11 @@ export default function PortfolioPage(){
             <div>
                 {loans.length > 0 && (
                   <div style={{ background:"#111c30", border:`1px solid ${T.border}`, borderRadius:14, padding:"16px 20px", marginBottom:20 }}>
-                    <h3 style={{ fontWeight:700, fontSize:"0.875rem", color:"#fff", marginBottom:12, display:"flex", alignItems:"center", gap:4 }}>Active Loans<InfoDot text="Your current debt. Loans reduce your net worth and require weekly repayments from your balance." /></h3>
+                    <h3 style={{ fontWeight:700, fontSize:"0.875rem", color: T.text, marginBottom:12, display:"flex", alignItems:"center", gap:4 }}>Active Loans<InfoDot text="Your current debt. Loans reduce your net worth and require weekly repayments from your balance." /></h3>
                     {loans.map(l => (
                       <div key={l.id} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"10px 0", borderBottom:"1px solid rgba(255,255,255,.04)", fontSize:"0.82rem" }}>
-                        <div><div style={{ fontWeight:700, color:"#fff" }}>{l.name}</div><div style={{ color:"#4a6a8a", marginTop:2, fontSize:"0.7rem" }}>{l.interestRate}% p.a. · ${l.weeklyRepayment}/wk</div></div>
-                        <div style={{ textAlign:"right" }}><div style={{ color:"#EF4444", fontWeight:800 }}>${(l.balance??0).toFixed(0)}</div><div style={{ fontSize:"0.62rem", color:"#4a6a8a" }}>owing</div></div>
+                        <div><div style={{ fontWeight:700, color: T.text }}>{l.name}</div><div style={{ color: T.text3, marginTop:2, fontSize:"0.7rem" }}>{l.interestRate}% p.a. · ${l.weeklyRepayment}/wk</div></div>
+                        <div style={{ textAlign:"right" }}><div style={{ color:"#EF4444", fontWeight:800 }}>${(l.balance??0).toFixed(0)}</div><div style={{ fontSize:"0.62rem", color: T.text3 }}>owing</div></div>
                       </div>
                     ))}
                   </div>
@@ -826,7 +826,7 @@ export default function PortfolioPage(){
                     <div key={cat} style={{ marginBottom:20 }}>
                       <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:10 }}>
                         <div style={{ height:3, width:20, background:color, borderRadius:99 }}/>
-                        <h3 style={{ fontWeight:700, color:"#fff", fontSize:"0.85rem" }}>{cat} Loans</h3>
+                        <h3 style={{ fontWeight:700, color: T.text, fontSize:"0.85rem" }}>{cat} Loans</h3>
                         {cat==="Personal" && <span style={{ background:"rgba(239,68,68,.15)", color:"#EF4444", padding:"2px 8px", borderRadius:99, fontSize:"0.62rem", fontWeight:800 }}>HIGH RISK</span>}
                       </div>
                       <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(240px,1fr))", gap:10 }}>
@@ -836,13 +836,13 @@ export default function PortfolioPage(){
                           return (
                             <div key={lp.name} className="pw-dark-card" style={{ padding:"16px", borderColor:isDangerous?"rgba(239,68,68,.25)":"rgba(255,255,255,.07)" }}>
                               <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", marginBottom:8 }}>
-                                <div style={{ fontWeight:800, fontSize:"0.875rem", color:"#fff", display:"flex", alignItems:"center", gap:4, flex:1 }}>{lp.name}<InfoDot text={lp.note}/></div>
+                                <div style={{ fontWeight:800, fontSize:"0.875rem", color: T.text, display:"flex", alignItems:"center", gap:4, flex:1 }}>{lp.name}<InfoDot text={lp.note}/></div>
                                 {have && <span style={{ background:"rgba(239,68,68,.15)", color:"#EF4444", padding:"2px 7px", borderRadius:99, fontSize:"0.6rem", fontWeight:800 }}>Active</span>}
                               </div>
                               <div style={{ display:"flex", gap:14, marginBottom:12 }}>
-                                <div><div style={{ fontSize:"0.6rem", color:"#4a6a8a", textTransform:"uppercase" }}>Amount</div><div style={{ fontWeight:800, color:"#fff" }}>${lp.principal.toLocaleString()}</div></div>
-                                <div><div style={{ fontSize:"0.6rem", color:"#4a6a8a", textTransform:"uppercase", display:"flex", alignItems:"center" }}>Rate<InfoDot text="Annual interest rate. Higher = more expensive debt." /></div><div style={{ fontWeight:800, color:lp.rate===0?"#76AD25":lp.rate>20?"#EF4444":"#f59e0b" }}>{lp.rate===0?"0%":lp.rate>100?`${lp.rate}% ⚠`:`${lp.rate}%`}</div></div>
-                                {lp.weekly>0&&<div><div style={{ fontSize:"0.6rem", color:"#4a6a8a", textTransform:"uppercase" }}>Weekly</div><div style={{ fontWeight:800, color:"#EF4444" }}>-${lp.weekly}</div></div>}
+                                <div><div style={{ fontSize:"0.6rem", color: T.text3, textTransform:"uppercase" }}>Amount</div><div style={{ fontWeight:800, color: T.text }}>${lp.principal.toLocaleString()}</div></div>
+                                <div><div style={{ fontSize:"0.6rem", color: T.text3, textTransform:"uppercase", display:"flex", alignItems:"center" }}>Rate<InfoDot text="Annual interest rate. Higher = more expensive debt." /></div><div style={{ fontWeight:800, color:lp.rate===0?"#76AD25":lp.rate>20?"#EF4444":"#f59e0b" }}>{lp.rate===0?"0%":lp.rate>100?`${lp.rate}% ⚠`:`${lp.rate}%`}</div></div>
+                                {lp.weekly>0&&<div><div style={{ fontSize:"0.6rem", color: T.text3, textTransform:"uppercase" }}>Weekly</div><div style={{ fontWeight:800, color:"#EF4444" }}>-${lp.weekly}</div></div>}
                               </div>
                               <button disabled={!!have} onClick={() => { const ok=takeLoan(lp.name,lp.principal,lp.rate,lp.weekly); if(ok)notify(`${lp.name} approved`); }}
                                 className={!have?(isDangerous?"btn-3d-red":"btn-3d-navy"):""}
@@ -967,7 +967,7 @@ export default function PortfolioPage(){
                           boxShadow: owned ? "0 4px 16px rgba(118,173,37,.2)" : "0 2px 8px rgba(0,0,0,.04)",
                         }}>
                         {owned && (
-                          <div style={{ position: "absolute", top: 12, right: 12, background: "#76AD25", color: "#fff", padding: "2px 8px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 700 }}>
+                          <div style={{ position: "absolute", top: 12, right: 12, background: "#76AD25", color: T.text, padding: "2px 8px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 700 }}>
                             Owned
                           </div>
                         )}

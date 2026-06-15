@@ -225,12 +225,12 @@ export default function EventOverlay() {
   const { state, clearPendingEvent, clearPendingNews, addXp } = useGame();
   const pathname = usePathname();
   const [shownMilestones, setShownMilestones] = useState<Set<number>>(new Set());
-  const [activeMilestone, setActiveMilestone] = useState<typeof MILESTONES[0] | null>(null);
+  const [activeMilestone, setActiveMilestone] = useState(null as typeof MILESTONES[0] | null);
   const [showLife, setShowLife] = useState(false);
   const [showNews, setShowNews] = useState(false);
   const prevNetWorth = useRef(0);
 
-  // Don't show on landing, login, or onboarding pages
+  // Do not show on landing, login, or onboarding pages
   const suppress = ["/landing", "/login", "/onboarding", "/"].includes(pathname ?? "");
 
   const netWorth = state?.netWorth ?? 0;

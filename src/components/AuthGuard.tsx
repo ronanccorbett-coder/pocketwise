@@ -201,7 +201,7 @@ function AccessWall({ user, myClassrooms, allSubs, now, onRefresh }: {
               </button>
             </>
           ) : (
-            // ── In a class but no active subscription (teacher hasn't activated yet) ──
+            // ── In a class but no active subscription (teacher has not activated yet) ──
             <>
               <div style={{ textAlign: "center", marginBottom: 20 }}>
                 <div style={{ width: 56, height: 56, borderRadius: 14, background: "rgba(245,158,11,.1)", border: "1px solid rgba(245,158,11,.15)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px" }}>
@@ -209,7 +209,7 @@ function AccessWall({ user, myClassrooms, allSubs, now, onRefresh }: {
                 </div>
                 <h2 style={{ color: "#fff", fontWeight: 800, fontSize: "1.1rem", marginBottom: 8 }}>Waiting for class activation</h2>
                 <p style={{ color: "#4a6a8a", fontSize: "0.875rem", lineHeight: 1.6, margin: 0 }}>
-                  You're enrolled in a class but your teacher hasn't activated their subscription yet. Check back soon or ask your teacher to activate PocketWise.
+                  You're enrolled in a class but your teacher has not activated their subscription yet. Check back soon or ask your teacher to activate PocketWise.
                 </p>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>

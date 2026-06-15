@@ -7,7 +7,7 @@ type ThemeCtx = { theme: Theme; toggle: () => void; isDark: boolean };
 const Ctx = createContext<ThemeCtx>({ theme: "dark", toggle: () => {}, isDark: true });
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState("dark" as Theme);
 
   useEffect(() => {
     const saved = localStorage.getItem("pw_theme") as Theme | null;

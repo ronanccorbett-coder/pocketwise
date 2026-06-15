@@ -12,8 +12,8 @@ type Tab  = "signin" | "signup";
 type Role = "student" | "teacher" | null;
 
 export default function LoginPage() {
-  const [tab,      setTab]      = useState<Tab>("signin");
-  const [role,     setRole]     = useState<Role>(null);
+  const [tab,      setTab]      = useState("signin" as Tab);
+  const [role,     setRole]     = useState(null as Role);
   const [email,    setEmail]    = useState("");
   const [fullName, setFullName] = useState("");
   const [school,   setSchool]   = useState("");

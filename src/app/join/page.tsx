@@ -73,7 +73,7 @@ export default function JoinClassPage() {
 
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
             <Users size={22} color="#3B82F6" />
-            <h1 style={{ fontWeight: 900, fontSize: "1.4rem", color: "#fff" }}>Join a Class</h1>
+            <h1 style={{ fontWeight: 900, fontSize: "1.4rem", color: T.text }}>Join a Class</h1>
           </div>
 
           {/* Join form */}
@@ -100,7 +100,7 @@ export default function JoinClassPage() {
           {/* My classes */}
           {myClasses.length > 0 && (
             <div>
-              <h2 style={{ fontWeight: 700, color: "#fff", fontSize: "0.9rem", marginBottom: 12 }}>My Classes</h2>
+              <h2 style={{ fontWeight: 700, color: T.text, fontSize: "0.9rem", marginBottom: 12 }}>My Classes</h2>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {myClasses.map((cls: any) => (
                   <div key={cls.id} style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
@@ -108,7 +108,7 @@ export default function JoinClassPage() {
                       <BookOpen size={18} color="#60a5fa" />
                     </div>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontWeight: 700, color: "#fff", fontSize: "0.875rem" }}>{cls.name}</div>
+                      <div style={{ fontWeight: 700, color: T.text, fontSize: "0.875rem" }}>{cls.name}</div>
                       <div style={{ fontSize: "0.72rem", color: T.text3 }}>{cls.subject} · {cls.yearLevel}</div>
                       {cls.announcement && (
                         <div style={{ fontSize: "0.72rem", color: "#60a5fa", marginTop: 4, display: "flex", alignItems: "center", gap: 4 }}>

@@ -101,7 +101,7 @@ function ModuleCard({ mod, completedLessons, isAssigned = false }: { mod: any; c
 
       {/* Complete badge */}
       {isComplete && (
-        <div style={{ position: "absolute", top: 14, right: 14, background: accent, color: "#fff", padding: "3px 10px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: ".05em" }}>
+        <div style={{ position: "absolute", top: 14, right: 14, background: accent, color: T.text, padding: "3px 10px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: ".05em" }}>
           Complete
         </div>
       )}
@@ -297,7 +297,7 @@ export default function CurriculumPage() {
               ].filter(s => s.show).map(s => (
                 <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 5, background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 99, padding: "5px 12px" }}>
                   <s.Icon size={13} color={s.color} fill={s.Icon === Flame || s.Icon === Star ? s.color : "none"} />
-                  <span style={{ fontWeight: 800, color: "#fff", fontSize: "0.8rem" }}>{s.val}</span>
+                  <span style={{ fontWeight: 800, color: T.text, fontSize: "0.8rem" }}>{s.val}</span>
                   <span style={{ color: T.text2, fontSize: "0.72rem" }}>{s.label}</span>
                 </div>
               ))}
