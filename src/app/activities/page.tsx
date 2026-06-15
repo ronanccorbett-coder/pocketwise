@@ -97,12 +97,12 @@ function BudgetChallenge({
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, paddingBottom: 100 }}>
       <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}`, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: T.text, display: "flex" }}>
+        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#ffffff", display: "flex" }}>
           <X size={16} />
         </button>
         <div>
           <div style={{ fontSize: "0.7rem", color: "#76AD25", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em" }}>Budget Challenge</div>
-          <div style={{ fontWeight: 700, color: T.text, fontSize: "0.95rem" }}>{scenario.name}</div>
+          <div style={{ fontWeight: 700, color: "#ffffff", fontSize: "0.95rem" }}>{scenario.name}</div>
         </div>
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 4 }}>
           <Zap size={14} color="#f59e0b" />
@@ -112,9 +112,9 @@ function BudgetChallenge({
 
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "24px 20px" }}>
         <div style={{ background: T.input, borderRadius: 14, padding: "16px 20px", marginBottom: 24, border: `1px solid ${T.border}` }}>
-          <div style={{ fontSize: "0.72rem", color: T.text2, marginBottom: 4 }}>Weekly take-home income</div>
+          <div style={{ fontSize: "0.72rem", color: "#8b9dc3", marginBottom: 4 }}>Weekly take-home income</div>
           <div style={{ fontSize: "1.75rem", fontWeight: 900, color: "#76AD25" }}>${scenario.income}</div>
-          <div style={{ fontSize: "0.78rem", color: T.text2, marginTop: 4 }}>Drag each expense into the right category: Need, Want, or Save</div>
+          <div style={{ fontSize: "0.78rem", color: "#8b9dc3", marginTop: 4 }}>Drag each expense into the right category: Need, Want, or Save</div>
         </div>
 
         {/* Category totals */}
@@ -182,7 +182,7 @@ function BudgetChallenge({
             <div style={{ fontSize: "2rem", marginBottom: 6 }}>
               {score === scenario.items.length ? "🎉" : score >= scenario.items.length * 0.7 ? "👍" : "📚"}
             </div>
-            <div style={{ fontSize: "1.1rem", fontWeight: 800, color: T.text, marginBottom: 4 }}>
+            <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#ffffff", marginBottom: 4 }}>
               {score}/{scenario.items.length} correct
             </div>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 4, marginBottom: 16 }}>
@@ -193,7 +193,7 @@ function BudgetChallenge({
               onClick={() => onComplete(xpEarned)}
               style={{
                 padding: "10px 28px", borderRadius: 10, background: "#76AD25",
-                color: T.text, border: "none", fontWeight: 800, fontSize: "0.9rem",
+                color: "#ffffff", border: "none", fontWeight: 800, fontSize: "0.9rem",
                 cursor: "pointer", fontFamily: FONT,
               }}>
               Collect XP <ArrowRight size={14} style={{ display: "inline", verticalAlign: "middle" }} />
@@ -282,14 +282,14 @@ function InterestQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void
         <div style={{ fontSize: "3rem", marginBottom: 12 }}>
           {score >= 4 ? "🏆" : score >= 3 ? "⭐" : "📖"}
         </div>
-        <div style={{ fontSize: "1.4rem", fontWeight: 900, color: T.text, marginBottom: 6 }}>
+        <div style={{ fontSize: "1.4rem", fontWeight: 900, color: "#ffffff", marginBottom: 6 }}>
           {score}/{INTEREST_QUESTIONS.length} correct
         </div>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 5, marginBottom: 24 }}>
           <Zap size={16} color="#f59e0b" />
           <span style={{ fontWeight: 800, color: "#f59e0b", fontSize: "1.1rem" }}>+{xpEarned} XP</span>
         </div>
-        <button onClick={() => onComplete(xpEarned)} style={{ padding: "12px 32px", borderRadius: 12, background: "#76AD25", color: T.text, border: "none", fontWeight: 800, fontSize: "1rem", cursor: "pointer", fontFamily: FONT }}>
+        <button onClick={() => onComplete(xpEarned)} style={{ padding: "12px 32px", borderRadius: 12, background: "#76AD25", color: "#ffffff", border: "none", fontWeight: 800, fontSize: "1rem", cursor: "pointer", fontFamily: FONT }}>
           Collect XP
         </button>
       </div>
@@ -299,12 +299,12 @@ function InterestQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, paddingBottom: 100 }}>
       <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}`, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: T.text, display: "flex" }}>
+        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#ffffff", display: "flex" }}>
           <X size={16} />
         </button>
         <div>
           <div style={{ fontSize: "0.7rem", color: "#3B82F6", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em" }}>Knowledge Quiz</div>
-          <div style={{ fontWeight: 700, color: T.text, fontSize: "0.95rem" }}>Interest Rates</div>
+          <div style={{ fontWeight: 700, color: "#ffffff", fontSize: "0.95rem" }}>Interest Rates</div>
         </div>
         <div style={{ marginLeft: "auto", fontSize: "0.8rem", color: T.text2 }}>{current + 1} / {INTEREST_QUESTIONS.length}</div>
       </div>
@@ -315,7 +315,7 @@ function InterestQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void
       </div>
 
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "32px 20px" }}>
-        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: T.text, lineHeight: 1.5, marginBottom: 28 }}>{q.q}</div>
+        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#ffffff", lineHeight: 1.5, marginBottom: 28 }}>{q.q}</div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {q.options.map((opt, i) => {
@@ -330,7 +330,7 @@ function InterestQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void
                   textAlign: "left", padding: "14px 16px", borderRadius: 12,
                   background: isCorrect ? "rgba(118,173,37,.15)" : isWrong ? "rgba(239,68,68,.1)" : isSelected ? "rgba(59,130,246,.1)" : "rgba(255,255,255,.05)",
                   border: `1.5px solid ${isCorrect ? "#76AD25" : isWrong ? "#EF4444" : isSelected ? "#3B82F6" : "rgba(255,255,255,.1)"}`,
-                  color: T.text, fontWeight: 600, fontSize: "0.9rem",
+                  color: "#ffffff", fontWeight: 600, fontSize: "0.9rem",
                   cursor: selected !== null ? "default" : "pointer", fontFamily: FONT,
                   transition: "all .12s",
                   display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -345,12 +345,12 @@ function InterestQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void
 
         {selected !== null && (
           <div style={{ marginTop: 16, background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 12, padding: "14px 16px" }}>
-            <div style={{ fontSize: "0.78rem", color: T.text2, lineHeight: 1.6 }}>{q.explanation}</div>
+            <div style={{ fontSize: "0.78rem", color: "#8b9dc3", lineHeight: 1.6 }}>{q.explanation}</div>
             <button
               onClick={next}
               style={{
                 marginTop: 12, padding: "8px 20px", borderRadius: 9, background: "#3B82F6",
-                color: T.text, border: "none", fontWeight: 700, fontSize: "0.85rem",
+                color: "#ffffff", border: "none", fontWeight: 700, fontSize: "0.85rem",
                 cursor: "pointer", fontFamily: FONT, display: "flex", alignItems: "center", gap: 6,
               }}>
               {current + 1 >= INTEREST_QUESTIONS.length ? "See Results" : "Next Question"} <ChevronRight size={14} />
@@ -383,12 +383,12 @@ function SavingsSimulator({ onComplete, onBack }: { onComplete: (xp: number) => 
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, paddingBottom: 100 }}>
       <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}`, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: T.text, display: "flex" }}>
+        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#ffffff", display: "flex" }}>
           <X size={16} />
         </button>
         <div>
           <div style={{ fontSize: "0.7rem", color: "#76AD25", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em" }}>Simulation</div>
-          <div style={{ fontWeight: 700, color: T.text, fontSize: "0.95rem" }}>Savings Calculator</div>
+          <div style={{ fontWeight: 700, color: "#ffffff", fontSize: "0.95rem" }}>Savings Calculator</div>
         </div>
         <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 4 }}>
           <Zap size={14} color="#f59e0b" />
@@ -400,17 +400,17 @@ function SavingsSimulator({ onComplete, onBack }: { onComplete: (xp: number) => 
         {/* Result card */}
         <div style={{ background: "linear-gradient(135deg, rgba(118,173,37,.15), rgba(34,197,94,.08))", border: "1px solid rgba(118,173,37,.3)", borderRadius: 16, padding: "24px", marginBottom: 28, textAlign: "center" }}>
           <div style={{ fontSize: "0.72rem", color: "#76AD25", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 6 }}>After {years} year{years !== 1 ? "s" : ""}</div>
-          <div style={{ fontSize: "2.5rem", fontWeight: 900, color: T.text, lineHeight: 1 }}>
+          <div style={{ fontSize: "2.5rem", fontWeight: 900, color: "#ffffff", lineHeight: 1 }}>
             ${Math.round(balance).toLocaleString()}
           </div>
           <div style={{ display: "flex", gap: 20, justifyContent: "center", marginTop: 14 }}>
             <div>
-              <div style={{ fontSize: "0.65rem", color: T.text2, marginBottom: 2 }}>You put in</div>
+              <div style={{ fontSize: "0.65rem", color: "#8b9dc3", marginBottom: 2 }}>You put in</div>
               <div style={{ fontWeight: 800, color: "#3B82F6" }}>${totalContrib.toLocaleString()}</div>
             </div>
             <div style={{ width: 1, background: "rgba(255,255,255,.1)" }} />
             <div>
-              <div style={{ fontSize: "0.65rem", color: T.text2, marginBottom: 2 }}>Interest earned</div>
+              <div style={{ fontSize: "0.65rem", color: "#8b9dc3", marginBottom: 2 }}>Interest earned</div>
               <div style={{ fontWeight: 800, color: "#76AD25" }}>${Math.round(interestEarned).toLocaleString()}</div>
             </div>
           </div>
@@ -424,7 +424,7 @@ function SavingsSimulator({ onComplete, onBack }: { onComplete: (xp: number) => 
         ].map(({ label, value, min, max, step, set, format }) => (
           <div key={label} style={{ marginBottom: 20 }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-              <span style={{ fontSize: "0.825rem", color: T.text2, fontWeight: 600 }}>{label}</span>
+              <span style={{ fontSize: "0.825rem", color: "#8b9dc3", fontWeight: 600 }}>{label}</span>
               <span style={{ fontSize: "0.825rem", fontWeight: 800, color: T.text }}>{format(value)}</span>
             </div>
             <input
@@ -438,7 +438,7 @@ function SavingsSimulator({ onComplete, onBack }: { onComplete: (xp: number) => 
         {!done ? (
           <button
             onClick={() => { setDone(true); onComplete(60); }}
-            style={{ width: "100%", padding: "14px", borderRadius: 12, background: "#76AD25", color: T.text, border: "none", fontWeight: 800, fontSize: "0.95rem", cursor: "pointer", fontFamily: FONT }}>
+            style={{ width: "100%", padding: "14px", borderRadius: 12, background: "#76AD25", color: "#ffffff", border: "none", fontWeight: 800, fontSize: "0.95rem", cursor: "pointer", fontFamily: FONT }}>
             Complete Simulation <ArrowRight size={14} style={{ display: "inline", verticalAlign: "middle" }} />
           </button>
         ) : (
@@ -509,12 +509,12 @@ function TaxQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onB
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "center" }}>
       <div style={{ textAlign: "center", padding: 32 }}>
         <div style={{ fontSize: "3rem", marginBottom: 12 }}>{score >= 3 ? "🎉" : "📚"}</div>
-        <div style={{ fontSize: "1.4rem", fontWeight: 900, color: T.text, marginBottom: 6 }}>{score}/{TAX_QUESTIONS.length} correct</div>
+        <div style={{ fontSize: "1.4rem", fontWeight: 900, color: "#ffffff", marginBottom: 6 }}>{score}/{TAX_QUESTIONS.length} correct</div>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 5, marginBottom: 24 }}>
           <Zap size={16} color="#f59e0b" />
           <span style={{ fontWeight: 800, color: "#f59e0b", fontSize: "1.1rem" }}>+{xpEarned} XP</span>
         </div>
-        <button onClick={() => onComplete(xpEarned)} style={{ padding: "12px 32px", borderRadius: 12, background: "#76AD25", color: T.text, border: "none", fontWeight: 800, fontSize: "1rem", cursor: "pointer", fontFamily: FONT }}>
+        <button onClick={() => onComplete(xpEarned)} style={{ padding: "12px 32px", borderRadius: 12, background: "#76AD25", color: "#ffffff", border: "none", fontWeight: 800, fontSize: "1rem", cursor: "pointer", fontFamily: FONT }}>
           Collect XP
         </button>
       </div>
@@ -524,12 +524,12 @@ function TaxQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onB
   return (
     <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, paddingBottom: 100 }}>
       <div style={{ background: "rgba(10,22,40,.95)", borderBottom: `1px solid ${T.border}`, padding: "16px 20px", display: "flex", alignItems: "center", gap: 12 }}>
-        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: T.text, display: "flex" }}>
+        <button onClick={onBack} style={{ background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 8, padding: "6px 10px", cursor: "pointer", color: "#ffffff", display: "flex" }}>
           <X size={16} />
         </button>
         <div>
           <div style={{ fontSize: "0.7rem", color: "#a78bfa", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em" }}>Knowledge Quiz</div>
-          <div style={{ fontWeight: 700, color: T.text, fontSize: "0.95rem" }}>Tax & KiwiSaver Basics</div>
+          <div style={{ fontWeight: 700, color: "#ffffff", fontSize: "0.95rem" }}>Tax & KiwiSaver Basics</div>
         </div>
         <div style={{ marginLeft: "auto", fontSize: "0.8rem", color: T.text2 }}>{current + 1} / {TAX_QUESTIONS.length}</div>
       </div>
@@ -537,7 +537,7 @@ function TaxQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onB
         <div style={{ height: 4, width: `${((current + 1) / TAX_QUESTIONS.length) * 100}%`, background: "#a78bfa", transition: "width .4s ease" }} />
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "32px 20px" }}>
-        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: T.text, lineHeight: 1.5, marginBottom: 28 }}>{q.q}</div>
+        <div style={{ fontWeight: 800, fontSize: "1.1rem", color: "#ffffff", lineHeight: 1.5, marginBottom: 28 }}>{q.q}</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {q.options.map((opt, i) => {
             const isSelected = selected === i;
@@ -548,7 +548,7 @@ function TaxQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onB
                 textAlign: "left", padding: "14px 16px", borderRadius: 12,
                 background: isCorrect ? "rgba(118,173,37,.15)" : isWrong ? "rgba(239,68,68,.1)" : "rgba(255,255,255,.05)",
                 border: `1.5px solid ${isCorrect ? "#76AD25" : isWrong ? "#EF4444" : "rgba(255,255,255,.1)"}`,
-                color: T.text, fontWeight: 600, fontSize: "0.9rem",
+                color: "#ffffff", fontWeight: 600, fontSize: "0.9rem",
                 cursor: selected !== null ? "default" : "pointer", fontFamily: FONT,
                 display: "flex", alignItems: "center", justifyContent: "space-between",
               }}>
@@ -561,8 +561,8 @@ function TaxQuiz({ onComplete, onBack }: { onComplete: (xp: number) => void; onB
         </div>
         {selected !== null && (
           <div style={{ marginTop: 16, background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 12, padding: "14px 16px" }}>
-            <div style={{ fontSize: "0.78rem", color: T.text2, lineHeight: 1.6 }}>{q.explanation}</div>
-            <button onClick={next} style={{ marginTop: 12, padding: "8px 20px", borderRadius: 9, background: "#a78bfa", color: T.text, border: "none", fontWeight: 700, fontSize: "0.85rem", cursor: "pointer", fontFamily: FONT, display: "flex", alignItems: "center", gap: 6 }}>
+            <div style={{ fontSize: "0.78rem", color: "#8b9dc3", lineHeight: 1.6 }}>{q.explanation}</div>
+            <button onClick={next} style={{ marginTop: 12, padding: "8px 20px", borderRadius: 9, background: "#a78bfa", color: "#ffffff", border: "none", fontWeight: 700, fontSize: "0.85rem", cursor: "pointer", fontFamily: FONT, display: "flex", alignItems: "center", gap: 6 }}>
               {current + 1 >= TAX_QUESTIONS.length ? "See Results" : "Next Question"} <ChevronRight size={14} />
             </button>
           </div>
@@ -588,7 +588,7 @@ function XPCelebration({ xp, onDone }: { xp: number; onDone: () => void }) {
       <XPCounter target={xp} />
       <button
         onClick={onDone}
-        style={{ marginTop: 12, padding: "12px 32px", borderRadius: 12, background: "#76AD25", color: T.text, border: "none", fontWeight: 800, fontSize: "1rem", cursor: "pointer", fontFamily: FONT }}>
+        style={{ marginTop: 12, padding: "12px 32px", borderRadius: 12, background: "#76AD25", color: "#ffffff", border: "none", fontWeight: 800, fontSize: "1rem", cursor: "pointer", fontFamily: FONT }}>
         Back to Activities
       </button>
     </div>
@@ -674,9 +674,9 @@ const ACTIVITIES: ActivityDef[] = [
     component: ({ onBack }) => (
       <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
         <Brain size={48} color="#f59e0b" />
-        <div style={{ color: T.text, fontWeight: 800, fontSize: "1.2rem" }}>Coming Soon</div>
-        <div style={{ color: T.text2, fontSize: "0.875rem" }}>This activity is being built</div>
-        <button onClick={onBack} style={{ marginTop: 8, padding: "10px 24px", borderRadius: 10, background: "rgba(255,255,255,.08)", color: T.text, border: "1px solid rgba(255,255,255,.15)", fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Go Back</button>
+        <div style={{ color: "#ffffff", fontWeight: 800, fontSize: "1.2rem" }}>Coming Soon</div>
+        <div style={{ color: "#8b9dc3", fontSize: "0.875rem" }}>This activity is being built</div>
+        <button onClick={onBack} style={{ marginTop: 8, padding: "10px 24px", borderRadius: 10, background: "rgba(255,255,255,.08)", color: "#ffffff", border: "1px solid rgba(255,255,255,.15)", fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Go Back</button>
       </div>
     ),
   },
@@ -694,9 +694,9 @@ const ACTIVITIES: ActivityDef[] = [
     component: ({ onBack }) => (
       <div style={{ minHeight: "100vh", background: "#0a1628", fontFamily: FONT, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
         <Target size={48} color="#EF4444" />
-        <div style={{ color: T.text, fontWeight: 800, fontSize: "1.2rem" }}>Coming Soon</div>
-        <div style={{ color: T.text2, fontSize: "0.875rem" }}>Unlock at 200 XP</div>
-        <button onClick={onBack} style={{ marginTop: 8, padding: "10px 24px", borderRadius: 10, background: "rgba(255,255,255,.08)", color: T.text, border: "1px solid rgba(255,255,255,.15)", fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Go Back</button>
+        <div style={{ color: "#ffffff", fontWeight: 800, fontSize: "1.2rem" }}>Coming Soon</div>
+        <div style={{ color: "#8b9dc3", fontSize: "0.875rem" }}>Unlock at 200 XP</div>
+        <button onClick={onBack} style={{ marginTop: 8, padding: "10px 24px", borderRadius: 10, background: "rgba(255,255,255,.08)", color: "#ffffff", border: "1px solid rgba(255,255,255,.15)", fontWeight: 700, cursor: "pointer", fontFamily: FONT }}>Go Back</button>
       </div>
     ),
   },
@@ -742,22 +742,22 @@ export default function ActivitiesPage() {
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
               <Star size={22} color="#f59e0b" fill="#f59e0b" />
-              <h1 style={{ fontWeight: 900, fontSize: "1.4rem", color: T.text, fontFamily: FONT }}>Activities</h1>
+              <h1 style={{ fontWeight: 900, fontSize: "1.4rem", color: "#ffffff", fontFamily: FONT }}>Activities</h1>
             </div>
-            <p style={{ color: T.text2, fontSize: "0.875rem", marginBottom: 18, fontFamily: FONT }}>Earn XP through quizzes, simulations, and daily challenges</p>
+            <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 18, fontFamily: FONT }}>Earn XP through quizzes, simulations, and daily challenges</p>
             <div style={{ display: "flex", gap: 12 }}>
               <div style={{ background: "rgba(245,158,11,.15)", border: "1px solid rgba(245,158,11,.25)", borderRadius: 10, padding: "10px 16px", display: "flex", alignItems: "center", gap: 6 }}>
                 <Zap size={15} color="#f59e0b" />
                 <div>
                   <div style={{ fontSize: "0.65rem", color: "#f59e0b", fontWeight: 700, textTransform: "uppercase" }}>Your XP</div>
-                  <div style={{ fontWeight: 900, color: T.text, fontSize: "1rem", fontFamily: FONT }}>{xp.toLocaleString()}</div>
+                  <div style={{ fontWeight: 900, color: "#ffffff", fontSize: "1rem", fontFamily: FONT }}>{xp.toLocaleString()}</div>
                 </div>
               </div>
               <div style={{ background: "rgba(128,128,128,.08)", border: "1px solid rgba(255,255,255,.12)", borderRadius: 10, padding: "10px 16px", display: "flex", alignItems: "center", gap: 6 }}>
                 <Star size={15} color="#a78bfa" />
                 <div>
                   <div style={{ fontSize: "0.65rem", color: "#a78bfa", fontWeight: 700, textTransform: "uppercase" }}>Activities</div>
-                  <div style={{ fontWeight: 900, color: T.text, fontSize: "1rem", fontFamily: FONT }}>{ACTIVITIES.length} available</div>
+                  <div style={{ fontWeight: 900, color: "#ffffff", fontSize: "1rem", fontFamily: FONT }}>{ACTIVITIES.length} available</div>
                 </div>
               </div>
             </div>
@@ -803,7 +803,7 @@ export default function ActivitiesPage() {
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 3 }}>
-                        <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: T.text, fontFamily: FONT }}>{activity.title}</h3>
+                        <h3 style={{ fontWeight: 700, fontSize: "0.9rem", color: "#ffffff", fontFamily: FONT }}>{activity.title}</h3>
                         {activity.badge && !locked && (
                           <span style={{ background: activity.badge === "Daily" ? "#e8f5d0" : activity.badge === "Hot" ? "#fef2f2" : "#f0f9ff", color: activity.badge === "Daily" ? "#5d8a1c" : activity.badge === "Hot" ? "#ef4444" : "#0284c7", padding: "1px 7px", borderRadius: 99, fontSize: "0.62rem", fontWeight: 700 }}>
                             {activity.badge}
@@ -822,11 +822,11 @@ export default function ActivitiesPage() {
                       </div>
                     </div>
                   </div>
-                  <p style={{ fontSize: "0.8rem", color: T.text2, lineHeight: 1.6, flex: 1, fontFamily: FONT, marginBottom: 14 }}>
+                  <p style={{ fontSize: "0.8rem", color: "#8b9dc3", lineHeight: 1.6, flex: 1, fontFamily: FONT, marginBottom: 14 }}>
                     {activity.description}
                   </p>
                   {locked ? (
-                    <div style={{ background: T.bg3, borderRadius: 8, padding: "8px 12px", fontSize: "0.75rem", color: T.text3, display: "flex", alignItems: "center", gap: 4 }}>
+                    <div style={{ background: T.bg3, borderRadius: 8, padding: "8px 12px", fontSize: "0.75rem", color: "#4a6a8a", display: "flex", alignItems: "center", gap: 4 }}>
                       <Lock size={11} /> Requires {activity.xpRequired} XP to unlock
                     </div>
                   ) : (
