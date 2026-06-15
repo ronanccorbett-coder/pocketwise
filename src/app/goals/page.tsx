@@ -52,13 +52,13 @@ const GOAL_TEMPLATES = [
 const ICON_OPTIONS = Object.keys(GOAL_ICONS);
 
 // ── Animated ring ──────────────────────────────────────────────────────────
-function Ring({ pct, color, size = 72, thickness = 7 }: { pct: number; color: string; size?: number; thickness?: number }) {
+function Ring({ pct, color, trackColor, size = 72, thickness = 7 }: { pct: number; color: string; trackColor: string; size?: number; thickness?: number }) {
   const r = (size - thickness) / 2;
   const circ = 2 * Math.PI * r;
   const dash = Math.min(pct / 100, 1) * circ;
   return (
     <svg width={size} height={size} style={{ transform: "rotate(-90deg)", flexShrink: 0 }}>
-      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={T.input} strokeWidth={thickness} />
+      <circle cx={size/2} cy={size/2} r={r} fill="none" stroke={trackColor} strokeWidth={thickness} />
       <circle cx={size/2} cy={size/2} r={r} fill="none"
         stroke={color} strokeWidth={thickness}
         strokeDasharray={`${dash} ${circ}`}
@@ -317,7 +317,7 @@ export default function GoalsPage() {
                       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
                         {/* Ring with icon */}
                         <div style={{ position: "relative", flexShrink: 0 }}>
-                          <Ring pct={progress} color={c.accent} size={68} />
+                          <Ring pct={progress} color={c.accent} trackColor={T.input} size={68} />
                           <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                             {done
                               ? <Check size={18} color={c.accent} style={{ filter: `drop-shadow(0 0 6px ${c.accent})` }} />
