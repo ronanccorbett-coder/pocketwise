@@ -125,7 +125,7 @@ function ModuleMapContent() {
   const folder = searchParams.get("folder");
   const { state } = useGame();
 
-  const [mod, setMod] = useState(null as ModuleData | null);
+  const [mod, setMod] = useState<ModuleData | null>(null);
   const [loading, setLoading] = useState(true);
   const [newlyUnlocked, setNewlyUnlocked] = useState<number | null>(null);
   const [hoveredNode, setHoveredNode] = useState<number | null>(null);
@@ -151,7 +151,7 @@ function ModuleMapContent() {
   // Detect newly unlocked lessons
   useEffect(() => {
     if (!mod) return;
-    const sorted = [...mod.lessons].sort((a, b) => (a.order || 0) - (b.order || 0));
+    const sorted = [...(mod.lessons ?? [])].sort((a: any, b: any) => (a.order || 0) - (b.order || 0));
     sorted.forEach((l, i) => {
       const key = `${folder}/${l.filename}`;
       const wasDone = prevCompleted.current.has(key);
@@ -177,12 +177,12 @@ function ModuleMapContent() {
   if (!mod) return (
     <div style={{ minHeight: "100vh", background: "#060d1a", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
       <p style={{ color: "#8b9dc3", fontFamily: FONT }}>Module not found.</p>
-      <button onClick={() => router.push("/curriculum")} style={{ padding: "10px 20px", background: "#76AD25", color: "#ffffff", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: FONT, fontWeight: 700 }}>Back</button>
+      <button onClick={() => router.push("/curriculum")} style={{ padding: "10px 20px", background: "#76AD25", color: "#fff", border: "none", borderRadius: 8, cursor: "pointer", fontFamily: FONT, fontWeight: 700 }}>Back</button>
     </div>
   );
 
   const accent = mod.colorTheme ?? "#76AD25";
-  const sorted = [...mod.lessons].sort((a, b) => (a.order || 0) - (b.order || 0));
+  const sorted = [...(mod.lessons ?? [])].sort((a: any, b: any) => (a.order || 0) - (b.order || 0));
   const currentIdx = sorted.findIndex(l => !completedSet.has(`${folder}/${l.filename}`));
   const allDone = currentIdx === -1;
   const completedCount = sorted.filter(l => completedSet.has(`${folder}/${l.filename}`)).length;
@@ -213,7 +213,7 @@ function ModuleMapContent() {
             width: Math.random() > 0.8 ? 2 : 1,
             height: Math.random() > 0.8 ? 2 : 1,
             borderRadius: "50%",
-            background: "#111c30",
+            background: T.card,
             opacity: Math.random() * 0.6 + 0.1,
           }} />
         ))}
@@ -223,14 +223,14 @@ function ModuleMapContent() {
 
         {/* Header */}
         <div style={{ padding: "20px 24px", display: "flex", alignItems: "center", gap: 16, borderBottom: "1px solid rgba(255,255,255,.06)" }}>
-          <button onClick={() => router.push("/curriculum")} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 10, padding: "8px 10px", cursor: "pointer", color: "#ffffff", display: "flex", alignItems: "center" }}>
+          <button onClick={() => router.push("/curriculum")} style={{ background: "rgba(255,255,255,.08)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 10, padding: "8px 10px", cursor: "pointer", color: "#fff", display: "flex", alignItems: "center" }}>
             <ArrowLeft size={18} />
           </button>
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: "0.7rem", color: accent, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".06em", marginBottom: 2 }}>
               {mod.nceaStandard ?? "Module"}
             </div>
-            <h1 style={{ fontWeight: 900, fontSize: "1.2rem", color: "#ffffff", lineHeight: 1.2 }}>{mod.title}</h1>
+            <h1 style={{ fontWeight: 900, fontSize: "1.2rem", color: "#fff", lineHeight: 1.2 }}>{mod.title}</h1>
           </div>
           <div style={{ textAlign: "right" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 4, justifyContent: "flex-end" }}>
@@ -418,7 +418,7 @@ function ModuleMapContent() {
           <div style={{ display: "flex", gap: 20, marginTop: 8, flexWrap: "wrap", justifyContent: "center" }}>
             {[
               { color: accent, label: "Complete" },
-              { color: "#ffffff", label: "Current" },
+              { color: "#fff", label: "Current" },
               { color: "#1a2540", label: "Locked", border: "#2a3a5c" },
             ].map(l => (
               <div key={l.label} style={{ display: "flex", alignItems: "center", gap: 6 }}>
@@ -445,11 +445,11 @@ function ModuleMapContent() {
                 <div style={{ fontSize: "0.68rem", color: "#8b9dc3", fontWeight: 600, textTransform: "uppercase", letterSpacing: ".05em", marginBottom: 4 }}>
                   Lesson {selectedLesson.order ?? selectedNode + 1}
                 </div>
-                <h3 style={{ fontWeight: 700, fontSize: "1.05rem", color: "#ffffff", lineHeight: 1.3 }}>
+                <h3 style={{ fontWeight: 700, fontSize: "1.05rem", color: "#fff", lineHeight: 1.3 }}>
                   {selectedLesson.title}
                 </h3>
                 {selectedLesson.bloomsLevel && (
-                  <div style={{ fontSize: "0.72rem", color: "#8b9dc3", marginTop: 4 }}>{selectedLesson.bloomsLevel}</div>
+                  <div style={{ fontSize: "0.72rem", color: T.text2, marginTop: 4 }}>{selectedLesson.bloomsLevel}</div>
                 )}
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 4, background: "rgba(245,158,11,.15)", padding: "4px 12px", borderRadius: 99, marginLeft: 12, flexShrink: 0 }}>
@@ -480,6 +480,7 @@ function ModuleMapContent() {
                 )}
               </button>
             )}
+            )}
           </div>
         ) : (
           <div style={{ maxWidth: 480, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -488,7 +489,7 @@ function ModuleMapContent() {
                 {allDone ? "Module complete!" : `${completedCount} of ${sorted.length} lessons done`}
               </p>
               {!allDone && currentIdx >= 0 && (
-                <p style={{ color: "#ffffff", fontSize: "0.875rem", fontWeight: 600 }}>
+                <p style={{ color: "#fff", fontSize: "0.875rem", fontWeight: 600 }}>
                   Up next: {sorted[currentIdx]?.title}
                 </p>
               )}
@@ -511,7 +512,7 @@ function ModuleMapContent() {
                 style={{
                   padding: "13px 24px",
                   background: `linear-gradient(135deg, ${accent}, ${accent}cc)`,
-                  color: "#ffffff", border: "none", borderRadius: 12,
+                  color: "#fff", border: "none", borderRadius: 12,
                   fontWeight: 800, fontSize: "0.9rem", cursor: "pointer",
                   fontFamily: FONT, display: "flex", alignItems: "center", gap: 6,
                   boxShadow: `0 4px 20px ${accent}44`,

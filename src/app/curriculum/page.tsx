@@ -73,9 +73,9 @@ function ModuleCard({ mod, completedLessons, isAssigned = false }: { mod: any; c
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   const router = useRouter();
   const accent = mod.colorTheme || "#76AD25";
-  const totalXp = mod.lessons.reduce((s: number, l: any) => s + (l.xpReward || 0), 0) || mod.xpReward || 0;
-  const firstLesson = mod.lessons.find((l: any) => !completedLessons.includes(`${mod.folder}/${l.filename}`)) ?? mod.lessons[0];
-  const completedCount = mod.lessons.filter((l: any) => completedLessons.includes(`${mod.folder}/${l.filename}`)).length;
+  const totalXp = mod.lessons.reduce((s, l) => s + (l.xpReward || 0), 0) || mod.xpReward || 0;
+  const firstLesson = mod.lessons.find(l => !completedLessons.includes(`${mod.folder}/${l.filename}`)) ?? mod.lessons[0];
+  const completedCount = mod.lessons.filter(l => completedLessons.includes(`${mod.folder}/${l.filename}`)).length;
   const progressPct = mod.lessonCount > 0 ? Math.round((completedCount / mod.lessonCount) * 100) : 0;
   const isComplete = completedCount === mod.lessonCount && mod.lessonCount > 0;
 
@@ -101,7 +101,7 @@ function ModuleCard({ mod, completedLessons, isAssigned = false }: { mod: any; c
 
       {/* Complete badge */}
       {isComplete && (
-        <div style={{ position: "absolute", top: 14, right: 14, background: accent, color: T.text, padding: "3px 10px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: ".05em" }}>
+        <div style={{ position: "absolute", top: 14, right: 14, background: accent, color: "#fff", padding: "3px 10px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 800, textTransform: "uppercase", letterSpacing: ".05em" }}>
           Complete
         </div>
       )}
@@ -134,7 +134,7 @@ function ModuleCard({ mod, completedLessons, isAssigned = false }: { mod: any; c
         {/* Stats row */}
         <div style={{ display: "flex", gap: 12, marginBottom: 12 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-            <BookOpen size={12} color={T.text3} />
+            <BookOpen size={12} color={T.text}3 />
             <span style={{ fontSize: "0.72rem", color: T.text3 }}>{mod.lessonCount} lessons</span>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
@@ -297,7 +297,7 @@ export default function CurriculumPage() {
               ].filter(s => s.show).map(s => (
                 <div key={s.label} style={{ display: "flex", alignItems: "center", gap: 5, background: "rgba(128,128,128,.08)", border: `1px solid ${T.border2}`, borderRadius: 99, padding: "5px 12px" }}>
                   <s.Icon size={13} color={s.color} fill={s.Icon === Flame || s.Icon === Star ? s.color : "none"} />
-                  <span style={{ fontWeight: 800, color: T.text, fontSize: "0.8rem" }}>{s.val}</span>
+                  <span style={{ fontWeight: 800, color: "#fff", fontSize: "0.8rem" }}>{s.val}</span>
                   <span style={{ color: T.text2, fontSize: "0.72rem" }}>{s.label}</span>
                 </div>
               ))}
