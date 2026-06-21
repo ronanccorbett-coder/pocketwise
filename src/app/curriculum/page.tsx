@@ -198,7 +198,7 @@ export default function CurriculumPage() {
   const { state, user } = useGame();
   const [modules, setModules] = useState([] as Module[]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(null as string | null);
   const [activeLevel, setActiveLevel] = useState("11");
 
   // Fetch class assigned modules
@@ -247,7 +247,7 @@ export default function CurriculumPage() {
   // Overall progress stats
   const totalModules = modules.length;
   const completedModules = modules.filter(m =>
-    m.lessons.length > 0 && m.lessons.every(l => completedLessons.includes(`${m.folder}/${l.filename}`))
+    (m.lessons ?? []).length > 0 && (m.lessons ?? []).every(l => completedLessons.includes(`${m.folder}/${l.filename}`))
   ).length;
 
   return (
