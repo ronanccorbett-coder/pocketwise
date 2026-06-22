@@ -17,7 +17,7 @@ const LEVEL_GROUPS = [
   { key: "extra", label: "Extra Learning", sub: "Beyond the curriculum",   color: "#f59e0b" },
 ];
 
-function getLevel(mod) {
+function getLevel(mod: any) {
   if (mod.ageTrack === "extra") return "extra";
   if (mod.yearLevel?.includes("13")) return "13";
   if (mod.yearLevel?.includes("12")) return "12";
