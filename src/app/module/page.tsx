@@ -135,11 +135,10 @@ function ModuleMapContent() {
 
   useEffect(() => {
     if (!folder) return;
-    fetch(`/api/modules`)
+    fetch(`/api/modules?folder=${encodeURIComponent(folder)}`)
       .then(r => r.json())
       .then(d => {
-        const found = d.modules?.find((m: ModuleData) => m.folder === folder);
-        if (found) setMod(found);
+        if (d.folder) setMod(d);
         setLoading(false);
       })
       .catch(() => setLoading(false));
