@@ -105,7 +105,7 @@ export default function CurriculumPage() {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", green: isDark?"#76AD25":"#5a9a1a" };
   const { state, user } = useGame();
-  const [modules, setModules] = useState([]);
+  const [modules, setModules] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [activeLevel, setActiveLevel] = useState("11");
@@ -116,7 +116,7 @@ export default function CurriculumPage() {
   const { data: classData } = db.useQuery({ classrooms: {} });
   const enrollments   = (enrollData?.classEnrollments ?? []);
   const allClassrooms = (classData?.classrooms ?? []);
-  const myClassrooms  = enrollments.map((e) => allClassrooms.find((c) => c.id === e.classroomId)).filter(Boolean);
+  const myClassrooms  = enrollments.map((e) => allClassrooms.find((c) => c.id === e.classroomId)).filter((c): c is NonNullable<typeof c> => c != null);
   const assignedModules = myClassrooms.flatMap((cls) => cls.assignedModules ?? []);
   const classAnnouncement = myClassrooms[0]?.announcement ?? null;
 
