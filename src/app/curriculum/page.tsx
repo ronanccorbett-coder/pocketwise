@@ -24,7 +24,7 @@ function getLevel(mod: any) {
   return "11";
 }
 
-function ModuleCard({ mod, completedLessons, isAssigned }) {
+function ModuleCard({ mod, completedLessons, isAssigned }: { mod: any; completedLessons: any[]; isAssigned: boolean }) {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", bg3: isDark?"#1a2540":"#f8fafc", green: isDark?"#76AD25":"#5a9a1a" };
   const router = useRouter();
