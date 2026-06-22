@@ -30,9 +30,9 @@ function ModuleCard({ mod, completedLessons, isAssigned }: { mod: any; completed
   const router = useRouter();
   const accent = mod.colorTheme || "#76AD25";
   const lessons = mod.lessons ?? [];
-  const totalXp = lessons.reduce((s, l) => s + (l.xpReward || 0), 0) || mod.xpReward || 0;
-  const firstLesson = lessons.find((l) => !completedLessons.includes(mod.folder + "/" + l.filename)) ?? lessons[0];
-  const completedCount = lessons.filter((l) => completedLessons.includes(mod.folder + "/" + l.filename)).length;
+  const totalXp = lessons.reduce((s: number, l: any) => s + (l.xpReward || 0), 0) || mod.xpReward || 0;
+  const firstLesson = lessons.find((l: any) => !completedLessons.includes(mod.folder + "/" + l.filename)) ?? lessons[0];
+  const completedCount = lessons.filter((l: any) => completedLessons.includes(mod.folder + "/" + l.filename)).length;
   const progressPct = mod.lessonCount > 0 ? Math.round((completedCount / mod.lessonCount) * 100) : 0;
   const isComplete = completedCount === mod.lessonCount && mod.lessonCount > 0;
   const btnLabel = completedCount === 0 ? "Start" : isComplete ? "Review" : "Continue";
