@@ -480,7 +480,6 @@ function ModuleMapContent() {
                 )}
               </button>
             )}
-            )}
           </div>
         ) : (
           <div style={{ maxWidth: 480, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
