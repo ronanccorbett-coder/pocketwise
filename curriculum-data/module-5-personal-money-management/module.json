@@ -24,5 +24,55 @@
     "Understand KiwiSaver basics and why starting early matters",
     "Apply practical money management strategies to real NZ student scenarios"
   ],
-  "assessmentTask": "Students build a complete personal financial plan for a fictional NZ school leaver entering the workforce. The plan includes a monthly budget using the 50/30/20 rule, a net pay calculation, a savings goal with compound interest projection, and a written reflection on their own financial goals."
+  "assessmentTask": "Students build a complete personal financial plan for a fictional NZ school leaver entering the workforce. The plan includes a monthly budget using the 50/30/20 rule, a net pay calculation, a savings goal with compound interest projection, and a written reflection on their own financial goals.",
+  "lessons": [
+    {
+      "filename": "lesson-1.json",
+      "title": "Your Money, Your Life — Why Personal Finance Matters",
+      "order": 1,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-2.json",
+      "title": "Building a Budget That Actually Works",
+      "order": 2,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-3.json",
+      "title": "Savings Accounts and Compound Interest",
+      "order": 3,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-4.json",
+      "title": "Week 1 Challenge — Build Your Personal Financial Plan",
+      "order": 4,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-5.json",
+      "title": "Debt and Credit — Staying Out of Trouble",
+      "order": 5,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-6.json",
+      "title": "Renting and Flatting — What You Need to Know",
+      "order": 6,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-7.json",
+      "title": "Project — Your Complete Personal Financial Plan",
+      "order": 7,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-8.json",
+      "title": "Module Review — Money Habits That Last",
+      "order": 8,
+      "xpReward": 90
+    }
+  ]
 }

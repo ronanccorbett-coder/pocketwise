@@ -27,5 +27,55 @@
     "Evaluate the financial viability of personal and organisational decisions",
     "Complete an NCEA-style financial decision-making assessment task"
   ],
-  "assessmentTask": "Students choose a real or fictional NZ organisation facing a financial need, issue or opportunity. They describe three options using a financial tool (budget or cost-benefit analysis), recommend a decision supported by financial data, identify stakeholder perspectives, discuss pūtake, and analyse consequences at Achieved, Merit, and Excellence levels."
+  "assessmentTask": "Students choose a real or fictional NZ organisation facing a financial need, issue or opportunity. They describe three options using a financial tool (budget or cost-benefit analysis), recommend a decision supported by financial data, identify stakeholder perspectives, discuss pūtake, and analyse consequences at Achieved, Merit, and Excellence levels.",
+  "lessons": [
+    {
+      "filename": "lesson-1.json",
+      "title": "What Is a Budget?",
+      "order": 1,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-2.json",
+      "title": "NZ Income, PAYE & the Minimum Wage",
+      "order": 2,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-3.json",
+      "title": "Building Your First Budget",
+      "order": 3,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-4.json",
+      "title": "Week 1 Challenge — Pūtake & Financial Tools",
+      "order": 4,
+      "xpReward": 100
+    },
+    {
+      "filename": "lesson-5.json",
+      "title": "NZ Banks, Saving Accounts & Compound Interest",
+      "order": 5,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-6.json",
+      "title": "Stakeholders, Consequences & Merit-Level Analysis",
+      "order": 6,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-7.json",
+      "title": "Project Work Session",
+      "order": 7,
+      "xpReward": 60
+    },
+    {
+      "filename": "lesson-8.json",
+      "title": "NCEA Assessment Day & Module Review",
+      "order": 8,
+      "xpReward": 100
+    }
+  ]
 }

@@ -24,5 +24,55 @@
     "Explain how internal and external factors affect viability and how the organisation could improve its financial viability",
     "Analyse the relationship between factors affecting viability and evaluate the extent to which proposed improvements would achieve financial viability"
   ],
-  "assessmentTask": "Students are given a scenario describing a NZ organisation's financial position. They must describe revenue, expenses, and profit or loss with specific figures, describe factors affecting viability, and state whether the organisation is financially viable. At Merit level they explain how factors affect viability and propose specific improvements. At Excellence level they analyse the relationship between factors and evaluate the extent to which improvements would achieve viability."
+  "assessmentTask": "Students are given a scenario describing a NZ organisation's financial position. They must describe revenue, expenses, and profit or loss with specific figures, describe factors affecting viability, and state whether the organisation is financially viable. At Merit level they explain how factors affect viability and propose specific improvements. At Excellence level they analyse the relationship between factors and evaluate the extent to which improvements would achieve viability.",
+  "lessons": [
+    {
+      "filename": "lesson-1.json",
+      "title": "What Is Financial Viability?",
+      "order": 1,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-2.json",
+      "title": "Reading Financial Statements for Viability",
+      "order": 2,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-3.json",
+      "title": "Merit Skills — How Factors Affect Viability and Improvement Strategies",
+      "order": 3,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-4.json",
+      "title": "Week 1 Challenge — Complete Viability Assessment",
+      "order": 4,
+      "xpReward": 100
+    },
+    {
+      "filename": "lesson-5.json",
+      "title": "Excellence Skills — Factor Relationships and Evaluating Improvements",
+      "order": 5,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-6.json",
+      "title": "Full Viability Reports and Common Mistakes",
+      "order": 6,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-7.json",
+      "title": "Project Completion Day",
+      "order": 7,
+      "xpReward": 100
+    },
+    {
+      "filename": "lesson-8.json",
+      "title": "NCEA External Exam Practice",
+      "order": 8,
+      "xpReward": 120
+    }
+  ]
 }

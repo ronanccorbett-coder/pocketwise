@@ -24,5 +24,55 @@
     "Explain who invests in shares and why",
     "Connect the stock market to everyday NZ life including KiwiSaver"
   ],
-  "assessmentTask": "Students explain in their own words: what the stock market is, why companies list on it, and how they personally connect to it through KiwiSaver."
+  "assessmentTask": "Students explain in their own words: what the stock market is, why companies list on it, and how they personally connect to it through KiwiSaver.",
+  "lessons": [
+    {
+      "filename": "lesson-1.json",
+      "title": "What Is the Stock Market?",
+      "order": 1,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-2.json",
+      "title": "How Share Prices Are Set",
+      "order": 2,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-3.json",
+      "title": "Bulls, Bears and Market Cycles",
+      "order": 3,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-4.json",
+      "title": "Week 1 Challenge — The Share Market Simulator",
+      "order": 4,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-5.json",
+      "title": "Dividends and Compound Growth",
+      "order": 5,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-6.json",
+      "title": "Indices and Market Benchmarks",
+      "order": 6,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-7.json",
+      "title": "Famous Investors and Investment Principles",
+      "order": 7,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-8.json",
+      "title": "Module Review — Stock Market Fundamentals",
+      "order": 8,
+      "xpReward": 90
+    }
+  ]
 }

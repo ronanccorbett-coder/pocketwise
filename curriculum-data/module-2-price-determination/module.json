@@ -25,5 +25,55 @@
     "Explain how internal and external factors influence a pricing decision and the possible effects on the organisation and its stakeholders",
     "Analyse the extent to which a pricing decision considers relevant factors and how the organisation could respond to the effects of its pricing decision"
   ],
-  "assessmentTask": "Students select a real or fictional New Zealand product or service and determine an appropriate price using a financial model. The assessment requires students to identify and describe internal and external factors influencing the price, show break-even calculations with actual dollar figures, recommend a price with full justification, and at Merit and Excellence levels explain how factors influence the pricing decision, explain possible effects on the organisation and its stakeholders, analyse the extent to which the pricing decision considers relevant factors, and analyse how the organisation could respond to the effects of its pricing decision."
+  "assessmentTask": "Students select a real or fictional New Zealand product or service and determine an appropriate price using a financial model. The assessment requires students to identify and describe internal and external factors influencing the price, show break-even calculations with actual dollar figures, recommend a price with full justification, and at Merit and Excellence levels explain how factors influence the pricing decision, explain possible effects on the organisation and its stakeholders, analyse the extent to which the pricing decision considers relevant factors, and analyse how the organisation could respond to the effects of its pricing decision.",
+  "lessons": [
+    {
+      "filename": "lesson-1.json",
+      "title": "What Is Price Determination?",
+      "order": 1,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-2.json",
+      "title": "Break-Even Analysis",
+      "order": 2,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-3.json",
+      "title": "Projected Income Statements and Price Recommendations",
+      "order": 3,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-4.json",
+      "title": "Week 1 Challenge — Pricing From Scratch",
+      "order": 4,
+      "xpReward": 100
+    },
+    {
+      "filename": "lesson-5.json",
+      "title": "Merit Skills — How Factors Influence Pricing and Effects on Stakeholders",
+      "order": 5,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-6.json",
+      "title": "Excellence Skills — Evaluating Pricing Decisions",
+      "order": 6,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-7.json",
+      "title": "Project Completion Day",
+      "order": 7,
+      "xpReward": 100
+    },
+    {
+      "filename": "lesson-8.json",
+      "title": "NCEA Assessment Day",
+      "order": 8,
+      "xpReward": 120
+    }
+  ]
 }

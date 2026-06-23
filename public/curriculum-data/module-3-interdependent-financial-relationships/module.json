@@ -24,5 +24,55 @@
     "Explain how an event affects each entity and the flow-on effects of that event",
     "Analyse the extent to which entities are interdependent and how each could respond to flow-on effects"
   ],
-  "assessmentTask": "Students select two or more NZ entities with a financial relationship and write a structured analysis. The response must identify and describe the financial relationship, describe how money flows between the entities, describe how a specific event affects the relationship, and at Merit and Excellence levels explain the flow-on effects for each entity and analyse the extent of interdependence and how each entity could respond."
+  "assessmentTask": "Students select two or more NZ entities with a financial relationship and write a structured analysis. The response must identify and describe the financial relationship, describe how money flows between the entities, describe how a specific event affects the relationship, and at Merit and Excellence levels explain the flow-on effects for each entity and analyse the extent of interdependence and how each entity could respond.",
+  "lessons": [
+    {
+      "filename": "lesson-1.json",
+      "title": "What Are Interdependent Financial Relationships?",
+      "order": 1,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-2.json",
+      "title": "Money Flows and Events",
+      "order": 2,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-3.json",
+      "title": "Flow-On Effects — Merit Level Skills",
+      "order": 3,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-4.json",
+      "title": "Week 1 Challenge — Analysing Complex Relationships",
+      "order": 4,
+      "xpReward": 100
+    },
+    {
+      "filename": "lesson-5.json",
+      "title": "Excellence Skills — Extent of Interdependence and Response Strategies",
+      "order": 5,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-6.json",
+      "title": "Bringing It All Together — Full Analysis and Common Mistakes",
+      "order": 6,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-7.json",
+      "title": "Project Completion Day",
+      "order": 7,
+      "xpReward": 100
+    },
+    {
+      "filename": "lesson-8.json",
+      "title": "NCEA External Exam Practice",
+      "order": 8,
+      "xpReward": 120
+    }
+  ]
 }

@@ -1,10 +1,20 @@
 {
   "title": "Reading the Market",
   "description": "Students learn to interpret share price charts, understand key metrics like P/E ratio and EPS, read financial news critically, and use basic technical and fundamental signals to form views on shares.",
-  "ageTrack": "14", "yearLevel": "Year 10", "nceaStandard": null, "nceaStandardTitle": null,
-  "nceaCredits": 0, "nceaAssessmentType": "Extra Learning", "durationWeeks": 2,
-  "sessionsPerWeek": 4, "minutesPerSession": 45, "xpReward": 640,
-  "iconName": "bar-chart-2", "colorTheme": "#0e9f6e", "isPublished": true, "order": 12,
+  "ageTrack": "14",
+  "yearLevel": "Year 10",
+  "nceaStandard": null,
+  "nceaStandardTitle": null,
+  "nceaCredits": 0,
+  "nceaAssessmentType": "Extra Learning",
+  "durationWeeks": 2,
+  "sessionsPerWeek": 4,
+  "minutesPerSession": 45,
+  "xpReward": 640,
+  "iconName": "bar-chart-2",
+  "colorTheme": "#0e9f6e",
+  "isPublished": true,
+  "order": 12,
   "ownerEmail": "admin@pocketwise.nz",
   "rationale": "Builds analytical skills for interpreting market data. Students learn to read charts, calculate and interpret key valuation metrics, distinguish signal from noise in financial media, and form basic investment views using real NZ data.",
   "learningObjectives": [
@@ -14,5 +24,55 @@
     "Identify reliable versus unreliable sources of financial information",
     "Apply basic valuation thinking to compare two NZ companies"
   ],
-  "assessmentTask": "Students produce a one-page analysis of a NZ listed company using at least three metrics (P/E, EPS, dividend yield) and a price chart, concluding with a hold/buy/sell opinion with reasoning."
+  "assessmentTask": "Students produce a one-page analysis of a NZ listed company using at least three metrics (P/E, EPS, dividend yield) and a price chart, concluding with a hold/buy/sell opinion with reasoning.",
+  "lessons": [
+    {
+      "filename": "lesson-1.json",
+      "title": "Reading Share Price Charts",
+      "order": 1,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-2.json",
+      "title": "P/E Ratio and EPS — The Core Valuation Metrics",
+      "order": 2,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-3.json",
+      "title": "Fundamental vs Technical Analysis",
+      "order": 3,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-4.json",
+      "title": "Week 1 Challenge — Analyse Two NZ Companies",
+      "order": 4,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-5.json",
+      "title": "Reading Financial Media Critically",
+      "order": 5,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-6.json",
+      "title": "Other Key Market Metrics",
+      "order": 6,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-7.json",
+      "title": "Sector Analysis — NZ Industries on the Market",
+      "order": 7,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-8.json",
+      "title": "Module 3 Review — Market Analysis Mastery",
+      "order": 8,
+      "xpReward": 90
+    }
+  ]
 }

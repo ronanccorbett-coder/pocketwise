@@ -25,5 +25,55 @@
     "Discuss, examine, and evaluate how financial decisions reflect and uphold an organisation's putake",
     "Produce a complete financial decision-making report structured to meet Achieved, Merit, and Excellence criteria for AS92028"
   ],
-  "assessmentTask": "Students select a real or fictional New Zealand organisation facing a financial need, issue, or opportunity and write a complete financial decision-making report. The report must describe the financial situation and the organisation's putake, compare at least two options using a financial tool with actual dollar figures, state and justify a recommended decision connected to putake, explain the perspectives of at least two stakeholders, explain at least two consequences of the decision, and at Excellence level analyse the extent to which the decision considers stakeholder perspectives and analyse how the organisation could respond to consequences in a way that upholds their putake."
+  "assessmentTask": "Students select a real or fictional New Zealand organisation facing a financial need, issue, or opportunity and write a complete financial decision-making report. The report must describe the financial situation and the organisation's putake, compare at least two options using a financial tool with actual dollar figures, state and justify a recommended decision connected to putake, explain the perspectives of at least two stakeholders, explain at least two consequences of the decision, and at Excellence level analyse the extent to which the decision considers stakeholder perspectives and analyse how the organisation could respond to consequences in a way that upholds their putake.",
+  "lessons": [
+    {
+      "filename": "lesson-1.json",
+      "title": "What Is Financial Decision-Making?",
+      "order": 1,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-2.json",
+      "title": "Financial Tools and How to Use Them",
+      "order": 2,
+      "xpReward": 80
+    },
+    {
+      "filename": "lesson-3.json",
+      "title": "Stakeholders, Perspectives, and the Decision",
+      "order": 3,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-4.json",
+      "title": "Week 1 Challenge — Putting the Skills Together",
+      "order": 4,
+      "xpReward": 100
+    },
+    {
+      "filename": "lesson-5.json",
+      "title": "Excellence Skills — Evaluating Financial Decisions",
+      "order": 5,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-6.json",
+      "title": "Analysis, Evaluation, and Full Decision Reports",
+      "order": 6,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-7.json",
+      "title": "Project Completion Day",
+      "order": 7,
+      "xpReward": 100
+    },
+    {
+      "filename": "lesson-8.json",
+      "title": "NCEA Assessment Day",
+      "order": 8,
+      "xpReward": 120
+    }
+  ]
 }

@@ -1,10 +1,20 @@
 {
   "title": "How Shares Work",
   "description": "Students learn what shares actually are, how ownership rights work, the difference between ordinary and preference shares, IPOs, and how to buy and sell shares in NZ.",
-  "ageTrack": "14", "yearLevel": "Year 10", "nceaStandard": null, "nceaStandardTitle": null,
-  "nceaCredits": 0, "nceaAssessmentType": "Extra Learning", "durationWeeks": 2,
-  "sessionsPerWeek": 4, "minutesPerSession": 45, "xpReward": 640,
-  "iconName": "pie-chart", "colorTheme": "#0e9f6e", "isPublished": true, "order": 11,
+  "ageTrack": "14",
+  "yearLevel": "Year 10",
+  "nceaStandard": null,
+  "nceaStandardTitle": null,
+  "nceaCredits": 0,
+  "nceaAssessmentType": "Extra Learning",
+  "durationWeeks": 2,
+  "sessionsPerWeek": 4,
+  "minutesPerSession": 45,
+  "xpReward": 640,
+  "iconName": "pie-chart",
+  "colorTheme": "#0e9f6e",
+  "isPublished": true,
+  "order": 11,
   "ownerEmail": "admin@pocketwise.nz",
   "rationale": "Deep dive into how shares actually work as financial instruments. Covers share types, shareholder rights, IPOs, and the practical mechanics of buying and selling in NZ.",
   "learningObjectives": [
@@ -14,5 +24,55 @@
     "Describe the mechanics of buying and selling shares in NZ",
     "Calculate basic returns including brokerage costs"
   ],
-  "assessmentTask": "Students describe the complete process of buying shares in a NZ company from account opening through to calculating total return after brokerage."
+  "assessmentTask": "Students describe the complete process of buying shares in a NZ company from account opening through to calculating total return after brokerage.",
+  "lessons": [
+    {
+      "filename": "lesson-1.json",
+      "title": "What Shareholder Rights Do You Get?",
+      "order": 1,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-2.json",
+      "title": "IPOs — How Companies Go Public",
+      "order": 2,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-3.json",
+      "title": "How to Buy and Sell Shares in NZ",
+      "order": 3,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-4.json",
+      "title": "Week 1 Challenge — Build Your Virtual Share Portfolio",
+      "order": 4,
+      "xpReward": 90
+    },
+    {
+      "filename": "lesson-5.json",
+      "title": "Reading Financial News",
+      "order": 5,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-6.json",
+      "title": "Short Selling and Other Share Strategies",
+      "order": 6,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-7.json",
+      "title": "Tax and Shares in NZ",
+      "order": 7,
+      "xpReward": 70
+    },
+    {
+      "filename": "lesson-8.json",
+      "title": "Module 2 Review — Shares in Depth",
+      "order": 8,
+      "xpReward": 90
+    }
+  ]
 }
