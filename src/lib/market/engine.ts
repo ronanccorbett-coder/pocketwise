@@ -91,12 +91,12 @@ export function nzClock(ts: number): NZWallClock {
 }
 
 // NZX market hours in minutes-from-midnight (NZ local)
-const MARKET_OPEN_MIN  = 10 * 60;       // 10:00
-const MARKET_CLOSE_MIN = 16 * 60 + 45;  // 16:45
+const MARKET_OPEN_MIN  = 0;             // 24/7 mode
+const MARKET_CLOSE_MIN = 24 * 60;       // 24/7 mode
 export const TRADING_MINUTES_PER_DAY = MARKET_CLOSE_MIN - MARKET_OPEN_MIN; // 405
 
-export function isWeekday(dow: number): boolean {
-  return dow >= 1 && dow <= 5;
+export function isWeekday(_dow: number): boolean {
+  return true; // 24/7 mode
 }
 
 export function isMarketOpen(ts: number): boolean {
@@ -109,26 +109,13 @@ export function isMarketOpen(ts: number): boolean {
 // Trading-day index since epoch. Used as a deterministic anchor — day 0 is
 // the first trading day on or after MARKET_EPOCH_MS.
 export function tradingDayIndex(ts: number): number {
-  // Days since epoch in NZ-local terms
+  // 24/7 mode: every calendar day counts as a trading day
   const epochClock = nzClock(MARKET_EPOCH_MS);
   const nowClock = nzClock(ts);
   const epochDate = Date.UTC(epochClock.year, epochClock.month - 1, epochClock.day);
   const nowDate = Date.UTC(nowClock.year, nowClock.month - 1, nowClock.day);
   const calendarDays = Math.floor((nowDate - epochDate) / 86_400_000);
-
-  // Count weekdays from epoch to today. Epoch lands on a Sunday (1 Feb 2026),
-  // so we count full weeks of 5 trading days plus a partial week.
-  if (calendarDays < 0) return 0;
-  const fullWeeks = Math.floor(calendarDays / 7);
-  const remainderDays = calendarDays % 7;
-  const epochDow = epochClock.dow; // 1..7
-  let partial = 0;
-  for (let i = 0; i <= remainderDays; i++) {
-    const dow = ((epochDow - 1 + i) % 7) + 1;
-    if (isWeekday(dow)) partial++;
-  }
-  // Subtract 1 because partial counts today as a step; we want the index OF today.
-  return fullWeeks * 5 + Math.max(0, partial - 1);
+  return Math.max(0, calendarDays);
 }
 
 // Minutes elapsed in today's trading session. 0 before open, TRADING_MINUTES_PER_DAY at/after close.
