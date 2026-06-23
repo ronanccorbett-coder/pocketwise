@@ -37,9 +37,10 @@ export async function GET(req: NextRequest) {
       for (const lesson of (modJson.lessons ?? [])) {
         const lessonPath = path.join(modPath, lesson.filename);
         if (fs.existsSync(lessonPath)) {
-          lessons.push(JSON.parse(fs.readFileSync(lessonPath, "utf8")));
-        }
+          const lessonData = JSON.parse(fs.readFileSync(lessonPath, "utf8"));
+        lessons.push({ ...lessonData, filename: lesson.filename });
       }
+    }
       return NextResponse.json({ ...modJson, folder, lessons });
     } catch (e: any) {
       return NextResponse.json({ error: e.message }, { status: 500 });
