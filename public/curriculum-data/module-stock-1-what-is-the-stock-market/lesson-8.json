@@ -1,0 +1,143 @@
+{
+  "title": "Module Review \u2014 Stock Market Fundamentals",
+  "order": 8,
+  "dayNumber": 8,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Apply and Evaluate",
+  "nceaFocus": "Extra Learning \u2014 Stock Market Foundations",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Demonstrate understanding of all core concepts from Module 1",
+    "Apply market cycle, compound growth and dividend knowledge to new scenarios",
+    "Evaluate a basic investment decision"
+  ],
+  "vocabulary": [],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Module 1 Summary \u2014 What You Now Know",
+      "estimatedMinutes": 3,
+      "notePrompt": "Without looking at your notes, write down: the definition of a share, three reasons a company lists on the stock exchange, the four phases of a market cycle, the Rule of 72, and what putake means in investing (hint: think about what your values and purpose are as an investor).",
+      "content": "A rapid summary of Module 1.\n\nThe stock market is a marketplace where people buy and sell small ownership stakes (shares) in companies. Companies list on exchanges to raise capital without taking on debt. Investors participate to grow wealth over time through capital gains and dividends.\n\nShare prices are set by supply and demand \u2014 constant buying and selling during market hours. Prices move as new information changes expectations about future earnings.\n\nMarkets cycle through four phases: expansion, peak, contraction, trough. Bull markets (rising 20%+) last longer than bear markets (falling 20%+). The best buying opportunities are at troughs \u2014 when fear is greatest.\n\nDividends are cash payments from profits to shareholders. Dividend yield = annual dividend \u00f7 share price \u00d7 100. Imputation credits prevent double taxation in NZ.\n\nCompound growth: A = P(1+r)^n. The Rule of 72: doubling time = 72 \u00f7 annual return rate. Time is the most powerful ingredient \u2014 starting early matters enormously.\n\nIndices (NZX 50, S&P 500) summarise overall market performance. Index funds replicate these automatically at low cost. Research shows most active managers fail to beat their benchmark index over 15 years.\n\nYou are probably already a stock market investor through KiwiSaver."
+    },
+    {
+      "type": "scenario",
+      "title": "Full Module Assessment \u2014 Jordan's Investment Decisions",
+      "estimatedMinutes": 22,
+      "nceaLevel": "Achieved",
+      "setup": "Jordan, 17, has $3,000 to invest. He has three options.\n\nOption A: Simplicity NZ Share Fund (index fund tracking NZX 50)\nHistorical average return: 9.5% per annum\nManagement fee: 0.10% per annum\n\nOption B: A managed growth fund run by an active manager\nClaimed target return: 11% per annum\nManagement fee: 1.20% per annum\n\nOption C: Leave in ASB savings account\nInterest rate: 4.50% per annum\nGovernment guarantee: yes (up to $100,000 under Deposit Protection Scheme)\n\nAdditionally: Jordan is considering buying 100 shares in Contact Energy (CEN).\nCurrent share price: $8.25\nAnnual dividend: $0.38 per share\n52-week range: $7.40 to $9.80",
+      "challenge": "1. Calculate what $3,000 grows to after 10 years under each of the three options. Use A = P(1+r)^n. For Option B, use the net return after fees (11% \u2212 1.20% = 9.80%).\n2. Which option produces the most wealth after 10 years? Is the difference what you expected?\n3. Calculate the dividend yield on Contact Energy at the current price.\n4. If Jordan buys 100 Contact Energy shares, how much dividend income does he receive per year?\n5. Contact Energy's current price is $8.25 and the 52-week high was $9.80. Calculate how far the share has fallen from its high as a percentage.\n6. Looking at the 52-week range, does $8.25 appear to be a relatively high or low price? Does this mean it is a good buy? Explain why the answer requires more than just the price range.",
+      "hints": [
+        "Q1: (1.095)^10 = 2.478. (1.098)^10 = 2.547. (1.045)^10 = 1.553.",
+        "Q5: % fall = (high \u2212 current) \u00f7 high \u00d7 100.",
+        "Q6: The 52-week range shows recent price history but not whether the current price reflects fair value \u2014 you need to know WHY the price fell."
+      ],
+      "solution": "1. Growth of $3,000 after 10 years:\nOption A (9.5%): $3,000 \u00d7 (1.095)^10 = $3,000 \u00d7 2.478 = $7,434\nOption B (9.8% net after 1.2% fee): $3,000 \u00d7 (1.098)^10 = $3,000 \u00d7 2.547 = $7,641\nOption C (4.5%): $3,000 \u00d7 (1.045)^10 = $3,000 \u00d7 1.553 = $4,659\n\n2. Option B produces the most ($7,641) but only by $207 more than Option A ($7,434) \u2014 despite the active manager targeting 11%. The high fees consume most of the extra return. And crucially: the active manager's 11% target is not guaranteed \u2014 research shows most active managers underperform their benchmark over 10 years. In reality, Option A (the index fund) may well outperform Option B if the active manager achieves anything below 10.3% gross (before fees). The savings account (Option C) grows to only $4,659 \u2014 $2,775 less than the index fund.\n\n3. Contact Energy dividend yield: $0.38 \u00f7 $8.25 \u00d7 100 = 4.61%\n\n4. Annual dividend income: 100 shares \u00d7 $0.38 = $38.00 per year\n\n5. Fall from 52-week high: ($9.80 \u2212 $8.25) \u00f7 $9.80 \u00d7 100 = $1.55 \u00f7 $9.80 \u00d7 100 = 15.8% below the 52-week high\n\n6. At $8.25, the share is closer to its 52-week low ($7.40) than its high ($9.80), suggesting it has been falling. This looks like it might be a buying opportunity \u2014 but the price range alone does not tell us enough. We need to know: WHY has it fallen 15.8% from its high? Is it because the overall market has fallen (and Contact Energy will recover with the market)? Or because something is specifically wrong with Contact Energy \u2014 regulatory changes, falling electricity prices, or a competitor building new generation capacity? A low price is only a good buy if the underlying business is still fundamentally sound at that price."
+    },
+    {
+      "type": "quiz",
+      "title": "Full Module Review Quiz",
+      "estimatedMinutes": 12,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A company has 800 million shares on issue and a share price of $4.25. What is its market cap?",
+          "options": [
+            "$800 million",
+            "$3.4 billion",
+            "$4.25 billion",
+            "$34 billion"
+          ],
+          "correctIndex": 1,
+          "explanation": "$4.25 \u00d7 800,000,000 = $3,400,000,000 = $3.4 billion. Market cap is the most common measure of company size and is the foundation of index construction \u2014 the NZX 50 weights companies by market cap, so larger companies like Fisher and Paykel Healthcare have more influence on the index than smaller ones."
+        },
+        {
+          "question": "The S&P 500 falls 22% from its recent high over 6 months. What is this called?",
+          "options": [
+            "A market correction \u2014 a normal and expected 10% to 20% pullback",
+            "A flash crash \u2014 an extreme intraday price movement",
+            "A bear market \u2014 defined as a fall of 20% or more from a recent high",
+            "A recession \u2014 defined as two consecutive quarters of falling GDP"
+          ],
+          "correctIndex": 2,
+          "explanation": "A fall of 20% or more from a recent high meets the official definition of a bear market. A correction is only 10% to 20%. A flash crash is a rapid intraday move (usually recovering the same day). A recession is an economic measure (falling GDP) that can cause \u2014 but is distinct from \u2014 a bear market. Bear markets and recessions often occur together but are separately defined."
+        },
+        {
+          "question": "You invest $4,000 at 9% annual return. Using the Rule of 72, approximately how many years until your investment doubles?",
+          "options": [
+            "4 years \u2014 the rule divides the investment amount by the return",
+            "8 years \u2014 72 divided by 9",
+            "18 years \u2014 the rule multiplies 9 by 2",
+            "36 years \u2014 the rule squares the return rate"
+          ],
+          "correctIndex": 1,
+          "explanation": "72 \u00f7 9 = 8 years. The Rule of 72 gives a quick estimate of doubling time. At 9% annual return, $4,000 becomes approximately $8,000 after 8 years. After 16 years it becomes $16,000. After 24 years, $32,000. The starting amount is irrelevant \u2014 the Rule of 72 tells you the doubling time regardless of principal."
+        },
+        {
+          "question": "A share pays $0.42 annual dividend and trades at $9.80. What is the dividend yield, and which option is closest?",
+          "options": [
+            "0.43% \u2014 yield is calculated as price divided by dividend",
+            "2.33% \u2014 yield is dividend times price",
+            "4.29% \u2014 annual dividend divided by share price multiplied by 100",
+            "9.80% \u2014 yield equals the share price numerically"
+          ],
+          "correctIndex": 2,
+          "explanation": "$0.42 \u00f7 $9.80 \u00d7 100 = 4.29%. Always: dividend yield = (annual dividend per share \u00f7 share price) \u00d7 100. This tells you how much income you receive per dollar invested. At 4.29%, investing $10,000 in this share would generate approximately $429 in annual dividend income."
+        },
+        {
+          "question": "Why do most financial economists and Warren Buffett recommend low-cost index funds for ordinary investors?",
+          "options": [
+            "Because index funds guarantee positive returns every year, unlike active funds",
+            "Because index funds are managed by more intelligent fund managers using superior algorithms",
+            "Because after fees, research consistently shows roughly 85% to 90% of active fund managers fail to beat their benchmark index over 15 years \u2014 making low-cost index funds the highest probability strategy for most investors",
+            "Because government regulations in NZ and the US require ordinary investors to use index funds rather than actively managed products"
+          ],
+          "correctIndex": 2,
+          "explanation": "Index funds do not guarantee positive returns \u2014 they fall with the market. And they are not managed by AI algorithms \u2014 they simply hold all index stocks automatically. The mathematical argument (Bogle) is that active investors in aggregate earn the market return before costs, so after higher fees, they must earn less on average. Empirical evidence confirms: around 85% to 90% of active managers underperform their benchmark over 15 years. Index funds are the rational response to this evidence."
+        },
+        {
+          "question": "Contact Energy's 52-week range is $7.40 to $9.80 and the current price is $8.25. Which statement BEST interprets this information?",
+          "options": [
+            "At $8.25 the share is priced fairly \u2014 exactly at the midpoint of its range",
+            "The share is in a bull market because the current price is above the 52-week low",
+            "The share is closer to its 52-week low than high, suggesting it has been falling over the past year, but the reason for the fall needs to be investigated before concluding whether it is cheap or expensive",
+            "The share should be bought immediately because any price below the 52-week high represents a discount to value"
+          ],
+          "correctIndex": 2,
+          "explanation": "The 52-week range provides context for the current price but does not determine whether it is cheap or expensive. The share is closer to its low ($8.25 vs $7.40 low, $9.80 high), which means it has been falling \u2014 but without understanding WHY, you cannot conclude it is a bargain. The fall might be because the overall market fell (and the share will recover), or because of specific company problems (earnings decline, regulatory threat) that justify the lower price. Always investigate the reason for a price change before interpreting it as opportunity."
+        },
+        {
+          "question": "A 15-year-old invests $1,000 at 8% compound annual growth. A 25-year-old invests the same $1,000 at the same rate. Both hold until age 65. What is the approximate difference in final wealth?",
+          "options": [
+            "About $2,000 \u2014 10 extra years of 8% return adds roughly double",
+            "About $11,000 \u2014 10 extra years at $1,000 plus compounding",
+            "About $100,000 \u2014 because compound growth makes later years dramatically more valuable, the 15-year-old's 50-year investment is roughly 2.16\u00d7 the 25-year-old's 40-year investment",
+            "No difference \u2014 the total dollar amount invested is identical"
+          ],
+          "correctIndex": 2,
+          "explanation": "At 8%: $1,000 \u00d7 (1.08)^50 = $1,000 \u00d7 46.90 = $46,902. $1,000 \u00d7 (1.08)^40 = $1,000 \u00d7 21.72 = $21,725. Difference: $46,902 \u2212 $21,725 = $25,177. The 15-year-old ends up with $25,177 more from the same $1,000 investment \u2014 simply by starting 10 years earlier. This approximately matches 'roughly 2.16\u00d7' (46.90 \u00f7 21.72 = 2.16). This is the most powerful argument for starting to invest as young as possible."
+        },
+        {
+          "question": "You are in the expansion phase of a market cycle. Share prices have risen 60% in 2 years. Your friend says 'prices can only keep going up \u2014 this bull market is different from previous ones.' What should this sentiment signal to a knowledgeable investor?",
+          "options": [
+            "Confirmation that this bull market will indeed continue \u2014 strong price performance is self-reinforcing",
+            "Caution \u2014 maximum optimism and 'this time is different' thinking historically tends to appear near market peaks, suggesting the market may be overvalued",
+            "An immediate signal to sell everything and move to cash before the certain crash",
+            "No concern \u2014 market sentiment has no relationship to future price movements"
+          ],
+          "correctIndex": 1,
+          "explanation": "'This time is different' has been said at virtually every major market peak in history. Maximum optimism is a characteristic of market peaks \u2014 when most people have already bought in, the pool of new buyers shrinks, and any negative news triggers selling. This does not mean an immediate crash is certain \u2014 peaks are only clear in hindsight. But it does suggest caution, maintaining diversification, and not adding excessive risk or leverage at this point in the cycle."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "Your Stock Market Learning \u2014 What Changed?",
+      "estimatedMinutes": 5,
+      "prompt": "Before this module, what did you think the stock market was? What misconceptions did you have? Write down three specific things you now understand that you did not before. Which concept surprised you most? How will this knowledge affect any financial decisions you make in the next few years?",
+      "nceaLink": "Extra Learning \u2014 this module builds the foundation for all seven subsequent stock market modules."
+    }
+  ]
+}

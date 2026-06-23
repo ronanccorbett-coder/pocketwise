@@ -1,0 +1,119 @@
+{
+  "title": "Building a Budget That Actually Works",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Apply",
+  "nceaFocus": "Extra Learning",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Build a realistic monthly personal budget using NZ 2025 figures",
+    "Categorise expenses as fixed, variable, or irregular",
+    "Identify the pay yourself first habit and set up automatic savings"
+  ],
+  "vocabulary": [
+    { "term": "Fixed expenses", "definition": "Costs that are the same every period — rent or board, phone plan, gym membership, insurance premiums." },
+    { "term": "Variable expenses", "definition": "Costs that change month to month — groceries, petrol, entertainment, clothing." },
+    { "term": "Irregular expenses", "definition": "Costs that occur occasionally rather than monthly — car registration, dentist visits, Christmas gifts. Must be provisioned monthly by dividing the annual cost by 12." },
+    { "term": "Pay yourself first", "definition": "Transferring your savings amount automatically on payday before spending on anything else. Makes saving a habit rather than an afterthought." },
+    { "term": "Emergency fund", "definition": "Three to six months of essential living expenses saved in an accessible account as a financial safety net. The first savings priority for any young worker." },
+    { "term": "Direct debit", "definition": "An automatic payment from your bank account on a set date and amount. Used for rent, regular bills, and automatic savings transfers." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Why Most Budgets Fail",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down four reasons budgets fail. For each one, write a one-sentence practical fix.",
+      "content": "Most people who try to budget give up within a month. Here is why — and how to do it differently.\n\nReason 1: The budget is too optimistic. People estimate $60 per week on groceries when they actually spend $95. They budget $30 for entertainment when three coffees a week costs $21. A budget must reflect reality, not aspiration. Track actual spending for two weeks before building the budget.\n\nReason 2: Irregular expenses are forgotten. Car registration ($156 per year), dental check ($90 every six months), Christmas gifts, a new tyre — these are not monthly but they are real. Include a monthly provision: $156 divided by 12 = $13 per month for rego.\n\nReason 3: No emergency fund. Without savings, the first unexpected cost — a car repair, a phone screen, a week without shifts — blows the budget entirely. Build three months of essential expenses as an emergency fund before any other savings goal.\n\nReason 4: Savings come last. If you wait until the end of the month to save whatever remains, there is almost never anything left. Pay yourself first — automate a savings transfer on payday before spending on wants."
+    },
+    {
+      "type": "slide",
+      "title": "Real NZ Budget — Mia, 18, Living at Home in Hamilton",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy Mia's budget into your notes. Calculate her monthly surplus. Check whether it follows the 50/30/20 rule by calculating each category as a percentage of her net income.",
+      "content": "Mia works 30 hours per week at $23.15 per hour as a retail assistant in Hamilton. She lives at home and pays $150 per week board.\n\nMonthly net income:\n30 hours multiplied by $23.15 = $694.50 gross per week\nAfter PAYE approx $89 and KiwiSaver $20.84 = net $584.66 per week\nMonthly net: $584.66 multiplied by 4.33 = $2,531\n\nMia's Monthly Budget:\n\nNEEDS (target 50% = $1,265):\nBoard: $650 ($150/wk x 4.33)\nPhone plan: $35\nBus pass: $80\nPersonal care: $40\nTotal needs: $805 (31.8%) — well under 50%\n\nWANTS (target 30% = $759):\nEating out and coffees: $180\nStreaming services: $28\nClothing: $100\nSocial activities: $120\nTotal wants: $428 (16.9%) — under 30%\n\nIRREGULAR PROVISION:\nGifts and occasions: $30\nHealthcare/dentist: $20\nTotal: $50\n\nSAVINGS (target 20% = $506):\nEmergency fund (building to $5,000): $200\nDriving lessons and licence: $300\nTotal savings: $500\n\nTotal all: $805 + $428 + $50 + $500 = $1,783\nMonthly surplus: $2,531 minus $1,783 = $748"
+    },
+    {
+      "type": "truefalse",
+      "statement": "Paying board to your parents is a waste of money — you should keep all your earnings for yourself.",
+      "correctAnswer": false,
+      "explanation": "False. Board is a legitimate contribution to the real costs your household incurs — rent, food, power, and utilities. It also builds the habit of budgeting for housing costs before you rent independently. Most NZ young workers living at home pay $100 to $200 per week board. The financial advantage of living at home is that board is far cheaper than independent renting, allowing a higher savings rate — not that board should be avoided entirely.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Real NZ Budget — Jordan, 20, Renting in Auckland",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy Jordan's budget. Calculate his monthly surplus. Identify: is he saving enough? What percentage of his income goes to rent alone?",
+      "content": "Jordan works full-time (40 hours per week) as a café barista at $23.15 per hour. He rents a room in a Ponsonby flat with three flatmates at $380 per week.\n\nNet monthly pay:\n40 hours x $23.15 = $926 gross/week\nAfter PAYE approx $140 and KiwiSaver $27.78 = net $758.22/week\nMonthly net: $758.22 x 4.33 = $3,283\n\nJordan's Monthly Budget:\n\nFIXED NEEDS:\nRent: $1,645 ($380/wk x 4.33)\nPower and internet (share): $100\nPhone: $40\nTotal fixed needs: $1,785\n\nVARIABLE NEEDS:\nGroceries: $320\nAT HOP transport: $100\nTotal variable needs: $420\n\nTotal Needs: $2,205 (67% of income — over 50% due to Auckland rents)\n\nWANTS:\nEating out: $200\nEntertainment: $80\nClothing: $60\nGym: $35\nTotal wants: $375 (11.4%)\n\nIRREGULAR: $50\n\nSAVINGS: $0\n\nTotal allocated: $2,630\nUnallocated surplus: $3,283 minus $2,630 = $653\n\nJordan has $653 unallocated but saves zero. This is the trap — unallocated money disappears on impulse purchases. He should automate a $600 transfer to savings on payday. Auckland rents push his needs above 50% but he still has capacity to save."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Fixed, Variable, or Irregular? Sort These Expenses",
+      "estimatedMinutes": 6,
+      "pairs": [
+        { "item": "Weekly rent $380", "zone": "Fixed" },
+        { "item": "Monthly grocery shopping", "zone": "Variable" },
+        { "item": "Annual car registration $156", "zone": "Irregular" },
+        { "item": "Phone plan $40/month", "zone": "Fixed" },
+        { "item": "Weekly café coffee spending", "zone": "Variable" },
+        { "item": "Dentist check-up every 6 months", "zone": "Irregular" },
+        { "item": "Gym membership $35/month", "zone": "Fixed" },
+        { "item": "Christmas gifts", "zone": "Irregular" }
+      ],
+      "explanation": "Fixed expenses are predictable and consistent — you know exactly what is coming each month. Variable expenses change based on behaviour and can be managed. Irregular expenses must be budgeted monthly even when they do not occur — divide the annual cost by 12 and set that amount aside each month so you are never caught off guard.",
+      "estimatedMinutes": 6
+    },
+    {
+      "type": "slide",
+      "title": "Pay Yourself First — Making Savings Automatic",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down how the pay yourself first method works. If Jordan is paid fortnightly, set up a specific savings plan: what day, what amount, what account, what bank.",
+      "content": "The single most effective personal finance habit is this: on payday, transfer a set amount to a separate savings account before spending anything on wants. The savings happen first.\n\nMost people do the opposite — they spend first and save whatever remains. The problem is that something always eats the remainder. Pay yourself first removes the temptation because the money is already gone before you can spend it.\n\nFor Jordan: his net pay arrives fortnightly on Thursdays. He should set up a direct debit for $300 (approximately 18% of fortnightly net pay) to transfer automatically to a separate ASB or Kiwibank savings account on Friday morning — the day after payday. He never sees it in his everyday account. Over a year, this builds $7,800 in savings.\n\nAll major NZ banks allow automatic transfers in their mobile apps in under 5 minutes. You set the amount, date, frequency, and destination account. Once running, it requires zero willpower — the habit runs on autopilot.\n\nThree-account system that works well:\nAccount 1 (everyday): Wages arrive here. Bills paid from here.\nAccount 2 (bills buffer): Transfer monthly bill amounts here on payday to avoid overdraft.\nAccount 3 (savings): Automatic transfer on payday. Never touch this for wants."
+    },
+    {
+      "type": "slide",
+      "title": "Five Budget Mistakes and How to Fix Them",
+      "estimatedMinutes": 4,
+      "notePrompt": "Read each mistake. Star the one you think is most common among people your age. Write one sentence explaining why it is so easy to fall into.",
+      "content": "Five mistakes that derail NZ young people's budgets — and the fix for each.\n\nMistake 1: Underestimating food costs. Groceries plus eating out plus coffees can easily hit $500 to $600 per month for one person in Auckland. Budget $20 per week per regular coffee habit before you start.\nFix: Track every food purchase for two weeks using your bank statement.\n\nMistake 2: Forgetting annual costs. Car rego, WOF, insurance renewal, gym annual fee — these hit hard when unexpected.\nFix: List all annual costs, divide each by 12, and set that amount aside monthly in a sinking fund.\n\nMistake 3: Not updating after a pay change. Got a raise? Still budgeting on your old income stops you benefiting.\nFix: Review and rebuild your budget whenever income changes.\n\nMistake 4: One account for everything. When savings and spending are mixed, it is impossible to know what is available.\nFix: Minimum two accounts — one for spending, one for savings. Never use savings for wants.\n\nMistake 5: Quitting after one bad month. A budget is a plan, not a law.\nFix: Overspending one month is data. Adjust the next month. A bad month does not mean budgeting does not work."
+    },
+    {
+      "type": "scenario",
+      "title": "Budget Repair — Anika Is Running Out of Money",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Anika, 19, works 32 hours per week at $23.15/hour in Wellington. Net monthly income: approximately $2,700. She consistently runs out of money before month end.\n\nHer listed spending:\nRent (Newtown flat share): $520/month\nPhone: $45/month\nGroceries: $250/month\nEating out and coffees: $420/month\nClothing: $180/month\nTransport (Metlink): $85/month\nNetflix and Spotify: $26/month\nSocial activities: $200/month\nGym: $45/month\nTotal listed: $1,771/month\n\nStated savings: $0",
+      "challenge": "1. Calculate Anika's apparent monthly surplus based on listed expenses and income of $2,700.\n2. Apply the 50/30/20 rule to Anika's income. What should go to needs, wants, and savings?\n3. Categorise each listed expense as a Need or Want.\n4. Identify where the 'missing' money is likely going and estimate the amount.\n5. Write a practical three-step budget repair recommendation for Anika.",
+      "hints": [
+        "For Q1: $2,700 minus $1,771 = apparent surplus. But she says she runs out — so something is not listed.",
+        "For Q3: Some are debatable. Justify your choice briefly.",
+        "For Q4: The gap between apparent surplus and zero remaining is untracked spending."
+      ],
+      "solution": "1. Apparent surplus: $2,700 minus $1,771 = $929 unaccounted for. Anika has $929 each month that is not captured in her listed expenses. This is almost certainly untracked impulse spending — unplanned food, cash purchases, online shopping.\n\n2. 50/30/20 on $2,700:\nNeeds (50%): $1,350\nWants (30%): $810\nSavings (20%): $540\n\n3. Categorisation:\nNeeds: Rent $520, Phone $45, Groceries $250, Transport $85 = $900 total\nWants: Eating out $420, Clothing $180, Netflix/Spotify $26, Social $200, Gym $45 = $871 total\n\nAnika's categorised needs ($900) are under the $1,350 target — she has room. Her categorised wants ($871) are slightly over the $810 target.\n\n4. Missing money: $929 per month untracked. Likely spending on additional food and drink, impulse online purchases, unplanned social costs, and cash withdrawals. This is the real budget leak.\n\n5. Three-step budget repair recommendation:\nStep 1 — Track everything for one month using her bank app. Identify exactly where the $929 goes. This creates awareness.\nStep 2 — Set up automatic savings transfer of $540 on payday (the day wages arrive) before any discretionary spending.\nStep 3 — Reduce eating out and coffees from $420 to $200/month (saving $220) and redirect the saved amount to top up the automatic savings, aiming for $760/month total savings (approximately 28% of income) to build the emergency fund faster."
+    },
+    {
+      "type": "quiz",
+      "title": "Budgeting Check",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Anika's net monthly income is $2,700. Using the 50/30/20 rule, how much should go to savings?",
+          "options": ["$810", "$1,350", "$540", "$270"],
+          "correctIndex": 2,
+          "explanation": "20% of $2,700 = $540 per month for savings and debt repayment. $1,350 is 50% needs. $810 is 30% wants. Getting into the habit of saving $540 per month consistently from the start of your working life builds an emergency fund, then savings goals, then long-term wealth."
+        },
+        {
+          "question": "Which of the following is an example of an IRREGULAR expense?",
+          "options": ["Monthly phone plan", "Weekly grocery shopping", "Annual car registration $156", "Daily coffee"],
+          "correctIndex": 2,
+          "explanation": "Car registration is irregular — it occurs once per year, not every month. Monthly phone plans and daily coffee are regular variable expenses. To budget for irregular costs, divide the annual amount by 12 and set aside that monthly amount: $156 divided by 12 = $13 per month for rego."
+        }
+      ]
+    }
+  ]
+}

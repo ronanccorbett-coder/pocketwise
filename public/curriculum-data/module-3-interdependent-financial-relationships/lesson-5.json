@@ -1,0 +1,133 @@
+{
+  "title": "Excellence Skills — Extent of Interdependence and Response Strategies",
+  "order": 5,
+  "dayNumber": 5,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Analyse and Evaluate",
+  "nceaFocus": "AS92030: Evaluate interdependent financial relationships — analyse the extent to which entities are interdependent and how each entity could respond to flow-on effects",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Analyse the extent of interdependence between two or more entities using specific evidence",
+    "Evaluate which entity holds more power in a financial relationship and why",
+    "Propose specific, practical response strategies for each entity facing flow-on effects",
+    "Apply Excellence-level analysis to a Māori financial context"
+  ],
+  "vocabulary": [
+    {
+      "term": "Asymmetric interdependence",
+      "definition": "A relationship where one entity depends more heavily on the other than vice versa. The more dependent entity is more vulnerable. For example, a small supplier who relies on a single supermarket chain for 80% of its revenue is more dependent than the supermarket."
+    },
+    {
+      "term": "Bargaining power",
+      "definition": "The ability of one entity in a relationship to influence terms, prices, or conditions in its favour. Entities with more alternatives, larger size, or unique resources typically have more bargaining power."
+    },
+    {
+      "term": "Loan restructure",
+      "definition": "An agreement between a borrower and lender to change the terms of a loan — for example, reducing repayments temporarily, extending the loan term, or deferring repayments during hardship."
+    },
+    {
+      "term": "Diversification",
+      "definition": "Spreading relationships, income sources, or investments across multiple entities to reduce dependence on any single one. A business that sells to many customers is less vulnerable than one with a single buyer."
+    },
+    {
+      "term": "Force majeure",
+      "definition": "A legal clause that releases parties from contractual obligations in the event of extraordinary events beyond their control — such as natural disasters, pandemics, or extreme weather. Relevant to NZ businesses affected by Cyclone Gabrielle."
+    },
+    {
+      "term": "Kaitiakitanga",
+      "definition": "The Māori concept of guardianship and stewardship. In a financial context, Māori organisations may prioritise long-term sustainability and community wellbeing over short-term financial gains, which affects how they respond to financial pressures."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "What Does 'Extent of Interdependence' Mean?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: What is the difference between symmetric and asymmetric interdependence? Give one NZ example of each type.",
+      "content": "At Excellence in AS92030, you must analyse the extent to which entities are interdependent — not just that they are connected, but HOW DEEPLY they rely on each other.\n\nTwo key questions drive this analysis:\n\n1. How dependent is Entity A on Entity B? Could Entity A survive or function well without this relationship?\n2. How dependent is Entity B on Entity A? Could Entity B easily replace this relationship?\n\nWhen both entities are equally dependent, the relationship is symmetrically interdependent. When one depends much more heavily on the other, the relationship is asymmetrically interdependent — and the more dependent entity is more vulnerable.\n\nExample of symmetric interdependence: A small NZ café and its primary coffee supplier. The café cannot operate without coffee; the supplier relies on the café for regular, significant revenue. If either party exits, both suffer.\n\nExample of asymmetric interdependence: Anika's Apple Orchard and Countdown. Countdown sources fruit from dozens of NZ orchards. Losing one small supplier is manageable. But Anika's $36,000 Countdown contract represents most of her annual income. Anika is far more dependent on Countdown than Countdown is on Anika.\n\nIdentifying which type of interdependence exists — and why — is the core of Excellence-level analysis in this standard."
+    },
+    {
+      "type": "slide",
+      "title": "Analysing Bargaining Power",
+      "estimatedMinutes": 4,
+      "notePrompt": "For the orchard-Countdown relationship, write two sentences explaining why Countdown has more bargaining power. Then write one sentence about how Anika could attempt to rebalance the power in this relationship.",
+      "content": "Bargaining power is closely linked to the extent of interdependence. The entity that is less dependent usually has more bargaining power — because it can walk away from the relationship more easily.\n\nFactors that give one entity MORE bargaining power:\n— Size: Countdown is a national chain; Anika's Orchard is a small family operation\n— Alternatives: Countdown can source apples from many orchards; Anika has few large-scale buyers\n— Unique resources: If Anika grew a unique certified organic variety that Countdown specifically marketed, she would have more power. If she grows standard apples, she has less.\n— Financial strength: Countdown can absorb supply disruption; Anika cannot absorb revenue loss\n\nFor Anika to improve her bargaining position, she could:\n— Supply multiple buyers (not just Countdown) to reduce dependence on one contract\n— Develop a premium branded product that creates unique value\n— Join a growers' cooperative that negotiates collectively with supermarkets\n— Achieve a certification (organic, sustainable) that gives her product unique market appeal\n\nIn AS92030 Excellence analysis, explaining the power dynamics in a relationship — and what the weaker entity could do to strengthen its position — demonstrates the highest level of understanding."
+    },
+    {
+      "type": "truefalse",
+      "statement": "In a financial relationship, the entity that provides money (e.g. the bank or the customer) always has more bargaining power than the entity that receives it.",
+      "correctAnswer": false,
+      "explanation": "False. Bargaining power depends on alternatives and dependence, not just the direction of money flow. A specialised supplier who is the only source of a critical input has enormous bargaining power even though they receive money rather than provide it. Conversely, a single small customer who represents only 0.01% of a bank's loan book has very little power despite being the one who receives the loan. The entity with fewer alternatives and higher dependence has less bargaining power, regardless of which way money flows.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Māori Financial Context — Ngāi Tahu and Supplier Relationships",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down two ways that kaitiakitanga or long-term community focus might influence how a Māori organisation responds to financial pressure in a relationship. How is this different from a purely profit-focused response?",
+      "content": "Understanding financial interdependence in a Māori context requires recognising that the framework of kaitiakitanga and intergenerational responsibility shapes how Māori organisations approach their financial relationships.\n\nNgāi Tahu Holdings, the commercial arm of Ngāi Tahu iwi, manages a diversified portfolio across tourism, property, fisheries, and farming. Their approach to financial relationships is shaped by their commitment to providing an 'everlasting return' for all generations of Ngāi Tahu people.\n\nThis means their relationships with suppliers, banks, and customers are evaluated not just on immediate financial return, but on long-term sustainability and alignment with iwi values. A supplier relationship that is financially profitable but environmentally damaging to Te Waipounamu's resources may be terminated or renegotiated despite the short-term cost.\n\nIn a practical AS92030 context: if a Māori tourism operator faces reduced revenue because of an economic downturn, their response to flow-on effects on their staff and community might differ from a purely commercial response. Rather than immediately cutting staff hours (which would reduce wages flowing to community members), they might draw on reserves or seek grant funding to maintain employment — because the social and cultural obligation to their people is part of their financial decision-making framework.\n\nWhen analysing a Māori organisation's response to flow-on effects in AS92030, acknowledge this values-based dimension of their decision-making."
+    },
+    {
+      "type": "quiz",
+      "title": "Excellence Skills — Extent Analysis",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Excellence",
+      "questions": [
+        {
+          "question": "Anika's Orchard depends on Countdown for $36,000 of annual revenue. Countdown sources apples from 15 different NZ orchards. Which of the following BEST analyses the extent of interdependence?",
+          "options": [
+            "Both entities are equally dependent on each other in this relationship.",
+            "Anika is highly dependent on Countdown — this contract represents most of her seasonal income and she has few alternative large-scale buyers. Countdown is minimally dependent on Anika — she is one of 15 suppliers and her volume can be replaced relatively easily. The relationship is asymmetrically interdependent, with Anika holding significantly less bargaining power.",
+            "Countdown depends on Anika because they need fresh apples.",
+            "Anika and Countdown are interdependent because money flows between them."
+          ],
+          "correctIndex": 1,
+          "explanation": "Option B is the Excellence-level analysis. It names both entities, assesses the degree of each entity's dependence with specific reasoning, identifies the asymmetry, and draws a conclusion about bargaining power. Option A is incorrect — the relationship is clearly asymmetric. Option C is a partial truth that ignores the availability of alternatives. Option D simply restates the definition of a financial relationship — it has no evaluative content."
+        },
+        {
+          "question": "Which response strategy would BEST help Anika reduce her vulnerability to future crop losses affecting her Countdown revenue?",
+          "options": [
+            "Increase her monthly mortgage repayments to pay off ASB faster",
+            "Diversify her buyer base by establishing supply contracts with independent greengrocers, a direct-to-consumer box scheme, and a local food cooperative — reducing her dependence on a single buyer",
+            "Reduce her seasonal worker numbers to lower costs",
+            "Ask Countdown to pay her more per tray"
+          ],
+          "correctIndex": 1,
+          "explanation": "Diversifying the buyer base directly addresses the root cause of Anika's vulnerability — her high dependence on a single buyer. Multiple supply relationships mean no single event (like a cyclone destroying part of the crop, or Countdown ending the contract) can eliminate her entire revenue stream. Option A addresses debt but not the revenue concentration risk. Option C reduces costs but does not protect revenue. Option D is a short-term tactic that Countdown may reject given their bargaining power."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "Response Strategies for Flow-On Effects",
+      "estimatedMinutes": 4,
+      "notePrompt": "List four specific response strategies from this slide. For each one, write one sentence explaining what type of flow-on effect it is designed to address.",
+      "content": "At Excellence level in AS92030, you must propose how each entity could respond to the flow-on effects they experience. These responses must be specific and practical — not just 'they could manage their finances better.'\n\nHere are the most useful response strategies for NZ financial relationship scenarios:\n\nLoan restructure (for a borrower facing repayment pressure): Contact the bank proactively to request a temporary repayment holiday or extended loan term. Addresses the flow-on effect of reduced income threatening loan repayments.\n\nDiversification (for an entity too dependent on a single relationship): Find additional suppliers, customers, or income sources. Addresses the flow-on effect of vulnerability to one relationship's disruption.\n\nInsurance (for entities exposed to physical or income risk): Ensure adequate crop insurance, business interruption insurance, or income protection. Directly addresses flow-on effects from natural disasters or health events.\n\nGovernment support applications (specific to NZ): Rural Support Trust, MBIE business continuity grants, IRD's COVID or disaster relief provisions, Kāinga Ora emergency housing assistance. Addresses flow-on effects from external events by accessing external support.\n\nContract renegotiation (for entities in formal supply or service agreements): Proactively renegotiate terms when circumstances change significantly. Addresses flow-on effects by adjusting the financial relationship to reflect new realities.\n\nEach response strategy must be linked to a specific flow-on effect in your analysis — not listed generically."
+    },
+    {
+      "type": "scenario",
+      "title": "Excellence Scenario — The Community Trust and Its Major Donor",
+      "estimatedMinutes": 15,
+      "nceaLevel": "Excellence",
+      "setup": "The Tāmaki Community Trust is a not-for-profit organisation in East Auckland that runs youth employment programmes, a food bank, and after-school tutoring. Their annual income: government contract $48,000, Lottery Grants Board grant $22,000, corporate donor (Fletcher Building Foundation) $35,000, individual donations $8,000. Total annual income: $113,000. Annual costs: $108,000. Annual surplus: $5,000.\n\nThe Trust has a KiwiSaver-enrolled staff of six full-time employees. Total annual wages: $312,000 (wait — this is wrong and should be lower for a $113,000 income trust — corrected: six staff at average $18,000 = $108,000 total costs including wages, rent, and programme costs).\n\nEvent: Fletcher Building Foundation announces it is restructuring its community investment programme. The Trust's $35,000 corporate donation will not be renewed for the coming year.",
+      "challenge": "1. Describe the financial relationship between the Trust and Fletcher Building Foundation before the event. Include money flows.\n2. Describe the direct effect of the event on the Trust's financial position (use figures to show the change).\n3. Explain the flow-on effects of this event on the Trust's six employees.\n4. Analyse the extent of interdependence between the Trust and Fletcher Building Foundation. Is it symmetric or asymmetric? Who holds more bargaining power?\n5. Propose specific response strategies for BOTH the Trust AND its employees to address the flow-on effects they face.",
+      "hints": [
+        "For Q2: New annual income = $113,000 − $35,000 = $78,000. Compare to annual costs of $108,000. Calculate the deficit.",
+        "For Q4: Think about how easily Fletcher Building can redirect its $35,000 to another community organisation, versus how hard it is for the Trust to replace $35,000 in funding.",
+        "For Q5: Response strategies must be specific. For the Trust: name actual NZ funding sources they could approach. For employees: think about what happens if the Trust must make redundancies."
+      ],
+      "solution": "1. Financial relationship before the event:\nThe Tāmaki Community Trust has a donor-recipient relationship with the Fletcher Building Foundation. The Fletcher Building Foundation provides an annual grant of $35,000 to the Trust to fund community programmes. Money flows from the Fletcher Building Foundation to the Trust once per year as a grant payment. This is a one-way money flow — the Trust receives the grant but makes no financial payment in return. The relationship is based on the Trust meeting reporting and accountability requirements set by the Foundation.\n\n2. Direct effect on the Trust's financial position:\nAnnual income falls from $113,000 to $78,000 — a reduction of $35,000. Annual costs remain $108,000. The Trust moves from an annual surplus of $5,000 to an annual deficit of $30,000 ($78,000 − $108,000 = -$30,000). If the Trust has no significant reserves, this deficit is unsustainable and will threaten operations within one financial year.\n\n3. Flow-on effects on employees:\nIf the Trust cannot cover its $108,000 cost base on $78,000 income, it will need to either dramatically reduce costs or source replacement funding urgently. A $30,000 deficit relative to $108,000 costs represents a 27.8% shortfall. If cost reductions are required, employee wages — the largest cost category — are at risk. One or two redundancies could bring costs down sufficiently, but each redundancy means a staff member loses their income. At an average wage of $18,000 per person (implied from the scenario), losing two staff would save $36,000 — slightly more than the deficit. Those two staff members would experience complete loss of employment income, requiring them to access government supports such as Work and Income NZ.\n\n4. Extent of interdependence — extent analysis:\nThe relationship is strongly asymmetric. The Tāmaki Community Trust is highly dependent on the Fletcher Building Foundation — the $35,000 grant represents 31% of total annual income, and its loss creates an immediate and serious deficit. The Trust has few quick alternatives for replacing this funding. In contrast, Fletcher Building Foundation has very low dependence on this specific relationship — they direct philanthropic funding to multiple community organisations across NZ and can redirect these funds easily without affecting their own operations. The Foundation holds significantly more bargaining power. The Trust's vulnerability is high; the Foundation's vulnerability is negligible. This asymmetry is common in donor-recipient relationships and reflects a structural inequality in many community funding arrangements.\n\n5. Response strategies:\n\nFor the Trust:\n— Immediately apply to alternative NZ grant funders: Foundation North (which funds East Auckland community organisations), the Lion Foundation, NZ Community Trust, and Auckland Council's Community Empowerment Fund. Each could potentially provide $10,000 to $20,000 in annual funding. Three successful applications could replace the full $35,000 loss.\n— Contact government contract funder (MBIE or MSD) to explore whether the government contract ($48,000) could be extended or increased given the Trust's track record and community need.\n— Launch a targeted community fundraising campaign to increase individual donations from $8,000 toward $15,000 to $20,000, leveraging existing community relationships.\n— Request a meeting with Fletcher Building Foundation to understand the restructure and whether a reduced grant (e.g. $15,000) or a transition support grant for one year might be possible while the Trust secures alternative funding.\n\nFor employees:\n— Employees facing potential redundancy should immediately register with Work and Income NZ to understand their entitlements and access job placement support.\n— KiwiSaver savings (assuming all six staff are enrolled) provide no immediate access to funds as they are locked in until age 65 or first home purchase, so KiwiSaver is not a short-term response option.\n— Employees could use the time before potential redundancy to update their CVs and begin job searching in the community services sector, where their skills are directly transferable.\n— The Trust's HR obligations include providing redundancy consultation and notice periods — employees should be aware of their rights under the Employment Relations Act and the relevant employment agreement."
+    },
+    {
+      "type": "typed",
+      "question": "The Tāmaki Community Trust loses $35,000 in donor income. Their costs remain $108,000. What is their new annual deficit?",
+      "acceptedAnswers": ["$30,000", "30000", "30,000", "-$30,000"],
+      "placeholder": "Type the annual deficit here...",
+      "hint": "New income = $113,000 − $35,000. Deficit = New income − Costs.",
+      "explanation": "New annual income = $113,000 − $35,000 = $78,000. Annual deficit = $78,000 − $108,000 = -$30,000. The Trust now spends $30,000 more per year than it earns. This deficit is unsustainable — without reserve funds, the Trust will exhaust its cash within approximately 12 months and be unable to meet its financial obligations.",
+      "estimatedMinutes": 4
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "title": "Debt and Credit — Staying Out of Trouble",
+  "order": 5,
+  "dayNumber": 5,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Calculate the true cost of consumer debt including credit card interest",
+    "Understand how BNPL services work and when they become dangerous",
+    "Apply the debt avalanche strategy to a NZ debt repayment scenario"
+  ],
+  "vocabulary": [
+    { "term": "Credit card", "definition": "A card allowing you to borrow up to a limit for purchases, repaid later. NZ credit card interest rates in 2025 are typically 18% to 25.99% per annum — charged on any balance not repaid by the due date." },
+    { "term": "BNPL", "definition": "Buy Now Pay Later. Services like Afterpay and Laybuy that split purchases into interest-free instalments. Interest-free if paid on time; fees apply for late payments." },
+    { "term": "Minimum repayment", "definition": "The smallest payment allowed on a credit card debt without incurring a penalty. Paying only the minimum results in very slow debt reduction and very high total interest paid." },
+    { "term": "Interest-free period", "definition": "The window (typically up to 55 days for NZ credit cards) during which no interest is charged if the full balance is paid. Interest is charged on the full amount if any balance remains." },
+    { "term": "Debt avalanche", "definition": "A repayment strategy where you pay minimums on all debts and direct every extra dollar at the highest-interest debt first. Saves the most money in total interest." },
+    { "term": "Debt snowball", "definition": "A repayment strategy where you pay minimums on all debts and direct every extra dollar at the smallest debt first. Faster early wins, psychologically motivating, but more expensive in total interest than the avalanche." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Debt Is Not Free Money",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: What is the difference between 'good debt' and 'bad debt'? Give one NZ example of each.",
+      "content": "Debt is not inherently bad — it depends entirely on what you borrow for and at what cost.\n\nGood debt is borrowing for something that grows in value or generates income. A student loan for a qualification that genuinely increases your earning potential. A mortgage on a home in a growing area. A business loan to buy equipment that generates profit.\n\nBad debt is borrowing for things that lose value immediately or are consumed. Putting a $900 phone on your credit card at 22% interest and not paying it off for 14 months means you paid approximately $1,040 for that phone. A payday loan to cover a night out can take months to clear. Clothing bought on Afterpay that you wear twice and donate.\n\nIn New Zealand, consumer debt — credit cards, BNPL, personal loans — is increasingly common among young people. The advertising makes it look easy and normal. The reality is that consumer debt at high interest rates systematically transfers money from your pocket to the lender's profit.\n\nPractical rule: if you cannot buy it cash from your own account, ask seriously whether you should be buying it now. The exception is large planned purchases — a car, a home — with a clear repayment plan at reasonable rates. Impulse borrowing for wants is almost always a poor financial decision."
+    },
+    {
+      "type": "slide",
+      "title": "Credit Card Interest — The Real Cost",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy Jordan's credit card example. Calculate: at $100 per month repayment, how many months to repay $1,200? How much total interest is paid? Show working.",
+      "content": "Credit cards are one of the most expensive forms of borrowing in NZ. Standard interest rates in 2025 range from 18% to 25.99% per annum.\n\nJordan buys a laptop for $1,200 on his ASB credit card at 22% per annum. He can only afford $100 per month.\n\nMonth 1:\nBalance: $1,200\nMonthly interest: $1,200 x (22% ÷ 12) = $1,200 x 1.8333% = $22.00\nPayment: $100\nNew balance: $1,200 + $22 - $100 = $1,122\n\nMonth 2:\nBalance: $1,122\nInterest: $1,122 x 1.8333% = $20.57\nPayment: $100\nNew balance: $1,042.57\n\nContinuing this way, Jordan takes approximately 14 months to clear the debt and pays approximately $154 in total interest. The laptop costs $1,354, not $1,200.\n\nIf Jordan had saved $100 per month for 12 months first, he would have bought the same laptop for $1,200 — saving $154 and experiencing no debt stress. The cost of impatience: $154 and 14 months of debt.\n\nScale this to a $3,000 holiday on a credit card at minimum repayments (2% of balance), and the total cost exceeds $5,000 with repayment taking over 10 years. Consumer debt compresses future financial freedom."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Paying only the minimum repayment on a $2,000 credit card balance at 22% interest will pay off the debt within 2 years.",
+      "correctAnswer": false,
+      "explanation": "False. Paying only the minimum (typically 2% of balance or $20, whichever is higher) on a $2,000 balance at 22% per annum takes approximately 14 to 16 years to repay and costs over $3,000 in interest — more than the original debt. Minimum payments barely cover the monthly interest charge, leaving the principal almost unchanged month to month. To repay $2,000 within 2 years requires paying approximately $102 per month.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "BNPL — Afterpay and the Hidden Trap",
+      "estimatedMinutes": 4,
+      "notePrompt": "Calculate: Caleb has four simultaneous Afterpay orders of $150 each. Each is split into 4 fortnightly payments. What is his total fortnightly BNPL commitment? How does this compare to his fortnightly take-home pay of $1,326?",
+      "content": "Buy Now Pay Later services like Afterpay, Laybuy, and Zip are extremely popular with NZ young people. Used correctly — all payments made on time — they are genuinely interest-free. Used carelessly, they create a pattern of living beyond your means.\n\nHow Afterpay works in NZ: split any purchase into four equal fortnightly payments. Buy $280 of clothing: pay $70 every two weeks for eight weeks. No interest if you pay on time.\n\nThe late payment problem: missing a payment on Afterpay triggers a $10 late fee in NZ. On a $70 instalment, that is 14.3% of the payment amount. If the second instalment is also missed, a further fee up to 7% of the outstanding order amount applies (capped at $68 per order). The effective annual rate equivalent on a $10 fee for a $70 two-week payment is over 300%.\n\nThe spending behaviour problem: research shows BNPL users spend more per purchase and buy more frequently than cash buyers. The small fortnightly amounts feel manageable even when total commitments are not. Four simultaneous Afterpay orders of $150 each = $600 total commitment = four separate sets of fortnightly payments of $37.50 each = $150 fortnightly in BNPL repayments alone. For a part-time worker earning $663 per week net, this is 22.6% of one week's take-home pay committed to BNPL every fortnight.\n\nBNPL is a tool. Use it deliberately for planned purchases you can afford, pay every instalment on time, and never run more than one order simultaneously."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Smart or Risky? Sort These Financial Behaviours",
+      "estimatedMinutes": 6,
+      "pairs": [
+        { "item": "Paying your full credit card balance before the due date every month", "zone": "Smart" },
+        { "item": "Using Afterpay and paying every instalment on time", "zone": "Smart" },
+        { "item": "Only paying the minimum credit card repayment each month", "zone": "Risky" },
+        { "item": "Saving for 3 months before a large purchase", "zone": "Smart" },
+        { "item": "Running four simultaneous Afterpay orders", "zone": "Risky" },
+        { "item": "Taking a payday loan to cover weekend spending", "zone": "Risky" },
+        { "item": "Using a 0% promotional credit card and repaying before the period ends", "zone": "Smart" },
+        { "item": "Borrowing from a friend without agreeing on repayment terms", "zone": "Risky" }
+      ],
+      "explanation": "Smart use of credit means you have a clear repayment plan, you understand all costs, and you only borrow for genuine needs or well-planned purchases. Risky behaviour is reactive, unplanned, or used to fund wants you cannot actually afford. All debt has a cost — even interest-free BNPL creates behavioural patterns that can lead to chronic overspending.",
+      "estimatedMinutes": 6
+    },
+    {
+      "type": "slide",
+      "title": "Getting Out of Debt — The Avalanche Method",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the debt avalanche steps. Apply them to this debt list: Afterpay $340 (no interest), credit card $1,800 at 22%, personal loan $3,000 at 12.5%. Which debt gets attacked first? Why?",
+      "content": "If you have consumer debt, here is the most financially efficient strategy for eliminating it.\n\nThe Debt Avalanche method:\n\nStep 1: List all debts with balance, interest rate, and minimum monthly payment.\nExample:\n- Afterpay $340: no interest, $85 payment remaining\n- Credit card $1,800 at 22% per annum: minimum $50/month\n- Personal loan $3,000 at 12.5% per annum: minimum $100/month\n\nStep 2: Pay the minimum on every debt each month — do not miss minimums.\n\nStep 3: Direct every extra dollar at the highest-interest debt (credit card at 22%). Pay as much as possible on top of the minimum until it is cleared.\n\nStep 4: When the credit card is cleared, redirect that payment plus the minimum to the next highest-interest debt (personal loan at 12.5%).\n\nStep 5: Continue until all debts are cleared.\n\nWhy avalanche beats snowball mathematically: by eliminating the 22% credit card first, you stop the most expensive interest accumulation fastest. On $1,800 at 22%, every month of delay costs $33. Clearing it 6 months faster saves approximately $198 in interest.\n\nThe snowball method (smallest balance first) gives faster psychological wins — clearing the Afterpay $340 quickly feels good — but costs more in total interest. Choose avalanche for maximum financial benefit, or snowball if you need motivational momentum to stay on track."
+    },
+    {
+      "type": "slide",
+      "title": "NZ Help Resources for Financial Difficulty",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down three NZ resources for financial help. When would you use each one?",
+      "content": "If you or someone you know is struggling financially in New Zealand, help is free, confidential, and accessible.\n\nMoneyTalks (0800 345 123 or moneytalks.co.nz): The NZ government's free financial helpline. Talk to a trained financial mentor who can help you build a budget, understand your debt, and find solutions. No judgement. Available Monday to Friday.\n\nCitizens Advice Bureau (CAB — cab.org.nz): Free, confidential advice on debt, consumer rights, financial entitlements, and more. Walk-in centres in most NZ cities and towns. CAB mentors are volunteers with genuine expertise.\n\nIRD (ird.govt.nz — myIR portal): For questions about tax codes, student loan balances, KiwiSaver details, and income tax. myIR lets you manage your tax affairs online, check what you owe, and set up payment plans if you owe a tax debt.\n\nWork and Income NZ (workandincome.govt.nz): If you are in genuine financial hardship, Work and Income can connect you to emergency assistance, food grants, and free financial mentoring through MSD partnerships.\n\nTenancy Services (tenancy.govt.nz): Specifically for renters experiencing issues with landlords, bond disputes, or rental affordability.\n\nThere is no shame in asking for help with money. Financial literacy is a skill that most people were never properly taught. The people who end up in the most serious financial difficulty are usually the ones who waited too long to ask for help."
+    },
+    {
+      "type": "scenario",
+      "title": "Debt Repayment Scenario — Jordan's Three Debts",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Jordan has three debts:\n1. Afterpay $420 remaining (no interest, 3 payments of $140 each over 6 weeks)\n2. Credit card $1,600 at 22% per annum, minimum repayment $40/month\n3. Personal loan from family $800, no interest, repaying $100/month\n\nJordan has $280 per month available for debt repayment above minimums.\nHis current minimum payments: Afterpay $140 (fortnightly, ≈ $303/month), credit card $40, family loan $100. Total minimums: approximately $443/month.",
+      "challenge": "1. Calculate the monthly interest on Jordan's credit card balance of $1,600 at 22% per annum.\n2. Using the avalanche method, which debt should Jordan attack first with his $280 extra per month, and why?\n3. Once the first debt is cleared (assume the $420 Afterpay clears in 6 weeks as planned), how much extra can Jordan redirect to the avalanche target?\n4. Estimate how many months to repay the credit card at $1,600 if Jordan pays $280 + $40 minimum = $320 per month (ignoring interest for simplicity).\n5. Write a one-paragraph debt repayment plan for Jordan.",
+      "hints": [
+        "Q1: Monthly interest = $1,600 x (22% ÷ 12).",
+        "Q2: Avalanche targets highest interest first. Afterpay has no interest, family loan has no interest, credit card has 22% — clear answer.",
+        "Q4: $1,600 ÷ $320 = months (simplified, ignoring interest accumulation)."
+      ],
+      "solution": "1. Monthly interest on credit card: $1,600 x (0.22 ÷ 12) = $1,600 x 0.01833 = $29.33 per month. Every month Jordan delays attacking the credit card costs him $29.33 in interest.\n\n2. Avalanche target: The credit card at 22% per annum should be attacked first. The Afterpay and family loan have no interest — they are not costing Jordan anything extra. The credit card generates $29.33 in monthly interest charges that compound if unpaid. Directing extra payments here stops the most expensive clock first.\n\n3. After Afterpay clears (6 weeks): Jordan no longer needs to pay $303/month to Afterpay. He can redirect this to the credit card: $280 extra + $303 freed from Afterpay + $40 minimum = $623/month total against the credit card.\n\n4. Months to repay credit card at $320/month (simplified): $1,600 ÷ $320 = 5 months. With interest compounding, actual time is slightly longer — approximately 6 months. Once the Afterpay is cleared and Jordan redirects $623/month, the credit card clears in approximately 3 months from that point.\n\n5. Jordan's debt repayment plan: Jordan should immediately pay the Afterpay minimums ($140 fortnightly) and credit card minimum ($40), plus direct his $280 extra per month at the credit card — bringing total monthly credit card payments to $320. This clears the credit card in approximately 6 months at a total interest cost of roughly $90. Once the Afterpay clears in 6 weeks, he should redirect that freed $303/month to the credit card as well, potentially clearing it in 3 to 4 months total. The family loan ($800 at no interest) can continue at $100/month as planned. Once all consumer debt is cleared, Jordan redirects the full $443/month previously spent on debt repayment to his savings — creating a strong financial foundation within 6 to 8 months."
+    },
+    {
+      "type": "typed",
+      "question": "A $1,600 credit card balance at 22% per annum. What is the monthly interest charge in dollars? Round to 2 decimal places.",
+      "acceptedAnswers": ["$29.33", "29.33", "$29.34", "29.34"],
+      "placeholder": "Type the monthly interest here...",
+      "hint": "Monthly interest = Balance x (Annual rate ÷ 12).",
+      "explanation": "$1,600 x (0.22 ÷ 12) = $1,600 x 0.018333 = $29.33 per month. This $29.33 is added to the balance every month. If Jordan pays only the $40 minimum, $29.33 of it goes to interest and only $10.67 reduces the principal. At that rate, paying off $1,600 would take many years and cost hundreds in interest.",
+      "estimatedMinutes": 4
+    }
+  ]
+}

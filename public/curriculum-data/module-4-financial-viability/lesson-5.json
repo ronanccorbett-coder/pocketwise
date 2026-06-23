@@ -1,0 +1,112 @@
+{
+  "title": "Excellence Skills — Factor Relationships and Evaluating Improvements",
+  "order": 5,
+  "dayNumber": 5,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Evaluate",
+  "nceaFocus": "AS92031: Evaluate financial viability — analyse the relationship between factors and analyse the extent to which improvements would achieve viability",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Analyse how internal and external factors interact to compound their effect on viability",
+    "Evaluate the extent to which proposed improvement strategies would restore financial viability",
+    "Apply Excellence-level analysis to a Māori and Pacific business context"
+  ],
+  "vocabulary": [
+    { "term": "Asymmetric impact", "definition": "When one entity or factor bears a disproportionately large share of the impact from an event or change." },
+    { "term": "Partial improvement", "definition": "A strategy that improves viability but does not fully restore it. Excellence analysis distinguishes between full and partial improvement." },
+    { "term": "Conditional viability", "definition": "When an organisation's viability depends on certain assumptions holding true — for example, achieving a projected sales increase." },
+    { "term": "Everlasting return", "definition": "Ngāi Tahu's vision of sustainable, long-term prosperity for all generations of Ngāi Tahu people. Shapes financial decision-making by prioritising intergenerational value over short-term profit maximisation." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Analysing the Relationship Between Factors",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: What does it mean for two factors to 'compound' each other? Give one example from the KickStart Sports scenario.",
+      "content": "At Excellence in AS92031, you must analyse the RELATIONSHIP between factors — not list them separately. The most important insight is showing how factors compound each other.\n\nCompounding means two factors together create a bigger problem than either would cause alone.\n\nExample: Wiremu's dairy.\nFactor 1 (External): Pak'nSave opens nearby, reducing grocery revenue by $28,000.\nFactor 2 (Internal): High fixed costs — particularly $58,000 wages and $38,400 rent — provide almost no flexibility.\n\nIf Wiremu had lower fixed costs (say $90,000 instead of $125,200), the $28,000 revenue reduction would reduce profit from around $34,000 to $6,000 — painful but survivable. But because his fixed costs are high and cannot be easily reduced, every dollar of lost revenue hits the bottom line directly. The external factor exploits the vulnerability created by the internal factor.\n\nThe relationship between these two factors is this: the external competitive pressure is more damaging than it would otherwise be because of the internal cost structure. Together they produce a loss; either alone might not have — at least not as severe or as quickly.\n\nThis is Excellence-level analysis. Show the mechanism by which two factors interact, explain why their combined effect is greater than the sum of their parts, and use specific figures to support your argument."
+    },
+    {
+      "type": "slide",
+      "title": "Māori Business Context — Financial Viability and Intergenerational Values",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down two ways that the concept of 'everlasting return' might lead Ngāi Tahu to assess financial viability differently from a purely profit-focused private company.",
+      "content": "Financial viability for Māori organisations in New Zealand is assessed through a different lens than for purely commercial entities.\n\nNgāi Tahu Holdings manages assets worth over $2.5 billion in 2025, across tourism, fisheries, property, and retail. Their approach to viability is shaped by their vision of providing an 'everlasting return' — sustainable, long-term prosperity for all generations of Ngāi Tahu people.\n\nThis means that when assessing viability, Ngāi Tahu does not just ask 'are we profitable this year?' They ask: 'Is this decision building financial foundations that will serve our mokopuna in 50 years?'\n\nPractically, this shapes viability assessment in three ways. First, short-term losses may be acceptable if they build long-term capability — investing in sustainable fisheries management reduces yield today but protects stocks and revenue for future generations. Second, reserves are built generously rather than drawn down, because the obligation to future generations requires financial security now. Third, revenue diversification is both a financial strategy and an expression of kaitiakitanga — ensuring no single resource is over-exploited.\n\nFor AS92031, when assessing a Māori organisation's viability, acknowledge this broader definition of sustainability. A Māori tourism operator earning a modest margin while maintaining cultural integrity and employing local iwi members may be 'viable' in the fullest sense — even if its net profit margin appears thin by commercial standards. The quality of the viability must be evaluated alongside the quantity."
+    },
+    {
+      "type": "truefalse",
+      "statement": "If an organisation implements a strategy that reduces its annual deficit from $11,500 to $4,000, the strategy has fully restored financial viability.",
+      "correctAnswer": false,
+      "explanation": "False. An annual deficit of $4,000 is better than $11,500, but the organisation is still not financially viable — it is still spending more than it earns. Viability is restored only when revenue equals or exceeds expenses. A partial improvement reduces the problem but does not solve it. At Excellence level in AS92031, you must evaluate whether a strategy fully or only partially restores viability — and if partial, what additional steps are needed.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Evaluating the Extent of Improvement — The Excellence Move",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the Excellence language for evaluating the extent of improvement. Try using 'this strategy would fully restore viability if...' and 'this strategy would only partially restore viability because...' in two sentences about the dairy scenario.",
+      "content": "Evaluating the extent of improvement means making a judgement: would this strategy FULLY restore viability, PARTIALLY improve it, or potentially WORSEN it if assumptions do not hold?\n\nHere is the language to use:\n\n'Strategy X would fully restore viability — at the projected improvement of $Y, the net result becomes a surplus of $Z, covering all costs with a buffer remaining.'\n\n'Strategy X would only partially restore viability — it reduces the annual deficit from $11,500 to $4,000, but the organisation remains in deficit. A second strategy is needed to achieve full viability.'\n\n'Strategy X is conditionally viable — it achieves full viability only if the projected sales increase of $600 per week is achieved. At a more conservative $350 per week estimate, the net improvement is $3,250, which reduces but does not eliminate the current $3,200 loss.'\n\nThe key move at Excellence is this: you are not just recommending strategies. You are stress-testing them. What happens if the strategy works exactly as planned? What if it works at 70% of the projected level? Does it fully solve the problem, or only partly?\n\nAlways ask: what assumption is this strategy based on? What if that assumption is wrong? That interrogation is Excellence thinking."
+    },
+    {
+      "type": "quiz",
+      "title": "Excellence Analysis Quiz",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Excellence",
+      "questions": [
+        {
+          "question": "Which of the following best analyses the RELATIONSHIP between two factors affecting Wiremu's dairy viability?",
+          "options": [
+            "Pak'nSave is an external factor and high wages are an internal factor.",
+            "Both competition and high wages affect the dairy negatively.",
+            "Pak'nSave's entry reduces revenue by $28,000. This external impact is especially damaging because Wiremu's high fixed costs — wages $58,000 and rent $38,400 — cannot be easily reduced to absorb the loss. If fixed costs were $20,000 lower, the same revenue loss would still leave him profitable. The internal cost structure amplifies the damage from the external competitive threat.",
+            "Wiremu should reduce his wages and find new customers."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C analyses the relationship between factors — showing how the external factor (revenue loss) is made more damaging by the internal factor (high fixed costs). It provides the mechanism (fixed costs cannot be reduced to absorb the loss), a counterfactual (lower fixed costs would maintain profit), and a conclusion (internal structure amplifies external damage). Options A and B identify factors without explaining their interaction. Option D is a recommendation, not analysis."
+        },
+        {
+          "question": "Wiremu's dairy has a net loss of $3,200. Strategy 1 is projected to add $7,600 to net profit. Which Excellence-level evaluation is most accurate?",
+          "options": [
+            "Strategy 1 is a good idea.",
+            "Strategy 1 would help the dairy.",
+            "Strategy 1 would fully restore viability if the projected $600 per week in late-night sales is achieved — the $7,600 improvement turns the $3,200 loss into a $4,400 profit. However, this depends on achieving consistent late-night trade, which may be lower in winter. If sales are only $350 per week, the improvement falls to approximately $3,250, reducing the loss to approximately negative $950 rather than achieving full viability.",
+            "Strategy 1 would improve profit by $7,600."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is Excellence level. It states the full outcome if the strategy succeeds (viability fully restored, $4,400 profit), identifies the key assumption (the $600/week sales estimate), stress-tests that assumption (lower winter sales), calculates the outcome if assumptions do not hold ($3,250 improvement, loss reduced but not eliminated), and draws a conditional conclusion. Options A and B are too vague. Option D states the projected improvement without any evaluation."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "Response Strategy Toolkit for NZ Viability Scenarios",
+      "estimatedMinutes": 4,
+      "notePrompt": "List all five response strategies. For each one, estimate what annual financial improvement it could realistically achieve for Wiremu's dairy. Use the dairy's financial figures to ground your estimates.",
+      "content": "When proposing improvement strategies in AS92031, you need specific, NZ-relevant options. Here is a toolkit of the most effective strategies with their typical mechanisms.\n\nRevenue diversification: Add new income streams that competitors cannot easily replicate. For a corner dairy: extended hours, a locally focused product range, or a parcel collection service. Mechanism — adds new revenue without requiring existing customers to change behaviour.\n\nCost renegotiation: Approach landlords and suppliers proactively to negotiate better terms. Mechanism — reduces fixed costs, improving the profit position regardless of revenue levels. A 10% rent reduction for Wiremu saves $3,840 per year.\n\nProduct mix optimisation: Shift toward higher-margin products. Convenience items like single-serve snacks, drinks, and tobacco products typically carry higher margins than bulk grocery items. Mechanism — improves gross margin percentage even if total revenue stays flat.\n\nMarketing and customer loyalty: Invest in building community loyalty through a simple stamp-card rewards programme or community notice board. Low cost, builds repeat business. Mechanism — retention of existing customers reduces the rate of revenue decline.\n\nGovernment and community support: NZ-specific options include MBIE small business advisory services, local business association support, and for Māori-owned businesses, the Māori and Pacific Business Development Fund. These provide tools and sometimes capital to support recovery. Mechanism — external expertise or funding accelerates the improvement trajectory."
+    },
+    {
+      "type": "scenario",
+      "title": "Excellence Scenario — The Rotorua Community Theatre Under Pressure",
+      "estimatedMinutes": 15,
+      "nceaLevel": "Excellence",
+      "setup": "Revisiting the Rotorua Community Theatre. Current position: revenue $99,000, expenses $92,500, surplus $6,500, reserves $28,000.\n\nTwo events have occurred simultaneously.\n\nEvent 1 (External): Auckland Council announces the $18,000 annual grant will not be renewed.\n\nEvent 2 (Internal): The volunteer director of 12 years has retired. The committee has hired a professional director at $28,000 per year — up from zero (previously volunteer).\n\nNew financial position:\nRevenue: $99,000 minus $18,000 = $81,000\nNew expenses: $92,500 plus $28,000 = $120,500\nNew annual deficit: $81,000 minus $120,500 = negative $39,500\n\nReserves: $28,000\nMonths until reserves exhausted: ($28,000 divided by $39,500) multiplied by 12 = 8.5 months",
+      "challenge": "1. Describe the new financial position. Is the theatre financially viable?\n2. Analyse the RELATIONSHIP between the two factors — how do they compound each other?\n3. Two improvement strategies are proposed:\n   Strategy A: Major donor campaign targeting 10 businesses at $3,500 each = $35,000 new annual revenue.\n   Strategy B: Reduce director to part-time, saving $8,000 per year.\n   Evaluate the EXTENT to which each strategy alone and both combined would restore financial viability. Include what happens if Strategy A achieves only 70% of target.",
+      "hints": [
+        "For Q2: Calculate what the deficit would be if each event had occurred alone. Then compare to the combined $39,500 deficit.",
+        "For Q3: Calculate the financial result under: Strategy A alone (full), Strategy A alone (70%), Strategy B alone, and A plus B combined.",
+        "Excellence language: 'To the extent that...', 'This strategy would fully/partially restore viability because...', 'The strategies would only achieve viability if...'"
+      ],
+      "solution": "1. New financial position: The theatre faces an annual deficit of $39,500 (revenue $81,000 minus expenses $120,500). This is a dramatic deterioration from the previous $6,500 surplus. The theatre is not financially viable. At this rate, the $28,000 in reserves will be exhausted in approximately 8.5 months — before the end of the current financial year. Without immediate action, the theatre faces closure.\n\n2. Relationship between the two factors — compounding analysis:\nIf the grant loss had occurred alone: Revenue would fall to $81,000, creating a deficit of $81,000 minus $92,500 = negative $11,500. Reserves last approximately 2.4 years — serious but manageable with time to act.\nIf the director hire had occurred alone: Expenses rise to $120,500. On unchanged revenue of $99,000, deficit = negative $21,500. Reserves last approximately 1.3 years — significant but the committee would have time to raise funds.\nCombined: Deficit = negative $39,500. Reserves last 8.5 months — an emergency.\n\nThe relationship between the two factors is compounding and directionally aligned: one reduces income while the other simultaneously increases costs. Both push viability in the same negative direction at the same time. The committee made the internal decision (hire a director) without stress-testing whether it remained affordable given the risk of the grant not being renewed. The internal and external factors interact through their timing — occurring simultaneously rather than sequentially — amplifying the combined damage well beyond either factor in isolation.\n\n3. Extent analysis:\n\nStrategy A alone (full $35,000 target):\nNew revenue = $81,000 plus $35,000 = $116,000. Deficit = $116,000 minus $120,500 = negative $4,500. Strategy A alone does NOT fully restore viability. It reduces the deficit from $39,500 to $4,500 — a significant improvement but still a loss position.\n\nStrategy A at 70% ($24,500 raised):\nNew revenue = $81,000 plus $24,500 = $105,500. Deficit = $105,500 minus $120,500 = negative $15,000. At 70% success, Strategy A alone reduces the deficit by $24,500 but viability remains far from restored.\n\nStrategy B alone ($8,000 saving):\nNew expenses = $120,500 minus $8,000 = $112,500. Deficit = $81,000 minus $112,500 = negative $31,500. Strategy B alone reduces the deficit from $39,500 to $31,500 — a partial improvement of $8,000 but the theatre remains deeply non-viable.\n\nStrategies A plus B combined (full targets):\nRevenue = $116,000. Expenses = $112,500. Surplus = $3,500. Viability is fully restored — a small surplus is achieved. However, this requires Strategy A to achieve its full $35,000 fundraising target.\n\nStrategies A (70%) plus B combined:\nRevenue = $105,500. Expenses = $112,500. Deficit = negative $7,000. Even combined, the strategies do not restore viability if the donor campaign falls short. The theatre would remain in deficit and would need a third strategy — such as an additional fundraising event or finding a new ongoing sponsor — to fully close the gap.\n\nConclusion: The committee should implement both strategies immediately. Strategy B (reducing the director to part-time) is a definite saving with no uncertainty. Strategy A (donor campaign) should be pursued with urgency, targeting a minimum of $28,000 (rather than $35,000) as the floor needed to achieve viability when combined with Strategy B. Setting this minimum threshold creates a clear decision point: if the campaign raises less than $28,000 despite best efforts, the committee must consider whether the professional director arrangement is financially sustainable at all."
+    },
+    {
+      "type": "typed",
+      "question": "The theatre's annual deficit is $39,500 and reserves are $28,000. How many months until reserves are exhausted? Round to one decimal place.",
+      "acceptedAnswers": ["8.5", "8.5 months"],
+      "placeholder": "Type the number of months here...",
+      "hint": "Months = (Reserves divided by Annual deficit) multiplied by 12.",
+      "explanation": "($28,000 divided by $39,500) multiplied by 12 = 0.708 multiplied by 12 = 8.5 months. This figure is critical for the viability assessment — despite having $28,000 in reserves, the theatre will be insolvent in under 9 months if nothing changes. This urgency makes the choice and speed of implementing improvement strategies a matter of organisational survival.",
+      "estimatedMinutes": 4
+    }
+  ]
+}

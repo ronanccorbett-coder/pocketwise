@@ -1,0 +1,154 @@
+{
+  "title": "Valuation \u2014 Estimating What a Company Is Worth",
+  "order": 6,
+  "dayNumber": 6,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Apply and Evaluate",
+  "nceaFocus": "Extra Learning \u2014 Company Analysis",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Apply comparable company analysis to value a NZ share",
+    "Use a simplified earnings-based valuation to estimate a target price",
+    "Identify the assumptions and uncertainty in any valuation exercise"
+  ],
+  "vocabulary": [
+    {
+      "term": "Target price",
+      "definition": "An analyst's estimate of where a share price should trade in the next 12 months, based on valuation methodology. Not a guarantee \u2014 an estimate based on assumptions."
+    },
+    {
+      "term": "Price target based on P/E",
+      "definition": "Forecast EPS multiplied by an appropriate P/E multiple. If EPS is expected to be $0.60 and a 20\u00d7 P/E is appropriate, target price = $0.60 \u00d7 20 = $12.00."
+    },
+    {
+      "term": "Sum of the parts (SOTP)",
+      "definition": "Valuing a company by valuing each of its business divisions separately, then adding them together. Useful for conglomerates like Infratil that own multiple distinct businesses."
+    },
+    {
+      "term": "Discount to fair value",
+      "definition": "When a share's market price is below the analyst's estimated intrinsic value. The discount provides a margin of safety."
+    },
+    {
+      "term": "Premium to fair value",
+      "definition": "When a share trades above estimated intrinsic value. Buying at a premium means paying more than fair value \u2014 higher risk if the premium is unjustified."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Simplest Valuation Method \u2014 P/E Based Price Target",
+      "estimatedMinutes": 4,
+      "notePrompt": "Estimate a 12-month price target for Spark NZ: Forecast EPS $0.23, appropriate P/E based on peers is 18\u201320\u00d7. Calculate the target price range.",
+      "content": "The most practical valuation approach for ordinary investors is the earnings-based price target.\n\nFormula: Target price = Forecast EPS \u00d7 Appropriate P/E multiple\n\nStep 1 \u2014 Estimate next year's EPS:\nUse the current EPS and apply a growth rate. If Spark's current EPS is $0.219 and you expect 5% growth: Forecast EPS = $0.219 \u00d7 1.05 = $0.230.\n\nStep 2 \u2014 Choose an appropriate P/E multiple:\nLook at: (a) the company's own historical P/E average, (b) peer companies in the same sector, (c) broader market P/E context.\nFor Spark, NZ telco peers trade at 17\u201322\u00d7 earnings. Given Spark's moderate growth prospects and high yield, 18\u201320\u00d7 seems appropriate.\n\nStep 3 \u2014 Calculate target price range:\nLow: $0.230 \u00d7 18 = $4.14\nHigh: $0.230 \u00d7 20 = $4.60\nTarget price range: $4.14 \u2013 $4.60\n\nCompare to current price:\nCurrent price: $4.18. Target range implies modest upside (0% to +10%).\n\nThis is a one-year forward view \u2014 imprecise but directionally useful. If the share currently trades at $4.18 and your fundamental analysis suggests $4.14\u2013$4.60 is fair, you might conclude it is roughly fairly valued and look elsewhere for better opportunity.\n\nImportant caveat: All assumptions in this model are uncertain. A change in interest rates, a profit warning from management, or a change in sector sentiment can invalidate the analysis quickly. Target prices should always be presented as ranges, not point estimates."
+    },
+    {
+      "type": "slide",
+      "title": "Comparable Company Analysis \u2014 What Are Peers Worth?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Given the peer comparison table, calculate Contact Energy's implied target price range if it should trade at the NZ utilities sector average P/E of 22\u201325\u00d7. Contact's forecast EPS is $0.38.",
+      "content": "Comparable company analysis ('comps') values a company by reference to how similar companies are priced by the market.\n\nNZ utilities sector P/E comparison:\nMeridian Energy: P/E 28\u00d7 | ROE 14% | Dividend yield 3.6% | Renewable-only generator\nGenesis Energy: P/E 18\u00d7 | ROE 11% | Dividend yield 6.2% | Mix of renewable and gas generation\nContact Energy: P/E 23\u00d7 | ROE 10% | Dividend yield 4.6% | Geothermal + gas + hydro\nSector average P/E: approximately 23\u00d7\n\nApplying comps to Contact Energy:\nIf Contact Energy should trade at 22\u201325\u00d7 P/E (sector range, excluding premium Meridian)\nForecast EPS: $0.38 (5% growth from current $0.360)\nTarget price: $0.38 \u00d7 22 = $8.36 low; $0.38 \u00d7 25 = $9.50 high\nCurrent price: $8.35\n\nConclusion: At $8.35, Contact Energy appears roughly fairly valued to slightly discounted compared to its sector peers. The 23\u00d7 sector average implies an $8.74 target \u2014 about 4.7% upside from current price. Not cheap enough to be compelling, but not expensive either.\n\nKey variable: If you believe interest rates will fall significantly (which improves utility valuations), you might assign a higher appropriate P/E (say 27\u00d7) giving a $10.26 target \u2014 implying 23% upside. The sensitivity of valuation to P/E assumptions illustrates why multiple scenarios are important."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A price target calculated using forecast EPS multiplied by an appropriate P/E ratio is a precise prediction of where the share price will be in 12 months.",
+      "correctAnswer": false,
+      "explanation": "False. Price targets are estimates based on assumptions \u2014 forecast EPS (which can be wrong), an appropriate P/E multiple (subjective and dependent on many factors), and time horizon. Professional analysts' price targets are wrong more often than right over 12 months. The value of the exercise is not the precise number but the framework: it forces you to be explicit about growth assumptions and the multiple you are willing to pay, then assess whether the current price is above or below that estimate.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Margin of Safety \u2014 The Most Important Valuation Concept",
+      "estimatedMinutes": 4,
+      "notePrompt": "If your valuation of FPH is $24.00 fair value, at what price would you buy with a 20% margin of safety? At what price would you sell if it reaches fair value?",
+      "content": "Benjamin Graham \u2014 Warren Buffett's mentor \u2014 introduced the concept of the margin of safety: the difference between estimated intrinsic value and the price you pay. The larger the gap, the more protection you have against being wrong.\n\nWhy margin of safety matters:\nEvery valuation is based on assumptions that could prove wrong. If you estimate a company is worth $25 and buy at $24.50, you have almost no buffer \u2014 if your EPS estimate is 5% too optimistic, the fair value falls to $23.75 and you already have a loss.\n\nIf you buy at $20 (20% discount to $25 fair value), you can be 20% wrong on your assumptions and still approximately break even.\n\nMath example \u2014 FPH:\nEstimated intrinsic value: $24.00\n20% margin of safety: buy at $24 \u00d7 (1 \u2212 0.20) = $19.20 or below\nCurrent price: $21.40 \u2014 trading 10.8% above the margin of safety entry point\n\nConclusion: FPH is too expensive for a value investor seeking a 20% margin of safety. A patient investor might watch for a market correction or FPH-specific weakness to bring it to $19.20.\n\nMoments to find margin of safety: market-wide corrections, sector-specific sell-offs, company-specific bad news that is temporary rather than structural (supply chain disruption, one-off costs), or simply when a quality business is overlooked by the market.\n\nWhat happens when you buy with a large margin of safety: even if you are somewhat wrong on the business, the low entry price protects you. And if you are right, the return is exceptional."
+    },
+    {
+      "type": "quiz",
+      "title": "Valuation Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "You estimate Mainfreight's fair value at $80 per share based on forecast EPS of $3.20 and a 25\u00d7 P/E multiple. The current price is $68.50. What is the discount to fair value and would a 15% margin of safety investor buy?",
+          "options": [
+            "14.4% discount to fair value. With a 15% margin of safety requiring purchase below $68 ($80 \u00d7 0.85), the investor would not quite buy at $68.50 \u2014 just above their entry point",
+            "17% discount to fair value. A 15% margin of safety requirement is satisfied at $68.50 since the discount exceeds 15%",
+            "14.4% discount. A 15% margin of safety requires buying at $68 or below ($80 \u00d7 0.85 = $68). At $68.50, the investor is just above their threshold and should wait",
+            "14.4% discount. Any discount above 10% satisfies any margin of safety threshold"
+          ],
+          "correctIndex": 2,
+          "explanation": "Discount to fair value: ($80 \u2212 $68.50) \u00f7 $80 \u00d7 100 = 14.4%. A 15% margin of safety requires buying at $80 \u00d7 (1 \u2212 0.15) = $80 \u00d7 0.85 = $68.00 or below. At $68.50, the investor is 50 cents above their entry threshold \u2014 just slightly too expensive for a strict 15% margin of safety buyer. They would wait for the price to reach $68.00 or set a limit order there."
+        },
+        {
+          "question": "Two analysts value Spark NZ at different prices: Analyst A says $4.60 (20\u00d7 P/E on $0.23 EPS). Analyst B says $4.14 (18\u00d7 P/E on $0.23 EPS). What is the most likely reason for the different valuations?",
+          "options": [
+            "One analyst has inside information about Spark's earnings the other does not",
+            "The EPS forecasts are different \u2014 Analyst A uses a higher growth assumption",
+            "They have used different P/E multiples \u2014 Analyst A believes 20\u00d7 is the appropriate multiple for Spark's growth and quality profile, while Analyst B considers 18\u00d7 more appropriate given competitive pressures on the telco sector",
+            "Analyst B has made a calculation error \u2014 there is only one correct P/E for each company"
+          ],
+          "correctIndex": 2,
+          "explanation": "Both analysts used the same EPS estimate ($0.23) but different P/E multiples (20\u00d7 vs 18\u00d7). Choosing an appropriate P/E multiple is the most subjective and variable part of earnings-based valuation. A more optimistic view of Spark's competitive resilience, dividend sustainability and sector dynamics might justify 20\u00d7; a more cautious view of its narrowing moat and competitive pressure might argue for 18\u00d7. Neither is definitively right \u2014 both are defensible with different underlying assumptions."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Overvalued, Fairly Valued or Undervalued? Sort These Scenarios",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Fair value estimate $20. Current price $14. 30% discount \u2014 well below margin of safety entry.",
+          "zone": "Undervalued"
+        },
+        {
+          "item": "Fair value estimate $15. Current price $18. 20% above fair value with no margin of safety.",
+          "zone": "Overvalued"
+        },
+        {
+          "item": "Fair value estimate $25. Current price $24.50. Trading at 2% discount \u2014 essentially at fair value.",
+          "zone": "Fairly Valued"
+        },
+        {
+          "item": "Forecast EPS $0.40, sector P/E 20\u00d7, implied fair value $8. Current price $6 \u2014 25% below fair value.",
+          "zone": "Undervalued"
+        },
+        {
+          "item": "Forecast EPS $0.55, appropriate P/E 18\u00d7, implied value $9.90. Current price $11.50 \u2014 trading at premium.",
+          "zone": "Overvalued"
+        }
+      ],
+      "explanation": "Valuation is always relative to your estimate of fair value \u2014 which is itself based on assumptions. The margin of safety concept acknowledges that you will sometimes be wrong. By demanding a discount to fair value before buying, you protect against errors in your own analysis."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Sum-of-the-parts (SOTP) valuation is most useful for companies that operate as a single focused business in one industry.",
+      "correctAnswer": false,
+      "explanation": "False. SOTP is most useful for conglomerates and holding companies that own multiple distinct businesses. For example, Infratil owns Vodafone NZ, Wellington Airport, Longroad Energy (US renewables), Qscan Group (radiology) and other assets. Each division has a different earnings profile and appropriate valuation multiple. SOTP values each division separately using appropriate methods, then adds them up (with adjustments for corporate overhead and holding company discount). For a focused single-business company like Mainfreight, a standard P/E or EV/EBITDA multiple approach is more appropriate than SOTP.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "An analyst forecasts FPH EPS of $0.62 next year and believes 38\u00d7 is the appropriate P/E given FPH's growth profile. What is the 12-month price target?",
+      "acceptedAnswers": [
+        "$23.56",
+        "23.56",
+        "$23.56 per share",
+        "23.56 per share"
+      ],
+      "placeholder": "Type the price target here...",
+      "hint": "Target price = forecast EPS \u00d7 P/E multiple.",
+      "explanation": "$0.62 \u00d7 38 = $23.56. If FPH is currently trading at $21.40, this target implies approximately 10.1% upside over 12 months. The 38\u00d7 multiple reflects FPH's consistent EPS growth (typically 10\u201320% per year), global market leadership and high quality earnings. At 38\u00d7 it is at the high end of NZX multiples \u2014 justified if FPH's growth continues, but risky if growth slows.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Your First Valuation",
+      "estimatedMinutes": 5,
+      "prompt": "Using the P/E method, estimate a 12-month price target for any NZ company you have been following. Find the current EPS (from any financial data source), apply a growth rate of your choice, and choose a P/E multiple based on sector peers. Show your working in three steps. How much upside or downside does your target imply from today's price?",
+      "nceaLink": "Extra Learning \u2014 producing your first price target makes all the theory concrete. It will be wrong \u2014 all price targets are \u2014 but the process builds analytical discipline."
+    }
+  ]
+}

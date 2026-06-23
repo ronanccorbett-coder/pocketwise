@@ -1,0 +1,28 @@
+{
+  "title": "What Is the Stock Market?",
+  "description": "Students discover what the stock market is, why it exists, who uses it, and how it connects to everyday NZ life. Foundation concepts before any numbers.",
+  "ageTrack": "14",
+  "yearLevel": "Year 10",
+  "nceaStandard": null,
+  "nceaStandardTitle": null,
+  "nceaCredits": 0,
+  "nceaAssessmentType": "Extra Learning",
+  "durationWeeks": 2,
+  "sessionsPerWeek": 4,
+  "minutesPerSession": 45,
+  "xpReward": 640,
+  "iconName": "trending-up",
+  "colorTheme": "#0e9f6e",
+  "isPublished": true,
+  "order": 10,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "Year 10 introduction to the stock market. No NCEA alignment — focus on genuine conceptual understanding. Students learn what markets are, why companies list on them, who investors are, and how NZ connects to global markets. Written for curiosity and engagement, not compliance.",
+  "learningObjectives": [
+    "Explain what a stock market is and why it exists",
+    "Describe what a share represents and why companies issue them",
+    "Identify the main NZ and global stock exchanges",
+    "Explain who invests in shares and why",
+    "Connect the stock market to everyday NZ life including KiwiSaver"
+  ],
+  "assessmentTask": "Students explain in their own words: what the stock market is, why companies list on it, and how they personally connect to it through KiwiSaver."
+}

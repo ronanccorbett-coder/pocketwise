@@ -1,0 +1,153 @@
+{
+  "title": "IPOs \u2014 How Companies Go Public",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand",
+  "nceaFocus": "Extra Learning \u2014 How Shares Work",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain the IPO process step by step",
+    "Describe why some IPOs succeed and others fail",
+    "Evaluate whether buying IPO shares is a good strategy for ordinary investors"
+  ],
+  "vocabulary": [
+    {
+      "term": "IPO (Initial Public Offering)",
+      "definition": "When a private company sells shares to the public for the first time, listing on a stock exchange and raising capital."
+    },
+    {
+      "term": "Prospectus",
+      "definition": "A legal document published before an IPO describing the company's business, financials, risks and use of the money raised. Investors must read this before investing."
+    },
+    {
+      "term": "Underwriter",
+      "definition": "Usually an investment bank that guarantees the IPO will raise its target amount, buying any unsold shares itself. Takes a fee of 2% to 7% of the amount raised."
+    },
+    {
+      "term": "Oversubscribed",
+      "definition": "When demand for IPO shares exceeds supply. If an IPO is 3\u00d7 oversubscribed, investors applied for 3\u00d7 as many shares as available. Often leads to share price rising on listing day."
+    },
+    {
+      "term": "Stag profit",
+      "definition": "The quick profit made by buying IPO shares and selling on the first day of trading when oversubscribed IPOs often jump in price."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "How an IPO Works",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write the five steps of the IPO process in order. What does the prospectus tell you that you could not find anywhere else?",
+      "content": "When a private company decides to 'go public,' it follows a structured process.\n\nStep 1 \u2014 Decision and preparation (6\u201318 months): The company hires investment banks, auditors and lawyers. Financial records are cleaned up and audited. Management prepares to face public scrutiny.\n\nStep 2 \u2014 Prospectus: A detailed legal document is prepared describing the business model, financial history, future plans, risks, management team, and how the money raised will be used. In NZ this is registered with the Financial Markets Authority (FMA).\n\nStep 3 \u2014 Price setting: The offer price is set based on company valuation. The underwriter conducts a 'bookbuild' \u2014 testing demand from institutional investors to find the price the market will support.\n\nStep 4 \u2014 Public offer: Ordinary investors can apply for shares at the IPO price during the offer period (typically 2\u20134 weeks). Applications are submitted through NZX-registered brokers or the company's online offer platform.\n\nStep 5 \u2014 Listing: Shares are allocated to applicants (scaled back if oversubscribed). The company lists on the exchange and trading begins. The share price immediately finds its market level \u2014 which may be above or below the IPO price."
+    },
+    {
+      "type": "slide",
+      "title": "Famous NZ IPOs",
+      "estimatedMinutes": 4,
+      "notePrompt": "For each NZ IPO example, write: Was it oversubscribed or undersubscribed? Did the share price rise or fall on listing? What does this tell you about predicting IPO performance?",
+      "content": "NZ has had some memorable IPOs in recent years.\n\nMercury Energy (2013): The government sold part of its stake in Mercury (then Mighty River Power) at $2.50 per share as part of the Mixed Ownership Model programme. Strong retail demand. Closed above IPO price on listing day and has been a strong long-term performer.\n\nSolomon's Gold (fictional): Illustrates the risk \u2014 a small mining company lists at $0.50 per share on excitement about gold deposits. IPO is 4\u00d7 oversubscribed. Shares list at $0.90. Within 12 months the gold deposits prove smaller than expected and shares fall to $0.15.\n\nBurger King NZ (Restaurant Brands, private placement): Not a public IPO but illustrates how valuations work \u2014 Restaurant Brands NZ was taken private in 2023 after trading publicly for many years.\n\nThe lesson: IPOs are exciting but unpredictable. Oversubscribed IPOs often jump on listing day (tempting stag profits) but the long-term performance depends entirely on the underlying business. Research consistently shows IPOs underperform the broader market on average over 3-5 years \u2014 because companies tend to list when market conditions favour the seller, not the buyer."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Because an IPO is oversubscribed (too many buyers), the share price almost always continues rising for years after listing.",
+      "correctAnswer": false,
+      "explanation": "False. Oversubscription predicts short-term listing day performance reasonably well \u2014 strong demand often pushes prices up on day one. But long-term performance has no reliable correlation with IPO oversubscription. Many oversubscribed IPOs significantly underperform the broader market over 3\u20135 years. Research shows companies tend to time IPOs when market conditions and their own valuations are most favourable to them as sellers \u2014 which is not necessarily the best time to be a buyer.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "The Prospectus \u2014 What to Read Before Investing",
+      "estimatedMinutes": 4,
+      "notePrompt": "List five sections of an IPO prospectus you should read before applying for shares. Why is the 'risk factors' section often the most important?",
+      "content": "A prospectus is a legal document that must disclose all material information about a company before its IPO. In NZ, it is registered with the FMA. False or misleading statements in a prospectus can result in criminal charges for directors.\n\nKey sections to read:\n\nBusiness description: What does the company actually do? How does it make money? Who are its customers?\n\nFinancial statements: Revenue, profit, debt, cash flow for the past 3 years. Is the company growing? Is it profitable? How much debt does it carry?\n\nUse of proceeds: What will the company do with the money raised? Expansion (positive) or primarily paying off existing investor loans (less positive for new investors)?\n\nRisk factors: Every material risk the company faces \u2014 competition, regulation, key person dependency, economic sensitivity. Companies are legally required to be honest here. Read this section carefully.\n\nManagement team: Who runs the company? Do they have relevant experience? Do they have skin in the game (holding significant shares post-IPO)?\n\nValuation rationale: At what P/E ratio or other multiple is the company being priced? Is this reasonable compared to listed peers?\n\nA company that spends 3 pages on risk factors is being honest. One that has half a page on risks for a complex business is a warning sign."
+    },
+    {
+      "type": "quiz",
+      "title": "IPO Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A NZ tech company IPO is 5\u00d7 oversubscribed \u2014 investors applied for 5 times the available shares. You applied for 1,000 shares. Approximately how many shares are you likely to receive?",
+          "options": [
+            "5,000 shares \u2014 oversubscription means you receive more than you applied for as compensation",
+            "1,000 shares \u2014 your application is guaranteed at IPO price if you apply on time",
+            "Approximately 200 shares \u2014 if scaled back proportionally based on 5\u00d7 oversubscription",
+            "No shares \u2014 oversubscribed IPOs only allocate shares to institutional investors"
+          ],
+          "correctIndex": 2,
+          "explanation": "In a 5\u00d7 oversubscribed IPO, allocations are typically scaled back proportionally. If you applied for 1,000 shares at 5\u00d7 oversubscription, you receive approximately 1,000 \u00f7 5 = 200 shares (though the exact allocation method varies \u2014 some IPOs prioritise smaller retail applications, some scale back all applications equally)."
+        },
+        {
+          "question": "A mining company's IPO prospectus has 2 pages covering company history and vision, and 18 pages of detailed risk factors. What should this suggest to an investor?",
+          "options": [
+            "The company is poorly managed \u2014 a well-run company would have fewer risks to disclose",
+            "The company's lawyers are unnecessarily cautious and risk-averse",
+            "The company is being relatively honest and thorough about its risks \u2014 extensive risk disclosure is a sign of good faith and regulatory compliance, not necessarily a sign to avoid",
+            "The IPO will definitely underperform because so many risks are listed"
+          ],
+          "correctIndex": 2,
+          "explanation": "Extensive risk disclosure is generally a positive sign \u2014 it means management and lawyers are being honest about what could go wrong. Minimal risk factors in a complex business is the actual warning sign. Reading the risk factors carefully lets you decide whether you are comfortable with the specific risks. No investment is risk-free and a prospectus that pretends otherwise is misleading."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "IPO Process \u2014 Put It in the Right Order",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Company hires investment banks and auditors \u2014 preparation begins",
+          "zone": "Step 1"
+        },
+        {
+          "item": "Prospectus written and registered with the FMA",
+          "zone": "Step 2"
+        },
+        {
+          "item": "Bookbuild with institutional investors to set the offer price",
+          "zone": "Step 3"
+        },
+        {
+          "item": "Public offer period \u2014 retail investors apply for shares",
+          "zone": "Step 4"
+        },
+        {
+          "item": "Shares allocated and company begins trading on the NZX",
+          "zone": "Step 5"
+        }
+      ],
+      "explanation": "The IPO process typically takes 6 to 18 months from decision to listing. The prospectus is the critical document \u2014 it must be honest and complete. The bookbuild sets the price based on institutional demand. Once trading begins, the market takes over and prices reflect continuous buyer-seller interactions."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Research shows IPO shares consistently outperform the broader market index over a 3 to 5 year period after listing.",
+      "correctAnswer": false,
+      "explanation": "False. Academic research consistently shows that on average, IPOs underperform the broader market index over 3 to 5 years. The reason: companies tend to time their IPOs when their business and market conditions are most favourable to them as sellers \u2014 meaning the public is often buying at a peak of optimism. The exception is oversubscribed IPOs of genuinely exceptional businesses, but identifying these in advance is difficult.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What is the legal document published before an IPO that must disclose the company's business, financials, risks and use of money raised?",
+      "acceptedAnswers": [
+        "prospectus",
+        "Prospectus",
+        "the prospectus"
+      ],
+      "placeholder": "Type the document name here...",
+      "hint": "It starts with P and is a legal requirement for NZ IPOs.",
+      "explanation": "The prospectus is the foundational document for any IPO. In NZ it must be registered with the Financial Markets Authority (FMA). Directors face legal liability for false or misleading statements in a prospectus \u2014 which is why the risk factors section tends to be thorough. Reading the prospectus is the single most important thing an investor can do before participating in an IPO.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Would You Participate in an IPO?",
+      "estimatedMinutes": 5,
+      "prompt": "Imagine a popular NZ technology company is about to IPO. The company makes software used by 60% of NZ businesses. The IPO is 4\u00d7 oversubscribed. The offer price implies a P/E ratio of 45\u00d7 earnings. Based on what you have learned, would you apply for shares? What information from the prospectus would you check first? What would make you say no?",
+      "nceaLink": "Extra Learning \u2014 critical thinking about IPOs is one of the most valuable skills for any investor."
+    }
+  ]
+}

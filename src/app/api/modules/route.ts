@@ -2,30 +2,42 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-const CURRICULUM_DIR = path.join(process.cwd(), "curriculum-data");
+// Try multiple possible locations for curriculum data
+function getCurriculumDir(): string | null {
+  const candidates = [
+    path.join(process.cwd(), "curriculum-data"),
+    path.join(process.cwd(), "public", "curriculum-data"),
+    path.join(process.cwd(), "src", "curriculum-data"),
+    path.join("/var/task", "curriculum-data"),
+    path.join("/var/task", "public", "curriculum-data"),
+  ];
+  for (const dir of candidates) {
+    if (fs.existsSync(dir)) return dir;
+  }
+  return null;
+}
 
 export async function GET(req: NextRequest) {
   const folder = req.nextUrl.searchParams.get("folder");
+  const CURRICULUM_DIR = getCurriculumDir();
 
-  if (!fs.existsSync(CURRICULUM_DIR)) {
-    return NextResponse.json({ modules: [] });
+  if (!CURRICULUM_DIR) {
+    return NextResponse.json({ modules: [], error: "curriculum-data not found", cwd: process.cwd() });
   }
 
   // Return specific module with all lessons
   if (folder) {
     const modPath = path.join(CURRICULUM_DIR, folder);
     if (!fs.existsSync(modPath)) {
-      return NextResponse.json({ error: "Module not found" }, { status: 404 });
+      return NextResponse.json({ error: "Module not found: " + modPath }, { status: 404 });
     }
     try {
       const modJson = JSON.parse(fs.readFileSync(path.join(modPath, "module.json"), "utf8"));
-      // Load all lesson files
       const lessons: any[] = [];
       for (const lesson of (modJson.lessons ?? [])) {
         const lessonPath = path.join(modPath, lesson.filename);
         if (fs.existsSync(lessonPath)) {
-          const lessonJson = JSON.parse(fs.readFileSync(lessonPath, "utf8"));
-          lessons.push(lessonJson);
+          lessons.push(JSON.parse(fs.readFileSync(lessonPath, "utf8")));
         }
       }
       return NextResponse.json({ ...modJson, lessons });
@@ -44,14 +56,13 @@ export async function GET(req: NextRequest) {
       if (!fs.existsSync(modFile)) continue;
       try {
         const mod = JSON.parse(fs.readFileSync(modFile, "utf8"));
-        // Count lesson files
         const lessonCount = fs.readdirSync(path.join(CURRICULUM_DIR, entry.name))
           .filter(f => f.startsWith("lesson-") && f.endsWith(".json")).length;
         modules.push({ ...mod, folder: entry.name, lessonCount });
       } catch {}
     }
     modules.sort((a, b) => (a.order ?? 99) - (b.order ?? 99));
-    return NextResponse.json({ modules });
+    return NextResponse.json({ modules, dir: CURRICULUM_DIR });
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }

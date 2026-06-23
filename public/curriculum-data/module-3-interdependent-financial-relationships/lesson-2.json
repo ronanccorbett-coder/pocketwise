@@ -1,0 +1,160 @@
+{
+  "title": "Money Flows and Events",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "AS92030: Describe how money flows between entities and describe how an event affects the financial relationship",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Describe with specific figures how money flows between entities in a NZ financial relationship",
+    "Identify how a given event changes the money flows in a relationship",
+    "Describe the immediate effect of an event on each entity in the relationship"
+  ],
+  "vocabulary": [
+    {
+      "term": "Event",
+      "definition": "Something that happens that changes the financial relationship between entities. Events can be internal (a business decision) or external (economic change, natural disaster, law change)."
+    },
+    {
+      "term": "Direct effect",
+      "definition": "The immediate financial consequence of an event on a specific entity. The first thing that changes for that entity as a direct result of the event."
+    },
+    {
+      "term": "Two-way flow",
+      "definition": "A money flow that goes in both directions — for example, a loan flows from bank to business, and repayments flow back from business to bank."
+    },
+    {
+      "term": "One-way flow",
+      "definition": "A money flow that goes only in one direction — for example, a government grant flows from the government to a community organisation with no repayment expected."
+    },
+    {
+      "term": "Credit terms",
+      "definition": "An arrangement where a buyer receives goods or services now and pays later. Common in business-supplier relationships. Creates a short-term financial dependency."
+    },
+    {
+      "term": "Variable interest rate",
+      "definition": "An interest rate that can change over time, typically linked to the RBNZ's Official Cash Rate. When the OCR rises, variable rate loans become more expensive."
+    },
+    {
+      "term": "Principal",
+      "definition": "The original amount of money borrowed in a loan, before interest is added."
+    },
+    {
+      "term": "Interest",
+      "definition": "The cost of borrowing money, usually expressed as a percentage of the principal per year. Interest flows from the borrower to the lender as part of loan repayments."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Recap — Financial Relationships",
+      "estimatedMinutes": 4,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Which of the following correctly identifies both entities AND the direction of money flow in a landlord-tenant relationship?",
+          "options": [
+            "Money flows from the landlord to the tenant as rent payments",
+            "Money flows from the tenant to the landlord as rent payments",
+            "Money flows in both directions equally between tenant and landlord",
+            "No money flows — the landlord provides housing for free"
+          ],
+          "correctIndex": 1,
+          "explanation": "In a landlord-tenant relationship, money flows from the tenant to the landlord as rent payments. The landlord provides accommodation (a service), and the tenant pays for that service (rent). This is a predominantly one-directional money flow — though the landlord may also spend money on property maintenance and insurance, which are costs associated with the relationship."
+        },
+        {
+          "question": "In a three-entity relationship between an employee, employer, and IRD, which entity sends money to IRD?",
+          "options": [
+            "The employee sends PAYE directly to IRD",
+            "The employer deducts PAYE from wages and sends it to IRD on the employee's behalf",
+            "IRD sends money to both the employee and employer",
+            "Neither sends money — IRD collects it directly from bank accounts"
+          ],
+          "correctIndex": 1,
+          "explanation": "The employer deducts PAYE from the employee's gross wages and pays it directly to IRD. The employee does not send money to IRD themselves in a standard employment relationship — the employer handles this obligation. This makes the employer a key intermediary in the employee-IRD financial relationship."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "Describing Money Flows Precisely",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the three-part formula for describing a money flow. Then apply it to describe the money flow between a sports club and its bank that has provided a $10,000 loan at 9% per annum over 2 years.",
+      "content": "In AS92030, describing a money flow means more than saying 'money goes from A to B.' You need to specify the amount, the reason, and the direction — and if the flow is ongoing, how often it occurs.\n\nA complete money flow description has three parts:\n1. Who sends the money\n2. What the money is (e.g. loan principal, interest, rent, wages, PAYE, grant)\n3. Who receives it — and how often or under what conditions\n\nExample — Business and bank relationship:\nInitial flow: 'Kiwibank transfers $50,000 in loan principal to Aroha's Café Ltd's bank account. Money flows from Kiwibank to the café.'\nOngoing flow: 'Each month, Aroha's Café Ltd pays $1,050 to Kiwibank as a loan repayment. This repayment includes $900 in principal reduction and $150 in interest. Money flows from the café to Kiwibank monthly.'\n\nExample — Government grant:\n'The Lotteries Commission transfers a one-off grant of $12,000 to the Gisborne Rowing Club's bank account. Money flows from the Lotteries Commission to the club. No repayment is required — this is a one-way flow.'\n\nPrecise language and specific figures distinguish a strong AS92030 response from a vague one."
+    },
+    {
+      "type": "slide",
+      "title": "How Events Change Financial Relationships",
+      "estimatedMinutes": 4,
+      "notePrompt": "List five different types of events from this slide. For each, write one sentence describing the immediate effect on one of the entities in the relationship.",
+      "content": "Every financial relationship exists in a state of relative stability — until an event changes things. In AS92030, the event is the turning point in your analysis.\n\nEvents can change financial relationships in several ways:\n\nThey can increase or decrease the amount of money flowing. A business increases its order from a supplier — more money flows to the supplier. A tenant loses their job and cannot pay rent — less money flows to the landlord.\n\nThey can stop a money flow entirely. A business closes — the bank loses repayments. A grant is not renewed — the community organisation loses funding.\n\nThey can reverse the direction of a flow. A bank calls in a loan early — instead of receiving regular small repayments, it demands a large immediate payment from the business.\n\nThey can introduce a new flow. A natural disaster causes damage — the insurance company must now pay a claim to the business. A new money flow begins.\n\nThey can change the cost of the flow. The RBNZ raises the OCR — the interest rate on a variable-rate loan rises, meaning the business must pay more per repayment.\n\nIn your NCEA exam, read the event carefully and ask: what specifically changes about the money flow? That is your description of the event's effect on the relationship."
+    },
+    {
+      "type": "slide",
+      "title": "Worked Example — The Interest Rate Event",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy this worked example into your notes. Calculate: if the interest rate rises from 7.5% to 9.5% on a $60,000 loan, how much more does the business pay per year? Show your working.",
+      "content": "Let's work through a complete event analysis using a real NZ scenario.\n\nEntities: Mia's Flower Shop Ltd and Westpac New Zealand.\n\nRelationship: Westpac provided a $40,000 business loan to Mia's Flower Shop at a variable interest rate of 7.5% per annum, repaid over 4 years. Monthly repayment: approximately $960.\n\nMoney flows before the event:\n— Westpac transferred $40,000 to Mia's business account (one-time, at loan establishment)\n— Mia's Flower Shop pays $960 per month to Westpac (monthly, ongoing)\n— Of this $960, approximately $250 is interest and $710 is principal\n\nThe event: The Reserve Bank of New Zealand raises the Official Cash Rate by 1%, causing Westpac to increase the variable rate on Mia's loan from 7.5% to 8.5% per annum.\n\nEffect on the relationship:\nMia's monthly repayment increases from approximately $960 to approximately $993 — an increase of $33 per month or $396 per year.\nThe interest component of each repayment increases. More money now flows from Mia's Flower Shop to Westpac per month.\n\nDirect effect on Mia's Flower Shop: Her monthly costs increase by $33. Over the remaining loan term this is a significant additional expense that reduces her profit margin.\n\nDirect effect on Westpac: It receives more interest income per month from Mia's account."
+    },
+    {
+      "type": "truefalse",
+      "statement": "When the RBNZ raises the Official Cash Rate, only businesses with loans are affected — individuals and households are not part of this financial relationship.",
+      "correctAnswer": false,
+      "explanation": "False. The OCR affects all borrowers — including households with home mortgages, individuals with personal loans, and businesses with term loans or overdrafts. In NZ, millions of households have mortgages with variable or floating rates that change when the OCR changes. The OCR is one of the most far-reaching events in NZ financial relationships because it flows through the banking system to affect almost every entity with debt.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Describing the Effect of an Event — Structure",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the four-part structure for describing an event's effect. Apply it to the following event: A supplier raises prices by 20% on all goods sold to a dairy. Describe the effect on both entities.",
+      "content": "When describing how an event affects a financial relationship in AS92030, use this four-part structure to make sure your answer is complete.\n\nStep 1 — Name the event clearly. 'The RBNZ raised the Official Cash Rate by 1%, causing Westpac to increase Mia's loan interest rate from 7.5% to 8.5%.'\n\nStep 2 — Describe the change to the money flow. 'Mia's monthly loan repayment increases from $960 to $993 — an increase of $33 per month. More money now flows from Mia's Flower Shop to Westpac.'\n\nStep 3 — Describe the direct effect on Entity 1. 'For Mia's Flower Shop, the increased repayment adds $396 to annual costs. This reduces net profit, assuming revenue stays constant.'\n\nStep 4 — Describe the direct effect on Entity 2. 'For Westpac, the rate increase means it receives approximately $396 more in annual interest income from Mia's account alone. Across Westpac's full loan book, OCR increases generate significant additional interest income.'\n\nThis four-part structure covers the Achieved requirement in AS92030: describe how money flows, describe the relationship, and describe how an event affects it. Make sure all four parts include specific figures wherever possible."
+    },
+    {
+      "type": "scenario",
+      "title": "Event Analysis Scenario — Ethan's Café and His Supplier",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Ethan runs a café in Rotorua called Lakeside Brew. He purchases coffee beans, milk, and baking supplies from a single supplier, NZ Fresh Supplies Ltd, on 30-day credit terms. Each month, Ethan orders $3,200 worth of supplies. NZ Fresh Supplies delivers weekly and invoices monthly.\n\nEvent: Due to rising transportation and fuel costs, NZ Fresh Supplies announces a 12% price increase on all supplies, effective immediately.",
+      "challenge": "1. Describe the financial relationship between Ethan's café and NZ Fresh Supplies before the event. Include the money flow direction and amounts.\n2. Calculate the new monthly cost of supplies after the 12% price increase.\n3. Describe how the event changes the money flow between the two entities.\n4. Describe the direct effect of the event on (a) Ethan's café and (b) NZ Fresh Supplies.",
+      "hints": [
+        "For question 2: 12% of $3,200 = $384. New monthly cost = $3,200 + $384.",
+        "For question 4: Think about what changes for each entity. For Ethan, his costs increase. For NZ Fresh Supplies, their revenue per delivery increases — but consider whether Ethan might respond."
+      ],
+      "solution": "1. Financial relationship before the event:\nLakeside Brew and NZ Fresh Supplies have a business-supplier relationship. NZ Fresh Supplies delivers supplies worth $3,200 per month to Lakeside Brew on 30-day credit terms. Money flows from NZ Fresh Supplies to Lakeside Brew in the form of stock (goods), and then 30 days later, money flows from Lakeside Brew back to NZ Fresh Supplies as payment of $3,200. This is a two-way flow: goods flow one direction, money flows the other.\n\n2. New monthly cost:\n12% of $3,200 = $384\nNew monthly cost = $3,200 + $384 = $3,584\n\n3. Change to the money flow:\nThe event increases the monthly payment Lakeside Brew makes to NZ Fresh Supplies from $3,200 to $3,584 — an increase of $384 per month. The direction of the flow does not change (money still flows from the café to the supplier), but the amount of money flowing from café to supplier increases by $384 per month.\n\n4. Direct effects:\n(a) Ethan's café: Monthly supply costs increase by $384 (from $3,200 to $3,584). If Ethan's café has fixed menu prices and does not pass on the cost increase to customers, his monthly profit decreases by $384 — equivalent to $4,608 per year. This reduces his net profit margin and may put pressure on his ability to meet other financial obligations such as rent and loan repayments.\n\n(b) NZ Fresh Supplies Ltd: The 12% price increase means NZ Fresh Supplies receives $384 more from Lakeside Brew each month. Across all their customers, this increase improves their revenue, helping them recover rising fuel and transportation costs. However, if customers like Ethan reduce orders or switch suppliers in response, the revenue increase may be partly or fully offset."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Classify the Event Type",
+      "pairs": [
+        { "item": "The RBNZ raises the Official Cash Rate by 0.5%", "zone": "External Economic Event" },
+        { "item": "A business owner decides to increase their monthly order from a supplier", "zone": "Internal Business Decision" },
+        { "item": "Cyclone Gabrielle damages a Hawke's Bay business's premises", "zone": "External Natural Event" },
+        { "item": "The government increases the minimum wage to $23.15 per hour", "zone": "External Government/Law Change" },
+        { "item": "A supplier runs out of stock and cannot fulfil an order", "zone": "External Supply Chain Event" },
+        { "item": "A business misses a monthly loan repayment to its bank", "zone": "Internal Financial Event" }
+      ],
+      "explanation": "Events in AS92030 come in different forms. External events (economic changes, natural disasters, government decisions, supply chain disruptions) are outside the control of the entities in the relationship. Internal events (business decisions, missed payments) originate from within one of the entities. Understanding the type of event helps you explain why it occurred and what options each entity has to respond.",
+      "estimatedMinutes": 6
+    },
+    {
+      "type": "slide",
+      "title": "The Importance of Specific Figures",
+      "estimatedMinutes": 4,
+      "notePrompt": "Rewrite this weak response as a strong one: 'When costs went up, the café had less money and the supplier got more money.' Make it specific with at least two dollar amounts.",
+      "content": "One of the most common weaknesses in AS92030 exam responses is vague language without specific figures. Compare these two answers describing the same event.\n\nWeak response: 'When the supplier raised prices, Ethan had to pay more money. This affected his profit. The supplier got more money from Ethan.'\n\nStrong response: 'NZ Fresh Supplies' 12% price increase raises Ethan's monthly supply cost from $3,200 to $3,584 — an increase of $384 per month. This reduces Lakeside Brew's monthly gross profit by $384, assuming menu prices remain unchanged. NZ Fresh Supplies receives $384 more per month from Lakeside Brew, helping to offset their rising fuel costs.'\n\nThe strong response:\n— Names the specific percentage increase (12%)\n— States the dollar amounts before and after ($3,200 to $3,584)\n— Calculates the change ($384)\n— Connects it to a financial outcome (reduced profit, offset costs)\n\nIn the NCEA external exam, marks are awarded for accuracy and specificity. You will be given figures in the scenario — use them. Calculate. Show the numbers. A response with no dollar amounts will never reach Merit or Excellence in this standard."
+    },
+    {
+      "type": "typed",
+      "question": "Ethan's café monthly supply cost increases from $3,200 to $3,584 due to a 12% price rise. How much more does he pay per year?",
+      "acceptedAnswers": ["$4,608", "4608", "4,608"],
+      "placeholder": "Type the annual increase here...",
+      "hint": "Monthly increase × 12 months.",
+      "explanation": "Monthly increase = $3,584 − $3,200 = $384. Annual increase = $384 × 12 = $4,608. This figure is important for understanding the full financial impact of the event on Lakeside Brew. A $384/month increase sounds modest, but $4,608/year is a significant additional cost for a small café — it could represent the difference between a profitable and unprofitable year.",
+      "estimatedMinutes": 4
+    }
+  ]
+}

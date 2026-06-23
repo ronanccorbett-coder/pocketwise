@@ -1,0 +1,143 @@
+{
+  "title": "Module 4 Review \u2014 Writing Your Investment Thesis",
+  "order": 8,
+  "dayNumber": 8,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Apply, Analyse and Evaluate",
+  "nceaFocus": "Extra Learning \u2014 Company Analysis",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Demonstrate mastery of all company analysis frameworks from Module 4",
+    "Produce a complete investment thesis for a NZ company covering all key dimensions",
+    "Evaluate the quality of a peer's investment thesis using a structured rubric"
+  ],
+  "vocabulary": [],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Complete Investment Thesis \u2014 Structure",
+      "estimatedMinutes": 3,
+      "notePrompt": "Without looking at your notes, write the six components of a complete investment thesis. Then check this slide and identify any you missed.",
+      "content": "Module 4 taught you to analyse companies from every angle. A complete investment thesis synthesises all these dimensions.\n\n1. Business description: What does the company do? How does it make money? What industry is it in? Keep it to 2\u20133 sentences.\n\n2. Competitive moat: What protects this business from competition? Wide, narrow or none? Is the moat widening or narrowing? Cite specific evidence.\n\n3. Management assessment: Track record under current leadership. Capital allocation quality. Insider ownership. Any red flags?\n\n4. Key financial metrics: EPS, EPS growth trend, P/E (current and historical average), ROE, gross margin trend, free cash flow vs profit, D/E ratio. Identify 2\u20133 metrics that most distinguish this company from peers.\n\n5. Valuation: Estimate fair value using P/E method. Calculate margin of safety. Is the share cheap, fairly valued or expensive vs your estimate?\n\n6. Risks and mitigants: List the top 3 risks. For each: probability (low/medium/high), severity (low/medium/high), and what you would watch for to identify if the risk is materialising.\n\nFinish with: Recommendation (buy/hold/sell), price target range, and one key variable you will monitor to decide whether to revisit the thesis."
+    },
+    {
+      "type": "scenario",
+      "title": "Full Investment Thesis \u2014 Infratil Limited (IFT)",
+      "estimatedMinutes": 27,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "Infratil Limited (NZX: IFT) is a NZ infrastructure investment company. It owns stakes in: Vodafone NZ (telecommunications, 100% owned), Wellington Airport (66% owned), Longroad Energy (US renewable energy development, 43.1%), Qscan Group (Australian radiology, 47%), CDC Data Centres (Australia/NZ data centres, 48%), and RetireAustralia (retirement villages, 100%).\n\nFinancial data (FY2024):\nShare price: $11.20\nShares on issue: 700 million\nNet profit: $280 million\nShareholders' equity: $2,580 million\nTotal debt (Infratil parent level): $600 million\nAnnual dividend: $0.165/share (partially imputed)\nCapital expenditure invested in subsidiaries: $650 million\nOperating cash flow from subsidiaries (dividends up): $320 million\n\nCEO Jason Boyes has led since 2022. Predecessor (Marko Bogoievski) led from 2008 to 2022 \u2014 compound return to shareholders during that period was approximately 18% per annum.\n\nHistorical P/E range: 22\u00d7 to 40\u00d7 (wide range due to valuation method complexity)\nMoody's credit rating: Baa2 (investment grade)\n\nIFT valuation note: Infratil is typically valued using Sum of Parts (SOTP) \u2014 each subsidiary is valued separately and added together, minus net debt, divided by shares.",
+      "challenge": "Write a complete investment thesis for Infratil covering all six sections:\n\n1. Business description (3 sentences)\n2. Competitive moat \u2014 what type, how strong, is it widening or narrowing?\n3. Management \u2014 assess track record, alignment, any concerns\n4. Key financial metrics \u2014 calculate EPS, P/E, dividend yield, ROE, D/E\n5. Valuation \u2014 attempt a P/E-based target price range. Note any limitations of standard P/E for Infratil.\n6. Top 3 risks with probability/severity rating\n\nConclude with: Buy / Hold / Sell recommendation at $11.20, your 12-month price target range, and one key variable you will monitor.",
+      "hints": [
+        "Q4: EPS = $280M \u00f7 700M. P/E = $11.20 \u00f7 EPS. Dividend yield = $0.165 \u00f7 $11.20. ROE = $280M \u00f7 $2,580M. D/E = $600M \u00f7 $2,580M.",
+        "Q5: P/E approach is limited because NPAT for a holding company is affected by unrealised gains/losses on subsidiaries. The SOTP approach values each subsidiary separately \u2014 but requires more information than provided. Note this limitation.",
+        "Q6: Think about: regulatory risk (Vodafone NZ), interest rate sensitivity (infrastructure assets), key person risk (new CEO), currency risk (US and Australian assets)."
+      ],
+      "solution": "1. Business description: Infratil is a NZ-listed infrastructure investment company that owns stakes in essential services businesses across telecommunications (Vodafone NZ), airports (Wellington Airport), renewable energy (Longroad Energy, USA), data centres (CDC Data Centres), radiology (Qscan) and retirement living (RetireAustralia). Its business model is to identify high-quality infrastructure assets, invest patient capital, and generate long-term total returns through a combination of dividend income and capital growth in the underlying assets. With over $9 billion in assets under management, Infratil is one of NZ's largest listed investment vehicles.\n\n2. Competitive moat: Infratil's moat at the parent company level is its ability to identify and access high-quality infrastructure investment opportunities that ordinary investors cannot access directly. Its long track record, deal sourcing capabilities, patient capital base and experienced management team create a sourcing and governance advantage. Each subsidiary has its own moat: CDC Data Centres (efficient scale in Australian data centre market), Wellington Airport (natural monopoly in Wellington's air gateway), Vodafone NZ (telco infrastructure). Moat appears to be widening in the high-growth data centre and renewable energy investments.\n\n3. Management: The predecessor CEO's 18% compound return over 14 years is an outstanding track record. Current CEO Jason Boyes joined in 2022 \u2014 insufficient track record to assess yet. The $650M annual capex in subsidiaries indicates an actively investing, growth-oriented approach. Key concern: Boyes is relatively new to the CEO role and must demonstrate he can identify the same quality opportunities as his predecessor.\n\n4. Financial metrics:\nEPS = $280M \u00f7 700M = $0.40/share\nP/E = $11.20 \u00f7 $0.40 = 28\u00d7\nDividend yield = $0.165 \u00f7 $11.20 \u00d7 100 = 1.47%\nROE = $280M \u00f7 $2,580M \u00d7 100 = 10.8%\nD/E = $600M \u00f7 $2,580M = 0.23\u00d7\n\nNote: NPAT for Infratil includes fair value movements in subsidiaries which distort year-to-year comparisons. The 10.8% ROE understates the true capital efficiency of the underlying businesses.\n\n5. Valuation: P/E target using 25\u201332\u00d7 range (appropriate for a premium infrastructure company with proven track record): $0.40 \u00d7 25 = $10.00 (low) to $0.40 \u00d7 32 = $12.80 (high). Current price $11.20 sits near the middle of this range \u2014 suggesting fair to slight premium valuation. Limitation: NPAT-based P/E is imprecise for Infratil because parent NPAT includes unrealised subsidiary gains. SOTP valuation would be more appropriate but requires detailed subsidiary valuations not available here.\n\n6. Top 3 risks:\n(a) Interest rate risk (High probability, Medium severity): Infratil's infrastructure assets are valued using DCF with long-term discount rates \u2014 rising rates reduce these valuations. If rates remain elevated longer than expected, Infratil's subsidiary book values (and therefore SOTP valuation) decline. CDC Data Centres particularly exposed.\n(b) Regulatory risk \u2014 Vodafone NZ (Medium probability, Medium severity): Vodafone NZ faces the same competitive pressures and regulatory oversight as Spark. MBIE regulatory intervention in mobile pricing could compress Vodafone NZ's earnings.\n(c) Key person risk \u2014 CEO succession (Low probability, High severity): The proven capability of the predecessor CEO was a major competitive advantage. If Boyes proves unable to identify equivalent investment opportunities or makes a large bad acquisition, the premium valuation would erode.\n\nRecommendation: HOLD at $11.20. Infratil is a high-quality NZ infrastructure vehicle with an exceptional long-term track record and diversified exposure to essential services businesses. The 28\u00d7 P/E is not cheap \u2014 but is appropriate for the quality and long-term compounding potential of the business. Key variable to monitor: CDC Data Centres' performance \u2014 the fastest-growing and potentially most valuable Infratil subsidiary, its trajectory will drive the next re-rating of the stock. Target price range: $10.50 \u2013 $13.50 over 12 months depending on interest rate direction and CDC valuation progress."
+    },
+    {
+      "type": "quiz",
+      "title": "Module 4 Review Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Which combination most strongly indicates a company with a WIDE competitive moat?",
+          "options": [
+            "Low gross margins, frequent new competitors entering the market, and high customer price sensitivity",
+            "High and rising gross margins, consistent ROE above 20% for 10 years, market share growing despite premium pricing, and customer switching costs that increase over time",
+            "Rapid revenue growth in the first 2 years of operations, high debt levels used to fund expansion, and heavy customer incentives to gain market share",
+            "A large advertising budget and a well-known brand name in the NZ market only"
+          ],
+          "correctIndex": 1,
+          "explanation": "A wide moat shows in the financial metrics over time. High and rising gross margins mean the company maintains pricing power despite competitive pressure. Consistent ROE above 20% for a decade indicates the business earns more than its cost of capital year after year. Growing market share at premium prices demonstrates that customers choose this company over cheaper alternatives \u2014 the definition of competitive advantage. Switching costs that increase over time mean the moat is widening."
+        },
+        {
+          "question": "A company's CFO changed twice in 3 years, the auditor issued an 'emphasis of matter' note last year, accounts receivable grew 50% while revenue grew 10%, and 'one-off' charges have appeared in 4 consecutive annual reports. A new management team says these issues are all in the past. What should an investor do?",
+          "options": [
+            "Trust the new management team \u2014 past issues are not relevant if leadership has changed",
+            "Buy immediately \u2014 all these problems are already priced into a depressed share price",
+            "Conduct very thorough due diligence, obtain independent verification of the accounting concerns, and apply a significant margin of safety if investing \u2014 multiple simultaneous red flags in the same company are a serious pattern",
+            "These issues are all routine for companies of this type \u2014 no special attention required"
+          ],
+          "correctIndex": 2,
+          "explanation": "Multiple simultaneous red flags (CFO turnover, auditor concern, revenue quality problem, recurring 'one-off' items) constitute a serious pattern of potential financial reporting concerns. A new management team can improve culture and strategy \u2014 but cannot retroactively fix what happened previously, and the accounting concerns require independent validation before trusting the numbers. High margin of safety is essential when financial statement quality is in question."
+        },
+        {
+          "question": "Mainfreight CEO Don Braid retires unexpectedly. The replacement CEO comes from outside the logistics industry. In investment thesis terms, which risk has partially materialised?",
+          "options": [
+            "Currency risk \u2014 CEO transitions always expose companies to foreign exchange vulnerability",
+            "Systematic risk \u2014 a CEO retirement affects the entire NZ market",
+            "Key person risk \u2014 a succession that brings in an outsider without logistics expertise potentially threatens a key source of Mainfreight's competitive edge and track record",
+            "Regulatory risk \u2014 the government has imposed new governance requirements on listed companies"
+          ],
+          "correctIndex": 2,
+          "explanation": "Key person risk has partially materialised. Mainfreight's exceptional performance is partly attributable to Don Braid's specific capabilities \u2014 his logistics expertise, culture-building track record and capital allocation discipline. An outside hire without logistics experience may struggle to maintain the culture and strategic discipline that drove 3.4\u00d7 revenue growth under Braid. This would not be a reason to sell immediately \u2014 but it would warrant monitoring how the new CEO performs in their first 12\u201324 months."
+        },
+        {
+          "question": "You estimate Contact Energy's fair value at $9.50. You require a 20% margin of safety before investing. At what price would you buy?",
+          "options": [
+            "$9.50 \u2014 you buy at fair value, not below it",
+            "$7.60 \u2014 $9.50 \u00d7 (1 \u2212 0.20) = $7.60",
+            "$8.55 \u2014 $9.50 minus 10% as a starting point",
+            "$11.40 \u2014 $9.50 plus 20% to account for upside potential"
+          ],
+          "correctIndex": 1,
+          "explanation": "$9.50 \u00d7 (1 \u2212 0.20) = $9.50 \u00d7 0.80 = $7.60. You would only buy Contact Energy below $7.60 if you require a 20% margin of safety. The current price is $8.35 \u2014 $0.75 above your entry threshold. A patient value investor would either wait for $7.60 or consider whether their 20% requirement is too strict given Contact's defensive business model."
+        },
+        {
+          "question": "FPH's gross margin was 54.2% in 2019 and 57.8% in 2024. What does this trend most strongly suggest about FPH's competitive position over this period?",
+          "options": [
+            "FPH's production costs have fallen \u2014 it is becoming more efficient rather than gaining pricing power",
+            "FPH's competitive moat is narrowing \u2014 higher margins always indicate impending competition",
+            "FPH's competitive position has strengthened \u2014 rising gross margins over 5 years indicate increasing pricing power and a widening moat",
+            "This margin trend is concerning \u2014 margins above 55% are unsustainable and will revert to industry average"
+          ],
+          "correctIndex": 2,
+          "explanation": "Rising gross margins over 5 years in a competitive industry are a clear signal of increasing pricing power \u2014 which in turn suggests a widening competitive moat. If competition were intensifying, FPH's margins would be under pressure, not expanding. The +3.6 percentage point improvement means FPH earns more per dollar of revenue than it did 5 years ago, despite competitors trying to undercut it. This is exactly the trajectory you want to see from a company whose thesis is based on a strong and widening moat."
+        },
+        {
+          "question": "Which statement about the Sum of Parts (SOTP) valuation method for Infratil is most accurate?",
+          "options": [
+            "SOTP is simply the P/E ratio applied to each subsidiary's individual earnings",
+            "SOTP values each of Infratil's subsidiaries separately using appropriate methods for each business type, sums the values, subtracts net debt, and divides by shares \u2014 more accurate than applying a single P/E to the consolidated NPAT which includes distorting fair value movements",
+            "SOTP is only relevant for companies with fewer than 3 subsidiaries and cannot be applied to Infratil's complex structure",
+            "SOTP always produces a higher valuation than P/E methods \u2014 companies should always prefer it for investor presentations"
+          ],
+          "correctIndex": 1,
+          "explanation": "SOTP is the standard valuation method for investment holding companies and conglomerates like Infratil. Each subsidiary is valued using the most appropriate method for its type \u2014 Wellington Airport using EV/EBITDA, CDC Data Centres using revenue multiple or DCF, Vodafone NZ using peer telco multiples. These individual valuations are summed, net debt deducted, and divided by shares. This is more precise than applying a single P/E to Infratil's consolidated profit, which is distorted by unrealised fair value movements on subsidiaries."
+        },
+        {
+          "question": "An investor builds a 20-company NZ portfolio but puts 40% of it in one stock \u2014 Fisher and Paykel Healthcare. A product safety recall hits FPH shares, which fall 35%. What does the portfolio outcome illustrate?",
+          "options": [
+            "Systematic risk \u2014 the recall affected all 20 companies in the portfolio",
+            "The 20-company portfolio was adequately diversified \u2014 35% falls are always within normal portfolio parameters",
+            "Concentration risk \u2014 despite owning 20 companies, the 40% allocation to FPH meant an unsystematic event (company-specific recall) caused a disproportionate portfolio loss of approximately 14%",
+            "The FPH recall was a systematic risk event that could not have been mitigated by any investment strategy"
+          ],
+          "correctIndex": 2,
+          "explanation": "Portfolio loss from FPH: 40% \u00d7 35% = 14% portfolio loss from one company's specific event. This is concentration risk in action \u2014 holding 20 companies but weighting one at 40% means the portfolio is not genuinely diversified. A 5% equal-weight allocation to FPH would mean a 35% FPH fall causes only a 1.75% portfolio loss \u2014 much more manageable. True diversification requires both many different companies AND roughly equal (or at least not extremely concentrated) position sizes."
+        },
+        {
+          "question": "Which approach would give the most reliable estimate of FPH's intrinsic value for a long-term investor?",
+          "options": [
+            "The current share price \u2014 markets are efficient and the price always equals fair value",
+            "A range of methods used together: P/E based on forecast EPS with sector-appropriate multiple, DCF analysis of projected free cash flows, and comparable company analysis \u2014 with the final view being a range not a point estimate",
+            "The 52-week high \u2014 fair value equals the maximum price investors were willing to pay in the past year",
+            "Only the discounted cash flow (DCF) method \u2014 other methods are too imprecise to be useful"
+          ],
+          "correctIndex": 1,
+          "explanation": "No single valuation method is reliably accurate. Markets are not perfectly efficient (so current price \u2260 fair value). DCF is theoretically superior but highly sensitive to assumptions about growth rates and discount rates \u2014 small changes produce very different outputs. P/E comparables are quick but don't account for differences in quality and risk. Using multiple methods that triangulate toward a range of fair value estimates gives the most robust picture. If P/E analysis, comparable analysis and a DCF all point toward the same approximate range, the investor can have more confidence in that range than in any single method."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "Module 4 Complete \u2014 Your Investment Analyst Journey",
+      "estimatedMinutes": 5,
+      "prompt": "Looking at everything you covered in Module 4 \u2014 annual reports, competitive moats, management quality, revenue quality, valuation and risks \u2014 which part of company analysis do you think is most important for predicting long-term investment returns? Which is hardest to assess? Write four sentences. Would you now feel confident writing a simple investment thesis for any NZ listed company?",
+      "nceaLink": "Extra Learning \u2014 Module 5 (Risk and Return) builds on this foundation to explain how to construct a portfolio that balances these analytical insights."
+    }
+  ]
+}

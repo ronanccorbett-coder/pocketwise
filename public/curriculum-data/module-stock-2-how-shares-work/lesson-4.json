@@ -1,0 +1,108 @@
+{
+  "title": "Week 1 Challenge \u2014 Build Your Virtual Share Portfolio",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Apply",
+  "nceaFocus": "Extra Learning \u2014 How Shares Work",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Apply share buying mechanics to a virtual portfolio",
+    "Calculate total invested cost including brokerage",
+    "Evaluate three NZ companies using basic share data"
+  ],
+  "vocabulary": [
+    {
+      "term": "Virtual portfolio",
+      "definition": "A simulated investment portfolio using real share prices but no real money. Used for learning and practice without financial risk."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Week 1 Recap Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Which statement BEST describes what you own when you hold an ordinary share in Mainfreight?",
+          "options": [
+            "A debt instrument \u2014 Mainfreight owes you money at a fixed interest rate",
+            "A proportional ownership stake in Mainfreight \u2014 entitled to voting rights, dividends if declared, and a share of residual assets if wound up",
+            "A guaranteed return equal to the NZX 50 index performance",
+            "A certificate that Mainfreight will repurchase at a predetermined price in 5 years"
+          ],
+          "correctIndex": 1,
+          "explanation": "Owning an ordinary share means owning a fraction of the company \u2014 not a loan or guaranteed return instrument. Your rights include voting at AGMs, receiving dividends if the board declares them, and participating in residual assets if the company is wound up. But there is no guaranteed return, no obligation for Mainfreight to buy shares back, and your dividend is not guaranteed."
+        },
+        {
+          "question": "An IPO prospectus shows the company will use 70% of IPO proceeds to repay loans from its original private equity owners. What should this signal to an ordinary investor?",
+          "options": [
+            "The company is financially responsible \u2014 reducing debt is a positive sign",
+            "Caution \u2014 most of the money raised goes to insiders exiting their investment, not to growing the business; ordinary investors are effectively buying out the private equity investors",
+            "This is legally prohibited in NZ \u2014 all IPO proceeds must go to the company's operations",
+            "The higher the debt repaid, the better the investment \u2014 less debt means a stronger company post-IPO"
+          ],
+          "correctIndex": 1,
+          "explanation": "When a large portion of IPO proceeds goes to repaying existing investor loans rather than funding growth, it signals that insiders are using the IPO primarily to cash out. New investors are essentially buying the original investors' exit. This is not necessarily a dealbreaker, but it means the company is not raising the capital for growth \u2014 there is less fuel for the business going forward, and the people who know the company best (original investors) are choosing to sell."
+        },
+        {
+          "question": "You place a limit buy order for 500 Fisher and Paykel Healthcare shares at $21.00. The current market price is $21.85. What happens?",
+          "options": [
+            "Your order executes immediately at $21.85 \u2014 limit orders always execute at the best available price",
+            "Your order is rejected \u2014 limit orders must be within 1% of the current market price",
+            "Your order sits on the exchange and will only execute if FPH shares fall to $21.00 or below \u2014 it may never execute",
+            "You receive 500 shares immediately at $21.00 and the $0.85 difference is credited to your account"
+          ],
+          "correctIndex": 2,
+          "explanation": "A limit buy order only executes at your specified price or lower. Your $21.00 limit sits on the order book waiting for a seller willing to accept $21.00 or less. If FPH never falls to $21.00, the order never executes. You can cancel a limit order at any time. Limit orders are useful when you want to buy but feel the current price is too high \u2014 you set your price and wait."
+        },
+        {
+          "question": "You buy $2,000 of Spark shares on Sharesies (0.5% brokerage). Spark pays a $0.135 dividend per share. If you own 476 shares (at $4.20 each), what annual dividend do you receive?",
+          "options": [
+            "$6.43 \u2014 0.5% of $2,000 minus brokerage",
+            "$64.26 \u2014 476 shares \u00d7 $0.135",
+            "$135.00 \u2014 the dividend per $1,000 invested",
+            "$270.00 \u2014 0.135% of the $2,000 investment"
+          ],
+          "correctIndex": 1,
+          "explanation": "476 shares \u00d7 $0.135 dividend per share = $64.26 annual dividend income. This represents a dividend yield of $64.26 \u00f7 $2,000 = 3.21% on the original investment. Spark typically pays this in two instalments \u2014 approximately $32 each in March and September. This is passive income you receive simply for holding the shares."
+        },
+        {
+          "question": "Which NZ platform charges brokerage as a percentage of transaction value (with a cap) rather than a flat fee per trade?",
+          "options": [
+            "Jarden Direct \u2014 $30 flat fee makes it best for all trade sizes",
+            "Sharesies \u2014 0.5% on NZX trades (minimum $0.50, capped at $25) making it best for smaller amounts",
+            "Hatch \u2014 specialises in US shares only at flat USD $3 per trade",
+            "InvestNow \u2014 direct share trading with percentage brokerage on all NZX transactions"
+          ],
+          "correctIndex": 1,
+          "explanation": "Sharesies charges 0.5% on NZX trades with a minimum of $0.50 and a cap of $25. This makes it the most cost-effective for smaller trades \u2014 on a $100 trade, Sharesies charges $0.50 versus Jarden's $30. Hatch is USD-denominated for US shares only. InvestNow is an index/managed fund platform, not a direct share trading platform."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "Build Your Virtual NZX Portfolio",
+      "estimatedMinutes": 25,
+      "nceaLevel": "Achieved",
+      "setup": "You have $10,000 virtual dollars to invest in NZ shares using Sharesies (0.5% brokerage, capped at $25). You must invest in at least 3 different NZ companies.\n\nCurrent share prices (use these):\nFisher and Paykel Healthcare (FPH): $21.40\nSpark NZ (SPK): $4.18\nMainfreight (MFT): $67.80\nMeridian Energy (MEL): $5.54\nInfratil (IFT): $11.20\nAir New Zealand (AIR): $0.72\nContact Energy (CEN): $8.35\n\nDividend information:\nFPH: $0.38/year\nSPK: $0.275/year\nMFT: $1.50/year\nMEL: $0.20/year\nIFT: $0.165/year\nAIR: $0.00 (no dividend)\nCEN: $0.38/year",
+      "challenge": "1. Choose 3 to 5 companies and decide how many shares to buy in each. Keep track of all allocations.\n2. Calculate the brokerage cost for each purchase.\n3. Calculate your total invested (shares + brokerage) and confirm it does not exceed $10,000.\n4. Calculate the annual dividend income from your portfolio.\n5. Calculate the dividend yield on your total portfolio value.\n6. Write a one-paragraph investment thesis for each company you chose \u2014 why did you pick it? What risks concern you?",
+      "hints": [
+        "Q2: Brokerage = 0.5% of trade value, minimum $0.50, maximum $25.",
+        "Q4: Annual dividends = shares held \u00d7 annual dividend per share, summed across all holdings.",
+        "Q5: Portfolio yield = total annual dividends \u00f7 total invested \u00d7 100."
+      ],
+      "solution": "Sample portfolio (one of many valid combinations):\n\n1. Allocations:\nFPH: 200 shares \u00d7 $21.40 = $4,280. Brokerage: $4,280 \u00d7 0.5% = $21.40\nSPK: 800 shares \u00d7 $4.18 = $3,344. Brokerage: $3,344 \u00d7 0.5% = $16.72\nMEL: 400 shares \u00d7 $5.54 = $2,216. Brokerage: $2,216 \u00d7 0.5% = $11.08\n\n2. Brokerage: FPH $21.40, SPK $16.72, MEL $11.08. Total brokerage: $49.20\n\n3. Total invested: $4,280 + $3,344 + $2,216 + $49.20 = $9,889.20. Under $10,000 \u2713\n\n4. Annual dividends:\nFPH: 200 \u00d7 $0.38 = $76.00\nSPK: 800 \u00d7 $0.275 = $220.00\nMEL: 400 \u00d7 $0.20 = $80.00\nTotal: $376.00\n\n5. Portfolio yield: $376 \u00f7 $9,889 \u00d7 100 = 3.80%\n\n6. Investment thesis examples:\nFPH: World-class NZ medical device company with global distribution and strong R&D pipeline. Risk: currency exposure (most revenue in USD) and high P/E valuation.\nSPK: Stable NZ telco with high dividend yield. Risk: regulatory environment and competitive pressure from 2degrees.\nMEL: NZ electricity generator \u2014 renewable energy (hydro, wind, geothermal). Benefits from electricity demand growth and climate transition. Risk: dry hydro year reduces generation."
+    },
+    {
+      "type": "reflection",
+      "title": "Why Did You Choose What You Chose?",
+      "estimatedMinutes": 5,
+      "prompt": "Looking at your virtual portfolio: Did you choose companies whose products you use personally? Did you choose the highest dividend yield? Did you choose companies you thought would grow? Write a short reflection on what drove your choices \u2014 and whether those reasons are good investment rationale or just familiarity bias.",
+      "nceaLink": "Extra Learning \u2014 analysing your own decision-making process is one of the most valuable investment skills."
+    }
+  ]
+}

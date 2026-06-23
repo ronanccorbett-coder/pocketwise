@@ -1,0 +1,169 @@
+{
+  "title": "Risks \u2014 What Could Go Wrong?",
+  "order": 7,
+  "dayNumber": 7,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Analyse and Evaluate",
+  "nceaFocus": "Extra Learning \u2014 Company Analysis",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Identify the main categories of investment risk for NZ companies",
+    "Distinguish between risks specific to a company and risks affecting all shares",
+    "Apply a risk assessment framework to a NZ company"
+  ],
+  "vocabulary": [
+    {
+      "term": "Systematic risk",
+      "definition": "Risk that affects all investments simultaneously \u2014 market crashes, interest rate changes, recessions. Cannot be eliminated by diversification."
+    },
+    {
+      "term": "Unsystematic risk",
+      "definition": "Risk specific to a single company or sector \u2014 a product recall, a failed acquisition, a CEO scandal. Can be reduced by diversification across many companies."
+    },
+    {
+      "term": "Key person risk",
+      "definition": "When a company's success is heavily dependent on one individual. If that person leaves, the business may significantly underperform."
+    },
+    {
+      "term": "Regulatory risk",
+      "definition": "The risk that government regulation changes in a way that negatively affects the company's operations, pricing or market access."
+    },
+    {
+      "term": "Currency risk",
+      "definition": "For companies earning significant revenue in foreign currencies (like FPH earning USD), changes in the NZD/USD exchange rate affect reported NZD earnings."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Risk Framework \u2014 What Could Go Wrong?",
+      "estimatedMinutes": 4,
+      "notePrompt": "For Mainfreight, list one company-specific risk and one market-wide risk. For each, estimate: How likely is it (low/medium/high)? How severe would the impact be if it occurred?",
+      "content": "Every investment carries risk. Understanding which risks matter most for a specific company \u2014 and which are shared across all investments \u2014 shapes portfolio construction decisions.\n\nSystematic (market-wide) risks affect all shares:\n\u2014 Recessions: economic slowdown reduces earnings across most industries\n\u2014 Interest rate increases: compress P/E multiples and increase borrowing costs\n\u2014 Market crashes: investor sentiment collapses across all assets simultaneously\n\u2014 Inflation: can compress margins if costs rise faster than prices\n\nThese risks cannot be eliminated by diversification within shares \u2014 they affect every stock you hold. Holding bonds, cash or other asset classes provides partial hedge.\n\nUnsystematic (company-specific) risks:\n\u2014 Key person risk: Don Braid retiring and no suitable successor at Mainfreight\n\u2014 Product failure: FPH's next respiratory device failing clinical trials\n\u2014 Regulatory change: Government changes electricity pricing regulation affecting utility profitability\n\u2014 Operational failure: A data breach, warehouse fire, or supply chain disruption\n\u2014 Customer concentration: Losing a major customer (especially where one customer is a large % of revenue)\n\nThese risks CAN be reduced through diversification \u2014 owning 20 companies means no single company's specific problem devastates your portfolio.\n\nFor individual company analysis: focus on identifying the top 3\u20135 specific risks that could materially affect this particular business, assess their probability and severity, and determine whether the current valuation adequately reflects these risks."
+    },
+    {
+      "type": "slide",
+      "title": "Currency Risk \u2014 The Hidden Earnings Factor",
+      "estimatedMinutes": 4,
+      "notePrompt": "FPH earns approximately 70% of its revenue outside NZ in USD, EUR, and GBP. The NZD strengthens 10% against the USD. What happens to FPH's NZD-reported revenue and profit?",
+      "content": "Fisher and Paykel Healthcare earns over 70% of its revenue in non-NZD currencies. When the NZD strengthens against these currencies, FPH's reported earnings in NZD decline \u2014 not because the business performed worse, but simply because foreign currency revenue translates to fewer NZD.\n\nExample:\nFPH earns USD $100 million from US hospital sales.\nNZD/USD exchange rate = 0.60 (1 NZD buys 0.60 USD)\nNZD revenue = USD $100M \u00f7 0.60 = NZD $166.7M\n\nIf NZD strengthens to 0.66 (10% appreciation):\nNZD revenue = USD $100M \u00f7 0.66 = NZD $151.5M\nRevenue falls by NZD $15.2M \u2014 purely from currency, with no change in business operations.\n\nThis is why FPH's earnings are sometimes volatile even when its underlying business is performing well. A 10% NZD appreciation could reduce reported NZD revenue by approximately 7% for FPH \u2014 a significant headwind.\n\nHow companies manage currency risk:\n\u2014 Hedging: FPH uses foreign exchange forward contracts to lock in exchange rates for future sales receipts. Partial hedging \u2014 typically covering the next 12\u201324 months \u2014 reduces short-term earnings volatility.\n\u2014 Natural hedge: Having costs in the same currency as revenues. If FPH also had significant USD costs (manufacturing in the US), the USD revenue and USD cost would partially offset.\n\u2014 Ignoring short-term currency movements: Buffett's approach \u2014 over decades, currency effects average out and do not alter the underlying business value."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Owning shares in 30 different NZ companies completely eliminates investment risk because diversification across many companies means no single failure can hurt the portfolio.",
+      "correctAnswer": false,
+      "explanation": "False. Diversification across many companies eliminates most unsystematic (company-specific) risk but does not eliminate systematic risk. If the NZ economy enters a recession, or if global markets crash, all 30 NZ companies will likely fall simultaneously. You have eliminated the risk of any single company destroying your portfolio, but not the risk of a broad market decline. Reducing systematic risk requires diversifying across asset classes (shares, bonds, property, cash) and geographies \u2014 not just across many companies within the same market.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "The Bull Case and Bear Case",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write a one-sentence bull case and a one-sentence bear case for each of: FPH, Spark NZ, and Air New Zealand.",
+      "content": "Professional investors always articulate both a bull case (why this investment does well) and a bear case (why it might not) before making a decision. This forces honest evaluation of risk.\n\nFisher and Paykel Healthcare:\nBull case: FPH's new product launches in OSA (obstructive sleep apnea) and home care markets succeed, expanding the addressable market by 30%+, driving EPS growth of 20%+ per year for the next 5 years.\nBear case: A major competitor (ResMed, Philips) copies FPH's key product innovations. NZD strengthens 15% against the USD, reducing reported earnings significantly. P/E multiple de-rates from 38\u00d7 to 25\u00d7 as growth disappoints.\n\nMainfreight:\nBull case: Successful expansion of European and Asian operations delivers 15% revenue CAGR for the next decade. High margin professional freight forwarding grows as a share of the mix. Compound growth makes the 25\u00d7 P/E look cheap in retrospect.\nBear case: Global freight volumes decline in a prolonged economic slowdown. Key person risk crystallises as Don Braid retires and a succession candidate disappoints. Competitors with deeper technology investment automate away Mainfreight's cost advantage.\n\nSpark NZ:\nBull case: Enterprise and government IT services division grows rapidly. Rising demand for data centres and 5G infrastructure creates new high-margin revenue streams. Dividend is maintained and shares re-rate to 22\u00d7 P/E.\nBear case: Starlink satellite internet makes broadband more competitive, pressuring Spark's fixed line business. 5G investment is more expensive than planned. Dividend is cut, share price falls 20%+.\n\nBull and bear cases frame the range of outcomes \u2014 good analysis resides in the probability you assign to each."
+    },
+    {
+      "type": "quiz",
+      "title": "Risk Assessment Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "You own shares in 25 different NZ companies across healthcare, logistics, utilities, telco and retail sectors. An unexpected global recession hits. Your portfolio falls 28%. Which best describes what happened?",
+          "options": [
+            "Your diversification failed \u2014 with 25 companies you should have been protected against any loss",
+            "Systematic risk affected all your holdings simultaneously \u2014 diversification across 25 NZ companies did not protect against a broad economic downturn",
+            "Your sector selection was poor \u2014 you should have held cash instead",
+            "Only unsystematic risk affected your portfolio \u2014 each company fell for specific company reasons"
+          ],
+          "correctIndex": 1,
+          "explanation": "A global recession is systematic risk \u2014 it affects all economic sectors simultaneously. Your diversification across 25 NZ companies eliminated company-specific (unsystematic) risks, but a broad economic downturn reduces earnings expectations across most industries at once, pulling all share prices down. To hedge systematic risk, investors hold assets that behave differently to shares during recessions \u2014 bonds, gold, cash, or international shares that are not correlated to NZ's economic cycle."
+        },
+        {
+          "question": "FPH earns USD $200 million from US sales. The NZD/USD rate moves from 0.60 to 0.68. What is the approximate impact on FPH's NZD-reported revenue from US operations?",
+          "options": [
+            "Increase of NZD $26.7M \u2014 a stronger NZD means more NZ dollars per USD earned",
+            "Decrease of approximately NZD $39.2M \u2014 NZD strengthening means each USD converts to fewer NZD",
+            "No impact \u2014 FPH hedges all USD revenue with forward contracts",
+            "Decrease of exactly 13.3% of revenue \u2014 matching the percentage currency change"
+          ],
+          "correctIndex": 1,
+          "explanation": "At NZD/USD 0.60: USD $200M \u00f7 0.60 = NZD $333.3M. At NZD/USD 0.68: USD $200M \u00f7 0.68 = NZD $294.1M. Change: $294.1M \u2212 $333.3M = \u2212$39.2M. NZD strengthening (requiring more NZD to buy each USD is reversed \u2014 each USD buys fewer NZD) reduces the NZD value of USD earnings. This is a real impact on reported earnings even though the underlying US business performed identically."
+        },
+        {
+          "question": "A NZ company's top 3 customers represent 58% of total revenue. The largest customer announces they are switching to a cheaper competitor. What type of risk does this represent and how can investors protect against it?",
+          "options": [
+            "Systematic risk \u2014 a large customer departure affects the whole NZ economy",
+            "Unsystematic (company-specific) risk arising from customer concentration \u2014 investors can protect against this type of risk by diversifying across many companies so no single company's customer loss destroys the portfolio",
+            "Regulatory risk \u2014 the government has forced the customer to switch suppliers",
+            "Currency risk \u2014 the customer's switch is driven by NZD movements"
+          ],
+          "correctIndex": 1,
+          "explanation": "Customer concentration risk (losing a customer representing a large % of revenue) is unsystematic \u2014 it is specific to this company's business structure. An investor holding 20 diversified companies would see this one company fall but the other 19 are unaffected. Diversification eliminates the catastrophic portfolio impact of a single company's specific problems. This is why identifying customer concentration risk in due diligence matters \u2014 concentrated customer bases mean single-company risk is higher."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Systematic or Unsystematic Risk? Classify These",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "RBNZ raises interest rates sharply \u2014 all NZ share valuations compress",
+          "zone": "Systematic Risk"
+        },
+        {
+          "item": "FPH announces a recall of a key respiratory device due to a safety concern",
+          "zone": "Unsystematic Risk"
+        },
+        {
+          "item": "Global recession reduces corporate earnings across most industries",
+          "zone": "Systematic Risk"
+        },
+        {
+          "item": "Mainfreight loses a major freight contract to DHL",
+          "zone": "Unsystematic Risk"
+        },
+        {
+          "item": "NZD rises sharply against all major currencies",
+          "zone": "Systematic Risk (macro)"
+        },
+        {
+          "item": "Spark NZ CEO resigns unexpectedly",
+          "zone": "Unsystematic Risk"
+        }
+      ],
+      "explanation": "Systematic risks affect all investments and cannot be diversified away within the same asset class. Unsystematic risks are company or sector specific and CAN be reduced by owning many different companies. This is why owning 1 company is far riskier than owning 20 \u2014 company-specific disasters (FPH recall, CEO departure) devastate a concentrated portfolio but barely dent a diversified one."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A company that uses currency hedging to fix its exchange rates eliminates all currency risk from its business.",
+      "correctAnswer": false,
+      "explanation": "False. Hedging reduces short-term earnings volatility from currency movements but creates its own risks and limitations. Typical hedges cover 12\u201324 months of forward revenue. Beyond that horizon, the company remains fully exposed. Additionally, if the NZD moves dramatically and stays there for years (not just months), the long-term economic impact is real regardless of short-term hedges. Hedging buys time to adjust pricing or costs \u2014 it does not eliminate the underlying economic exposure to currency movements.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What term describes risk that affects all shares simultaneously \u2014 such as a recession or interest rate rise \u2014 and CANNOT be eliminated by diversifying across many companies?",
+      "acceptedAnswers": [
+        "systematic risk",
+        "Systematic risk",
+        "Systematic Risk",
+        "systemic risk"
+      ],
+      "placeholder": "Type the risk term here...",
+      "hint": "The opposite of company-specific risk \u2014 affects the whole 'system'.",
+      "explanation": "Systematic risk (sometimes called systemic or market risk) is the risk inherent in the entire market that cannot be diversified away by holding more companies. A recession, interest rate shock, or market crash affects almost every company simultaneously. Investors can reduce systematic risk by holding assets that are not correlated with shares \u2014 bonds (which often rise when shares fall), cash, gold, or international diversification.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Risk Assessment for Your Portfolio",
+      "estimatedMinutes": 5,
+      "prompt": "Using the virtual portfolio you built in Module 2 (or any set of shares you have been thinking about), identify: one systematic risk that could affect all your holdings, and one unsystematic risk for each of your three main holdings. Write these down in a table format. Which risk concerns you most and what would you do to mitigate it?",
+      "nceaLink": "Extra Learning \u2014 a formal risk assessment before investing is what separates disciplined investors from gamblers."
+    }
+  ]
+}

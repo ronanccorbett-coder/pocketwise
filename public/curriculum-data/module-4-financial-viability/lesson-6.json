@@ -1,0 +1,96 @@
+{
+  "title": "Full Viability Reports and Common Mistakes",
+  "order": 6,
+  "dayNumber": 6,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Analyse and Evaluate",
+  "nceaFocus": "AS92031: Complete analysis from Achieved through Excellence — all levels integrated in a structured viability report",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Write a complete AS92031 viability report covering all achievement levels",
+    "Identify and avoid the five most common mistakes in AS92031 responses",
+    "Apply the complete report structure to a new NZ scenario independently"
+  ],
+  "vocabulary": [
+    { "term": "Viability report", "definition": "A structured written assessment of an organisation's financial position, the factors affecting it, and proposed strategies for improvement — structured to meet the AS92031 achievement criteria." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Complete AS92031 Viability Report Structure",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the five-part structure into your notes. Tick the parts you feel confident with. Star the parts that need more practice.",
+      "content": "Here is the complete structure for an AS92031 financial viability report. Use this in your exam and project.\n\nPart 1 (Achieved): Describe revenue, expenses, and profit or loss with specific figures. Name the major revenue sources and expense categories. Calculate gross profit and net profit. State the net profit margin.\n\nPart 2 (Achieved): State whether the organisation is financially viable. Justify with at least two pieces of financial evidence — the profit or loss figure, the margin, the trend, the reserves, or the debt level.\n\nPart 3 (Merit): Explain how INTERNAL factors affect viability. For each factor, show the mechanism — how does it specifically affect the profit line, with dollar figures?\n\nPart 4 (Merit): Explain how EXTERNAL factors affect viability using the same mechanism-and-figures approach. Then explain at least two specific improvement strategies with estimated financial impacts.\n\nPart 5 (Excellence): Analyse the RELATIONSHIP between factors — show how they interact and compound. Then evaluate the EXTENT to which your proposed improvements would restore viability — fully, partially, or conditionally — and under what assumptions.\n\nEvery part must include specific NZD figures from the scenario. The exam gives you data — use it. Every claim needs evidence."
+    },
+    {
+      "type": "slide",
+      "title": "Five Common Mistakes — and How to Fix Them",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down all five mistakes. For each one, write a one-sentence fix that describes what the correct approach looks like.",
+      "content": "These five mistakes appear repeatedly in AS92031 exam responses. Knowing them in advance gives you a real advantage.\n\nMistake 1: Vague viability statement without figures. 'The business is struggling' is not a viability assessment. 'The business is not financially viable — it has a net loss of $3,200, meaning expenses exceed revenue by 1.0% and any further income reduction will worsen the deficit' is a proper assessment.\n\nMistake 2: Listing factors without explaining how they affect viability. 'Competition from Pak'nSave is a factor' earns Achieved at best. 'Pak'nSave's entry has reduced grocery sales by $28,000 — at a 38.4% gross margin, this reduces gross profit by $10,752 and converts a $24,800 profit into a $3,200 loss' earns Merit.\n\nMistake 3: Improvement strategies without financial quantification. 'Wiremu should diversify his revenue' is vague. 'Extended late-night hours generating $600 per week in additional high-margin sales = $31,200 additional annual revenue, with $8,000 incremental costs, improving net profit by $7,600' is Merit to Excellence.\n\nMistake 4: Writing long Merit responses and calling it Excellence. Longer is not Excellence. The specific Excellence moves are showing how factors interact and evaluating whether improvements fully solve the problem. If you are not doing these two things, you are writing extended Merit regardless of length.\n\nMistake 5: Ignoring reserves in the viability assessment. Reserves are a critical viability indicator. A business losing $3,200 per year with $42,000 in reserves can survive 13 years at the current rate. A business losing $3,200 with no reserves faces immediate closure. Always mention reserves in your assessment."
+    },
+    {
+      "type": "truefalse",
+      "statement": "At the Achieved level in AS92031, students must analyse the relationship between internal and external factors affecting viability.",
+      "correctAnswer": false,
+      "explanation": "False. Analysing the relationship between factors is an Excellence requirement. At Achieved, students only need to describe revenue, expenses, profit or loss, and factors affecting viability, then state whether the organisation is financially viable with supporting data. The progression is: Achieved = describe, Merit = explain, Excellence = analyse relationships and evaluate the extent of improvements.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Sample Excellence Response — Wiremu's Dairy",
+      "estimatedMinutes": 4,
+      "notePrompt": "Annotate this response: label each part (1–5). Highlight one dollar figure in each part. Circle one place where Excellence-level language appears — words like 'relationship', 'compound', 'extent', 'fully restore', or 'conditionally viable'.",
+      "content": "Here is a condensed but complete viability report at Excellence level for Wiremu's dairy.\n\nPart 1: Wiremu's dairy earns $318,000 in total annual revenue from four sources. After COGS of $196,000, gross profit is $122,000 (38.4% margin). After operating expenses of $125,200, the result is a net loss of negative $3,200 (negative 1.0% margin).\n\nPart 2: The dairy is not currently financially viable. It generates a net loss of $3,200. Revenue has declined from $346,000 two years ago — the trend is deteriorating. Reserves of $42,000 provide a 13-year buffer at the current loss rate, but the declining revenue trajectory suggests the annual loss will grow, shortening this runway.\n\nPart 3: High fixed wages ($58,000 — 18.2% of revenue) and rent ($38,400 — 12.1% of revenue) provide no flexibility to absorb revenue losses. Every dollar of lost income goes directly to the deficit.\n\nPart 4: The Pak'nSave entry has reduced grocery revenue by $28,000. At a 38.4% gross margin, this has reduced gross profit by approximately $10,752 — the primary driver of the swing from $24,800 profit to $3,200 loss. Extended hours strategy: projected $7,600 net improvement, fully restoring viability if $600 per week in late-night sales is achieved.\n\nPart 5 — Relationship and extent: The Pak'nSave competition (external) is especially damaging because of Wiremu's high fixed cost structure (internal) — costs cannot be easily reduced to absorb the revenue loss. These factors compound: lower fixed costs would make the same revenue reduction survivable. The extended hours strategy would fully restore viability at the projected sales level, but conditionally — if late-night sales average $350 rather than $600, the improvement is only $3,250, leaving a residual loss of negative $950 and requiring Strategy 2 to fully achieve viability."
+    },
+    {
+      "type": "scenario",
+      "title": "Practice Scenario — The Nelson Swim Club",
+      "estimatedMinutes": 15,
+      "nceaLevel": "Merit to Excellence",
+      "setup": "The Nelson Aquatics Club is a not-for-profit organisation running swimming programmes for children and adults in Nelson.\n\nAnnual Revenue:\nMembership fees (320 members at $220 each): $70,400\nLearn-to-swim programme fees: $28,000\nPool hire to other groups: $14,400\nNelson City Council grant: $16,000\nTotal Revenue: $128,800\n\nAnnual Expenses:\nHead coach wages (full-time): $72,000\nAssistant coach wages (part-time, 25 hrs/week at $23.15): $30,095\nPool hire cost (from the city council): $22,000\nInsurance: $4,800\nEquipment: $3,600\nAdministration: $4,200\nTotal Expenses: $136,695\n\nNet Deficit: negative $7,895\nReserves: $18,400\n\nContext: The club was financially viable three years ago, earning a $4,200 surplus. Pool hire costs have increased by $5,000 over the same period. Membership has stayed stable at 320. The assistant coach's wages increased by $2,080 this year due to the minimum wage rise.",
+      "challenge": "Write a complete five-part viability report:\n\nPart 1: Describe revenue, expenses, and deficit with figures.\nPart 2: State whether the club is financially viable with two pieces of evidence.\nPart 3: Explain how TWO internal factors affect viability with figures.\nPart 4: Explain how TWO external factors affect viability with figures. Propose TWO improvement strategies with estimated financial impact.\nPart 5 (Excellence): Analyse the relationship between two factors. Evaluate the extent to which your proposed strategies would restore viability.",
+      "hints": [
+        "For Part 2: Calculate how many months of reserves remain at the current deficit rate.",
+        "For Part 3: Consider the high coach wages relative to revenue, and the thin revenue diversification (membership is 54.7% of revenue).",
+        "For Part 4: Pool hire cost increase and minimum wage rise are the two key external factors. For strategies: membership fee increase and new revenue stream options.",
+        "For Part 5: Consider how the pool hire cost increase (external) is more damaging because the club's revenue is capped by pool availability (internal constraint)."
+      ],
+      "solution": "Part 1: Revenue, expenses, deficit: The Nelson Aquatics Club earns $128,800 in total annual revenue: membership fees $70,400 (54.7%), learn-to-swim fees $28,000 (21.7%), pool hire income $14,400 (11.2%), and council grant $16,000 (12.4%). Annual expenses total $136,695, producing a net deficit of $7,895.\n\nPart 2: Viability assessment: The club is not currently financially viable. Two pieces of evidence: (1) The club has a net deficit of $7,895 — it spends $7,895 more than it earns annually, which is unsustainable. (2) The trend is deteriorating — three years ago the club earned a $4,200 surplus; today it has a $7,895 deficit, a deterioration of $12,095 over three years. Reserves of $18,400 would be exhausted in approximately 2.3 years ($18,400 divided by $7,895 multiplied by 12 = 28 months) at the current deficit rate.\n\nPart 3: Internal factors: (1) High coach wages: The head coach wage of $72,000 represents 55.9% of total revenue — an extremely high proportion for an organisation of this size. These wages are fixed and cannot be easily reduced, meaning any revenue shortfall or cost increase flows directly to the deficit. If head coach wages were 45% of revenue (more typical), they would be $57,960 — saving $14,040 per year and eliminating the deficit entirely. (2) Revenue concentration in membership: Membership fees at $70,400 are 54.7% of revenue. If membership fell by 10% (32 members leaving at $220 each), revenue would decrease by $7,040 — deepening the deficit to $14,935 and exhausting reserves within 1.3 years.\n\nPart 4: External factors: (1) Pool hire cost increase: Pool hire costs have risen by $5,000 over three years (from approximately $17,000 to $22,000). This is an external factor driven by the council's cost recovery on pool facilities. This $5,000 increase directly reduces the surplus — it accounts for 41% of the total deterioration from $4,200 surplus to $7,895 deficit. (2) Minimum wage increase: The assistant coach's wages increased by $2,080 this year due to the minimum wage rise, adding to the deficit. At $0.45 per hour for 25 hours per week over 52 weeks, this equals $0.45 multiplied by 25 multiplied by 52 = $585 — but the total increase of $2,080 suggests the role was on the previous minimum wage, and the larger increase reflects a catch-up effect.\n\nStrategy 1 — Membership fee increase: Raising fees by $30 per member (from $220 to $250) would increase membership revenue by $9,600 (320 members multiplied by $30). If 5% of members (16 people) do not renew due to the fee increase, revenue rises by $30 multiplied by 304 members = $9,120 minus lost fees from 16 members at $220 = $3,520 lost, net improvement = $9,120 minus $3,520 = $5,600. This reduces the deficit from $7,895 to $2,295.\n\nStrategy 2 — Expand the learn-to-swim programme: The learn-to-swim programme currently generates $28,000 with available pool time. Adding two additional group sessions per week at 10 students per session at $18 per session = 2 sessions multiplied by 10 students multiplied by 52 weeks multiplied by $18 = $18,720 additional revenue. Incremental costs (coaching time already covered): approximately $4,000. Net improvement: $14,720. This would more than eliminate the remaining deficit after Strategy 1.\n\nPart 5 — Excellence analysis: The pool hire cost increase (external) is especially damaging because of a structural internal constraint: the club can only generate revenue from pool-based activities, and pool access is limited by the number of sessions the council allocates. The club cannot simply grow its way out of the deficit by adding more programmes without securing additional pool time — which costs more. These two factors compound each other: rising pool costs (external) reduce the margin on existing revenue, while limited pool access (internal structural constraint) limits the revenue growth strategies available. A club with its own pool would be far less exposed to this interaction.\n\nExtent analysis: Strategy 1 (fee increase) would reduce the deficit from $7,895 to approximately $2,295 — a partial improvement. Strategy 2 (expanded learn-to-swim) would add $14,720 in net contribution, fully restoring viability and producing a surplus of approximately $12,425. Combined, both strategies would achieve a strong surplus of approximately $14,720 minus $2,295 deficit = net surplus of approximately $12,425. This assumes full enrolment in the new sessions (10 students per session) — at 70% capacity (7 students), Strategy 2 contributes $10,104 net, still sufficient to achieve full viability when combined with Strategy 1."
+    },
+    {
+      "type": "quiz",
+      "title": "Merit and Excellence Level Check",
+      "estimatedMinutes": 7,
+      "nceaLevel": "Merit to Excellence",
+      "questions": [
+        {
+          "question": "The Nelson Swim Club has reserves of $18,400 and an annual deficit of $7,895. How many months until reserves are exhausted?",
+          "options": ["14.3 months", "28.0 months", "33.4 months", "7.9 months"],
+          "correctIndex": 1,
+          "explanation": "Months = ($18,400 divided by $7,895) multiplied by 12 = 2.33 years multiplied by 12 = 27.96 months, approximately 28 months. The club has approximately 2.3 years before reserves run out at the current deficit rate — enough time to implement strategies, but the urgency is real."
+        },
+        {
+          "question": "The swim club's pool hire cost has risen by $5,000 over three years. Which statement best analyses how this external factor affects viability?",
+          "options": [
+            "Higher pool hire costs are bad for the club.",
+            "Pool hire is an external factor the club cannot control.",
+            "The $5,000 increase in pool hire costs over three years contributes directly to the $12,095 deterioration in financial position (from $4,200 surplus to $7,895 deficit). It accounts for 41% of that deterioration. Since pool hire is a fixed cost the club must pay to operate at all, there is no option to reduce it without reducing services — making this a structurally damaging external factor.",
+            "The club should find a cheaper pool."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is Merit to Excellence level. It calculates the specific contribution of the pool hire increase to the total financial deterioration (41% of the $12,095 swing), explains why it is structurally damaging (must pay to operate at all), and notes the constraint it creates (cannot reduce without cutting services). Options A and B identify the factor without explaining the mechanism. Option D is a recommendation, not an analysis."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "Project Progress Check",
+      "estimatedMinutes": 7,
+      "prompt": "Review your module project draft. Using the five-part structure, assess which sections are complete and which need work. For each incomplete section, write one specific sentence describing what you need to add. Pay special attention to: Are all your figures specific NZD amounts? Do your factor explanations show the mechanism (not just name the factor)? Do your improvement strategies include an estimated financial impact? Have you evaluated whether strategies fully or partially restore viability?",
+      "nceaLink": "The five-part viability report structure maps directly to the AS92031 external exam criteria. Completing each part with specific figures and clear reasoning is the path to Merit and Excellence."
+    }
+  ]
+}

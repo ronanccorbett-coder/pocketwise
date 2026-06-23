@@ -1,0 +1,129 @@
+{
+  "title": "Reading Share Price Charts",
+  "order": 1,
+  "dayNumber": 1, "weekNumber": 1, "durationMinutes": 45, "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning — Reading the Market",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Read the key components of a line and candlestick chart",
+    "Identify trends, support levels and resistance levels",
+    "Explain what trading volume tells you about price movements"
+  ],
+  "vocabulary": [
+    {"term": "Line chart", "definition": "A chart showing closing prices over time connected by a line. The simplest view of a share's price history."},
+    {"term": "Candlestick chart", "definition": "A chart showing open, high, low and close prices for each period. Each 'candle' is green (price rose) or red (price fell). More information than a line chart."},
+    {"term": "Trend", "definition": "The general direction of a share price over time. Uptrend = higher highs and higher lows. Downtrend = lower highs and lower lows. Sideways = no clear direction."},
+    {"term": "Support level", "definition": "A price level where a share tends to stop falling and bounce back up — because buyers step in at that price. Acts like a floor."},
+    {"term": "Resistance level", "definition": "A price level where a share tends to stop rising and pull back — because sellers emerge at that price. Acts like a ceiling."},
+    {"term": "Volume", "definition": "The number of shares traded in a period. High volume on a price move gives it more significance — many investors agreeing on the direction."}
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Line Chart — Your Starting Point",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What does a line chart show? What does it NOT show? When would you want more detail than a line chart provides?",
+      "content": "The line chart is the most basic way to visualise a share's price history. It plots closing prices over time and connects them with a line.\n\nWhat it shows:\n— The overall trend (up, down or sideways)\n— Major turning points — peaks and troughs\n— How today's price compares to past prices\n— The general shape of performance over a period (1 week, 1 month, 1 year, 5 years)\n\nWhat it does NOT show:\n— How much the price moved within any single day\n— Whether a day's close was near its high or low\n— Trading volume (how many shares changed hands)\n— Opening prices\n\nHow to read a line chart:\nLook at the time axis (x-axis) — this is the date range. Look at the price axis (y-axis) — this is the price in NZD. The line itself shows how price changed across the time range. A line trending up and to the right is an uptrend. Down and to the right is a downtrend.\n\nNZ example: Fisher and Paykel Healthcare's 5-year line chart shows a strong uptrend from 2016 to 2021, a sharp peak around $38 in early 2021, then a significant downtrend through 2022, followed by partial recovery. The chart tells this story instantly — no words needed.\n\nFor most investors, a 1-year and 5-year line chart is enough context to understand recent price behaviour."
+    },
+    {
+      "type": "slide",
+      "title": "Candlestick Charts — More Information Per Day",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a single green candlestick and a single red candlestick, labelling: open, close, high, low, body, and wick. Then explain what each element represents.",
+      "content": "Candlestick charts show four prices for each period: open, high, low and close. Each candle summarises a full day (or week, or hour) of trading.\n\nHow to read a candlestick:\n— The body is the thick rectangle — it spans from open to close\n— Green body: close was HIGHER than open (price rose during the period)\n— Red body: close was LOWER than open (price fell during the period)\n— The upper wick (thin line above body): the highest price reached during the period\n— The lower wick (thin line below body): the lowest price reached during the period\n\nExample: Mainfreight, one trading day\nOpen: $68.00, High: $69.80, Low: $67.40, Close: $69.20\nBody: green (close $69.20 > open $68.00)\nUpper wick: from $69.20 to $69.80\nLower wick: from $68.00 to $67.40\n\nWhat this tells us: Mainfreight opened at $68, dipped to $67.40 early in the session (testing a support level), then rallied to a high of $69.80 before settling at $69.20. Buyers were in control — the stock closed near its daily high. This is a bullish candlestick pattern.\n\nA long lower wick with a green body is often called a 'hammer' — it shows sellers tried to push the price down but buyers overwhelmed them. These patterns matter in technical analysis."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A share in a strong uptrend will always have higher prices this year than last year.",
+      "correctAnswer": false,
+      "explanation": "False. An uptrend is defined as a series of higher highs and higher lows over time — but individual weeks or months within the trend can have down periods. Even strong uptrends have pullbacks and corrections. A share can be in a long-term uptrend while also being significantly below last year's high — for example if a correction happened in the past year. Trend analysis is about the overall direction, not every single data point.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Trends, Support and Resistance",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a simple uptrend chart. Mark: two higher highs, two higher lows, a support level, and a resistance level. Then describe what might happen if the price breaks through the resistance.",
+      "content": "Three concepts professional chart readers use constantly.\n\nTrend:\nUptrend: each rally reaches a higher high than the previous rally, and each pullback only reaches a higher low than the previous pullback. Classic pattern of a strong bull run.\nDowntrend: each bounce only reaches a lower high, and each fall reaches a lower low. A share in a clear downtrend is grinding lower.\nSideways trend: price oscillates between a ceiling (resistance) and a floor (support) without clear direction.\n\nSupport: A price level where the share has repeatedly stopped falling and bounced. Buyers consistently step in at this level — perhaps because they believe it is 'good value' or because stop-loss orders are clustered there. Example: Spark NZ repeatedly bouncing at $4.00 over 18 months makes $4.00 a support level.\n\nResistance: A price level where the share has repeatedly failed to break through. Sellers consistently emerge at this level — taking profits or establishing short positions. Example: Air New Zealand hitting $0.90 multiple times without breaking through makes $0.90 a resistance level.\n\nBreakouts: When a share breaks through a resistance level on high volume, it often continues rising — the 'ceiling' has become a new 'floor.' This breakout pattern is one of the most commonly watched signals in technical analysis. The opposite — a break below support — is bearish.\n\nCaveat: These are patterns and tendencies, not certainties. Technical analysis is a tool for forming probabilities, not predictions."
+    },
+    {
+      "type": "quiz",
+      "title": "Chart Reading Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A share has the following weekly closing prices: $10, $11, $10.50, $12, $11.20, $13, $12.50. What trend is this share in?",
+          "options": [
+            "Downtrend — the share fell from $11 to $10.50 and from $12 to $11.20",
+            "Sideways trend — prices are oscillating without clear direction",
+            "Uptrend — the series shows higher highs ($11→$12→$13) and higher lows ($10.50→$11.20→$12.50)",
+            "No trend — the data is too short to identify a trend"
+          ],
+          "correctIndex": 2,
+          "explanation": "This is an uptrend. Despite the pullbacks (from $11 to $10.50 and from $12 to $11.20), each successive high is higher than the last ($11, $12, $13) and each successive low is higher than the last ($10.50, $11.20, $12.50). Higher highs and higher lows is the textbook definition of an uptrend. The pullbacks are normal — uptrends always include temporary retracements."
+        },
+        {
+          "question": "Meridian Energy has bounced from $5.20 four times over the past year each time it touched that level. What does this make $5.20?",
+          "options": [
+            "A resistance level — sellers consistently emerge at $5.20",
+            "A support level — buyers consistently step in at $5.20, preventing further falls",
+            "The fair value of Meridian shares as determined by the NZX",
+            "A price ceiling imposed by Meridian's board"
+          ],
+          "correctIndex": 1,
+          "explanation": "A price level where a share repeatedly stops falling and bounces is a support level — buyers consistently find value at that price and buy, absorbing selling pressure. $5.20 has acted as a 'floor' for Meridian multiple times. Support levels are identified by repeated bounces, not set by any authority. If Meridian were to close decisively below $5.20 on heavy volume, this former support could become new resistance."
+        },
+        {
+          "question": "A share breaks above its 12-month resistance level of $8.50, closing at $8.80 on its highest trading volume in 3 months. What does this signal?",
+          "options": [
+            "The share is now overvalued and should be sold immediately",
+            "A bearish signal — breaking above resistance on high volume typically means a reversal downward is coming",
+            "A bullish breakout — the prior resistance level may now become support, and the high volume confirms broad investor participation in the move",
+            "Nothing significant — price movements above resistance occur randomly and have no predictive value"
+          ],
+          "correctIndex": 2,
+          "explanation": "A breakout above a significant resistance level on high volume is one of the most watched bullish signals in technical analysis. The high volume is critical — it indicates many investors participated in the breakout, making it more likely to be sustained rather than a false alarm. The prior resistance of $8.50 may now become a support level (buyers who missed the breakout often buy pullbacks to the old resistance). This does not guarantee further gains, but the probability is considered favourable by technical analysts."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Line Chart or Candlestick? Match the Use Case",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {"item": "Quick check of whether a share is up or down over the past year", "zone": "Line Chart"},
+        {"item": "Understanding how much price fluctuated within individual trading days", "zone": "Candlestick Chart"},
+        {"item": "Identifying long-term uptrends and downtrends", "zone": "Line Chart"},
+        {"item": "Looking for hammer and reversal patterns on specific days", "zone": "Candlestick Chart"},
+        {"item": "Showing 5-year performance to assess long-term investment returns", "zone": "Line Chart"}
+      ],
+      "explanation": "Line charts are better for big-picture trend and performance analysis. Candlestick charts provide more granular information about each period — open, high, low, close — making them more useful for technical pattern analysis. Most serious investors use both: line charts for context, candlestick charts for shorter-term pattern analysis.",
+      "estimatedMinutes": 5
+    },
+    {
+      "type": "truefalse",
+      "statement": "High trading volume on a price rise makes the rise more significant and reliable than the same price rise on low volume.",
+      "correctAnswer": true,
+      "explanation": "True. Volume is the market's vote of confidence. When many investors participate in a price move (high volume), it reflects broad agreement about direction. A share rising 3% on ten times its average daily volume is a stronger signal than the same 3% rise on minimal volume. Low-volume price moves can be caused by a single large order and may not reflect real market sentiment — they are more prone to reversal.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "A share's price chart shows a series: $20 high, $18 low, $22 high, $19.50 low, $24 high, $21 low. Is this an uptrend, downtrend or sideways? Type one word.",
+      "acceptedAnswers": ["uptrend", "up trend", "up-trend", "Uptrend"],
+      "placeholder": "Type uptrend, downtrend or sideways...",
+      "hint": "Check whether each successive high is higher than the last, and each successive low is higher than the last.",
+      "explanation": "This is an uptrend. Highs: $20 → $22 → $24 (each higher). Lows: $18 → $19.50 → $21 (each higher). Higher highs and higher lows define an uptrend. The share is making consistent progress upward despite regular pullbacks between each peak.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Look Up a Real Chart",
+      "estimatedMinutes": 5,
+      "prompt": "Go to nzx.com or Google Finance and pull up the 1-year chart for any NZ company you recognise. Describe in writing: Is it in an uptrend, downtrend or sideways trend? Can you spot any obvious support or resistance levels? Did anything dramatic happen — sharp rises or falls? What do you think might have caused the biggest move you can see?",
+      "nceaLink": "Extra Learning — reading real charts is the fastest way to build pattern recognition."
+    }
+  ]
+}

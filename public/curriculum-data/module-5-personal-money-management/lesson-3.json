@@ -1,0 +1,111 @@
+{
+  "title": "Savings Accounts and Compound Interest",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Compare NZ savings account types and their 2025 interest rates",
+    "Calculate simple interest on a NZ savings deposit",
+    "Apply the compound interest formula and explain why starting early matters"
+  ],
+  "vocabulary": [
+    { "term": "Interest rate", "definition": "The percentage of your savings balance the bank pays you per year. In 2025, NZ savings accounts range from near 0% to 5.5%+ depending on account type." },
+    { "term": "Simple interest", "definition": "Interest calculated only on the original principal. Formula: I = P x R x T where P is principal, R is rate (as decimal), T is time in years." },
+    { "term": "Compound interest", "definition": "Interest calculated on the principal AND on interest already earned. Formula: A = P(1+r)^n. Grows faster than simple interest over time." },
+    { "term": "Term deposit", "definition": "Savings locked in for a fixed period (3 months, 6 months, 1 year) at a fixed rate. Higher rate than on-call savings but no access until the term ends." },
+    { "term": "On-call savings account", "definition": "A savings account allowing deposits and withdrawals at any time. Lower rate than term deposits but fully accessible." },
+    { "term": "Bonus saver account", "definition": "An on-call savings account paying a higher rate if conditions are met — typically one deposit and no withdrawals per calendar month." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "NZ Savings Accounts — Know Your Options",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a comparison table: Account Type | Rate (approx 2025) | Access | Best For. Fill in at least four account types from this slide.",
+      "content": "Not all savings accounts are equal. The interest rate on your savings can vary from almost zero to over 5.5% depending on which type of account you use. The difference matters — on $5,000 in savings over one year, the gap between 0.1% and 5.3% is $260 in extra money for doing nothing.\n\nEveryday transaction account: 0% to 0.1%. Your spending account. Earns essentially nothing. Do not keep savings here.\n\nOn-call savings account: 2% to 4.5% per annum in 2025. Fully accessible — deposit or withdraw anytime. Good for emergency funds and short-term goals. Examples: ASB FastSaver, ANZ Online Saver, Kiwibank Online Savings.\n\nBonus saver accounts: 4% to 5% per annum if conditions are met — usually one deposit and no withdrawals per month. Slightly higher rate but requires discipline. Examples: ANZ Serious Saver, ASB Savings On Call.\n\nTerm deposits: 4.5% to 5.5% per annum for terms of 3 to 12 months in 2025. Highest standard rates but money is locked in until maturity. Best for money you will not need for a defined period.\n\nKiwiSaver growth funds: Historically 6% to 9% per annum averaged over 10+ years (variable). Not a bank account — an investment. Best for long-term wealth building.\n\nRule: Emergency fund → on-call savings. Money not needed for 6-12 months → term deposit. Long-term wealth → KiwiSaver growth fund."
+    },
+    {
+      "type": "slide",
+      "title": "Simple Interest — Calculate Your Growth",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the simple interest formula. Calculate: if you deposit $3,500 in a term deposit at 5.1% per annum for 9 months, how much interest do you earn? Show all working.",
+      "content": "Simple interest is the foundation of savings calculations. It is used for term deposits and straightforward savings estimates.\n\nFormula: Interest = Principal x Rate x Time\nWhere Rate is the annual interest rate as a decimal and Time is in years.\n\nExample 1: Mia deposits $2,000 in a 12-month term deposit at 4.8% per annum.\nInterest = $2,000 x 0.048 x 1 = $96.00\nTotal at maturity: $2,096.00\n\nExample 2: Jordan puts $1,500 into an ASB on-call savings account at 3.5%. He leaves it for 6 months.\nInterest = $1,500 x 0.035 x 0.5 = $26.25\nTotal: $1,526.25\n\nExample 3: Wiremu opens a BNZ 6-month term deposit with $4,000 at 5.2%.\nInterest = $4,000 x 0.052 x 0.5 = $104.00\nTotal: $4,104.00\n\nKey point: time must always be expressed in years. Six months = 0.5. Three months = 0.25. Nine months = 0.75.\n\nSimple interest assumes the interest is paid at maturity and not reinvested during the period. Most NZ on-call savings accounts actually calculate interest daily and credit it monthly — which is slightly more favourable than annual simple interest, but the formula gives a good approximation."
+    },
+    {
+      "type": "typed",
+      "question": "You deposit $2,000 at 4.8% per annum for 12 months. Using simple interest, how much interest do you earn in dollars?",
+      "acceptedAnswers": ["$96", "$96.00", "96"],
+      "placeholder": "Type the interest earned...",
+      "hint": "Interest = Principal x Rate x Time. Rate as decimal = 4.8 ÷ 100 = 0.048. Time = 1 year.",
+      "explanation": "Interest = $2,000 x 0.048 x 1 = $96.00. Total balance = $2,096. While $96 seems modest, this is free money earned by doing nothing except choosing the right account. If you left $2,000 in an everyday transaction account at 0.1%, you would earn only $2.00 for the year — $94 less for the same money.",
+      "estimatedMinutes": 4
+    },
+    {
+      "type": "slide",
+      "title": "Compound Interest — The Real Magic",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the compound interest formula. Calculate: $3,000 at 4% per annum compounded annually for 5 years. Show each year's balance and compare to simple interest.",
+      "content": "Simple interest pays the same dollar amount each year based only on the original deposit. Compound interest pays interest on your interest — so the amount grows faster every single year.\n\nFormula: A = P(1 + r)^n\nWhere A = final amount, P = principal, r = annual rate as decimal, n = number of years.\n\nExample: Anika deposits $2,000 at 4% per annum compounded annually for 5 years.\n\nYear 1: $2,000 x 1.04 = $2,080.00 (earned $80)\nYear 2: $2,080 x 1.04 = $2,163.20 (earned $83.20)\nYear 3: $2,163.20 x 1.04 = $2,249.73 (earned $86.53)\nYear 4: $2,249.73 x 1.04 = $2,339.72 (earned $89.99)\nYear 5: $2,339.72 x 1.04 = $2,433.31 (earned $93.59)\n\nTotal compound interest: $433.31\n\nWith simple interest at 4% for 5 years: $2,000 x 0.04 x 5 = $400.00\n\nCompound interest earns $33.31 more over just 5 years on a $2,000 deposit. That gap grows enormously over 10, 20, or 40 years — which is exactly why starting KiwiSaver at 18 rather than 28 creates a dramatically different retirement balance."
+    },
+    {
+      "type": "truefalse",
+      "statement": "$5,000 invested at 4% per annum compounded annually for 10 years will give you exactly $7,000 ($5,000 + $200/year x 10).",
+      "correctAnswer": false,
+      "explanation": "False. With compound interest: A = $5,000 x (1.04)^10 = $5,000 x 1.4802 = $7,401. That is $401 more than the simple interest calculation of $7,000. The extra $401 comes from earning interest on previously earned interest — the compounding effect. Over 20 years the gap is even larger: compound gives $10,955 versus simple interest's $9,000 — a difference of nearly $2,000 on the same original deposit.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Why Starting Early Matters — The Time Value of Compound Interest",
+      "estimatedMinutes": 4,
+      "notePrompt": "Using the comparison in this slide, calculate approximately how much more Wiremu ends up with than Caleb by starting KiwiSaver 10 years earlier. What is the 'cost' of each year's delay in starting?",
+      "content": "The single most powerful thing a young NZ person can do for long-term wealth is start saving and investing early. Here is the math that proves it.\n\nWiremu starts contributing $500 per month to a KiwiSaver growth fund at age 18. Average return 5% per annum compounded monthly. He contributes until age 65 (47 years, 564 months).\n\nFuture value ≈ $500 x [(1.004167)^564 - 1] / 0.004167 ≈ $1,080,000\n\nCaleb starts the same $500 per month at age 28. He contributes until age 65 (37 years, 444 months).\n\nFuture value ≈ $500 x [(1.004167)^444 - 1] / 0.004167 ≈ $628,000\n\nDifference: approximately $452,000 — Wiremu ends up with $452,000 more than Caleb by starting 10 years earlier.\n\nCaleb contributed $60,000 more than Wiremu (10 years x $500 x 12 = $60,000 extra). But he still ends up with $452,000 less. The extra compounding time was worth far more than the extra contributions.\n\nEach year of delay at age 18 to 28 costs approximately $45,200 in final balance. That is the financial cost of waiting.\n\nThis is why KiwiSaver enrollment at 18 is one of the most valuable financial decisions available to you right now. You do not need to contribute a lot. You just need to start."
+    },
+    {
+      "type": "slide",
+      "title": "Comparing NZ Savings Products — 2025 Real Rates",
+      "estimatedMinutes": 4,
+      "notePrompt": "For a $5,000 deposit held for 12 months, calculate the interest earned at each rate listed. Which product provides the best return? What is the opportunity cost of leaving money in an everyday account?",
+      "content": "Here are indicative NZ savings product rates for 2025. Always check bank websites for current rates as they change with the RBNZ Official Cash Rate.\n\nANZ Online Saver: approximately 2.5% per annum. Fully accessible.\nASB Savings On Call (with bonus conditions met): approximately 4.5% per annum.\nKiwibank Notice Saver (32-day withdrawal notice): approximately 4.75% per annum.\nBNZ 6-month Term Deposit: approximately 5.2% per annum.\nSimplicity KiwiSaver Growth Fund (long-term historical average): approximately 7% to 9% per annum (variable, not guaranteed).\n\nInterest on $5,000 over 12 months at each rate:\nANZ Online Saver (2.5%): $5,000 x 0.025 = $125\nASB Bonus Saver (4.5%): $5,000 x 0.045 = $225\nKiwibank Notice Saver (4.75%): $5,000 x 0.0475 = $237.50\nBNZ Term Deposit (5.2%): $5,000 x 0.052 = $260\nEveryday account (0.1%): $5,000 x 0.001 = $5\n\nThe difference between leaving $5,000 in an everyday account versus a term deposit: $255 per year for doing nothing except choosing the right account. Over 5 years with the compound effect, the gap is over $1,400."
+    },
+    {
+      "type": "scenario",
+      "title": "Savings Strategy — Caleb's First Home Deposit",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Caleb is 22 and wants to save a $25,000 first home deposit. He currently has $3,000 saved. His 20% savings allocation from his monthly net income of $2,800 = $560 per month available for saving.\n\nOptions:\nOption A: On-call savings account at 4.25% per annum.\nOption B: 6-month rolling term deposits at 5.2% per annum (reinvested each term).\nOption C: Split $280/month to on-call (emergency buffer) and $280/month to term deposit.",
+      "challenge": "1. Using simple interest, calculate how much Caleb earns on his existing $3,000 in Option A over 12 months.\n2. If Caleb adds $560/month and earns 4.25% on a growing balance, approximately how many months to reach $25,000? (Simplified: ignore monthly compounding, divide remaining $22,000 by $560 to estimate months.)\n3. Give one advantage and one disadvantage of Option B (term deposit) compared to Option A.\n4. Recommend which option Caleb should use and explain why.",
+      "hints": [
+        "Q1: Simple interest = $3,000 x 0.0425 x 1 year.",
+        "Q2: Remaining needed = $25,000 minus $3,000 = $22,000. Months = $22,000 / $560.",
+        "Q3: Think about what happens if Caleb has an emergency and needs his savings urgently."
+      ],
+      "solution": "1. Interest on $3,000 at 4.25% for 1 year: $3,000 x 0.0425 x 1 = $127.50. Caleb earns $127.50 in year one on existing savings.\n\n2. Months to save $25,000 (simplified): $22,000 remaining ÷ $560/month = 39.3 months (approximately 3.3 years) ignoring interest. With interest, slightly shorter — approximately 36 to 37 months.\n\n3. Option B advantage: 5.2% rate earns $5,000 x 1.2% more per year than 4.25% — approximately $60 extra per year on a $5,000 average balance. Faster growth.\nOption B disadvantage: Money is locked in for 6-month periods. If Caleb has an unexpected expense (medical bill, job loss) mid-term, he cannot access the funds without a penalty rate reduction. This creates liquidity risk for money he might genuinely need.\n\n4. Recommendation: Option C — the split approach. Depositing $280/month to on-call builds a $3,000 to $5,000 emergency buffer over the first year — protecting Caleb from needing to break the term deposit in an emergency. The other $280/month in rolling 6-month term deposits earns the higher rate. Once the emergency fund is established, redirect the full $560/month to term deposits to maximise growth toward the $25,000 target. This balances growth and security — both essential for a first home deposit strategy."
+    },
+    {
+      "type": "quiz",
+      "title": "Interest and Savings Quiz",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Anika deposits $2,000 at 4% per annum compounded annually. Using A = P(1+r)^n, what is her balance after 5 years?",
+          "options": ["$2,400.00", "$2,433.31", "$2,416.65", "$2,500.00"],
+          "correctIndex": 1,
+          "explanation": "A = $2,000 x (1.04)^5 = $2,000 x 1.21665 = $2,433.31. With simple interest the balance would be $2,400. Compounding adds $33.31 extra over 5 years — small here but growing significantly over longer periods and larger amounts."
+        },
+        {
+          "question": "Which NZ savings option typically offers the HIGHEST interest rate in 2025?",
+          "options": ["ANZ everyday transaction account", "On-call savings account", "6-month term deposit", "KiwiSaver conservative fund"],
+          "correctIndex": 2,
+          "explanation": "In 2025, 6-month term deposits typically offer 4.5% to 5.5% — the highest of these standard savings options — in exchange for locking in money for 6 months. Everyday accounts earn near 0%. On-call accounts earn 2.5% to 4.75%. KiwiSaver conservative funds typically earn 2% to 4% long-term — lower than growth funds and designed for near-retirement capital preservation."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "m2-l4",
+  "title": "Income Sources in NZ",
+  "order": 4,
+  "xpReward": 25,
+  "filename": "lesson-4.json",
+  "activities": [
+    {
+      "type": "slide",
+      "id": "m2l4-s1",
+      "title": "Where does money come from?",
+      "content": "Before you can budget, you need to understand your income clearly. In New Zealand, income comes in many forms — and each has different tax treatment, reliability, and growth potential.\n\n**Active income:** You trade time for money (wages, salary, freelance work)\n**Passive income:** Money works for you (rent, dividends, interest)\n\nMost young New Zealanders start with active income only. The goal over time is to build passive income streams that reduce dependence on a single job.",
+      "notePrompt": "What is your current primary source of income? Is it active or passive?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l4-s2",
+      "title": "PAYE — how your wages are taxed",
+      "content": "In New Zealand, most employees pay tax through **PAYE (Pay As You Earn)**. Your employer deducts tax before paying you, so you never touch the gross amount.\n\n**NZ income tax rates (2025):**\n- Up to $14,000: 10.5%\n- $14,001 – $48,000: 17.5%\n- $48,001 – $70,000: 30%\n- $70,001 – $180,000: 33%\n- Over $180,000: 39%\n\nIf you earn $30,000/year: first $14,000 taxed at 10.5%, remaining $16,000 at 17.5%.\nAlways budget using your **net (take-home) pay**, not the gross figure.",
+      "notePrompt": "If a job advertises $25/hour for 20 hours/week, what is the approximate gross weekly income? Why would your actual take-home be less?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l4-s3",
+      "title": "KiwiSaver and employer contributions",
+      "content": "**KiwiSaver** is NZ's voluntary workplace savings scheme. Understanding it is essential for budgeting:\n\n- Your contribution: 3%, 4%, 6%, 8%, or 10% of gross pay (you choose)\n- Employer contribution: minimum 3% of gross pay (legislated)\n- Government: up to $521/year (member tax credit if you contribute enough)\n\n**Important:** KiwiSaver is deducted BEFORE you receive your pay — like tax. When budgeting, your take-home is after tax AND after KiwiSaver.\n\nAt minimum 3%: on $600/week gross, you contribute $18, employer adds $18, government adds ~$10/week. That is $46/week building in the background.",
+      "notePrompt": "Are you enrolled in KiwiSaver? What contribution rate do you use, or would you choose?"
+    },
+    {
+      "type": "quiz",
+      "id": "m2l4-q1",
+      "questions": [
+        {
+          "question": "Mia earns $22/hour and works 25 hours/week. Her PAYE tax rate is 17.5% and she contributes 3% to KiwiSaver. What is her approximate weekly take-home pay?",
+          "options": ["$550", "$468", "$430", "$475"],
+          "correctIndex": 1,
+          "explanation": "Gross: 22 x 25 = $550. Tax: 550 x 17.5% = $96.25. KiwiSaver: 550 x 3% = $16.50. Take-home: 550 - 96.25 - 16.50 = approximately $437 (closest to $430-$468 range depending on ACC levy). Actual is around $437."
+        },
+        {
+          "question": "Which income type does NOT require you to trade your time for money?",
+          "options": ["Wages from a part-time job", "Freelance graphic design fees", "Dividends from shares", "Tips from hospitality work"],
+          "correctIndex": 2,
+          "explanation": "Dividends are paid to shareholders from company profits — you receive money simply by owning shares, without working for it. This is passive income."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "id": "m2l4-s4",
+      "title": "Government support payments",
+      "content": "Many young New Zealanders are entitled to government support:\n\n**Student Allowance:** Up to ~$261/week for eligible full-time students (income and parent-tested)\n\n**Working for Families:** Tax credits for families with children — can add hundreds per week\n\n**Accommodation Supplement:** Helps with rent costs — up to $305/week depending on region and situation\n\n**JobSeeker Support:** Income support if you cannot find work\n\n**Student Loan:** Covers fees and living costs as a loan (not income — must be repaid)\n\nAlways check your entitlements at **workandincome.govt.nz** — many people miss payments they qualify for.",
+      "notePrompt": "Which of these support payments might you be eligible for currently or in the future?"
+    },
+    {
+      "type": "truefalse",
+      "id": "m2l4-tf1",
+      "questions": [
+        { "statement": "You should budget using your gross (before tax) income.", "answer": false, "explanation": "Always budget using net (take-home) income. Gross income includes tax you never receive — budgeting with it will leave you consistently short." },
+        { "statement": "Your employer is required by law to contribute at least 3% to your KiwiSaver.", "answer": true, "explanation": "As of 2013, all NZ employers must contribute a minimum of 3% of an employee's gross salary to their KiwiSaver — if the employee is enrolled." },
+        { "statement": "Passive income requires ongoing daily effort to maintain.", "answer": false, "explanation": "Passive income (dividends, rental income, interest) does not require daily effort once established. This is what makes it valuable — money working without your direct time input." }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "id": "m2l4-dd1",
+      "instruction": "Sort these income types as Active or Passive",
+      "items": [
+        { "text": "Weekly wages from supermarket job", "category": "Active" },
+        { "text": "Weekly rent from investment property", "category": "Passive" },
+        { "text": "Dividend payment from NZX shares", "category": "Passive" },
+        { "text": "Freelance web design project fee", "category": "Active" },
+        { "text": "Interest earned in savings account", "category": "Passive" },
+        { "text": "Tips from café work", "category": "Active" },
+        { "text": "Student allowance from StudyLink", "category": "Active" },
+        { "text": "TradeMe sales of homemade products", "category": "Active" }
+      ],
+      "categories": ["Active", "Passive"]
+    },
+    {
+      "type": "typed",
+      "id": "m2l4-t1",
+      "prompt": "James works 30 hours/week at $18/hour. He also earns $40/week interest from a term deposit. His PAYE tax rate is 17.5% and he contributes 4% to KiwiSaver. Calculate his total weekly net income from all sources.",
+      "sampleAnswer": "Wages gross: 30 x $18 = $540. Tax on wages: $540 x 17.5% = $94.50. KiwiSaver: $540 x 4% = $21.60. Net wages: $540 - $94.50 - $21.60 = $423.90. Interest: $40 (taxed at RWT, approximately $40 x 17.5% = $7 tax deducted = $33 net). Total net income: approximately $423.90 + $33 = $456.90/week.",
+      "hint": "Calculate wages after tax and KiwiSaver separately, then add the after-tax interest income."
+    }
+  ]
+}

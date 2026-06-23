@@ -1,0 +1,153 @@
+{
+  "title": "Tax and Shares in NZ",
+  "order": 7,
+  "dayNumber": 7,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand",
+  "nceaFocus": "Extra Learning \u2014 How Shares Work",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain NZ's tax treatment of dividends including imputation credits",
+    "Describe the Portfolio Investment Entity (PIE) tax regime for funds",
+    "Explain why NZ has no capital gains tax on share investments (in most circumstances)"
+  ],
+  "vocabulary": [
+    {
+      "term": "No capital gains tax",
+      "definition": "NZ does not generally tax profits made from selling shares, property or other investments \u2014 unless the investment was bought with the intention to resell (the 'bright-line' test applies to property but generally not shares)."
+    },
+    {
+      "term": "Imputation credit",
+      "definition": "A tax credit attached to dividends reflecting the company tax already paid. Passes through to shareholders to prevent double taxation on the same income."
+    },
+    {
+      "term": "Portfolio Investment Entity (PIE)",
+      "definition": "A NZ tax structure for managed funds (like KiwiSaver and index funds) that caps the tax rate on investment returns at the investor's prescribed investor rate (PIR), maximum 28%."
+    },
+    {
+      "term": "Prescribed Investor Rate (PIR)",
+      "definition": "Your personal tax rate for PIE investments \u2014 either 10.5%, 17.5% or 28% depending on your income."
+    },
+    {
+      "term": "Foreign Investment Fund (FIF)",
+      "definition": "The NZ tax regime for investments in offshore companies (like US shares). Taxes based on 5% of the value of the holding each year regardless of whether dividends are paid."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Good News \u2014 NZ Has No Capital Gains Tax on Shares",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What does 'no capital gains tax' mean for NZ share investors? What is the one exception and does it apply to ordinary investors holding diversified portfolios?",
+      "content": "One of the most investor-friendly aspects of NZ's tax system is that there is generally no capital gains tax (CGT) on shares.\n\nIn plain English: if you buy 1,000 Mainfreight shares at $50 and sell them 10 years later for $120, your $70,000 capital gain is completely tax-free.\n\nThis is remarkable compared to many countries: the US taxes long-term capital gains at 0% to 23.8% depending on income. Australia taxes them at marginal income rates (with a 50% discount for assets held over 12 months). The UK taxes them at 10% to 28%.\n\nThe NZ exception \u2014 the 'share trader' rule: If you are classified as a professional trader who buys shares with the primary purpose of reselling them at a profit, your gains may be taxable as income. This applies to high-frequency traders and investment businesses \u2014 not to ordinary investors holding a diversified portfolio for growth.\n\nIRD factors for classifying a share trader include: frequency of transactions, purpose of purchase, length of holding, and whether trading is your occupation.\n\nFor the vast majority of NZ investors \u2014 people holding a diversified portfolio of shares for medium to long-term growth \u2014 there is no CGT. This makes starting early and holding long-term even more attractive in NZ than in most countries."
+    },
+    {
+      "type": "slide",
+      "title": "Dividends and Imputation Credits",
+      "estimatedMinutes": 4,
+      "notePrompt": "If you are on a 33% income tax rate and receive a $70 dividend with a $30 imputation credit (30/70 = 28% company tax), what additional tax do you pay?",
+      "content": "NZ dividends come with imputation credits attached \u2014 a system designed to prevent double taxation.\n\nHow it works:\n1. Spark earns $100 profit.\n2. Spark pays 28% company tax = $28 to IRD. Profit after tax = $72.\n3. Spark distributes $72 as a dividend with $28 of imputation credits attached.\n4. You (the shareholder) receive $72 cash + $28 tax credit = $100 of 'gross dividend'.\n5. Your income tax on $100 at 30% personal rate = $30.\n6. Minus $28 imputation credit = only $2 additional tax to pay.\n\nFull vs partial imputation: If a company paid the full 28% company tax, the dividend is 'fully imputed.' Some companies (particularly overseas subsidiaries) may have partial imputation or none.\n\nFor low-income investors (17.5% tax rate): the imputation credit ($28) exceeds their tax ($17.50) \u2014 they receive a $10.50 tax refund on the dividend. This makes NZ dividends very tax-efficient for lower-income shareholders.\n\nFor KiwiSaver and PIE funds: dividends flow into the fund and are taxed at the investor's PIR (max 28%), which matches the company tax rate \u2014 so imputation credits often fully offset any tax on the fund's NZ dividend income."
+    },
+    {
+      "type": "truefalse",
+      "statement": "All NZ investors pay the same 28% tax rate on returns from PIE funds like KiwiSaver.",
+      "correctAnswer": false,
+      "explanation": "False. PIE funds (including KiwiSaver funds) tax investors at their Prescribed Investor Rate (PIR), which depends on individual income. The three PIR rates are 10.5% (for those earning under $14,000 annually), 17.5% (earning $14,001 to $48,000), and 28% (earning above $48,000 or those with investment income). Students and young investors in their first years of work often qualify for the 10.5% or 17.5% PIR \u2014 making PIE funds particularly tax-efficient for them.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Overseas Shares and the FIF Rules",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: Why does NZ have a special tax rule for overseas shares? If you hold $40,000 of US shares, how much income is you assumed to have earned under FIF rules?",
+      "content": "Buying US, Australian or other overseas shares through platforms like Hatch or Sharesies introduces a different NZ tax regime: the Foreign Investment Fund (FIF) rules.\n\nWhy FIF exists: Without special rules, NZ investors in overseas shares could defer NZ tax indefinitely by buying non-dividend-paying growth stocks (like Amazon or Alphabet). FIF prevents this by taxing a deemed return on overseas shareholdings annually.\n\nHow FIF works:\n\u2014 If your overseas share portfolio is over NZD $50,000, FIF rules apply.\n\u2014 Under the default FIF method, 5% of the opening market value of your overseas holdings is treated as taxable income each year \u2014 regardless of whether dividends were actually paid.\n\u2014 This 5% deemed income is added to your ordinary income and taxed at your marginal rate.\n\nExample: You hold $60,000 of US shares on 1 April (tax year start). FIF deems: $60,000 \u00d7 5% = $3,000 of income. At 30% tax rate: $900 tax regardless of actual dividends or gains.\n\nExceptions:\n\u2014 Australian shares listed on the ASX with DTA (Double Tax Agreement): exempt from FIF, treated like NZ shares\n\u2014 Portfolio below NZD $50,000 in overseas shares: FIF does not apply\n\nFor most young NZ investors starting out with small amounts, the $50,000 threshold means FIF rules will not apply for many years."
+    },
+    {
+      "type": "quiz",
+      "title": "Tax and Shares Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Jordan buys 500 Spark shares at $4.10, holds for 4 years, and sells at $5.40. His capital gain is $650. How much NZ income tax does he pay on this gain?",
+          "options": [
+            "$195 \u2014 30% capital gains tax on the $650 profit",
+            "$0 \u2014 NZ does not have a capital gains tax on ordinary share investments held for growth",
+            "$117 \u2014 18% reduced rate for long-term capital gains",
+            "$650 \u2014 all capital gains are treated as ordinary income and taxed at the full marginal rate"
+          ],
+          "correctIndex": 1,
+          "explanation": "NZ has no capital gains tax on ordinary share investments. Jordan's $650 gain is completely tax-free. This is one of NZ's most investor-friendly tax features. The exception (share trader rules) does not apply to Jordan \u2014 he held shares for 4 years as a long-term investor, not a professional trader seeking to resell for profit."
+        },
+        {
+          "question": "You receive a fully imputed dividend of $72 from Spark NZ. The attached imputation credit is $28. If your income tax rate is 17.5%, how much additional tax do you pay (or refund do you receive)?",
+          "options": [
+            "Pay $17.50 additional tax \u2014 17.5% on the $100 gross dividend",
+            "Pay $12.60 additional tax \u2014 17.5% on the $72 cash dividend received",
+            "Receive a $10.50 refund \u2014 your 17.5% tax on $100 ($17.50) is less than the $28 imputation credit",
+            "Pay $28 tax \u2014 dividends are always taxed at the company tax rate of 28%"
+          ],
+          "correctIndex": 2,
+          "explanation": "Gross dividend = $72 cash + $28 imputation credit = $100. Your tax at 17.5%: $100 \u00d7 17.5% = $17.50. Imputation credit available: $28. $17.50 tax due \u2212 $28 credit = \u2212$10.50 (refund). Because the company already paid 28% tax and your personal rate is only 17.5%, the excess credit is refunded to you. NZ imputation credits are very efficient for lower-income investors."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Which Tax Rule Applies? Match the Scenario",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "You sell Mainfreight shares after 5 years for a $4,000 profit",
+          "zone": "No tax \u2014 no capital gains tax in NZ"
+        },
+        {
+          "item": "You receive a Spark dividend with imputation credits",
+          "zone": "Taxed as income, imputation credits offset tax"
+        },
+        {
+          "item": "You hold $80,000 of Apple shares (US) \u2014 FIF rules apply",
+          "zone": "5% of opening value deemed as taxable income"
+        },
+        {
+          "item": "KiwiSaver growth fund returns taxed at your PIR",
+          "zone": "PIE tax regime \u2014 capped at 28%"
+        },
+        {
+          "item": "You hold $30,000 of US shares \u2014 below the FIF threshold",
+          "zone": "No FIF \u2014 taxed on actual dividends received"
+        }
+      ],
+      "explanation": "NZ's tax treatment of investments varies significantly by investment type. Capital gains on NZ shares are generally tax-free. Dividends are taxed as income but imputation credits prevent double taxation. Overseas shares above $50,000 are taxed under FIF rules. KiwiSaver and PIE funds cap tax at 28%. Understanding these rules helps optimise investment decisions."
+    },
+    {
+      "type": "truefalse",
+      "statement": "The NZ Foreign Investment Fund (FIF) rules tax you on capital gains actually made from overseas shares.",
+      "correctAnswer": false,
+      "explanation": "False. FIF rules do not tax actual capital gains. Instead, they deem 5% of the opening value of your overseas portfolio as income each year \u2014 regardless of what actually happened (gains, losses or dividends). You could have lost 20% on your US shares but still owe FIF tax on the deemed 5% income. Conversely, you could have gained 40% but only pay tax on 5%. FIF is a simplified regime that trades accuracy for administrative simplicity.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What is the NZ tax regime for managed funds including KiwiSaver that caps investor tax rates based on their income level?",
+      "acceptedAnswers": [
+        "PIE",
+        "Portfolio Investment Entity",
+        "pie"
+      ],
+      "placeholder": "Type the three letters or full name...",
+      "hint": "Three-letter abbreviation \u2014 think of a circular pastry.",
+      "explanation": "PIE (Portfolio Investment Entity) is the NZ tax structure for managed funds including KiwiSaver. Investors are taxed at their PIR (Prescribed Investor Rate) \u2014 10.5%, 17.5% or 28% \u2014 rather than their full marginal income tax rate. This is particularly beneficial for investors who pay marginal rates above 28% on other income, and for those who qualify for the 10.5% PIR on low incomes.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "NZ's Tax Advantages for Investors",
+      "estimatedMinutes": 5,
+      "prompt": "Compared to countries like Australia (which does have capital gains tax) and the US, NZ has several tax advantages for share investors. List three specific NZ tax advantages for a young investor. How might these advantages change the decision to invest in NZ shares versus overseas shares? Are there any disadvantages to NZ's tax approach?",
+      "nceaLink": "Extra Learning \u2014 understanding the tax environment shapes which investments are most efficient for NZ investors."
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "title": "Excellence Skills — Evaluating Pricing Decisions",
+  "order": 6,
+  "dayNumber": 6,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Evaluate",
+  "nceaFocus": "AS92029: Evaluate price determination — analysing the extent to which the pricing decision considers relevant factors and analysing how the organisation could respond to the effects of its pricing decision",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Analyse the extent to which a pricing decision considers relevant internal and external factors",
+    "Analyse how an organisation could respond to the effects of its pricing decision",
+    "Apply Excellence-level evaluative language to a complete pricing analysis"
+  ],
+  "vocabulary": [
+    {
+      "term": "Analyse the extent",
+      "definition": "To judge how fully or partially something is accounted for. In AS92029, this means evaluating whether the pricing decision strongly, partially, or insufficiently considers each relevant factor — and explaining your judgement with evidence."
+    },
+    {
+      "term": "Respond to effects",
+      "definition": "Actions the organisation could take to manage or mitigate the consequences of its pricing decision. In AS92029, an Excellence response proposes specific, practical strategies grounded in the organisation's goals."
+    },
+    {
+      "term": "Pricing review",
+      "definition": "A periodic reassessment of prices in response to changing costs, competitor behaviour, or market conditions. Part of how organisations respond to the effects of their pricing decisions."
+    },
+    {
+      "term": "Differentiation",
+      "definition": "Making a product or service distinct from competitors in ways customers value. Effective differentiation allows an organisation to justify a premium price."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Excellence Shift — From Explain to Evaluate",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write the Excellence-level question you must answer for each factor: it starts with 'To what extent does this pricing decision consider...' Complete it for two factors from any scenario in this module.",
+      "content": "You have learned to describe factors (Achieved) and explain how they influence pricing and what effects they have (Merit). Excellence requires one more shift: evaluation.\n\nAt Excellence, you analyse TWO things:\n\n1. The extent to which the pricing decision considers relevant factors. This means making a judgement — does the decision fully, partially, or inadequately account for each factor? And what is the evidence?\n\n2. How the organisation could respond to the effects of its pricing decision. This means proposing specific, practical actions the organisation should take to manage the consequences of its chosen price.\n\nHere is the language that signals Excellence level:\n— 'To the extent that... the decision [strongly/partially/inadequately] considers...'\n— 'However, the decision does not fully account for...'\n— 'To respond to this effect, the organisation could...'\n— 'This response is appropriate because it addresses [effect] without compromising [goal]'\n\nPractice using these phrases in your assessment. They are not just filler — they mark the transition from explaining what happens to evaluating how well it is handled and what should be done next."
+    },
+    {
+      "type": "slide",
+      "title": "Analysing the Extent — Worked Example",
+      "estimatedMinutes": 4,
+      "notePrompt": "Using the four-step framework from this slide, write your own Excellence-level extent analysis for ONE factor in the Wiremu honey scenario.",
+      "content": "Let's walk through a worked Excellence-level analysis using Anika's $5.00 cookie pricing decision.\n\nFactor: Competitor pricing (competitor selling at $3.80)\n\nAchieved level: 'A competitor is selling gourmet cookies at $3.80, which is $1.20 less than Anika's price.'\n\nMerit level: 'The competitor's $3.80 price creates downward pressure on Anika's pricing. Budget-conscious customers may switch to the cheaper option, which could reduce Anika's sales volume by approximately 20%.'\n\nExcellence level: 'Anika's $5.00 pricing decision only partially considers the competitive pricing factor. While the projected income statement shows her monthly profit actually increases to $198 despite lower volume, this model assumes a 20% drop — but does not account for the possibility of a larger volume loss if the competitor is perceived as offering equivalent quality. To the extent that Anika's product is genuinely differentiated by quality, the $5.00 price is defensible. However, if customer perception of quality differences weakens, the competitive gap of $1.20 could drive a steeper sales decline. Anika should monitor the competitor closely and respond if sales drop below 100 cookies per month by either investing in visible quality signals (packaging upgrades, a loyalty card) or reconsidering the price point.'\n\nThe Excellence response makes a judgement (partially considers), explains the reasoning and the risk (model assumption may underestimate volume loss), and proposes a practical response (monitor sales, loyalty card, packaging)."
+    },
+    {
+      "type": "quiz",
+      "title": "Excellence Language — Identify the Level",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Excellence",
+      "questions": [
+        {
+          "question": "Which of the following responses demonstrates Excellence-level analysis of a pricing factor?",
+          "options": [
+            "'The cost of production is an internal factor.'",
+            "'The cost of production is $10.24 per jar, which means the price must cover this amount.'",
+            "'The variable cost of $10.24 per jar establishes a hard floor — any price below this results in a direct loss. The $26 price covers this cost with a $15.76 contribution margin, which means fixed costs are covered within 22 jars — well within expected monthly volume. To this extent, the pricing decision fully considers production costs and builds in meaningful financial resilience.'",
+            "'The cost of production influences the break-even point, which affects how many jars Wiremu needs to sell.'"
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is Excellence level. It makes a specific judgement ('fully considers production costs'), provides financial evidence ($15.76 contribution margin, 22-jar break-even), and explains the significance ('meaningful financial resilience'). Option A is Achieved (describes the factor). Option B is Achieved-Merit (identifies the cost and its minimum implication). Option D is Merit (explains the influence) but stops short of evaluation and does not make a judgement about the extent."
+        },
+        {
+          "question": "Which of the following best demonstrates 'how the organisation could respond to the effects of its pricing decision' at the Excellence level?",
+          "options": [
+            "'The high price may reduce sales, which would be bad for the business.'",
+            "'If sales fall, Wiremu could lower his price.'",
+            "'If the $26 price causes sales to drop below 50 jars per month for two consecutive months, Wiremu should introduce a market-day bundle offer (e.g. 2 jars for $48) to incentivise volume without permanently reducing his advertised price. This maintains his premium positioning while stimulating demand — addressing the sales effect without undermining his brand.'",
+            "'Wiremu should monitor his sales carefully and make adjustments as needed.'"
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is Excellence level. It proposes a specific, practical response (bundle offer), defines the trigger (sales below 50 jars for two consecutive months), explains the mechanism (incentivise volume without cutting the list price), and connects it to organisational goals (maintaining premium positioning). Options A and B are vague with no actionable detail. Option D is a generic management statement that could apply to any situation and shows no understanding of this specific pricing context."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "Responding to Effects — Strategy Toolkit",
+      "estimatedMinutes": 4,
+      "notePrompt": "List five response strategies from this slide. For each one, write one sentence explaining what type of pricing effect it is designed to address.",
+      "content": "When analysing how an organisation could respond to the effects of its pricing decision, you need to propose specific strategies — not vague suggestions like 'review the price.' Here is a practical toolkit of responses applicable to NZ business contexts.\n\n1. Bundle pricing: Offer two or more products together at a slight discount. Addresses the effect of customers perceiving the unit price as too high by improving perceived value without reducing the advertised price.\n\n2. Tiered pricing: Offer a standard and premium version at different price points. Addresses the effect of losing price-sensitive customers by giving them a lower-cost entry point while maintaining premium revenue from less price-sensitive buyers.\n\n3. Loyalty programmes: Reward repeat purchases. Addresses the effect of customers switching to cheaper competitors by creating a non-price reason to stay.\n\n4. Cost reduction initiatives: Find ways to reduce variable or fixed costs. Addresses the effect of a price ceiling that makes the current cost structure unviable, allowing the organisation to maintain its price while improving margins.\n\n5. Differentiation investment: Improve packaging, quality signals, or customer experience. Addresses the effect of customers questioning whether the premium price is justified, by making the quality difference more visible.\n\n6. Periodic pricing review: Commit to reviewing prices every six months relative to costs and competitor pricing. Addresses the ongoing effect of changing external conditions by building responsiveness into the pricing process."
+    },
+    {
+      "type": "truefalse",
+      "statement": "At the Excellence level in AS92029, students must analyse both the extent to which the pricing decision considers relevant factors AND how the organisation could respond to the effects of the decision.",
+      "correctAnswer": true,
+      "explanation": "True. The Excellence criteria in AS92029 have two distinct requirements. First, students must analyse the extent to which the pricing decision considers relevant factors — making evaluative judgements about how well or partially each factor is accounted for. Second, students must analyse how the organisation could respond to the effects of its pricing decision — proposing specific, practical strategies. A response that does only one of these two things is unlikely to reach Excellence.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "A Complete Excellence Response — Wiremu's Honey Pricing",
+      "estimatedMinutes": 4,
+      "notePrompt": "Annotate this response. Mark where the extent analysis appears (E1) and where the response strategy appears (E2). Could you write something similar for the Anika scenario?",
+      "content": "Here is a complete Excellence-level analysis for Wiremu's $26 honey pricing decision. Use this as a model.\n\nExtent analysis — competitor prices:\n'Wiremu's $26 pricing decision partially considers the external factor of competitor prices. The decision correctly identifies that $26 sits within the $18 to $28 Northland market range, avoiding the risk of pricing above the market ceiling. However, it does not fully account for the specific positioning of competitors at the lower end of the range (around $18 to $20), where higher-volume sellers may offer a similar product to price-sensitive customers. To the extent that Wiremu's product is perceived as genuinely superior — through local provenance, raw honey quality, and personal market relationship — the $26 price is defensible. However, the decision incompletely accounts for the risk that budget-conscious customers, particularly in a high cost-of-living environment, may shift to the $18 to $20 products if they cannot clearly perceive the quality difference.'\n\nResponse strategy:\n'To respond to the potential effect of losing price-sensitive customers, Wiremu could introduce a market-day tasting station where customers can sample his honey before purchasing. This investment (estimated $15 to $20 per market day in sample portions) creates a tangible quality experience that justifies the $26 price without discounting. If sales still fall below 40 jars per month for three consecutive months, Wiremu should introduce a 2-jar bundle at $48 (saving $4) to improve volume while maintaining his per-jar revenue above break-even with a comfortable margin.'"
+    },
+    {
+      "type": "scenario",
+      "title": "Excellence Scenario — Jordan's FreshBox Price Increase",
+      "estimatedMinutes": 15,
+      "nceaLevel": "Excellence",
+      "setup": "Jordan has been running her FreshBox meal prep service in Christchurch at $85 per box for three months. She has 20 regular clients (80 boxes per month). Monthly net profit: $2,250. A new competitor, MealKing, has just launched in Christchurch charging $72 per box for a similar service. Two of Jordan's regular clients have contacted her asking whether she will match the $72 price. Jordan is also dealing with a supply cost increase — her protein ingredient costs have risen by $0.80 per box, bringing her new variable cost to $50.80 per box. Her fixed costs remain $550 per month.",
+      "challenge": "1. Recalculate Jordan's new break-even point and projected monthly profit at $85 with the updated variable cost of $50.80.\n2. Analyse the extent to which Jordan's $85 pricing decision considers (a) the competitor pricing factor and (b) the rising cost of production factor.\n3. Analyse how Jordan could respond to TWO effects of her current pricing decision. Propose specific, practical strategies.",
+      "hints": [
+        "For question 1: New contribution margin = $85 − $50.80. New break-even = $550 ÷ new contribution margin. New net profit = (80 × contribution margin) − $550.",
+        "For extent analysis: judge whether the pricing decision fully, partially, or inadequately accounts for each factor. Explain your judgement with evidence.",
+        "For response strategies: be specific. Name the strategy, explain how it works, and connect it to the specific effect it addresses."
+      ],
+      "solution": "1. Recalculated financial position at $85 with new variable cost $50.80:\nNew contribution margin = $85.00 − $50.80 = $34.20 per box\nNew break-even = $550 ÷ $34.20 = 16.1 → 17 boxes per month\nNew monthly net profit at 80 boxes = (80 × $34.20) − $550 = $2,736 − $550 = $2,186\nNote: The cost increase reduces profit from $2,250 to $2,186 — a decrease of $64 per month.\n\n2. Extent analysis:\n\n(a) Competitor pricing factor:\nJordan's $85 price only partially considers the competitor pricing factor. While $85 sat within the Christchurch meal prep market range at launch, MealKing's entry at $72 has compressed the market range significantly. The $13 price gap between Jordan and MealKing is now significant enough that price-sensitive clients (two have already enquired about matching) may switch. To the extent that Jordan's service offers genuine differentiation — homemade quality, personalised menu options, reliable relationship — the $85 price remains defensible. However, the pricing decision does not fully account for the competitive disruption a new lower-priced entrant can cause, particularly in a market where clients have not yet built strong switching barriers.\n\n(b) Rising cost of production:\nJordan's $85 pricing decision currently does not fully account for the rising variable cost of $50.80 per box. The price was set when variable costs were $50.00. The $0.80 increase per box reduces monthly profit by $64 — not dramatic in isolation, but it creates a downward trend. If input costs continue to rise, the margin compression could eventually threaten financial viability without a price adjustment. To the extent that Jordan monitors costs and reviews prices periodically, she can adapt. However, her current $85 price does not yet reflect the updated cost structure, meaning she is absorbing the cost increase rather than passing it on.\n\n3. Response strategies:\n\nEffect 1 — Risk of losing price-sensitive clients to MealKing at $72:\nJordan should not match MealKing's $72 price. Doing so would reduce her contribution margin to $72 − $50.80 = $21.20, meaning she would need 26 boxes just to break even (up from 17). At 80 boxes, profit would drop to (80 × $21.20) − $550 = $1,696 − $550 = $1,146 — nearly half her current profit. Instead, Jordan should schedule a personal check-in call with each of her 20 clients, highlighting the specific value differences: customised meals, quality ingredients, direct communication. She should offer a referral discount ($10 off next order for each new client referred) to strengthen loyalty and grow volume. This addresses the competitive effect by investing in relationships rather than matching a price that would damage her financial position.\n\nEffect 2 — Rising variable costs reducing profitability:\nJordan should implement a modest price adjustment from $85 to $88 per box, effective from the next subscription renewal. The $3 increase per box increases contribution margin to $37.20 and raises monthly profit at 80 boxes to (80 × $37.20) − $550 = $2,976 − $550 = $2,426 — recovering the cost increase and improving the financial position. She should communicate the increase to clients with transparency: 'Due to rising ingredient costs, we are adjusting our pricing from [date]. We remain committed to the same quality and personalised service.' This approach maintains trust while protecting financial viability — addressing the cost effect directly rather than absorbing it indefinitely."
+    },
+    {
+      "type": "reflection",
+      "title": "Project Excellence Review",
+      "estimatedMinutes": 7,
+      "prompt": "Review your module project draft so far. For each of the following, write one sentence assessing where you are: (1) Have you clearly stated your recommended price with financial evidence? (2) Have you explained how at least two factors INFLUENCE the decision? (3) Have you explained at least two EFFECTS on stakeholders? (4) Have you analysed the EXTENT to which your decision considers each factor? (5) Have you proposed specific RESPONSE STRATEGIES for at least one significant effect? If any of these is missing, write one sentence describing exactly what you will add.",
+      "nceaLink": "Items 1 and 2 cover Achieved and Merit criteria respectively. Items 3 and 4 cover Merit and Excellence criteria. Item 5 is the second Excellence criterion. Use this checklist before your final submission."
+    }
+  ]
+}

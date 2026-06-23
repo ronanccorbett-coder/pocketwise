@@ -1,0 +1,64 @@
+{
+  "title": "Project Completion Day",
+  "order": 7,
+  "dayNumber": 7,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 100,
+  "bloomsLevel": "Apply, Analyse, and Evaluate",
+  "nceaFocus": "AS92029: Full project completion — applying all achievement criteria from Achieved through to Excellence in a complete price determination report",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Complete a full AS92029-aligned price determination report for a chosen NZ product or service",
+    "Apply the report structure with financial model, factor analysis, effects analysis, and Excellence evaluation",
+    "Conduct peer review using the specific AS92029 achievement criteria"
+  ],
+  "vocabulary": [
+    {
+      "term": "Price determination report",
+      "definition": "A structured written response that recommends a price for a product or service, supported by a financial model and analysis of internal and external factors, effects on stakeholders, and at Excellence level, evaluation of how well the decision considers each factor."
+    },
+    {
+      "term": "Peer review",
+      "definition": "The process of reading and evaluating another student's work using assessment criteria. Helps you see your own work more clearly."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Your Price Determination Report — Structure Reminder",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the six-part structure into your notes. Tick off each section you have already completed in your project draft.",
+      "content": "Before you start writing today, here is the complete structure for your AS92029 price determination report.\n\nPart 1 (Achieved): Describe the organisation and the product or service being priced. Identify at least two internal and two external factors that influence the price.\n\nPart 2 (Achieved): Build your financial model — a break-even analysis and/or projected income statement comparing at least two pricing options. All figures must be actual calculated amounts in NZD.\n\nPart 3 (Achieved): State your recommended price clearly. Justify it with reference to your financial model and both internal and external factors.\n\nPart 4 (Merit): Explain how internal and external factors INFLUENCE the pricing decision. Use the phrase 'this influences the pricing decision by...' to ensure you are explaining the mechanism, not just naming the factor.\n\nPart 5 (Merit): Explain the possible effects of your recommended price on the organisation and at least two stakeholders.\n\nPart 6 (Excellence): Analyse the EXTENT to which your pricing decision considers relevant factors. Analyse how the organisation could RESPOND to the effects — propose specific, practical strategies.\n\nEvery section must contain actual NZD figures. Vague statements without numbers will not meet the criteria at any level."
+    },
+    {
+      "type": "slide",
+      "title": "Reference Scenario — If You Need One",
+      "estimatedMinutes": 4,
+      "notePrompt": "If you are using your own scenario, skip this slide. If you are using the reference scenario, copy the key figures (costs, market range, expected volume) into your notes before beginning.",
+      "content": "If you have not yet selected your own product or service for the project, use this reference scenario.\n\nCaleb runs a small screen-printing business in Hamilton, printing custom T-shirts for schools, sports clubs, and community events. He is pricing his standard single-colour printed T-shirt (printed both sides).\n\nMonthly fixed costs: studio rent $450, printing equipment maintenance $90, software subscriptions $35, business insurance $65. Total fixed costs: $640 per month.\n\nVariable costs per shirt: blank T-shirt $8.50, ink and screen setup per shirt $3.20, packaging $0.80. Total variable cost per shirt: $12.50.\n\nExpected monthly volume: 120 shirts (based on current enquiries and three ongoing club contracts).\n\nMarket research: Comparable Hamilton custom T-shirt printers charge $25 to $42 per shirt for single-colour single runs. Volume discounts (50+ shirts) are typically available at $18 to $28 per shirt.\n\nCaleb is considering pricing at $28, $32, or $36 per shirt for small orders (under 50 shirts).\n\nUse this scenario to complete your full six-part price determination report."
+    },
+    {
+      "type": "scenario",
+      "title": "Full Project Work Session — Your Price Determination Report",
+      "estimatedMinutes": 30,
+      "nceaLevel": "Achieved to Excellence",
+      "setup": "Use your own chosen NZ product or service, or the Caleb screen-printing reference scenario above. You have all the tools from this module: break-even analysis, projected income statements, factor identification, effects analysis, and Excellence evaluation framework.",
+      "challenge": "Write your complete price determination report covering all six parts:\n\nPart 1: Organisation, product/service, and two internal plus two external pricing factors.\nPart 2: Financial model — break-even analysis and projected income statement for at least two price options. All figures in NZD with calculations shown.\nPart 3: Recommended price with justification referencing financial evidence and factors.\nPart 4 (Merit): Explain how at least two factors INFLUENCE the pricing decision.\nPart 5 (Merit): Explain the effects of the recommended price on the organisation and two stakeholders.\nPart 6 (Excellence): Analyse the extent to which the decision considers relevant factors. Propose specific response strategies for at least two effects.\n\nFor the Caleb scenario:\nBefore writing, calculate: contribution margin at each price, break-even at each price, and net profit at 120 shirts per month at each price. Use these figures throughout your report.",
+      "hints": [
+        "Caleb's contribution margins: $28 − $12.50 = $15.50; $32 − $12.50 = $19.50; $36 − $12.50 = $23.50",
+        "Break-even points: $640 ÷ $15.50 = 41.3 → 42 shirts; $640 ÷ $19.50 = 32.8 → 33 shirts; $640 ÷ $23.50 = 27.2 → 28 shirts",
+        "Net profit at 120 shirts: $28 price: (120 × $15.50) − $640 = $1,860 − $640 = $1,220; $32: $2,340 − $640 = $1,700; $36: $2,820 − $640 = $2,180",
+        "For Excellence: consider the extent to which the $36 price accounts for the competitive pricing factor (market range $25–$42) and the customer demand factor (volume sensitivity of small clubs and schools)"
+      ],
+      "solution": "Sample full report for Caleb's screen-printing business:\n\nPart 1 — Organisation and factors:\nCaleb runs a custom T-shirt screen-printing business in Hamilton. He is pricing a single-colour printed T-shirt for small orders (under 50 shirts). Internal factors: (1) Variable cost of $12.50 per shirt and fixed costs of $640 per month set the financial floor for viable pricing. (2) Caleb's goal of building a sustainable business with school and sports club clients means he wants a price that is competitive for repeat buyers. External factors: (1) Competitor prices in Hamilton range from $25 to $42 per shirt for small single-colour runs. (2) Customer demand from schools and clubs is price-sensitive — these organisations operate on limited budgets and compare quotes carefully.\n\nPart 2 — Financial model:\nContribution margins: $28: $15.50; $32: $19.50; $36: $23.50\nBreak-even: $28: 42 shirts; $32: 33 shirts; $36: 28 shirts\n\nProjected income statements at 120 shirts/month:\nPrice $28: Revenue $3,360 − COGS $1,500 = GP $1,860 − Fixed $640 = Net Profit $1,220\nPrice $32: Revenue $3,840 − COGS $1,500 = GP $2,340 − Fixed $640 = Net Profit $1,700\nPrice $36: Revenue $4,320 − COGS $1,500 = GP $2,820 − Fixed $640 = Net Profit $2,180\n\nPart 3 — Recommended price:\nI recommend Caleb price his single-colour T-shirts at $32 per shirt. The break-even is 33 shirts per month — well below expected volume of 120. Projected monthly net profit is $1,700. This price sits within the middle of the $25–$42 market range and balances profit margin with competitive positioning.\n\nPart 4 — How factors influence the decision:\nThe variable cost of $12.50 per shirt means any price below this results in a direct loss per shirt. With $640 in fixed costs, Caleb needs sufficient contribution margin to cover them while remaining competitive. This cost structure influences the decision by establishing a minimum viable price around $20–$22 (based on a minimum viable contribution margin of approximately $5.33 to cover fixed costs at 120 shirts). This rules out the lower end of the competitor range ($25) as undesirable and pushes toward a mid-to-high price. Competitor prices of $25–$42 influence the decision by defining the market range customers expect. At $32, Caleb is in the middle of this range, which signals a balance of quality and value. Pricing at $36 — near the top — would require clear quality differentiation to avoid losing price-sensitive school and club buyers to cheaper competitors.\n\nPart 5 — Effects on stakeholders:\nEffect on Caleb (business owner): The $32 price generates $1,700 monthly net profit at expected volume, providing sustainable income. The break-even of 33 shirts means the business remains profitable even in slow months with fewer orders, reducing financial risk.\nEffect on school and sports club customers: At $32 per shirt, a sports club ordering 30 shirts pays $960. This is within the typical budget for small club uniform runs, making the service accessible. If Caleb had priced at $36, the total would be $1,080 — $120 more — which could deter smaller clubs with tighter budgets and push them to cheaper competitors.\n\nPart 6 — Excellence analysis:\nExtent analysis: The $32 pricing decision strongly considers the production cost factor — the $19.50 contribution margin comfortably covers fixed costs within 33 shirts and provides meaningful profit at expected volumes. The decision partially considers the competitor pricing factor — $32 is within the market range but does not fully account for the risk that larger Hamilton print shops can offer volume discounts below $28 for orders of 50+, which may attract Caleb's club clients for their larger annual orders. The decision adequately considers customer demand — schools and clubs are price-sensitive, and $32 is accessible without undervaluing the service.\n\nResponse strategies: If Caleb finds that larger clubs are moving to competitors for their big annual orders, he should introduce a tiered pricing structure: $32 for orders under 30 shirts, $26 for 30–49 shirts, and $22 for 50+ shirts. This responds directly to the volume competition effect without reducing his small-order price, maintaining his margin on low-volume clients while competing for high-volume work. If variable costs increase in the future (which is likely given NZ supplier price trends), Caleb should schedule a price review every six months, allowing him to adjust incrementally rather than absorbing cost increases until they become unsustainable."
+    },
+    {
+      "type": "reflection",
+      "title": "Peer Review — AS92029 Criteria Check",
+      "estimatedMinutes": 7,
+      "prompt": "Exchange your completed report with a classmate. Read their report and mark each of the following with a tick and level label (A, M, or E):\n\nAchieved (A): Organisation described. Two internal and two external factors identified. Financial model with actual NZD figures. Recommended price stated with justification.\nMerit (M): Explains how factors INFLUENCE the pricing decision. Explains effects on the organisation and two stakeholders.\nExcellence (E): Analyses EXTENT to which the decision considers factors. Proposes specific RESPONSE STRATEGIES for effects.\n\nThen write two pieces of specific feedback: one strength and one specific improvement. 'The financial model is strong' is useful. 'The Merit section explains the competitor factor but does not explain how customer demand specifically limits how high the price can go' is more useful.",
+      "nceaLink": "Using the AS92029 achievement criteria as a marking guide is one of the most effective ways to improve your own work. Understanding where criteria are met — or missing — in someone else's report helps you see your own more clearly."
+    }
+  ]
+}

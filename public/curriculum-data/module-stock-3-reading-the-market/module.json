@@ -1,0 +1,18 @@
+{
+  "title": "Reading the Market",
+  "description": "Students learn to interpret share price charts, understand key metrics like P/E ratio and EPS, read financial news critically, and use basic technical and fundamental signals to form views on shares.",
+  "ageTrack": "14", "yearLevel": "Year 10", "nceaStandard": null, "nceaStandardTitle": null,
+  "nceaCredits": 0, "nceaAssessmentType": "Extra Learning", "durationWeeks": 2,
+  "sessionsPerWeek": 4, "minutesPerSession": 45, "xpReward": 640,
+  "iconName": "bar-chart-2", "colorTheme": "#0e9f6e", "isPublished": true, "order": 12,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "Builds analytical skills for interpreting market data. Students learn to read charts, calculate and interpret key valuation metrics, distinguish signal from noise in financial media, and form basic investment views using real NZ data.",
+  "learningObjectives": [
+    "Read and interpret a basic share price chart",
+    "Calculate and explain P/E ratio, EPS and dividend yield",
+    "Distinguish between fundamental and technical analysis",
+    "Identify reliable versus unreliable sources of financial information",
+    "Apply basic valuation thinking to compare two NZ companies"
+  ],
+  "assessmentTask": "Students produce a one-page analysis of a NZ listed company using at least three metrics (P/E, EPS, dividend yield) and a price chart, concluding with a hold/buy/sell opinion with reasoning."
+}

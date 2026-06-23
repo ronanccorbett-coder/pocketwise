@@ -1,0 +1,137 @@
+{
+  "title": "Week 1 Challenge — Putting the Skills Together",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 100,
+  "bloomsLevel": "Apply and Analyse",
+  "nceaFocus": "AS92028: Synthesising financial need/issue/opportunity identification, financial tool use, stakeholder perspectives, consequences, and putake discussion into a complete Achieved-to-Merit response",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Apply all Week 1 skills to a single extended NZ organisational scenario",
+    "Construct a complete financial decision-making response at the Achieved to Merit level",
+    "Identify the qualities needed to move from Merit toward Excellence in AS92028"
+  ],
+  "vocabulary": [
+    {
+      "term": "Recommendation",
+      "definition": "A clear statement of which option an organisation should choose, supported by specific financial evidence and connected to the organisation's putake. In AS92028, a recommendation must be justified — you cannot just state a preference without explaining why."
+    },
+    {
+      "term": "Justification",
+      "definition": "The reasoning behind a decision. In AS92028, good justification uses financial figures from your tool, discusses stakeholder perspectives, considers consequences, and connects back to putake."
+    },
+    {
+      "term": "Synthesis",
+      "definition": "Bringing different pieces of information or analysis together to form a complete, coherent argument. At Merit level, synthesis means connecting financial evidence, stakeholder perspectives, consequences, and putake into one integrated response rather than separate disconnected points."
+    },
+    {
+      "term": "Achievement level",
+      "definition": "The grade awarded for performance in an NCEA achievement standard. In AS92028, the levels are Not Achieved, Achieved, Merit, and Excellence. Each level has specific requirements that go beyond just doing more work — they require different types of thinking and explanation."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Week 1 Recap Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved to Merit",
+      "questions": [
+        {
+          "question": "Which of the following correctly describes what is required at the Achieved level in AS92028?",
+          "options": [
+            "Analyse how the decision considers stakeholder perspectives and how the organisation could respond to consequences in a way that upholds putake",
+            "Explain stakeholder perspectives and explain possible consequences of the decision",
+            "Describe the financial need/issue/opportunity, describe options using a financial tool with actual dollar amounts, state a decision, and discuss putake",
+            "Compare two financial tools and select the most appropriate one for the scenario"
+          ],
+          "correctIndex": 2,
+          "explanation": "At the Achieved level in AS92028, students must: describe the financial need, issue, or opportunity; describe options using a financial tool with actual dollar amounts; state a decision; and discuss putake. Option A describes the Excellence level. Option B describes the Merit level. Option D is not a specific requirement of any achievement level — it is a skill that might appear within a task but is not the core Achieved requirement."
+        },
+        {
+          "question": "A cost-benefit analysis for a community hall renovation shows: Benefits (increased hire revenue over 3 years $18,000 + improved community relationships valued at $5,000) = $23,000. Costs (renovation $15,000 + disruption to current bookings $2,500) = $17,500. What is the net benefit?",
+          "options": [
+            "$18,000",
+            "$5,500",
+            "$23,000",
+            "$17,500"
+          ],
+          "correctIndex": 1,
+          "explanation": "Net benefit = Total benefits minus total costs. $23,000 - $17,500 = $5,500. This positive net benefit suggests the renovation is financially worthwhile over three years. $18,000 is just the hire revenue component of benefits. $23,000 is total benefits before subtracting costs. $17,500 is total costs only."
+        },
+        {
+          "question": "Which of the following is the most complete putake discussion for a school tuck shop?",
+          "options": [
+            "The tuck shop has a putake.",
+            "The tuck shop's putake is to make money for the school.",
+            "The tuck shop's putake is to provide affordable, nutritious food to all students. The decision to expand to five days directly serves this putake because it gives all students daily access to food at a price they can afford, regardless of their family's financial situation.",
+            "Putake means the reason an organisation exists."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is the most complete. It identifies the specific putake, then explains how the decision connects to it in concrete terms (daily access, affordability, all students). Option A simply acknowledges putake exists. Option B misrepresents the tuck shop's putake — a school canteen's purpose is not primarily commercial profit. Option D defines putake but does not apply it to the specific organisation or decision."
+        },
+        {
+          "question": "At the Excellence level in AS92028, students must analyse how the organisation could respond to possible consequences in a way that upholds putake. What does this mean in practice?",
+          "options": [
+            "Students must find ways to maximise financial returns while minimising costs",
+            "Students must explain that the organisation should always avoid any negative consequences",
+            "Students must show how the organisation's response to consequences is shaped by its values and reason for existing, not just by financial logic",
+            "Students must identify all possible consequences and rank them by severity"
+          ],
+          "correctIndex": 2,
+          "explanation": "At Excellence, upholding putake means showing that the organisation's response to consequences is guided by its values, not just financial logic. For example, if a marae faces cash flow pressure from a loan, a response that upholds putake might involve community fundraising or applying for a cultural grant rather than raising hire fees in a way that prices out local community users. Option A describes a purely financial approach that ignores putake. Option B is unrealistic — some negative consequences cannot be avoided."
+        },
+        {
+          "question": "Jordan is writing about the Gisborne Rowing Club's decision to buy a new rowing shell. She writes: 'The junior families would support this decision.' What is missing from this stakeholder perspective?",
+          "options": [
+            "The stakeholder's name",
+            "An explanation of what they want, why they want it, and why it matters in the context of this decision",
+            "A calculation showing the financial impact on the families",
+            "A reference to the putake of the rowing club"
+          ],
+          "correctIndex": 1,
+          "explanation": "Jordan has identified the stakeholder and their position (support), but she has not explained what specifically they want (a third boat for the junior programme), why they want it (so their children can train and compete), and why this matters (the junior programme cannot expand without the boat). Merit-level stakeholder explanations require this full reasoning, not just a position statement."
+        },
+        {
+          "question": "Which financial tool would be most appropriate for comparing three different loan options from three different banks for a community centre repair?",
+          "options": [
+            "A budget",
+            "A cost-benefit analysis",
+            "A price comparison chart",
+            "A SWOT analysis"
+          ],
+          "correctIndex": 2,
+          "explanation": "A price comparison chart is ideal for comparing multiple similar options side by side. Each loan option has the same basic structure (principal, interest rate, term, total repayment) and needs to be directly compared. A price comparison chart puts these details in columns and makes the differences immediately visible. A budget would be used to plan income and expenses for a project. A cost-benefit analysis would be better for a longer-term investment decision. A SWOT is too broad for a straightforward three-option comparison."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "The Palmerston North Community Garden Challenge",
+      "estimatedMinutes": 20,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "The Palmerston North Community Gardeners' Trust (PNCGT) is a not-for-profit organisation that runs a shared community garden on a section of Palmerston North City Council land. The garden has 48 plot holders who each pay $180 per year in annual fees, generating $8,640 in annual income. Additional income comes from plant sales at their Saturday market stall ($1,800 per year) and a small council grant ($1,200 per year). Total annual income: $11,640. Annual costs: water supply $1,400, tools and equipment maintenance $800, insurance $650, council land lease $2,400, website and communications $300, seeds and seedlings for communal areas $480. Total annual costs: $6,030. Annual surplus: $5,610.\n\nThe Trust's putake is to build a connected, sustainable community by providing affordable access to garden space, growing knowledge, and fresh produce for all Palmerston North residents regardless of income or ability.\n\nThe Trust faces a financial opportunity: the council has offered them the lease on an adjacent vacant section — double the current garden size — for an additional $2,800 per year. This would allow them to add 40 new plots. However, it would also require $14,000 in setup costs (raised garden beds for accessibility, water connection, pathways, shed). The Trust has $18,200 in reserves. They are considering three options:\n\nOption A: Accept the lease and use reserves to fund the setup. Full cost: $14,000 from reserves immediately, plus $2,800 additional lease per year.\nOption B: Accept the lease and apply for a Palmerston North City Council Community Development grant (up to $12,000, results in 3 months). Use $2,000 from reserves for remaining setup costs. Additional lease: $2,800 per year.\nOption C: Decline the lease for now and save for 2 to 3 years to fund expansion independently.\n\nNew plot holders (40 plots at $180 per year) would generate $7,200 in additional annual income. This applies to Options A and B only from Year 1 (assuming full uptake, which is likely given a waiting list of 53 people).",
+      "challenge": "1. Confirm the type of financial situation and explain in two to three sentences.\n2. Build a cost-benefit analysis comparing Option A and Option B over a three-year period. Include all costs (setup, annual lease) and all benefits (new plot income, grant if applicable).\n3. For Option C, calculate how many years it would take the Trust to save $14,000 from surplus alone, assuming the additional lease cost of $2,800 per year is not yet applicable.\n4. Identify two stakeholders and explain each one's perspective on the expansion decision.\n5. Explain one financial and one non-financial consequence of choosing Option B.\n6. Write a recommendation stating which option the Trust should choose, with justification connected to both the financial evidence and the Trust's putake.",
+      "hints": [
+        "For the cost-benefit analysis, remember to subtract the $12,000 grant from the setup cost in Option B. Under Option B, the Trust only pays $2,000 from reserves for setup, not $14,000.",
+        "For Option C's saving timeline, use the current annual surplus of $5,610. Do not add the new lease cost because under Option C the Trust has not accepted the lease yet.",
+        "In your recommendation, explain not just which option is financially better but also how it connects to the Trust's putake — affordable access for all residents regardless of income or ability."
+      ],
+      "solution": "Question 1: This is a financial opportunity. The PNCGT is currently operating with a healthy annual surplus of $5,610 and strong reserves of $18,200. There is no crisis or ongoing problem. The council's offer of an adjacent section is a chance to grow the Trust's capacity, serve more community members, and increase income.\n\nQuestion 2: Cost-benefit analysis over three years\n\nOption A (use reserves):\nSetup cost: -$14,000 (Year 1, from reserves)\nAdditional lease cost: -$2,800 x 3 = -$8,400 over three years\nAdditional plot income: +$7,200 x 3 = +$21,600 over three years\nNet benefit over 3 years: $21,600 - $8,400 - $14,000 = -$800\nReserves drop from $18,200 to $4,200 immediately.\n\nOption B (grant + small reserve draw):\nSetup cost from reserves: -$2,000 (Year 1)\nGrant received: +$12,000 (Year 1)\nAdditional lease cost: -$2,800 x 3 = -$8,400 over three years\nAdditional plot income: +$7,200 x 3 = +$21,600 over three years\nNet benefit over 3 years: $21,600 + $12,000 - $8,400 - $2,000 = net benefit $12,800\nReserves drop only from $18,200 to $16,200.\n\nOption B is significantly better over three years.\n\nQuestion 3: Option C saving timeline\nCurrent annual surplus: $5,610\nTarget savings needed: $14,000\nYears to save: $14,000 ÷ $5,610 = 2.49 years, approximately 2.5 years\nUnder Option C, the Trust could self-fund the expansion in approximately 2.5 years. However, during this time the 53 people on the waiting list cannot access plots, and the council's lease offer may no longer be available.\n\nQuestion 4: Stakeholder perspectives\n\nStakeholder 1 — People on the waiting list (53 individuals): These prospective plot holders would strongly support Option A or B because they are waiting for garden access that directly fulfils the Trust's promise of affordable, connected community space. Their main concern is timing — the longer the Trust delays, the longer they wait. Option C's 2.5-year delay is particularly frustrating for those who may have been on the list for a year or more. This perspective aligns with the Trust's putake: these are exactly the residents who need affordable access to growing space.\n\nStakeholder 2 — The Trust's board of trustees: The board would be cautious about Option A because it reduces reserves from $18,200 to $4,200. Their main concern is organisational sustainability: if something unexpected happens, the Trust would have very limited financial buffer. They would likely prefer Option B because it achieves the expansion while preserving most of the reserves, maintaining financial resilience.\n\nQuestion 5: Consequences of Option B\n\nFinancial consequence: Under Option B, the Trust's annual income increases by $7,200 from new plot fees, raising total annual income from $11,640 to $18,840. After the additional lease cost of $2,800, the annual surplus grows from $5,610 to $9,410 — an increase of $3,800 per year. Over five years, this generates an additional $19,000 above what the Trust would have earned under the current arrangement.\n\nNon-financial consequence: Adding 40 new plots from the waiting list of 53 people strengthens the Trust's relationship with the broader Palmerston North community. More plot holders means more volunteers, more participation in market stalls, and a larger network of people connected by the garden. This social capital is central to the Trust's putake of building a connected, sustainable community.\n\nQuestion 6 — Recommendation: The Trust should choose Option B. Financially, Option B generates a net benefit of $12,800 over three years compared to a net cost of $800 under Option A, while preserving reserves at $16,200. The $12,000 council grant effectively covers the setup costs, making the expansion achievable without significant financial risk. Option C would achieve expansion eventually but would delay it by 2.5 years, leaving 53 waiting list members without access — conflicting directly with the Trust's putake of providing affordable access to all Palmerston North residents regardless of income or ability. By choosing Option B, the Trust expands its capacity immediately, serves more residents, grows its annual surplus, and maintains financial security. This is the option that best upholds both the financial evidence and the Trust's reason for existing."
+    },
+    {
+      "type": "slide",
+      "title": "What Does Excellence Look Like? The Step Beyond Merit",
+      "estimatedMinutes": 10,
+      "content": "You have now worked at the Achieved and Merit levels of AS92028. Before we finish Week 1, it is worth understanding what Excellence actually requires — because it is not just about doing more of the same thing. It is about a different kind of thinking.\n\nAt Achieved, you describe. You describe the financial situation, describe your options using a tool, state a decision, and discuss putake.\n\nAt Merit, you examine. You explain stakeholder perspectives and explain possible consequences of the decision.\n\nAt Excellence, you evaluate. You analyse how the decision considers stakeholder perspectives and analyse how the organisation could respond to possible consequences in a way that upholds their putake.\n\nThe key word at Excellence is analyse. And the key phrase that separates Excellence from Merit is 'in a way that upholds their putake.' This is worth unpacking carefully.\n\nAt Merit, you identify that a consequence might happen — for example, 'the Trust's reserves will drop significantly under Option A, which could leave them financially exposed.' That is an explanation. Good Merit work.\n\nAt Excellence, you go further. You say: 'If the Trust's reserves drop to $4,200 under Option A and an unexpected cost arises, the Trust may be forced to reduce services or increase plot fees to remain solvent. However, increasing plot fees would conflict directly with the Trust's putake of providing affordable access regardless of income. To uphold putake, the Trust should therefore maintain Option B as the preferred approach, as it preserves reserves while achieving the expansion — allowing them to respond to unexpected costs without compromising their commitment to affordability.'\n\nDo you see the difference? Merit explains the consequence. Excellence analyses what the organisation should do about the consequence, and ties that response explicitly back to putake.\n\nHere is another way to think about it. At Merit, you are a good observer. You notice what is happening and explain it clearly. At Excellence, you are a financial advisor. You do not just describe what might happen — you recommend a specific course of action in response, and you justify that recommendation in terms of the organisation's values, not just the numbers.\n\nThe word 'extent' also appears at Excellence. You are asked to analyse the extent to which the decision considers relevant stakeholder perspectives. This means you do not just list perspectives — you evaluate how well or how poorly the chosen decision accounts for each one. You might argue: 'The decision to choose Option B largely addresses the perspectives of the waiting list members and the board of trustees. However, it does not fully address the concerns of existing plot holders who may worry about increased foot traffic and maintenance demands on communal areas. The Trust could respond to this by establishing a working group of existing and new members to manage the transition, upholding their putake by ensuring all members feel valued and heard.'\n\nThat is Excellence thinking. Specific, evaluative, connected to putake, and forward-looking.\n\nIn Week 2, we will practise this kind of analysis. For now, keep the framework in mind: at Excellence, you respond to consequences in a way that upholds putake. That is the phrase to carry with you."
+    },
+    {
+      "type": "reflection",
+      "title": "Your Project Introduction",
+      "estimatedMinutes": 5,
+      "prompt": "For your AS92028 module project, you will select a real or fictional NZ organisation facing a financial need, issue, or opportunity. You will describe three options using a budget or cost-benefit analysis, recommend a decision, identify two stakeholders and their perspectives, discuss putake, and at Excellence level analyse how the decision considers all stakeholders and how the organisation should respond to consequences. Start thinking now: what organisation will you use? What financial situation will they face? Write three to four sentences introducing your chosen organisation, its putake, and the financial situation you will analyse.",
+      "nceaLink": "This project is your AS92028 assessment practice. Everything you have learned in Week 1 — identifying financial situations, building financial tools, explaining stakeholders, discussing consequences, and connecting decisions to putake — will be applied in your project over Week 2."
+    }
+  ]
+}

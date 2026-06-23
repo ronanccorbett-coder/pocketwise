@@ -1,0 +1,18 @@
+{
+  "title": "How Shares Work",
+  "description": "Students learn what shares actually are, how ownership rights work, the difference between ordinary and preference shares, IPOs, and how to buy and sell shares in NZ.",
+  "ageTrack": "14", "yearLevel": "Year 10", "nceaStandard": null, "nceaStandardTitle": null,
+  "nceaCredits": 0, "nceaAssessmentType": "Extra Learning", "durationWeeks": 2,
+  "sessionsPerWeek": 4, "minutesPerSession": 45, "xpReward": 640,
+  "iconName": "pie-chart", "colorTheme": "#0e9f6e", "isPublished": true, "order": 11,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "Deep dive into how shares actually work as financial instruments. Covers share types, shareholder rights, IPOs, and the practical mechanics of buying and selling in NZ.",
+  "learningObjectives": [
+    "Explain what rights come with owning a share",
+    "Describe ordinary vs preference shares",
+    "Explain how an IPO works and why companies use them",
+    "Describe the mechanics of buying and selling shares in NZ",
+    "Calculate basic returns including brokerage costs"
+  ],
+  "assessmentTask": "Students describe the complete process of buying shares in a NZ company from account opening through to calculating total return after brokerage."
+}

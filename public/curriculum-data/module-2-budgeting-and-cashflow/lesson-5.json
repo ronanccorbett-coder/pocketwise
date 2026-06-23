@@ -1,0 +1,80 @@
+{
+  "id": "m2-l5",
+  "title": "Cash vs Digital Money",
+  "order": 5,
+  "xpReward": 25,
+  "filename": "lesson-5.json",
+  "activities": [
+    {
+      "type": "slide",
+      "id": "m2l5-s1",
+      "title": "The psychology of payment methods",
+      "content": "**How you pay changes how much you spend.** This is one of the most well-researched findings in behavioural economics.\n\nStudies consistently show that people spend **12–18% more** when using cards or digital payments compared to cash. Why? Cash is physical and feels real — spending $50 cash feels like a loss. Tapping a card takes milliseconds and feels abstract.\n\nIn New Zealand, 85% of transactions are now cashless. This convenience comes with a hidden cost: it is much easier to overspend without realising it.",
+      "notePrompt": "Do you think you spend more when paying by card vs cash? Why or why not?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l5-s2",
+      "title": "Eftpos and debit cards",
+      "content": "**Eftpos** is New Zealand's debit payment network — you pay directly from your bank account.\n\n**Advantages:**\n- Convenient and widely accepted\n- No interest (it is your own money)\n- Easy to track via banking apps\n- Contactless tap and go up to $200\n\n**Disadvantages:**\n- Easy to overspend — no friction\n- Impulse purchases happen more readily\n- Overdraft fees if you go negative\n- Peer pressure to spend at group events\n\nEftpos is fine for daily spending — the key is checking your balance before spending, not after.",
+      "notePrompt": "How often do you check your bank balance before making a purchase?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l5-s3",
+      "title": "Credit cards — a double-edged tool",
+      "content": "Credit cards let you borrow money for purchases and repay later. In NZ, major options include Visa, Mastercard, and Amex.\n\n**Potential benefits (if paid in full each month):**\n- Purchase protection and dispute resolution\n- Rewards points / cashback\n- Interest-free period (usually 44–55 days)\n- Emergency spending buffer\n\n**The danger:** Average NZ credit card interest rate = **22% per annum**. If you carry a balance:\n- $1,000 balance = $220/year in interest\n- Minimum payments only = could take 10+ years to pay off\n\n**Rule:** Only use credit cards if you will pay the full balance every month. Otherwise, do not get one.",
+      "notePrompt": "Do you think you would be disciplined enough to pay a credit card balance in full every month? Be honest."
+    },
+    {
+      "type": "quiz",
+      "id": "m2l5-q1",
+      "questions": [
+        {
+          "question": "Sarah has a credit card balance of $2,400 at 22% annual interest. She only makes minimum payments of $48/month. Approximately how much interest will she pay in the first year?",
+          "options": ["$98", "$288", "$528", "$880"],
+          "correctIndex": 2,
+          "explanation": "22% of $2,400 = $528 in interest for the first year — more than 10 times her monthly payment. The balance barely reduces. This is why credit card debt is so dangerous."
+        },
+        {
+          "question": "What is the main psychological reason people spend more with cards than cash?",
+          "options": ["Cards have higher limits", "Cash is harder to access", "Card payments feel less like real money", "Cards are more widely accepted"],
+          "correctIndex": 2,
+          "explanation": "Physical cash feels real — losing it stings. Card or phone payments are abstract and instant, reducing the emotional resistance to spending. This is well-documented in behavioural economics research."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "id": "m2l5-s4",
+      "title": "Buy Now Pay Later — understanding Afterpay",
+      "content": "**BNPL (Buy Now Pay Later)** services like Afterpay, Laybuy, and Humm let you split purchases into instalments — usually interest-free.\n\n**How Afterpay works:**\n- Split purchase into 4 payments every 2 weeks\n- No interest if paid on time\n- Late fee: $10 per missed payment (capped)\n\n**The real risk:**\n- Makes expensive items feel affordable (a $200 item becomes 'just $50 today')\n- Easy to have multiple Afterpay purchases running simultaneously\n- If you miss payments, fees compound\n- Reported to credit agencies — can affect future loan applications\n\n**NZ statistic:** 67% of Afterpay users admit to buying things they would not have bought if they had to pay upfront.",
+      "notePrompt": "Have you used Afterpay or similar? Did it change what you bought or how much you spent?"
+    },
+    {
+      "type": "truefalse",
+      "id": "m2l5-tf1",
+      "questions": [
+        { "statement": "Using a credit card always leads to debt.", "answer": false, "explanation": "Credit cards can be used responsibly if the full balance is paid every month within the interest-free period. Used this way, you get the benefits (protection, rewards) without paying interest." },
+        { "statement": "BNPL services like Afterpay are always free to use.", "answer": false, "explanation": "Afterpay is free IF you pay on time. Miss a payment and you pay $10 immediately, plus another $7 if still unpaid 7 days later. Multiple missed payments add up quickly." },
+        { "statement": "Spending with physical cash tends to make people more conscious of how much they are spending.", "answer": true, "explanation": "Research consistently shows that parting with physical notes creates stronger emotional responses than digital payments, leading to more considered spending decisions." }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "id": "m2l5-dd1",
+      "instruction": "Classify each payment scenario as Low Risk or High Risk",
+      "items": [
+        { "text": "Paying rent by automatic bank transfer", "category": "Low Risk" },
+        { "text": "Using Afterpay for $400 shoes you don't need", "category": "High Risk" },
+        { "text": "Using a credit card and paying the full balance monthly", "category": "Low Risk" },
+        { "text": "Using credit card for groceries and carrying the balance", "category": "High Risk" },
+        { "text": "Weekly grocery shop on debit card with budget tracked", "category": "Low Risk" },
+        { "text": "Tap-and-go for everything with no balance checks", "category": "High Risk" },
+        { "text": "Cash envelope system for discretionary spending", "category": "Low Risk" },
+        { "text": "Multiple simultaneous Afterpay purchases", "category": "High Risk" }
+      ],
+      "categories": ["Low Risk", "High Risk"]
+    }
+  ]
+}

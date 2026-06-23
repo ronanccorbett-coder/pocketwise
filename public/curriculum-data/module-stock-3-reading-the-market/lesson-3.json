@@ -1,0 +1,168 @@
+{
+  "title": "Fundamental vs Technical Analysis",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Evaluate",
+  "nceaFocus": "Extra Learning \u2014 Reading the Market",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain the difference between fundamental and technical analysis",
+    "Describe the key metrics used in each approach",
+    "Evaluate the strengths and weaknesses of each approach for a Year 10 student investor"
+  ],
+  "vocabulary": [
+    {
+      "term": "Fundamental analysis",
+      "definition": "Evaluating a company based on its financial performance, business model, competitive position and management. Asks: what is this business actually worth?"
+    },
+    {
+      "term": "Technical analysis",
+      "definition": "Analysing historical share price and volume patterns to forecast future price movements. Asks: where is this price likely to go based on past patterns?"
+    },
+    {
+      "term": "Moving average",
+      "definition": "The average closing price over a set number of days (e.g. 50-day or 200-day). Smooths out daily noise to show the underlying trend direction."
+    },
+    {
+      "term": "Relative Strength Index (RSI)",
+      "definition": "A momentum indicator from 0 to 100. Above 70 is considered overbought (may fall). Below 30 is considered oversold (may rise). Used by technical traders."
+    },
+    {
+      "term": "Intrinsic value",
+      "definition": "The 'true' underlying value of a company estimated through fundamental analysis \u2014 what a rational buyer would pay for the whole business. Different from market price."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Two Ways to Analyse a Share",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What question does fundamental analysis try to answer? What question does technical analysis try to answer? Are these two questions in conflict or complementary?",
+      "content": "Investors take two broad approaches to deciding what to buy and when to buy it.\n\nFundamental analysis: focuses on the business itself. What does the company do? Is the business growing? How profitable is it? What are its debts? Who runs it and are they good? What is it worth compared to its current market price?\n\nFundamental analysts build models of future earnings, assign a value to the business, and compare that to the market price. If the stock is trading below its estimated intrinsic value \u2014 it is a buy. If above \u2014 it is a sell.\n\nKey metrics: EPS, P/E ratio, revenue growth, profit margins, return on equity, debt levels, free cash flow, dividend yield.\n\nTechnical analysis: focuses on price and volume history. What patterns have formed in this share's price? Is it trending up or down? Is momentum building or fading? Are there key support or resistance levels nearby?\n\nTechnical analysts believe that all known information is already reflected in the price, and that price patterns repeat because human psychology is consistent. They look for signals in charts to decide when to buy and when to sell.\n\nKey tools: moving averages, RSI, MACD, chart patterns (head and shoulders, cup and handle), volume analysis.\n\nMost professional investors use both: fundamental analysis to decide WHAT to buy, technical analysis to decide WHEN to buy it."
+    },
+    {
+      "type": "slide",
+      "title": "Moving Averages \u2014 Smoothing the Noise",
+      "estimatedMinutes": 4,
+      "notePrompt": "Explain: why is a 200-day moving average more significant than a 5-day moving average? What does it mean when a share's 50-day MA crosses above its 200-day MA?",
+      "content": "Moving averages are the most widely used technical indicator. They smooth out daily price fluctuations to show the underlying trend.\n\nHow they work: a 50-day moving average (MA) is simply the average closing price of the last 50 trading days, recalculated each day as the oldest day drops off and the newest day is added.\n\nTwo key moving averages:\n\u2014 50-day MA: represents medium-term trend (about 2.5 months). Faster to react to price changes.\n\u2014 200-day MA: represents long-term trend (about 10 months). Slower, filters out shorter-term noise.\n\nGolden Cross: when the 50-day MA crosses ABOVE the 200-day MA, it is called a 'golden cross' \u2014 considered a bullish long-term signal. Often means the medium-term momentum has shifted positive relative to the long-term trend.\n\nDeath Cross: when the 50-day MA crosses BELOW the 200-day MA \u2014 bearish signal. Medium-term momentum has turned negative.\n\nSupport and resistance from MAs: A share often bounces from its 50-day or 200-day MA when it pulls back \u2014 traders buy on these dips because they consider the MA a natural support level.\n\nLimitation: moving averages are lagging indicators \u2014 they react to price changes after they happen, never before. They confirm trends but do not predict turning points."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Technical analysts believe that a company's financial statements and business model are more important than its price chart for making investment decisions.",
+      "correctAnswer": false,
+      "explanation": "False. Technical analysts believe that all known information \u2014 including financial statements and business fundamentals \u2014 is already reflected in the current market price. Therefore, analysing the price and volume directly (the chart) is more efficient than re-analysing information already incorporated into the price. Fundamental analysts hold the opposite view: that the market sometimes misprices businesses, and careful analysis of the underlying business can identify these mispricings.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Fundamental Analysis \u2014 What You Are Really Buying",
+      "estimatedMinutes": 4,
+      "notePrompt": "For any NZ company you know, write: What competitive advantage does it have? Is this advantage durable or could a new entrant copy it in 5 years? How might you estimate whether the business is worth more or less than its current market cap?",
+      "content": "Fundamental analysis is about understanding the business behind the share price.\n\nThe key questions a fundamental analyst asks:\n\n1. What is the business model? How does it make money? Is this model durable?\n2. Who are the customers and why do they choose this company over competitors?\n3. Is revenue and profit growing? At what rate?\n4. How strong is the balance sheet? Too much debt can turn a good business into a bad investment.\n5. Who runs the company? Do management have a good track record? Do they own significant shares (aligned with shareholders)?\n6. What is the competitive moat? Does the company have pricing power \u2014 can it raise prices without losing customers?\n\nEstimating intrinsic value:\nThe simplest approach is comparing P/E to peers. If similar companies trade at 18\u201322\u00d7 earnings and this company trades at 13\u00d7, it might be undervalued \u2014 or there might be a good reason for the discount.\n\nA more rigorous approach is discounted cash flow (DCF) analysis \u2014 projecting future profits and discounting them back to today's value. This requires significant assumptions about future growth and is only as good as those assumptions.\n\nFor Year 10 investors, comparing P/E to peers and sector, analysing EPS growth trends, and checking dividend sustainability are practical starting points."
+    },
+    {
+      "type": "quiz",
+      "title": "Fundamental vs Technical Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "An investor says: 'I only care about FPH's revenue growth, profit margins and competitive position in the medical device market. The chart is irrelevant to me.' This investor is primarily using:",
+          "options": [
+            "Technical analysis \u2014 analysing the company's performance metrics and market position",
+            "Fundamental analysis \u2014 focusing on business quality, financial performance and competitive position to assess intrinsic value",
+            "Momentum investing \u2014 following recent price trends",
+            "Passive investing \u2014 simply holding the index without stock analysis"
+          ],
+          "correctIndex": 1,
+          "explanation": "Focusing on revenue growth, profit margins and competitive positioning is textbook fundamental analysis. The investor is trying to understand what the business is worth by analysing its underlying economics \u2014 not relying on price patterns. Warren Buffett is the most famous proponent of this approach."
+        },
+        {
+          "question": "A trader notices that Contact Energy's 50-day moving average has just crossed above its 200-day moving average. They decide to buy. This is an example of:",
+          "options": [
+            "Fundamental analysis \u2014 the trader is using a quantitative measure of the company's value",
+            "Index investing \u2014 replicating the market using mechanical rules",
+            "Technical analysis \u2014 using price pattern signals (the golden cross) to make a trading decision based on chart behaviour",
+            "Arbitrage \u2014 exploiting a pricing discrepancy between two markets"
+          ],
+          "correctIndex": 2,
+          "explanation": "Acting on a golden cross (50-day MA crossing above 200-day MA) is pure technical analysis. The trader has made no assessment of Contact Energy's business fundamentals, valuation or earnings outlook \u2014 they are responding to a chart pattern that has historically (though not always) been followed by price appreciation."
+        },
+        {
+          "question": "Which limitation is MOST accurate about technical analysis?",
+          "options": [
+            "Technical analysis only works for very large companies with liquid markets and is useless for small caps",
+            "Technical analysis ignores price entirely \u2014 relying only on company financial statements",
+            "Moving averages and chart patterns are lagging indicators that confirm trends after they form, rather than predicting them before they happen",
+            "Technical analysis is illegal in New Zealand under financial markets law"
+          ],
+          "correctIndex": 2,
+          "explanation": "The biggest legitimate critique of technical analysis is that most indicators (moving averages, RSI, MACD) are lagging \u2014 they use past price data to signal what has already happened. A moving average golden cross might confirm an uptrend that has been underway for weeks, providing a delayed entry signal. Critics argue this provides limited predictive advantage compared to fundamental value identification."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Fundamental or Technical? Classify These Analysis Activities",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Calculating Mainfreight's P/E ratio and comparing to logistics peers",
+          "zone": "Fundamental Analysis"
+        },
+        {
+          "item": "Watching for Spark's 50-day MA to cross above its 200-day MA",
+          "zone": "Technical Analysis"
+        },
+        {
+          "item": "Reading FPH's annual report to assess its R&D pipeline",
+          "zone": "Fundamental Analysis"
+        },
+        {
+          "item": "Identifying a head-and-shoulders pattern on Meridian's 6-month chart",
+          "zone": "Technical Analysis"
+        },
+        {
+          "item": "Estimating Contact Energy's intrinsic value using projected earnings",
+          "zone": "Fundamental Analysis"
+        },
+        {
+          "item": "Checking whether Mainfreight is oversold on the RSI indicator",
+          "zone": "Technical Analysis"
+        }
+      ],
+      "explanation": "Fundamental analysis is about the business \u2014 financials, competitive position, management, valuation. Technical analysis is about the price chart \u2014 patterns, momentum indicators, moving averages. In practice, most investors combine both: fundamental analysis to identify what to buy, technical analysis to help decide when."
+    },
+    {
+      "type": "truefalse",
+      "statement": "An RSI reading above 70 definitively means a share is overvalued and will fall immediately.",
+      "correctAnswer": false,
+      "explanation": "False. An RSI above 70 indicates the share is 'overbought' on momentum \u2014 it has risen quickly relative to recent history. This is a warning signal, not a certainty. A strong uptrend can keep a share overbought for extended periods \u2014 the RSI stays above 70 for months while the price keeps rising. Overbought signals work best as a complement to other analysis, not as a standalone sell trigger. A momentum indicator cannot determine fundamental value.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What is the term for a share's estimated true underlying value, calculated through fundamental analysis \u2014 which may differ significantly from its current market price?",
+      "acceptedAnswers": [
+        "intrinsic value",
+        "Intrinsic value",
+        "Intrinsic Value"
+      ],
+      "placeholder": "Type the term here...",
+      "hint": "Two words \u2014 what the business is really worth, as opposed to what the market currently says it is worth.",
+      "explanation": "Intrinsic value is the concept at the heart of fundamental analysis. If a company's intrinsic value is $25 per share but the market price is $18, it is trading at a discount \u2014 a potential buying opportunity. If intrinsic value is $12 but the price is $25, it may be overvalued. Estimating intrinsic value requires analysing future earnings, growth rates and appropriate discount rates \u2014 it is an estimate, not a precise calculation.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Which Approach Would You Use?",
+      "estimatedMinutes": 5,
+      "prompt": "Imagine you have $2,000 to invest in one NZ company. Would you primarily use fundamental analysis (reading financial reports, calculating P/E, understanding the business) or technical analysis (looking at charts, moving averages, RSI) to make your decision? Could you use both? Write three sentences explaining your approach and why.",
+      "nceaLink": "Extra Learning \u2014 developing your own investment framework is a key step toward becoming a confident investor."
+    }
+  ]
+}

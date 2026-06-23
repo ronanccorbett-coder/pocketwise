@@ -1,0 +1,29 @@
+{
+  "title": "Price Determination",
+  "description": "Students learn how New Zealand organisations determine prices using financial models, internal and external factors, and break-even analysis.",
+  "ageTrack": "15",
+  "yearLevel": "Year 11",
+  "nceaStandard": "AS92029",
+  "nceaStandardTitle": "Demonstrate understanding of price determination for an organisation",
+  "nceaCredits": 5,
+  "nceaAssessmentType": "Internal",
+  "durationWeeks": 2,
+  "sessionsPerWeek": 4,
+  "minutesPerSession": 45,
+  "xpReward": 740,
+  "iconName": "tag",
+  "colorTheme": "#0e9f6e",
+  "isPublished": true,
+  "order": 2,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "AS92029 is a Year 11 internal standard worth 5 credits requiring students to demonstrate understanding of how organisations determine prices. This module covers internal and external pricing factors, break-even analysis, projected income statements, and the effects of pricing decisions on organisations and their stakeholders.",
+  "learningObjectives": [
+    "Identify and describe internal factors that influence an organisation's pricing decisions including costs, desired profit margin, and capacity",
+    "Identify and describe external factors including competitor prices, customer demand, and economic conditions",
+    "Apply break-even analysis and projected income statements using actual NZD figures",
+    "Recommend a price for a product or service with justification supported by financial data",
+    "Explain how internal and external factors influence a pricing decision and the possible effects on the organisation and its stakeholders",
+    "Analyse the extent to which a pricing decision considers relevant factors and how the organisation could respond to the effects of its pricing decision"
+  ],
+  "assessmentTask": "Students select a real or fictional New Zealand product or service and determine an appropriate price using a financial model. The assessment requires students to identify and describe internal and external factors influencing the price, show break-even calculations with actual dollar figures, recommend a price with full justification, and at Merit and Excellence levels explain how factors influence the pricing decision, explain possible effects on the organisation and its stakeholders, analyse the extent to which the pricing decision considers relevant factors, and analyse how the organisation could respond to the effects of its pricing decision."
+}

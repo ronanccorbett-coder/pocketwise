@@ -1,0 +1,28 @@
+{
+  "title": "Personal Money Management",
+  "description": "Students build practical personal finance skills including budgeting, understanding net pay, saving accounts, compound interest, and the 50/30/20 rule.",
+  "ageTrack": "15",
+  "yearLevel": "Year 11",
+  "nceaStandard": null,
+  "nceaStandardTitle": null,
+  "nceaCredits": 0,
+  "nceaAssessmentType": "Extra Learning",
+  "durationWeeks": 2,
+  "sessionsPerWeek": 4,
+  "minutesPerSession": 45,
+  "xpReward": 640,
+  "iconName": "wallet",
+  "colorTheme": "#057a55",
+  "isPublished": true,
+  "order": 5,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "This extra learning module teaches practical money management skills that every NZ student needs regardless of their NCEA pathway. It covers budgeting with real NZ figures, understanding gross versus net pay and tax codes, savings accounts and interest, compound interest with actual NZ bank rates, and the 50/30/20 budgeting rule as a practical framework. No NCEA credits — pure life skills.",
+  "learningObjectives": [
+    "Build a personal budget using the 50/30/20 rule with actual NZD figures",
+    "Understand the difference between gross pay and net pay and calculate PAYE tax deductions",
+    "Compare NZ savings account types and calculate simple and compound interest",
+    "Understand KiwiSaver basics and why starting early matters",
+    "Apply practical money management strategies to real NZ student scenarios"
+  ],
+  "assessmentTask": "Students build a complete personal financial plan for a fictional NZ school leaver entering the workforce. The plan includes a monthly budget using the 50/30/20 rule, a net pay calculation, a savings goal with compound interest projection, and a written reflection on their own financial goals."
+}

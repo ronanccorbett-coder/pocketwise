@@ -1,0 +1,157 @@
+{
+  "title": "What Shareholder Rights Do You Get?",
+  "order": 1,
+  "dayNumber": 1,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand",
+  "nceaFocus": "Extra Learning \u2014 How Shares Work",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "List the main rights of an ordinary shareholder",
+    "Explain how voting rights work at AGMs",
+    "Describe what a company annual report tells investors"
+  ],
+  "vocabulary": [
+    {
+      "term": "Ordinary share",
+      "definition": "The standard type of share. Holders get voting rights, dividends (if declared), and a share of assets if the company winds up \u2014 but only after debts are paid."
+    },
+    {
+      "term": "Annual General Meeting (AGM)",
+      "definition": "A yearly meeting where shareholders vote on company matters \u2014 electing directors, approving auditors, voting on major decisions."
+    },
+    {
+      "term": "Annual report",
+      "definition": "A detailed document published by listed companies each year showing financial results, strategy, risks and director remuneration."
+    },
+    {
+      "term": "Shareholder registry",
+      "definition": "The official list of all shareholders in a company, maintained by a registrar. Shows who owns how many shares."
+    },
+    {
+      "term": "Capital return",
+      "definition": "A payment from a company to shareholders that returns capital rather than profits. Different from a dividend \u2014 a capital return reduces the company's share capital."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "What Do You Actually Own?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: If you own 1,000 shares out of 200,000,000 shares in a NZ company, what percentage of the company do you own? What does that give you?",
+      "content": "Owning a share means owning a fraction of a company. That fraction comes with specific legal rights.\n\nThe four main rights of an ordinary shareholder:\n\n1. Voting rights: You can vote on significant company decisions at the Annual General Meeting (AGM). One share = one vote. You can elect and remove directors, approve or reject major transactions, and vote on executive pay. If you own 1,000 shares and the company has 200 million shares, your vote is 0.0005% of the total \u2014 tiny, but it still counts.\n\n2. Dividends: If the company's board declares a dividend, you receive cash proportional to your shareholding. The board is not obligated to pay dividends \u2014 it can decide to retain profits instead.\n\n3. Information rights: Listed companies must publish annual reports, half-year financial results, and NZX announcements about material events. As a shareholder you have a legal right to receive this information.\n\n4. Residual claim: If the company is wound up, you receive a share of remaining assets after all debts and preference shareholders are paid. In practice, liquidated company shareholders rarely receive anything \u2014 creditors take priority."
+    },
+    {
+      "type": "slide",
+      "title": "Ordinary vs Preference Shares",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What is the main trade-off between ordinary and preference shares? Which would a risk-averse income investor prefer?",
+      "content": "Most NZ investors deal only in ordinary shares. But companies can also issue preference shares.\n\nOrdinary shares: Get voting rights and dividends when declared. Dividends can vary or be skipped. If the company does well, ordinary shareholders benefit most \u2014 no cap on upside. If it fails, ordinary shareholders are last in line for any residual assets.\n\nPreference shares: Usually have no voting rights. In exchange they get a fixed dividend that must be paid before ordinary shareholders receive anything. If the company is wound up, preference shareholders are paid out before ordinary shareholders. Think of them as somewhere between a bond (fixed income, priority) and an ordinary share (still equity, not guaranteed).\n\nFor income-seeking investors, preference shares offer more predictability. For growth investors, ordinary shares offer unlimited upside. Most NZX-listed companies only have ordinary shares \u2014 preference shares are more common in private companies and some large Australian banks."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Ordinary shareholders are the first to be paid out when a company goes bankrupt and its assets are sold.",
+      "correctAnswer": false,
+      "explanation": "False. Ordinary shareholders are last in the priority queue during liquidation. The correct order is: (1) secured creditors (banks with security over assets), (2) unsecured creditors (suppliers, bondholders), (3) preference shareholders, (4) ordinary shareholders. In practice, most company liquidations return nothing to ordinary shareholders \u2014 by the time everyone else is paid, the assets are exhausted.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "The AGM \u2014 Where Shareholders Exercise Power",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What decisions are typically made at an AGM? Could a small shareholder with 0.01% of votes actually influence anything?",
+      "content": "Every listed NZ company must hold an Annual General Meeting (AGM) each year. It is the main formal mechanism through which shareholders exercise oversight over company management.\n\nTypical AGM agenda items:\n\u2014 Re-election of directors\n\u2014 Approval of the auditor and their fees\n\u2014 Approval of director remuneration\n\u2014 Voting on any proposed capital restructuring or major asset sale\n\u2014 Shareholder questions to management\n\nProxy voting: If you cannot attend in person, you can submit a proxy vote online. Most NZ share registries (Computershare, Link Market Services) allow online voting through their portals. Many small shareholders never vote \u2014 which is why large institutional investors (KiwiSaver funds, pension funds) have enormous effective influence.\n\nActivist shareholders: Occasionally a shareholder with significant holdings (5%+) will campaign for change at an AGM \u2014 voting against director re-election, proposing strategic changes, or pushing for higher dividends. This is called shareholder activism and has led to real governance changes at NZ companies."
+    },
+    {
+      "type": "quiz",
+      "title": "Shareholder Rights Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A company has 500,000,000 ordinary shares. You own 250,000. What is your voting power at the AGM?",
+          "options": [
+            "50% \u2014 you have majority control",
+            "0.05% \u2014 a small but real voting stake proportional to your shareholding",
+            "25% \u2014 because you own shares in a $250,000 investment",
+            "0% \u2014 small shareholders have no voting rights"
+          ],
+          "correctIndex": 1,
+          "explanation": "250,000 \u00f7 500,000,000 \u00d7 100 = 0.05%. You have a genuine vote, but 0.05% of it. For most company decisions at an AGM, your individual vote is unlikely to be decisive. Your power as a small shareholder lies primarily in collective action \u2014 if many small shareholders vote together \u2014 or through the indirect pressure of institutional investors (like KiwiSaver funds) who vote much larger blocks of shares."
+        },
+        {
+          "question": "A NZ company goes into receivership with $50 million in assets. Secured creditors are owed $40 million. Preference shareholders are owed $12 million. What do ordinary shareholders receive?",
+          "options": [
+            "$10 million split proportionally among ordinary shareholders",
+            "Nothing \u2014 secured creditors take $40M leaving $10M, insufficient for the $12M preference shareholders owed, so ordinary shareholders receive nothing",
+            "$2 million \u2014 the remainder after all priority creditors are paid",
+            "The same amount per share as preference shareholders"
+          ],
+          "correctIndex": 1,
+          "explanation": "$50M assets minus $40M secured creditors = $10M remaining. Preference shareholders are owed $12M but only $10M is left, so they receive approximately 83 cents per dollar owed \u2014 and ordinary shareholders receive nothing at all. This illustrates why investing in companies with large debt loads is risky for ordinary shareholders: even modest asset shortfalls wipe them out completely."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Ordinary or Preference Share? Sort These Features",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Voting rights at the AGM",
+          "zone": "Ordinary Share"
+        },
+        {
+          "item": "Fixed dividend that must be paid before ordinary shareholders",
+          "zone": "Preference Share"
+        },
+        {
+          "item": "Unlimited upside if company grows rapidly",
+          "zone": "Ordinary Share"
+        },
+        {
+          "item": "Priority over ordinary shares in a liquidation",
+          "zone": "Preference Share"
+        },
+        {
+          "item": "Dividend can be skipped by the board if profits are insufficient",
+          "zone": "Ordinary Share"
+        },
+        {
+          "item": "No voting rights in exchange for greater income security",
+          "zone": "Preference Share"
+        }
+      ],
+      "explanation": "Preference shares trade upside potential and voting control for income predictability and priority in bad scenarios. Ordinary shares offer full participation in company growth and voting rights at the cost of being last in line if things go wrong. Most retail investors on the NZX deal exclusively in ordinary shares."
+    },
+    {
+      "type": "truefalse",
+      "statement": "NZ listed companies are required to pay dividends to shareholders every six months.",
+      "correctAnswer": false,
+      "explanation": "False. No company is legally required to pay dividends. The board of directors decides whether to pay a dividend, how much, and when, based on the company's financial position and capital requirements. Many NZ growth companies pay no dividend at all, preferring to reinvest all profits. Even companies that have paid regular dividends can suspend them if conditions change \u2014 Air New Zealand suspended its dividend during COVID-19 as an example.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What is the official annual meeting called where shareholders vote on company matters including director elections?",
+      "acceptedAnswers": [
+        "AGM",
+        "Annual General Meeting",
+        "annual general meeting"
+      ],
+      "placeholder": "Type the full name or abbreviation...",
+      "hint": "Three letters \u2014 or write the full three-word name.",
+      "explanation": "The Annual General Meeting (AGM) is the main mechanism through which shareholders exercise oversight over company management. NZ listed companies are legally required to hold an AGM each year. Most NZ shareholders can now vote online through share registrar portals without attending in person.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Would You Vote?",
+      "estimatedMinutes": 5,
+      "prompt": "If you owned shares in a NZ company and the AGM was voting on whether to pay the CEO $4.5 million per year, would you vote? What information would you want before deciding? Write three sentences about what factors you would consider.",
+      "nceaLink": "Extra Learning \u2014 understanding shareholder rights is part of being an informed investor."
+    }
+  ]
+}

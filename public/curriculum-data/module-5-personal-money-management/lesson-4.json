@@ -1,0 +1,99 @@
+{
+  "title": "Week 1 Challenge — Build Your Personal Financial Plan",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Apply and Create",
+  "nceaFocus": "Extra Learning",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Calculate net pay for a NZ school leaver entering the workforce",
+    "Build a complete 50/30/20 budget with real NZ figures",
+    "Project savings growth toward a specific financial goal"
+  ],
+  "vocabulary": [
+    { "term": "Financial goal", "definition": "A specific, measurable target for your money — for example, saving $5,000 for a car by December, or building a $3,000 emergency fund within 8 months." },
+    { "term": "SMART goal", "definition": "A goal that is Specific, Measurable, Achievable, Relevant, and Time-bound. SMART financial goals are far more likely to be achieved than vague intentions." }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Week 1 Recap Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A student earns $694.50 gross per week. PAYE is $89 and KiwiSaver is $20.84. What is the net weekly pay?",
+          "options": ["$584.66", "$605.50", "$673.66", "$694.50"],
+          "correctIndex": 0,
+          "explanation": "$694.50 minus $89.00 minus $20.84 = $584.66 net per week. PAYE flows to IRD. KiwiSaver flows to the employee's retirement account. Both are deductions from gross pay."
+        },
+        {
+          "question": "Using the 50/30/20 rule with net monthly income of $2,531, what is the maximum recommended spending on WANTS?",
+          "options": ["$1,265.50", "$759.30", "$506.20", "$253.10"],
+          "correctIndex": 1,
+          "explanation": "30% of $2,531 = $759.30 per month. $1,265.50 is 50% needs. $506.20 is 20% savings. Keeping wants at or below 30% preserves the savings allocation that builds long-term financial security."
+        },
+        {
+          "question": "You deposit $4,000 in a 6-month term deposit at 5.2% per annum. Using simple interest, how much interest do you earn?",
+          "options": ["$208.00", "$104.00", "$416.00", "$52.00"],
+          "correctIndex": 1,
+          "explanation": "Interest = $4,000 x 0.052 x 0.5 = $104.00. Time must be expressed in years — 6 months = 0.5 years. Total at maturity = $4,104."
+        },
+        {
+          "question": "What tax code should you use for your SECOND part-time job if you have no student loan?",
+          "options": ["M", "S", "M SL", "SB"],
+          "correctIndex": 1,
+          "explanation": "S is the correct code for a secondary job with no student loan. M is for your primary job. Using M on a secondary job under-deducts tax and results in a tax bill at year end. S deducts at a flat 17.5% which covers most cases for secondary employment."
+        },
+        {
+          "question": "Wiremu deposits $2,000 at 4% per annum compounded annually for 3 years. Using A = P(1+r)^n, what is his balance?",
+          "options": ["$2,240.00", "$2,249.73", "$2,163.20", "$2,324.97"],
+          "correctIndex": 1,
+          "explanation": "A = $2,000 x (1.04)^3 = $2,000 x 1.124864 = $2,249.73. With simple interest it would be $2,240. Compounding adds $9.73 extra over 3 years — small now but very significant over longer periods."
+        },
+        {
+          "question": "Which of the following is a SMART financial goal?",
+          "options": [
+            "I want to save some money.",
+            "I want to be better with money this year.",
+            "I will save $3,600 in 12 months by transferring $300 per month to my ASB savings account on the 1st of each month.",
+            "I will try to spend less on eating out."
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C is SMART: Specific ($3,600), Measurable ($300/month), Achievable, Relevant, and Time-bound (12 months). Options A and B are vague intentions. Option D has no specific amount, timeframe, or measurement mechanism."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "Build a Complete Financial Plan — Zoe's First Job",
+      "estimatedMinutes": 20,
+      "nceaLevel": "Achieved",
+      "setup": "Zoe is 18 and has just left school. She starts a full-time job in Dunedin as a customer service representative at $23.15 per hour, 40 hours per week. She lives at home paying $120 per week board. No student loan. Enrolled in KiwiSaver at 3%.\n\nZoe's goals:\n- Build a $3,000 emergency fund within 8 months\n- Save $4,500 for a used car within 18 months\n- Contribute to KiwiSaver (already enrolled)",
+      "challenge": "1. Calculate Zoe's gross weekly pay.\n2. Calculate her approximate net weekly pay. Use: annual gross above $14,000 taxed at 17.5%; first $14,000 at 10.5%. Calculate annual PAYE, divide by 52 for weekly PAYE. Then deduct KiwiSaver at 3%.\n3. Convert to monthly net income (multiply by 4.33).\n4. Apply the 50/30/20 rule. Build Zoe's monthly budget with at least three items in each category with realistic NZ figures.\n5. (a) When does Zoe reach her $3,000 emergency fund target based on her savings allocation? (b) After the emergency fund is full, how long to save $4,500 for the car?\n6. Calculate the total annual KiwiSaver contribution from both Zoe and her employer.",
+      "hints": [
+        "Q2: Annual gross = $23.15 x 40 x 52 = $48,152. PAYE: first $14,000 x 10.5% = $1,470. Remaining $34,152 x 17.5% = $5,976.60. Total annual PAYE = $7,446.60. Weekly PAYE = $7,446.60 ÷ 52 = $143.20. Weekly KiwiSaver = $926 x 3% = $27.78.",
+        "Q4: Board $120/wk x 4.33 = $519.60/month. Include phone, transport, personal care as needs.",
+        "Q6: Annual gross = $48,152. Zoe's 3% = $1,444.56. Employer 3% = $1,444.56. Total = $2,889.12."
+      ],
+      "solution": "1. Gross weekly pay: $23.15 x 40 = $926.00 per week.\n\n2. Net weekly pay:\nAnnual gross: $926 x 52 = $48,152\nPAYE: $14,000 x 10.5% = $1,470 + $34,152 x 17.5% = $5,976.60 = $7,446.60 total annual PAYE\nWeekly PAYE: $7,446.60 ÷ 52 = $143.20\nKiwiSaver 3%: $926 x 0.03 = $27.78\nNet weekly pay: $926.00 - $143.20 - $27.78 = $755.02\n\n3. Monthly net income: $755.02 x 4.33 = $3,269.24\n\n4. Monthly 50/30/20 budget (targets: needs $1,634.62, wants $980.77, savings $653.85):\n\nNEEDS:\nBoard: $519.60\nPhone plan: $40.00\nTransport (bus): $80.00\nGroceries (personal contribution): $120.00\nPersonal care: $55.00\nTotal needs: $814.60 (well under 50% — living at home is a huge financial advantage)\n\nWANTS:\nEating out and coffees: $200.00\nEntertainment/social: $150.00\nClothing: $150.00\nStreaming services: $25.00\nSports/hobbies: $80.00\nTotal wants: $605.00\n\nSAVINGS:\nEmergency fund: $400.00\nCar savings: $200.00\nBuffer: $53.85\nTotal savings: $653.85\n\n5. Savings timeline:\n(a) Emergency fund: $3,000 ÷ $400/month = 7.5 months. Achieved within 8-month goal.\n(b) After emergency fund is full (7.5 months), redirect $400 to car savings. Total car savings per month = $200 + $400 = $600. Amount already saved toward car: $200 x 7.5 = $1,500. Remaining needed: $4,500 - $1,500 = $3,000. Time: $3,000 ÷ $600 = 5 months. Total time to car: 7.5 + 5 = 12.5 months — well within 18-month goal.\n\n6. KiwiSaver:\nZoe's 3% of $48,152 = $1,444.56/year\nEmployer 3% = $1,444.56/year\nTotal annual = $2,889.12\nBy end of year 1, Zoe has $2,889.12 in KiwiSaver contributions plus investment returns — the beginning of long-term wealth building."
+    },
+    {
+      "type": "slide",
+      "title": "KiwiSaver — Why You Should Care Right Now",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: What three contributions go into your KiwiSaver? At 18 with 47 years until age 65, what is the most important KiwiSaver decision you can make today?",
+      "content": "KiwiSaver is one of the most valuable financial tools available to NZ workers — especially young ones. Three sources of money go into your account:\n\n1. Your own contributions (3% minimum of gross pay)\n2. Your employer's contributions (minimum 3% on top of your gross — this is free money)\n3. Government member tax credit: up to $521 per year if you contribute at least $1,042 from your own pay\n\nZoe's combined annual KiwiSaver input: $2,889.12 in contributions. In year one alone, investment growth at 5% adds approximately $72 more. By year 5 the balance compounds to approximately $16,500 — from $7,228 in contributions plus growth.\n\nKiwiSaver fund types:\nConservative (bonds): 2% to 4% average returns. Low risk. Best for people near retirement.\nBalanced: 4% to 6% returns. Moderate risk.\nGrowth (shares): 6% to 9% long-term average. Higher risk but much higher growth. Best for under-40s.\n\nAt 18 with 47 years until 65, a Growth fund is almost always the right choice. You have decades to ride out any market dips. A conservative fund at 18 is one of the most common and costly mistakes young NZ workers make.\n\nCheck your current fund type at myIR or your provider's app. Switching from conservative to growth takes 2 minutes and could add tens of thousands to your retirement."
+    },
+    {
+      "type": "reflection",
+      "title": "Your Three Financial Goals",
+      "estimatedMinutes": 5,
+      "prompt": "Write down three personal financial goals — one short-term (under 6 months), one medium-term (6 months to 2 years), and one long-term (5+ years). For each: What is the exact dollar target? What is the deadline? How much do you need to save per month to get there? What is the one spending change that would most help you achieve it? A goal without a number and a date is just a wish.",
+      "nceaLink": "Extra Learning — no NCEA credits but directly practical for your financial life. The habits you build at 18 compound into dramatically different outcomes by 30, 40, and 65."
+    }
+  ]
+}

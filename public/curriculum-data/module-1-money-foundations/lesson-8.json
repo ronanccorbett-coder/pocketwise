@@ -1,0 +1,128 @@
+{
+  "title": "NCEA Assessment Day & Module Review",
+  "order": 8,
+  "dayNumber": 8,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 100,
+  "bloomsLevel": "Evaluate & Create",
+  "nceaFocus": "AS92028 — formal assessment task, full module knowledge review",
+  "ownerEmail": "admin@pocketwise.nz",
+
+  "objectives": [
+    "Complete the formal AS92028 financial decision-making assessment task",
+    "Demonstrate understanding of pūtake, financial tools, and stakeholder analysis",
+    "Review and consolidate all module 1 learning",
+    "Celebrate completing your first PocketWise module"
+  ],
+
+  "vocabulary": [],
+
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Assessment Day — Final Reminders",
+      "estimatedMinutes": 3,
+      "content": "Today is your formal AS92028 assessment. Here are your final reminders before you begin:\n\n✅ You have 35 minutes to complete your response\n✅ Use your revised draft from yesterday as your starting point\n✅ Check the checklist one more time before you start writing\n✅ Every claim needs financial data to support it — no vague statements\n✅ Pūtake must appear throughout your response, not just in the introduction\n✅ For Merit and Excellence: stakeholders need perspectives, not just names\n\nYou've spent two weeks preparing for this. Trust your preparation.\n\nGood luck — you've got this."
+    },
+    {
+      "type": "reflection",
+      "title": "NCEA Assessment Task — AS92028",
+      "estimatedMinutes": 35,
+      "prompt": "FORMAL ASSESSMENT TASK — AS92028 (5 credits)\n\nWrite your financial decision-making response below. Your teacher will assess this against the AS92028 achievement criteria.\n\nREMINDER OF REQUIREMENTS:\n\nACHIEVED:\n• Describe the organisation, its pūtake, and its financial need/issue/opportunity\n• Describe three options using a financial tool with actual dollar values\n• Describe and justify your recommended decision using financial data\n• Discuss pūtake in the context of the decision\n\nMERIT (additionally):\n• Explain the perspectives of two stakeholders\n• Explain possible consequences of the decision\n\nEXCELLENCE (additionally):\n• Analyse how the decision considers stakeholder perspectives\n• Analyse how the organisation could respond to the consequences in a way that upholds their pūtake\n\nYou have 35 minutes. Write clearly and include specific financial figures throughout.",
+      "nceaLink": "This is the formal AS92028 internal assessment. Completed responses are assessed by your teacher against NZQA achievement criteria for Achieved, Merit, and Excellence."
+    },
+    {
+      "type": "quiz",
+      "title": "Module 1 Complete — Full Review Quiz",
+      "estimatedMinutes": 7,
+      "nceaLevel": "Achieved to Excellence",
+      "questions": [
+        {
+          "question": "What is the 50/30/20 rule?",
+          "options": [
+            "50% tax, 30% savings, 20% spending",
+            "50% needs, 30% wants, 20% savings",
+            "50% savings, 30% needs, 20% wants",
+            "50% wants, 30% needs, 20% debt repayment"
+          ],
+          "correctIndex": 1,
+          "explanation": "50% needs (rent, food, transport, essential phone), 30% wants (entertainment, eating out, hobbies), 20% savings (emergency fund, KiwiSaver, goals). The 20% savings should be transferred automatically on payday."
+        },
+        {
+          "question": "Tama earns $450/week gross. PAYE is 10.5%. What is his weekly net pay?",
+          "options": ["$402.75", "$404.25", "$398.50", "$450.00"],
+          "correctIndex": 0,
+          "explanation": "PAYE = $450 × 0.105 = $47.25. Net = $450 − $47.25 = $402.75."
+        },
+        {
+          "question": "What is the Rule of 72 used for?",
+          "options": [
+            "Calculating your PAYE tax rate",
+            "Estimating how many years it takes for an investment to double",
+            "Working out the 50/30/20 budget split",
+            "Calculating minimum KiwiSaver contributions"
+          ],
+          "correctIndex": 1,
+          "explanation": "Divide 72 by your interest rate to estimate the years to double your money. 72 ÷ 5% = 14.4 years. This helps you understand the power of compound interest over time."
+        },
+        {
+          "question": "In AS92028, what must ALWAYS be discussed regardless of achievement level?",
+          "options": [
+            "Stakeholder perspectives",
+            "Consequences of the decision",
+            "Pūtake — the organisation's reason for existing",
+            "The Rule of 72"
+          ],
+          "correctIndex": 2,
+          "explanation": "Pūtake is mandatory at ALL achievement levels in AS92028. Even at Achieved, you must discuss how the organisation's pūtake is relevant to their financial decision. Forgetting pūtake is a common reason students don't achieve the standard."
+        },
+        {
+          "question": "What is the difference between an Achieved and a Merit response in AS92028?",
+          "options": [
+            "Merit responses are longer",
+            "Merit responses describe options; Achieved responses don't",
+            "Merit responses explain stakeholder perspectives and consequences; Achieved only describes the decision",
+            "Merit responses use more expensive financial tools"
+          ],
+          "correctIndex": 2,
+          "explanation": "Achieved = describe options, use financial tool, discuss pūtake. Merit (Examine) = everything at Achieved PLUS explain stakeholder perspectives AND explain possible consequences. The jump from Achieved to Merit requires adding stakeholder and consequence analysis."
+        },
+        {
+          "question": "A local marae decides to use its annual surplus to repair its wharenui rather than distribute it as cash payments to members. Which of the following BEST explains this decision?",
+          "options": [
+            "The marae committee made a poor financial decision",
+            "The marae's pūtake — preserving cultural heritage and providing a gathering place for future generations — shaped the decision to invest in the wharenui over individual payments",
+            "The marae simply had too much money and needed to spend it",
+            "The NZ government required them to spend the surplus on infrastructure"
+          ],
+          "correctIndex": 1,
+          "explanation": "This is pūtake analysis in action. The marae's reason for existing — cultural preservation and community gathering across generations — makes the wharenui investment the decision that best serves their pūtake, even if individuals might prefer cash."
+        },
+        {
+          "question": "Which is a STRONG use of a financial tool in AS92028?",
+          "options": [
+            "'Option A would cost more than Option B.'",
+            "'Option A (new computer lab) costs $24,000 upfront but saves $8,000/year in technology rental fees, recouping the full investment in exactly 3 years. Option B (extend current rental) costs $8,000/year ongoing with no asset gained.'",
+            "'We used a budget to make our decision.'",
+            "'The cost-benefit analysis shows Option A is better.'"
+          ],
+          "correctIndex": 1,
+          "explanation": "A strong financial tool response includes specific dollar amounts, shows calculations, and directly uses the figures to compare and justify the decision. Vague references to tools or costs without numbers do not meet the standard."
+        },
+        {
+          "question": "Jordan saves $240/month at 5% annual compound interest. Using the Rule of 72, his savings will double in value in approximately:",
+          "options": ["7.2 years", "9 years", "14.4 years", "24 years"],
+          "correctIndex": 2,
+          "explanation": "72 ÷ 5 = 14.4 years. However, since Jordan is adding $240/month continuously, his actual savings will grow much faster than just doubling — the Rule of 72 applies to a fixed lump sum, not regular contributions."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "Module 1 Complete — What You've Achieved",
+      "estimatedMinutes": 2,
+      "content": "You've completed Module 1: Money Foundations. Here's what you now know that most adults wish they'd learned at your age:\n\n✅ A budget is a plan — and you know how to build one\n✅ Gross pay and net pay are different — and you can calculate the difference\n✅ The 50/30/20 rule gives you a framework for every dollar you earn\n✅ Compound interest rewards people who start early — and you're starting early\n✅ Pūtake shapes every good financial decision — for organisations and for you personally\n✅ You can analyse financial decisions at NCEA Achievement, Merit, and Excellence level\n\nYou've earned up to 640 XP across 8 lessons.\n\nModule 2 is next: Price, Market & Consumer — where you'll learn how organisations set prices, what makes a business financially viable, and how events like interest rate rises and cyclones flow through the NZ economy.\n\nNice mahi."
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "title": "Week 1 Challenge — Analysing Complex Relationships",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 100,
+  "bloomsLevel": "Apply and Analyse",
+  "nceaFocus": "AS92030: Synthesising relationship identification, money flow description, event analysis, and flow-on effects into a complete Achieved-to-Merit response",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Apply all Week 1 skills to a new multi-entity NZ scenario",
+    "Trace a complete chain of effects from event through to flow-on consequences for each entity",
+    "Identify what is needed to move from Merit toward Excellence in AS92030"
+  ],
+  "vocabulary": [
+    {
+      "term": "Extent of interdependence",
+      "definition": "How deeply each entity depends on the other. High interdependence means both entities would be severely affected if the relationship ended. Low interdependence means one or both could relatively easily find alternatives."
+    },
+    {
+      "term": "Response strategy",
+      "definition": "An action one entity in a financial relationship could take to manage the consequences of an event or the flow-on effects it experiences."
+    },
+    {
+      "term": "Vulnerability",
+      "definition": "The degree to which an entity is exposed to harm from a negative event. An entity with few alternative relationships, limited reserves, or high fixed costs is more vulnerable."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Week 1 Recap Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved to Merit",
+      "questions": [
+        {
+          "question": "Which of the following best describes a 'flow-on effect' in AS92030?",
+          "options": [
+            "The initial direct consequence of an event on the entity it immediately affects",
+            "A consequence that travels through a financial relationship from one entity to another after the initial direct effect",
+            "The total amount of money that flows between entities in a year",
+            "The decision an entity makes in response to a financial event"
+          ],
+          "correctIndex": 1,
+          "explanation": "A flow-on effect is a consequence that travels through the relationship — it is what happens to the other entity as a result of the initial impact. The initial direct consequence is just the first step. The flow-on is step two or three in the chain. For example, if a business cuts orders (direct effect: less stock purchased), the flow-on to the supplier is reduced revenue."
+        },
+        {
+          "question": "A café's monthly supply costs increase from $3,200 to $3,584. If the café does not raise its menu prices, what is the most likely direct financial effect?",
+          "options": [
+            "Revenue increases to offset the higher costs",
+            "Monthly net profit decreases by $384",
+            "The café must close immediately",
+            "The supplier receives less money per delivery"
+          ],
+          "correctIndex": 1,
+          "explanation": "If revenue stays the same and costs increase by $384, net profit decreases by $384. Revenue does not automatically change — the café would need to actively raise prices to protect profit. The café does not close immediately from a $384 cost increase (it would need to be much more severe to threaten viability). The supplier receives more money, not less — the flow-on to the supplier of reduced orders comes only if the café responds by cutting volume."
+        },
+        {
+          "question": "In the employer-employee-IRD three-entity relationship, if an employer reduces an employee's hours by 10 hours per week (from 30 to 20 hours at $23.15/hour), how much less does IRD receive per week in PAYE? (Assume approximately 18% average PAYE rate)",
+          "options": [
+            "$23.15",
+            "$41.67",
+            "$83.34",
+            "$231.50"
+          ],
+          "correctIndex": 1,
+          "explanation": "Weekly wage reduction = 10 hours × $23.15 = $231.50. PAYE reduction = $231.50 × 18% = approximately $41.67 per week. IRD receives $41.67 less per week in PAYE from this employment relationship. $231.50 is the gross wage reduction, not the PAYE reduction. $83.34 would be approximately 36% PAYE — too high for this wage level. $23.15 is one hour's wage, not the PAYE amount."
+        },
+        {
+          "question": "The Palmerston North Rugby Club loses $14,000 in sponsorship income. Their annual surplus shrinks from $15,056 to $1,056. Which word best describes the club's financial vulnerability after this event?",
+          "options": [
+            "Eliminated — they now have no surplus",
+            "Unchanged — they still have a surplus",
+            "Critically reduced — a very small buffer remains and any further reduction could push them into deficit",
+            "Increased — having less money makes them more careful managers"
+          ],
+          "correctIndex": 2,
+          "explanation": "The club still technically has a surplus ($1,056), so it has not been eliminated. However, the financial buffer has shrunk from $15,056 to $1,056 — a 93% reduction. This tiny margin means any further income reduction or cost increase will push the club into deficit. The vulnerability has increased dramatically, even though the club remains solvent. 'Critically reduced' accurately describes this position."
+        },
+        {
+          "question": "At the Merit level in AS92030, which of the following is required beyond the Achieved criteria?",
+          "options": [
+            "Identify the two entities in the relationship",
+            "Describe how money flows between the entities",
+            "Explain how the event affects each entity and explain the flow-on effects",
+            "Analyse the extent to which entities are interdependent"
+          ],
+          "correctIndex": 2,
+          "explanation": "At Merit, students must explain how the event affects each entity and explain the flow-on effects. Identifying entities and describing money flows are Achieved requirements. Analysing the extent of interdependence and how entities could respond to flow-on effects are Excellence requirements. The Merit level is specifically about explanation — going beyond description to show the mechanism and consequences."
+        },
+        {
+          "question": "Which of the following is the most complete Merit-level explanation of a flow-on effect?",
+          "options": [
+            "The supplier was affected by the café reducing its order.",
+            "When the café reduced its monthly order from $3,584 to $2,800, NZ Fresh Supplies received $784 less per month from this account. This reduced their monthly revenue and may affect their ability to cover their own fixed costs if multiple customers make similar reductions.",
+            "Both the café and the supplier were affected by the event.",
+            "The café made less profit and the supplier got less money."
+          ],
+          "correctIndex": 1,
+          "explanation": "Option B is Merit level. It names the specific dollar amounts ($3,584 to $2,800, a reduction of $784/month), explains the consequence for the supplier (reduced monthly revenue), and traces the further implication (ability to cover fixed costs if multiple customers respond similarly). Options A, C, and D are too vague — they name the affected parties but do not explain the mechanism or provide figures."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "Week 1 Challenge — Cyclone Effects on a Hawke's Bay Orchard",
+      "estimatedMinutes": 20,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "Anika's Apple Orchard is a family-owned apple orchard in Hastings, Hawke's Bay. The orchard has three financial relationships relevant to this scenario:\n\nRelationship 1: Anika's Orchard and ASB Bank. ASB provided a $120,000 mortgage on the orchard property at a variable rate of 6.8% per annum. Monthly repayment: approximately $1,340.\n\nRelationship 2: Anika's Orchard and a major supermarket chain (Countdown). Anika supplies 2,000 trays of apples per season at $18 per tray. Annual revenue from this contract: $36,000. Payment is received 60 days after delivery.\n\nRelationship 3: Anika's Orchard and her seasonal workers (8 workers hired for 6 weeks at harvest). Each worker earns $23.15 per hour for 45 hours per week. Total seasonal wage bill: 8 workers × 45 hrs × 6 weeks × $23.15 = $50,004.\n\nEvent: Cyclone Gabrielle causes severe flooding and wind damage to the orchard in February 2023. Approximately 40% of the apple crop is destroyed. Anika can now only supply 1,200 trays to Countdown instead of 2,000.",
+      "challenge": "1. For each of the three financial relationships, describe the money flows BEFORE the event.\n2. Describe how the cyclone event changes the financial relationship with Countdown (include the change in revenue with figures).\n3. Explain the flow-on effect of the reduced Countdown revenue on Anika's ability to meet her mortgage repayments to ASB.\n4. Explain the effect of the event on the seasonal workers. Calculate the change in total wages paid if Anika can only employ 5 workers instead of 8 (same hours and rate).\n5. Describe how the reduced crop affects EACH of the three entities in Relationship 2 (Countdown, Anika, and — as a flow-on — ASB).",
+      "hints": [
+        "For Q2: New revenue = 1,200 × $18 = $21,600. Original = $36,000. Loss = $14,400.",
+        "For Q3: If Anika's revenue falls by $14,400 per season, and her monthly mortgage is $1,340, calculate how many months of mortgage payments that lost revenue would have covered.",
+        "For Q4: Original wages = $50,004 for 8 workers. New wages = 5 workers × same hours and rate. Calculate new total and the reduction.",
+        "For Q5: Think about what Countdown loses (contracted supply), what Anika loses (revenue), and what ASB risks (loan repayment security)."
+      ],
+      "solution": "1. Money flows before the event:\n\nRelationship 1 (Orchard and ASB): ASB provided $120,000 mortgage. Money flows from Anika's Orchard to ASB as monthly repayments of $1,340, including principal and interest. Annual mortgage cost: $16,080.\n\nRelationship 2 (Orchard and Countdown): Anika supplies 2,000 trays per season. Money flows from Countdown to Anika's Orchard as payment of $36,000 per season, received 60 days after delivery. Goods (apples) flow from Anika to Countdown.\n\nRelationship 3 (Orchard and seasonal workers): Anika pays 8 seasonal workers $23.15/hour for 45 hours/week over 6 weeks. Money flows from Anika to workers as wages totalling $50,004 per season. Workers also contribute KiwiSaver and Anika pays employer KiwiSaver contributions.\n\n2. Change to Relationship 2 after the cyclone:\nAnika can only supply 1,200 trays instead of 2,000 (a 40% reduction). Revenue from Countdown falls from $36,000 to 1,200 × $18 = $21,600 — a loss of $14,400. Money still flows from Countdown to Anika but the amount is $14,400 less. Countdown also receives 800 fewer trays of apples than contracted, which may require them to source product elsewhere.\n\n3. Flow-on effect on ASB mortgage repayments:\nAnika loses $14,400 in seasonal revenue. Her annual mortgage repayments total $16,080. The lost revenue represents 10.7 months of mortgage repayments ($14,400 ÷ $1,340 = 10.7). Without replacement income, insurance payouts, or other reserves, Anika may struggle to continue making monthly repayments to ASB. The flow-on effect on ASB is increased credit risk — the possibility that repayments may be missed or delayed.\n\n4. Effect on seasonal workers:\nNew total wages (5 workers): 5 × 45 hrs × 6 weeks × $23.15 = $31,252.50\nOriginal total wages (8 workers): $50,004\nReduction: $50,004 − $31,252.50 = $18,751.50 less in total wages paid\nThree workers who expected employment for 6 weeks lose their seasonal income entirely — approximately $6,250.50 each (45 hrs × 6 weeks × $23.15). This is a significant personal financial loss for those workers and their households.\n\n5. Effects across all three entities in Relationship 2:\n\nCountdown: Receives 800 fewer trays than contracted. Must source additional supply from other suppliers potentially at higher prices or with less preferred quality. If Countdown has a minimum supply guarantee in the contract, they may be entitled to compensation or price adjustments — but in a natural disaster, force majeure clauses typically protect Anika from breach of contract claims.\n\nAnika's Orchard: Revenue falls by $14,400. Combined with the cost of crop loss (inputs, labour already invested in the destroyed crop) and likely insurance excess, the financial damage is severe. Her ability to service all financial obligations — mortgage, supplier accounts, worker wages — is significantly impaired.\n\nASB (flow-on from Relationship 2 to Relationship 1): Reduced orchard revenue directly threatens Anika's ability to make monthly mortgage repayments of $1,340. ASB faces increased credit risk. If Anika's insurance covers the damage and she can access government recovery support (e.g. the Rural Support Trust or government cyclone assistance packages), this risk may be manageable. If not, ASB may need to restructure the loan or initiate recovery proceedings — a serious flow-on consequence from a natural disaster's effect on a distant business relationship."
+    },
+    {
+      "type": "slide",
+      "title": "What Does Excellence Look Like in AS92030?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the two things you must do at Excellence level that are NOT required at Merit level. Give one example of each using the orchard scenario.",
+      "content": "You have now worked at Achieved and Merit levels. Here is what Excellence requires — and again, it is a different kind of thinking, not just more of the same.\n\nAt Achieved: Describe the relationship, describe the money flows, describe the event's effect.\n\nAt Merit: Explain how the event affects each entity, explain the flow-on effects.\n\nAt Excellence: Two things.\n\nFirst — Analyse the EXTENT to which entities are interdependent. This means making a judgement: are they highly dependent on each other, or could one easily replace the other? For example: 'Countdown is moderately dependent on Anika — her apples are one of many supplier relationships and Countdown can source fruit elsewhere. However, Anika is highly dependent on Countdown — this contract represents $36,000 of her annual income and losing it would be financially devastating. The interdependence is asymmetric: Countdown holds significantly more power in this relationship.'\n\nSecond — Analyse how EACH entity could RESPOND to the flow-on effects. This means proposing specific, practical responses. For example: 'Anika could apply for the Rural Support Trust emergency grant and contact ASB proactively to request a loan repayment holiday during the recovery period. This would directly address the cash flow threat from reduced revenue.'\n\nThese two Excellence moves — extent analysis and response strategies — are what we practise in Week 2."
+    },
+    {
+      "type": "reflection",
+      "title": "Project Introduction",
+      "estimatedMinutes": 5,
+      "prompt": "For your AS92030 module project, you will select two or more NZ entities with a financial relationship and write a complete analysis. Think now about which relationship you will analyse. It might be a business and its bank, a school and its major donor, a family and their landlord, or an iwi and a government agency. Write three to four sentences describing: Who are the entities? What is the nature of their financial relationship? What event might you analyse? Why is this relationship genuinely interdependent?",
+      "nceaLink": "Your project mirrors the AS92030 external exam structure. The practice you do building chains of effects and explaining flow-on consequences is direct preparation for exam questions."
+    }
+  ]
+}

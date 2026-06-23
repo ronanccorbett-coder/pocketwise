@@ -1,0 +1,142 @@
+{
+  "title": "NCEA External Exam Practice",
+  "order": 8,
+  "dayNumber": 8,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 120,
+  "bloomsLevel": "Apply, Analyse, and Evaluate",
+  "nceaFocus": "AS92030: Full external exam-style practice — all achievement levels from Achieved through to Excellence under timed conditions",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Complete a full AS92030-style external exam question under timed conditions",
+    "Apply all six parts of the response structure to a new NZ scenario",
+    "Identify where your response meets Achieved, Merit, and Excellence criteria"
+  ],
+  "vocabulary": [
+    {
+      "term": "Force majeure",
+      "definition": "A legal clause that releases parties from obligations in extraordinary events outside their control. Relevant when natural events disrupt business relationships."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Exam Approach — Read First, Plan Second, Write Third",
+      "estimatedMinutes": 4,
+      "notePrompt": "Before reading the exam scenario below, write down the six-part structure from memory. Then read the scenario and underline the key figures, entity names, and the specific event.",
+      "content": "This is your AS92030 external exam practice session. Before writing anything, follow this three-step process.\n\nStep 1 — Read the scenario completely. Do not start writing until you have read every sentence. Important figures and details often appear at the end.\n\nStep 2 — Plan your response. Spend 3 to 4 minutes identifying: Who are the entities? What money flows between them? What is the event? What changes? Who is more vulnerable?\n\nStep 3 — Write in order. Work through Parts 1 to 6 in sequence. Do not skip ahead to Excellence before completing Achieved and Merit — the earlier parts provide the evidence your Excellence analysis builds on.\n\nTime allocation suggestion:\nParts 1 and 2 (Achieved): 8 minutes\nParts 3 and 4 (Merit): 10 minutes\nParts 5 and 6 (Excellence): 12 minutes\nReview: 5 minutes\n\nWrite every dollar figure you calculate. Show your working. Mark numbers in your response so they are easy to find."
+    },
+    {
+      "type": "scenario",
+      "title": "NCEA-Style External Exam Practice — The Fishing Company and Its Bank",
+      "estimatedMinutes": 35,
+      "nceaLevel": "Achieved to Excellence",
+      "setup": "Caleb's Seafood Ltd is a small fishing company based in Nelson. They operate two boats and supply fresh snapper, blue cod, and gurnard to restaurants and fish shops across the South Island.\n\nFinancial relationships:\n\nRelationship 1 — Caleb's Seafood Ltd and BNZ:\nBNZ provided a $180,000 vessel loan for Caleb's second fishing boat, borrowed in 2021 at a variable interest rate of 7.2% per annum over 8 years. Current monthly repayment: approximately $2,360 (principal and interest). Outstanding balance: approximately $145,000.\n\nRelationship 2 — Caleb's Seafood Ltd and its restaurant customers:\nCaleb supplies fresh fish to 12 South Island restaurants on 14-day credit terms. Annual supply revenue: $290,000. The three largest restaurant customers account for 65% of total revenue ($188,500 per year combined). Caleb delivers three times per week.\n\nRelationship 3 — Caleb's Seafood Ltd and its crew (4 employees):\nCaleb employs 4 crew members. Each is paid $1,150 per week in gross wages. Annual wage bill: 4 × $1,150 × 52 = $239,200 per year. Each crew member has a KiwiSaver deduction of 3% and Caleb contributes 3% employer KiwiSaver.\n\nEvent: One of Caleb's three largest restaurant customers — The Anchor restaurant in Christchurch — enters liquidation owing Caleb $18,500 in unpaid invoices from the past 14 days. The Anchor accounted for $74,000 of Caleb's annual revenue (approximately 25.5% of total revenue).\n\nCaleb is unlikely to recover the $18,500 debt through the liquidation process. He must also replace $74,000 in annual revenue.",
+      "challenge": "This is your AS92030 external exam practice task. Answer all parts.\n\nPart A — Achieved:\n1. Describe the financial relationship between Caleb's Seafood Ltd and BNZ. Include money flows with specific figures.\n2. Describe how the event (The Anchor's liquidation) affects Caleb's financial position. Include the immediate loss and the longer-term revenue impact.\n\nPart B — Merit:\n3. Explain how the event affects EACH of the three entities in Relationship 2 (Caleb's Seafood, The Anchor, and the remaining 11 restaurant customers as a group).\n4. Explain the flow-on effect of the lost Anchor revenue on Caleb's Relationship 1 with BNZ. Trace the chain of effects with at least 4 steps.\n\nPart C — Excellence:\n5. Analyse the extent to which Caleb's Seafood Ltd is interdependent with its restaurant customers. Is the relationship symmetric or asymmetric? Which party is more vulnerable and why?\n6. Propose specific response strategies for Caleb's Seafood Ltd to address the two key flow-on effects it faces: (a) the immediate $18,500 bad debt loss and (b) the loss of $74,000 in annual revenue.",
+      "hints": [
+        "For Q2: The immediate loss is $18,500 (unrecoverable debt). The longer-term impact is $74,000 less annual revenue. How does this affect Caleb's ability to cover annual costs including the $2,360/month mortgage ($28,320/year) and wages ($239,200/year)?",
+        "For Q4: Chain: Lost revenue → reduced monthly cash flow → potential difficulty meeting $2,360 BNZ repayment → BNZ flags increased risk → possible interest rate increase or loan review.",
+        "For Q5: Consider how easily Caleb could replace The Anchor's revenue vs how easily The Anchor could have found another seafood supplier.",
+        "For Q6: NZ-specific responses — Caleb could contact the Insolvency Practitioner to register as a creditor, seek Trade Credit Insurance for future customers, approach other South Island restaurants to expand his customer base."
+      ],
+      "solution": "Part A — Achieved:\n\n1. Relationship 1 — Caleb's Seafood and BNZ:\nCaleb's Seafood Ltd has a debtor-creditor relationship with BNZ. BNZ provided a $180,000 vessel loan in 2021, enabling Caleb to purchase his second fishing boat. Money flows from Caleb's Seafood to BNZ as monthly loan repayments of approximately $2,360, comprising principal reduction and interest at 7.2% per annum. The current outstanding balance is $145,000. Annually, Caleb pays BNZ approximately $28,320 in repayments. BNZ's interest income from this loan is approximately $145,000 × 7.2% = $10,440 per year on the current balance.\n\n2. Direct effect of The Anchor's liquidation:\nImmediate financial impact: Caleb loses $18,500 in unpaid invoices that are unlikely to be recovered. This is a direct bad debt cost — money that was expected to flow from The Anchor to Caleb's Seafood will not arrive. This immediately reduces Caleb's cash position by $18,500.\nLonger-term revenue impact: The Anchor provided $74,000 in annual revenue — approximately 25.5% of Caleb's $290,000 total revenue. Without this customer, annual revenue falls to $216,000 ($290,000 − $74,000). Caleb's annual cost base includes wages of $239,200 and BNZ repayments of $28,320 — a total of at least $267,520 in known major costs alone, which already exceeds the new revenue of $216,000. Caleb faces a serious financial deficit.\n\nPart B — Merit:\n\n3. Effect on each entity in Relationship 2:\nCaleb's Seafood Ltd: Loses $18,500 immediately and $74,000 in annual revenue. Annual income falls below the cost of wages and mortgage repayments combined. The business is in financial distress.\n\nThe Anchor restaurant: Has entered liquidation, meaning it has ceased trading and cannot pay its debts. The liquidator will sell The Anchor's assets and distribute proceeds to creditors. Caleb is likely to receive cents in the dollar — or nothing — from the $18,500 owed. The Anchor no longer has a financial relationship with Caleb going forward.\n\nThe remaining 11 restaurant customers: These customers are not directly affected by The Anchor's liquidation. However, they may experience a secondary effect — if Caleb's supply becomes unreliable because of his financial difficulties (e.g. reduced fishing operations, crew cuts), their access to Caleb's fresh fish may be disrupted. They may also face price pressure if Caleb attempts to increase prices to existing customers to compensate for lost revenue.\n\n4. Flow-on effect on Relationship 1 (BNZ):\nStep 1: The Anchor's liquidation removes $74,000 of annual revenue from Caleb's Seafood. Annual income falls from $290,000 to $216,000.\nStep 2: With annual wages of $239,200 alone exceeding new revenue of $216,000, Caleb's monthly cash flow becomes severely negative. He can no longer cover all operating costs from trading income.\nStep 3: Caleb must either reduce costs (e.g. reduce crew hours or lay off staff) or draw on savings/reserves to meet obligations — including the $2,360 monthly BNZ repayment.\nStep 4: If reserves are insufficient, Caleb may miss or delay BNZ loan repayments. A missed repayment triggers a default notification from BNZ and the right to charge a default interest rate (typically 2% to 5% above the standard rate) — increasing Caleb's interest cost at the worst possible time.\nStep 5: BNZ faces increased credit risk on a $145,000 loan. If Caleb cannot recover financially, BNZ may need to pursue recovery of the vessel loan through asset seizure — which would end Caleb's business operations entirely.\n\nPart C — Excellence:\n\n5. Extent of interdependence — Relationship 2:\nThe relationship is asymmetrically interdependent, with significant concentration risk. Caleb is highly dependent on his three largest customers, who represent 65% of revenue ($188,500). The loss of one of these customers (The Anchor, 25.5% of revenue) is immediately devastating. Caleb's dependence on individual large customers is his greatest financial vulnerability.\n\nIn contrast, each individual restaurant customer is minimally dependent on Caleb — fresh seafood is available from multiple South Island suppliers, and most restaurants maintain relationships with two or three suppliers for resilience. The Anchor could have replaced Caleb relatively easily; Caleb cannot replace The Anchor easily.\n\nCaleb holds weak bargaining power relative to large restaurant customers, who can use the availability of alternatives to negotiate lower prices or longer credit terms. The asymmetry is significant and represents a structural risk in Caleb's business model.\n\n6. Response strategies:\n\n(a) Addressing the immediate $18,500 bad debt:\nCaleb should immediately register as a creditor with The Anchor's liquidator (Insolvency Practitioners NZ) to participate in the liquidation distribution, even if the recovery is likely to be small. He should review his existing customer contracts and ensure all have personal or company guarantees where possible. Going forward, Caleb should obtain Trade Credit Insurance through NZ providers such as Atradius or Coface, which protects against exactly this scenario — a customer failing to pay. The annual premium (typically 0.5% to 1.5% of insured revenue) would cost approximately $2,175 to $4,350 on $290,000 of revenue — far less than the $18,500 loss just experienced.\n\n(b) Addressing the $74,000 revenue loss:\nCaleb must replace The Anchor's $74,000 in annual revenue. His strategy should include: (1) Contacting 15 to 20 potential new South Island restaurant customers immediately — targeting high-end restaurants and boutique fish shops in Christchurch, Nelson, and Marlborough. A targeted approach with samples and competitive pricing could realistically recover $30,000 to $50,000 in new annual revenue within 6 months. (2) Listing with Fisher & Paykel's NZ direct-to-consumer seafood platforms or similar online markets to diversify into retail sales. (3) Proactively contacting BNZ to discuss the situation and request a 3-month repayment holiday or interest-only period while the revenue is rebuilt. NZ banks routinely grant these to long-standing customers facing genuine hardship — and approaching the bank proactively, before missing a repayment, strongly improves the likelihood of a positive response."
+    },
+    {
+      "type": "quiz",
+      "title": "Full Module Review Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved to Excellence",
+      "questions": [
+        {
+          "question": "Caleb's annual BNZ loan repayments are $2,360/month. What is his annual repayment total?",
+          "options": [
+            "$21,240",
+            "$28,320",
+            "$35,400",
+            "$14,160"
+          ],
+          "correctIndex": 1,
+          "explanation": "$2,360 × 12 = $28,320 per year. This is the minimum annual cash outflow Caleb must maintain to stay current on his BNZ loan. When evaluating flow-on effects from lost revenue, comparing this fixed obligation against available cash flow is essential."
+        },
+        {
+          "question": "The Anchor owes Caleb $18,500 and enters liquidation. What is the most accurate description of this as a financial event?",
+          "options": [
+            "An internal business decision by Caleb",
+            "An external event — the liquidation of a customer entity — that creates a bad debt and eliminates a major revenue stream",
+            "A natural disaster affecting the financial relationship",
+            "A government regulation change affecting credit terms"
+          ],
+          "correctIndex": 1,
+          "explanation": "The Anchor's liquidation is an external event — it originates from outside Caleb's business and is beyond his control. It creates two simultaneous financial effects: a bad debt of $18,500 (money expected but not received) and the permanent loss of a $74,000 annual revenue stream. This is one of the most damaging event types in a business-customer financial relationship."
+        },
+        {
+          "question": "Which of the following best demonstrates a Merit-level explanation of flow-on effects from the lost Anchor revenue to Caleb's BNZ relationship?",
+          "options": [
+            "Caleb will have less money so he might not pay BNZ.",
+            "The loss of $74,000 in annual revenue reduces Caleb's monthly cash flow by approximately $6,167. With wages alone costing $239,200 per year ($18,267/month), Caleb's remaining revenue of $216,000 ($18,000/month) is insufficient to cover wages, let alone BNZ repayments of $2,360/month. This creates a realistic risk of missed repayments, which would flow on to BNZ as a credit risk increase on the $145,000 outstanding loan balance.",
+            "BNZ may lose money if Caleb cannot pay.",
+            "Caleb's relationship with BNZ is affected by losing The Anchor."
+          ],
+          "correctIndex": 1,
+          "explanation": "Option B demonstrates Merit-level analysis. It calculates the monthly revenue reduction ($74,000 ÷ 12 = $6,167), compares it to the monthly cost base (wages $18,267 + BNZ $2,360), and shows that even the remaining $216,000 annual revenue is insufficient — making missed repayments a realistic risk. It then identifies the specific flow-on consequence for BNZ (credit risk increase on $145,000 balance). Options A, C, and D are too vague to qualify as Merit."
+        },
+        {
+          "question": "What does 'asymmetric interdependence' mean in the Caleb-restaurant customer relationship?",
+          "options": [
+            "Both Caleb and his customers depend equally on each other",
+            "Caleb depends more heavily on his large customers than they depend on him — they can replace his supply more easily than he can replace their revenue",
+            "The restaurant customers depend more on Caleb than he depends on them",
+            "Neither party depends on the other"
+          ],
+          "correctIndex": 1,
+          "explanation": "Asymmetric interdependence means the dependence is unequal. Caleb's three largest customers represent 65% of his revenue — losing one is catastrophic for him. In contrast, each restaurant can source seafood from multiple South Island suppliers and can replace Caleb's supply relatively easily. Caleb depends far more on his customers than they depend on him. This asymmetry gives the restaurants more bargaining power and makes Caleb more financially vulnerable."
+        },
+        {
+          "question": "Which NZ-specific response strategy would directly protect Caleb from future bad debt losses like The Anchor situation?",
+          "options": [
+            "Increasing his prices to all customers to recover the loss faster",
+            "Refusing to supply any restaurant on credit terms",
+            "Obtaining Trade Credit Insurance from a provider such as Atradius or Coface, which pays out when a customer cannot meet their invoice obligations",
+            "Reducing crew wages to cut costs"
+          ],
+          "correctIndex": 2,
+          "explanation": "Trade Credit Insurance directly addresses the risk of customer default — which is exactly what happened with The Anchor. When an insured customer fails to pay, the insurer pays Caleb the outstanding invoice amount (up to the policy limit). Options A and B address symptoms but not the root risk. Option D reduces costs but does not protect revenue. Trade Credit Insurance is available in NZ from providers including Atradius, Coface, and QBE, and is specifically designed for businesses supplying on credit terms."
+        },
+        {
+          "question": "At the Excellence level in AS92030, students must analyse TWO things. What are they?",
+          "options": [
+            "The types of money flow and the names of entities",
+            "The extent to which entities are interdependent, and how each entity could respond to the flow-on effects",
+            "The direct effects of the event and the flow-on effects",
+            "The financial relationship and the event"
+          ],
+          "correctIndex": 1,
+          "explanation": "The two Excellence requirements in AS92030 are: (1) analyse the extent to which the entities are interdependent — making a judgement about whether it is symmetric or asymmetric and who is more vulnerable, with justification; and (2) analyse how each entity could respond to the flow-on effects — proposing specific, practical response strategies. Options A, C, and D describe earlier achievement levels."
+        },
+        {
+          "question": "Caleb's crew of 4 employees each earn $1,150/week gross. Caleb contributes 3% employer KiwiSaver. How much does Caleb contribute to KiwiSaver annually for all four employees?",
+          "options": [
+            "$6,240",
+            "$7,176",
+            "$8,694",
+            "$14,352"
+          ],
+          "correctIndex": 1,
+          "explanation": "Annual gross wages per employee: $1,150 × 52 = $59,800. Employer KiwiSaver per employee: $59,800 × 3% = $1,794. Total for 4 employees: $1,794 × 4 = $7,176. This is money that flows from Caleb's Seafood Ltd to the KiwiSaver providers on behalf of his crew — an often-overlooked element of the employer-employee financial relationship."
+        },
+        {
+          "question": "Caleb contacts BNZ proactively about a repayment holiday before missing any payments. Why is this approach better than waiting until he misses a payment?",
+          "options": [
+            "It means BNZ forgives the debt entirely",
+            "It demonstrates financial management competence, reduces the risk of penalty interest being applied, and preserves the relationship — making BNZ more likely to agree to a restructured arrangement",
+            "It reduces the outstanding loan balance",
+            "It is required by NZ law when a business loses a major customer"
+          ],
+          "correctIndex": 1,
+          "explanation": "Proactive communication with a lender is always preferable to missing a payment. When a borrower contacts BNZ before defaulting, it signals that they understand their situation and are managing it responsibly — banks respond much more favourably to this than to missed payments followed by explanation. Proactive contact avoids penalty interest, default fees, and the negative credit record impact of a missed payment. It also demonstrates the kind of financial management competence that makes BNZ more confident in restructuring the arrangement. NZ banks routinely provide repayment holidays to good-standing customers facing genuine hardship — but only if asked."
+        }
+      ]
+    }
+  ]
+}

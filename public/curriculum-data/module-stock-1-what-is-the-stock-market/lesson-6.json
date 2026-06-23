@@ -1,0 +1,154 @@
+{
+  "title": "Indices and Market Benchmarks",
+  "order": 6,
+  "dayNumber": 6,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning \u2014 Stock Market Foundations",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain what a stock market index is and why it exists",
+    "Identify the major NZ and global indices and what they track",
+    "Interpret an index movement \u2014 what a 1.5% rise in the NZX 50 means"
+  ],
+  "vocabulary": [
+    {
+      "term": "Index",
+      "definition": "A basket of selected shares used to represent the overall performance of a market or sector. The NZX 50 tracks NZ's 50 largest listed companies."
+    },
+    {
+      "term": "NZX 50",
+      "definition": "New Zealand's main share market index, tracking the 50 largest companies listed on the NZX by market cap. Used as the benchmark for NZ share market performance."
+    },
+    {
+      "term": "S&P 500",
+      "definition": "An index tracking the 500 largest listed companies in the United States. The most widely used benchmark for US (and global) share market performance."
+    },
+    {
+      "term": "Benchmark",
+      "definition": "A standard against which investment performance is measured. If a fund manager's portfolio returned 8% and the NZX 50 returned 10%, the fund underperformed its benchmark."
+    },
+    {
+      "term": "Index fund",
+      "definition": "A fund that automatically buys all shares in an index in proportion to their weight. Low cost, broadly diversified. The most common investment vehicle for ordinary investors."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "What Is a Stock Market Index?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: Why do we need an index? What problem does it solve compared to tracking individual share prices?",
+      "content": "The NZX lists around 200 companies. Every day, some go up and some go down. To understand whether 'the market' as a whole moved up or down, you need an index \u2014 a summary measure.\n\nAn index is a basket of selected shares that represents a market or sector. The price changes of all shares in the basket are combined (weighted by company size) into a single number that changes throughout the day.\n\nWhen a news report says 'the NZX 50 rose 1.2% today,' it means the weighted average of NZ's 50 largest listed companies rose 1.2% \u2014 not that every share went up. Some companies in the index might have fallen while the overall index rose.\n\nIndices also serve as benchmarks. Fund managers are assessed on whether their portfolios beat the index. An investor who earns 6% while the NZX 50 returns 9% has underperformed the benchmark \u2014 they would have been better off in an index fund.\n\nWhy are indices useful for ordinary investors? They provide a simple, daily answer to 'how is the market doing?' without requiring you to track hundreds of individual shares."
+    },
+    {
+      "type": "slide",
+      "title": "Major Indices You Should Know",
+      "estimatedMinutes": 4,
+      "notePrompt": "Create a reference table: Index | Country | Number of companies | What it represents. Fill in all five indices from this slide.",
+      "content": "Here are the indices most relevant to NZ investors.\n\nNZX 50: New Zealand's benchmark. Tracks NZ's 50 largest listed companies. When you hear 'the NZ market was up today,' this is the index being referenced. Major components include Fisher and Paykel Healthcare, Mainfreight, Meridian Energy, Spark, and Infratil.\n\nS&P 500 (USA): The world's most tracked index. 500 large US companies. Dominated by technology \u2014 Apple, Microsoft, Amazon, Alphabet (Google), and Meta make up around 25% of the index by weight. Considered the best proxy for overall global equity market performance.\n\nDow Jones Industrial Average (USA): 30 major US companies. Older and less comprehensive than the S&P 500. Still widely reported in news because of its long history (founded 1896).\n\nNASDAQ Composite (USA): Over 3,000 companies, heavily weighted toward technology. Follows companies like Tesla, Netflix, and Nvidia. More volatile than the S&P 500.\n\nASX 200 (Australia): Australia's 200 largest listed companies. Closely followed in NZ \u2014 many NZ investors hold Australian shares and the Australian economy is closely tied to NZ's.\n\nWhen a US journalist says 'the market was down today,' they almost always mean the S&P 500."
+    },
+    {
+      "type": "truefalse",
+      "statement": "If the NZX 50 index rises 2% in a day, it means every company in the index rose in price that day.",
+      "correctAnswer": false,
+      "explanation": "False. An index is a weighted average. A 2% rise means the weighted average of all 50 companies rose 2% \u2014 but individual companies could have fallen significantly while the index still rose, if the larger companies (which have more weight in the index) gained. For example, if Fisher and Paykel Healthcare (a major index component) surged 5%, the index could rise even if many smaller index companies fell. This is why an index is a summary measure, not a statement about every individual stock.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Index Funds \u2014 The Smart Way Most People Invest",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What is an index fund? Why might it outperform a fund managed by professional stock pickers over 10 years?",
+      "content": "An index fund is a fund that automatically replicates an index. It buys every share in the index in proportion to its weight, holding them without active stock selection.\n\nWhy index funds are popular:\n\u2014 Low cost: no expensive fund managers required. Index funds typically charge 0.1% to 0.5% per year. Actively managed funds charge 0.8% to 1.5% or more.\n\u2014 Diversification: you own all major companies in the market, not a concentrated bet on a few.\n\u2014 Performance: academic research consistently shows most active fund managers fail to beat their benchmark index over 10+ years. The S&P 500 outperforms around 85% to 90% of US fund managers over 15 years.\n\nNZ examples of index funds and low-cost providers:\n\u2014 Simplicity NZ Share Fund \u2014 tracks the NZX 50 at very low cost\n\u2014 Smartshares NZX 50 ETF (FNZ) \u2014 an Exchange Traded Fund tracking the NZX 50, buying shares in it like a regular share\n\u2014 Vanguard index funds \u2014 the world's largest index fund provider (US-based), accessible to NZ investors through platforms like InvestNow\n\nFor most people investing for the long run, a low-cost index fund is the recommended starting point. Warren Buffett has publicly instructed his estate to invest in index funds after his death."
+    },
+    {
+      "type": "quiz",
+      "title": "Indices Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A fund manager's portfolio returned 7.5% last year. The NZX 50 index returned 9.8% over the same period. What does this mean for the fund manager?",
+          "options": [
+            "The fund manager performed well \u2014 7.5% is a positive return",
+            "The fund manager underperformed the benchmark by 2.3 percentage points \u2014 investors would have been better off in a low-cost NZX 50 index fund",
+            "The fund manager outperformed because active management generated higher quality returns than passive indexing",
+            "The comparison is invalid \u2014 fund returns cannot be compared to index returns"
+          ],
+          "correctIndex": 1,
+          "explanation": "When a fund manager underperforms the benchmark index, investors would have been better off \u2014 and paid less in fees \u2014 by investing in a simple index fund. 7.5% vs 9.8% is a 2.3 percentage point underperformance. Compounded over 20 years, that gap results in significantly less wealth. This is why Buffett and most financial economists recommend index funds for most investors."
+        },
+        {
+          "question": "Which index is the most widely used benchmark for measuring global share market performance?",
+          "options": [
+            "Dow Jones Industrial Average \u2014 because it is the oldest and most recognised",
+            "NASDAQ Composite \u2014 because it includes the most technology companies",
+            "NZX 50 \u2014 because it covers the most economically diverse range of companies",
+            "S&P 500 \u2014 because it covers 500 large US companies and the US represents the largest share of global market cap"
+          ],
+          "correctIndex": 3,
+          "explanation": "The S&P 500 is the world's most widely used benchmark because the US represents approximately 60% of total global stock market value. While the Dow Jones is older and more famous in mainstream media, the S&P 500 is considered more representative because it covers 500 companies rather than just 30. Institutional investors globally measure their performance against the S&P 500."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Index to Its Market",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "NZX 50",
+          "zone": "New Zealand top 50 companies"
+        },
+        {
+          "item": "S&P 500",
+          "zone": "500 largest US companies"
+        },
+        {
+          "item": "ASX 200",
+          "zone": "200 largest Australian companies"
+        },
+        {
+          "item": "NASDAQ Composite",
+          "zone": "3,000+ mostly US technology companies"
+        },
+        {
+          "item": "Dow Jones Industrial Average",
+          "zone": "30 major US companies \u2014 oldest US index"
+        }
+      ],
+      "explanation": "Each index has a different composition and purpose. The S&P 500 is the most comprehensive US index. The Dow is more famous but less representative. NASDAQ captures tech-heavy growth companies. The ASX 200 and NZX 50 are the most relevant for NZ investors interested in their home region."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Over long periods of 15+ years, most professional fund managers who actively pick shares beat a simple low-cost S&P 500 index fund.",
+      "correctAnswer": false,
+      "explanation": "False. Research consistently shows approximately 85% to 90% of active fund managers fail to beat their benchmark index over 15 years. This is after fees \u2014 and active funds charge significantly more than index funds. The reason is that markets are highly efficient: prices already reflect publicly available information, making consistent outperformance very difficult. This is why index funds are recommended by most economists, Warren Buffett, and financial regulators as the default investment for most individuals.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "The NZX 50 opens at 12,450 points and closes at 12,637 points. What is the percentage change? Round to two decimal places.",
+      "acceptedAnswers": [
+        "1.50%",
+        "1.50",
+        "1.5%",
+        "1.5"
+      ],
+      "placeholder": "Type the percentage change here...",
+      "hint": "% change = (new value \u2212 old value) \u00f7 old value \u00d7 100.",
+      "explanation": "(12,637 \u2212 12,450) \u00f7 12,450 \u00d7 100 = 187 \u00f7 12,450 \u00d7 100 = 1.50%. A 1.5% daily rise is a good day for the NZX. For context, the NZX 50 moves more than 1% in either direction on roughly 50 to 70 days per year. Days with moves over 3% are significant and typically involve major economic news.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "If You Had $1,000 to Invest Right Now",
+      "estimatedMinutes": 5,
+      "prompt": "You have $1,000 to invest for 10 years. You have three options: (A) put it in a NZX 50 index fund at estimated 9% annual return, (B) give it to an active fund manager at 1.2% fees per year who claims to target 10% returns, (C) leave it in a savings account at 4.5% interest. Use the Rule of 72 to estimate how long each option takes to double. Which would you choose and why?",
+      "nceaLink": "Extra Learning \u2014 understanding the difference between index funds, active funds and savings accounts is one of the most practically important investment concepts."
+    }
+  ]
+}

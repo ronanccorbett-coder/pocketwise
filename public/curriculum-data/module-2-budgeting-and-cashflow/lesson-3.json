@@ -1,0 +1,94 @@
+{
+  "id": "m2-l3",
+  "title": "Fixed vs Variable Expenses",
+  "order": 3,
+  "xpReward": 25,
+  "filename": "lesson-3.json",
+  "activities": [
+    {
+      "type": "slide",
+      "id": "m2l3-s1",
+      "title": "Why this distinction matters",
+      "content": "Understanding which expenses are **fixed** and which are **variable** is crucial for budgeting because they require different strategies:\n\n- **Fixed expenses** are predictable — you know exactly what you'll pay\n- **Variable expenses** fluctuate — harder to predict, easier to overspend\n\nMost people's budget problems come from underestimating variable expenses, especially food and entertainment.",
+      "notePrompt": "Can you name two of your fixed expenses and two variable ones right now?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l3-s2",
+      "title": "Fixed expenses",
+      "content": "**Fixed expenses** stay the same regardless of your behaviour:\n\n- Rent (same amount every week/month)\n- Hire purchase / finance agreements\n- Subscription services (Netflix, Spotify, gym)\n- Insurance premiums\n- Minimum loan repayments\n- Phone plan (if on a plan, not prepaid)\n\n**Advantage:** Easy to budget — you know exactly what's coming\n**Disadvantage:** Hard to reduce quickly — usually locked in by contracts\n\nFixed expenses are your floor — the minimum you must earn to survive.",
+      "notePrompt": "List your fixed expenses. What is the minimum income you need to cover them all?"
+    },
+    {
+      "type": "slide",
+      "id": "m2l3-s3",
+      "title": "Variable expenses",
+      "content": "**Variable expenses** change week to week based on your choices:\n\n- Groceries (varies by what you buy)\n- Fuel (varies by how much you drive)\n- Dining out and takeaways\n- Clothing and shoes\n- Entertainment (concerts, movies, events)\n- Personal care (haircuts, cosmetics)\n- Gifts and celebrations\n\n**Advantage:** You can control these — your biggest lever for saving more\n**Disadvantage:** Easy to underestimate and overspend\n\nMost people underestimate variable expenses by 25-35% when asked to guess.",
+      "notePrompt": "Which variable expense do you think you spend the most on? What is your best guess for the weekly amount?"
+    },
+    {
+      "type": "truefalse",
+      "id": "m2l3-tf1",
+      "questions": [
+        { "statement": "Grocery spending is a fixed expense because you buy food every week.", "answer": false, "explanation": "Groceries are variable — the amount changes based on what you buy, where you shop, and how many meals you eat at home. The category is regular, but the amount varies." },
+        { "statement": "Fixed expenses are generally harder to reduce than variable expenses.", "answer": true, "explanation": "Cancelling a gym contract or phone plan is harder than deciding to cook at home instead of ordering takeaways. Variable expenses give you immediate control." },
+        { "statement": "A Spotify subscription is a variable expense.", "answer": false, "explanation": "Spotify charges the same amount every month — it is a fixed expense. Even though it is optional, the amount is predictable and does not vary with your behaviour." }
+      ]
+    },
+    {
+      "type": "quiz",
+      "id": "m2l3-q1",
+      "questions": [
+        {
+          "question": "Lena wants to reduce her expenses by $50/week immediately. Which category should she focus on first?",
+          "options": ["Fixed expenses — they are larger", "Variable expenses — she can control them daily", "She should increase income instead", "It does not matter which one"],
+          "correctIndex": 1,
+          "explanation": "Variable expenses can be reduced immediately through daily choices (cooking more, fewer takeaways, skipping one outing). Fixed expenses usually require notice periods or contract penalties to change."
+        },
+        {
+          "question": "Which of the following is a FIXED expense?",
+          "options": ["Weekly grocery shop", "Monthly gym membership", "Petrol costs", "Clothing purchases"],
+          "correctIndex": 1,
+          "explanation": "A monthly gym membership is fixed — same amount debited every month regardless of how many times you go. The others all vary based on usage and choices."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "id": "m2l3-s4",
+      "title": "Semi-variable expenses",
+      "content": "Some expenses blur the line — they're **semi-variable**:\n\n- **Power:** Fixed connection fee + variable usage\n- **Phone:** Fixed plan + variable data/call charges\n- **Car:** Fixed insurance + variable fuel and maintenance\n- **Food:** Fixed household items + variable treats and dining\n\nFor budgeting purposes, use your highest recent month as the estimate for semi-variable expenses. This builds in a buffer rather than leaving you short.",
+      "notePrompt": "Identify one semi-variable expense in your life and estimate its typical range (e.g. power: $40-80/month)."
+    },
+    {
+      "type": "dragdrop",
+      "id": "m2l3-dd1",
+      "instruction": "Sort these expenses into Fixed or Variable",
+      "items": [
+        { "text": "Rent $180/week", "category": "Fixed" },
+        { "text": "Takeaways this week", "category": "Variable" },
+        { "text": "Netflix subscription $19.99/mth", "category": "Fixed" },
+        { "text": "Petrol costs", "category": "Variable" },
+        { "text": "Car insurance premium", "category": "Fixed" },
+        { "text": "Weekly grocery shop", "category": "Variable" },
+        { "text": "Student loan minimum repayment", "category": "Fixed" },
+        { "text": "Night out with friends", "category": "Variable" }
+      ],
+      "categories": ["Fixed", "Variable"]
+    },
+    {
+      "type": "slide",
+      "id": "m2l3-s5",
+      "title": "Reducing fixed costs — the bigger win",
+      "content": "While variable expenses are easier to cut daily, reducing fixed costs creates permanent savings:\n\n**High-impact fixed cost reductions:**\n- Moving to a cheaper flat or adding a flatmate: save $100-200/week\n- Switching phone plans: save $20-50/month\n- Cancelling unused subscriptions: save $30-80/month\n- Refinancing at a lower interest rate: save hundreds per year\n- Moving closer to work (trade longer commute): save $30-100/week in fuel\n\nEach dollar removed from fixed costs saves that amount every single period — no willpower required.",
+      "notePrompt": "Can you identify one fixed expense you could reduce or eliminate? How much would you save per year?"
+    },
+    {
+      "type": "typed",
+      "id": "m2l3-t1",
+      "prompt": "James pays $85/week for petrol, $40/month for Spotify Premium, $29.99/month for a gaming subscription, and $49/month for a gym he barely uses. Calculate his monthly fixed subscription costs and suggest which to cut and why.",
+      "sampleAnswer": "Monthly subscriptions: Spotify $40 + gaming $29.99 + gym $49 = $118.99/month. The gym ($49/month) is the best target — if he rarely uses it he is paying $588/year for nothing. The gaming subscription ($29.99) could be put on pause if he is not actively playing. Petrol is variable and harder to cut unless he changes behaviour or route. Cancelling both gym and gaming saves $78.99/month = $947.88/year.",
+      "hint": "Add up the monthly subscription costs, then evaluate which has the least value for the money."
+    }
+  ]
+}

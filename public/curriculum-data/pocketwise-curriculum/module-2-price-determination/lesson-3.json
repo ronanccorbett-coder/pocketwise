@@ -1,0 +1,194 @@
+{
+  "title": "Projected Income Statements and Price Recommendations",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "AS92029: Describing the pricing process using a financial model — building projected income statements and making a fully justified price recommendation with actual NZD figures",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Build a projected income statement comparing two or more pricing options",
+    "Use the income statement to identify the most financially viable price",
+    "Write a complete price recommendation connecting financial evidence to internal and external factors"
+  ],
+  "vocabulary": [
+    {
+      "term": "Projected income statement",
+      "definition": "A financial model that estimates revenue, costs, and profit for a future period based on a set of assumptions. Used to compare the financial outcomes of different pricing options."
+    },
+    {
+      "term": "Gross profit",
+      "definition": "Revenue minus the cost of goods sold (variable costs). Gross profit = Total revenue − Total variable costs."
+    },
+    {
+      "term": "Net profit",
+      "definition": "Gross profit minus fixed costs and any other expenses. Net profit = Gross profit − Fixed costs."
+    },
+    {
+      "term": "Revenue",
+      "definition": "The total money received from sales before any costs are deducted. Revenue = Selling price × Units sold."
+    },
+    {
+      "term": "Cost of goods sold (COGS)",
+      "definition": "The total variable costs directly associated with producing the units sold. COGS = Variable cost per unit × Units sold."
+    },
+    {
+      "term": "Price recommendation",
+      "definition": "A clearly stated and justified pricing decision supported by financial evidence (such as a break-even analysis or projected income statement) and an explanation of internal and external factors."
+    },
+    {
+      "term": "Assumptions",
+      "definition": "The estimates and conditions upon which a financial model is based. For example, 'We assume sales volume of 200 units per month' is an assumption. All projected income statements rely on assumptions that must be stated clearly."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Recap — Break-Even Analysis",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A food truck's fixed costs are $1,195 per month. Variable cost per bowl is $6.30. If the selling price is $14.00, what is the contribution margin per bowl?",
+          "options": [
+            "$6.30",
+            "$7.70",
+            "$14.00",
+            "$1.95"
+          ],
+          "correctIndex": 1,
+          "explanation": "Contribution margin = Selling price − Variable cost = $14.00 − $6.30 = $7.70. This means each bowl sold at $14.00 contributes $7.70 toward covering fixed costs. Once enough bowls are sold to cover all $1,195 in fixed costs, every additional bowl contributes $7.70 directly to profit."
+        },
+        {
+          "question": "Using the food truck scenario: fixed costs $1,195, contribution margin $7.70 per bowl. What is the break-even point in bowls per month?",
+          "options": [
+            "89 bowls",
+            "133 bowls",
+            "156 bowls",
+            "190 bowls"
+          ],
+          "correctIndex": 2,
+          "explanation": "Break-even = Fixed costs ÷ Contribution margin = $1,195 ÷ $7.70 = 155.2, rounded up to 156 bowls. The food truck must sell 156 bowls per month before making any profit. At 50 bowls per day over 22 operating days (1,100 bowls per month), this is very achievable — leaving 944 profit-generating bowls above break-even."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "What Is a Projected Income Statement?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw the structure of a projected income statement — Revenue, COGS, Gross Profit, Fixed Costs, Net Profit — and write a one-sentence explanation of each line.",
+      "content": "A projected income statement is a financial model that estimates what the organisation's financial position will look like over a period — usually one month or one year — at a given price and sales volume.\n\nIt is different from a break-even analysis. Break-even analysis tells you the minimum sales needed to avoid a loss. A projected income statement shows you the full financial picture — revenue, costs, gross profit, and net profit — at a specific expected sales volume.\n\nThe structure of a basic projected income statement:\n\nRevenue (Selling price × Units sold)\nminus Cost of Goods Sold (Variable cost × Units sold)\n= Gross Profit\nminus Fixed Costs\n= Net Profit (or Loss)\n\nIn AS92029, you will often build two projected income statements — one for each pricing option — and compare them to recommend the most financially viable price. The model must use actual dollar figures, not estimates or ranges. This is what makes it a valid financial tool for your assessment."
+    },
+    {
+      "type": "slide",
+      "title": "Building a Projected Income Statement — Step by Step",
+      "estimatedMinutes": 4,
+      "notePrompt": "Copy the full projected income statement for both options into your notes. Which option produces more net profit at the same sales volume? By how much?",
+      "content": "Let's build a projected income statement for Anika's cookie business, comparing her two pricing options at an expected sales volume of 150 cookies per month.\n\nOption A — Price $3.50 per cookie:\nRevenue: 150 × $3.50 = $525.00\nCost of Goods Sold: 150 × $1.35 = $202.50\nGross Profit: $525.00 − $202.50 = $322.50\nFixed Costs: $240.00\nNet Profit: $322.50 − $240.00 = $82.50\n\nOption B — Price $4.00 per cookie:\nRevenue: 150 × $4.00 = $600.00\nCost of Goods Sold: 150 × $1.35 = $202.50\nGross Profit: $600.00 − $202.50 = $397.50\nFixed Costs: $240.00\nNet Profit: $397.50 − $240.00 = $157.50\n\nAt the same sales volume, Option B generates $75.00 more net profit per month ($157.50 vs $82.50) — nearly double. The cost of goods sold and fixed costs are identical in both scenarios. The only difference is the price — and that $0.50 difference multiplied across 150 sales equals $75.00 in additional monthly profit."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A projected income statement is only useful if you know exactly how many units you will sell.",
+      "correctAnswer": false,
+      "explanation": "False. Projected income statements are built on assumptions about sales volume — which are estimates, not certainties. The value of the model is in comparing options under the same assumptions. Even if actual sales differ from the projection, the model reveals which pricing option performs better at a given volume, and you can run the numbers at different volume scenarios (optimistic, expected, pessimistic) to understand the range of outcomes.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Comparing Options Across Different Sales Volumes",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: Why might a business owner build projected income statements at three different sales volumes (low, expected, high) rather than just one?",
+      "content": "A single projected income statement at one sales volume gives a useful snapshot, but it does not tell the whole story. Smart pricing decisions consider a range of scenarios.\n\nFor Anika's cookie business:\nAt LOW sales (80 cookies/month):\nOption A net profit: (80 × $3.50) − (80 × $1.35) − $240 = $280 − $108 − $240 = -$68 (loss)\nOption B net profit: (80 × $4.00) − (80 × $1.35) − $240 = $320 − $108 − $240 = -$28 (loss)\nBoth options lose money at 80 cookies, but Option B loses $40 less.\n\nAt EXPECTED sales (150 cookies/month):\nOption A net profit: $82.50\nOption B net profit: $157.50\n\nAt HIGH sales (200 cookies/month):\nOption A net profit: (200 × $2.15) − $240 = $430 − $240 = $190\nOption B net profit: (200 × $2.65) − $240 = $530 − $240 = $290\n\nAcross all three scenarios, Option B ($4.00) outperforms Option A ($3.50). The higher price produces more profit at every sales level and minimises losses at lower volumes. Unless there is strong evidence that the higher price would significantly reduce customer numbers, Option B is the stronger choice."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Build the Income Statement — Match Each Item to Its Line",
+      "pairs": [
+        { "item": "Selling price × units sold", "zone": "Revenue" },
+        { "item": "Variable cost × units sold", "zone": "Cost of Goods Sold" },
+        { "item": "Revenue minus COGS", "zone": "Gross Profit" },
+        { "item": "Rent, insurance, equipment costs", "zone": "Fixed Costs" },
+        { "item": "Gross profit minus fixed costs", "zone": "Net Profit" },
+        { "item": "The estimates the model is based on", "zone": "Assumptions" }
+      ],
+      "explanation": "This is the structure of a projected income statement. Revenue sits at the top. Subtracting COGS gives gross profit — the margin on production. Subtracting fixed costs from gross profit gives net profit — the amount the organisation keeps after all costs. Assumptions (like expected sales volume and price) must always be stated clearly so the model can be understood and tested against real outcomes.",
+      "estimatedMinutes": 6
+    },
+    {
+      "type": "slide",
+      "title": "Writing a Price Recommendation",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write the three things a price recommendation must include according to AS92029. Why is each one important?",
+      "content": "A price recommendation is more than just stating a number. In AS92029, your recommendation must do three things.\n\nFirst, state the recommended price clearly. Do not leave this vague. 'I recommend a price of $4.00 per cookie' is clear. 'A price around $4 seems reasonable' is not.\n\nSecond, support the recommendation with financial evidence. Reference your break-even analysis or projected income statement. Show the numbers that back your decision. For example: 'At $4.00 per cookie, the break-even point is 91 cookies per month. At an expected sales volume of 150 cookies, the projected monthly net profit is $157.50.'\n\nThird, explain how internal and external factors shaped the decision. Reference at least one internal factor (e.g. cost of production, desired margin) and at least one external factor (e.g. competitor prices, customer demand). For example: 'The $4.00 price covers all production costs of $1.35 per cookie and fixed costs of $240 per month, while remaining within the $3.50 to $5.00 range charged by comparable market stall operators in Napier.'\n\nA recommendation that has all three elements meets the Achieved level in AS92029. To move toward Merit, you need to explain how the factors influence the decision and explain possible effects on the organisation and its stakeholders."
+    },
+    {
+      "type": "typed",
+      "question": "Anika sells 150 cookies per month at $4.00. Variable cost is $1.35 per cookie. Fixed costs are $240 per month. What is her monthly net profit in dollars?",
+      "acceptedAnswers": ["$157.50", "157.50", "157.5"],
+      "placeholder": "Type the monthly net profit here...",
+      "hint": "Net profit = Revenue − COGS − Fixed Costs. Or: (Units sold × Contribution margin) − Fixed costs.",
+      "explanation": "Method 1: Revenue = 150 × $4.00 = $600. COGS = 150 × $1.35 = $202.50. Gross Profit = $600 − $202.50 = $397.50. Net Profit = $397.50 − $240 = $157.50. Method 2: Contribution margin = $4.00 − $1.35 = $2.65. Total contribution = 150 × $2.65 = $397.50. Net Profit = $397.50 − $240 = $157.50. Both methods give the same answer.",
+      "estimatedMinutes": 4
+    },
+    {
+      "type": "slide",
+      "title": "Sample Price Recommendation — Anika's Cookies",
+      "estimatedMinutes": 4,
+      "notePrompt": "Highlight the three parts of this recommendation: (1) the stated price, (2) the financial evidence, (3) the internal and external factors. Could you write something similar for a different product?",
+      "content": "Here is a complete Achieved-level price recommendation using Anika's cookie business. Use this as a model for your own assessment.\n\n'I recommend Anika price her gourmet cookies at $4.00 per cookie.\n\nFinancial evidence: At this price, her contribution margin is $2.65 per cookie and her break-even point is 91 cookies per month. Based on her expected monthly sales of 150 cookies, her projected monthly net profit is $157.50. This compares favourably to the $3.50 option, which generates only $82.50 net profit at the same sales volume.\n\nInternal factors: Anika's total variable cost per cookie is $1.35 and her monthly fixed costs are $240. The $4.00 price provides a 66% gross margin on variable costs and covers all costs with meaningful profit remaining.\n\nExternal factors: Comparable artisan and gourmet cookie operators at Hawke's Bay markets charge between $3.50 and $5.00 per cookie. The $4.00 price sits within the market range and reflects the premium quality of Anika's ingredients and handmade process. Customer demand at Napier's Saturday market is strong, with regular repeat buyers demonstrating low price sensitivity at this price point.'\n\nThis recommendation states the price, supports it with a financial model, and connects it to both internal and external factors. That is the structure you need."
+    },
+    {
+      "type": "slide",
+      "title": "Common Mistakes When Writing Price Recommendations",
+      "estimatedMinutes": 4,
+      "notePrompt": "List the four common mistakes. For each one, write a one-sentence fix that would turn the mistake into a correct approach.",
+      "content": "These are the most common mistakes students make in AS92029. Read them carefully before writing your own recommendation.\n\nMistake 1: Stating a price without any financial evidence. 'I think $4.00 is a good price' has no evidence. You must show the break-even calculation or projected income statement that supports the price.\n\nMistake 2: Only describing internal factors. Many students describe costs thoroughly but forget to mention competitor prices, customer demand, or economic conditions. Both internal AND external factors must be described.\n\nMistake 3: Using vague figures. 'Costs are quite high' or 'revenue would be around $500' is not acceptable. Every figure must be specific and calculated. $1.35 per cookie. $240 fixed costs. $4.00 selling price. $157.50 net profit.\n\nMistake 4: Not connecting the evidence to the recommendation. Writing a break-even analysis is not enough if you do not then say: 'Therefore, at this price, break-even is achievable at X units and the recommended price is supported.' The analysis must drive the recommendation explicitly."
+    },
+    {
+      "type": "scenario",
+      "title": "Price Recommendation Scenario — Jordan's Meal Prep Service",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "setup": "Jordan runs a weekly meal prep service in Christchurch called FreshBox. She prepares five home-cooked meals per week for busy families. Her monthly fixed costs are: commercial kitchen hire $320, insurance $65, delivery fuel $90, packaging and labels $75. Total fixed costs: $550 per month. Variable costs per weekly box: ingredients $42.00, disposable containers $4.50, ingredient delivery $3.50. Total variable cost per box: $50.00. Jordan currently serves 20 clients per month (each client receives 4 boxes per month = 80 boxes total). She is deciding between two prices: $75 per box or $85 per box. Her market research shows comparable Christchurch meal prep services charge $70 to $100 per box.",
+      "challenge": "1. Calculate the contribution margin per box at each price option.\n2. Calculate the break-even point in boxes per month at each price.\n3. Build a projected income statement for each price option at Jordan's expected 80 boxes per month.\n4. Write a complete price recommendation for Jordan using the three-part structure from today's lesson. Include the recommended price, financial evidence, and internal and external factors.",
+      "hints": [
+        "Contribution margin = Selling price − Variable cost per box ($50.00)",
+        "Break-even = Fixed costs ($550) ÷ Contribution margin",
+        "For the income statement: Revenue = Price × 80, COGS = $50 × 80 = $4,000, Fixed Costs = $550"
+      ],
+      "solution": "1. Contribution margins:\nOption A ($75): $75 − $50 = $25 per box\nOption B ($85): $85 − $50 = $35 per box\n\n2. Break-even points:\nOption A: $550 ÷ $25 = 22 boxes per month\nOption B: $550 ÷ $35 = 15.7 boxes, rounded to 16 boxes per month\n\n3. Projected income statements at 80 boxes/month:\n\nOption A ($75/box):\nRevenue: 80 × $75 = $6,000\nCOGS: 80 × $50 = $4,000\nGross Profit: $2,000\nFixed Costs: $550\nNet Profit: $1,450\n\nOption B ($85/box):\nRevenue: 80 × $85 = $6,800\nCOGS: 80 × $50 = $4,000\nGross Profit: $2,800\nFixed Costs: $550\nNet Profit: $2,250\n\n4. Sample price recommendation:\nI recommend Jordan price her FreshBox service at $85 per box.\n\nFinancial evidence: At $85, the contribution margin is $35 per box and the break-even point is just 16 boxes per month — well below her current 80 boxes. The projected monthly net profit at 80 boxes is $2,250, compared to $1,450 at the $75 price. The $85 price generates $800 more monthly profit at the same sales volume.\n\nInternal factors: Jordan's variable cost per box is $50 and her monthly fixed costs are $550. The $85 price provides a 41% net margin, which is appropriate for a premium, time-intensive service. The $75 price, while viable, leaves less financial buffer if costs rise or client numbers fluctuate.\n\nExternal factors: Comparable Christchurch meal prep services charge $70 to $100 per box. The $85 price sits comfortably within this range and reflects the quality and convenience of Jordan's homemade service. Her target customers — busy Christchurch families — have demonstrated willingness to pay for time-saving, quality food services, suggesting relatively low price sensitivity at the $85 level."
+    },
+    {
+      "type": "quiz",
+      "title": "End-of-Day Quiz — Income Statements and Recommendations",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Jordan's break-even at $85/box is 16 boxes and at $75/box is 22 boxes. She currently serves 80 boxes per month. Which statement is correct?",
+          "options": [
+            "Both prices are below break-even and Jordan is making a loss",
+            "At both prices, Jordan is well above break-even and making a profit",
+            "Only the $85 price is above break-even",
+            "Jordan needs to sell more than 100 boxes to make a profit at either price"
+          ],
+          "correctIndex": 1,
+          "explanation": "At 80 boxes per month, Jordan is well above both break-even points (16 and 22 boxes). She is making a profit at both prices. The key difference is how much profit: $2,250 at $85 versus $1,450 at $75. Both are financially viable, but the $85 price generates $800 more profit per month for the same effort."
+        },
+        {
+          "question": "Which of the following price recommendations best meets the AS92029 Achieved criteria?",
+          "options": [
+            "'I recommend $85 because it is higher than $75.'",
+            "'I recommend $85 because it seems like a good price for a premium service.'",
+            "'I recommend $85 because at this price the break-even is 16 boxes per month, the projected net profit at 80 boxes is $2,250, and the price is within the $70 to $100 market range for comparable Christchurch meal prep services.'",
+            "'I recommend $75 because it is more affordable for customers.'"
+          ],
+          "correctIndex": 2,
+          "explanation": "Option C meets the three-part requirement for an Achieved recommendation: it states the price, provides financial evidence (break-even of 16 boxes, net profit of $2,250), and references an external factor (market range of $70 to $100). Options A, B, and D make claims without financial evidence or factor analysis. Option D is the weakest — 'more affordable' is not a financial justification and does not reference any costs or market data."
+        }
+      ]
+    }
+  ]
+}

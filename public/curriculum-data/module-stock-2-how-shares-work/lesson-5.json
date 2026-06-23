@@ -1,0 +1,157 @@
+{
+  "title": "Reading Financial News",
+  "order": 5,
+  "dayNumber": 5,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Apply",
+  "nceaFocus": "Extra Learning \u2014 How Shares Work",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Read and interpret a NZX company announcement",
+    "Identify what financial news is material versus noise",
+    "Explain how information releases affect share prices"
+  ],
+  "vocabulary": [
+    {
+      "term": "Material information",
+      "definition": "Information that a reasonable investor would consider important in deciding whether to buy, hold or sell a share. Listed companies must immediately disclose material information to the NZX."
+    },
+    {
+      "term": "Continuous disclosure",
+      "definition": "The legal obligation of NZX-listed companies to immediately release any material information to the market. Prevents insiders from trading on information the public does not have."
+    },
+    {
+      "term": "Earnings guidance",
+      "definition": "A company's forecast of its own future earnings, issued to help investors set expectations. Often more market-moving than the actual earnings result."
+    },
+    {
+      "term": "Profit warning",
+      "definition": "When a company signals its earnings will be below previous guidance or market expectations. Almost always causes an immediate share price fall."
+    },
+    {
+      "term": "Insider trading",
+      "definition": "Illegal trading on material non-public information \u2014 for example, buying shares before a positive announcement that is not yet public. Heavily penalised under NZ financial markets law."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Continuous Disclosure \u2014 Why Information Must Be Public",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What is continuous disclosure? Why is it important for markets to work fairly? What happens to a company that fails to disclose material information on time?",
+      "content": "The NZX operates on a principle of continuous disclosure \u2014 listed companies must immediately release any material information to the market. This levels the playing field between professional investors and ordinary shareholders.\n\nWhat must be disclosed immediately:\n\u2014 Profit warnings or upgrades\n\u2014 Major contracts won or lost (if material to earnings)\n\u2014 CEO or CFO resignation or appointment\n\u2014 Proposed mergers, acquisitions or divestments\n\u2014 Significant legal proceedings\n\u2014 Dividend announcements\n\u2014 Capital raisings\n\nWhy it matters: Without continuous disclosure, company insiders and their friends could trade on non-public information before the market knows. This is insider trading \u2014 illegal in NZ and carries criminal penalties including up to 5 years imprisonment and fines up to $1 million under the Financial Markets Conduct Act 2013.\n\nWhen companies fail to disclose: The FMA (Financial Markets Authority) investigates. Companies can face significant fines. Directors can face personal liability. The NZX can also suspend trading in the company's shares until adequate disclosure is made.\n\nPractical effect: when a major announcement is released through the NZX, algorithmic trading systems process the information in milliseconds. Share prices can move substantially within seconds of an announcement \u2014 before you have time to read it properly."
+    },
+    {
+      "type": "slide",
+      "title": "Types of NZX Announcements and Their Impact",
+      "estimatedMinutes": 4,
+      "notePrompt": "For each announcement type listed, estimate whether it typically causes a share price rise, fall or minimal movement, and explain why.",
+      "content": "NZX announcements vary enormously in market impact. Here is a guide.\n\nHigh impact \u2014 typically large price moves:\n\u2014 Profit warning: 'Earnings will be below previous guidance' \u2192 sharp fall, often 10%+\n\u2014 Earnings upgrade: 'Earnings will exceed previous guidance' \u2192 sharp rise\n\u2014 Takeover bid: Someone is offering to buy the company at a premium \u2192 share rises toward offer price\n\u2014 CEO resignation (unexpected): Uncertainty \u2192 fall\n\u2014 Major contract loss: Significant revenue impact \u2192 fall\n\nMedium impact:\n\u2014 Half-year or full-year results in line with expectations: Modest movement depending on guidance\n\u2014 New contract win (material but not transformational): Modest rise\n\u2014 Dividend announcement in line with expectations: Small positive response\n\nLow or no impact:\n\u2014 Share buyback programmes (already announced): Already priced in\n\u2014 Routine AGM results where no contested votes: Minimal\n\u2014 Administrative filings (director share transactions, registry changes): Usually trivial\n\nThe key principle: markets move on surprises, not events. An earnings result exactly in line with expectations may cause no price movement at all \u2014 it was already priced in. The same earnings result announced with an unexpected downgrade in guidance could cause a 15% fall even if the result itself was good."
+    },
+    {
+      "type": "truefalse",
+      "statement": "If a NZ company's CEO has early knowledge of an upcoming profit upgrade, they can legally buy the company's shares immediately as this information will soon be public.",
+      "correctAnswer": false,
+      "explanation": "False. Trading on material non-public information is insider trading \u2014 illegal under the Financial Markets Conduct Act 2013 regardless of when the information will become public. It does not matter that the information will be disclosed soon. The CEO is prohibited from buying shares until the information is publicly disclosed through the NZX. NZ insider trading penalties include up to 5 years in prison and fines up to $1 million for individuals.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "How to Read a Company Announcement",
+      "estimatedMinutes": 4,
+      "notePrompt": "Read the fictional Mainfreight announcement below. Write: What is the key information? What impact would you expect on the share price? What would you do if you held Mainfreight shares?",
+      "content": "Example NZX Announcement \u2014 Mainfreight Limited:\n\nDate: [date]\nSubject: FY2025 Full Year Earnings Update\n\n'Mainfreight advises that for the full year ended 31 March 2025, the Group expects to report net profit after tax of approximately $360 million to $370 million, compared to analyst consensus of $345 million. This outcome reflects stronger-than-expected performance across the Americas and Asia divisions.\n\nGroup revenue is expected to be approximately $5.1 billion, ahead of prior year. The Board expects to declare a full year dividend of $1.60 per share, up from $1.50 in the prior year.\n\nA formal earnings release will be made on [date].'\n\nAnalysis:\n\u2014 This is a positive earnings surprise: $360-370M vs $345M expected = 4% to 7% above expectations\n\u2014 Revenue also ahead of prior year\n\u2014 Dividend increased from $1.50 to $1.60 (+6.7%)\n\u2014 Effect: expect a meaningful share price rise on release \u2014 likely 3% to 8% given the magnitude of the beat\n\u2014 If holding Mainfreight: this is positive confirmation of investment thesis \u2014 no reason to sell\n\nThe phrase 'analyst consensus' is key \u2014 market prices already reflect expected results. The announcement beats that consensus, so prices will rise."
+    },
+    {
+      "type": "quiz",
+      "title": "Financial News Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Fisher and Paykel Healthcare releases full-year results showing net profit of $280 million. The market had expected $320 million. What is the most likely immediate market reaction?",
+          "options": [
+            "Share price rises \u2014 $280 million profit is still a large, positive number",
+            "Share price falls significantly \u2014 the result is $40 million below what the market had expected and priced in",
+            "No movement \u2014 listed companies' results are already factored into prices before they are released",
+            "Share price rises slightly \u2014 any positive profit result causes a small positive market reaction"
+          ],
+          "correctIndex": 1,
+          "explanation": "Markets move on surprises versus expectations, not absolute results. $280 million profit sounds impressive, but if the market expected $320 million, the $40 million shortfall is a negative surprise \u2014 and the share price will fall accordingly. This is called 'missing analyst estimates' and often triggers sharp price falls even when results are historically strong. The market prices in its best estimate of results in advance; the announcement simply corrects that estimate."
+        },
+        {
+          "question": "A NZX listed company CFO learns the company's annual earnings will be 30% above consensus. Before the announcement, she buys 50,000 shares in the company. This is:",
+          "options": [
+            "Acceptable \u2014 the information will be public soon so no real advantage is taken",
+            "Discouraged but not illegal \u2014 the FMA will request she sell the shares back",
+            "Illegal insider trading under the Financial Markets Conduct Act 2013 \u2014 criminal penalties include up to 5 years imprisonment",
+            "Only illegal if the share purchase is above a certain dollar threshold"
+          ],
+          "correctIndex": 2,
+          "explanation": "This is a textbook case of insider trading \u2014 trading on material non-public information. The CFO has information (30% earnings beat) that is not yet public and would significantly affect the share price. Trading on this information is illegal under the Financial Markets Conduct Act 2013 regardless of the amount involved or the intention to disclose the information soon. Penalties include up to 5 years imprisonment and fines up to $1 million."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "High, Medium or Low Impact? Sort These Announcements",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Company issues profit warning \u2014 earnings will be 25% below guidance",
+          "zone": "High Impact"
+        },
+        {
+          "item": "CEO resigns unexpectedly with no successor named",
+          "zone": "High Impact"
+        },
+        {
+          "item": "Half-year results exactly in line with analyst consensus",
+          "zone": "Low Impact"
+        },
+        {
+          "item": "Company wins material contract with a new international customer",
+          "zone": "Medium Impact"
+        },
+        {
+          "item": "Takeover bid received at 35% premium to current share price",
+          "zone": "High Impact"
+        },
+        {
+          "item": "Routine change to company share register",
+          "zone": "Low Impact"
+        }
+      ],
+      "explanation": "High impact announcements contain major surprises relative to expectations \u2014 earnings misses, unexpected leadership changes, takeover bids, or contract losses. Medium impact announcements are meaningful but expected or partially anticipated. Low impact announcements contain no new material information or confirm what was already expected."
+    },
+    {
+      "type": "truefalse",
+      "statement": "When a company announces earnings exactly in line with analyst expectations, the share price typically rises because the company has confirmed positive performance.",
+      "correctAnswer": false,
+      "explanation": "False. Markets are forward-looking and prices reflect expectations in advance. When a company delivers results exactly in line with what the market already expected, there is no new information \u2014 so there is no reason for the price to move significantly. 'In line' results typically produce minimal price movement. It is surprises \u2014 positive or negative \u2014 that move share prices. This is why guidance and analyst forecasts matter so much: they define the baseline against which actual results are judged.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What is the legal obligation for NZX-listed companies to immediately release any information that would materially affect their share price?",
+      "acceptedAnswers": [
+        "continuous disclosure",
+        "Continuous Disclosure",
+        "continuous disclosure obligation"
+      ],
+      "placeholder": "Type the term here...",
+      "hint": "Two words \u2014 it describes an ongoing, real-time obligation to release information.",
+      "explanation": "Continuous disclosure is the fundamental transparency requirement of public markets. Without it, insiders could exploit information advantages at the expense of ordinary investors. NZX Rule 3.1 requires listed companies to release material information 'immediately' \u2014 typically within minutes of becoming aware of it. The FMA and NZX police compliance and companies can face significant penalties for failure to disclose.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Find a Real NZX Announcement",
+      "estimatedMinutes": 5,
+      "prompt": "Go to nzx.com/markets/nzsx/announcements and find one announcement made in the past week. Identify: the company, what the announcement says, whether it is high/medium/low impact, and what happened to the share price after it was released. Write four sentences summarising what you found.",
+      "nceaLink": "Extra Learning \u2014 reading real NZX announcements is the fastest way to build practical investment knowledge."
+    }
+  ]
+}

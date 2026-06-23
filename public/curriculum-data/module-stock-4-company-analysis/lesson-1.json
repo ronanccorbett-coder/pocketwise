@@ -1,0 +1,130 @@
+{
+  "title": "Reading an Annual Report",
+  "order": 1,
+  "dayNumber": 1, "weekNumber": 1, "durationMinutes": 45, "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning — Company Analysis",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Navigate the key sections of a NZ company annual report",
+    "Extract revenue, profit, EPS and dividend data from financial statements",
+    "Identify red flags in an annual report"
+  ],
+  "vocabulary": [
+    {"term": "Annual report", "definition": "A comprehensive document published yearly by listed companies. Contains the chairman's letter, CEO review, financial statements, auditor's report, and notes to accounts."},
+    {"term": "Income statement", "definition": "Shows revenue, expenses and profit over a period (usually 12 months). Also called profit and loss statement or P&L."},
+    {"term": "Balance sheet", "definition": "Shows assets, liabilities and equity at a point in time — a snapshot of what the company owns and owes."},
+    {"term": "Cash flow statement", "definition": "Shows how cash moved in and out of the business across three categories: operating, investing and financing activities."},
+    {"term": "Auditor's report", "definition": "An independent assessment by an external accounting firm certifying whether the financial statements give a 'true and fair' view of the company's finances."},
+    {"term": "Notes to accounts", "definition": "Detailed explanations of line items in the financial statements. Often where crucial information — accounting policies, debt terms, related party transactions — is buried."}
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Annual Report — Your Primary Source",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What are the five main sections of an annual report? Why is the annual report more reliable than a news article about the same company?",
+      "content": "Every NZ listed company publishes an annual report — the most important document an investor can read. Unlike media coverage, annual reports are legally required to be accurate and complete.\n\nKey sections:\n\n1. Chairman's letter and CEO review: The narrative. Management explains what happened, why, and what they plan to do next. Read critically — this section is written by management and tends toward optimism. Compare stated strategy to actual financial results.\n\n2. Financial statements (three key ones):\n— Income statement (P&L): Revenue → Gross profit → EBITDA → Net profit\n— Balance sheet: Assets, liabilities, equity — the company's financial position\n— Cash flow statement: How cash actually moved — often more revealing than profit\n\n3. Notes to accounts: The fine print. Accounting policies, debt covenants, related party transactions, contingent liabilities. Important information is often buried here.\n\n4. Auditor's report: The independent certification. Look for 'clean' opinion (no qualifications). Any 'emphasis of matter' or 'qualified' opinion is a serious red flag.\n\n5. Corporate governance: Director independence, board composition, CEO pay, share ownership. Reveals whether incentives are aligned with shareholders.\n\nNZ annual reports are filed on the NZX website and the company's investor relations page. All are free to download. Fisher and Paykel Healthcare, Mainfreight and Infratil all produce excellent investor-friendly annual reports — good starting points."
+    },
+    {
+      "type": "slide",
+      "title": "The Income Statement — Tracking Profit",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw an income statement 'waterfall' showing: Revenue → Cost of goods sold → Gross profit → Operating expenses → EBITDA → Depreciation → EBIT → Interest → Net profit before tax → Tax → Net profit after tax.",
+      "content": "The income statement tells you how much money the company made — and how.\n\nKey line items in order:\n\nRevenue (turnover): Total income from selling goods and services. The top line.\n\nCost of goods sold (COGS): Direct costs of making what was sold — materials, direct labour, manufacturing costs.\n\nGross profit: Revenue minus COGS. Gross margin % = Gross profit ÷ Revenue × 100. High gross margins indicate pricing power.\n\nOperating expenses (OPEX): Salaries, marketing, R&D, rent, admin — costs of running the business beyond direct production.\n\nEBITDA: Earnings Before Interest, Tax, Depreciation and Amortisation. A measure of operating profitability before non-cash charges and financing costs.\n\nDepreciation and amortisation (D&A): Non-cash charges representing the wear on assets. Subtract from EBITDA to get EBIT.\n\nEBIT: Operating profit — what the business earns from operations before financing.\n\nInterest expense: Cost of debt. Subtract from EBIT.\n\nNet profit before tax. Then tax (28% in NZ).\n\nNet profit after tax (NPAT): The bottom line. What EPS is calculated from.\n\nWhat to track year-on-year: Is revenue growing? Is gross margin stable or improving? Are operating expenses growing slower than revenue (operating leverage)? Is NPAT growing faster than revenue (margin expansion)?"
+    },
+    {
+      "type": "truefalse",
+      "statement": "A qualified auditor's opinion in a company's annual report is a routine occurrence that investors should not worry about.",
+      "correctAnswer": false,
+      "explanation": "False. A qualified auditor's opinion — where the auditor notes exceptions or limitations to their 'true and fair' certification — is unusual and serious. It means the auditor found material issues with the financial statements that they could not fully resolve. Most listed companies receive a clean (unqualified) audit opinion. Any qualification, 'emphasis of matter' or going concern note should prompt deep investigation before investing. The Wirecard fraud (a German company that hid billions in fake cash) included repeated auditor warnings that most investors ignored.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Red Flags in Annual Reports",
+      "estimatedMinutes": 4,
+      "notePrompt": "For each red flag, write a one-sentence explanation of why it is concerning. Which red flag would concern you most and why?",
+      "content": "Not all annual reports tell good stories. Here are warning signs to watch for.\n\nRed flag 1 — Revenue growing but cash flow falling:\nIf a company is growing revenue rapidly but cash flow is declining, ask: are they actually collecting the cash? Companies can recognise revenue before cash is received — growing accounts receivable can signal revenue quality problems.\n\nRed flag 2 — Repeated 'one-off' charges:\nEvery year the company reports restructuring costs, impairment charges or 'one-off' items. If these occur every year, they are not one-off — they are part of the business. This can mask the true cost structure.\n\nRed flag 3 — Auditor change:\nIf a company changes its external auditor, investigate why. Sometimes legitimate (reducing costs, fresh perspective). Sometimes the auditor was uncomfortable with the company's accounting and resigned or was pushed out.\n\nRed flag 4 — Rising net debt alongside falling earnings:\nBorrowing more while earning less is a dangerous trajectory — especially if the company is also paying dividends. Can it service the debt if earnings keep falling?\n\nRed flag 5 — CEO/CFO resignation with no explanation:\nKey financial officers resigning suddenly without a credible explanation (retirement, new role) may indicate internal problems they are choosing not to be associated with.\n\nRed flag 6 — Goodwill that equals or exceeds equity:\nGoodwill arises from acquisitions paid above book value. Enormous goodwill relative to equity means the company has paid a lot for businesses that might not be worth it — impairment risk.\n\nRed flag 7 — Complex related party transactions:\nBusiness done between the listed company and companies controlled by directors or major shareholders at non-market terms is a governance concern."
+    },
+    {
+      "type": "quiz",
+      "title": "Annual Report Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A company's income statement shows: Revenue $450M, COGS $270M, Operating expenses $95M, Interest $18M, Tax $19.1M, Net profit $47.9M. What is the gross profit and gross margin?",
+          "options": [
+            "Gross profit $180M, gross margin 40% — Revenue minus COGS",
+            "Gross profit $85M, gross margin 18.9% — Revenue minus all costs",
+            "Gross profit $450M, gross margin 100% — gross profit equals revenue",
+            "Gross profit $155M, gross margin 34.4% — Revenue minus COGS and operating expenses"
+          ],
+          "correctIndex": 0,
+          "explanation": "Gross profit = Revenue − COGS = $450M − $270M = $180M. Gross margin = $180M ÷ $450M × 100 = 40%. Gross profit measures profitability before operating expenses — it tells you how much margin the company earns on its direct sales activity. A 40% gross margin is healthy for a manufacturing or services business, though margin norms vary significantly by industry."
+        },
+        {
+          "question": "A NZ listed company has reported 'one-off restructuring charges' every year for the past 5 consecutive years. What does this most likely indicate?",
+          "options": [
+            "The company is genuinely restructuring its operations significantly each year in response to changing market conditions",
+            "The restructuring charges are not truly one-off — they appear to be a recurring cost of the business that should be considered part of normal operating expenses",
+            "Five consecutive years of restructuring is a sign of a well-managed company adapting to change",
+            "This is a positive sign — restructuring charges reduce tax obligations"
+          ],
+          "correctIndex": 1,
+          "explanation": "When 'exceptional' or 'one-off' items recur every year, they are by definition not one-off. Management may be using these classifications to make underlying earnings look better than they are by excluding regular operational costs. Analysts often calculate 'underlying' or 'adjusted' earnings that add back what management calls one-offs — but when these add-backs are needed every year, it signals potential earnings quality issues."
+        },
+        {
+          "question": "Which section of a NZ annual report contains the most technical and detailed information — including debt covenants, accounting policy changes and related party transactions?",
+          "options": [
+            "Chairman's letter — as the most senior executive communication it contains all key disclosures",
+            "Auditor's report — the external auditor lists all detailed financial information in their certification",
+            "Notes to the financial statements — this is where detailed explanations, policies and disclosures beyond the headline numbers are found",
+            "Corporate governance section — all financial details are disclosed under governance requirements"
+          ],
+          "correctIndex": 2,
+          "explanation": "The notes to the financial statements are the most detailed and technically rich section of an annual report. They explain the accounting policies used, break down major balance sheet items, disclose debt terms and covenants, reveal related party transactions, and quantify contingent liabilities. Sophisticated investors read the notes carefully — this is where material information is disclosed without the positive spin of the CEO's letter."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Which Financial Statement? Match the Information",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {"item": "Total revenue and net profit for the year", "zone": "Income Statement"},
+        {"item": "Total assets, total debt and shareholders' equity at 31 March", "zone": "Balance Sheet"},
+        {"item": "Cash received from customers and cash paid to suppliers", "zone": "Cash Flow Statement"},
+        {"item": "Capital expenditure on new factory equipment", "zone": "Cash Flow Statement"},
+        {"item": "Gross margin percentage — what fraction of revenue becomes gross profit", "zone": "Income Statement"},
+        {"item": "Cash and short-term investments held at year end", "zone": "Balance Sheet"}
+      ],
+      "explanation": "The three financial statements each tell a different part of the story. The income statement shows profitability over time. The balance sheet shows financial position at a point in time. The cash flow statement shows how cash actually moved — often the most honest of the three because cash is harder to manipulate than accounting profit.",
+      "estimatedMinutes": 5
+    },
+    {
+      "type": "truefalse",
+      "statement": "The CEO's letter in an annual report is required by law to be completely objective and must not contain any positive spin about the company's performance.",
+      "correctAnswer": false,
+      "explanation": "False. The CEO's letter is written by management and is inherently promotional — it naturally presents results in the most favourable light. While factual claims must be accurate, the framing, emphasis and optimism levels are entirely at management's discretion. A useful technique is to compare what management said last year about expected outcomes against what actually happened — it reveals how realistic (or aspirational) their communications tend to be. Always read the numbers independently rather than relying on management's narrative framing.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "The three main financial statements in an annual report are the income statement, the balance sheet, and the ________ statement.",
+      "acceptedAnswers": ["cash flow", "Cash Flow", "cash flow statement", "Cash Flow Statement"],
+      "placeholder": "Type the missing statement name...",
+      "hint": "It shows how money moved in and out of the business — harder to manipulate than profit.",
+      "explanation": "The cash flow statement is the third core financial statement. It shows how cash actually moved through the business across three categories: operating activities (cash from the core business), investing activities (capex, acquisitions), and financing activities (dividends, debt repayments, share issuances). Free cash flow — the most important measure for many investors — is derived from the cash flow statement.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Read a Real Annual Report Page",
+      "estimatedMinutes": 5,
+      "prompt": "Go to the investor relations section of any NZX-listed company website and download their most recent annual report. Find the income statement. Write down: revenue, net profit after tax, and the gross margin if calculable. What was the biggest line item in operating expenses? Did revenue grow or fall compared to the prior year?",
+      "nceaLink": "Extra Learning — reading one real annual report teaches you more than any summary ever could."
+    }
+  ]
+}

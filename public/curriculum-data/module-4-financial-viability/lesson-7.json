@@ -1,0 +1,49 @@
+{
+  "title": "Project Completion Day",
+  "order": 7,
+  "dayNumber": 7,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 100,
+  "bloomsLevel": "Apply, Analyse, and Evaluate",
+  "nceaFocus": "AS92031: Full project completion — all achievement criteria from Achieved through Excellence in a complete financial viability report",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Complete a full AS92031-aligned financial viability report",
+    "Apply all five parts of the structure with specific NZD figures throughout",
+    "Conduct peer review using the AS92031 achievement criteria"
+  ],
+  "vocabulary": [
+    { "term": "Peer review", "definition": "Reading and evaluating another student's work against assessment criteria to provide specific, constructive feedback." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Reference Scenario — If You Need One",
+      "estimatedMinutes": 4,
+      "notePrompt": "If using your own scenario, skip this slide. If using the reference scenario, copy the income statement figures into your notes before starting.",
+      "content": "If you have not yet selected your own organisation, use this reference scenario.\n\nThe Queenstown Adventure Sports Club is a not-for-profit running trail runs, cycling events, and kayaking competitions for the local community.\n\nAnnual Revenue:\nEvent entry fees: $68,000\nSponsorship: $24,000\nEquipment hire: $11,000\nMembership fees: $9,200\nTotal Revenue: $112,200\n\nCost of Events:\nPrizes, medals, signage: $18,400\nVenue and permit costs: $14,600\nVolunteer coordination: $6,200\nTotal COGS: $39,200\n\nGross Profit: $73,000 (65.1% margin)\n\nOperating Expenses:\nPart-time coordinator wages: $42,000\nInsurance: $8,400\nEquipment maintenance: $6,800\nMarketing: $5,200\nAdministration: $4,600\nTotal Operating Expenses: $67,000\n\nNet Surplus: $6,000\nReserves: $31,000\n\nContext: The club's major sponsor is reducing sponsorship from $24,000 to $10,000 next year. Event entry fee revenue has also been declining — two years ago it was $78,000."
+    },
+    {
+      "type": "scenario",
+      "title": "Full Project Work Session — Your Financial Viability Report",
+      "estimatedMinutes": 30,
+      "nceaLevel": "Achieved to Excellence",
+      "setup": "Use your own chosen NZ organisation or the Queenstown Adventure Sports Club reference scenario. Apply the complete five-part AS92031 viability report structure.",
+      "challenge": "Write your complete viability report:\n\nPart 1 (Achieved): Describe revenue, expenses, gross profit, and net profit or loss with specific figures. Calculate the net profit or surplus margin.\n\nPart 2 (Achieved): State whether the organisation is financially viable. Justify with at least two pieces of evidence.\n\nPart 3 (Merit): Explain how TWO internal factors affect viability. Show the mechanism with specific dollar figures.\n\nPart 4 (Merit): Explain how TWO external factors affect viability with figures. Propose TWO specific improvement strategies with estimated financial impacts.\n\nPart 5 (Excellence): Analyse the relationship between at least two factors — show how they interact. Evaluate the extent to which your proposed strategies would restore or maintain viability.",
+      "hints": [
+        "For the Queenstown club: New revenue after sponsor reduction = $112,200 minus $14,000 = $98,200. New deficit = $98,200 minus $67,000 minus $39,200 = negative $8,000.",
+        "For the declining entry fee trend: if entry fees decline by another $5,000 next year, what does the deficit become?",
+        "For improvement strategies: What could a NZ adventure sports club do to replace $14,000 in lost sponsorship? Think about new sponsors, expanding events, or online registration fees."
+      ],
+      "solution": "Sample report for the Queenstown Adventure Sports Club:\n\nPart 1: Revenue, expenses, surplus: The club earns $112,200 in total annual revenue: event entry fees $68,000 (60.6%), sponsorship $24,000 (21.4%), equipment hire $11,000 (9.8%), membership fees $9,200 (8.2%). After event COGS of $39,200, gross profit is $73,000 (65.1% margin). After operating expenses of $67,000, net surplus is $6,000 — a 5.3% surplus margin.\n\nPart 2: Currently the club is financially viable. Two pieces of evidence: (1) The club generates a net surplus of $6,000, meaning revenue exceeds expenses. (2) Reserves of $31,000 provide approximately 5.2 months of operating expenses ($31,000 divided by $67,000 multiplied by 12) as a buffer. However, viability is fragile — the 5.3% surplus margin leaves minimal room for income reduction. The entry fee decline from $78,000 to $68,000 over two years is a concerning trend.\n\nPart 3: Internal factors: (1) Revenue concentration in event fees and sponsorship: Entry fees (60.6%) and sponsorship (21.4%) together represent 82% of revenue. If either declines significantly, the club has limited alternative income. The declining entry fee trend (down $10,000 in two years) combined with impending sponsor reduction creates compounding income risk. (2) High fixed coordinator wages: The part-time coordinator earns $42,000 — 37.4% of total revenue. These are largely fixed costs that cannot be easily reduced if revenue falls, meaning any income reduction flows directly to the surplus or deficit line.\n\nPart 4: External factors: (1) Sponsor reduction: The major sponsor reducing from $24,000 to $10,000 removes $14,000 from annual revenue. New revenue = $98,200. New result = $98,200 minus $67,000 minus $39,200 = negative $8,000 deficit. The sponsorship reduction alone turns viability from a $6,000 surplus to an $8,000 deficit. (2) Declining event participation: Entry fee revenue has fallen from $78,000 to $68,000 over two years — likely reflecting increased competition from other adventure events in the Queenstown region. If the trend continues, another $5,000 reduction is possible, deepening the projected deficit to $13,000.\n\nStrategy 1 — Replace lost sponsorship: Approach 3 to 5 Queenstown businesses — tourism operators, outdoor gear retailers, accommodation providers — for $4,000 to $6,000 sponsorships each. If three $5,000 sponsors are secured = $15,000 new sponsorship, replacing the $14,000 lost and adding $1,000. This fully restores and slightly exceeds the pre-reduction sponsorship total.\n\nStrategy 2 — Introduce an online virtual event series: Partner with Strava or similar platforms to run monthly virtual trail challenges with an entry fee of $15. If 200 participants per month join, monthly revenue = $3,000. Annual additional revenue = $36,000 with estimated platform and prize costs of $10,000, giving net improvement of $26,000. This would not only address the deficit but significantly improve viability.\n\nPart 5: The sponsor reduction (external) is especially damaging because the club already had a thin 5.3% surplus margin with high fixed wage costs (internal). The fixed coordinator wages of $42,000 mean the club cannot absorb any revenue reduction without moving into deficit. These two factors compound: if wages were $30,000 instead of $42,000, the same $14,000 sponsor reduction would reduce the surplus from $18,000 to $4,000 — painful but viable. Because wages are high and fixed, the external sponsor reduction triggers immediate non-viability.\n\nExtent analysis: Strategy 1 (replacement sponsorship at $15,000) would fully restore the pre-reduction viability — new surplus approximately $7,000. This is conditional on securing three sponsors at approximately $5,000 each, which is realistic given Queenstown's tourism economy but not guaranteed. Strategy 2 (virtual events at $26,000 net) would transform viability completely, but depends on achieving 200 participants per month — an ambitious target. At 100 participants per month, net improvement is $13,000, returning the club to approximate breakeven after the sponsor loss but not achieving strong viability. The most resilient approach is to implement Strategy 1 first (lower risk, direct replacement) and pursue Strategy 2 as a medium-term growth initiative, treating the virtual events as a new long-term revenue stream rather than an emergency measure."
+    },
+    {
+      "type": "reflection",
+      "title": "Peer Review — AS92031 Criteria Check",
+      "estimatedMinutes": 7,
+      "prompt": "Exchange your completed report with a classmate. Read their report and mark each of the following with a tick and level label:\n\nAchieved (A): Revenue, expenses, and profit or loss described with figures. Viability statement made with supporting evidence.\nMerit (M): Internal and external factors explained with figures showing the mechanism. Improvement strategies proposed with estimated financial impact.\nExcellence (E): Relationship between factors analysed — shows how they interact or compound. Extent of improvement evaluated — states whether strategies fully or partially restore viability.\n\nThen write two pieces of feedback: one specific strength and one specific improvement. Not 'add more detail' but something like 'the Merit section explains the pool hire cost increase but does not calculate its specific impact on net profit — add the dollar figure showing how much the deficit increased due to this factor alone.'",
+      "nceaLink": "AS92031 is externally assessed. Using the criteria as a marking guide internalises what the exam requires. If you can identify where criteria are met in someone else's work, you can find gaps in your own."
+    }
+  ]
+}

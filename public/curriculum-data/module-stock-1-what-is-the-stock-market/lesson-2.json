@@ -1,0 +1,174 @@
+{
+  "title": "How Share Prices Are Set",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand",
+  "nceaFocus": "Extra Learning \u2014 Stock Market Foundations",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain how supply and demand sets share prices",
+    "Describe what causes share prices to rise and fall",
+    "Read a basic share price quote"
+  ],
+  "vocabulary": [
+    {
+      "term": "Supply and demand",
+      "definition": "The force that sets prices. When more people want to buy a share than sell it, the price rises. When more want to sell than buy, it falls."
+    },
+    {
+      "term": "Bid price",
+      "definition": "The highest price a buyer is currently willing to pay for a share."
+    },
+    {
+      "term": "Ask price",
+      "definition": "The lowest price a seller is currently willing to accept for a share. The trade happens when bid meets ask."
+    },
+    {
+      "term": "Market capitalisation",
+      "definition": "The total market value of a company. Calculated as: share price \u00d7 total number of shares. Also called 'market cap'."
+    },
+    {
+      "term": "Dividend",
+      "definition": "A payment a company makes to shareholders from its profits \u2014 usually twice a year. Not all companies pay dividends."
+    },
+    {
+      "term": "Earnings per share (EPS)",
+      "definition": "A company's annual profit divided by its total number of shares. Tells you how much profit each share represents."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Prices Are Set by Buyers and Sellers",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What happens to a share price when more people want to buy than sell? What happens when more want to sell than buy? Why?",
+      "content": "No committee sets share prices. Prices emerge from the constant interaction of buyers and sellers.\n\nIf 10,000 people want to buy Meridian Energy shares today and only 3,000 people want to sell, there are not enough shares to go around. Buyers start offering higher prices to jump the queue. The share price rises.\n\nIf a company reports bad news and suddenly 15,000 people want to sell but only 4,000 want to buy, sellers must drop their price to find buyers. The share price falls.\n\nThis happens continuously during trading hours \u2014 in NZ, 10am to 4:45pm Monday to Friday. Every second, thousands of trades update the price of every listed share.\n\nThe bid price is the highest a buyer will pay right now. The ask price is the lowest a seller will accept. A trade executes the moment a buyer's bid matches a seller's ask.\n\nExample: Fisher and Paykel Healthcare (FPH) might have a bid of $21.42 and an ask of $21.45. If you buy, you pay $21.45. If you sell, you receive $21.42. The $0.03 gap is the spread \u2014 the market's friction."
+    },
+    {
+      "type": "slide",
+      "title": "What Makes Prices Move?",
+      "estimatedMinutes": 4,
+      "notePrompt": "List five things that could cause a NZ company's share price to rise and five things that could cause it to fall. Try to think of examples from real NZ companies.",
+      "content": "Share prices move when new information changes what investors think a company is worth.\n\nPrice rises when:\n\u2014 Company reports higher profits than expected\n\u2014 A major new contract or customer is announced\n\u2014 A competitor closes or struggles\n\u2014 Interest rates fall (making shares more attractive than bonds)\n\u2014 The CEO announces a major growth strategy\n\u2014 The economy grows strongly, boosting all business revenues\n\nPrice falls when:\n\u2014 Company profits miss expectations\n\u2014 A product recall, scandal or lawsuit emerges\n\u2014 A major customer leaves\n\u2014 Interest rates rise (bonds become more attractive than shares)\n\u2014 A new competitor enters the market\n\u2014 A global shock occurs \u2014 pandemic, war, financial crisis\n\nNZ example: When Fonterra reduced its milk price forecast in 2015, dairy-related shares across the NZX fell sharply. When Fisher and Paykel Healthcare reported strong COVID-19 ventilator demand in 2020, its share price rose over 50% in months."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A company's share price is officially set each morning by the NZX based on the company's reported financial results.",
+      "correctAnswer": false,
+      "explanation": "False. No authority sets share prices. Prices are determined continuously by the interaction of buyers and sellers on the exchange. The NZX provides the platform and the rules, but the price at any moment is simply the most recent price at which a buyer and seller agreed to trade. This process continues throughout the trading day \u2014 10am to 4:45pm \u2014 with prices updating constantly as new information reaches the market.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Reading a Share Price Quote",
+      "estimatedMinutes": 4,
+      "notePrompt": "Using the Mainfreight example, calculate the market cap. Then calculate: if Mainfreight's EPS is $4.20, what is its price-to-earnings ratio?",
+      "content": "When you look up a share on the NZX website or an investment app, you see a standard set of information.\n\nExample: Mainfreight (MFT) on the NZX\n\nLast price: $68.50\nChange today: +$0.85 (+1.26%)\n52-week high: $82.10\n52-week low: $58.40\nShares on issue: 108,500,000\nMarket cap: $68.50 \u00d7 108,500,000 = $7,432,250,000 (approximately $7.4 billion)\nDividend: $1.50 per share per year (paid twice \u2014 $0.75 mid-year, $0.75 end of year)\nEarnings per share (EPS): $4.20\nPrice-to-earnings ratio (P/E): $68.50 \u00f7 $4.20 = 16.3\u00d7\n\nWhat these mean:\n\u2014 Last price: the most recent trade price\n\u2014 52-week range: the highest and lowest prices in the past year \u2014 gives context for whether today's price is high or low historically\n\u2014 Market cap: the market's current total valuation of the whole company\n\u2014 Dividend: the annual cash payment you receive per share you own\n\u2014 EPS: how much profit each share represents \u2014 higher is better\n\u2014 P/E ratio: how many years of current earnings you are paying \u2014 we cover this in depth in Module 4"
+    },
+    {
+      "type": "quiz",
+      "title": "Share Prices Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Meridian Energy has 2,000,000,000 shares and a price of $5.80 per share. What is its market cap?",
+          "options": [
+            "$5.80 billion",
+            "$11.6 billion",
+            "$2.9 billion",
+            "$580 million"
+          ],
+          "correctIndex": 1,
+          "explanation": "Market cap = share price \u00d7 shares on issue = $5.80 \u00d7 2,000,000,000 = $11,600,000,000 = $11.6 billion. Market cap is the most common measure of a company's total value in the eyes of investors. Meridian Energy is one of NZ's largest companies by market cap."
+        },
+        {
+          "question": "Fisher and Paykel Healthcare announces a major new hospital equipment contract worth $800 million. What is the most likely immediate effect on its share price?",
+          "options": [
+            "The price falls because the contract creates new costs and risks",
+            "The price is unaffected until the financial results are reported in six months",
+            "The price rises as investors update their expectations of future earnings upward",
+            "The NZX pauses trading in the stock until the contract details are verified"
+          ],
+          "correctIndex": 2,
+          "explanation": "Good news that significantly increases a company's expected future profits almost immediately causes the share price to rise, as investors reprice the stock to reflect higher expected earnings. The market processes information very quickly. The $800 million contract represents major new revenue that will flow to shareholders over time \u2014 so buyers bid up the price before the formal financial results are published."
+        },
+        {
+          "question": "If a share's bid price is $14.80 and the ask price is $14.84, what price will you pay if you buy a share right now at market price?",
+          "options": [
+            "$14.80 \u2014 you always get the bid price as a buyer",
+            "$14.82 \u2014 the midpoint between bid and ask",
+            "$14.84 \u2014 buyers pay the ask price (the lowest price a seller will accept)",
+            "$14.76 \u2014 the next price below the bid"
+          ],
+          "correctIndex": 2,
+          "explanation": "Buyers pay the ask price \u2014 the lowest price a seller is willing to accept right now. Sellers receive the bid price \u2014 the highest a buyer will pay. The $0.04 difference between $14.80 and $14.84 is called the spread. The spread is a transaction cost paid by traders, captured by market makers who facilitate trading."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Price Up or Price Down? Sort These Events",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Company reports 40% profit increase",
+          "zone": "Price Rises"
+        },
+        {
+          "item": "Major product recall announced",
+          "zone": "Price Falls"
+        },
+        {
+          "item": "Interest rates cut to historic lows",
+          "zone": "Price Rises"
+        },
+        {
+          "item": "CEO resigns unexpectedly amid scandal",
+          "zone": "Price Falls"
+        },
+        {
+          "item": "Company wins largest contract in its history",
+          "zone": "Price Rises"
+        },
+        {
+          "item": "Country enters recession \u2014 GDP falls for two quarters",
+          "zone": "Price Falls"
+        }
+      ],
+      "explanation": "Prices rise when news is better than expected and investors revise their estimate of the company's future value upward. Prices fall when news is worse than expected. The key word is 'expected' \u2014 even good news can cause a price fall if it was not as good as investors had anticipated. The market is always pricing in the future, not just the present."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A company's market capitalisation equals the price it would actually cost to buy the whole company.",
+      "correctAnswer": false,
+      "explanation": "Not quite. Market cap is the current market value of all shares outstanding. To actually buy a company, an acquirer typically has to pay a premium above the market cap \u2014 usually 20% to 40% more \u2014 to convince shareholders to sell. This premium is called the 'takeover premium' or 'control premium.' Market cap is therefore a useful but incomplete measure of a company's acquisition cost.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "A company has 500 million shares and a share price of $3.20. What is its market cap in billions of dollars?",
+      "acceptedAnswers": [
+        "$1.6 billion",
+        "1.6 billion",
+        "$1.6b",
+        "1.6",
+        "$1,600,000,000"
+      ],
+      "placeholder": "Type the market cap here...",
+      "hint": "Market cap = share price \u00d7 number of shares.",
+      "explanation": "$3.20 \u00d7 500,000,000 = $1,600,000,000 = $1.6 billion. Market cap is the standard measure of company size in investment. A company with a $1.6 billion market cap would be a mid-sized NZ company \u2014 larger than most listed companies but smaller than Fisher and Paykel Healthcare ($12+ billion) or Mainfreight ($7+ billion).",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Track a Real Share",
+      "estimatedMinutes": 5,
+      "prompt": "Go to nzx.com or Google Finance and look up one NZ company you recognise. Record: the current share price, the 52-week high and low, and the market cap. Write two sentences about what you notice \u2014 is the current price closer to the high or the low? What might explain that?",
+      "nceaLink": "Extra Learning \u2014 building the habit of looking at real share data is the most effective way to develop market intuition."
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "title": "Merit Skills — How Factors Influence Pricing and Effects on Stakeholders",
+  "order": 5,
+  "dayNumber": 5,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Analyse",
+  "nceaFocus": "AS92029: Examine price determination — explaining how internal and external factors influence the pricing decision and explaining possible effects on the organisation and its stakeholders",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain how internal factors such as costs and organisational goals influence a specific pricing decision",
+    "Explain how external factors such as competitor prices and economic conditions influence a specific pricing decision",
+    "Explain possible effects of a pricing decision on the organisation and its stakeholders",
+    "Apply Merit-level thinking to a Māori and Pacific business context"
+  ],
+  "vocabulary": [
+    {
+      "term": "Influence",
+      "definition": "To have an effect on a decision or outcome. In AS92029, explaining how a factor influences a pricing decision means showing the specific way it shapes or limits the options available."
+    },
+    {
+      "term": "Effect",
+      "definition": "A result or consequence of a decision. Pricing effects can be financial (impact on profit, revenue, cash flow) or non-financial (impact on reputation, customer relationships, staff morale)."
+    },
+    {
+      "term": "Stakeholder effect",
+      "definition": "The way a pricing decision impacts a specific stakeholder — what they gain, lose, or experience differently as a result of the price being set."
+    },
+    {
+      "term": "Pricing corridor",
+      "definition": "The range of viable prices for a product, bounded at the bottom by minimum cost coverage and at the top by market ceiling (what customers will pay and what competitors charge)."
+    },
+    {
+      "term": "Tauhi vā",
+      "definition": "A Tongan concept meaning to nurture and maintain relationships. In a pricing context, it reflects the idea that pricing decisions in Pacific-owned businesses often consider community relationships and obligations alongside financial returns."
+    },
+    {
+      "term": "Kaitiakitanga",
+      "definition": "A Māori concept of guardianship and stewardship, particularly of natural resources. For Māori businesses in tourism, food production, or environmental services, pricing decisions may reflect kaitiakitanga by ensuring sustainable, non-exploitative use of resources."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "From 'What' to 'How' — The Merit Shift",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down: What is the difference between describing a factor and explaining how it influences a decision? Give one example from the Wiremu honey business.",
+      "content": "At Achieved, you describe internal and external factors. At Merit, you explain how those factors INFLUENCE the pricing decision.\n\nThis is a meaningful difference. Describing is naming and defining. Explaining how it influences is showing the connection between the factor and the outcome.\n\nHere is the contrast:\n\nAchieved level: 'An internal factor is the cost of production. Wiremu's variable cost per jar is $10.24.'\n\nMerit level: 'Wiremu's variable cost of $10.24 per jar establishes the absolute floor for his price — he cannot sell below this amount without making a direct loss on every jar. Combined with his monthly fixed costs of $340, this means he needs to price high enough and sell enough volume to cover both. At the $18 price, he needs 44 jars just to break even. This cost pressure pushes him toward the higher end of the market range where possible.'\n\nThe Merit explanation shows how the cost influences the minimum viable price, explains the mechanism (break-even pressure), and connects it to a specific pricing decision. That chain of reasoning is what separates Merit from Achieved.\n\nIn your assessment, every time you introduce a factor, follow it with: 'This influences the pricing decision by...' That phrase is your signal to yourself that you are writing at the Merit level."
+    },
+    {
+      "type": "slide",
+      "title": "How Internal Factors Influence Pricing — Cost and Margin",
+      "estimatedMinutes": 4,
+      "notePrompt": "For a business you know or can imagine, identify one internal cost factor and write two sentences explaining how it influences the minimum viable price.",
+      "content": "Let's work through how each major internal factor actively influences a pricing decision — not just what it is, but what it does.\n\nCost of production: Higher costs push the minimum viable price up. If Wiremu's honey costs rise (e.g. new hives, more expensive jars), his break-even price rises too. This limits how low he can price without making a loss. Conversely, if he finds a cheaper jar supplier, his cost falls and he gains more pricing flexibility.\n\nDesired profit margin: If Wiremu sets a goal of 50% net profit margin, that target directly determines how high his price must be above his costs. At $10.24 variable cost and $4.25 per jar fixed cost allocation (at 80 jars), his total cost is $14.49. A 50% net margin requires a price of $14.49 ÷ 0.50 = $28.98. The margin goal sets a target price floor above the break-even floor.\n\nOrganisational goals: If Wiremu's goal is to build a long-term premium brand, this internal goal pushes him away from discounting even if demand is slow. If his goal is community access — making his honey available to local buyers regardless of income — this might lead him to hold a lower price even at reduced profit margin.\n\nCapacity: Wiremu can only produce a limited number of jars per season. If demand exceeds supply, he can price higher without losing sales. Scarcity supports premium pricing."
+    },
+    {
+      "type": "truefalse",
+      "statement": "An organisation's desired profit margin is an external factor because it depends on what the market will allow.",
+      "correctAnswer": false,
+      "explanation": "False. Desired profit margin is an internal factor — it is a goal set by the organisation itself, not something imposed from outside. The market sets the ceiling on what customers will pay, which is an external constraint. But the profit margin the organisation targets is an internal decision. The relationship between these two factors creates the pricing corridor: the internal margin goal sets a floor while the external market ceiling sets the upper limit.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "How External Factors Influence Pricing — Competition and Demand",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the two external factors covered in this slide. For each one, explain in your own words how it could force a NZ business to change its price.",
+      "content": "External factors do not just exist in the background — they actively limit or expand the viable price range.\n\nCompetitor prices: If Wiremu's competitors sell comparable mānuka honey for $18 to $28, this sets a reference range for customers. If Wiremu prices at $32, customers will ask: why is this more expensive than the others? He needs a clear point of difference (certified grade, unique provenance, exceptional quality) to justify that premium. Without one, the competitor price ceiling pushes him back into the $18 to $28 range. Competition directly limits how high he can price without losing customers.\n\nCustomer demand and price sensitivity: In Northland, artisan market customers often have moderate price sensitivity — they are willing to pay for quality but will comparison-shop across stalls. If economic conditions are tough (cost of living pressure, job insecurity), customers become more price-sensitive and the viable price range compresses. In contrast, tourists visiting Kerikeri are often less price-sensitive and more likely to pay a premium for authentic NZ honey as a gift or souvenir. The mix of customer types in Wiremu's market directly influences how high he can price.\n\nEconomic conditions: In 2025, rising grocery prices and interest rate pressures have made NZ consumers more cautious about discretionary spending. This is an external factor that makes customers more likely to compare prices carefully — which matters when Wiremu is deciding whether to price at $22 or $26."
+    },
+    {
+      "type": "slide",
+      "title": "Māori and Pacific Business Pricing Contexts",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down two ways that Māori or Pacific values might influence pricing decisions differently from a purely profit-maximising business. Give a real or hypothetical NZ example for each.",
+      "content": "Pricing decisions for Māori and Pacific-owned businesses in New Zealand are often shaped by values that go beyond profit maximisation.\n\nFor Māori businesses connected to the whenua (land) and natural resources, the concept of kaitiakitanga — guardianship and sustainable stewardship — can directly influence pricing. A Māori-owned seafood operation that harvests kaimoana (seafood) sustainably might limit its harvest volume rather than maximising output for profit. Lower volume means higher cost per unit, which pushes the price up. But this is a deliberate choice aligned with the organisation's values, not a compromise.\n\nSimilarly, a Māori tourism operator offering cultural experiences on a marae might choose not to maximise pricing for international tourists if it risks making the experience inaccessible to domestic visitors and local iwi members. The price reflects both commercial sustainability and cultural responsibility.\n\nFor Pacific-owned businesses, tauhi vā — nurturing relationships — can influence pricing. A Tongan-owned bakery in Auckland's Māngere might set a community price for local Pacific families that is lower than its commercial price, because maintaining those relationships has value that does not appear on a balance sheet.\n\nFor AS92029, when analysing a Māori or Pacific organisation, your price recommendation and effects analysis must recognise these values. A price that is 'optimal' by pure financial logic may not be the right recommendation for an organisation whose goals include cultural integrity, community access, and intergenerational responsibility."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Factor to How It Influences the Price",
+      "pairs": [
+        { "item": "High production costs push the minimum viable price up", "zone": "Cost of Production" },
+        { "item": "Competitors charging $18–$28 limits how high Wiremu can price", "zone": "Competitor Prices" },
+        { "item": "A 50% margin goal sets a target price above break-even", "zone": "Desired Profit Margin" },
+        { "item": "Tourist buyers are less price-sensitive, supporting a higher price", "zone": "Customer Demand" },
+        { "item": "Rising inflation makes customers comparison-shop more carefully", "zone": "Economic Conditions" },
+        { "item": "Limited hive capacity means scarcity supports premium pricing", "zone": "Production Capacity" }
+      ],
+      "explanation": "Each factor shown here actively shapes the viable price range. Internal factors (costs, margin, capacity) establish the floor and target. External factors (competitors, demand, economic conditions) establish the ceiling and market context. Merit-level analysis requires you to explain these connections explicitly — not just list the factors, but show how each one shapes the pricing decision.",
+      "estimatedMinutes": 6
+    },
+    {
+      "type": "slide",
+      "title": "Effects on the Organisation",
+      "estimatedMinutes": 4,
+      "notePrompt": "List three possible financial effects of a high price decision on an organisation. List two possible non-financial effects. Give at least one NZ example for each.",
+      "content": "Every pricing decision has effects — on the organisation, on its customers, on its competitors, and on the wider community. In AS92029, explaining these effects is a Merit-level skill.\n\nLet's look at the effects of Wiremu's pricing decision on his own organisation first.\n\nFinancial effects of setting a high price ($26):\n— Higher net profit per jar ($15.76 contribution margin vs $7.76 at $18) means stronger monthly cash flow if volume holds\n— Lower break-even point (22 jars vs 44 at $18) means the business is financially resilient at lower sales volumes\n— Risk: if the higher price reduces sales below the break-even point, the higher contribution margin cannot compensate for insufficient volume\n\nNon-financial effects on the organisation:\n— A $26 price positions Wiremu as a premium producer, which builds brand reputation over time. This can attract new customers who associate price with quality\n— If the price feels too high to regular market customers, Wiremu may experience negative word-of-mouth or reduced customer loyalty, damaging his long-term market presence\n\nThe balance between financial and non-financial effects is what makes pricing decisions complex. A price that maximises short-term profit might damage long-term customer relationships. A price that maintains strong community relationships might reduce short-term profitability."
+    },
+    {
+      "type": "slide",
+      "title": "Effects on Stakeholders",
+      "estimatedMinutes": 4,
+      "notePrompt": "Choose two stakeholders from the Wiremu scenario. For each one, write two sentences explaining the effect of a $26 price on that stakeholder.",
+      "content": "Beyond the organisation itself, pricing decisions affect specific stakeholders — and Merit-level analysis requires you to explain those effects for at least two stakeholders.\n\nStakeholder 1 — Wiremu's regular market customers:\nA $26 price is at the top of the Northland market range. Regular customers who have been buying honey for several seasons may feel the price has jumped from their expected range. Some may reduce their purchase frequency or buy smaller quantities. This is a negative effect on price-sensitive customers, especially those on lower incomes for whom food costs are a real concern.\n\nStakeholder 2 — Wiremu's family (who depend on the business income):\nA higher price that maintains or grows net profit directly benefits the family financially. At $920.80 monthly profit at 80 jars, versus $280.80 at the $18 price, the difference in family income is significant. However, if the higher price causes sales to fall below break-even, the family income effect is negative.\n\nStakeholder 3 — Competing honey sellers at the same market:\nWiremu pricing at $26 (near the top of the market range) creates pressure on competitors. If customers associate his premium price with higher quality, some competitors may feel the need to respond by improving their product, reducing their price, or repositioning themselves. This is a competitive market effect of his pricing decision.\n\nFor your AS92029 assessment, you must identify at least two stakeholders and explain the effect of the pricing decision on each one with specific reasoning."
+    },
+    {
+      "type": "scenario",
+      "title": "Merit-Level Scenario — Anika Considers a Price Increase",
+      "estimatedMinutes": 12,
+      "nceaLevel": "Merit",
+      "setup": "Anika has been selling her gourmet cookies at $4.00 each at the Napier Saturday market for six months. She has 150 regular customers per month (150 cookies sold). Her costs remain: variable cost $1.35 per cookie, fixed costs $240 per month. Monthly net profit at current pricing: $157.50.\n\nAnika is now considering raising her price to $5.00 per cookie. She has two concerns: (1) Some of her regular customers are budget-conscious and may reduce purchases at the higher price. She estimates a 20% drop in sales volume — from 150 to 120 cookies per month. (2) A competitor at the same market recently began selling similar gourmet cookies at $3.80, which is below Anika's current price. Anika's regular customers have commented positively on her quality but a few have asked about the price difference.",
+      "challenge": "1. Build a projected income statement for Anika at her current $4.00 price (150 cookies) and at the proposed $5.00 price (120 cookies — reflecting estimated 20% volume drop).\n2. Explain how TWO internal factors influence Anika's pricing decision.\n3. Explain how TWO external factors influence Anika's pricing decision.\n4. Explain the effect of the $5.00 price increase on TWO stakeholders.",
+      "hints": [
+        "For the income statement: use the adjusted sales volume (120) for the $5.00 option. COGS = variable cost × units sold.",
+        "For Merit-level explanations, each factor or effect should be 2–3 sentences. Use 'This influences the pricing decision by...' or 'The effect on [stakeholder] is...' as your sentence starters.",
+        "For effects on stakeholders, consider: regular customers, Anika herself (as the business owner), and the competitor."
+      ],
+      "solution": "1. Projected income statements:\n\nCurrent: $4.00 price, 150 cookies:\nRevenue: 150 × $4.00 = $600.00\nCOGS: 150 × $1.35 = $202.50\nGross Profit: $397.50\nFixed Costs: $240.00\nNet Profit: $157.50\n\nProposed: $5.00 price, 120 cookies:\nRevenue: 120 × $5.00 = $600.00\nCOGS: 120 × $1.35 = $162.00\nGross Profit: $438.00\nFixed Costs: $240.00\nNet Profit: $198.00\n\nInterestingly, despite selling fewer cookies, Anika earns $40.50 more net profit per month at $5.00 — because the higher contribution margin per cookie ($3.65 vs $2.65) offsets the lower volume.\n\n2. Internal factors influencing the decision:\n\nCost of production: Anika's variable cost of $1.35 per cookie means any price above $1.35 contributes to covering fixed costs. However, with $240 in fixed costs, she needs sufficient volume to break even. At $5.00, break-even = $240 ÷ ($5.00 − $1.35) = $240 ÷ $3.65 = 65.8 → 66 cookies. Even at 120 cookies (below her current volume), she is well above break-even. The cost structure supports the price increase.\n\nOrganisational goals: Anika's goal is to operate a sustainable, quality-focused baking business at the Napier market. Her use of premium ingredients and handcrafted approach is an internal positioning decision that supports a higher price point. Pricing at $5.00 is consistent with her quality positioning and signals to customers that her product is genuinely premium — which aligns with her goals even if it means selling fewer cookies.\n\n3. External factors influencing the decision:\n\nCompetitor pricing: The new competitor selling at $3.80 is an external factor that creates downward pricing pressure. Some customers will notice the $1.20 difference between Anika's $5.00 and the competitor's $3.80. This external pressure means Anika's $5.00 price must be clearly justified by visible quality differences. If customers cannot perceive the quality difference, the competitive pressure may make the $5.00 price difficult to sustain.\n\nCustomer demand and price sensitivity: Anika's estimate of a 20% volume drop reflects her assessment of customer price sensitivity. Her regular customer base includes both quality-focused buyers (low price sensitivity) and budget-conscious shoppers (higher price sensitivity). The external demand pattern in the Napier market — where Saturday market shoppers span a range of income levels — influences how far Anika can push the price before losing a significant share of her buyer base.\n\n4. Effects on stakeholders:\n\nEffect on Anika's regular budget-conscious customers: A price increase from $4.00 to $5.00 — a 25% rise — will likely reduce purchase frequency for customers who are already careful about spending. For a customer buying 4 cookies per visit, the cost rises from $16 to $20 per visit. Some may switch to the $3.80 competitor even if they prefer Anika's product. The effect is financial: reduced affordability for lower-income market shoppers.\n\nEffect on Anika (business owner): Despite selling fewer cookies, the projected income statement shows Anika earns $40.50 more per month at $5.00 (net profit $198 vs $157.50). The financial effect on Anika is positive — higher profit with less baking volume. However, the non-financial effect is less certain: losing regular customers could damage the loyal buyer relationships she has built over six months, which have long-term value for the business."
+    },
+    {
+      "type": "typed",
+      "question": "At a price of $5.00 and variable cost of $1.35 per cookie, with fixed costs of $240/month, what is Anika's break-even point in cookies? Round up to the nearest whole cookie.",
+      "acceptedAnswers": ["66", "66 cookies"],
+      "placeholder": "Type the break-even quantity here...",
+      "hint": "Break-even = Fixed costs ÷ Contribution margin. Contribution margin = $5.00 − $1.35.",
+      "explanation": "Contribution margin = $5.00 − $1.35 = $3.65. Break-even = $240 ÷ $3.65 = 65.75, rounded up to 66 cookies. Even with a 20% volume drop (120 cookies), Anika is well above break-even at 66 cookies. This shows that the higher price creates a more financially resilient business — fewer sales needed to avoid a loss.",
+      "estimatedMinutes": 4
+    }
+  ]
+}

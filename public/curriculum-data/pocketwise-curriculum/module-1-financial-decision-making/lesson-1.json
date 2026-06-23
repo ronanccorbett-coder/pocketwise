@@ -1,0 +1,187 @@
+{
+  "title": "What Is Financial Decision-Making?",
+  "order": 1,
+  "dayNumber": 1,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 80,
+  "bloomsLevel": "Remember and Understand",
+  "nceaFocus": "AS92028: Demonstrate understanding of an organisation's financial decision-making — identifying financial needs, issues or opportunities and understanding what putake means for an organisation",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain what financial decision-making means for a New Zealand organisation",
+    "Describe what putake is and why it shapes every financial decision an organisation makes",
+    "Identify whether a situation represents a financial need, issue, or opportunity"
+  ],
+  "vocabulary": [
+    {
+      "term": "Financial decision-making",
+      "definition": "The process an organisation goes through when it needs to choose how to use its money. This includes identifying what the problem or opportunity is, looking at options, and choosing the best path forward based on evidence."
+    },
+    {
+      "term": "Putake",
+      "definition": "A te reo Māori concept meaning the reason an organisation exists — its purpose, values, and beliefs. In NCEA Commerce, putake must be considered in every financial decision because an organisation's values should shape how it spends its money."
+    },
+    {
+      "term": "Financial need",
+      "definition": "Something an organisation must spend money on to keep operating. For example, a school canteen must pay for ingredients and power or it cannot open."
+    },
+    {
+      "term": "Financial issue",
+      "definition": "A problem that is affecting the organisation's finances. For example, a sports club whose membership fees have not covered its costs for two years running."
+    },
+    {
+      "term": "Financial opportunity",
+      "definition": "A chance to improve the organisation's financial position. For example, a café that has the chance to add outdoor seating and attract more customers."
+    },
+    {
+      "term": "Organisation",
+      "definition": "Any group that operates with a shared purpose. In AS92028, this includes businesses, schools, sports clubs, community groups, marae, and charities — not just companies trying to make a profit."
+    },
+    {
+      "term": "Stakeholder",
+      "definition": "Anyone who is affected by an organisation's decisions. This includes owners, employees, customers, suppliers, the local community, and the government."
+    },
+    {
+      "term": "Financial tool",
+      "definition": "A structured method for organising financial information to help make a decision. Examples include a budget, a cost-benefit analysis, a price comparison chart, or a SWOT analysis that includes financial data."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Every Organisation Faces Financial Decisions",
+      "estimatedMinutes": 8,
+      "content": "Let's start with something real. Think about your school canteen. Every single week, the person running it has to make financial decisions. How much bread should we order? Can we afford a new pie warmer? Should we drop the price of chips to sell more of them? Should we add a new item to the menu?\n\nNone of those questions have obvious answers. They all involve money, and they all have consequences. That is what financial decision-making is — the process of working through a money question carefully, gathering information, looking at your options, and choosing the best path forward.\n\nHere is what makes financial decision-making different from just guessing. When you make a financial decision properly, you use evidence. You gather actual dollar figures. You compare options side by side. You think about who will be affected. And you come back to the reason your organisation exists in the first place.\n\nThat last part is what a lot of people miss. Financial decisions are not just about the numbers. They are also about values. A decision that makes financial sense on paper might still be the wrong decision if it goes against what your organisation stands for.\n\nLet me give you a concrete example. Imagine a youth sports club in Porirua. They run football for kids aged 8 to 16. Their putake — their reason for existing — is to give every young person in the community access to sport regardless of their family's income. They charge $60 per year per player, which is deliberately low.\n\nNow imagine they get an offer from a local business to sponsor the club for $10,000 a year. The catch is the sponsor sells energy drinks, and the club would need to display the brand on their gear and at their games.\n\nFinancially? $10,000 is a lot for a small club. It could pay for new jerseys, fix the goal posts, and fund a development programme. But does it fit their putake? Probably not. Promoting energy drinks to kids aged 8 to 16 conflicts directly with their values around youth wellbeing.\n\nThat is the tension at the heart of financial decision-making. Numbers matter. But so does purpose.\n\nFor AS92028, you need to understand that every financial decision an organisation makes happens in this context. There is always a financial need, issue, or opportunity driving the decision. There is always a set of values — a putake — that should shape the response. And there are always stakeholders who will be affected by whatever is decided.\n\nThe financial decision-making process has five steps. First, you identify the financial need, issue, or opportunity clearly. Second, you gather information and look at your options. Third, you use a financial tool — like a budget or cost-benefit analysis — to compare those options using actual dollar amounts. Fourth, you make a decision and justify it. Fifth, you consider the consequences for stakeholders and think about how the organisation should respond.\n\nWe are going to work through each of those steps in detail across this module. For now, the most important thing to understand is this: financial decisions are not just about money. They are about what your organisation is trying to do in the world, and whether the way you spend your money helps you do that.\n\nEvery organisation you will study in AS92028 — whether it is a school canteen, a marae, a small café, or a community sports club — has a putake. Your job is to find it, name it, and use it to evaluate whether a financial decision is actually a good one."
+    },
+    {
+      "type": "slide",
+      "title": "Needs, Issues, and Opportunities — Knowing the Difference",
+      "estimatedMinutes": 8,
+      "content": "Before you can make a good financial decision, you need to know what kind of situation you are dealing with. In AS92028, there are three types: a financial need, a financial issue, and a financial opportunity. They sound similar but they are actually quite different, and getting them confused is one of the most common mistakes students make.\n\nLet's break each one down clearly.\n\nA financial need is something the organisation must spend money on to keep functioning. Without it, the organisation cannot operate. Think of it like the basics you need to stay alive — food, water, shelter. For a business, a financial need might be paying rent on their premises, buying stock to sell, or paying staff wages. If these things don't happen, the doors close.\n\nHere is a real example. Aroha runs a small bakery in Hamilton. Her commercial oven has broken down. Without an oven, she cannot bake anything. She cannot sell anything. She has a financial need — she must find $4,800 to repair or replace the oven, or her business stops operating entirely.\n\nA financial issue is a problem that is already affecting the organisation's finances in a negative way. The organisation is still running, but something is wrong. Sales might be falling. Costs might be rising faster than income. Debt might be building up. The organisation needs to make a decision to fix the problem before it gets worse.\n\nHere is an example. The Tāmaki Intermediate School tuck shop has been losing money for the past two terms. Income from sales is $1,200 per term, but costs for ingredients, packaging, and a part-time helper are $1,500 per term. That is a $300 loss every term. If this continues, the tuck shop will have to close. This is a financial issue — the organisation is still operating, but there is a clear problem that needs a decision.\n\nA financial opportunity is a chance to improve the organisation's financial position. Nothing is wrong right now, but there is a potential to grow, save money, or improve services if the organisation acts. Opportunities do not last forever, and they always carry some risk, which is why they require careful decision-making.\n\nHere is an example. A community sports club in Dunedin has been offered a ten-year lease on the building they currently rent month-to-month. The lease would cost $18,000 per year — $3,000 more than they currently pay annually — but it locks in their location and gives them the security to apply for larger grants and run bigger programmes. This is a financial opportunity. It costs more but could deliver significant long-term benefits.\n\nHere is the key distinction that trips students up. A need is about survival. An issue is about an existing problem. An opportunity is about growth or improvement. In your NCEA assessment, you will be given a scenario about a real or fictional NZ organisation and asked to identify which of these three situations they are facing. Read the scenario carefully. Look for clues: Is the organisation about to collapse without action? Is there an ongoing problem eating into their finances? Or is there a chance to do something new?\n\nOne more thing worth knowing. Some situations have elements of more than one type. Aroha's broken oven is primarily a need, but if she decides to upgrade to a better oven rather than just repair the old one, it also becomes an opportunity. Real financial decisions are often messy like this. Your job in the assessment is to identify the primary type and explain your reasoning clearly.\n\nYou will get better at spotting these with practice. By the end of this module, you will be reading scenarios and identifying the financial situation within about thirty seconds. Trust the process."
+    },
+    {
+      "type": "vocabulary",
+      "title": "Key Terms — Check Your Understanding",
+      "estimatedMinutes": 5,
+      "instruction": "Read each term and definition carefully before moving on. Pay particular attention to putake, financial need, financial issue, and financial opportunity. These four terms will appear in almost every lesson in this module. If any definition is unclear, write it in your own words before continuing."
+    },
+    {
+      "type": "quiz",
+      "title": "Checkpoint Quiz — Day 1 Part 1",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A school canteen has been running at a loss for three terms in a row. Income is $900 per term and costs are $1,150 per term. What type of financial situation is this?",
+          "options": [
+            "A financial issue",
+            "A financial opportunity",
+            "A financial need",
+            "A putake conflict"
+          ],
+          "correctIndex": 0,
+          "explanation": "This is a financial issue. The canteen is still operating but there is a clear ongoing problem — it is spending $250 more than it earns every term. A financial need would mean the organisation cannot operate without immediate action (like a broken oven). A financial opportunity would mean there is a chance to improve, not an existing problem. A putake conflict is not one of the three financial situation types, though putake is relevant to how the canteen responds."
+        },
+        {
+          "question": "Which of the following best describes putake in the context of AS92028?",
+          "options": [
+            "The profit target an organisation sets for the financial year",
+            "The reason an organisation exists, shaped by its values and beliefs",
+            "The process of comparing financial options using a tool like a budget",
+            "The total amount of money available for spending decisions"
+          ],
+          "correctIndex": 1,
+          "explanation": "Putake means the reason an organisation exists, shaped by its values and beliefs. It is not a profit target — many organisations with a putake are not-for-profit. It is not the financial decision-making process itself, though putake informs that process. And it is not a financial figure. In NCEA AS92028, putake must be discussed at all achievement levels and is central to evaluating whether a financial decision is truly appropriate for an organisation."
+        },
+        {
+          "question": "A community centre in Wellington has been offered the chance to rent out its hall on Saturday evenings for $350 per booking. This would generate new income without requiring major changes. What type of financial situation is this?",
+          "options": [
+            "A financial need",
+            "A financial issue",
+            "A financial opportunity",
+            "A stakeholder conflict"
+          ],
+          "correctIndex": 2,
+          "explanation": "This is a financial opportunity. The community centre is not in crisis and there is no existing problem being described — instead, there is a chance to improve their financial position by generating new income. Opportunities are about potential improvement or growth. The organisation still needs to make a careful decision because opportunities have costs and risks, but the starting position is positive rather than a problem that needs fixing."
+        },
+        {
+          "question": "Which of the following is an example of a financial need?",
+          "options": [
+            "A café considering whether to open a second location in Christchurch",
+            "A sports club whose annual membership fees have dropped by 15% this year",
+            "A food truck whose gas cylinder has run out and must be replaced to operate",
+            "A school considering whether to upgrade its computer lab"
+          ],
+          "correctIndex": 2,
+          "explanation": "A financial need is something the organisation must have to keep functioning. The food truck cannot operate at all without gas — replacing the cylinder is not optional. The café considering a second location is an opportunity. The sports club with falling fees is facing a financial issue. The school considering a computer lab upgrade is an opportunity. The key word with a financial need is 'must' — without this, the organisation cannot operate."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "What Makes a Good Financial Decision?",
+      "estimatedMinutes": 8,
+      "content": "You now know the three types of financial situations an organisation can face. But knowing what the problem is only gets you halfway there. The second half is knowing how to make a good decision in response.\n\nA good financial decision has five qualities. Let's go through each one.\n\nFirst, it is evidence-based. This means it uses actual numbers, not guesses. When Wiremu's parents are deciding whether to expand their kiwifruit orchard in Te Puke, they do not just say 'it feels like it could be profitable.' They look at the cost of extra land, the expected yield per hectare, the current market price per tray, and the likely profit. Real dollar figures. Not vibes.\n\nSecond, it considers options. A good financial decision does not just grab the first idea that comes along. It looks at at least two or three possibilities and compares them. This is why financial tools like budgets and cost-benefit analyses are so valuable — they give you a structured way to put options side by side.\n\nThird, it considers stakeholders. Every financial decision affects people. Employees, customers, owners, the local community — they all have a stake in what happens. A decision that looks financially great but destroys staff morale or alienates customers might not actually be a good decision at all. Good financial decision-makers think about who is affected and how.\n\nFourth, it reflects putake. This is the one that separates a good financial decision from just a profitable one. An organisation's spending should align with its purpose. A marae that decides to hire out its space primarily to corporate events for maximum revenue might be making a financially smart move in the short term. But if it starts pricing out its own community, it is drifting away from why it exists. Putake is the anchor that keeps financial decisions honest.\n\nFifth, it considers consequences. Every decision has effects — some expected, some not. A good decision-maker thinks ahead. If we choose this option, what happens next? What if things go wrong? What if costs come in higher than we projected? Planning for consequences is not pessimism. It is good management.\n\nHere is an analogy that might help. Think of financial decision-making like choosing what to cook for a big family dinner. You do not just grab whatever is cheapest (evidence without context). You think about what everyone likes and whether there are any dietary needs (stakeholders). You consider whether the meal fits the occasion — is this a celebration or a regular Thursday night (putake)? You look at a few recipes before deciding (options). And you think about whether you have time to cook it properly and what you will do if the oven breaks (consequences).\n\nNow let's look at how this plays out with a real NZ example — one that is typical of the kind of scenario you will see in AS92028.\n\nThe Kaikoura Surf Lifesaving Club has 180 members and operates off annual subs of $120 per member, plus fundraising. Their total annual income is approximately $28,600. This year, their inflatable rescue boat (IRB) motor has failed. Replacing it costs $6,200. They have three options:\n\nOption 1: Use reserves ($6,200 from savings). Immediate fix, no debt, but reserves drop to $1,400.\nOption 2: Apply for a Lotteries Commission grant ($6,200, no repayment needed, but takes 3 to 4 months to process).\nOption 3: Take a short-term loan from ANZ at 12.5% interest per annum, repay over 12 months — total repayment approximately $6,990.\n\nA good financial decision here means comparing these three options with actual figures, thinking about what the club stands for (keeping beaches safe, supporting the community), identifying who is affected (members, beach users, the town), and recommending the best option with clear reasoning.\n\nWe will come back to this example in a later lesson and work through it fully. For now, just notice how all five qualities of a good financial decision are relevant here. That is the framework you carry into every scenario in this module."
+    },
+    {
+      "type": "quiz",
+      "title": "Checkpoint Quiz — Day 1 Part 2",
+      "estimatedMinutes": 5,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Which of the following best describes an evidence-based financial decision?",
+          "options": [
+            "A decision made quickly based on the manager's experience and instinct",
+            "A decision supported by actual dollar figures and data rather than guesses",
+            "A decision that has been approved by all stakeholders before being made",
+            "A decision that results in the highest possible profit for the organisation"
+          ],
+          "correctIndex": 1,
+          "explanation": "An evidence-based decision uses actual dollar figures and data. Experience and instinct can be useful but they are not evidence — a manager might have strong instincts that are wrong. Stakeholder approval is part of good decision-making but is not what makes it evidence-based. Maximising profit is one possible goal but not a definition of good decision-making — an organisation's putake might mean a less profitable option is actually the right choice."
+        },
+        {
+          "question": "The Kaikoura Surf Lifesaving Club is deciding how to fund a $6,200 motor replacement. They are comparing using reserves, applying for a grant, and taking a loan. Which quality of good financial decision-making does this best demonstrate?",
+          "options": [
+            "Considering consequences",
+            "Reflecting putake",
+            "Considering options",
+            "Identifying stakeholders"
+          ],
+          "correctIndex": 2,
+          "explanation": "Comparing three different funding methods — reserves, a grant, and a loan — is an example of considering options. Good financial decision-making does not grab the first solution that appears. It looks at multiple possibilities and compares them with actual figures. The club may also be demonstrating the other qualities (considering putake, consequences, and stakeholders), but the specific action described — comparing three funding methods — is about weighing options."
+        },
+        {
+          "question": "A marae is considering renting out its wharenui to a corporate company for $3,500 per weekend to generate income. The committee is worried this might conflict with why the marae exists. Which quality of good financial decision-making is the committee demonstrating?",
+          "options": [
+            "Using an evidence-based approach",
+            "Reflecting putake",
+            "Considering consequences",
+            "Identifying a financial opportunity"
+          ],
+          "correctIndex": 1,
+          "explanation": "The committee is asking whether the rental decision aligns with the marae's reason for existing — its putake. Putake is the anchor that keeps financial decisions honest. A marae's putake typically centres on cultural identity, community wellbeing, and serving its people. A high-paying corporate rental might look attractive financially but could conflict with those values. Recognising this tension and making it part of the decision is exactly what reflecting putake means."
+        },
+        {
+          "question": "Which of the following statements about financial decision-making is correct?",
+          "options": [
+            "A financially profitable decision is always the right decision for an organisation",
+            "Financial decisions only affect the owners of an organisation",
+            "Good financial decisions consider both the numbers and the organisation's values",
+            "The goal of financial decision-making is always to reduce costs"
+          ],
+          "correctIndex": 2,
+          "explanation": "Good financial decisions consider both the numbers and the organisation's values (putake). A profitable decision is not always the right one — it might conflict with the organisation's purpose or harm stakeholders. Financial decisions affect many people beyond just owners, including employees, customers, and the community. And the goal is not always to reduce costs — sometimes the right decision involves spending more to achieve a better outcome aligned with the organisation's putake."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "What Does Your Organisation Stand For?",
+      "estimatedMinutes": 10,
+      "prompt": "Think about an organisation you belong to or care about. It might be a sports team, a school club, a part-time job, a community group, or even your own family as a unit. Write down: What is this organisation's putake — why does it exist and what does it value? Now think of one financial decision that organisation has made recently, or one it might face. Do you think the decision reflected its putake? Why or why not?",
+      "nceaLink": "AS92028 requires you to discuss putake at all achievement levels. Understanding how to identify an organisation's putake — and how to judge whether a financial decision reflects it — is a core skill for this standard. This reflection helps you practise that thinking in a context that is real and personal to you."
+    }
+  ]
+}
