@@ -40,8 +40,14 @@ export default function MarketsTab({
 
   const { snapshots, isOpen } = useStockSnapshots();
   const [selected, setSelected] = useState<string | null>(null);
+  const [initialMode, setInitialMode] = useState<"buy" | "sell">("buy");
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState<"alpha" | "gainers" | "losers" | "marketCap">("alpha");
+
+  function openStock(symbol: string, mode: "buy" | "sell" = "buy") {
+    setInitialMode(mode);
+    setSelected(symbol);
+  }
 
   const ownedById = useMemo(() => {
     const m = new Map<string, OwnedStock>();
@@ -127,7 +133,7 @@ export default function MarketsTab({
             {headlines.map((h, i) => {
               const positive = h.magnitude >= 0;
               return (
-                <button key={i} onClick={() => setSelected(h.sym)}
+                <button key={i} onClick={() => openStock(h.sym, "buy")}
                   style={{
                     flexShrink: 0, padding: "8px 12px", borderRadius: 10,
                     background: positive ? "rgba(118,173,37,.10)" : "rgba(239,68,68,.10)",
@@ -152,6 +158,14 @@ export default function MarketsTab({
           </div>
         </div>
       )}
+
+      {/* Holdings strip — quick view of owned positions with one-tap sell */}
+      <HoldingsStrip
+        stocks={stocks}
+        snapshots={snapshots}
+        T={T}
+        onOpenSell={(sym) => openStock(sym, "sell")}
+      />
 
       {/* Search + sort */}
       <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
@@ -184,7 +198,7 @@ export default function MarketsTab({
       {/* Stock grid */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 10 }}>
         {filtered.map(s => (
-          <StockCard key={s.symbol} snapshot={s} owned={ownedById.get(s.symbol)} onClick={() => setSelected(s.symbol)} T={T} />
+          <StockCard key={s.symbol} snapshot={s} owned={ownedById.get(s.symbol)} onClick={() => openStock(s.symbol, "buy")} T={T} />
         ))}
         {filtered.length === 0 && (
           <div style={{ gridColumn: "1 / -1", padding: 30, textAlign: "center", color: T.text3, fontSize: "0.85rem" }}>
@@ -202,6 +216,7 @@ export default function MarketsTab({
           onClose={() => setSelected(null)}
           onBuy={onBuy}
           onSell={onSell}
+          initialMode={initialMode}
         />
       )}
     </div>
@@ -293,6 +308,117 @@ function Mini({ label, info, value }: { label: string; info: string; value: stri
         <InfoIcon text={info} size={10} />
       </div>
       <div style={{ fontWeight: 800, fontSize: "0.72rem" }}>{value}</div>
+    </div>
+  );
+}
+
+// ── Holdings strip ─────────────────────────────────────────────────────────
+// Horizontal scrollable summary of owned positions. Each card is tappable —
+// opens the detail modal pre-loaded into Sell mode with the full position
+// quantity selected. Also shows a portfolio total at the start of the strip.
+function HoldingsStrip({
+  stocks, snapshots, T, onOpenSell,
+}: {
+  stocks: OwnedStock[];
+  snapshots: Record<string, StockSnapshot>;
+  T: any;
+  onOpenSell: (symbol: string) => void;
+}) {
+  // Sum unique symbols only — if there are duplicate legacy rows we still
+  // surface each so the user can sell from any of them.
+  const owned = stocks.filter(s => (s.quantity ?? 0) > 0);
+
+  if (owned.length === 0) return null;
+
+  let totalValue = 0;
+  let totalCost = 0;
+  for (const h of owned) {
+    const snap = snapshots[h.symbol];
+    const mid = snap?.price ?? h.currentValue ?? 0;
+    totalValue += mid * (h.quantity ?? 0);
+    totalCost += (h.purchasePrice ?? 0) * (h.quantity ?? 0);
+  }
+  const totalPL = totalValue - totalCost;
+  const totalPLPct = totalCost > 0 ? totalPL / totalCost : 0;
+  const plPositive = totalPL >= 0;
+
+  return (
+    <div style={{
+      background: T.card, borderRadius: 14, padding: "12px 0",
+      border: `1px solid ${T.border}`,
+    }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 14px 10px" }}>
+        <div style={{ fontSize: "0.72rem", fontWeight: 800, color: T.text2, letterSpacing: "0.05em" }}>
+          YOUR HOLDINGS ({owned.length})
+        </div>
+        <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+          <span style={{ fontSize: "0.7rem", color: T.text2 }}>Total value</span>
+          <span style={{ fontWeight: 900, fontSize: "0.9rem", color: T.text }}>
+            ${totalValue.toLocaleString("en-NZ", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+          </span>
+          {totalCost > 0 && (
+            <span style={{ fontWeight: 800, fontSize: "0.72rem", color: plPositive ? "#76AD25" : "#EF4444" }}>
+              {plPositive ? "+" : ""}${Math.abs(totalPL).toLocaleString("en-NZ", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ({plPositive ? "+" : ""}{(totalPLPct * 100).toFixed(1)}%)
+            </span>
+          )}
+        </div>
+      </div>
+      <div style={{
+        display: "flex", gap: 10, overflowX: "auto",
+        padding: "0 14px", scrollbarWidth: "thin",
+      }}>
+        {owned.map(h => {
+          const snap = snapshots[h.symbol];
+          const mid = snap?.price ?? h.currentValue ?? h.purchasePrice ?? 0;
+          const bid = snap?.bid ?? mid * 0.998;
+          const value = bid * (h.quantity ?? 0);
+          const cost = (h.purchasePrice ?? 0) * (h.quantity ?? 0);
+          const pl = value - cost;
+          const plPct = cost > 0 ? pl / cost : 0;
+          const up = pl >= 0;
+          return (
+            <button
+              key={h.id}
+              onClick={() => onOpenSell(h.symbol)}
+              style={{
+                flexShrink: 0, minWidth: 200, textAlign: "left",
+                background: T.input, borderRadius: 12, padding: "10px 12px",
+                border: `1px solid ${T.border2}`, cursor: "pointer",
+                color: T.text, fontFamily: "Inter, sans-serif",
+                display: "flex", flexDirection: "column", gap: 6,
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                  <span style={{ background: "#1e3a5f", color: "#60a5fa", padding: "2px 7px", borderRadius: 5, fontWeight: 900, fontSize: "0.68rem" }}>
+                    {h.symbol}
+                  </span>
+                  <span style={{ fontSize: "0.7rem", color: T.text2, fontWeight: 700 }}>
+                    {h.quantity ?? 0} shares
+                  </span>
+                </div>
+                <span style={{
+                  background: "#EF4444", color: "#fff",
+                  padding: "3px 10px", borderRadius: 6,
+                  fontSize: "0.65rem", fontWeight: 800,
+                  letterSpacing: "0.04em",
+                }}>SELL</span>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+                <span style={{ fontWeight: 900, fontSize: "1rem" }}>
+                  ${value.toLocaleString("en-NZ", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                </span>
+                <span style={{ fontSize: "0.7rem", fontWeight: 800, color: up ? "#76AD25" : "#EF4444" }}>
+                  {up ? "+" : ""}{(plPct * 100).toFixed(1)}%
+                </span>
+              </div>
+              <div style={{ fontSize: "0.62rem", color: T.text3 }}>
+                Avg cost ${(h.purchasePrice ?? 0).toFixed(2)} · Now ${mid.toFixed(2)}
+              </div>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

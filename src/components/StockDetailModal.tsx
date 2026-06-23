@@ -14,7 +14,7 @@ const RANGES: HistoryRange[] = ["1D", "1W", "1M", "3M", "ALL"];
 type OwnedStock = { id: string; symbol: string; quantity?: number; purchasePrice?: number; dividendsEarned?: number };
 
 export default function StockDetailModal({
-  snapshot, owned, balance, onClose, onBuy, onSell,
+  snapshot, owned, balance, onClose, onBuy, onSell, initialMode = "buy",
 }: {
   snapshot: StockSnapshot;
   owned: OwnedStock | undefined;
@@ -22,6 +22,7 @@ export default function StockDetailModal({
   onClose: () => void;
   onBuy: (sym: string, name: string, qty: number, midPrice: number) => void;
   onSell: (stockId: string, qty: number, midPrice: number) => void;
+  initialMode?: "buy" | "sell";
 }) {
   const { isDark } = useTheme();
   const T = {
@@ -37,8 +38,9 @@ export default function StockDetailModal({
   };
 
   const [range, setRange] = useState<HistoryRange>("1M");
-  const [mode, setMode] = useState<"buy" | "sell">("buy");
-  const [qty, setQty] = useState<number>(1);
+  const ownedQtyInitial = owned?.quantity ?? 0;
+  const [mode, setMode] = useState<"buy" | "sell">(initialMode === "sell" && ownedQtyInitial > 0 ? "sell" : "buy");
+  const [qty, setQty] = useState<number>(initialMode === "sell" && ownedQtyInitial > 0 ? ownedQtyInitial : 1);
   const [justDid, setJustDid] = useState<string | null>(null);
 
   const history = useStockHistory(snapshot.symbol, range);
