@@ -37,10 +37,10 @@ export async function GET(req: NextRequest) {
       for (const lesson of (modJson.lessons ?? [])) {
         const lessonPath = path.join(modPath, lesson.filename);
         if (fs.existsSync(lessonPath)) {
-          const lessonData = JSON.parse(fs.readFileSync(lessonPath, "utf8"));
-        lessons.push({ ...lessonData, filename: lesson.filename });
+            const lessonData = JSON.parse(fs.readFileSync(lessonPath, "utf8"));
+          lessons.push({ ...lessonData, filename: lesson.filename });
+        }
       }
-    }
       return NextResponse.json({ ...modJson, folder, lessons });
     } catch (e: any) {
       return NextResponse.json({ error: e.message }, { status: 500 });
@@ -49,10 +49,21 @@ export async function GET(req: NextRequest) {
 
   // Return all modules summary
   try {
+    // Read hidden modules list
+    let hidden: string[] = [];
+    const hiddenPath = path.join(CURRICULUM_DIR, "hidden-modules.json");
+    if (fs.existsSync(hiddenPath)) {
+      try {
+        const parsed = JSON.parse(fs.readFileSync(hiddenPath, "utf8"));
+        hidden = Array.isArray(parsed) ? parsed : (parsed.hidden ?? []);
+      } catch {}
+    }
+
     const entries = fs.readdirSync(CURRICULUM_DIR, { withFileTypes: true });
     const modules: any[] = [];
     for (const entry of entries) {
       if (!entry.isDirectory()) continue;
+      if (hidden.includes(entry.name)) continue;
       const modFile = path.join(CURRICULUM_DIR, entry.name, "module.json");
       if (!fs.existsSync(modFile)) continue;
       try {
