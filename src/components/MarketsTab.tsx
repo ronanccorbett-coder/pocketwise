@@ -91,6 +91,10 @@ export default function MarketsTab({
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+      <style>{`
+        .pw-hscroll { scrollbar-width: none; -ms-overflow-style: none; }
+        .pw-hscroll::-webkit-scrollbar { display: none; height: 0; width: 0; }
+      `}</style>
       {/* Market status pill */}
       <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "0.72rem", color: T.text2 }}>
         <span style={{
@@ -126,9 +130,8 @@ export default function MarketsTab({
           <div style={{ fontSize: "0.7rem", fontWeight: 800, color: T.text2, padding: "0 14px 6px", letterSpacing: "0.05em" }}>
             TODAY'S HEADLINES
           </div>
-          <div style={{
+          <div className="pw-hscroll" style={{
             display: "flex", gap: 10, overflowX: "auto", padding: "0 14px",
-            scrollbarWidth: "thin",
           }}>
             {headlines.map((h, i) => {
               const positive = h.magnitude >= 0;
@@ -159,12 +162,12 @@ export default function MarketsTab({
         </div>
       )}
 
-      {/* Holdings strip — quick view of owned positions with one-tap sell */}
+      {/* Holdings strip — tap any holding to open full buy/sell menu */}
       <HoldingsStrip
         stocks={stocks}
         snapshots={snapshots}
         T={T}
-        onOpenSell={(sym) => openStock(sym, "sell")}
+        onOpenHolding={(sym) => openStock(sym, "buy")}
       />
 
       {/* Search + sort */}
@@ -317,12 +320,12 @@ function Mini({ label, info, value }: { label: string; info: string; value: stri
 // opens the detail modal pre-loaded into Sell mode with the full position
 // quantity selected. Also shows a portfolio total at the start of the strip.
 function HoldingsStrip({
-  stocks, snapshots, T, onOpenSell,
+  stocks, snapshots, T, onOpenHolding,
 }: {
   stocks: OwnedStock[];
   snapshots: Record<string, StockSnapshot>;
   T: any;
-  onOpenSell: (symbol: string) => void;
+  onOpenHolding: (symbol: string) => void;
 }) {
   // Sum unique symbols only — if there are duplicate legacy rows we still
   // surface each so the user can sell from any of them.
@@ -363,9 +366,9 @@ function HoldingsStrip({
           )}
         </div>
       </div>
-      <div style={{
+      <div className="pw-hscroll" style={{
         display: "flex", gap: 10, overflowX: "auto",
-        padding: "0 14px", scrollbarWidth: "thin",
+        padding: "0 14px",
       }}>
         {owned.map(h => {
           const snap = snapshots[h.symbol];
@@ -379,7 +382,7 @@ function HoldingsStrip({
           return (
             <button
               key={h.id}
-              onClick={() => onOpenSell(h.symbol)}
+              onClick={() => onOpenHolding(h.symbol)}
               style={{
                 flexShrink: 0, minWidth: 200, textAlign: "left",
                 background: T.input, borderRadius: 12, padding: "10px 12px",
@@ -397,12 +400,6 @@ function HoldingsStrip({
                     {h.quantity ?? 0} shares
                   </span>
                 </div>
-                <span style={{
-                  background: "#EF4444", color: "#fff",
-                  padding: "3px 10px", borderRadius: 6,
-                  fontSize: "0.65rem", fontWeight: 800,
-                  letterSpacing: "0.04em",
-                }}>SELL</span>
               </div>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
                 <span style={{ fontWeight: 900, fontSize: "1rem" }}>
