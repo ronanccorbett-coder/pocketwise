@@ -1,0 +1,160 @@
+{
+  "title": "Bulls, Bears and Market Cycles",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand",
+  "nceaFocus": "Extra Learning \u2014 Stock Market Foundations",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Define bull and bear markets and explain their causes",
+    "Describe the typical phases of a market cycle",
+    "Explain investor psychology during different market phases"
+  ],
+  "vocabulary": [
+    {
+      "term": "Bull market",
+      "definition": "A period when share prices are rising \u2014 typically defined as a rise of 20% or more from a recent low. Investors are optimistic. Usually lasts months to years."
+    },
+    {
+      "term": "Bear market",
+      "definition": "A period when share prices are falling \u2014 typically defined as a fall of 20% or more from a recent high. Investors are pessimistic. Usually shorter than bull markets but more intense."
+    },
+    {
+      "term": "Market correction",
+      "definition": "A fall of 10% to 20% from a recent high. Less severe than a bear market. Corrections are normal and happen regularly \u2014 roughly once per year on average."
+    },
+    {
+      "term": "Volatility",
+      "definition": "How much a share price moves up and down. High volatility means large swings. Low volatility means steady, small changes. Volatile stocks are generally riskier."
+    },
+    {
+      "term": "Market cycle",
+      "definition": "The repeating pattern of expansion (prices rising), peak (prices at maximum), contraction (prices falling), and trough (prices at minimum) that characterises share market behaviour."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Bulls and Bears",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What is a bull market? What is a bear market? Why do you think these animal names were chosen?",
+      "content": "Two animals dominate market vocabulary: bulls and bears.\n\nA bull market is a period of rising prices \u2014 generally defined as prices rising 20% or more from a recent low. Bull markets are driven by optimism, strong economic growth, rising corporate profits and investor confidence. The longest bull market in US history ran from 2009 to 2020 \u2014 over 11 years \u2014 as markets recovered from the Global Financial Crisis and kept rising.\n\nA bear market is a period of falling prices \u2014 generally defined as a fall of 20% or more from a recent high. Bear markets are driven by pessimism, economic slowdown, falling profits, or external shocks. The COVID-19 bear market in early 2020 was the fastest ever recorded \u2014 US markets fell 34% in just 33 days.\n\nWhy these animals? The bull thrusts its horns upward \u2014 prices going up. The bear swipes its paws downward \u2014 prices going down.\n\nBetween these are corrections (falls of 10% to 20%) which are entirely normal. Corrections happen roughly every year. Most investors should expect to see dozens of corrections over their investment lifetime \u2014 and not panic.\n\nHistorically, bull markets last much longer than bear markets. The average bull market lasts around 4 to 5 years; the average bear market lasts 9 to 16 months. Long-term investors benefit from staying patient through bear markets."
+    },
+    {
+      "type": "slide",
+      "title": "The Four Phases of a Market Cycle",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a simple cycle diagram with four phases labelled. For each phase, write what investors are typically feeling and doing.",
+      "content": "Markets move in cycles \u2014 not randomly. The same four phases repeat, though the timing and severity vary.\n\nPhase 1 \u2014 Expansion (bull market): The economy is growing. Company profits rise. Unemployment falls. Investors feel optimistic. Share prices climb steadily. News coverage is positive. Many people start investing for the first time.\n\nPhase 2 \u2014 Peak: Prices reach their highest point. Optimism is at maximum \u2014 some say 'this time is different' and prices will keep rising forever. Valuations become stretched. The smart money starts quietly selling.\n\nPhase 3 \u2014 Contraction (bear market): Something triggers a fall \u2014 a shock, an economic slowdown, rising interest rates, or simply prices getting too high. Prices decline. Investors panic and sell. Media coverage turns negative. New investors who bought at the peak are losing money and consider selling.\n\nPhase 4 \u2014 Trough: Prices reach their lowest point. Pessimism is at maximum \u2014 many people say 'the market will never recover.' But experienced investors know this is often the best time to buy. The economy slowly stabilises. The next expansion eventually begins.\n\nThen the cycle repeats. Understanding cycles does not mean you can predict exactly when each phase will start or end \u2014 nobody can. But knowing cycles exist helps you avoid the most common mistake: buying at the peak (when everyone is excited) and selling at the trough (when everyone is terrified)."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A market correction \u2014 a fall of 10% to 20% \u2014 is an unusual event that signals serious problems with the economy.",
+      "correctAnswer": false,
+      "explanation": "False. Market corrections of 10% to 20% are entirely normal and happen on average roughly once per year. They do not necessarily signal economic problems \u2014 they are often simply the market resetting after a period of strong gains. Long-term investors should expect and accept corrections as a normal part of investing. Panic-selling during a correction is one of the most common and costly mistakes individual investors make.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Investor Psychology \u2014 The Enemy Within",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What is the most common mistake investors make during a bull market? What about during a bear market? How does understanding market cycles help avoid these mistakes?",
+      "content": "The market cycle is as much a psychological phenomenon as an economic one. At each phase, typical investor behaviour makes the cycle more extreme.\n\nIn a bull market, greed grows. Investors feel smart \u2014 everything they buy goes up. They take on more risk, invest more money, and start believing prices will keep rising indefinitely. At the peak, this euphoria draws in the most new investors who have been watching from the sidelines \u2014 often at exactly the wrong time.\n\nIn a bear market, fear dominates. Investors who bought at or near the peak are losing money on paper. The headlines are terrifying. The impulse is to sell \u2014 to 'stop the bleeding.' But selling at the trough locks in losses and means missing the recovery.\n\nThe investor who buys $10,000 of the NZX 50 at the peak of a cycle, watches it fall 35% to $6,500, panics and sells, has turned a temporary paper loss into a permanent real loss of $3,500. The investor who holds through the same fall and waits for the recovery eventually sees the $10,000 return and then grow further.\n\nWarren Buffett \u2014 the world's most successful investor \u2014 summarises it: 'Be fearful when others are greedy, and greedy when others are fearful.' Buying during a bear market when prices are low is the highest-return strategy \u2014 if you can control the fear."
+    },
+    {
+      "type": "quiz",
+      "title": "Market Cycles Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "The NZX 50 falls 28% from its recent high over 6 months as the economy enters recession. What term best describes this?",
+          "options": [
+            "A market correction \u2014 a normal 10% to 20% pullback",
+            "A bull market \u2014 prices are moving in a bull pattern",
+            "A bear market \u2014 defined as a fall of 20% or more from a recent high",
+            "Market volatility \u2014 normal day-to-day price fluctuation"
+          ],
+          "correctIndex": 2,
+          "explanation": "A fall of 20% or more from a recent high is officially a bear market. A correction is only 10% to 20%. This 28% fall during a recession is a classic bear market \u2014 driven by falling corporate earnings expectations, rising unemployment and investor fear. Bear markets are painful but historically temporary."
+        },
+        {
+          "question": "At which phase of the market cycle do experienced investors typically find the best buying opportunities?",
+          "options": [
+            "At the peak \u2014 when the economy is strongest and company profits are at record highs",
+            "During expansion \u2014 when everyone is optimistic and prices have already risen significantly",
+            "At the trough \u2014 when pessimism is at maximum, prices are lowest, and assets are cheapest relative to their long-term value",
+            "Just before a correction \u2014 because corrections provide a small discount"
+          ],
+          "correctIndex": 2,
+          "explanation": "The trough of a bear market offers the best prices \u2014 companies are available at their cheapest relative to long-term value. This is exactly when investor sentiment is most negative and buying feels most frightening, which is why most ordinary investors do the opposite (sell at the trough) and miss the recovery. Experienced investors train themselves to buy when others are selling in panic."
+        },
+        {
+          "question": "A friend tells you: 'Everyone is making money in the market \u2014 I've just put my whole emergency fund in. Prices can only go up.' What market phase does this sentiment most likely signal?",
+          "options": [
+            "The trough \u2014 maximum pessimism signals buying opportunities",
+            "Early expansion \u2014 smart money is just beginning to buy in",
+            "The peak \u2014 maximum optimism and 'prices only go up' thinking often signals markets are overvalued and a correction or bear market may be coming",
+            "A correction \u2014 prices are down 15% and optimism is cautious"
+          ],
+          "correctIndex": 2,
+          "explanation": "When mainstream optimism peaks \u2014 when people who were previously not investors begin putting emergency funds into markets and believing prices can only go up \u2014 this often signals the market is at or near a peak. This is not a reliable timing tool (nobody knows exactly when a peak occurs), but extreme optimism is historically associated with overvalued markets. Investing emergency funds in shares is also a risk management error regardless of market phase."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Which Market Phase? Match the Description",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Prices at their highest point, optimism at maximum, experienced investors quietly selling",
+          "zone": "Peak"
+        },
+        {
+          "item": "Prices at their lowest, pessimism maximum, best time to buy for long-term investors",
+          "zone": "Trough"
+        },
+        {
+          "item": "Economy growing, profits rising, prices climbing, investors feeling optimistic",
+          "zone": "Expansion"
+        },
+        {
+          "item": "Prices falling sharply, investors panicking, negative media coverage dominates",
+          "zone": "Contraction"
+        }
+      ],
+      "explanation": "Market cycles repeat in the same four phases. The challenge is that it is impossible to know in real time exactly which phase you are in \u2014 peaks and troughs are only clearly visible in hindsight. This is why trying to 'time the market' (sell before the peak and buy at the trough) is so difficult, and why long-term investors generally prefer to stay invested through full cycles."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Historically, bear markets have lasted longer than bull markets on average.",
+      "correctAnswer": false,
+      "explanation": "False. Historically, bull markets last much longer than bear markets \u2014 the average bull market has lasted 4 to 5 years while the average bear market has lasted 9 to 16 months. This asymmetry is important for long-term investors: if you stay invested through a bear market, you typically spend far more time in rising markets than falling ones. The short but intense nature of bear markets is why panic-selling is so costly \u2014 you exit during the painful but brief falling phase and miss the longer recovery.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "A share portfolio was worth $15,000 at the market peak. The market falls 30% into a bear market. What is the portfolio now worth?",
+      "acceptedAnswers": [
+        "$10,500",
+        "10500",
+        "$10,500.00"
+      ],
+      "placeholder": "Type the portfolio value here...",
+      "hint": "Falling 30% means the portfolio retains 70% of its value.",
+      "explanation": "$15,000 \u00d7 (1 \u2212 0.30) = $15,000 \u00d7 0.70 = $10,500. This is a paper loss of $4,500. If the investor panics and sells, this loss becomes real and permanent. If they hold, historical evidence shows markets recover. For context, the NZX 50 fell approximately 35% in early 2020 but fully recovered within 12 months.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Would You Hold or Sell?",
+      "estimatedMinutes": 5,
+      "prompt": "Imagine you invested $2,000 in shares three months ago. Today the portfolio is worth $1,400 \u2014 a 30% fall. The news is full of warnings about the economy. Your friend says you should sell before it falls further. What would you actually do? What does everything in this lesson tell you you should do? Are they the same thing? Why is there a gap between what we know and what we feel?",
+      "nceaLink": "Extra Learning \u2014 understanding your own psychological responses to market movements is one of the most valuable investment skills."
+    }
+  ]
+}

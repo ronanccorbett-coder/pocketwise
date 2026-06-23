@@ -1,0 +1,154 @@
+{
+  "title": "Other Key Market Metrics",
+  "order": 6,
+  "dayNumber": 6,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning \u2014 Reading the Market",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Calculate and interpret price-to-book (P/B) ratio",
+    "Explain what free cash flow reveals that profit does not",
+    "Use return on equity (ROE) to compare management effectiveness"
+  ],
+  "vocabulary": [
+    {
+      "term": "Book value",
+      "definition": "The net asset value of a company \u2014 total assets minus total liabilities. What shareholders would theoretically receive if the company were liquidated at accounting values."
+    },
+    {
+      "term": "Price-to-book ratio (P/B)",
+      "definition": "Share price divided by book value per share. A P/B below 1 means the market values the company below its accounting net assets \u2014 unusual for healthy companies."
+    },
+    {
+      "term": "Free cash flow (FCF)",
+      "definition": "Cash generated from operations minus capital expenditure. The actual cash a company has available to pay dividends, buy back shares, or invest in growth. Harder to manipulate than reported profit."
+    },
+    {
+      "term": "Return on equity (ROE)",
+      "definition": "Net profit divided by shareholders' equity, expressed as a percentage. Measures how efficiently management uses shareholder capital to generate profit. Higher is better."
+    },
+    {
+      "term": "Debt-to-equity ratio",
+      "definition": "Total debt divided by shareholders' equity. Measures financial leverage. High D/E means more reliance on borrowed money \u2014 higher risk if earnings fall."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Beyond P/E \u2014 Other Ways to Value a Company",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: Why might free cash flow be a more honest measure of company health than reported net profit? Give one example of how a company could report high profit but low free cash flow.",
+      "content": "P/E is the most used valuation metric but it has limitations. Here are three additional measures that give a fuller picture.\n\nPrice-to-Book (P/B): Compares market value to accounting net assets. Useful for banks and asset-heavy companies. A P/B of 1.5 means you pay $1.50 for every $1 of net assets. Most quality businesses trade above 1\u00d7 book value because their earnings power exceeds their asset value.\n\nFormula: P/B = Share price \u00f7 (Total equity \u00f7 Shares on issue)\n\nFree Cash Flow (FCF): What profit should be but often is not. Profit can be manipulated through accounting choices \u2014 depreciation timing, revenue recognition, capitalising vs expensing costs. FCF is cash generated from operations minus capital expenditures. Cash is harder to fake.\n\nExample of divergence: A company builds a new factory for $50 million. Under accounting rules, this might be depreciated over 20 years ($2.5M per year hit to profit). But $50M of cash went out the door immediately. FCF falls by $50M in the year of investment; reported profit only falls by $2.5M. A company can report strong profit while burning cash \u2014 FCF exposes this.\n\nReturn on Equity (ROE): Measures how effectively management deploys shareholder capital. A ROE of 20% means the company generates $20 of profit for every $100 of equity invested. Higher ROE sustained over many years is a hallmark of quality businesses. Warren Buffett's criteria: consistent ROE above 15%."
+    },
+    {
+      "type": "slide",
+      "title": "ROE \u2014 Are Management Using Your Money Well?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Calculate ROE for: Company A earns $60M profit on $400M equity. Company B earns $200M profit on $2 billion equity. Which management is using capital more efficiently?",
+      "content": "Return on equity (ROE) cuts through company size to ask: for every dollar of shareholders' money, how much profit is being generated?\n\nFormula: ROE = Net profit \u00f7 Shareholders' equity \u00d7 100\n\nNZ examples:\nFisher and Paykel Healthcare: Net profit $310M, equity approximately $1.5B\nROE = $310M \u00f7 $1,500M \u00d7 100 = 20.7% \u2014 excellent\n\nSpark NZ: Net profit $408M, equity approximately $2.8B\nROE = $408M \u00f7 $2,800M \u00d7 100 = 14.6% \u2014 acceptable for a capital-intensive utility-like business\n\nMainfreight: Net profit approximately $300M, equity approximately $900M\nROE = $300M \u00f7 $900M \u00d7 100 = 33.3% \u2014 outstanding\n\nWhat ROE tells you:\n\u2014 ROE above 15% consistently: excellent capital allocation, likely has competitive advantages\n\u2014 ROE 10\u201315%: adequate\n\u2014 ROE below 10%: capital is being used inefficiently \u2014 management may not be adding enough value\n\nCaution: ROE can be inflated by high debt (leverage). A company borrowing heavily to fund returns looks more profitable per dollar of equity \u2014 but carries more risk. Always check the debt-to-equity ratio alongside ROE."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A company with a Price-to-Book ratio below 1.0 is always an excellent investment because you are buying assets cheaper than their accounting value.",
+      "correctAnswer": false,
+      "explanation": "False. A P/B below 1 means the market values the company below its net accounting assets \u2014 but accounting values can be misleading. Assets might be overstated (inventory that cannot be sold, goodwill from bad acquisitions), or the company might have genuinely declining earnings that justify the discount. Banks often trade below book value during financial crises because investors fear their loan books contain bad debts. A below-book price is a signal to investigate further, not an automatic buy.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Debt \u2014 The Double-Edged Sword",
+      "estimatedMinutes": 4,
+      "notePrompt": "Calculate the debt-to-equity ratio for: Company A has $800M debt and $400M equity. Is this high or low? What would happen to this company if its earnings fell 50%?",
+      "content": "Debt amplifies both gains and losses. Understanding a company's debt level is crucial before investing.\n\nDebt-to-equity ratio (D/E) = Total debt \u00f7 Shareholders' equity\n\nA D/E of 1.0 means the company has $1 of debt for every $1 of equity. A D/E of 3.0 means $3 of debt for every $1 of equity \u2014 highly leveraged.\n\nWhy debt can be good: Borrowing at 6% to invest in projects generating 15% returns adds real value. Moderate leverage is normal and sensible.\n\nWhy debt is dangerous when overdone: Debt requires regular interest and principal payments regardless of how the business is performing. In a downturn, a highly leveraged company may not be able to service its debt \u2014 leading to covenant breaches, asset sales at distressed prices, or even bankruptcy.\n\nNZ example \u2014 Air New Zealand pre-COVID:\nAir NZ carried significant debt to fund aircraft purchases. COVID-19 destroyed revenue overnight. The NZ government had to inject $900 million to prevent bankruptcy. Shareholders were severely diluted. High fixed debt costs made the company highly vulnerable to revenue disruption.\n\nInfratil comparison:\nInfratil carries substantial debt (typical for infrastructure companies which have stable, predictable cash flows that can reliably service debt). Their debt is matched to long-term contracted revenue \u2014 less risky than cyclical businesses carrying the same leverage.\n\nNZX norms by sector:\nUtilities/infrastructure: D/E up to 2.0\u00d7 \u2014 normal and manageable\nManufacturing/logistics: D/E 0.3\u20130.8\u00d7 \u2014 manageable\nRetailers/consumer: D/E ideally below 0.5\u00d7 \u2014 volatile revenues need lower debt\nTech companies: ideally minimal debt \u2014 growth funds itself or through equity"
+    },
+    {
+      "type": "quiz",
+      "title": "Additional Metrics Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Mainfreight earns $300 million net profit on shareholders' equity of $900 million. What is its ROE and how does it compare to the 15% benchmark for excellent capital allocation?",
+          "options": [
+            "ROE 3.3% \u2014 significantly below benchmark, suggesting poor capital allocation",
+            "ROE 15.0% \u2014 exactly at benchmark, suggesting adequate but not exceptional performance",
+            "ROE 33.3% \u2014 well above the 15% benchmark, indicating excellent capital use",
+            "ROE 300% \u2014 calculated by dividing profit by equity expressed in millions"
+          ],
+          "correctIndex": 2,
+          "explanation": "$300M \u00f7 $900M \u00d7 100 = 33.3% ROE. This is well above Buffett's 15% threshold for excellent capital allocation. Mainfreight consistently generates high returns on equity because it operates efficiently without excessive capital needs \u2014 its asset-light logistics model (using third-party transport and leased facilities where possible) allows high returns on a relatively small equity base. This consistent high ROE is a hallmark of a quality business."
+        },
+        {
+          "question": "A company reports net profit of $80 million but its free cash flow is only $15 million. What might explain this gap?",
+          "options": [
+            "The company has been paying excessive dividends which reduce free cash flow below profit",
+            "The company has made large capital expenditures (new factories, equipment) that reduce cash flow but are depreciated slowly over many years in the profit calculation",
+            "The company has received large tax refunds that inflate reported profit without generating cash",
+            "Free cash flow is always lower than profit due to accounting rules \u2014 the gap is not concerning"
+          ],
+          "correctIndex": 1,
+          "explanation": "Large capital expenditure is the most common reason FCF falls well below net profit. If a company spends $65 million on new equipment in a year (reducing FCF by $65M) but depreciates it over 20 years ($3.25M per year hitting profit), reported profit remains high while FCF is much lower. This is not necessarily bad \u2014 it might represent valuable growth investment \u2014 but it does mean less cash is available for dividends or buybacks this year."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Metric to What It Measures",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "P/E ratio",
+          "zone": "How many years of current earnings investors are paying"
+        },
+        {
+          "item": "ROE",
+          "zone": "How efficiently management generates profit from shareholder capital"
+        },
+        {
+          "item": "Free cash flow",
+          "zone": "Actual cash generated after capital expenditure \u2014 harder to manipulate than profit"
+        },
+        {
+          "item": "P/B ratio",
+          "zone": "How market value compares to accounting net asset value"
+        },
+        {
+          "item": "D/E ratio",
+          "zone": "How much debt the company carries relative to shareholder equity"
+        }
+      ],
+      "explanation": "Using multiple metrics together gives a much fuller picture than any single metric. A company might look cheap on P/E but have terrible ROE and high debt. Or it might look expensive on P/E but have exceptional free cash flow growth and a pristine balance sheet. Professional analysts routinely use 5\u201310 metrics together before forming a view."
+    },
+    {
+      "type": "truefalse",
+      "statement": "High ROE is always good \u2014 a company achieving 50% ROE is always an excellent investment regardless of other factors.",
+      "correctAnswer": false,
+      "explanation": "Not always. A very high ROE can be driven by excessive debt rather than operational excellence. If a company borrows heavily ($900M debt on $100M equity), a modest profit of $30M looks like 30% ROE \u2014 but the company is extremely leveraged and fragile. Always check D/E alongside ROE. Buffett looks for companies with high ROE AND minimal debt \u2014 this combination indicates genuine competitive advantage rather than financial engineering.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "A company has net profit of $45 million and shareholders' equity of $300 million. What is its Return on Equity as a percentage?",
+      "acceptedAnswers": [
+        "15%",
+        "15",
+        "15.0%",
+        "15.0"
+      ],
+      "placeholder": "Type the ROE percentage here...",
+      "hint": "ROE = (Net profit \u00f7 Shareholders' equity) \u00d7 100.",
+      "explanation": "$45M \u00f7 $300M \u00d7 100 = 15%. This exactly meets Buffett's benchmark of 15% for excellent capital allocation. A company consistently generating 15%+ ROE year after year typically possesses durable competitive advantages \u2014 it earns significantly more than its cost of capital, compounding shareholder value over time.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "The Full Metrics Picture",
+      "estimatedMinutes": 5,
+      "prompt": "Look up any NZ company and try to find: P/E ratio, ROE, and whether the company has significant debt (check its annual report or NZX profile). Write three sentences: what do these metrics together tell you about the quality of this business? Is any single metric misleading without the others?",
+      "nceaLink": "Extra Learning \u2014 using metrics together is the mark of an analyst, not just a data reader."
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "title": "Famous Investors and Investment Principles",
+  "order": 7,
+  "dayNumber": 7,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning \u2014 Stock Market Foundations",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Describe the investment principles of Warren Buffett and index fund investing",
+    "Explain what 'buying undervalued shares' means",
+    "Identify principles applicable to young NZ investors"
+  ],
+  "vocabulary": [
+    {
+      "term": "Value investing",
+      "definition": "Buying shares that appear to be trading below their true underlying value, then waiting for the market to recognise that value. Associated with Warren Buffett and Benjamin Graham."
+    },
+    {
+      "term": "Growth investing",
+      "definition": "Buying shares in companies expected to grow earnings faster than average, even if the current price seems high. Associated with investors like Peter Lynch and Cathie Wood."
+    },
+    {
+      "term": "Margin of safety",
+      "definition": "Buffett principle: only buy a share when the price is significantly below what the company is really worth \u2014 giving you a buffer against being wrong."
+    },
+    {
+      "term": "Time in the market vs timing the market",
+      "definition": "Research shows that staying invested long-term (time in the market) produces better average returns than trying to buy at lows and sell at highs (timing the market)."
+    },
+    {
+      "term": "Compounding moat",
+      "definition": "A competitive advantage that keeps competitors out \u2014 like a brand, patent, network effect or cost advantage. Buffett seeks companies with wide moats."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Warren Buffett \u2014 The World's Greatest Investor",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down three specific principles Buffett uses when deciding whether to buy a company's shares.",
+      "content": "Warren Buffett has compounded money at approximately 20% per year for over 60 years through his company Berkshire Hathaway \u2014 turning a textile business into a USD $900 billion conglomerate. His approach is simple in principle but difficult in practice.\n\nBuffett buys businesses, not tickers. He reads company annual reports for hours every day. He wants to understand exactly how a business makes money, why customers choose it over competitors, and whether it can sustain that advantage for decades.\n\nHis five core principles:\n1. Invest in what you understand. Never buy a business whose economics you cannot explain.\n2. Buy at a discount to intrinsic value. The price you pay determines your return. Buy $1 worth of business for $0.70 \u2014 that $0.30 gap is your margin of safety.\n3. Look for a competitive moat. Companies with durable advantages \u2014 strong brands (Coca-Cola), network effects (credit card networks), switching costs (Apple ecosystem) \u2014 can compound earnings for decades.\n4. Think long-term. Buffett's favourite holding period is 'forever.' He buys companies he would be happy to hold if the market closed for 10 years.\n5. Be patient. Buffett waits for the right opportunity. Most of his greatest returns came from buying during market panics when good businesses were temporarily cheap.\n\nHis most famous quote on individual investors: 'For most investors, the best thing to do is own an S&P 500 index fund.' He acknowledges even he cannot easily beat the index with small sums of money."
+    },
+    {
+      "type": "slide",
+      "title": "Jack Bogle and the Index Fund Revolution",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What did Jack Bogle argue that most fund managers get wrong? Why are fees such a big deal in long-term investing?",
+      "content": "Jack Bogle founded Vanguard in 1975 and launched the first index fund available to ordinary investors. Financial professionals ridiculed the idea \u2014 why would anyone settle for 'average' returns? Bogle's response: because after fees, most active managers produce below-average returns.\n\nBogle's central insight: in a given market, all investors collectively must earn the market return before costs. After fees, the average active investor must earn less than the market. Therefore the average index fund investor must outperform the average active investor. It is mathematics.\n\nThe fee difference compounds dramatically. A 1% annual fee difference on $100,000 invested for 30 years at 8% return costs approximately $170,000 in lost wealth. The fee is not 1% of your money \u2014 it is 1% of your money compounding for 30 years.\n\nBogle's principles for ordinary investors:\n\u2014 Invest early and often\n\u2014 Never try to time the market\n\u2014 Keep costs as low as possible\n\u2014 Diversify broadly \u2014 own the whole market\n\u2014 Stay the course \u2014 do not react to market volatility\n\u2014 Never look at your portfolio every day\n\nVanguard is now the world's second-largest asset manager with over USD $7 trillion under management. The index fund revolution Bogle started has saved investors hundreds of billions of dollars in fees. In NZ, Simplicity and Smartshares are built on Bogle's principles."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Warren Buffett recommends that most ordinary investors should actively pick individual shares the same way he does.",
+      "correctAnswer": false,
+      "explanation": "False. Buffett has explicitly and repeatedly stated that for most ordinary investors, the best strategy is to invest regularly in a low-cost S&P 500 index fund. He acknowledges that stock-picking at his level requires enormous time, expertise and access that most people do not have. In his 2013 annual letter, he instructed his estate trustee to invest 90% of his wife's inheritance in a low-cost S&P 500 index fund \u2014 not in individual stocks. He considers this the best advice he can give the average investor.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Principles Every Young NZ Investor Can Apply",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write down the five principles from this slide. For each one, write a one-sentence example of how a 15-year-old in NZ could apply it with $500.",
+      "content": "You do not need $1 million to apply investment principles. Here are five that work at any investment size.\n\n1. Start as early as possible. Time is the most powerful ingredient in compound growth. Starting at 15 instead of 25 can double your wealth at retirement from the same amount invested. Every year of delay is costly.\n\n2. Invest regularly, not in lump sums. Dollar-cost averaging \u2014 investing a fixed amount regularly (e.g. $50 per month) \u2014 means you automatically buy more shares when prices are low and fewer when high. This removes the need to 'time the market.'\n\n3. Keep fees low. A 1% annual fee sounds trivial but compounds to enormous cost over 30 years. Choose index funds with management expense ratios (MERs) below 0.5%.\n\n4. Diversify. Do not put all your money in one company, one sector, or one country. Hold a mix of NZ shares, international shares, and possibly bonds as you approach retirement.\n\n5. Ignore short-term noise. News headlines, social media posts and YouTube videos about stocks are designed for engagement, not returns. The 24-hour news cycle is irrelevant to a 30-year investment plan. Check your portfolio quarterly, not daily."
+    },
+    {
+      "type": "quiz",
+      "title": "Famous Investors and Principles Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Warren Buffett values a 'moat' in a business. Which of the following is the best example of a strong competitive moat?",
+          "options": [
+            "A company that currently has the highest profit margins in its industry, but operates in a market where anyone can enter with low startup costs",
+            "A company that recently hired very talented staff away from competitors",
+            "A company whose product has strong network effects \u2014 the more users it has, the more valuable it becomes, making it very difficult for new entrants to compete",
+            "A company that has grown revenue by 30% this year due to a one-time government contract"
+          ],
+          "correctIndex": 2,
+          "explanation": "Network effects are one of the strongest moats. Examples include Visa and Mastercard (more merchants accept them because more customers use them), SEEK (more employers advertise there because more candidates use it), and TradeMe (more buyers because more sellers, and vice versa). These advantages compound over time and are extremely difficult for competitors to replicate \u2014 unlike high margins in a low-barrier industry or temporary contracts."
+        },
+        {
+          "question": "Jack Bogle's main argument for index funds is that after fees, most active fund managers produce returns below the market index. Why is this necessarily true?",
+          "options": [
+            "Fund managers are less intelligent than index fund algorithms",
+            "Active managers trade too frequently, creating excessive capital gains tax",
+            "All investors in aggregate must earn the market return before costs \u2014 so after subtracting higher active management fees, the average active investor must underperform the average index investor",
+            "Index funds use machine learning to consistently identify undervalued shares faster than human managers"
+          ],
+          "correctIndex": 2,
+          "explanation": "This is Bogle's zero-sum insight. Every share trade has a buyer and a seller \u2014 one outperforms the market, one underperforms. In aggregate, all active investors earn the market return before costs. Index fund investors pay 0.1% to 0.2% in fees; active investors pay 0.8% to 1.5% or more. So on average, after fees, active investors must earn less than index investors. This mathematical certainty is why index funds win in the long run on average."
+        },
+        {
+          "question": "Dollar-cost averaging means investing $200 every month regardless of what the market is doing. What is the main benefit of this approach?",
+          "options": [
+            "You always buy shares at their lowest price for the month",
+            "You automatically buy more shares when prices are low and fewer when prices are high \u2014 reducing the average cost per share over time without needing to time the market",
+            "You receive a bonus dividend payment from index funds for consistent contributions",
+            "It guarantees you will never experience a capital loss on any individual purchase"
+          ],
+          "correctIndex": 1,
+          "explanation": "Dollar-cost averaging buys more shares when prices are low (your $200 buys more at $4/share than at $8/share) and fewer when prices are high. Over time, this reduces the average cost per share compared to investing lump sums at random times. It also eliminates the psychological burden of trying to 'buy at the right time' \u2014 you invest consistently regardless of market conditions."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Value or Growth? Match the Investment Description",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Buy shares trading below what the company is fundamentally worth \u2014 focus on price paid",
+          "zone": "Value Investing"
+        },
+        {
+          "item": "Buy fast-growing companies even at high prices, expecting earnings to catch up",
+          "zone": "Growth Investing"
+        },
+        {
+          "item": "Seek businesses with strong moats and long histories of steady earnings",
+          "zone": "Value Investing"
+        },
+        {
+          "item": "Invest in early-stage technology, biotech or consumer brands with disruptive potential",
+          "zone": "Growth Investing"
+        },
+        {
+          "item": "Use a margin of safety \u2014 only buy when price is well below intrinsic value",
+          "zone": "Value Investing"
+        },
+        {
+          "item": "Accept high P/E ratios because future earnings growth will justify today's price",
+          "zone": "Growth Investing"
+        }
+      ],
+      "explanation": "Value and growth are two major investment philosophies. Both have periods of outperformance \u2014 value tends to do better in mature markets and after downturns; growth tends to do better in low-interest-rate expansions. Most professional investors blend elements of both. Index fund investors get exposure to both automatically."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Research shows that investors who check their portfolio prices daily tend to achieve better long-term returns than those who check quarterly.",
+      "correctAnswer": false,
+      "explanation": "False. Research shows the opposite. Investors who monitor their portfolios frequently tend to react emotionally to short-term movements \u2014 selling during dips, buying during rallies \u2014 which destroys long-term returns. Studies consistently find that investors who check less frequently and trade less often outperform frequent traders. Jack Bogle's advice: set your investment plan, automate contributions, and check quarterly at most.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What term describes Buffett's principle of only buying a share when the price is significantly below the company's estimated true worth, providing a buffer against being wrong?",
+      "acceptedAnswers": [
+        "margin of safety",
+        "Margin of Safety",
+        "margin of safety principle"
+      ],
+      "placeholder": "Type the term here...",
+      "hint": "It is a three-word phrase introduced in the vocabulary at the top of this lesson.",
+      "explanation": "Margin of safety is one of Buffett's (and his mentor Benjamin Graham's) core principles. If you estimate a company is worth $20 per share and buy it at $15, the $5 gap is your margin of safety. Even if your estimate is slightly wrong, you still paid below true value. Without a margin of safety, any error in your analysis leads directly to a loss. With it, modest estimation errors are absorbed without capital loss.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Your Investment Philosophy",
+      "estimatedMinutes": 5,
+      "prompt": "Based on what you have learned so far in this module, write three personal investment principles you want to follow when you start investing. For each principle, explain why you have chosen it and what specific mistake it is designed to prevent. They can be inspired by Buffett, Bogle or anyone else \u2014 or entirely your own.",
+      "nceaLink": "Extra Learning \u2014 having a clear investment philosophy before you start investing helps you make better decisions during volatile markets."
+    }
+  ]
+}

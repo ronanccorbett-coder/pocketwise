@@ -1,0 +1,165 @@
+{
+  "title": "P/E Ratio and EPS \u2014 The Core Valuation Metrics",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning \u2014 Reading the Market",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Calculate earnings per share (EPS) from a company's financial data",
+    "Calculate and interpret the price-to-earnings (P/E) ratio",
+    "Compare two companies using P/E and explain what a difference in P/E implies"
+  ],
+  "vocabulary": [
+    {
+      "term": "Earnings per share (EPS)",
+      "definition": "Net profit after tax divided by number of shares on issue. The profit each share earns. Higher EPS generally means a more profitable company per share."
+    },
+    {
+      "term": "Price-to-earnings ratio (P/E)",
+      "definition": "Share price divided by EPS. Shows how many years of current earnings investors are paying. A P/E of 20 means investors pay 20 years of current earnings for one share."
+    },
+    {
+      "term": "Forward P/E",
+      "definition": "P/E calculated using forecast future earnings rather than historical earnings. More forward-looking but relies on earnings estimates that may prove wrong."
+    },
+    {
+      "term": "Earnings growth",
+      "definition": "The percentage increase in a company's EPS from one year to the next. Growing earnings typically justify a higher P/E ratio."
+    },
+    {
+      "term": "PEG ratio",
+      "definition": "P/E divided by earnings growth rate. A PEG of 1.0 is considered fair value \u2014 accounts for the fact that faster-growing companies deserve higher P/E ratios."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Earnings Per Share \u2014 How Much Profit Per Share?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Calculate EPS for: Company A earns $45 million profit with 150 million shares. Company B earns $120 million profit with 500 million shares. Which has higher EPS? Which is more profitable in absolute terms?",
+      "content": "Earnings per share (EPS) is the most fundamental measure of a company's profitability on a per-share basis.\n\nFormula: EPS = Net profit after tax \u00f7 Shares on issue\n\nExample \u2014 Fisher and Paykel Healthcare:\nNet profit 2024: $310 million\nShares on issue: 579 million\nEPS = $310,000,000 \u00f7 579,000,000 = $0.535 per share\n\nEPS tells you: each FPH share earned $0.535 of profit in 2024.\n\nWhy EPS matters more than total profit: A company with $500 million profit and 2 billion shares ($0.25 EPS) is less profitable per share than a company with $100 million profit and 150 million shares ($0.67 EPS). EPS normalises profit by the number of shares, allowing fair comparison between companies of different sizes.\n\nEPS growth: The change in EPS from year to year is even more important than the absolute level. If FPH's EPS was $0.45 last year and is $0.535 this year, EPS grew 18.9% \u2014 a strong signal of improving business performance.\n\nDiluted EPS: Companies also report diluted EPS, which accounts for shares that might be issued in future (from employee options, convertible bonds etc.). Diluted EPS is always equal to or lower than basic EPS, and is the more conservative measure."
+    },
+    {
+      "type": "slide",
+      "title": "The P/E Ratio \u2014 How Much Are You Paying for Profits?",
+      "estimatedMinutes": 4,
+      "notePrompt": "If Mainfreight has an EPS of $4.20 and a share price of $70, what is its P/E? If the NZX average P/E is 22\u00d7, is Mainfreight cheap or expensive? What might justify the difference?",
+      "content": "The price-to-earnings ratio is the most widely used valuation metric in investing.\n\nFormula: P/E = Share price \u00f7 EPS\n\nExample:\nMainfreight share price: $70.00\nMainfreight EPS: $4.20\nP/E = $70 \u00f7 $4.20 = 16.7\u00d7\n\nWhat P/E means: You are paying $16.70 for every $1 of annual earnings. Or equivalently: if earnings stay constant, it would take 16.7 years of earnings to pay back your purchase price.\n\nHow to interpret P/E:\n\u2014 NZX 50 average P/E: approximately 20\u00d7 to 25\u00d7\n\u2014 Low P/E (below 15\u00d7): potentially cheap, or market expects earnings to decline\n\u2014 High P/E (above 30\u00d7): potentially expensive, or market expects strong future earnings growth\n\u2014 Very high P/E (above 50\u00d7): market is betting on dramatic future growth \u2014 very common in tech companies\n\nContext matters: Comparing P/E only makes sense within the same industry or against the historical average for that company. A 25\u00d7 P/E is cheap for a fast-growing software company but expensive for a slow-growth utility.\n\nNZ examples (approximate 2024 P/E):\nFisher and Paykel Healthcare: ~38\u00d7 (growth company premium)\nMainfreight: ~17\u00d7 (reasonable for a quality logistics company)\nSpark NZ: ~19\u00d7 (mature, steady telco)\nMeridian Energy: ~30\u00d7 (renewable energy premium)"
+    },
+    {
+      "type": "truefalse",
+      "statement": "A low P/E ratio always means a share is cheap and represents a good buying opportunity.",
+      "correctAnswer": false,
+      "explanation": "False. A low P/E can mean a share is cheap \u2014 or it can mean the market expects the company's earnings to decline, making today's EPS a misleading starting point. This is called a 'value trap': a company looks cheap on P/E but earnings fall, and the P/E was low because the market correctly anticipated the decline. Always ask WHY a P/E is low before concluding it is a bargain. Is it cheap because it is overlooked, or cheap because the business is deteriorating?",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Comparing Companies Using P/E \u2014 Worked Example",
+      "estimatedMinutes": 5,
+      "notePrompt": "Using the Spark vs Contact Energy comparison, write two sentences: one explaining why Contact Energy might deserve a higher P/E, one explaining why a higher P/E might be unjustified.",
+      "content": "P/E comparison between two NZ energy companies:\n\nSpark NZ (SPK): Telecommunications\nShare price: $4.20 | EPS: $0.22 | P/E: 19.1\u00d7\nGrowth rate: ~3% per year | Dividend yield: 6.5%\n\nContact Energy (CEN): Electricity generation and retail\nShare price: $8.35 | EPS: $0.36 | P/E: 23.2\u00d7\n\nGrowth rate: ~6% per year | Dividend yield: 4.6%\n\nContact Energy trades at a higher P/E (23.2\u00d7) than Spark (19.1\u00d7). Why might this be justified?\n\u2014 Contact Energy is growing earnings faster (6% vs 3%) \u2014 higher growth justifies higher multiple\n\u2014 Renewable electricity is benefiting from electrification trends (EVs, heat pumps) \u2014 structural tailwind\n\u2014 Investors may view electricity as having better long-term demand growth than telecom\n\nWhy the higher P/E might NOT be justified:\n\u2014 Spark's dividend yield (6.5%) is significantly higher than Contact's (4.6%)\n\u2014 Telecom is a more predictable, stable business with less risk\n\u2014 If Contact's earnings growth slows, the 23.2\u00d7 P/E looks expensive\n\nThe PEG ratio helps adjust for growth:\nSpark PEG: 19.1 \u00f7 3 = 6.4 (very high \u2014 paying a lot per unit of growth)\nContact PEG: 23.2 \u00f7 6 = 3.9 (still high but less so given faster growth)\n\nNeither is 'cheap' on PEG but Contact Energy offers better value on a growth-adjusted basis."
+    },
+    {
+      "type": "quiz",
+      "title": "P/E and EPS Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Meridian Energy earns $320 million net profit and has 1,600 million shares on issue. What is its EPS?",
+          "options": [
+            "$0.10 \u2014 $320M divided by 1,600M shares divided by 2",
+            "$0.20 \u2014 $320,000,000 divided by 1,600,000,000 shares",
+            "$2.00 \u2014 net profit in cents per share",
+            "$320 \u2014 total profit not adjusted for share count"
+          ],
+          "correctIndex": 1,
+          "explanation": "$320,000,000 \u00f7 1,600,000,000 = $0.20 EPS. Each Meridian share earned $0.20 of profit in the year. At a share price of $5.60, the P/E ratio would be $5.60 \u00f7 $0.20 = 28\u00d7. This means investors are paying 28 years of current earnings for each share \u2014 reflecting Meridian's position as a high-quality renewable energy company with strong long-term demand growth prospects."
+        },
+        {
+          "question": "Company A has a P/E of 12\u00d7 and Company B has a P/E of 35\u00d7. Company A is a mature grocery retailer growing at 2% per year. Company B is a healthcare technology firm growing at 25% per year. Which valuation is likely more reasonable?",
+          "options": [
+            "Company A is clearly the better buy \u2014 a P/E of 12 is always cheaper and safer than 35",
+            "Company B is overvalued at 35\u00d7 \u2014 no company is worth more than 20\u00d7 earnings",
+            "Both valuations may be reasonable given their growth profiles \u2014 12\u00d7 for a 2% grower and 35\u00d7 for a 25% grower can both represent fair value depending on the quality and sustainability of the growth",
+            "Company A is overvalued at 12\u00d7 because grocery retail is a declining industry"
+          ],
+          "correctIndex": 2,
+          "explanation": "P/E must be evaluated relative to growth. A 2% growing grocery retailer trading at 12\u00d7 P/E is actually quite richly valued \u2014 PEG = 12\u00f72 = 6\u00d7. A 25% growing healthcare tech at 35\u00d7 has PEG = 35\u00f725 = 1.4\u00d7 \u2014 actually better value on a growth-adjusted basis. Both could be reasonably valued. P/E in isolation tells you nothing without growth context."
+        },
+        {
+          "question": "Fisher and Paykel Healthcare's EPS was $0.45 last year and is $0.535 this year. What is the EPS growth rate?",
+          "options": [
+            "0.085% \u2014 the raw difference between the two EPS figures",
+            "8.5% \u2014 (0.535 \u2212 0.45) \u00f7 0.535 \u00d7 100 using the new EPS as base",
+            "18.9% \u2014 ($0.535 \u2212 $0.45) \u00f7 $0.45 \u00d7 100",
+            "53.5% \u2014 this year's EPS as a percentage of one dollar"
+          ],
+          "correctIndex": 2,
+          "explanation": "EPS growth = (new EPS \u2212 old EPS) \u00f7 old EPS \u00d7 100 = ($0.535 \u2212 $0.45) \u00f7 $0.45 \u00d7 100 = $0.085 \u00f7 $0.45 \u00d7 100 = 18.9%. Always divide by the starting (old) value when calculating percentage growth. An 18.9% EPS growth rate is very strong and typically supports a premium P/E multiple."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "High P/E or Low P/E? Match the Scenario",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Fast-growing NZ tech company with 40% annual earnings growth",
+          "zone": "Typically High P/E (30\u201360\u00d7)"
+        },
+        {
+          "item": "Mature NZ electricity retailer with 3% annual growth and high dividend",
+          "zone": "Typically Low-Medium P/E (15\u201322\u00d7)"
+        },
+        {
+          "item": "Early-stage biotech with no profits yet but promising drug pipeline",
+          "zone": "No P/E (not calculable \u2014 no earnings)"
+        },
+        {
+          "item": "Established NZ logistics company with consistent 8% earnings growth",
+          "zone": "Typically Medium P/E (18\u201328\u00d7)"
+        },
+        {
+          "item": "Company whose earnings have fallen 60% \u2014 market expects further decline",
+          "zone": "Misleadingly High P/E \u2014 earnings may fall further"
+        }
+      ],
+      "explanation": "P/E reflects both current earnings and the market's expectations for future earnings growth. High-growth companies deserve high P/E multiples. Stable, low-growth businesses trade at lower multiples. Unprofitable companies have no meaningful P/E. And companies with collapsing earnings can show misleadingly high P/E \u2014 the number looks high but it is because earnings have plunged, not because the company is valued generously."
+    },
+    {
+      "type": "truefalse",
+      "statement": "The PEG ratio adjusts the P/E ratio for earnings growth, making it more useful for comparing a fast-growing company to a slow-growing one.",
+      "correctAnswer": true,
+      "explanation": "True. PEG (P/E \u00f7 earnings growth rate) accounts for the fact that faster-growing companies deserve higher P/E multiples. A company with a 30\u00d7 P/E and 30% growth has PEG = 1.0 \u2014 considered fair value. A company with 30\u00d7 P/E and 3% growth has PEG = 10 \u2014 considered very expensive. PEG = 1.0 is traditionally the dividing line between cheap (below 1) and expensive (above 1), though like all metrics it is a guide not a rule.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "A company has a share price of $15.60 and EPS of $0.78. What is its P/E ratio?",
+      "acceptedAnswers": [
+        "20",
+        "20\u00d7",
+        "20x",
+        "20.0"
+      ],
+      "placeholder": "Type the P/E ratio here...",
+      "hint": "P/E = share price \u00f7 EPS.",
+      "explanation": "$15.60 \u00f7 $0.78 = 20. The P/E ratio is 20\u00d7. This means investors are paying $20 for every $1 of annual earnings. Compared to the NZX 50 average of approximately 20\u201325\u00d7, this is at the low end of market average \u2014 suggesting either fair value or that the market expects low future earnings growth.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Find a Real P/E",
+      "estimatedMinutes": 5,
+      "prompt": "Look up any NZ company on nzx.com or Google Finance. Find its P/E ratio. Find its sector average P/E (you may need to compare to similar companies). Write: Is your company above or below its sector average P/E? What might explain this \u2014 is the company growing faster, has it had a bad year, or is it genuinely better or worse quality than peers?",
+      "nceaLink": "Extra Learning \u2014 interpreting P/E in context is one of the most useful practical investment skills."
+    }
+  ]
+}

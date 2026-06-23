@@ -1,0 +1,159 @@
+{
+  "title": "Revenue Quality and Profit Margins",
+  "order": 5,
+  "dayNumber": 5,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Analyse",
+  "nceaFocus": "Extra Learning \u2014 Company Analysis",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Distinguish between high-quality and low-quality revenue streams",
+    "Analyse gross margin trends to assess competitive positioning",
+    "Identify operating leverage and its effect on profit growth"
+  ],
+  "vocabulary": [
+    {
+      "term": "Recurring revenue",
+      "definition": "Revenue that automatically renews and is highly predictable \u2014 subscriptions, SaaS fees, long-term contracts. More valuable than one-off transactional revenue."
+    },
+    {
+      "term": "Gross margin",
+      "definition": "Gross profit as a percentage of revenue. High and stable gross margins suggest pricing power and competitive advantage."
+    },
+    {
+      "term": "EBITDA margin",
+      "definition": "EBITDA as a percentage of revenue. A measure of operational profitability before non-cash charges and financing. Widely used for comparing companies across capital structures."
+    },
+    {
+      "term": "Operating leverage",
+      "definition": "When a large portion of costs are fixed, each additional dollar of revenue generates a high proportion of additional profit \u2014 small revenue increases lead to large profit increases."
+    },
+    {
+      "term": "Revenue per employee",
+      "definition": "Total revenue divided by number of employees. High revenue per employee indicates a high-quality, efficient business model \u2014 particularly important for comparing service businesses."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Not All Revenue Is Equal",
+      "estimatedMinutes": 4,
+      "notePrompt": "Rank these revenue types from most to least valuable, and explain why: one-off project fee, monthly subscription, government contract renewed annually, spot transaction (day-by-day), 5-year take-or-pay contract.",
+      "content": "A company that earns $10 million from subscriptions is worth more than one earning $10 million from one-off project work \u2014 even if the profit margins are identical. Why? Predictability and retention.\n\nRevenue quality spectrum (best to worst):\n\n1. Multi-year contracted recurring revenue: Long-term take-or-pay contracts where the customer commits to purchase regardless. Example: Meridian Energy's long-term electricity contracts with large industrial customers. Highly predictable, bankable by lenders.\n\n2. Subscription revenue: Customers pay regularly (monthly, annually) and must actively cancel to stop. SaaS software, streaming, mobile phone plans. High retention rates (85\u201395%+ per year). Predictable and expandable.\n\n3. Government contracts: Often renewed, large, and the counterparty is low default risk. Valuable but can involve public tender processes.\n\n4. Repeat transactional revenue: Customers return regularly but are not contractually committed. Supermarkets, fuel stations \u2014 high repeat rate due to habit and location, not contract.\n\n5. One-off project or transactional revenue: Revenue that must be earned fresh each period. No guarantee of repetition. NZ example: a construction company's project revenue \u2014 each project must be won competitively.\n\n6. Cyclical spot revenue: Priced daily in commodity markets. Extremely volatile. Fonterra's commodity dairy powder prices fluctuate with global supply and demand.\n\nFor analysis: check what percentage of revenue is recurring or under long-term contract. For FPH, the razor-and-blade model (sell consumables to hospitals that have already purchased the hardware) creates highly recurring consumable revenue."
+    },
+    {
+      "type": "slide",
+      "title": "Operating Leverage \u2014 How Revenue Growth Turbocharges Profits",
+      "estimatedMinutes": 4,
+      "notePrompt": "Company A has $100M revenue, $60M fixed costs and $20M variable costs. Revenue grows 20% to $120M. Variable costs grow proportionally. Calculate: what happens to profit? What is the 'profit leverage ratio' (% profit growth \u00f7 % revenue growth)?",
+      "content": "Operating leverage is one of the most powerful concepts in business analysis. It explains why some companies' profits grow much faster than their revenues.\n\nHow it works: Companies have fixed costs (the same regardless of revenue) and variable costs (that grow proportionally with revenue). Fixed costs include rent, management salaries, software licences, depreciation.\n\nExample:\nRevenue: $100M | Fixed costs: $60M | Variable costs (20% of revenue): $20M | Profit: $20M\n\nRevenue grows 20% to $120M:\nFixed costs: still $60M (unchanged)\nVariable costs: 20% of $120M = $24M\nNew profit: $120M \u2212 $60M \u2212 $24M = $36M\nProfit growth: ($36M \u2212 $20M) \u00f7 $20M \u00d7 100 = 80%\n\nRevenue grew 20% but profit grew 80% \u2014 a 4\u00d7 leverage ratio. This is operating leverage in action.\n\nWhy it matters for investors: Companies with high fixed cost bases AND growing revenue compound earnings very rapidly. Software companies (once built, distribution costs are minimal), healthcare device companies (FPH), and infrastructure businesses all demonstrate strong operating leverage.\n\nThe flip side: operating leverage works in reverse too. Revenue falling 20% could reduce profit by 80% for the same business. High fixed costs amplify downturns as much as they amplify growth \u2014 which is why companies with high operating leverage are more volatile."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A company with 80% recurring revenue is always better than one with 40% recurring revenue, regardless of the gross margin on each revenue type.",
+      "correctAnswer": false,
+      "explanation": "Not necessarily. Recurring revenue is more predictable and valuable \u2014 but if the recurring revenue has a very low gross margin (say 5%) while the non-recurring revenue has a 60% margin, a pure comparison of recurring revenue percentages misses the picture. For example, a company with $100M of 5% margin subscriptions and $60M of 55% margin project work might generate less total profit than a company with 40% recurring revenue at high margins. Always assess both revenue quality (predictability) AND revenue profitability (margin) together.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Analysing Gross Margin Trends",
+      "estimatedMinutes": 4,
+      "notePrompt": "FPH's gross margins over 5 years: 54.2%, 55.8%, 57.1%, 55.4%, 56.9%. What trend do you observe? What might cause the dip in year 4? What does the overall trend tell you about FPH's competitive position?",
+      "content": "Gross margin trends tell you more about competitive positioning than the absolute level.\n\nA stable or rising gross margin is evidence of sustained pricing power \u2014 the company can maintain or improve the premium customers pay relative to cost of goods.\n\nA declining gross margin signals competitive pressure, commodity input cost increases the company cannot pass through to customers, or product mix shift toward lower-margin items.\n\nFPH gross margin analysis (2019\u20132024):\n2019: 54.2% \u2192 2020: 55.8% \u2192 2021: 57.1% \u2192 2022: 55.4% \u2192 2023: 56.9% \u2192 2024: 57.8%\n\nObservations: The overall trend is upward (+3.6 percentage points over 5 years). The dip in 2022 coincided with the COVID recovery period when supply chain costs rose globally for medical device manufacturers \u2014 a temporary external factor, not competitive erosion. The return to 56.9% in 2023 and 57.8% in 2024 confirms the dip was transient. The sustained upward trend over 5 years is a hallmark of widening competitive advantage \u2014 FPH is gaining pricing power over time.\n\nSpark NZ gross margin trend for comparison:\n2019: 44.1% \u2192 2020: 43.2% \u2192 2021: 42.5% \u2192 2022: 41.8% \u2192 2023: 41.2%\n\nThis steady decline tells a different story \u2014 competitive pressure from rivals is progressively compressing Spark's ability to earn margin on its services. This is the numerical evidence of Spark's narrowing moat."
+    },
+    {
+      "type": "quiz",
+      "title": "Revenue Quality and Margins Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A software company has $80M revenue, $60M in fixed costs and $8M in variable costs, earning $12M profit. Revenue grows 25% to $100M. What is the new profit and the profit growth rate?",
+          "options": [
+            "Profit grows 25% to $15M \u2014 profit always grows proportionally with revenue",
+            "Profit grows to $32M \u2014 a 167% increase, demonstrating operating leverage from fixed-cost base",
+            "Profit grows to $22M \u2014 a simple application of 25% growth to the existing $12M",
+            "Profit stays at $12M \u2014 fixed costs are fixed so profit cannot grow"
+          ],
+          "correctIndex": 1,
+          "explanation": "New revenue: $100M. Variable costs grow 25%: $8M \u00d7 1.25 = $10M. Fixed costs: still $60M. New profit: $100M \u2212 $60M \u2212 $10M = $30M. Profit growth: ($30M \u2212 $12M) \u00f7 $12M \u00d7 100 = 150%. Approximately 6\u00d7 leverage (150% profit growth \u00f7 25% revenue growth). This dramatic operating leverage comes from the $60M fixed cost base \u2014 those costs are already covered, so each additional revenue dollar mostly flows to profit."
+        },
+        {
+          "question": "A company's gross margin has declined from 45% to 36% over 5 years while revenue grew 15% per year. What does this most likely indicate?",
+          "options": [
+            "The company is successfully growing by competing on price \u2014 low margins are a strategic choice",
+            "Input cost increases or competitive pressure have eroded pricing power \u2014 the company must spend more to generate each dollar of gross profit, potentially threatening long-term profitability",
+            "Gross margin decline is irrelevant if revenue is growing \u2014 what matters is absolute profit growth",
+            "This pattern is consistent with an improving moat \u2014 growing companies always see margin compression"
+          ],
+          "correctIndex": 1,
+          "explanation": "A 9 percentage point gross margin decline over 5 years is significant even if revenue is growing. It means the company is generating less profit per dollar of sales over time \u2014 either competitors are forcing price cuts, or input costs are rising faster than the company can pass through to customers. Revenue growth can mask this problem short-term, but if the trend continues, eventual profit growth will stall even with continued top-line growth. This is a moat erosion warning sign."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "High or Low Revenue Quality? Sort These Revenue Types",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Monthly software subscription fees \u2014 cancellable but historically 92% renewal rate",
+          "zone": "High Quality Revenue"
+        },
+        {
+          "item": "One-off construction project fee \u2014 must win competitive tender each time",
+          "zone": "Low Quality Revenue"
+        },
+        {
+          "item": "5-year take-or-pay electricity contract with a large industrial customer",
+          "zone": "High Quality Revenue"
+        },
+        {
+          "item": "Daily commodity spot sales \u2014 price resets to global market every morning",
+          "zone": "Low Quality Revenue"
+        },
+        {
+          "item": "Annual government maintenance contract renewed for 8 consecutive years",
+          "zone": "High Quality Revenue"
+        },
+        {
+          "item": "Tourist revenue \u2014 highly seasonal and cancelled entirely during COVID",
+          "zone": "Low Quality Revenue"
+        }
+      ],
+      "explanation": "High-quality revenue is predictable, recurring and sticky. Low-quality revenue must be earned fresh each period, is cyclical or competitively bid. Companies with predominantly high-quality revenue deserve premium valuations because investors can model future earnings with more confidence. This difference in revenue quality is a major reason SaaS software companies trade at higher P/E multiples than construction companies."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Operating leverage means a company's profits will always grow faster than its revenue, making companies with high fixed costs always better investments.",
+      "correctAnswer": false,
+      "explanation": "False. Operating leverage is symmetrical \u2014 it amplifies both growth and decline. When revenue grows, profits grow faster (positive leverage). When revenue falls, profits fall even faster (negative leverage). This makes high-fixed-cost businesses with operating leverage more volatile \u2014 excellent in bull phases, more painful in downturns. Airlines, for example, have very high fixed costs (aircraft, crew, slots) and show extreme operating leverage \u2014 in good years they are very profitable; in downturns they burn cash rapidly.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "A company has $50M revenue and $35M in fixed costs with $10M variable costs, earning $5M profit. If revenue grows 40% to $70M and variable costs grow proportionally, what is the new profit? Enter the dollar amount.",
+      "acceptedAnswers": [
+        "$21M",
+        "$21 million",
+        "21000000",
+        "$21,000,000",
+        "21M"
+      ],
+      "placeholder": "Type the new profit amount...",
+      "hint": "Fixed costs stay at $35M. Variable costs grow 40% from $10M. New profit = new revenue minus fixed costs minus new variable costs.",
+      "explanation": "New revenue: $70M. Variable costs: $10M \u00d7 1.40 = $14M. Fixed costs: $35M (unchanged). New profit: $70M \u2212 $35M \u2212 $14M = $21M. Profit grew from $5M to $21M \u2014 a 320% increase on 40% revenue growth. The leverage ratio is 320% \u00f7 40% = 8\u00d7. The $35M fixed cost base means almost all of the $20M revenue increase flows to profit after the small variable cost increase.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Revenue Quality Assessment",
+      "estimatedMinutes": 5,
+      "prompt": "Think about any company you interact with daily. Estimate what percentage of its revenue is recurring (subscription, regular repeat) versus one-off or transactional. Does this revenue quality reflect in how confident you would feel about its earnings next year? Write three sentences.",
+      "nceaLink": "Extra Learning \u2014 revenue quality analysis is one of the most underappreciated skills in equity analysis."
+    }
+  ]
+}

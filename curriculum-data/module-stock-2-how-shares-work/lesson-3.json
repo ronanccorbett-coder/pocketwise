@@ -1,0 +1,149 @@
+{
+  "title": "How to Buy and Sell Shares in NZ",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Apply",
+  "nceaFocus": "Extra Learning \u2014 How Shares Work",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Describe the practical steps to buy shares in NZ",
+    "Compare NZ share trading platforms and brokerage costs",
+    "Calculate total cost and return on a share trade including brokerage"
+  ],
+  "vocabulary": [
+    {
+      "term": "Broker",
+      "definition": "A licensed intermediary that executes share trades on your behalf. Can be a full-service broker (advice included, higher fees) or an online/discount broker (self-directed, lower fees)."
+    },
+    {
+      "term": "Brokerage",
+      "definition": "The fee charged by a broker to execute a trade. NZ online brokers typically charge $10 to $30 per trade or a percentage of the transaction value."
+    },
+    {
+      "term": "Market order",
+      "definition": "An instruction to buy or sell immediately at whatever the current market price is. Executes instantly but price may differ slightly from what you see."
+    },
+    {
+      "term": "Limit order",
+      "definition": "An instruction to buy or sell only at a specific price or better. Your trade will not execute unless the price reaches your limit \u2014 but you control the price you pay."
+    },
+    {
+      "term": "Settlement",
+      "definition": "The finalisation of a share trade. In NZ, standard settlement is T+2 \u2014 the trade settles two business days after execution. Money and shares change hands on settlement day."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Opening a Share Trading Account in NZ",
+      "estimatedMinutes": 4,
+      "notePrompt": "List the four things you typically need to open a share trading account in NZ. Why is a verified identity required?",
+      "content": "Buying shares in NZ is much simpler than most people think. Here is the practical process.\n\nStep 1 \u2014 Choose a platform:\n\u2014 Sharesies: Popular with young NZ investors. Fractional shares available ($50 minimum). Low fees on small amounts.\n\u2014 Hatch: Specialises in US shares. Flat $3 USD per trade.\n\u2014 Jarden Direct (formerly ASB Securities): Established NZ broker. $30 per trade.\n\u2014 Tiger Brokers: Low-cost option with access to NZ, AU and US markets.\n\u2014 InvestNow: Index fund and managed fund platform \u2014 not direct share trading.\n\nStep 2 \u2014 Open the account:\nYou need: NZ bank account, NZ government-issued photo ID (driver licence or passport), IRD number, and to verify your address. All platforms require Anti-Money Laundering (AML) verification under NZ law. This can be done fully online, typically in 10 to 30 minutes.\n\nStep 3 \u2014 Fund the account:\nTransfer money via internet banking. Most platforms settle funds within 1 business day.\n\nStep 4 \u2014 Place your first order:\nSearch for the company by name or NZX ticker. Choose market order (buy at current price) or limit order (buy only at your specified price or lower). Confirm the trade."
+    },
+    {
+      "type": "slide",
+      "title": "Brokerage Costs \u2014 What Trades Actually Cost",
+      "estimatedMinutes": 4,
+      "notePrompt": "Calculate the break-even share price movement for a $500 and a $5,000 Sharesies trade. How does brokerage change the minimum gain needed to break even?",
+      "content": "Every share trade has a cost. Brokerage eats into returns, especially on small trades.\n\nNZ online brokerage fees in 2025 (approximate):\n\nSharesies:\n\u2014 0.5% on NZX trades (min $0.50, max $25)\n\u2014 On a $500 trade: $2.50\n\u2014 On a $5,000 trade: $25 (capped)\n\nHatch (US shares):\n\u2014 USD $3 flat fee per trade plus a small FX margin\n\u2014 Good for US shares, not available for NZX\n\nJarden Direct:\n\u2014 $30 per NZX trade (flat fee, any size)\n\u2014 Better value for large trades\n\nBreak-even calculations \u2014 why trade size matters:\nSharesies, $500 trade:\nBuy: $500 + $2.50 = $502.50. Sell later: brokerage another $2.50. Total cost: $5.00.\nYour share must rise at least 1.0% just to break even.\n\nJarden Direct, $500 trade:\nBuy: $500 + $30. Sell: another $30. Total cost: $60.\nYour share must rise 12% just to break even.\n\nJarden Direct, $5,000 trade:\nBuy: $5,000 + $30. Sell: another $30. Total cost: $60.\nYour share must rise 1.2% to break even \u2014 now competitive.\n\nConclusion: flat-fee brokers are only cost-effective for larger trades. Percentage-fee platforms like Sharesies are better for smaller amounts."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A market order guarantees you will pay exactly the price displayed on screen when you click buy.",
+      "correctAnswer": false,
+      "explanation": "False. A market order executes at the best available price at the moment it reaches the exchange \u2014 which may differ slightly from the price displayed when you clicked. In fast-moving markets or for less liquid shares (few buyers and sellers), the price can move between the moment you decide to buy and when the order executes. This is called slippage. A limit order solves this by only executing at your specified price or better \u2014 but it may not execute at all if the price never reaches your limit.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Market Orders vs Limit Orders",
+      "estimatedMinutes": 4,
+      "notePrompt": "When would you use a market order? When would you use a limit order? Give a specific NZ example of each situation.",
+      "content": "Two main ways to place a share trade order.\n\nMarket order:\n\u2014 Executes immediately at the current best available price\n\u2014 You get certainty of execution (the trade will definitely happen)\n\u2014 But you do not control the exact price\n\u2014 Best for large, liquid NZ shares (Fisher and Paykel Healthcare, Spark, Meridian) where the bid-ask spread is tiny\n\nLimit order:\n\u2014 You specify the maximum price you will pay to buy (or minimum you will accept to sell)\n\u2014 Trade only executes if the market reaches your price\n\u2014 You control the price but not whether the trade happens\n\u2014 Best for less liquid shares with wide spreads, or when you want to buy a share that is slightly above your target price\n\nExample \u2014 Limit order in practice:\nMainfreight is trading at $70.20. You think $68 is a fair price. You set a limit buy order at $68.00. The order sits on the exchange. If Mainfreight falls to $68 or below, your order automatically executes and you buy. If it never reaches $68, you never buy \u2014 but you also do not overpay.\n\nFor most NZ retail investors buying large NZX companies, market orders are perfectly fine. Limit orders become more important when trading smaller or less liquid companies."
+    },
+    {
+      "type": "quiz",
+      "title": "Share Trading Mechanics Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "You buy 200 Spark shares at $4.20 using Sharesies (0.5% brokerage). Six months later you sell at $4.55. What is your total profit after both brokerage charges?",
+          "options": [
+            "$70.00 \u2014 simply 200 shares \u00d7 $0.35 price gain",
+            "$61.25 \u2014 $70 gain minus $4.20 buy brokerage and $4.55 sell brokerage",
+            "$65.65 \u2014 $70 gain minus brokerage on buy ($4.20) and sell ($4.55)",
+            "$85.25 \u2014 including the value of dividends received"
+          ],
+          "correctIndex": 2,
+          "explanation": "Capital gain: 200 \u00d7 ($4.55 \u2212 $4.20) = 200 \u00d7 $0.35 = $70.00. Buy brokerage: 200 \u00d7 $4.20 \u00d7 0.5% = $840 \u00d7 0.005 = $4.20. Sell brokerage: 200 \u00d7 $4.55 \u00d7 0.5% = $910 \u00d7 0.005 = $4.55. Total brokerage: $4.20 + $4.55 = $8.75. Net profit: $70.00 \u2212 $8.75 = $61.25. Note: this ignores any dividends \u2014 the actual total return including dividends would be higher."
+        },
+        {
+          "question": "Why is a flat-fee broker like Jarden Direct ($30 per trade) better value than Sharesies (0.5% per trade) for a $10,000 investment?",
+          "options": [
+            "Flat-fee brokers always offer better customer service and more investment options",
+            "On a $10,000 trade, Sharesies charges $25 (capped) while Jarden charges $30 \u2014 they are similar, but Jarden offers more professional tools for large investors",
+            "On a $10,000 trade, Sharesies would charge $50 (0.5%) while Jarden charges $30 \u2014 Jarden is cheaper, and the advantage grows further for larger amounts above the Sharesies cap",
+            "They are identical in cost \u2014 both charge a percentage of the transaction"
+          ],
+          "correctIndex": 1,
+          "explanation": "Sharesies caps NZX brokerage at $25 (not 0.5% \u00d7 $10,000 = $50 \u2014 the cap applies). So for a $10,000 trade, Sharesies charges $25 and Jarden charges $30. They are close but Jarden is slightly more expensive at this size. For trades above approximately $6,000, the Sharesies cap ($25) kicks in and remains fixed while continuing to be less than Jarden's $30. Below $6,000, Sharesies percentage fee is cheaper than Jarden's flat $30."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Market Order or Limit Order? Match the Situation",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Buying 500 Spark shares immediately \u2014 large liquid company, tiny bid-ask spread",
+          "zone": "Market Order"
+        },
+        {
+          "item": "You want Mainfreight but only at $65 or below \u2014 willing to wait",
+          "zone": "Limit Order"
+        },
+        {
+          "item": "Selling Fisher and Paykel Healthcare today after a strong earnings report \u2014 want fast execution",
+          "zone": "Market Order"
+        },
+        {
+          "item": "Buying shares in a small NZ company with low daily trading volume \u2014 worried about wide spread",
+          "zone": "Limit Order"
+        }
+      ],
+      "explanation": "Market orders prioritise speed of execution. Limit orders prioritise price control. For large, liquid NZX shares the difference is usually negligible \u2014 the spread is tiny and market orders execute close to the displayed price. For small or thinly traded companies, limit orders prevent paying significantly more than intended."
+    },
+    {
+      "type": "truefalse",
+      "statement": "When you buy shares on the NZX, you receive the shares and the seller receives your money on the same day the trade executes.",
+      "correctAnswer": false,
+      "explanation": "False. NZX trades settle on T+2 \u2014 two business days after the trade executes. On trade day you see the trade confirmed in your account, but the formal exchange of shares and cash happens two business days later. This is called settlement. You cannot sell the shares you just bought until they are settled (though some platforms show them as available immediately). Settlement delays exist to allow time for verification and administrative processing.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "You buy 100 Meridian Energy shares at $5.60 using a broker charging $30 flat. What is the total cost of this purchase including brokerage?",
+      "acceptedAnswers": [
+        "$590",
+        "$590.00",
+        "590"
+      ],
+      "placeholder": "Type the total cost here...",
+      "hint": "Total cost = (shares \u00d7 price) + brokerage.",
+      "explanation": "100 \u00d7 $5.60 = $560 for the shares. Plus $30 brokerage = $590 total cost. Your average cost per share is $590 \u00f7 100 = $5.90. Meridian must rise above $5.90 + another $0.30 (to cover the sell brokerage of $30 \u00f7 100 shares) = $6.20 before you break even on this trade. This illustrates why brokerage costs matter \u2014 particularly for smaller trades.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Setting Up Your First Virtual Account",
+      "estimatedMinutes": 5,
+      "prompt": "Go to Sharesies.nz or any NZ share trading platform and look at the account opening process. What information do they ask for? What documents do they need? How long would it take you to open an account? Write down three questions you have about the process that you would want answered before investing real money.",
+      "nceaLink": "Extra Learning \u2014 understanding the practical mechanics of investing removes the barrier that stops many people getting started."
+    }
+  ]
+}

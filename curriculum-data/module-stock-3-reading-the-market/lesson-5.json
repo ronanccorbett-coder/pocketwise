@@ -1,0 +1,157 @@
+{
+  "title": "Reading Financial Media Critically",
+  "order": 5,
+  "dayNumber": 5,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Analyse and Evaluate",
+  "nceaFocus": "Extra Learning \u2014 Reading the Market",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Identify reliable versus unreliable sources of financial information",
+    "Recognise common media biases in financial reporting",
+    "Evaluate a financial news claim using basic metrics"
+  ],
+  "vocabulary": [
+    {
+      "term": "Conflict of interest",
+      "definition": "When someone providing financial advice or information has a personal financial stake in the recommendation \u2014 e.g. a journalist who owns shares recommending a buy."
+    },
+    {
+      "term": "Clickbait",
+      "definition": "Headlines designed to generate clicks and emotional reactions rather than inform. Common in financial media: 'This stock will make you rich' or 'Market crash imminent.'"
+    },
+    {
+      "term": "Recency bias",
+      "definition": "The tendency to overweight recent events when making predictions \u2014 assuming current trends will continue indefinitely. Common mistake in financial media."
+    },
+    {
+      "term": "Analyst recommendation",
+      "definition": "A professional securities analyst's opinion on a share \u2014 typically buy, hold, or sell. Published by investment banks and brokerages. Can have conflicts of interest."
+    },
+    {
+      "term": "Short selling disclosure",
+      "definition": "In NZ, any investor with a short position above 0.1% of a company's shares must disclose this to the FMA. Allows investors to see who is betting against a company."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Problem With Financial Media",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What are three incentives that financial media has that might lead to poor quality investment advice? How would you identify a trustworthy financial information source?",
+      "content": "Financial media \u2014 websites, YouTube channels, podcasts, social media accounts \u2014 produces enormous amounts of content about shares. Most of it is noise. A critical investor learns to filter it.\n\nWhy financial media often misleads:\n\n1. Engagement incentives: Media companies earn revenue from views, clicks and subscriptions \u2014 not from investment returns. Headlines like 'This stock will 10\u00d7 in 12 months' generate clicks. 'Buy a diversified index fund and wait 30 years' is accurate but boring.\n\n2. Recency bias: When markets are rising, media declares bull markets will last forever. When markets fall, crash predictions dominate. The trend of the moment is always extrapolated indefinitely.\n\n3. Conflict of interest: Stock promoters, investment banks and financial influencers often own the shares they are recommending. NZ law requires disclosure \u2014 but violations occur and disclosures are easy to miss.\n\n4. Complexity theatre: Financial jargon, complicated charts with dozens of indicators, and confident predictions about short-term price movements create an illusion of expertise. Most 12-month price targets from analysts are wrong.\n\n5. Availability bias: Media focuses on dramatic moves \u2014 shares up 300% or down 80%. The boring 8% annual index fund return never makes headlines but beats most active advice over 20 years."
+    },
+    {
+      "type": "slide",
+      "title": "Evaluating a Financial Claim \u2014 A Framework",
+      "estimatedMinutes": 4,
+      "notePrompt": "Apply the four-question framework to this claim: 'NZ tech company Xero (XRO) is a screaming buy \u2014 it is about to 3\u00d7 in 12 months based on its recurring revenue model.' What do you need to check?",
+      "content": "When you encounter a financial claim or recommendation, run it through four questions.\n\n1. Who is making the claim, and what is their incentive?\nAn investment bank recommending a company they helped take public has a conflict of interest. A YouTuber who discloses owning 500,000 shares recommending you buy is promoting their own position. A financial journalist who owns no shares in the company is more credible \u2014 but may still have recency bias or clickbait pressure.\n\n2. What evidence supports the claim?\nSpecific numbers (P/E, revenue growth, market opportunity with sources) are more credible than vague assertions ('this company is going to dominate its market'). Show me the data.\n\n3. What could make this claim wrong?\nEvery good analysis considers the bear case \u2014 what would have to go wrong for this recommendation to fail? If the bull case gets all the airtime and risks are dismissed, be sceptical.\n\n4. Is this actionable for a long-term investor?\n'This stock will rise 15% in the next 6 weeks' is a short-term trading call that requires timing precision. 'This company has durable competitive advantages and is trading at a discount to fair value' is a more robust long-term case that does not require perfect timing.\n\nFor most year 10 investors: apply these four questions, then default to index fund investing until you have developed enough knowledge to evaluate individual company investment cases yourself."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Professional securities analysts from major investment banks have a reliable track record of accurately predicting 12-month share price targets.",
+      "correctAnswer": false,
+      "explanation": "False. Research consistently shows that analyst 12-month price targets are wrong more often than right. Studies find accuracy rates for price targets below 50% \u2014 no better than chance. Additionally, analyst recommendations skew bullish \u2014 partly because investment banks want to maintain good relationships with the companies they cover (who also pay them for services). The ratio of buy to sell recommendations from major banks is historically around 5:1, even in declining markets.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Good Sources vs Noise \u2014 A Practical Guide for NZ Investors",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: Which three sources from this slide would you use regularly? Which types would you actively avoid? Explain why for each category.",
+      "content": "Not all financial information is equal. Here is a practical guide for NZ investors.\n\nMore reliable sources:\n\u2014 Company annual reports and NZX announcements: primary source documents \u2014 the company speaks for itself under legal obligation of honesty\n\u2014 NZX website (nzx.com): official exchange data, company filings, announcements\n\u2014 Reserve Bank of New Zealand (rbnz.govt.nz): monetary policy, interest rates, economic data\n\u2014 IRD and FMA: tax rules, regulatory guidance\n\u2014 Academic finance research: rigorous peer-reviewed studies on what actually works\n\u2014 Morningstar, Bloomberg (paid services): professional-grade research with disclosed methodologies\n\nUse with critical thinking:\n\u2014 NZ Herald, Stuff business sections: generally accurate reporting but susceptible to recency bias and headline pressure\n\u2014 Broker research reports: useful analysis but note the conflict of interest and bullish bias\n\u2014 NZ ShareChat / HotCopper forums: retail investor discussion \u2014 can surface ideas but full of speculation\n\nHigh caution:\n\u2014 TikTok, YouTube 'stock picks' channels: most are entertainment not investment advice\n\u2014 Reddit investment forums (r/wallstreetbets etc): meme stocks and speculation\n\u2014 Social media influencers discussing specific stocks: almost always undisclosed conflict of interest\n\u2014 Any source guaranteeing returns or promising 'secrets'"
+    },
+    {
+      "type": "quiz",
+      "title": "Financial Media Critical Thinking Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A NZ finance YouTube channel with 200,000 subscribers makes a video titled '5 NZ Stocks That Will Make You Rich in 2025.' In the video description, you notice the presenter discloses owning shares in all 5 companies. How should you evaluate this content?",
+          "options": [
+            "Highly reliable \u2014 a large subscriber count and personal investment mean the presenter is confident in these picks",
+            "View with significant caution \u2014 the presenter has a direct financial incentive to promote shares they already own, creating a conflict of interest regardless of their disclosure",
+            "Completely invalid \u2014 any disclosure of share ownership invalidates all analysis",
+            "Reliable specifically because they disclosed ownership \u2014 full transparency eliminates the conflict of interest"
+          ],
+          "correctIndex": 1,
+          "explanation": "Disclosure of ownership is better than non-disclosure, but it does not eliminate the conflict of interest. The presenter benefits financially if viewers buy the shares and prices rise. Their analysis may be genuinely good \u2014 or it may be motivated by the desire to push their own holdings higher. A large subscriber count is irrelevant to investment quality. View the analysis but verify independently, checking the fundamental metrics yourself."
+        },
+        {
+          "question": "A headline reads: 'NZ Share Market Hits Record High \u2014 Experts Say Bull Run Has Years To Go.' What risk does this headline most clearly represent?",
+          "options": [
+            "Accurate reporting \u2014 if experts agree, the prediction is reliable",
+            "Short selling risk \u2014 short sellers are spreading misinformation",
+            "Recency bias \u2014 extrapolating recent trend (record highs) indefinitely into the future, which historically has predicted peaks rather than continued rises",
+            "Conflict of interest \u2014 the newspaper owns shares in NZ companies"
+          ],
+          "correctIndex": 2,
+          "explanation": "Headlines declaring record highs and unlimited bull run potential are classic examples of recency bias \u2014 projecting the recent trend forward indefinitely. In financial history, extreme consensus optimism near market highs has often coincided with the late stages of bull markets. This does not mean the bull run will end immediately, but 'experts say it will last years' has a poor predictive track record compared to 'markets are expensive relative to historical averages and a correction is statistically more likely.'"
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Reliable or Noise? Sort These Information Sources",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "FPH annual report published to NZX \u2014 audited financial statements",
+          "zone": "Reliable"
+        },
+        {
+          "item": "NZ TikTok influencer: 'This NZ stock is about to moon'",
+          "zone": "Noise"
+        },
+        {
+          "item": "RBNZ Monetary Policy Statement on interest rate outlook",
+          "zone": "Reliable"
+        },
+        {
+          "item": "Reddit forum: 'I heard from a mate that Mainfreight is getting a huge contract'",
+          "zone": "Noise"
+        },
+        {
+          "item": "Morningstar research report with disclosed methodology on Contact Energy",
+          "zone": "Reliable (with critical reading)"
+        },
+        {
+          "item": "NZX company announcement: CEO resignation effective immediately",
+          "zone": "Reliable"
+        }
+      ],
+      "explanation": "Primary sources (company reports, regulatory announcements, official economic data) are the gold standard. Professional research from reputable firms is useful with critical awareness of bias. Social media, forums and anonymous tips are noise \u2014 at best speculative, at worst market manipulation. Building a filter for information quality is one of the most valuable investor skills."
+    },
+    {
+      "type": "truefalse",
+      "statement": "If an investment bank gives a company a 'buy' recommendation, it means their analysts genuinely believe it is one of the best investment opportunities available.",
+      "correctAnswer": false,
+      "explanation": "Not necessarily. Investment banks have complex relationships with the companies they cover \u2014 they may have provided IPO underwriting, merger advice or debt financing to the same company. Research shows buy recommendations vastly outnumber sell recommendations (historically around 5:1) even in poor market conditions. A 'hold' from an investment bank often means their analysts believe the stock is overvalued but they cannot say 'sell' without damaging the bank's relationship with the company. Read analyst reports but apply your own critical judgement.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What term describes the tendency to assume that recent market trends (rising prices, falling prices) will continue indefinitely into the future?",
+      "acceptedAnswers": [
+        "recency bias",
+        "Recency bias",
+        "recency bias."
+      ],
+      "placeholder": "Type the term here...",
+      "hint": "Two words \u2014 the word 'recency' refers to recent events.",
+      "explanation": "Recency bias is one of the most pervasive and damaging cognitive biases in investing. When markets have risen for 3 years, most investors assume they will keep rising. When markets have fallen for 6 months, most expect further falls. In both cases, the market tends to surprise \u2014 bull markets end when optimism is maximum, bear markets end when pessimism is maximum. Recognising recency bias helps you think contrarily.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Find a Financial Claim and Evaluate It",
+      "estimatedMinutes": 5,
+      "prompt": "Find one financial recommendation or market prediction online \u2014 from any source (news website, YouTube, social media). Apply the four-question framework: (1) Who is making the claim and what is their incentive? (2) What evidence do they provide? (3) What risks do they mention? (4) Is this useful for a long-term investor? Write your evaluation in four sentences.",
+      "nceaLink": "Extra Learning \u2014 developing media literacy for financial content is one of the most practically valuable skills an investor can build."
+    }
+  ]
+}

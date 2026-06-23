@@ -1,0 +1,169 @@
+{
+  "title": "Dividends and Compound Growth",
+  "order": 5,
+  "dayNumber": 5,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning \u2014 Stock Market Foundations",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain what dividends are and how they are paid",
+    "Calculate dividend yield for a NZ share",
+    "Apply compound growth to project long-term investment returns"
+  ],
+  "vocabulary": [
+    {
+      "term": "Dividend yield",
+      "definition": "Annual dividend per share divided by share price, expressed as a percentage. Shows how much income a share generates per dollar invested."
+    },
+    {
+      "term": "Dividend reinvestment plan (DRP)",
+      "definition": "A scheme where dividends are automatically used to buy more shares instead of paying cash. Accelerates compound growth."
+    },
+    {
+      "term": "Compound growth",
+      "definition": "Growth on top of previous growth \u2014 earnings reinvested to generate further earnings. The most powerful force in long-term investing."
+    },
+    {
+      "term": "Rule of 72",
+      "definition": "A quick way to estimate how long it takes an investment to double. Divide 72 by the annual return rate. At 8% per year: 72 \u00f7 8 = 9 years to double."
+    },
+    {
+      "term": "Imputation credit",
+      "definition": "A NZ tax credit attached to dividends from NZ companies. Because the company has already paid tax on its profits, shareholders receive a credit to avoid being taxed again on the same income."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "What Are Dividends?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What is a dividend? Which type of investor cares most about dividends \u2014 a young investor or someone retired? Why?",
+      "content": "When a company makes a profit, it has two choices: reinvest the money into growing the business, or distribute some of it to shareholders as dividends.\n\nDividends are cash payments made by companies to their shareholders, typically twice a year. You receive dividends in proportion to how many shares you own.\n\nNZ example: Spark NZ (SPK) typically pays about $0.275 per share per year in dividends \u2014 paid in two instalments. If you own 1,000 Spark shares, you receive approximately $275 per year in cash.\n\nNot all companies pay dividends. Growth companies \u2014 like early-stage tech businesses \u2014 typically reinvest all profits back into the business to fund expansion. Mature, stable companies \u2014 utilities, infrastructure, banks \u2014 typically pay regular dividends because their growth opportunities are more limited.\n\nOn the NZX, reliable dividend payers include Spark, Meridian Energy, Contact Energy, Infratil, and the major property companies (REITs). These are popular with income-focused investors, particularly retirees, who want regular cash flow from their investments.\n\nYounger investors often care less about dividends and more about share price growth \u2014 they have time for capital gains to compound. Retirees often prefer dividends as a form of passive income."
+    },
+    {
+      "type": "slide",
+      "title": "Dividend Yield \u2014 How Much Income Per Dollar?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Calculate the dividend yield for: (1) Spark at $4.20 share price, $0.275 annual dividend. (2) Meridian Energy at $5.60 share price, $0.20 annual dividend. Which gives more income per dollar invested?",
+      "content": "Dividend yield lets you compare the income from different shares.\n\nDividend yield = (Annual dividend \u00f7 Share price) \u00d7 100\n\nExample 1: Spark NZ\nShare price: $4.20\nAnnual dividend: $0.275 per share\nDividend yield: $0.275 \u00f7 $4.20 \u00d7 100 = 6.55%\n\nExample 2: Meridian Energy\nShare price: $5.60\nAnnual dividend: $0.20 per share\nDividend yield: $0.20 \u00f7 $5.60 \u00d7 100 = 3.57%\n\nSpark generates 6.55% income per year per dollar invested \u2014 significantly more than Meridian's 3.57%. However, a higher yield is not always better. Sometimes a high yield signals that investors expect the dividend to be cut (share price has fallen because of bad news, pushing the yield up artificially). Always check whether the company's earnings comfortably cover the dividend before relying on yield numbers.\n\nNZ shares generally pay higher dividend yields than US shares. The NZX average yield is around 3% to 5%, while the S&P 500 average is around 1.5% to 2%. NZ companies have historically returned more of their earnings to shareholders as dividends rather than reinvesting for growth."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A very high dividend yield always means a share is a great investment for income.",
+      "correctAnswer": false,
+      "explanation": "False. A high yield can be a warning sign \u2014 called a 'yield trap.' If a share's price has fallen sharply (due to bad news about the company), its yield rises automatically even without any change to the dividend. For example: a $10 share paying $0.60 annual dividend has a 6% yield. If the price falls to $6 on bad news, the yield jumps to 10% \u2014 but the company may soon cut the dividend because its earnings are falling. Chasing high yields without checking whether earnings can sustain the dividend is a common investor mistake.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Compound Growth \u2014 The Eighth Wonder of the World",
+      "estimatedMinutes": 4,
+      "notePrompt": "Using the formula A = P(1+r)^n, calculate: if you invest $5,000 in the NZX 50 at 8% average annual return, what is it worth after 10 years? After 30 years?",
+      "content": "Albert Einstein (allegedly) called compound interest 'the eighth wonder of the world.' Whether he said it or not, the maths is astonishing.\n\nCompound growth means your returns generate their own returns. Year 1 you earn returns on your original investment. Year 2 you earn returns on the original investment plus last year's returns. This snowball effect grows exponentially over time.\n\nFormula: A = P(1 + r)^n\nA = final amount, P = starting amount, r = annual return rate (as decimal), n = number of years\n\nExample \u2014 $5,000 invested at 8% annual return:\n10 years: A = $5,000 \u00d7 (1.08)^10 = $5,000 \u00d7 2.159 = $10,795\n20 years: A = $5,000 \u00d7 (1.08)^20 = $5,000 \u00d7 4.661 = $23,305\n30 years: A = $5,000 \u00d7 (1.08)^30 = $5,000 \u00d7 10.063 = $50,315\n\nThe same $5,000 grows to over $50,000 in 30 years \u2014 without adding another dollar. The growth in the final decade alone ($23,305 to $50,315 \u2014 an increase of $27,010) exceeds the total growth of the first two decades. This is compounding: the later years are the most powerful.\n\nThe Rule of 72: divide 72 by the return rate to find how long it takes to double. At 8%: 72 \u00f7 8 = 9 years. At 4%: 72 \u00f7 4 = 18 years. This simple rule shows why a higher long-term return makes an enormous difference."
+    },
+    {
+      "type": "quiz",
+      "title": "Dividends and Compound Growth Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A share trades at $8.40 and pays an annual dividend of $0.35 per share. What is the dividend yield?",
+          "options": [
+            "0.042% \u2014 the dividend is very small relative to the share price",
+            "4.17% \u2014 annual dividend divided by share price, multiplied by 100",
+            "8.40% \u2014 the yield equals the share price numerically",
+            "2.40% \u2014 yield is calculated on the purchase price not the current price"
+          ],
+          "correctIndex": 1,
+          "explanation": "$0.35 \u00f7 $8.40 \u00d7 100 = 4.17% dividend yield. This means for every $100 invested in this share, you receive $4.17 per year in dividend income. The NZX average yield is typically 3% to 5%, so 4.17% is in the normal range for a NZ income share."
+        },
+        {
+          "question": "Using the Rule of 72, how long does it take for an investment to double at a 6% annual return?",
+          "options": [
+            "6 years \u2014 the rule is simply the return rate in years",
+            "12 years \u2014 72 divided by 6",
+            "18 years \u2014 the rule adds 12 to the return rate",
+            "36 years \u2014 the rule multiplies 6 by 6"
+          ],
+          "correctIndex": 1,
+          "explanation": "72 \u00f7 6 = 12 years. The Rule of 72 gives a fast estimate of doubling time. At 6% annual return, your money doubles every 12 years. This means $10,000 becomes $20,000 in 12 years, $40,000 in 24 years, and $80,000 in 36 years \u2014 all without adding more money. Just from compound growth at 6% per year."
+        },
+        {
+          "question": "Why does a dividend reinvestment plan (DRP) accelerate long-term wealth building more than receiving cash dividends?",
+          "options": [
+            "DRP participants receive a higher dividend rate than cash dividend recipients",
+            "Cash dividends are taxed more heavily in NZ than reinvested dividends",
+            "Reinvested dividends buy more shares, which generate more dividends, which buy more shares \u2014 accelerating compound growth on an increasing base",
+            "DRP participants receive their dividends quarterly instead of twice yearly, improving cash flow"
+          ],
+          "correctIndex": 2,
+          "explanation": "DRP reinvests cash dividends into more shares of the company, increasing the number of shares you hold. More shares generate more dividends in the next period. Those dividends buy even more shares. This compounding of share count on top of price appreciation produces meaningfully higher returns over long periods. The difference between reinvesting and not reinvesting dividends over 20+ years is typically very significant."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Income Investor or Growth Investor? Match the Preference",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Prefers high dividend yield \u2014 regular cash payments from holdings",
+          "zone": "Income Investor"
+        },
+        {
+          "item": "Prefers companies reinvesting profits to fund rapid expansion",
+          "zone": "Growth Investor"
+        },
+        {
+          "item": "Typically retired or near retirement \u2014 needs portfolio to generate living expenses",
+          "zone": "Income Investor"
+        },
+        {
+          "item": "Typically young \u2014 has decades for capital to compound without needing cash withdrawals",
+          "zone": "Growth Investor"
+        },
+        {
+          "item": "Favours stable companies like utilities, banks and infrastructure",
+          "zone": "Income Investor"
+        },
+        {
+          "item": "Favours early-stage tech, biotech or consumer companies with fast-growing earnings",
+          "zone": "Growth Investor"
+        }
+      ],
+      "explanation": "Neither approach is universally better \u2014 they suit different life stages and financial goals. Young investors with long time horizons typically benefit most from growth investing and dividend reinvestment, allowing compound growth to work for decades. Retirees often shift toward income investing to generate regular cash without selling shares."
+    },
+    {
+      "type": "truefalse",
+      "statement": "In NZ, when you receive a dividend, you pay full income tax on it because the company that paid it has not paid any tax on those profits.",
+      "correctAnswer": false,
+      "explanation": "False. NZ companies pay company tax (28%) on their profits before paying dividends. To prevent shareholders being taxed again on the same income, NZ has imputation credits \u2014 a tax credit passed on to shareholders with dividends. Depending on your personal tax rate, you may receive a refund or owe additional tax on top of the imputation credits. This system means NZ dividends are effectively more tax-efficient than dividends in many other countries.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "You invest $8,000 at 7% annual compound growth. Using A = P(1+r)^n, what is the investment worth after 10 years? Round to the nearest dollar.",
+      "acceptedAnswers": [
+        "$15,737",
+        "15737",
+        "$15,737.00",
+        "$15,737"
+      ],
+      "placeholder": "Type the final amount here...",
+      "hint": "(1.07)^10 = 1.9672.",
+      "explanation": "$8,000 \u00d7 (1.07)^10 = $8,000 \u00d7 1.9672 = $15,737.60, rounded to $15,737. Your $8,000 almost doubles in 10 years at 7% annual return \u2014 without adding any more money. The NZX 50 has historically returned approximately 10% to 11% per year including dividends reinvested over long periods, which would produce even higher growth.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "The Cost of Waiting",
+      "estimatedMinutes": 5,
+      "prompt": "If you invest $2,000 at 8% compound growth at age 15, use A = P(1+r)^n to find what it is worth at age 65 (50 years). Now calculate what it would be worth if you waited until age 25 to invest the same $2,000 (40 years). What is the cost \u2014 in dollars \u2014 of waiting 10 years? Write the calculation and one sentence about what this tells you.",
+      "nceaLink": "Extra Learning \u2014 the mathematics of compound growth is one of the most practically important things you will ever learn about money."
+    }
+  ]
+}

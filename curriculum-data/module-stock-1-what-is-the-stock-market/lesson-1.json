@@ -1,0 +1,138 @@
+{
+  "title": "What Is the Stock Market?",
+  "order": 1,
+  "dayNumber": 1,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Remember and Understand",
+  "nceaFocus": "Extra Learning — Stock Market Foundations",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain what a stock market is in plain language",
+    "Describe why stock markets exist and who benefits from them",
+    "Name the main NZ and global stock exchanges"
+  ],
+  "vocabulary": [
+    { "term": "Stock market", "definition": "A marketplace where buyers and sellers trade shares in companies. Like a farmers market — but instead of vegetables, people buy and sell small pieces of businesses." },
+    { "term": "Share", "definition": "A small unit of ownership in a company. If a company has 1,000,000 shares and you own 1,000 of them, you own 0.1% of the company." },
+    { "term": "Stock exchange", "definition": "The official platform where shares are bought and sold. New Zealand's is the NZX. Australia's is the ASX. The world's largest is the NYSE in New York." },
+    { "term": "Investor", "definition": "A person or organisation that buys shares hoping the value will grow over time, or to receive a share of company profits." },
+    { "term": "NZX", "definition": "The New Zealand Exchange — NZ's official stock market where NZ company shares are publicly traded. Based in Wellington." }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The World's Biggest Marketplace",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: What is a stock market? What is actually being bought and sold? Why would someone want to own a tiny piece of a company?",
+      "content": "Imagine you want to start a pizza business but you only have $5,000 and you need $50,000. You could ask 45 friends to each chip in $1,000, giving each of them a 2% share of the business. That is the core idea behind the stock market.\n\nA stock market is a place where people buy and sell small pieces of companies. Those pieces are called shares. When you own a share, you own a fraction of everything that company owns — its buildings, equipment, brand, and future profits.\n\nCompanies use the stock market to raise money from thousands of investors at once, without having to borrow from a bank. Investors use it to grow their money by owning pieces of businesses they believe in.\n\nEvery weekday, billions of dollars of shares change hands on stock exchanges around the world. The New York Stock Exchange (NYSE) alone trades over USD $25 billion every single day. The NZX — New Zealand's exchange — is much smaller but still trades hundreds of millions of dollars of NZ company shares each week.\n\nThe price of a share changes constantly based on what buyers are willing to pay and what sellers are willing to accept."
+    },
+    {
+      "type": "slide",
+      "title": "Why Companies List on the Stock Market",
+      "estimatedMinutes": 4,
+      "notePrompt": "List three reasons a NZ company might choose to list on the NZX instead of borrowing money from a bank.",
+      "content": "When a company wants to raise money to expand, it has two main choices: borrow from a bank (a loan it must repay with interest) or sell shares to the public (raise money it never has to repay, but give up some ownership).\n\nA company that sells shares to the public for the first time does an IPO — Initial Public Offering. After the IPO, those shares can be bought and sold by anyone through the stock exchange.\n\nReasons companies choose to list:\n— Access to large capital. A NZ company listing on the NZX can raise tens or hundreds of millions of dollars in days.\n— No debt repayments. Unlike a bank loan, share capital does not have to be repaid.\n— Profile and credibility. Listed companies face rigorous reporting requirements, which builds investor trust.\n— Allow early investors to exit. Founders and early backers can sell their shares once the company is publicly listed.\n\nThe trade-off: once listed, the company must share ownership with potentially thousands of shareholders, publish financial results publicly, and answer to a board of directors representing all shareholders."
+    },
+    {
+      "type": "truefalse",
+      "statement": "When you buy a share in a company, you are lending the company money that they must repay you with interest.",
+      "correctAnswer": false,
+      "explanation": "False. Buying a share means buying ownership — not lending. You become a part-owner of the company. The company has no obligation to repay you the purchase price. Instead, you benefit if the share price rises (you can sell for a profit) or if the company pays dividends (a share of profits). If the company does badly, the share price may fall and you could lose money. This is very different from a loan or a bank deposit.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Major Stock Exchanges Around the World",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a table: Exchange | Location | Key companies listed. Fill in the five exchanges from this slide.",
+      "content": "Stock exchanges exist in most countries. Here are the most important ones.\n\nNYSE — New York Stock Exchange. The world's largest by total market value. Home to Apple, JPMorgan, McDonald's. Market cap over USD $25 trillion.\n\nNASDAQ — New York. Technology-heavy exchange. Home to Microsoft, Amazon, Google, Meta, Tesla. Many of the world's most valuable tech companies list here.\n\nLSE — London Stock Exchange. The UK's main exchange and one of the oldest in the world, founded in 1801.\n\nASX — Australian Securities Exchange. Australia's main exchange. Closely followed in NZ — many NZ investors hold ASX shares. Home to BHP, Commonwealth Bank, CSL.\n\nNZX — New Zealand Exchange. Wellington-based. Smaller than its global peers but home to major NZ companies including Fisher and Paykel Healthcare, Meridian Energy, Mainfreight, and Air New Zealand. Also home to Fonterra Shareholders' Fund.\n\nWhen people say 'the market went up today,' they usually mean a major index like the NZX 50 (NZ's top 50 companies), S&P 500 (US top 500), or Dow Jones Industrial Average (30 major US companies)."
+    },
+    {
+      "type": "quiz",
+      "title": "Stock Market Basics Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "What does owning a share in a company actually mean?",
+          "options": [
+            "You have lent the company money at a fixed interest rate",
+            "You own a small fraction of the company — its assets, earnings potential and voting rights",
+            "You are entitled to a guaranteed fixed payment each year regardless of company performance",
+            "You have a job at the company and receive a salary"
+          ],
+          "correctIndex": 1,
+          "explanation": "Owning a share means owning a fraction of the company itself — not a debt instrument. Shareholders participate in the company's success (rising share price, dividends) and its failure (falling share price, possible dividend cuts). There is no guaranteed return and no obligation for the company to repay the share price."
+        },
+        {
+          "question": "A NZ company wants to raise $40 million to build a new factory. Which option does NOT require them to repay the capital?",
+          "options": [
+            "A $40 million bank loan at 7.5% per annum",
+            "A $40 million corporate bond issue at 6% per annum",
+            "Issuing $40 million of new shares on the NZX",
+            "A government-backed business development loan"
+          ],
+          "correctIndex": 2,
+          "explanation": "Issuing shares raises equity capital — money the company never has to repay. In exchange, investors receive ownership stakes and potential future dividends. Bank loans, bonds and government loans are all forms of debt that must be repaid with interest. This is a key reason companies choose to list on stock exchanges: access to capital without debt repayment obligations."
+        },
+        {
+          "question": "Which stock exchange is home to Fisher and Paykel Healthcare, Meridian Energy and Mainfreight?",
+          "options": [
+            "NYSE — New York Stock Exchange",
+            "ASX — Australian Securities Exchange",
+            "NASDAQ — National Association of Securities Dealers Automated Quotations",
+            "NZX — New Zealand Exchange"
+          ],
+          "correctIndex": 3,
+          "explanation": "Fisher and Paykel Healthcare, Meridian Energy and Mainfreight are all major NZ companies listed on the NZX — New Zealand's stock exchange based in Wellington. While some NZ companies also have secondary listings on the ASX, these are primarily NZX-listed companies."
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "title": "You Are Probably Already an Investor",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: How does KiwiSaver connect NZ students to the stock market? What does it mean that your KiwiSaver fund buys shares?",
+      "content": "Most New Zealanders over 18 who have worked are already stock market investors through KiwiSaver — they just might not know it.\n\nWhen you contribute to KiwiSaver, your money goes to a fund manager (like Fisher Funds, Simplicity, or ANZ Investments) who invests it on your behalf. Growth and balanced KiwiSaver funds invest significant portions in shares — both NZ companies on the NZX and international companies on exchanges like the NYSE, ASX and LSE.\n\nThis means:\n— If you are in a KiwiSaver growth fund, part of your retirement savings is invested in companies like Apple, Microsoft, Fisher and Paykel Healthcare and Meridian Energy.\n— When these companies do well and share prices rise, your KiwiSaver balance grows.\n— When markets fall sharply — like they did in early 2020 during COVID-19 — KiwiSaver growth fund balances temporarily fell before recovering.\n\nOver the long run, growth-fund KiwiSaver members (who are invested in the share market) typically end up with significantly more money than conservative-fund members (who are mostly in bonds and cash) — because shares have historically grown faster than other asset types over decades.\n\nThe share market is not just for wealthy investors in suits. It is the engine behind most retirement savings in New Zealand."
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Stock Exchange to Its Country",
+      "estimatedMinutes": 5,
+      "pairs": [
+        { "item": "NZX", "zone": "New Zealand" },
+        { "item": "ASX", "zone": "Australia" },
+        { "item": "NYSE", "zone": "United States" },
+        { "item": "LSE", "zone": "United Kingdom" },
+        { "item": "NASDAQ", "zone": "United States" }
+      ],
+      "explanation": "Each country has its own stock exchange (or several). The NYSE and NASDAQ are both in the US — NYSE is older and home to large traditional companies; NASDAQ is younger and more technology-focused. The NZX is small compared to these global exchanges but is the home market for major NZ companies and the index most relevant to NZ investors.",
+      "estimatedMinutes": 5
+    },
+    {
+      "type": "truefalse",
+      "statement": "KiwiSaver growth funds invest primarily in term deposits and government bonds, not company shares.",
+      "correctAnswer": false,
+      "explanation": "False. Growth KiwiSaver funds invest the majority of their assets in shares — both NZ and international company shares listed on various stock exchanges. Conservative funds invest mostly in bonds and cash. The reason growth funds generate higher long-term returns is precisely because they are exposed to the share market's growth potential. If you are under 40, a growth fund is generally recommended because you have decades to ride out any short-term market falls.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What is the name of New Zealand's stock exchange?",
+      "acceptedAnswers": ["NZX", "nzx", "New Zealand Exchange", "the NZX"],
+      "placeholder": "Type the name here...",
+      "hint": "It is a three-letter abbreviation.",
+      "explanation": "NZX — the New Zealand Exchange — is New Zealand's official stock market, based in Wellington. It lists major NZ companies including Fisher and Paykel Healthcare, Meridian Energy, Mainfreight, Spark, and Air New Zealand. The NZX 50 index tracks the performance of New Zealand's 50 largest listed companies.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Companies You Know on the Stock Market",
+      "estimatedMinutes": 5,
+      "prompt": "Think of five companies whose products or services you use regularly — supermarkets, streaming services, phone manufacturers, fast food chains, clothing brands. For each, guess whether it is publicly listed on a stock exchange. Pick one you are most interested in and write two sentences: what does the company do, and why might investors want to own a piece of it?",
+      "nceaLink": "Extra Learning — no NCEA credits. The stock market connects to virtually every major company whose products you use every day."
+    }
+  ]
+}

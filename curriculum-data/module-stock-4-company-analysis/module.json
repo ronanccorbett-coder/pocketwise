@@ -1,0 +1,18 @@
+{
+  "title": "Company Analysis",
+  "description": "Students learn to analyse individual companies using annual reports, competitive positioning, management quality and financial health. Builds toward writing a complete investment thesis on a NZ company.",
+  "ageTrack": "14", "yearLevel": "Year 10", "nceaStandard": null, "nceaStandardTitle": null,
+  "nceaCredits": 0, "nceaAssessmentType": "Extra Learning", "durationWeeks": 2,
+  "sessionsPerWeek": 4, "minutesPerSession": 45, "xpReward": 640,
+  "iconName": "search", "colorTheme": "#0e9f6e", "isPublished": true, "order": 13,
+  "ownerEmail": "admin@pocketwise.nz",
+  "rationale": "Deep dive into analysing individual companies. Students learn to read annual reports, assess competitive moats, evaluate management quality and construct a complete investment thesis. Uses real NZ companies throughout.",
+  "learningObjectives": [
+    "Read and extract key information from a NZ company annual report",
+    "Identify and assess a company's competitive moat",
+    "Evaluate management quality using track record and alignment metrics",
+    "Analyse revenue quality, profit margins and earnings sustainability",
+    "Write a complete investment thesis for a NZ listed company"
+  ],
+  "assessmentTask": "Students produce a complete 2-page investment thesis on one NZ listed company covering: business model, competitive moat, management assessment, key metrics, risks and a buy/hold/sell recommendation with price target rationale."
+}

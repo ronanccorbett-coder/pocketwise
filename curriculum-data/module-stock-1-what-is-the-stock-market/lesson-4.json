@@ -1,0 +1,120 @@
+{
+  "title": "Week 1 Challenge \u2014 The Share Market Simulator",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Apply",
+  "nceaFocus": "Extra Learning \u2014 Stock Market Foundations",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Apply Week 1 knowledge in a simulated investment decision",
+    "Calculate gains, losses, dividends and total returns",
+    "Evaluate a portfolio decision considering market cycle phase"
+  ],
+  "vocabulary": [
+    {
+      "term": "Capital gain",
+      "definition": "The profit made from selling a share for more than you paid. If you buy at $10 and sell at $14, your capital gain is $4 per share."
+    },
+    {
+      "term": "Capital loss",
+      "definition": "The loss made from selling a share for less than you paid. If you buy at $10 and sell at $7, your capital loss is $3 per share."
+    },
+    {
+      "term": "Total return",
+      "definition": "The complete return from an investment, combining both capital gain (or loss) and any dividends received. Total return = (sale price \u2212 purchase price + dividends) \u00f7 purchase price."
+    },
+    {
+      "term": "Portfolio",
+      "definition": "The collection of all shares (and other investments) owned by a single investor."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Week 1 Knowledge Check",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "What is an Initial Public Offering (IPO)?",
+          "options": [
+            "When a company pays its first dividend to shareholders",
+            "When a company's shares are offered to the public for the first time, allowing it to raise capital by selling ownership stakes",
+            "When a company repurchases its own shares from the market to reduce the number in circulation",
+            "When two companies merge and their shares are combined into a single new stock"
+          ],
+          "correctIndex": 1,
+          "explanation": "An IPO is when a private company sells shares to the public for the first time through a stock exchange. It allows the company to raise large amounts of capital from many investors at once. After the IPO, those shares can be bought and sold freely on the exchange. Famous IPOs include Facebook (2012, raised USD $16 billion) and Alibaba (2014, raised USD $25 billion \u2014 the largest IPO in history at the time)."
+        },
+        {
+          "question": "A share's 52-week range is $42.10 to $61.80. The current price is $44.20. What does this suggest about the share's recent performance?",
+          "options": [
+            "The share is near its 52-week high \u2014 it has performed strongly over the past year",
+            "The share is near its 52-week low \u2014 it has fallen significantly from its high over the past year",
+            "The share is at exactly its average price for the year",
+            "The 52-week range shows the share is unusually stable with low volatility"
+          ],
+          "correctIndex": 1,
+          "explanation": "At $44.20, the share is close to its 52-week low of $42.10 and far below its 52-week high of $61.80 \u2014 a fall of over 28% from the high. This context matters enormously: a share at $44 sounds different depending on whether it was recently $40 (recovering) or recently $62 (still falling). The 52-week range is one of the first things investors check."
+        },
+        {
+          "question": "Which of the following BEST describes investor behaviour at the trough of a market cycle?",
+          "options": [
+            "Extreme optimism \u2014 investors believe prices will keep rising and are buying aggressively",
+            "Calm and measured \u2014 investors rationally assess long-term value and make disciplined decisions",
+            "Extreme pessimism and fear \u2014 most investors believe markets will keep falling, many are panic-selling, and the media predicts doom",
+            "Mild concern \u2014 investors are slightly cautious but still broadly confident in the market"
+          ],
+          "correctIndex": 2,
+          "explanation": "The trough of a bear market is characterised by extreme pessimism. Investors who held through the fall are experiencing significant paper losses. Media coverage is overwhelmingly negative. Many investors capitulate (sell at the bottom to stop losses). This emotional environment is exactly why troughs are the best buying opportunities \u2014 prices are at their lowest, but psychologically it feels most dangerous to buy."
+        },
+        {
+          "question": "You own 500 shares in Spark NZ. Spark announces a dividend of $0.135 per share. How much dividend income do you receive?",
+          "options": [
+            "$13.50",
+            "$135.00",
+            "$67.50",
+            "$270.00"
+          ],
+          "correctIndex": 2,
+          "explanation": "500 shares \u00d7 $0.135 dividend per share = $67.50 total dividend income. Dividends are a cash payment from company profits to shareholders, typically paid twice per year. Spark NZ is known as a reliable dividend-paying stock \u2014 its stable utility-like earnings allow consistent dividend payments."
+        },
+        {
+          "question": "Mainfreight's share price falls from $70 to $49 as the economy enters recession. What percentage has it fallen?",
+          "options": [
+            "21% fall",
+            "30% fall",
+            "43% fall",
+            "70% fall"
+          ],
+          "correctIndex": 1,
+          "explanation": "Percentage fall = ($70 \u2212 $49) \u00f7 $70 \u00d7 100 = $21 \u00f7 $70 \u00d7 100 = 30%. A 30% fall meets the definition of a bear market (20%+ fall). For context, Mainfreight fell similarly in 2022 as rising interest rates pressured growth company valuations globally. It subsequently recovered strongly, demonstrating why long-term holders who did not panic-sell were rewarded."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "Simulated Portfolio \u2014 The NZX Investment Challenge",
+      "estimatedMinutes": 22,
+      "nceaLevel": "Achieved",
+      "setup": "You have $10,000 of virtual money to invest in NZ shares. You bought the following shares six months ago.\n\nHolding 1: 150 shares in Meridian Energy (MEL)\nPurchase price: $5.20 per share\nCurrent price: $5.68 per share\nDividend received during period: $0.12 per share\n\nHolding 2: 200 shares in Fisher and Paykel Healthcare (FPH)\nPurchase price: $21.40 per share\nCurrent price: $19.80 per share\nDividend received during period: $0.19 per share\n\nHolding 3: 80 shares in Mainfreight (MFT)\nPurchase price: $64.50 per share\nCurrent price: $71.20 per share\nDividend received during period: $0.75 per share\n\nRemaining cash: $1,150 (invested $8,850 total in shares)",
+      "challenge": "1. Calculate the current market value of each holding.\n2. Calculate the capital gain or loss on each holding (current value minus purchase cost).\n3. Calculate the dividend income from each holding.\n4. Calculate the total return on the portfolio: total current value + dividends \u2212 original investment.\n5. Calculate the percentage total return on the original $10,000.\n6. Which holding performed best in percentage terms? Show your working.\n7. The market has just entered a bull phase. You have $1,150 cash. Which one holding would you add to and why \u2014 considering what you learned about market cycles?",
+      "hints": [
+        "Q1: Current value = current price \u00d7 number of shares for each holding.",
+        "Q4: Total return = (sum of current values + all dividends + cash) \u2212 original $10,000.",
+        "Q6: Compare % return for each: (current price \u2212 purchase price + dividend) \u00f7 purchase price \u00d7 100."
+      ],
+      "solution": "1. Current market values:\nMEL: 150 \u00d7 $5.68 = $852.00\nFPH: 200 \u00d7 $19.80 = $3,960.00\nMFT: 80 \u00d7 $71.20 = $5,696.00\nTotal shares value: $10,508.00\n\n2. Capital gains/losses:\nMEL: 150 \u00d7 ($5.68 \u2212 $5.20) = 150 \u00d7 $0.48 = +$72.00\nFPH: 200 \u00d7 ($19.80 \u2212 $21.40) = 200 \u00d7 (\u2212$1.60) = \u2212$320.00\nMFT: 80 \u00d7 ($71.20 \u2212 $64.50) = 80 \u00d7 $6.70 = +$536.00\n\n3. Dividend income:\nMEL: 150 \u00d7 $0.12 = $18.00\nFPH: 200 \u00d7 $0.19 = $38.00\nMFT: 80 \u00d7 $0.75 = $60.00\nTotal dividends: $116.00\n\n4. Total portfolio value:\nShares: $10,508.00 + dividends: $116.00 + cash: $1,150.00 = $11,774.00\nOriginal investment: $10,000.00\nTotal dollar return: $11,774.00 \u2212 $10,000.00 = $1,774.00\n\n5. Percentage total return: $1,774 \u00f7 $10,000 \u00d7 100 = 17.74% in 6 months\n\n6. Best performing holding:\nMEL: ($0.48 + $0.12) \u00f7 $5.20 \u00d7 100 = $0.60 \u00f7 $5.20 \u00d7 100 = 11.5%\nFPH: (\u2212$1.60 + $0.19) \u00f7 $21.40 \u00d7 100 = \u2212$1.41 \u00f7 $21.40 \u00d7 100 = \u22126.6%\nMFT: ($6.70 + $0.75) \u00f7 $64.50 \u00d7 100 = $7.45 \u00f7 $64.50 \u00d7 100 = 11.5%\nMEL and MFT tied at 11.5%. FPH was the weakest at \u22126.6%.\n\n7. Which to add to in a bull phase: Good argument for MFT. Mainfreight is a growth company whose earnings are closely tied to economic activity \u2014 it tends to perform well when the economy is expanding (bull phase). It also has the strongest momentum of the three holdings. Alternatively, buying more FPH at its lower price ($19.80 vs $21.40 purchase price) is a contrarian strategy \u2014 adding to a fallen stock in a bull phase if you believe in the company's long-term story."
+    },
+    {
+      "type": "reflection",
+      "title": "What Did You Learn From the Simulation?",
+      "estimatedMinutes": 5,
+      "prompt": "Looking at your portfolio results: FPH lost money despite being a world-class company. Mainfreight gained despite being a simple transport business. What does this tell you about the relationship between company quality and short-term share price performance? What would you do differently if you were managing this portfolio for the next 6 months?",
+      "nceaLink": "Extra Learning \u2014 simulated portfolios build the intuition that real money takes years to develop."
+    }
+  ]
+}

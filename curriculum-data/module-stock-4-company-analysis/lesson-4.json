@@ -1,0 +1,112 @@
+{
+  "title": "Week 1 Challenge \u2014 Full Company Deep Dive",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Apply and Analyse",
+  "nceaFocus": "Extra Learning \u2014 Company Analysis",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Apply annual report, moat and management assessment frameworks to a NZ company",
+    "Synthesise multiple analytical dimensions into a coherent investment view",
+    "Identify the key investment risks and mitigants for a specific company"
+  ],
+  "vocabulary": [
+    {
+      "term": "Investment thesis",
+      "definition": "A written rationale for why a share is worth buying \u2014 covering business model, competitive position, management, key metrics, valuation and risks."
+    },
+    {
+      "term": "Bull case / bear case",
+      "definition": "The optimistic scenario (bull) and pessimistic scenario (bear) for a share. Good analysis explicitly considers both before reaching a conclusion."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Week 1 Recap Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A company's income statement shows Revenue $600M, COGS $360M, Operating expenses $140M, Interest $20M, Tax $22.4M, Net profit $57.6M. What is the net profit margin?",
+          "options": [
+            "40% \u2014 gross margin (revenue minus COGS) divided by revenue",
+            "16.7% \u2014 operating profit divided by revenue",
+            "9.6% \u2014 net profit after tax ($57.6M) divided by revenue ($600M)",
+            "5.8% \u2014 net profit divided by total costs"
+          ],
+          "correctIndex": 2,
+          "explanation": "Net profit margin = NPAT \u00f7 Revenue \u00d7 100 = $57.6M \u00f7 $600M \u00d7 100 = 9.6%. This measures how much of each dollar of revenue becomes profit after all costs including tax. A 9.6% net margin is modest \u2014 typical for logistics, retail or other competitive industries. FPH's net margin is around 16\u201318%, reflecting stronger pricing power and operating leverage."
+        },
+        {
+          "question": "Mainfreight has an ROE of 33% with a debt-to-equity ratio of 0.3\u00d7. A competitor has an ROE of 35% but a D/E of 2.8\u00d7. Which company has demonstrated more impressive capital efficiency?",
+          "options": [
+            "The competitor \u2014 35% ROE is simply higher than 33%",
+            "They are identical \u2014 ROE is the only relevant metric",
+            "Mainfreight \u2014 its 33% ROE is achieved with minimal leverage, indicating genuine operational excellence. The competitor's 35% ROE is partly a product of aggressive borrowing, which adds financial risk",
+            "The competitor \u2014 high debt shows confidence in earnings stability"
+          ],
+          "correctIndex": 2,
+          "explanation": "ROE can be inflated by leverage (the DuPont formula shows ROE = Net Margin \u00d7 Asset Turnover \u00d7 Leverage). A company with D/E of 2.8\u00d7 is borrowing heavily to boost its apparent equity returns. If earnings fall, it faces debt coverage risk. Mainfreight's 33% ROE with minimal debt is genuinely operationally excellent \u2014 it earns those returns from business performance, not financial engineering."
+        },
+        {
+          "question": "An annual report reveals the company's CFO resigned last month with no explanation, the external auditor issued an 'emphasis of matter' note on revenue recognition, and accounts receivable jumped 40% despite only 8% revenue growth. What is the most appropriate investor response?",
+          "options": [
+            "Buy more shares \u2014 this volatility represents an overreaction and a buying opportunity",
+            "Hold and wait \u2014 these issues will likely resolve themselves in the next quarter",
+            "Investigate deeply before investing \u2014 three simultaneous warning signs (key executive departure, audit concern, unusual receivables growth) are significant red flags warranting thorough due diligence",
+            "Ignore these factors \u2014 financial fundamentals are the only relevant consideration"
+          ],
+          "correctIndex": 2,
+          "explanation": "Three simultaneous red flags is a serious pattern. CFO departures are concerning (they have the most detailed knowledge of financial health). Auditor 'emphasis of matter' notes are unusual and suggest material accounting concerns. Accounts receivable growing 5\u00d7 faster than revenue suggests the company may be recognising revenue before it is collected \u2014 a classic earnings quality problem. Together, these warrant deep investigation and extreme caution before investing."
+        },
+        {
+          "question": "FPH's competitive moat is best described as:",
+          "options": [
+            "Cost advantage \u2014 FPH produces respiratory care equipment more cheaply than competitors",
+            "Network effects \u2014 FPH becomes more valuable as more hospitals join its customer base",
+            "Switching costs combined with intangible assets \u2014 hospitals face clinical workflow disruption if they switch, and FPH holds regulatory approvals, clinical relationships and patents that are hard to replicate",
+            "Efficient scale \u2014 the medical device market is large enough for only one profitable supplier globally"
+          ],
+          "correctIndex": 2,
+          "explanation": "FPH's primary moat is switching costs \u2014 once a hospital's clinical workflows are built around FPH respiratory devices, switching requires retraining staff, clinical risk management, regulatory re-approval processes and potential interruption to patient care. This is reinforced by intangible assets: FPH holds hundreds of patents, has deep clinical relationships with leading respiratory centres globally, and its products have regulatory approvals in over 100 countries that took decades to build."
+        },
+        {
+          "question": "Which capital allocation decision would you rate MOST negatively for long-term shareholders?",
+          "options": [
+            "Paying a fully imputed dividend equal to 80% of free cash flow when no high-return reinvestment is available",
+            "Making a large acquisition in a completely unrelated industry at 45\u00d7 earnings, funded entirely by taking on $800M of new debt",
+            "Buying back shares during a market correction at 30% below the company's estimated intrinsic value",
+            "Investing $200M in expanding the company's core business at an expected 18% return on invested capital"
+          ],
+          "correctIndex": 1,
+          "explanation": "Paying 45\u00d7 earnings for an unrelated acquisition funded by $800M of new debt is one of the worst possible capital allocation outcomes. Research shows diversification acquisitions typically destroy value \u2014 management lacks expertise in the new industry, integration is complex, and the price paid is often extreme (45\u00d7 is very aggressive). Funding it with debt amplifies the risk \u2014 if the acquisition underperforms (as most do), the company faces both earnings disappointment and debt service pressure. Options A, C and D all represent sensible capital deployment."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "Full Company Deep Dive \u2014 Mainfreight Analysis",
+      "estimatedMinutes": 25,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "Mainfreight Limited (NZX: MFT) is a global logistics company founded in Auckland in 1978. It operates freight forwarding, warehousing and supply chain services across NZ, Australia, USA, Europe and Asia.\n\nSelected financial data (FY2024):\nRevenue: $5,100 million\nGross profit: $1,530 million\nNet profit after tax: $300 million\nShares on issue: 108.5 million\nShareholders' equity: $900 million\nTotal debt: $270 million\nCapital expenditure: $320 million\nOperating cash flow: $490 million\nAnnual dividend: $1.50/share\nShare price: $68.50\n52-week range: $58.40 \u2013 $82.10\n\nManagement notes:\n\u2014 CEO Don Braid has led the company since 2007. Revenue has grown from $1.5B to $5.1B under his tenure.\n\u2014 Braid owns approximately 6% of all shares (~6.5 million shares).\n\u2014 No acquisitions in the past 3 years \u2014 management describes acquisitions as 'very occasional and small.'\n\u2014 The company has no independent directors on the remuneration committee \u2014 a governance concern raised by some proxy advisors.\n\nCompetitive position:\n\u2014 Mainfreight has 350+ branch locations globally\n\u2014 No single customer represents more than 2% of revenue\n\u2014 Competitors include DHL, FedEx, Toll and Linfox in key markets",
+      "challenge": "Calculate and analyse:\n1. EPS, P/E ratio and dividend yield\n2. Gross margin and net profit margin\n3. ROE and D/E ratio\n4. Free cash flow and dividend coverage ratio (FCF \u00f7 dividends paid)\n\nAssess:\n5. What type of competitive moat does Mainfreight have? Is it widening or narrowing?\n6. Evaluate management quality using three specific pieces of evidence from the data.\n7. Identify two green flags and two red flags in the data provided.\n8. Write a 5-sentence investment opinion: is Mainfreight a buy, hold or sell at $68.50?",
+      "hints": [
+        "Q4: Dividends paid = shares \u00d7 DPS = 108.5M \u00d7 $1.50. Dividend coverage = FCF \u00f7 dividends paid.",
+        "Q5: Think about Mainfreight's 350+ branch global network and what this means for a competitor trying to replicate it.",
+        "Q8: Consider valuation (P/E vs historical average and sector), management alignment, moat strength and current technical position (below 52-week high)."
+      ],
+      "solution": "1. EPS = $300M \u00f7 108.5M = $2.765/share. P/E = $68.50 \u00f7 $2.765 = 24.8\u00d7. Dividend yield = $1.50 \u00f7 $68.50 \u00d7 100 = 2.19%.\n\n2. Gross margin = $1,530M \u00f7 $5,100M \u00d7 100 = 30%. Net profit margin = $300M \u00f7 $5,100M \u00d7 100 = 5.9%.\n\n3. ROE = $300M \u00f7 $900M \u00d7 100 = 33.3%. D/E = $270M \u00f7 $900M = 0.30\u00d7.\n\n4. FCF = $490M \u2212 $320M = $170M. Dividends paid = 108.5M \u00d7 $1.50 = $162.75M. Dividend coverage = $170M \u00f7 $162.75M = 1.04\u00d7. FCF barely covers dividends \u2014 the company is investing heavily in growth (high capex) which compresses near-term FCF relative to earnings.\n\n5. Mainfreight's moat is primarily cost advantage (scale) combined with switching costs (deeply embedded in customer supply chains). With 350+ global branches, Mainfreight's network density allows more freight per truck per route than smaller competitors \u2014 a structural cost advantage. Moat appears to be widening: revenue grew from $1.5B to $5.1B under the current CEO, each new geography makes the network more useful for international freight customers.\n\n6. Management quality assessment:\n(a) Track record: Revenue grew 3.4\u00d7 and net profit grew substantially under Braid since 2007. This is exceptional long-term performance. (b) Skin in the game: Braid personally owns ~6% of all shares worth over $400M \u2014 extraordinary personal alignment with shareholders. (c) Capital allocation discipline: No acquisitions in 3 years, preferring organic investment. High capex of $320M suggests meaningful reinvestment in the business at expected returns well above cost of capital.\n\n7. Green flags: (a) CEO owns 6% of shares \u2014 very strong alignment. (b) Revenue diversification \u2014 no single customer more than 2% of revenue, reducing customer concentration risk.\nRed flags: (a) No independent directors on remuneration committee \u2014 governance concern. (b) Dividend coverage of 1.04\u00d7 is very thin \u2014 any earnings shortfall could require a dividend cut or funding dividends from debt.\n\n8. Investment opinion (HOLD/BUY on weakness):\nMainfreight is an exceptional NZ business with a 33% ROE, widening global moat and outstanding management alignment under Don Braid. At 24.8\u00d7 P/E the valuation is not cheap for a logistics company (sector typically trades 15\u201320\u00d7), reflecting the premium the market rightly assigns to Mainfreight's track record and management quality. The current price at $68.50 \u2014 roughly 17% below the 52-week high of $82.10 \u2014 has partially corrected this premium. A stronger buy case would emerge if the price falls toward the $58\u201362 range where the P/E drops to ~21\u201322\u00d7 and the yield approaches 2.5%. Current recommendation: hold existing positions and accumulate on weakness below $62."
+    },
+    {
+      "type": "reflection",
+      "title": "What Made This Analysis Difficult?",
+      "estimatedMinutes": 5,
+      "prompt": "Which part of the Mainfreight analysis did you find hardest \u2014 the financial calculations, the moat assessment, the management evaluation, or the final investment opinion? Write three sentences about what made it difficult and what additional information would have helped you form a stronger view.",
+      "nceaLink": "Extra Learning \u2014 real company analysis is genuinely difficult. Professional analysts spend weeks on each company. The goal is building a framework, not achieving certainty."
+    }
+  ]
+}

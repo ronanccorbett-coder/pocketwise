@@ -1,0 +1,154 @@
+{
+  "title": "Short Selling and Other Share Strategies",
+  "order": 6,
+  "dayNumber": 6,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand",
+  "nceaFocus": "Extra Learning \u2014 How Shares Work",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Explain how short selling works and its risks",
+    "Describe share buybacks and why companies do them",
+    "Identify strategies beyond simple buy-and-hold investing"
+  ],
+  "vocabulary": [
+    {
+      "term": "Short selling",
+      "definition": "Borrowing shares from someone, selling them, then hoping to buy them back cheaper later. Profits when share prices fall. Risk: the price can rise instead, causing unlimited losses."
+    },
+    {
+      "term": "Share buyback",
+      "definition": "When a company uses its own cash to buy its own shares from the market, reducing the total shares on issue. Increases earnings per share for remaining shareholders."
+    },
+    {
+      "term": "Dollar-cost averaging",
+      "definition": "Investing a fixed amount at regular intervals (e.g. $100 per month) regardless of price. Automatically buys more shares when cheap and fewer when expensive."
+    },
+    {
+      "term": "Margin lending",
+      "definition": "Borrowing money to invest in shares. Amplifies both gains and losses. Dangerous for most investors \u2014 if shares fall, losses can exceed the original investment."
+    },
+    {
+      "term": "Averaging down",
+      "definition": "Buying more shares in a company after the price has fallen, lowering the average cost per share. Can be a good strategy if the company is fundamentally sound, but can amplify losses if the company keeps falling."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Short Selling \u2014 Profiting From Falls",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: How does short selling work? What is the maximum profit possible on a short? What is the maximum possible loss? Why is the loss potentially unlimited?",
+      "content": "Most investors profit when share prices rise. Short sellers do the opposite \u2014 they profit when prices fall.\n\nHow short selling works:\n1. You borrow 100 shares of Mainfreight from a broker (paying a fee).\n2. You immediately sell those borrowed shares for $70 each = $7,000 cash.\n3. Time passes. Mainfreight falls to $50.\n4. You buy 100 shares at $50 = $5,000.\n5. You return the 100 shares to the broker.\n6. Profit: $7,000 received \u2212 $5,000 spent = $2,000 (minus borrowing fees).\n\nThe risks of short selling:\n\u2014 Maximum profit: 100% of the amount borrowed-and-sold (if the company goes to $0)\n\u2014 Maximum loss: unlimited. If Mainfreight rises to $140 instead of falling, you must buy back at $140: $7,000 \u2212 $14,000 = \u2212$7,000 loss. If it rises to $200, loss = $13,000. There is no ceiling on losses.\n\nShort selling by experienced hedge funds serves a function: it provides price-discovery and exposes overvalued companies. It is not appropriate for most ordinary investors.\n\nNZ short selling is legal and disclosed \u2014 significant short positions in NZX shares must be reported to the FMA."
+    },
+    {
+      "type": "slide",
+      "title": "Share Buybacks \u2014 Companies Buying Their Own Shares",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: If a company has 100 million shares on issue, earns $50 million profit, and buys back 10 million shares \u2014 what happens to earnings per share?",
+      "content": "When a company generates more cash than it needs for operations and growth, it can return that cash to shareholders in two ways: pay a dividend, or buy back its own shares.\n\nHow a buyback works: the company announces it will spend (e.g.) $50 million buying its own shares on the NZX over the next 12 months. It becomes a buyer in the market. The purchased shares are usually cancelled, reducing the total shares on issue.\n\nEffect on earnings per share:\nBefore buyback: Company earns $50 million profit on 100 million shares = $0.50 EPS.\nAfter buying back 10 million shares: $50 million profit \u00f7 90 million shares = $0.556 EPS \u2014 a 11.1% increase in EPS with no improvement in underlying profits.\n\nWhy companies do buybacks:\n\u2014 Returns cash to shareholders in a tax-effective way (capital gain vs dividend income tax treatment)\n\u2014 Signals management believes the shares are undervalued\n\u2014 Improves EPS and therefore potentially the share price\n\nBuybacks vs dividends: Some investors prefer buybacks (NZ imputation credits make dividends relatively efficient too, reducing the tax advantage of buybacks vs other markets). Companies like Apple and Mainfreight have used buybacks significantly."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Short selling a share carries a maximum possible loss of 100% \u2014 the same as buying a share.",
+      "correctAnswer": false,
+      "explanation": "False. When you buy a share, the maximum you can lose is 100% of your investment (if the share goes to zero). When you short sell, your maximum loss is theoretically unlimited \u2014 because the share price can rise without limit. If you short sell 100 shares at $70 ($7,000) and the price rises to $300, you must buy back at $300 \u00d7 100 = $30,000 \u2014 a loss of $23,000 on a $7,000 short position. This asymmetric risk profile makes short selling significantly more dangerous than buying shares for most investors.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Dollar-Cost Averaging \u2014 The Simple Strategy That Works",
+      "estimatedMinutes": 4,
+      "notePrompt": "Tama invests $200 per month in the NZX 50 index fund at these prices: Jan $12, Feb $10, Mar $8, Apr $10, May $12. Calculate the total units purchased. Calculate the average cost per unit.",
+      "content": "Dollar-cost averaging (DCA) is the strategy of investing a fixed amount at regular intervals regardless of price. It is one of the most reliable long-term strategies available to ordinary investors.\n\nHow it works with $200 monthly in a NZX 50 fund:\nJanuary (price $12.00): $200 \u00f7 $12 = 16.67 units\nFebruary (price $10.00): $200 \u00f7 $10 = 20.00 units\nMarch (price $8.00): $200 \u00f7 $8 = 25.00 units\nApril (price $10.00): $200 \u00f7 $10 = 20.00 units\nMay (price $12.00): $200 \u00f7 $12 = 16.67 units\n\nTotal invested: $1,000\nTotal units: 98.34\nAverage cost per unit: $1,000 \u00f7 98.34 = $10.17\n\nAverage price over the period: ($12+$10+$8+$10+$12) \u00f7 5 = $10.40 per unit\n\nDCA average cost ($10.17) is LOWER than the simple average price ($10.40) \u2014 because you automatically bought more units when the price was low (25 units in March) and fewer when high (16.67 units in January and May). You did not need to time the market at all.\n\nDCA is perfect for KiwiSaver (automatic fortnightly contributions) and for young investors building wealth steadily over time."
+    },
+    {
+      "type": "quiz",
+      "title": "Share Strategies Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "You short sell 200 Spark shares at $4.20. Spark rises to $6.80 instead of falling. What is your loss?",
+          "options": [
+            "$0 \u2014 your loss is capped at the original $840 short sale value",
+            "$520 loss \u2014 you profit when prices fall so a rise causes a proportional loss of 200 \u00d7 $2.60",
+            "$840 loss \u2014 you lose the full amount of the original short sale",
+            "$840 gain \u2014 short sellers profit from any price movement"
+          ],
+          "correctIndex": 1,
+          "explanation": "Short sale proceeds: 200 \u00d7 $4.20 = $840. Buyback cost: 200 \u00d7 $6.80 = $1,360. Loss: $1,360 \u2212 $840 = $520. You sold borrowed shares for $840 and now must pay $1,360 to replace them \u2014 a $520 loss. And importantly, if Spark kept rising to $10, the loss would be 200 \u00d7 ($10 \u2212 $4.20) = $1,160. Short selling losses are not capped and grow with every price increase."
+        },
+        {
+          "question": "A company earns $80 million and has 200 million shares on issue ($0.40 EPS). It buys back 40 million shares. What is the new EPS?",
+          "options": [
+            "$0.40 \u2014 EPS is unchanged because profits did not increase",
+            "$0.32 \u2014 EPS falls because the company spent money on the buyback",
+            "$0.50 \u2014 same $80M profit now divided by 160M remaining shares",
+            "$0.80 \u2014 EPS doubles because half the shares are cancelled"
+          ],
+          "correctIndex": 2,
+          "explanation": "$80 million profit \u00f7 (200M \u2212 40M) = $80M \u00f7 160M shares = $0.50 EPS. The buyback reduced shares from 200M to 160M. Same profit, fewer shares \u2014 each remaining share represents a larger portion of the company's earnings. EPS rises 25% ($0.40 to $0.50) without any improvement in the underlying business \u2014 which is why buybacks are popular and tend to be positively received by the market."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Strategy to Its Mechanism",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Investing $150 per month regardless of what the market is doing",
+          "zone": "Dollar-Cost Averaging"
+        },
+        {
+          "item": "Borrowing shares, selling them, then buying back cheaper after a fall",
+          "zone": "Short Selling"
+        },
+        {
+          "item": "Company uses excess cash to reduce shares on issue",
+          "zone": "Share Buyback"
+        },
+        {
+          "item": "Buying more of a fallen share to reduce your average cost",
+          "zone": "Averaging Down"
+        },
+        {
+          "item": "Borrowing money from your broker to invest more than you have in cash",
+          "zone": "Margin Lending"
+        }
+      ],
+      "explanation": "These strategies range from conservative (DCA) to highly risky (short selling, margin lending). For young investors, DCA into diversified index funds is widely regarded as the most appropriate strategy. Short selling and margin lending amplify risk in ways that can result in losses exceeding the original investment."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Dollar-cost averaging always produces a lower average cost per unit than investing a lump sum at the start of the period.",
+      "correctAnswer": false,
+      "explanation": "False. If prices rise consistently throughout the investment period, a lump sum invested at the start would outperform DCA (because you bought all units at the lower starting price). DCA produces a lower average cost than the simple average price over the period, but not necessarily lower than the starting price. DCA's main advantage is psychological and practical \u2014 it removes the need to time the market, eliminates the risk of investing a lump sum at a peak, and is suitable for investors who invest income gradually rather than having a large sum at the start.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "Zoe invests $300 every month in the NZX 50. In March the price is $10.50. How many units does she buy in March?",
+      "acceptedAnswers": [
+        "28.57",
+        "28.6",
+        "28.57 units",
+        "approximately 28.57"
+      ],
+      "placeholder": "Type the number of units here...",
+      "hint": "Units = amount invested \u00f7 price per unit.",
+      "explanation": "$300 \u00f7 $10.50 = 28.571 units. Dollar-cost averaging produces fractional unit purchases like this \u2014 which is why platforms like Sharesies that allow fractional unit investing are particularly well-suited to DCA strategies. Most index fund platforms automatically reinvest contributions and allow partial unit purchases.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Which Strategy For You?",
+      "estimatedMinutes": 5,
+      "prompt": "Of the strategies covered today \u2014 buy-and-hold, dollar-cost averaging, short selling, share buybacks (from company perspective), averaging down \u2014 which would you use personally and why? Which would you definitely avoid and why? Write three to four sentences justifying your choices based on your investment goals and risk tolerance.",
+      "nceaLink": "Extra Learning \u2014 matching your investment strategy to your personal situation is a core financial literacy skill."
+    }
+  ]
+}

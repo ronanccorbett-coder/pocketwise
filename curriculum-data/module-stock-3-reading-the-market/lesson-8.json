@@ -1,0 +1,143 @@
+{
+  "title": "Module 3 Review \u2014 Market Analysis Mastery",
+  "order": 8,
+  "dayNumber": 8,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Apply and Evaluate",
+  "nceaFocus": "Extra Learning \u2014 Reading the Market",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Demonstrate mastery of all analytical tools from Module 3",
+    "Apply chart analysis, valuation metrics and sector knowledge to a fresh scenario",
+    "Produce a complete one-page share analysis"
+  ],
+  "vocabulary": [],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Module 3 Summary",
+      "estimatedMinutes": 3,
+      "notePrompt": "Without notes: list the four key chart concepts, three valuation ratios with formulas, the difference between fundamental and technical analysis, and two ways interest rates affect NZ utility stocks.",
+      "content": "Module 3 built your toolkit for reading the market.\n\nChart analysis: Line charts show trend; candlestick charts show open/high/low/close. Uptrend = higher highs and higher lows. Support = price floor where buyers step in. Resistance = price ceiling where sellers emerge. Volume confirms price moves.\n\nKey valuation metrics:\nEPS = Net profit \u00f7 Shares on issue\nP/E = Price \u00f7 EPS (how much you pay per dollar of earnings)\nDividend yield = Annual dividend \u00f7 Price \u00d7 100\nROE = Net profit \u00f7 Equity \u00d7 100 (management efficiency)\nP/B = Price \u00f7 Book value per share (market vs accounting value)\nFCF = Operating cash flow minus capital expenditure\n\nFundamental analysis: Asks what is the business worth. Uses financial metrics, competitive analysis, management quality.\nTechnical analysis: Asks where is the price going based on patterns. Uses charts, moving averages, RSI, volume.\n\nFinancial media: Most is noise. Apply the four questions: who, what evidence, what risks, is it actionable?\n\nSectors: Defensive (utilities, healthcare, telco) hold up in recessions. Cyclical (logistics, tourism, aviation) outperform in booms. Both are interest rate sensitive in different ways \u2014 rate rises hurt utilities most directly."
+    },
+    {
+      "type": "scenario",
+      "title": "Full Analysis \u2014 Contact Energy (CEN)",
+      "estimatedMinutes": 22,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "Contact Energy Limited (NZX: CEN) is NZ's second-largest electricity generator and retailer. It owns geothermal, hydro and gas-fired generation assets.\n\nData provided:\nShare price: $8.35\nShares on issue: 716 million\nNet profit: $258 million\nShareholders' equity: $2,580 million\nTotal debt: $1,800 million\nAnnual dividend: $0.38/share (fully imputed)\nCapital expenditure last year: $320 million\nOperating cash flow: $490 million\n\nChart description:\n52-week range: $7.60 \u2013 $9.40\nCurrent price: $8.35 \u2014 approximately 20% below 52-week high\nTrend: Sideways to slightly down over 12 months\n50-day MA: $8.25 (just below current price)\n200-day MA: $8.80 (above current price \u2014 bearish configuration)\nRSI: 44 \u2014 neutral, not overbought or oversold",
+      "challenge": "Calculate:\n1. EPS\n2. P/E ratio\n3. Dividend yield\n4. Market cap\n5. ROE\n6. Debt-to-equity ratio\n7. Free cash flow\n8. P/B ratio\n\nThen answer:\n9. Is Contact Energy defensive or cyclical? Explain.\n10. What does the chart analysis tell you about current momentum?\n11. Write a 5-sentence investment opinion: is Contact Energy a buy, hold or sell at $8.35? Use at least three metrics and the chart analysis to support your view.",
+      "hints": [
+        "FCF = Operating cash flow ($490M) minus capex ($320M).",
+        "P/B = Price \u00f7 (Equity \u00f7 Shares). Book value per share = $2,580M \u00f7 716M shares.",
+        "D/E = Total debt \u00f7 Equity."
+      ],
+      "solution": "1. EPS = $258M \u00f7 716M = $0.360/share\n\n2. P/E = $8.35 \u00f7 $0.360 = 23.2\u00d7\n\n3. Dividend yield = $0.38 \u00f7 $8.35 \u00d7 100 = 4.55%\n\n4. Market cap = $8.35 \u00d7 716M = $5.98 billion\n\n5. ROE = $258M \u00f7 $2,580M \u00d7 100 = 10.0% \u2014 below Buffett's 15% threshold. Electricity generation is capital-intensive, so lower ROE is expected, but 10% is at the lower end.\n\n6. D/E = $1,800M \u00f7 $2,580M = 0.70\u00d7 \u2014 moderate debt, normal for a utility company with stable contracted cash flows.\n\n7. FCF = $490M \u2212 $320M = $170M. The dividend costs 716M \u00d7 $0.38 = $272M \u2014 FCF of $170M does NOT cover the dividend. Contact Energy is paying dividends exceeding its FCF, likely funding the gap from cash reserves or debt. This is a yellow flag worth monitoring.\n\n8. P/B = $8.35 \u00f7 ($2,580M \u00f7 716M) = $8.35 \u00f7 $3.603 = 2.32\u00d7 \u2014 trading at 2.32\u00d7 book value, typical for a quality utility.\n\n9. Contact Energy is defensive \u2014 electricity is an essential service with stable demand regardless of economic conditions. However, it is interest rate sensitive: rising rates increase its debt costs and make bonds more competitive income alternatives, causing share price pressure.\n\n10. Technical analysis: Price is 20% below 52-week high and below the 200-day MA ($8.80) \u2014 a bearish configuration. The 50-day MA ($8.25) is very close to current price \u2014 the share is in a neutral zone. RSI of 44 suggests no extreme momentum in either direction. The overall picture is neutral to slightly negative \u2014 no clear catalyst for either a strong rally or further significant fall based on chart alone.\n\n11. Investment opinion (HOLD with caution):\nContact Energy trades at a reasonable 23.2\u00d7 P/E and offers an attractive 4.55% fully imputed dividend yield for income investors. However, the dividend coverage ratio is concerning \u2014 FCF of $170M does not cover the $272M annual dividend payout, suggesting dividends are not fully self-funded from operations. ROE of 10% is below the 15% benchmark, reflecting the capital intensity of electricity generation. Technically, the share sits below its 200-day MA and 20% below its 52-week high \u2014 momentum is neutral to negative with no clear catalyst for re-rating. A HOLD rating is appropriate: the yield is attractive and the business is defensive, but the dividend coverage gap and technical weakness argue against adding aggressively at current prices. A better entry might come if price returns toward the $7.60 52-week low where the yield would exceed 5%."
+    },
+    {
+      "type": "quiz",
+      "title": "Module 3 Review Quiz",
+      "estimatedMinutes": 12,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "A company reports strong profit growth of 25% but its free cash flow actually fell by 15%. What is the most likely explanation?",
+          "options": [
+            "The company manipulated its profit figures upward using fraudulent accounting",
+            "The company made large capital expenditures that reduce cash flow immediately but are depreciated slowly in the profit calculation, creating a temporary divergence between profit and FCF",
+            "The company paid a large dividend that reduced cash flow without affecting reported profit",
+            "Free cash flow and profit always diverge when growth rates are high \u2014 this is a known accounting principle"
+          ],
+          "correctIndex": 1,
+          "explanation": "Large capital expenditure is the most common reason FCF diverges below profit. Growth companies often invest heavily in new capacity \u2014 a $100M factory hits FCF immediately but is depreciated at perhaps $5M/year in the profit calculation. Reported profit stays high; cash is depleted. This is not necessarily alarming \u2014 it may represent valuable growth investment \u2014 but it does constrain dividends and buybacks in the short term."
+        },
+        {
+          "question": "A share breaks below its 18-month support level of $12.40 on its highest daily trading volume in over a year. What does this signal?",
+          "options": [
+            "A strong buy signal \u2014 the price has reached an extreme low and will bounce",
+            "A significant bearish breakout \u2014 the support has failed with broad market participation confirming the breakdown; former support may become new resistance",
+            "A temporary anomaly \u2014 support levels always hold eventually",
+            "A bullish technical pattern called a reversal hammer indicating imminent recovery"
+          ],
+          "correctIndex": 1,
+          "explanation": "Breaking below a significant support level on very high volume is a strong bearish signal \u2014 it confirms broad investor participation in the breakdown, not just a one-off trade. The high volume is critical: it means many investors collectively decided the $12.40 support was no longer compelling. The former support ($12.40) often becomes new resistance \u2014 buyers who held at $12.40 may now sell when the price recovers to that level, capping any bounce."
+        },
+        {
+          "question": "Which combination of metrics most clearly indicates a HIGH-QUALITY NZ business?",
+          "options": [
+            "High P/E, low ROE, high debt-to-equity ratio, FCF below net profit",
+            "Consistent ROE above 20%, P/E at a modest premium to peers, FCF exceeding net profit, low debt",
+            "Low P/E, declining EPS over three years, high dividend yield, no revenue growth",
+            "P/B ratio below 1.0, D/E ratio of 4.0\u00d7, no dividends, flat earnings for 5 years"
+          ],
+          "correctIndex": 1,
+          "explanation": "Consistent high ROE (above 20%) indicates durable competitive advantage. FCF exceeding profit indicates quality earnings \u2014 the business actually generates more cash than accounting profit suggests. Modest P/E premium reflects market recognition of quality without excessive speculation. Low debt means the ROE is genuine business performance, not financial leverage. This combination \u2014 high ROE, strong FCF, reasonable valuation, sound balance sheet \u2014 describes a quality business like Mainfreight."
+        },
+        {
+          "question": "The NZ economy is entering a recession. Which portfolio shift reflects sound sector rotation knowledge?",
+          "options": [
+            "Increase allocation to Air New Zealand and Tourism Holdings \u2014 people still travel even in recessions",
+            "Increase allocation to Meridian Energy and Spark NZ \u2014 defensive sectors with stable essential service revenues",
+            "Increase allocation to Mainfreight and Port of Tauranga \u2014 logistics is always in demand",
+            "Move entirely to cash \u2014 all NZ shares lose value equally in a recession"
+          ],
+          "correctIndex": 1,
+          "explanation": "In a recession, rotating toward defensive sectors (utilities, telcos, healthcare) is sound practice \u2014 these businesses provide essential services with stable demand. Meridian Energy's electricity and Spark's broadband are non-negotiable for households even in hard times. Logistics, aviation and tourism are cyclical and fall with economic activity. Moving entirely to cash is overly defensive and means missing eventual recovery."
+        },
+        {
+          "question": "A financial influencer on YouTube says: 'I'm not a financial advisor, but this NZ tech stock is guaranteed to double in 6 months \u2014 I'm all in.' In the description, they disclose owning 2 million shares. How should you evaluate this?",
+          "options": [
+            "Reliable \u2014 they are fully transparent about their position and the disclaimer protects them from legal liability",
+            "High caution \u2014 the influencer has a massive financial incentive (2 million shares) to promote this stock; this is likely promotion dressed as analysis",
+            "Reliable because they are not a financial advisor \u2014 regulated advisors have bias; unregulated influencers are more honest",
+            "Evaluate on the merit of the stock analysis alone \u2014 conflict of interest is irrelevant if the analysis is sound"
+          ],
+          "correctIndex": 1,
+          "explanation": "Owning 2 million shares while recommending a stock to a large audience is a classic conflict of interest \u2014 the influencer profits directly if viewers buy and push up the price. Disclaimer language ('not a financial advisor') provides no investment protection and simply avoids legal liability for advice. The 'guaranteed to double' claim is also a red flag \u2014 no legitimate analyst guarantees returns. Approach with extreme scepticism; verify any claims using primary sources and your own metric analysis."
+        },
+        {
+          "question": "A company has consistent 15% EPS growth over 5 years and a P/E of 25\u00d7. Its PEG ratio is:",
+          "options": [
+            "25 \u2014 PEG equals the P/E ratio for companies with high growth",
+            "0.6 \u2014 calculated as 15 divided by 25",
+            "1.67 \u2014 25\u00d7 P/E divided by 15% growth rate",
+            "375 \u2014 P/E multiplied by growth rate"
+          ],
+          "correctIndex": 2,
+          "explanation": "PEG = P/E \u00f7 growth rate = 25 \u00f7 15 = 1.67. A PEG of 1.0 is considered fair value; below 1.0 is potentially cheap; above 1.0 is potentially expensive on a growth-adjusted basis. At 1.67, this company is somewhat expensive relative to its growth \u2014 but PEG is just one measure. The quality, durability and predictability of that 15% growth also matters enormously."
+        },
+        {
+          "question": "Which statement about the 200-day moving average is MOST accurate?",
+          "options": [
+            "A share trading above its 200-day MA is guaranteed to keep rising for at least another 6 months",
+            "The 200-day MA is a leading indicator that predicts future price movements before they occur",
+            "The 200-day MA is a lagging indicator showing the average price over the past 200 trading days \u2014 a share trading above it is in a positive long-term trend, though this confirms rather than predicts the trend",
+            "The 200-day MA is set by the NZX as a floor price for major index constituents"
+          ],
+          "correctIndex": 2,
+          "explanation": "The 200-day MA is a lagging indicator \u2014 it is calculated from the past 200 trading days and therefore always reflects history, never the future. A share above its 200-day MA is in a positive long-term trend, which is favourable context \u2014 but it guarantees nothing about future direction. Trends can reverse. The 200-day MA confirms the current trend; it cannot predict when the trend will change."
+        },
+        {
+          "question": "Mainfreight's ROE is 33%. It has minimal debt. What does this combination most strongly suggest?",
+          "options": [
+            "Mainfreight is using financial leverage to boost its returns \u2014 the high ROE would be much lower without debt",
+            "Mainfreight has genuine operational excellence \u2014 high ROE with minimal debt means the returns come from business efficiency and competitive advantage, not borrowing",
+            "Mainfreight is underinvesting in growth \u2014 low debt means it is not taking enough risk",
+            "A 33% ROE is impossible without debt \u2014 the numbers must be incorrect"
+          ],
+          "correctIndex": 1,
+          "explanation": "High ROE with minimal debt is the gold standard of business quality. When ROE is high because of leverage (debt), the return is partly an artefact of financial engineering \u2014 and it comes with fragility. When ROE is high with minimal debt, it reflects genuine operational superiority \u2014 the business earns more from operations than most competitors with the same amount of shareholder capital. This is exactly what Buffett looks for, and why Mainfreight has been one of the NZX's best long-term performers."
+        }
+      ]
+    },
+    {
+      "type": "reflection",
+      "title": "What Will You Do With This Knowledge?",
+      "estimatedMinutes": 5,
+      "prompt": "You can now calculate P/E, EPS, ROE and dividend yield, read basic charts, distinguish fundamental from technical analysis, and evaluate financial media claims. Write three sentences: What is the most valuable thing you learned in Module 3? Is there anything you feel you still need to understand better before you would be comfortable investing in an individual NZ company? What would your next step be to build your knowledge further?",
+      "nceaLink": "Extra Learning \u2014 Module 4 extends this analysis to individual company deep dives, comparing businesses within the same sector."
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "title": "Management Quality and Governance",
+  "order": 3,
+  "dayNumber": 3,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Analyse",
+  "nceaFocus": "Extra Learning \u2014 Company Analysis",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Assess CEO quality using track record, communication and capital allocation decisions",
+    "Evaluate board independence and governance quality",
+    "Identify management red flags including excessive pay, related party transactions and insider selling"
+  ],
+  "vocabulary": [
+    {
+      "term": "Capital allocation",
+      "definition": "How management decides to deploy the company's profits \u2014 reinvest for growth, pay dividends, buy back shares, or make acquisitions. The quality of capital allocation decisions drives long-term shareholder value."
+    },
+    {
+      "term": "Insider ownership",
+      "definition": "The percentage of company shares owned by executives, directors and their families. High insider ownership aligns management incentives with shareholders."
+    },
+    {
+      "term": "Board independence",
+      "definition": "The proportion of board directors who have no material relationship with the company beyond their director role. Independent directors provide objective oversight of management."
+    },
+    {
+      "term": "Return on invested capital (ROIC)",
+      "definition": "Net profit divided by total capital invested (debt plus equity). Measures how effectively management deploys all capital \u2014 both equity and debt. Sustained ROIC above the cost of capital creates shareholder value."
+    },
+    {
+      "term": "Remuneration report",
+      "definition": "The section of the annual report disclosing CEO and senior executive pay. NZ listed companies must publish this and shareholders vote on the remuneration policy at the AGM (non-binding vote)."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "Why Management Quality Matters",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: How can you assess a CEO's quality if you have never met them? What public information is available? List at least five sources.",
+      "content": "Buying a share means trusting management with your money for however long you hold. Management quality is one of the hardest factors to assess \u2014 but also one of the most important for long-term returns.\n\nWhy management matters so much:\nA great business with poor management will eventually disappoint. A mediocre business with excellent management can generate outstanding returns through operational improvement, smart acquisitions and disciplined capital allocation.\n\nMainfreight is a standout NZ example. Under Don Braid (CEO since 2007), Mainfreight has compounded at extraordinary rates \u2014 revenue grew from NZD $1.5 billion to over $5 billion, net profit grew 10\u00d7 and the share price rose from approximately $6 to $65+. This was not luck \u2014 it was disciplined execution of a deliberate long-term strategy.\n\nWhat you can assess without meeting management:\n\u2014 Financial track record: Has NPAT, EPS and ROE grown consistently under this CEO's tenure?\n\u2014 Capital allocation: How have major acquisitions performed? Has share buyback timing been good or poor?\n\u2014 Communication quality: Are annual reports and presentations honest, specific and follow-through-able? Or full of vague aspirational language and strategy pivots?\n\u2014 Insider ownership: Does the CEO own significant shares? Do they buy more on the open market?\n\u2014 Remuneration: Is CEO pay proportionate to company performance and scale? Or does it increase even when performance declines?"
+    },
+    {
+      "type": "slide",
+      "title": "Capital Allocation \u2014 The CEO's Most Important Job",
+      "estimatedMinutes": 4,
+      "notePrompt": "A company earns $200M profit. Its CEO uses $80M for dividends, $60M for share buybacks and $60M for a small acquisition. Write: what does each decision signal about the CEO's priorities? Which allocation is best and worst for long-term shareholders?",
+      "content": "After running the business day-to-day, the CEO's most consequential role is deciding where to deploy profits.\n\nOptions and what they signal:\n\nDividends: Return cash to shareholders. Appropriate when the company cannot find high-returning reinvestment opportunities. Preferred by income investors. The safest signal \u2014 the company acknowledges it cannot deploy all capital above its hurdle rate.\n\nShare buybacks: Buy company's own shares, reducing count. Good when shares are trading below intrinsic value. Bad when shares are expensive \u2014 management is paying too much. Buybacks at the wrong price destroy shareholder value. Check if the CEO is buying back at the bottom of a cycle (smart) or near the top (wasteful).\n\nOrganic reinvestment (CapEx, R&D): Deploy in growing the existing business. Best use of capital if ROIC on new investment exceeds cost of capital. Mainfreight's consistent reinvestment in new branches and capabilities at high returns is a model example.\n\nAcquisitions (M&A): The most dangerous deployment. Research shows 70%+ of large acquisitions destroy value \u2014 acquirers overpay, integration is harder than expected, and synergies are overstated. Great acquirers (Infratil, Mainfreight) are disciplined, patient and honest about when acquisitions do not work. Bad acquirers overpay at cycle peaks and write down goodwill within 3 years.\n\nBest capital allocation: reinvesting at high returns when available, distributing when it is not, and never overpaying for acquisitions."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A CEO owning a large number of company shares is always a positive sign for investors because it means they have skin in the game.",
+      "correctAnswer": false,
+      "explanation": "Not always. Significant insider ownership is generally positive \u2014 it aligns the CEO's personal wealth with shareholder outcomes. However, context matters: if the shares were received as free compensation (options granted regardless of performance) rather than purchased with personal capital, the alignment is weaker. Also, a CEO who owns 40% of shares has concentrated personal wealth \u2014 they might be more risk-averse than minority shareholders who prefer growth investments. The ideal is a CEO who has personally purchased meaningful shares on the open market with their own money \u2014 this signals genuine belief in the business.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Management Red Flags",
+      "estimatedMinutes": 4,
+      "notePrompt": "For each red flag, write: how would you detect it from public information? Rate each from 1 (mild concern) to 5 (immediate dealbreaker).",
+      "content": "Red flags that suggest management may not be acting in shareholders' best interests.\n\nRed flag 1 \u2014 CEO pay increasing faster than share price or earnings:\nIf the CEO receives a 20% pay increase while EPS fell 10% and the share price is flat, the board is rewarding failure. Check the remuneration report and vote against management if needed at the AGM.\n\nRed flag 2 \u2014 Consistent earnings misses against guidance:\nManagement who repeatedly miss their own forecasts either do not understand their business or are setting unrealistic guidance to pump the stock price. Track every forecast against outcome.\n\nRed flag 3 \u2014 Excessive acquisition activity without clear strategic rationale:\nSerial acquirers who buy frequently, often in new sectors, often at high prices, have a poor historical track record. Each acquisition adds complexity and often destroys value.\n\nRed flag 4 \u2014 Significant insider selling:\nWhen executives sell large quantities of shares (beyond routine tax planning), they may know something unflattering. Check insider transactions reported to the NZX \u2014 especially multiple executives selling simultaneously.\n\nRed flag 5 \u2014 Related party transactions on non-arm's-length terms:\nIf the CEO leases property they personally own to the company at above-market rates, or if the company buys services from a director's other business, shareholders' interests are not first.\n\nRed flag 6 \u2014 Board with no independence:\nIf the board is full of the CEO's personal friends, family members or long-serving 'yes' directors, management faces minimal accountability. Check who each director is and their relationship to management."
+    },
+    {
+      "type": "quiz",
+      "title": "Management Quality Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Mainfreight's CEO Don Braid owns approximately 6% of Mainfreight shares, worth over $400 million. He did not receive these as free compensation \u2014 he built his position over his career and continues to hold. What does this most strongly suggest?",
+          "options": [
+            "He should not be CEO \u2014 his personal financial interests are too concentrated in one company",
+            "His personal wealth is directly tied to Mainfreight's share price \u2014 a very strong alignment of incentives between CEO and shareholders that is rare and valuable",
+            "His share ownership creates a conflict of interest \u2014 he will always prioritise the share price over the long-term health of the business",
+            "This level of insider ownership is illegal in NZ under securities law"
+          ],
+          "correctIndex": 1,
+          "explanation": "A CEO who has personally built a >$400M stake in the company they run has extraordinarily strong skin in the game. If Mainfreight's share price falls 30%, the CEO loses $120M of personal wealth. This creates incentives aligned almost perfectly with ordinary shareholders \u2014 he needs the business to genuinely succeed long-term. This level of insider ownership, self-built over a career, is one of the most bullish signals possible for minority shareholders."
+        },
+        {
+          "question": "A company CEO receives a 30% pay increase in the year net profit fell 20% and the share price fell 25%. What does this suggest about the board's governance?",
+          "options": [
+            "Nothing unusual \u2014 CEO pay is based on responsibilities, not short-term performance",
+            "Poor governance \u2014 the board appears to be rewarding management despite poor performance for shareholders, suggesting inadequate independence or accountability",
+            "This is legally required \u2014 NZ law mandates minimum CEO pay increases each year regardless of performance",
+            "This is a positive sign \u2014 the board is retaining talent during a difficult period"
+          ],
+          "correctIndex": 1,
+          "explanation": "A 30% pay increase while profit falls 20% and shareholders lose 25% is a clear governance failure. It suggests either the board lacks independence from management, performance targets are poorly designed (measuring things other than shareholder value), or the board is captured by management (prioritising the CEO's interests over shareholders'). This is exactly the type of behaviour that activist shareholders and proxy advisors flag at AGMs."
+        },
+        {
+          "question": "When evaluating a CEO's capital allocation decisions, which historical action would be MOST impressive?",
+          "options": [
+            "Making an acquisition at the top of the market cycle for a 40\u00d7 earnings multiple with promised 'significant synergies'",
+            "Buying back company shares when the price was near 52-week highs to boost EPS",
+            "During the 2020 COVID crash, using cash reserves to buy back significant shares at 40% discounts to pre-COVID prices, then watching the share price recover fully within 18 months",
+            "Paying a special dividend every year regardless of available reinvestment opportunities"
+          ],
+          "correctIndex": 2,
+          "explanation": "Buying back shares during the COVID crash at 40% discounts is superb capital allocation \u2014 management demonstrated conviction in the business at a time of maximum fear, deployed capital at excellent value, and shareholders were rewarded as prices recovered. This requires discipline (maintaining a cash reserve despite uncertainty), courage (acting when sentiment is worst), and genuine belief in the business's intrinsic value. The acquisition at 40\u00d7 earnings shows the opposite \u2014 impulse buying at peak prices."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Green Flag or Red Flag? Classify These Management Signals",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "CEO has bought $2M of company shares on open market in past 12 months",
+          "zone": "Green Flag"
+        },
+        {
+          "item": "Three senior executives sold large share parcels in the same week before a results announcement",
+          "zone": "Red Flag"
+        },
+        {
+          "item": "CEO consistently updates guidance by being slightly conservative then beats expectations",
+          "zone": "Green Flag"
+        },
+        {
+          "item": "Company has made 8 acquisitions in 3 years in different industries",
+          "zone": "Red Flag"
+        },
+        {
+          "item": "CEO pay fell 15% in year when net profit fell 12% \u2014 performance-linked remuneration working",
+          "zone": "Green Flag"
+        },
+        {
+          "item": "Board has not changed composition in 12 years \u2014 average director tenure 14 years",
+          "zone": "Red Flag"
+        }
+      ],
+      "explanation": "Green flags indicate management is focused on long-term shareholder value creation. Red flags suggest incentive misalignment, poor capital discipline or inadequate governance oversight. No single signal is definitive, but patterns across multiple signals build a picture of management quality."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Shareholders in NZ listed companies can vote to refuse the company's remuneration report at the AGM, and this vote legally prevents the company from paying the proposed executive salaries.",
+      "correctAnswer": false,
+      "explanation": "False. The AGM vote on the remuneration report in NZ is non-binding \u2014 it is advisory only. The board is not legally obligated to change pay structures even if the vote is negative. However, a 'strike' against the remuneration report (more than 25% of votes against) is significant reputationally and usually prompts engagement between the board and shareholders. Repeated strikes create governance pressure and can eventually lead to board changes via director election votes.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What term describes the CEO's critical responsibility of deciding how to deploy company profits \u2014 between dividends, buybacks, reinvestment and acquisitions?",
+      "acceptedAnswers": [
+        "capital allocation",
+        "Capital allocation",
+        "Capital Allocation"
+      ],
+      "placeholder": "Type the term here...",
+      "hint": "Two words \u2014 the CEO is 'allocating' the company's financial resources.",
+      "explanation": "Capital allocation is widely regarded as the most important skill of a company CEO. Over decades, the cumulative effect of capital allocation decisions \u2014 where to invest, at what prices, when to distribute versus retain \u2014 determines the total return shareholders receive. CEOs who compound capital at high rates by making consistently good allocation decisions (like Don Braid at Mainfreight or Graham Turner at Flight Centre) create enormous long-term wealth for shareholders.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Assessing a Real CEO",
+      "estimatedMinutes": 5,
+      "prompt": "Pick any NZ company and find out who the current CEO is. Using public information (NZX announcements, annual reports, media interviews), write three sentences: How long have they been CEO? What is the company's EPS growth over their tenure? Do they own significant shares in the company?",
+      "nceaLink": "Extra Learning \u2014 learning to assess management from public information is a core analyst skill."
+    }
+  ]
+}

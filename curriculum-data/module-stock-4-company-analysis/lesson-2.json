@@ -1,0 +1,166 @@
+{
+  "title": "Competitive Moats \u2014 What Makes a Business Durable",
+  "order": 2,
+  "dayNumber": 2,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Analyse",
+  "nceaFocus": "Extra Learning \u2014 Company Analysis",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Identify and explain the five main types of competitive moat",
+    "Assess the durability of a NZ company's competitive advantage",
+    "Distinguish between companies with wide, narrow and no moats"
+  ],
+  "vocabulary": [
+    {
+      "term": "Competitive moat",
+      "definition": "A durable competitive advantage that protects a business from competitors \u2014 like a moat around a castle. Companies with wide moats can maintain high returns on capital for many years."
+    },
+    {
+      "term": "Network effect",
+      "definition": "When a product becomes more valuable as more people use it. TradeMe becomes more useful as more buyers and sellers join. Visa is accepted more places because more people carry it."
+    },
+    {
+      "term": "Switching costs",
+      "definition": "The pain (time, money, disruption) of moving to a competitor's product. High switching costs give companies pricing power \u2014 customers stay even if a cheaper alternative exists."
+    },
+    {
+      "term": "Cost advantage",
+      "definition": "When a company can produce goods or services more cheaply than competitors due to scale, location, unique processes or proprietary resources."
+    },
+    {
+      "term": "Intangible assets",
+      "definition": "Non-physical sources of competitive advantage \u2014 brand recognition, patents, licences, regulatory approvals. A strong brand allows premium pricing without losing customers."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The Five Types of Competitive Moat",
+      "estimatedMinutes": 4,
+      "notePrompt": "For each of the five moat types, write one NZ or global company example and one sentence explaining why the moat is hard to replicate.",
+      "content": "Warren Buffett introduced the concept of the economic moat \u2014 a business characteristic that protects returns on capital from competitive erosion. A wide moat company can earn high profits for decades; a narrow moat company might maintain advantages for 5\u201310 years; a no-moat company faces constant competitive pressure.\n\nFive main moat types:\n\n1. Network effects: Each additional user makes the product more valuable. TradeMe: more buyers attract more sellers, which attract more buyers. This creates a self-reinforcing cycle that is extremely hard for a new entrant to break into \u2014 you cannot replicate the network.\n\n2. Switching costs: Once embedded, customers find it painful to leave. Fisher and Paykel Healthcare's respiratory care equipment becomes integrated into hospital workflows \u2014 clinical staff are trained on it, maintenance contracts exist, replacement is disruptive. This gives FPH pricing power.\n\n3. Cost advantage: Mainfreight's scale across NZ, Australia, USA and Europe gives it logistics density that smaller competitors cannot match \u2014 more freight per truck, more efficient routes. Scale advantages compound over time.\n\n4. Intangible assets: Brand, patents, regulatory licences. Fonterra's brand in high-value dairy markets. Air New Zealand's 'preferred airline' status on major NZ routes. A pharmaceutical company's patent on a life-saving drug.\n\n5. Efficient scale: When the market is large enough for only one or two profitable operators, and entry by a third would make everyone unprofitable \u2014 deterring entry. Port of Tauranga: a second container port at Tauranga would be unprofitable for both. This protects the incumbents."
+    },
+    {
+      "type": "slide",
+      "title": "Assessing Moat Durability \u2014 Is the Advantage Widening or Narrowing?",
+      "estimatedMinutes": 4,
+      "notePrompt": "For Mainfreight: list two reasons its moat might be widening over time and two risks that could erode it.",
+      "content": "Having a moat is good. Having a widening moat is exceptional \u2014 and is what makes truly great long-term investments.\n\nA widening moat: each year the competitive advantage becomes stronger. Mainfreight's global logistics network grows more valuable as it adds new locations and connections \u2014 each new office makes the existing ones more useful for customers who need international shipping.\n\nA narrowing moat: competitive pressures are eroding the advantage. Spark NZ once held a near-monopoly on NZ telecommunications. Deregulation, the rollout of the shared fibre network (UFB), and aggressive competition from 2degrees, Vodafone and Starlink have progressively narrowed the moat. Spark is still profitable but holds less pricing power than it did 15 years ago.\n\nHow to assess moat direction \u2014 key questions:\n\u2014 Are gross margins stable, rising or falling over the past 5 years? Falling margins suggest competitive pressure.\n\u2014 Is market share growing or shrinking? Growing share means the moat is being extended.\n\u2014 Are competitors entering and gaining traction, or failing and exiting?\n\u2014 Can the company raise prices without losing significant customers? (Pricing power test)\n\u2014 Is the company investing in the moat (R&D, capacity, brand) or harvesting it (cutting investment to boost short-term profits)?\n\nFPH example of moat widening: every year FPH adds new hospitals to its customer base, increases penetration of existing accounts, and launches new products that extend its clinical position. The switching costs deepen as more clinical workflows are built around FPH products."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A company with a strong brand name like Air New Zealand automatically has a wide and durable competitive moat in all its business activities.",
+      "correctAnswer": false,
+      "explanation": "False. Brand strength is only a moat where customers are willing to pay a premium for that brand \u2014 and where the brand genuinely influences purchasing decisions. Air New Zealand has a strong brand in NZ domestic aviation (many customers prefer it) but faces intense price competition on international routes where passengers are highly price-sensitive and multiple carriers compete. Brand moats are narrower on routes where price is the primary decision factor. A brand moat also requires constant investment to maintain \u2014 neglect it and it weakens.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "NZ Moat Examples \u2014 Wide, Narrow or None?",
+      "estimatedMinutes": 4,
+      "notePrompt": "Assess two more NZ companies not mentioned in this slide: estimate whether they have a wide, narrow or no moat, and identify what type of advantage (or lack of) drives your assessment.",
+      "content": "Applying moat thinking to NZ companies.\n\nFisher and Paykel Healthcare \u2014 WIDE MOAT:\nType: Switching costs + intangible assets (regulatory approvals, clinical relationships, patents)\nEvidence: FPH's respiratory humidification and neonatal products are the global standard in their categories. Hospitals switching away face clinical risk, staff retraining and regulatory re-approval. Gross margins consistently above 55%. FPH prices at a premium in virtually every market it operates in.\n\nMainfreight \u2014 WIDE MOAT (widening):\nType: Cost advantage (scale and density) + switching costs (deeply embedded in customer supply chains)\nEvidence: Network of 350+ branches across NZ, Australia, USA, Europe, Asia. Logistics density reduces cost per unit at scale. ROE consistently above 25%. Revenue has compounded at 15%+ per year for 20 years.\n\nSpark NZ \u2014 NARROW MOAT (narrowing):\nType: Scale and brand in telecommunications \u2014 but eroding with infrastructure sharing and more competition.\nEvidence: Still profitable and generates strong cash flow, but market share has declined steadily. Gross margins under pressure. Dividend yield of 6.5% reflects limited growth expectations.\n\nRestaurant Brands NZ (KFC, Pizza Hut, Carl's Jr) \u2014 NO MOAT at company level:\nType: Franchise licences give it a right to operate \u2014 but McDonald's, Burger King and others are equally accessible to a competitor. No pricing power, no unique assets.\nEvidence: Low gross margins, cyclical earnings tied to consumer spending, no pricing premium."
+    },
+    {
+      "type": "quiz",
+      "title": "Competitive Moats Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "TradeMe has over 4 million registered NZ users and thousands of active listings daily. A competitor launches a similar marketplace with lower fees. Why might TradeMe still dominate despite the lower-fee competitor?",
+          "options": [
+            "TradeMe's government backing prevents competition from entering the market",
+            "TradeMe benefits from network effects \u2014 its value comes from having the most buyers and sellers. A new marketplace with no users has nothing to offer either party, making it nearly impossible to gain critical mass against an incumbent with 4 million users",
+            "Lower fees are not actually attractive to buyers and sellers \u2014 they prefer to pay more for trusted services",
+            "TradeMe has filed patents covering online marketplace software that prevent competitors from launching"
+          ],
+          "correctIndex": 1,
+          "explanation": "TradeMe's competitive moat is almost entirely network effects. Buyers go where the most sellers are; sellers go where the most buyers are. A new entrant must simultaneously attract enough buyers and sellers to make both sides interested \u2014 but without one, you cannot attract the other. This chicken-and-egg problem has prevented serious competition to TradeMe in NZ despite many attempts. Lower fees do not solve the network problem."
+        },
+        {
+          "question": "Fisher and Paykel Healthcare's gross margin has been above 55% for 10 consecutive years. Competitors offer similar respiratory products at lower prices. Yet FPH's market share grows. What does this tell you about FPH's competitive position?",
+          "options": [
+            "FPH's prices are artificially inflated through collusion with competitors",
+            "FPH has demonstrated pricing power and customer loyalty consistent with a wide competitive moat \u2014 likely driven by switching costs, regulatory approval requirements and clinical relationships that competitors cannot easily replicate",
+            "FPH's customers are unable to compare prices \u2014 the market lacks price transparency",
+            "FPH has a 10-year government contract that prevents hospitals from switching"
+          ],
+          "correctIndex": 1,
+          "explanation": "A gross margin above 55% sustained over 10 years while growing market share against cheaper competitors is strong evidence of a wide moat. Customers are choosing FPH at premium prices \u2014 they have alternatives and are choosing not to use them. The most likely explanation is a combination of switching costs (clinical workflow integration, staff training, regulatory re-approval requirements) and genuine product superiority in FPH's core categories."
+        },
+        {
+          "question": "A new NZ technology company launches and rapidly captures 40% of its target market in year one. But gross margins are only 12% and the company is not yet profitable. What moat risk does this suggest?",
+          "options": [
+            "No moat risk \u2014 rapid market share gain is the clearest possible evidence of a strong competitive advantage",
+            "Low margins suggest either no pricing power (competitors can undercut and the company cannot raise prices) or that the company is deliberately sacrificing margins for growth \u2014 the durability of the advantage is unclear",
+            "The company clearly has a cost advantage \u2014 low margins mean it is operating very efficiently",
+            "The company has an efficient scale moat \u2014 operating in a market too small for profitable competition"
+          ],
+          "correctIndex": 1,
+          "explanation": "Low margins in a fast-growing company could mean several things: it is subsidising growth to gain scale (e.g. Amazon for many years), it genuinely lacks pricing power and can only compete on price, or it is operating in a commodity market without differentiation. Rapid market share gain without pricing power suggests the company might grow large but not generate strong returns on capital \u2014 which is ultimately what creates shareholder value. Evaluate whether margins are likely to expand at scale, or whether the business model inherently produces low returns."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Match the Moat Type to the NZ Example",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "TradeMe \u2014 more valuable because more NZ users are on it than any competitor",
+          "zone": "Network Effects"
+        },
+        {
+          "item": "FPH respiratory devices \u2014 hospitals face clinical disruption if they switch",
+          "zone": "Switching Costs"
+        },
+        {
+          "item": "Mainfreight \u2014 350+ global branches create delivery density competitors cannot replicate",
+          "zone": "Cost Advantage (Scale)"
+        },
+        {
+          "item": "Fonterra \u2014 NZ dairy brand recognition in Asian premium markets",
+          "zone": "Intangible Assets (Brand)"
+        },
+        {
+          "item": "Port of Tauranga \u2014 only major container port serving the Bay of Plenty region",
+          "zone": "Efficient Scale"
+        }
+      ],
+      "explanation": "Many companies have elements of multiple moat types. The strongest businesses often combine two or more: FPH has switching costs AND intangible assets (patents, clinical relationships). Mainfreight has cost advantage AND switching costs (deeply embedded in customer supply chains). Moat combination makes a competitive position more durable."
+    },
+    {
+      "type": "truefalse",
+      "statement": "A company's moat is permanent once established \u2014 no competitive advantage can be eroded once it reaches a certain scale.",
+      "correctAnswer": false,
+      "explanation": "False. Every moat can be eroded over time. Technology can eliminate switching costs (cloud software vs on-premise). Regulation can break up network monopolies (what happened to Bell Telephone in the US). Innovation can make intangible assets obsolete (Kodak's film patents became worthless as digital cameras emerged). Cost advantages can be replicated at scale by well-funded new entrants. The durability of a moat must be regularly reassessed \u2014 widening moats are investment gold; narrowing moats require vigilance.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What term describes the situation where a product becomes more valuable as more people use it \u2014 used to describe TradeMe's competitive advantage?",
+      "acceptedAnswers": [
+        "network effect",
+        "network effects",
+        "Network effect",
+        "Network effects",
+        "Network Effect"
+      ],
+      "placeholder": "Type the term here...",
+      "hint": "Two words starting with 'network' \u2014 the value scales with the number of users.",
+      "explanation": "Network effects create some of the most durable competitive advantages in modern business. Once a network reaches critical mass, it becomes self-reinforcing and extremely difficult to dislodge. This is why TradeMe, despite being an old-technology platform, has remained dominant in NZ \u2014 the network of buyers and sellers is the product, and no competitor can replicate that without somehow convincing millions of NZ users to simultaneously move.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "Moat Assessment for a Company You Know",
+      "estimatedMinutes": 5,
+      "prompt": "Choose a NZ or global company you interact with regularly \u2014 a supermarket, streaming service, social media platform, bank or tech company. Write three sentences: What type of moat do you think it has? How strong and durable is it? What could erode it in the next 10 years?",
+      "nceaLink": "Extra Learning \u2014 applying moat thinking to familiar companies makes the concept concrete and memorable."
+    }
+  ]
+}

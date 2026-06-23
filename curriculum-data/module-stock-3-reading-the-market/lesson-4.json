@@ -1,0 +1,108 @@
+{
+  "title": "Week 1 Challenge \u2014 Analyse Two NZ Companies",
+  "order": 4,
+  "dayNumber": 4,
+  "weekNumber": 1,
+  "durationMinutes": 45,
+  "xpReward": 90,
+  "bloomsLevel": "Apply and Analyse",
+  "nceaFocus": "Extra Learning \u2014 Reading the Market",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Apply P/E, EPS and dividend yield metrics to compare two real NZ companies",
+    "Interpret a chart description and identify trend, support and resistance",
+    "Write a structured investment analysis comparing two NZ stocks"
+  ],
+  "vocabulary": [
+    {
+      "term": "Comparable company analysis",
+      "definition": "Valuing a company by comparing it to similar listed companies on metrics like P/E, EV/EBITDA and dividend yield. The most common valuation method in practice."
+    }
+  ],
+  "activities": [
+    {
+      "type": "quiz",
+      "title": "Week 1 Recap Quiz",
+      "estimatedMinutes": 10,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "Infratil has 700 million shares on issue and earned $280 million net profit. Its share price is $11.20. What are its EPS and P/E ratio?",
+          "options": [
+            "EPS $0.25, P/E 44.8\u00d7 \u2014 a high multiple reflecting Infratil's infrastructure asset quality",
+            "EPS $0.40, P/E 28\u00d7 \u2014 accurate for Infratil's scale of operations",
+            "EPS $4.00, P/E 2.8\u00d7 \u2014 calculated using millions not billions",
+            "EPS $0.10, P/E 112\u00d7 \u2014 Infratil is massively overvalued on this analysis"
+          ],
+          "correctIndex": 1,
+          "explanation": "EPS = $280,000,000 \u00f7 700,000,000 = $0.40. P/E = $11.20 \u00f7 $0.40 = 28\u00d7. At 28\u00d7 P/E, Infratil is above the NZX 50 average (approximately 20\u201325\u00d7), reflecting its high-quality portfolio of infrastructure assets including Vodafone NZ, Wellington Airport, and renewable energy investments."
+        },
+        {
+          "question": "A share is in a confirmed downtrend. Its 50-day moving average crosses BELOW its 200-day moving average. What is this pattern called and what does it signal?",
+          "options": [
+            "A golden cross \u2014 a bullish signal that the medium-term trend has turned positive",
+            "A death cross \u2014 a bearish signal that medium-term momentum has turned negative relative to the long-term trend",
+            "A support bounce \u2014 the price is likely to recover from this level",
+            "An overbought signal \u2014 the RSI has risen above 70"
+          ],
+          "correctIndex": 1,
+          "explanation": "A death cross occurs when the 50-day MA crosses BELOW the 200-day MA \u2014 the opposite of a golden cross. It is considered a bearish long-term signal, suggesting medium-term momentum has turned negative. In a confirmed downtrend, a death cross reinforces the bearish outlook. Note: moving averages lag \u2014 a death cross often confirms a downtrend that has been underway for weeks."
+        },
+        {
+          "question": "Company X has a P/E of 8\u00d7 and Company Y has a P/E of 45\u00d7. Company X is a coal mining company in structural decline. Company Y is a high-growth SaaS software business growing at 35% per year. Which statement best evaluates this comparison?",
+          "options": [
+            "Company X is clearly better value \u2014 8\u00d7 P/E is less than half the market average",
+            "Company Y is clearly overvalued \u2014 no company is worth 45\u00d7 earnings",
+            "Company X's low P/E likely reflects market expectation of declining earnings, while Company Y's high P/E reflects high growth expectations \u2014 each valuation may be appropriate for its respective business",
+            "Both are mispriced \u2014 the market always settles on the fair P/E of approximately 20\u00d7 for all companies"
+          ],
+          "correctIndex": 2,
+          "explanation": "P/E is always relative to growth and business quality. A coal miner in structural decline at 8\u00d7 P/E may not be cheap at all \u2014 if earnings fall 20% next year, the effective P/E rises. A SaaS business at 45\u00d7 with 35% growth has PEG = 45/35 = 1.3 \u2014 not outrageous. The market attempts to price these differences. Low P/E on a declining business is often correct, not an opportunity."
+        },
+        {
+          "question": "Which combination of signals gives the STRONGEST buy signal from both fundamental and technical perspectives?",
+          "options": [
+            "High P/E ratio with 200-day MA below 50-day MA",
+            "Low P/E relative to peers, earnings growing strongly, share price recently broke above 12-month resistance on high volume",
+            "Falling EPS with RSI reading of 28 (oversold) and no dividend",
+            "Average P/E for sector, sideways price trend for 6 months, low trading volume"
+          ],
+          "correctIndex": 1,
+          "explanation": "Option B combines fundamental attractiveness (low P/E relative to peers + strong EPS growth = potentially undervalued quality business) with a strong technical signal (breakout above resistance on high volume = market confirming the bullish view). This combination \u2014 cheap on fundamentals AND breaking out technically \u2014 is what many experienced investors look for. Options A, C and D each have concerning elements (high P/E, falling EPS, or no directional momentum)."
+        },
+        {
+          "question": "What does it mean when a share's price repeatedly bounces off $15.50 over 18 months?",
+          "options": [
+            "$15.50 is the NZX-approved minimum price for this share",
+            "$15.50 is a resistance level \u2014 sellers consistently dominate at this price",
+            "$15.50 is a support level \u2014 buyers consistently step in at this price, preventing further falls",
+            "$15.50 is the intrinsic value calculated by the NZX each quarter"
+          ],
+          "correctIndex": 2,
+          "explanation": "A price level where a share repeatedly stops falling and reverses is a support level. Buyers consistently find value at $15.50 and step in \u2014 creating demand that absorbs selling pressure. Support levels are identified empirically from price history, not set by any authority. A decisive break below $15.50 on high volume would be a significant bearish signal \u2014 former support often becomes resistance once broken."
+        }
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "Compare Two NZ Companies \u2014 Full Analysis",
+      "estimatedMinutes": 25,
+      "nceaLevel": "Achieved to Merit",
+      "setup": "You are comparing two NZ companies as potential investments.\n\nCompany A: Spark NZ (SPK)\nShare price: $4.18\nShares on issue: 1,860 million\nNet profit: $408 million\nAnnual dividend: $0.275/share (fully imputed)\n52-week range: $3.85 \u2013 $4.72\nChart description: Clear downtrend over past 12 months from $4.72 high. Bounced twice from $3.85. 50-day MA below 200-day MA. RSI at 38 (not yet oversold).\n\nCompany B: Fisher and Paykel Healthcare (FPH)\nShare price: $21.40\nShares on issue: 579 million\nNet profit: $310 million\nAnnual dividend: $0.38/share (fully imputed)\n52-week range: $18.90 \u2013 $23.80\nChart description: Recovery uptrend from $18.90 low. 50-day MA recently crossed above 200-day MA (golden cross). RSI at 58 \u2014 healthy momentum.",
+      "challenge": "For both companies, calculate:\n1. EPS\n2. P/E ratio\n3. Dividend yield\n4. Market capitalisation\n\nThen:\n5. Compare the P/E ratios \u2014 which company is more expensive and what might justify this?\n6. Compare dividend yields \u2014 which is more attractive for an income investor?\n7. Summarise the technical picture for each company in two sentences.\n8. Write a four-sentence investment opinion: which company would you prefer and why? Consider both fundamental and technical factors.",
+      "hints": [
+        "EPS = net profit \u00f7 shares. P/E = price \u00f7 EPS. Yield = dividend \u00f7 price \u00d7 100. Market cap = price \u00d7 shares.",
+        "When comparing P/E: FPH is a high-growth medical device company; Spark is a mature telco. What does that imply about which deserves a higher multiple?",
+        "For the technical summary: look at MA position (golden/death cross), RSI level, trend direction and 52-week position."
+      ],
+      "solution": "1\u20134. Calculated metrics:\n\nSpark NZ (SPK):\nEPS = $408M \u00f7 1,860M = $0.219/share\nP/E = $4.18 \u00f7 $0.219 = 19.1\u00d7\nDividend yield = $0.275 \u00f7 $4.18 \u00d7 100 = 6.58%\nMarket cap = $4.18 \u00d7 1,860M = $7.77 billion\n\nFisher and Paykel Healthcare (FPH):\nEPS = $310M \u00f7 579M = $0.535/share\nP/E = $21.40 \u00f7 $0.535 = 40.0\u00d7\nDividend yield = $0.38 \u00f7 $21.40 \u00d7 100 = 1.78%\nMarket cap = $21.40 \u00d7 579M = $12.39 billion\n\n5. P/E comparison: FPH at 40\u00d7 is significantly more expensive than Spark at 19.1\u00d7. FPH's higher P/E is justified by: (a) high growth expectations \u2014 FPH is a global medical device company with significant R&D pipeline and growing international sales; (b) premium quality \u2014 FPH dominates its product categories globally; (c) growth investing premium \u2014 markets pay up for businesses expected to compound earnings at 15\u201320%+ per year. Spark's 19.1\u00d7 is appropriate for a mature telco with 3\u20134% earnings growth.\n\n6. Dividend yield: Spark at 6.58% is dramatically more attractive for income investors \u2014 more than 3.5\u00d7 FPH's 1.78% yield. A retiree seeking passive income would strongly prefer Spark. A younger investor focused on long-term capital growth would be more attracted to FPH.\n\n7. Technical summaries:\nSpark: In a 12-month downtrend. Death cross confirmed (50-day MA below 200-day MA) \u2014 bearish medium-term signal. However, bounced twice from $3.85 support and RSI at 38 is approaching oversold territory (below 30 would be oversold). The technical picture is bearish but showing early signs that selling pressure may be exhausting.\n\nFPH: In recovery uptrend from $18.90 low. Golden cross just confirmed \u2014 bullish long-term signal. RSI at 58 indicates healthy momentum without being overbought. Current price $21.40 is in mid-range of its 52-week range. Technically stronger picture than Spark.\n\n8. Investment opinion (sample): FPH is the stronger investment for a young long-term investor despite its higher P/E. The company's global market position in humidified respiratory care and surgical products gives it durable pricing power that a telco cannot match, and its earnings growth trajectory (15\u201320%+ per year) justifies the 40\u00d7 multiple over time. Technically, FPH's golden cross and healthy RSI confirm the fundamental bullish case. Spark offers a compelling 6.58% dividend yield and is approaching a potentially oversold level, making it interesting for income investors \u2014 but the downtrend and death cross suggest waiting for technical confirmation of a reversal before buying."
+    },
+    {
+      "type": "reflection",
+      "title": "Your Analysis Process",
+      "estimatedMinutes": 5,
+      "prompt": "What did you find harder \u2014 the fundamental calculations (EPS, P/E, yield) or the technical interpretation (trend, MA, RSI)? Which felt more useful for understanding whether the company was a good investment? Write three sentences about your analytical process and which approach you found more insightful.",
+      "nceaLink": "Extra Learning \u2014 combining fundamental and technical analysis is the approach used by most professional investors."
+    }
+  ]
+}

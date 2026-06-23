@@ -1,0 +1,157 @@
+{
+  "title": "Sector Analysis \u2014 NZ Industries on the Market",
+  "order": 7,
+  "dayNumber": 7,
+  "weekNumber": 2,
+  "durationMinutes": 45,
+  "xpReward": 70,
+  "bloomsLevel": "Understand and Apply",
+  "nceaFocus": "Extra Learning \u2014 Reading the Market",
+  "ownerEmail": "admin@pocketwise.nz",
+  "objectives": [
+    "Identify the main sectors represented on the NZX",
+    "Explain why different sectors perform differently in different economic conditions",
+    "Match NZ company examples to their sectors and typical characteristics"
+  ],
+  "vocabulary": [
+    {
+      "term": "Sector",
+      "definition": "A group of companies in the same broad industry. On the NZX, major sectors include healthcare, utilities, energy, industrials, consumer staples and financials."
+    },
+    {
+      "term": "Cyclical sector",
+      "definition": "Industries whose earnings rise and fall with the broader economy. Examples: airlines, tourism, retail, building materials. Perform well in booms, poorly in recessions."
+    },
+    {
+      "term": "Defensive sector",
+      "definition": "Industries providing essential goods and services with stable demand regardless of economic conditions. Examples: utilities, healthcare, consumer staples. Hold value better in downturns."
+    },
+    {
+      "term": "Interest rate sensitive",
+      "definition": "Sectors particularly affected by changes in interest rates. Utilities and property companies suffer when rates rise (their debt costs more, and bonds become more attractive alternatives). Banks benefit from rising rates."
+    },
+    {
+      "term": "Sector rotation",
+      "definition": "The movement of investment money from one sector to another as economic conditions change \u2014 e.g. from growth stocks to defensive stocks when recession fears rise."
+    }
+  ],
+  "activities": [
+    {
+      "type": "slide",
+      "title": "The NZX by Sector",
+      "estimatedMinutes": 4,
+      "notePrompt": "Draw a table: NZ Sector | Example Companies | Typical P/E range | Cyclical or Defensive. Fill in five sectors from this slide.",
+      "content": "The NZX 50 spans several distinct economic sectors. Each behaves differently based on interest rates, economic cycles and industry-specific factors.\n\nHealthcare (Fisher and Paykel Healthcare, Pacific Edge, Ebos Group):\nCharacteristics: High P/E (25\u201350\u00d7), strong earnings growth, global markets, relatively defensive (people need healthcare in recessions), often no or low dividends (reinvest growth).\n\nUtilities / Energy (Meridian Energy, Contact Energy, Genesis Energy, Mercury NZ):\nCharacteristics: Medium P/E (18\u201330\u00d7), stable regulated or contracted earnings, high dividend yields (4\u20136%), very interest rate sensitive (high debt loads, compete with bonds as income investments), defensive demand.\n\nTelecommunications (Spark NZ):\nCharacteristics: Medium P/E (15\u201322\u00d7), very stable revenue (people do not cancel broadband in recessions), very high dividend yield (6\u20137%), limited growth potential, capital intensive.\n\nIndustrials / Logistics (Mainfreight, Freightways, Port of Tauranga):\nCharacteristics: Medium P/E (15\u201325\u00d7), earnings tied to economic activity (cyclical), strong NZ management culture, dividend payers.\n\nConsumer / Tourism (Tourism Holdings, Kathmandu, Restaurant Brands):\nCharacteristics: Lower P/E (10\u201318\u00d7), highly cyclical, performance varies enormously between economic booms and recessions, COVID-19 devastated this sector.\n\nProperty (Precinct Properties, Goodman Property, Vital Healthcare):\nCharacteristics: Typically valued on yield and net asset value (NAV) rather than P/E, very interest rate sensitive, high dividends."
+    },
+    {
+      "type": "slide",
+      "title": "Cyclical vs Defensive \u2014 When to Favour Each",
+      "estimatedMinutes": 4,
+      "notePrompt": "Write: In a recession, which NZ sectors would you expect to perform relatively better? In a strong economic boom, which sectors would you prefer? Give specific NZ company examples for each.",
+      "content": "Sector performance is strongly linked to the economic cycle.\n\nIn a recession or economic slowdown:\nDefensive sectors hold their value better. People still need electricity (Meridian, Contact), broadband (Spark), healthcare (FPH), and food staples. These businesses maintain earnings through downturns.\nCyclical sectors get hit hard. Airlines ground flights, tourism collapses, building activity stops, discretionary retail suffers. Air New Zealand, Tourism Holdings and building materials companies all fell severely in 2020.\n\nIn a strong economic expansion:\nCyclical sectors typically outperform. More flights, more construction, more consumer spending, more freight movement. Mainfreight, Port of Tauranga and Air New Zealand all benefit.\nDefensive sectors often underperform relative to cyclicals \u2014 not because they do poorly, but because money rotates into higher-growth cyclicals when risk appetite increases.\n\nInterest rate effects:\nWhen interest rates RISE: Utilities and property companies typically fall because (a) their debt costs increase and (b) bonds become more competitive as income alternatives. Growth stocks also fall as higher rates reduce the present value of future earnings.\nWhen interest rates FALL: Utilities, property and long-duration growth stocks typically outperform.\n\n2022 NZ example: The RBNZ raised the OCR aggressively to fight inflation. Utility stocks (Meridian, Contact) fell significantly \u2014 their high debt costs rose and bonds became more attractive. Growth stocks like FPH also fell. Spark (defensive, high yield) held up relatively better."
+    },
+    {
+      "type": "truefalse",
+      "statement": "When interest rates rise sharply, NZ utility companies like Meridian Energy typically see their share prices rise because higher rates reflect a stronger economy boosting electricity demand.",
+      "correctAnswer": false,
+      "explanation": "False. Utility companies are interest rate sensitive in the opposite direction. When rates rise: (1) their borrowing costs increase (utilities carry significant debt to fund infrastructure), reducing profits; (2) government bonds become more attractive income alternatives to utility dividend stocks \u2014 investors sell utilities and buy bonds. This combination typically causes utility share prices to fall when rates rise significantly, even if the underlying business is healthy. This dynamic played out clearly in NZ in 2022\u201323.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "slide",
+      "title": "Sector Rotation \u2014 Following the Smart Money",
+      "estimatedMinutes": 4,
+      "notePrompt": "Describe the typical sector rotation sequence through a full economic cycle: early recession \u2192 late recession \u2192 early recovery \u2192 late recovery/boom \u2192 overheating. Which NZ sectors match each phase?",
+      "content": "Professional fund managers actively rotate between sectors as economic conditions change. Understanding this rotation helps interpret market movements.\n\nTypical rotation sequence:\n\nEarly recession (fear rising, rates still high):\nMoney rotates INTO: Consumer staples, healthcare, utilities (defensive). People and institutions seek safety.\nMoney rotates OUT OF: Discretionary consumer, industrials, financials (vulnerable to economic slowdown).\n\nLate recession / trough (rates being cut, recovery approaching):\nMoney rotates INTO: Financials (banks recover as rate cuts improve margins), interest rate sensitive sectors (utilities, property).\nMoney OUT OF: Consumer defensives (already priced for safety premium).\n\nEarly recovery:\nMoney rotates INTO: Industrials, logistics, consumer discretionary (economy beginning to turn).\n\nLate cycle / boom:\nMoney rotates INTO: Cyclicals fully \u2014 airlines, tourism, building, commodities.\nMoney OUT OF: Defensives (too expensive relative to growth).\n\nNZ relevance: In 2020\u20132021, as COVID-19 hit, money moved into Spark (defensive telco) and FPH (healthcare demand surge). In the 2021\u20132022 recovery, Mainfreight surged (logistics demand, economy recovering). In the 2022\u20132023 rate rise period, utilities fell and Spark remained relatively stable.\n\nSector rotation does not require perfectly timing the economy \u2014 which is impossible. But being aware of which sectors are likely to be favoured in your scenario helps avoid concentrating in the wrong sectors at the wrong time."
+    },
+    {
+      "type": "quiz",
+      "title": "Sector Analysis Quiz",
+      "estimatedMinutes": 6,
+      "nceaLevel": "Achieved",
+      "questions": [
+        {
+          "question": "The RBNZ signals it will cut the Official Cash Rate significantly over the next 12 months. Which NZ sector is MOST likely to benefit?",
+          "options": [
+            "Airlines and tourism \u2014 lower rates stimulate consumer travel spending",
+            "Technology \u2014 lower rates reduce the discount rate applied to future earnings, making growth stocks more attractive",
+            "Utilities and property companies \u2014 lower rates reduce their debt costs AND make their high dividend yields more attractive relative to falling bond yields",
+            "Banks \u2014 lower rates improve bank lending margins and increase loan demand"
+          ],
+          "correctIndex": 2,
+          "explanation": "Utilities and property companies benefit most directly from rate cuts through two channels: (1) their substantial debt becomes cheaper to service, improving margins; (2) their high dividend yields (4\u20136%) become more attractive relative to declining bond yields, drawing income investors back. While technology (growth stocks) also benefits from lower discount rates, utilities have the most direct and immediate sensitivity to rate changes on the NZX."
+        },
+        {
+          "question": "NZ enters a recession \u2014 GDP falls for three consecutive quarters and unemployment rises to 7%. Which NZ company combination would you expect to hold up best?",
+          "options": [
+            "Tourism Holdings (tourist rentals) and Restaurant Brands (fast food franchisee) \u2014 consumer spending on leisure is resilient",
+            "Spark NZ (telco) and Meridian Energy (electricity generation) \u2014 essential services with stable demand regardless of economic conditions",
+            "Mainfreight (logistics) and Port of Tauranga (port) \u2014 freight volumes are always high regardless of GDP",
+            "Air New Zealand (aviation) and Kathmandu (outdoor retail) \u2014 these companies have survived previous recessions"
+          ],
+          "correctIndex": 1,
+          "explanation": "Spark and Meridian are classic defensive stocks. In a recession: people keep their broadband connections (essential, low monthly cost, high switching barrier) and keep using electricity (non-negotiable essential). Both companies have stable, predictable revenue regardless of GDP. Tourism Holdings collapses in recessions (discretionary leisure). Freight and ports decline with trade volumes. Air New Zealand and discretionary retail are highly cyclical and suffer severely."
+        }
+      ]
+    },
+    {
+      "type": "dragdrop",
+      "title": "Cyclical or Defensive? Sort These NZ Companies",
+      "estimatedMinutes": 5,
+      "pairs": [
+        {
+          "item": "Meridian Energy \u2014 electricity generation from renewable sources",
+          "zone": "Defensive"
+        },
+        {
+          "item": "Tourism Holdings \u2014 motorhome and campervan rental",
+          "zone": "Cyclical"
+        },
+        {
+          "item": "Spark NZ \u2014 broadband, mobile and IT services",
+          "zone": "Defensive"
+        },
+        {
+          "item": "Mainfreight \u2014 freight and logistics",
+          "zone": "Cyclical"
+        },
+        {
+          "item": "Fisher and Paykel Healthcare \u2014 medical devices",
+          "zone": "Defensive"
+        },
+        {
+          "item": "Air New Zealand \u2014 international and domestic aviation",
+          "zone": "Cyclical"
+        }
+      ],
+      "explanation": "Defensive companies provide essential services with stable demand regardless of economic conditions. Cyclical companies see earnings closely tied to economic activity \u2014 they boom in good times and suffer in recessions. Both types have a place in a well-diversified portfolio: defensives provide stability in downturns, cyclicals provide growth leverage during expansions."
+    },
+    {
+      "type": "truefalse",
+      "statement": "Defensive stocks like utilities always outperform cyclical stocks over the long run because their stable earnings provide more reliable compound growth.",
+      "correctAnswer": false,
+      "explanation": "False. Over the long run, cyclical growth companies often outperform defensives despite their higher volatility. Mainfreight has dramatically outperformed Meridian Energy over 10-year periods because its earnings grew much faster. Defensives protect capital in downturns but typically grow more slowly in expansions. The optimal long-term portfolio often holds both \u2014 defensives for stability, cyclicals for growth \u2014 rather than concentrating in either.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "typed",
+      "question": "What term describes the movement of investor money from one market sector to another as economic conditions change \u2014 for example, from cyclical to defensive stocks when recession fears rise?",
+      "acceptedAnswers": [
+        "sector rotation",
+        "Sector rotation",
+        "Sector Rotation"
+      ],
+      "placeholder": "Type the term here...",
+      "hint": "Two words \u2014 describes money moving between sectors of the market.",
+      "explanation": "Sector rotation is the process by which investment flows shift between industries as economic conditions evolve. Understanding it helps investors avoid concentrating in sectors that are likely to face headwinds. While perfect timing of sector rotation is impossible, broad awareness of which sectors tend to benefit or suffer in different economic environments is useful for portfolio construction.",
+      "estimatedMinutes": 3
+    },
+    {
+      "type": "reflection",
+      "title": "NZ Sector Positioning",
+      "estimatedMinutes": 5,
+      "prompt": "Given current NZ economic conditions (you may need to look up whether NZ is in growth or slowdown), which two sectors would you currently favour for a NZ portfolio and why? Which sector would you underweight? Write three sentences with specific NZ company examples.",
+      "nceaLink": "Extra Learning \u2014 sector awareness is one of the most practically useful portfolio construction skills."
+    }
+  ]
+}
