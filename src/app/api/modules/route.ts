@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
           lessons.push(JSON.parse(fs.readFileSync(lessonPath, "utf8")));
         }
       }
-      return NextResponse.json({ ...modJson, lessons });
+      return NextResponse.json({ ...modJson, folder, lessons });
     } catch (e: any) {
       return NextResponse.json({ error: e.message }, { status: 500 });
     }
