@@ -2,41 +2,31 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-function getCurriculumDir(): string {
-  if (process.env.CURRICULUM_DIR) {
-    // If relative, resolve from project root (process.cwd())
-    if (!path.isAbsolute(process.env.CURRICULUM_DIR)) {
-      return path.join(process.cwd(), process.env.CURRICULUM_DIR);
-    }
-    return process.env.CURRICULUM_DIR;
+function findFile(folder: string, filename: string): string | null {
+  const bases = [
+    path.join(process.cwd(), "public", "curriculum-data"),
+    path.join(process.cwd(), "curriculum-data"),
+    path.join(process.cwd(), ".next", "server", "curriculum-data"),
+  ];
+  for (const base of bases) {
+    const p = path.join(base, folder, filename);
+    if (fs.existsSync(p)) return p;
   }
-  // Fallback: look for curriculum-data inside the project
-  const inside = path.join(process.cwd(), "curriculum-data");
-  if (fs.existsSync(inside)) return inside;
-  // Last resort: sibling folder
-  return path.join(process.cwd(), "../pocketwise-curriculum");
+  return null;
 }
 
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const folder = searchParams.get("folder");
+    const folder   = searchParams.get("folder");
     const filename = searchParams.get("filename");
-
     if (!folder || !filename) {
       return NextResponse.json({ error: "Missing folder or filename" }, { status: 400 });
     }
-
-    const dir = getCurriculumDir();
-    const filePath = path.join(dir, folder, filename);
-
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json(
-        { error: `Lesson not found` },
-        { status: 404 }
-      );
+    const filePath = findFile(folder, filename);
+    if (!filePath) {
+      return NextResponse.json({ error: `Lesson not found: ${folder}/${filename}` }, { status: 404 });
     }
-
     const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return NextResponse.json(data);
   } catch (e: any) {
