@@ -2,17 +2,25 @@ import { NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-function findFile(folder: string, filename: string): string | null {
-  const bases = [
-    path.join(process.cwd(), "public", "curriculum-data"),
+function candidateBases(): string[] {
+  return [
     path.join(process.cwd(), "curriculum-data"),
+    path.join(process.cwd(), "public", "curriculum-data"),
+    path.join(process.cwd(), "src", "curriculum-data"),
+    path.join("/var/task", "curriculum-data"),
+    path.join("/var/task", "public", "curriculum-data"),
     path.join(process.cwd(), ".next", "server", "curriculum-data"),
   ];
-  for (const base of bases) {
+}
+
+function findFile(folder: string, filename: string): { path: string | null; tried: string[] } {
+  const tried: string[] = [];
+  for (const base of candidateBases()) {
     const p = path.join(base, folder, filename);
-    if (fs.existsSync(p)) return p;
+    tried.push(p);
+    if (fs.existsSync(p)) return { path: p, tried };
   }
-  return null;
+  return { path: null, tried };
 }
 
 export async function GET(request: Request) {
@@ -23,9 +31,12 @@ export async function GET(request: Request) {
     if (!folder || !filename) {
       return NextResponse.json({ error: "Missing folder or filename" }, { status: 400 });
     }
-    const filePath = findFile(folder, filename);
+    const { path: filePath, tried } = findFile(folder, filename);
     if (!filePath) {
-      return NextResponse.json({ error: `Lesson not found: ${folder}/${filename}` }, { status: 404 });
+      return NextResponse.json(
+        { error: `Lesson not found: ${folder}/${filename}`, tried, cwd: process.cwd() },
+        { status: 404 }
+      );
     }
     const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
     return NextResponse.json(data);
