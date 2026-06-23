@@ -233,10 +233,15 @@ function StockCard({ snapshot, owned, onClick, T }: { snapshot: StockSnapshot; o
     >
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 10 }}>
         <div style={{ minWidth: 0, flex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 2 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 2, flexWrap: "wrap" }}>
             <span style={{ background: "#1e3a5f", color: "#60a5fa", padding: "2px 8px", borderRadius: 6, fontWeight: 900, fontSize: "0.72rem" }}>
               {snapshot.symbol}
             </span>
+            {snapshot.type === "etf" && (
+              <span style={{ background: "rgba(168,85,247,.18)", color: "#c084fc", padding: "2px 7px", borderRadius: 6, fontWeight: 800, fontSize: "0.6rem", letterSpacing: "0.04em" }}>
+                ETF
+              </span>
+            )}
             {ownedQty > 0 && (
               <span style={{ background: "rgba(118,173,37,.18)", color: "#76AD25", padding: "2px 8px", borderRadius: 6, fontWeight: 800, fontSize: "0.62rem" }}>
                 OWN {ownedQty}

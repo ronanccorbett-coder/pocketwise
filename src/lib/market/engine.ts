@@ -162,37 +162,60 @@ const HEADLINE_TEMPLATES: Record<MarketEventType, (name: string, sector: string)
   calm:              (n) => `${n} trading in line with broader NZX market`,
 };
 
+// ETF-specific templates — funds don't have CEOs, earnings, or contracts.
+const ETF_HEADLINE_TEMPLATES: Partial<Record<MarketEventType, (name: string, sector: string) => string>> = {
+  sector_tailwind:   (n) => `${n} rallies as global markets reach new highs`,
+  sector_headwind:   (n) => `${n} slides amid broad market sell-off`,
+  analyst_upgrade:   (_, s) => `Strategists forecast stronger outlook for ${s}`,
+  analyst_downgrade: (_, s) => `Analysts caution on ${s} valuations`,
+  guidance_raise:    (n) => `${n} sees inflows lift fund size to new record`,
+  guidance_cut:      (n) => `Outflows hit ${n} as investors turn defensive`,
+  calm:              (n) => `${n} steady alongside broader markets`,
+};
+
 // Build the day's events deterministically for a single stock.
 export function dailyEvents(stock: StockMeta, tradingDay: number): MarketEvent[] {
   const seed = hashStr(`${stock.symbol}|day${tradingDay}`);
   const rng = mulberry32(seed);
 
-  // 70% chance of at least one event, 15% chance of two events
+  // ETFs have softer events: 50% one event, 5% two, 45% calm-only
+  // Stocks: 70% one event, 15% two, 15% none
+  const isETF = stock.type === "etf";
   const r = rng();
-  const eventCount = r < 0.15 ? 2 : r < 0.85 ? 1 : 0;
+  const eventCount = isETF
+    ? (r < 0.05 ? 2 : r < 0.55 ? 1 : 0)
+    : (r < 0.15 ? 2 : r < 0.85 ? 1 : 0);
   if (eventCount === 0) return [];
 
-  const events: MarketEvent[] = [];
-  const types: MarketEventType[] = [
+  const stockTypes: MarketEventType[] = [
     "earnings_beat", "earnings_miss", "contract_win", "contract_loss",
     "sector_tailwind", "sector_headwind", "exec_change",
     "guidance_raise", "guidance_cut", "analyst_upgrade", "analyst_downgrade",
-    "regulatory", "calm", "calm", "calm", // calm weighted more
+    "regulatory", "calm", "calm", "calm",
   ];
+  const etfTypes: MarketEventType[] = [
+    "sector_tailwind", "sector_headwind",
+    "analyst_upgrade", "analyst_downgrade",
+    "guidance_raise", "guidance_cut",
+    "calm", "calm", "calm", "calm",
+  ];
+  const types = isETF ? etfTypes : stockTypes;
 
+  const events: MarketEvent[] = [];
   for (let i = 0; i < eventCount; i++) {
     const type = types[Math.floor(rng() * types.length)];
-    // Magnitude: most events are small, occasionally larger
     const sign = type.includes("miss") || type.includes("loss") ||
                  type.includes("headwind") || type.includes("cut") ||
                  type.includes("downgrade") || type === "regulatory" ? -1 : 1;
     const calmAdj = type === "calm" ? 0.2 : 1;
-    const base = (0.005 + rng() * 0.025) * calmAdj; // 0.5%–3%
+    const etfAdj = isETF ? 0.4 : 1;
+    const base = (0.005 + rng() * 0.025) * calmAdj * etfAdj;
     const magnitude = sign * base;
+    const template = (isETF && ETF_HEADLINE_TEMPLATES[type]) || HEADLINE_TEMPLATES[type];
     events.push({
       type,
       magnitude,
-      headline: HEADLINE_TEMPLATES[type](stock.name, stock.sector),
+      headline: template(stock.name, stock.sector),
     });
   }
   return events;
@@ -353,6 +376,7 @@ export type StockSnapshot = {
   name: string;
   sector: string;
   about: string;
+  type?: "stock" | "etf";
   price: number;
   prevClose: number;
   change: number;
@@ -410,6 +434,7 @@ export function snapshotStock(stock: StockMeta, ts: number): StockSnapshot {
     name: stock.name,
     sector: stock.sector,
     about: stock.about,
+    type: stock.type ?? "stock",
     price,
     prevClose,
     change: price - prevClose,

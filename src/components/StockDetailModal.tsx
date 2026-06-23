@@ -130,10 +130,15 @@ export default function StockDetailModal({
           position: "sticky", top: 0, background: T.card, zIndex: 10,
         }}>
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 4 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4, flexWrap: "wrap" }}>
               <div style={{ background: "#1e3a5f", borderRadius: 8, padding: "4px 10px", fontWeight: 900, fontSize: "0.85rem", color: "#60a5fa" }}>
                 {snapshot.symbol}
               </div>
+              {snapshot.type === "etf" && (
+                <span style={{ background: "rgba(168,85,247,.18)", color: "#c084fc", padding: "3px 8px", borderRadius: 6, fontWeight: 800, fontSize: "0.65rem", letterSpacing: "0.05em" }}>
+                  ETF
+                </span>
+              )}
               <span style={{ fontWeight: 700, fontSize: "1rem" }}>{snapshot.name}</span>
             </div>
             <div style={{ fontSize: "0.72rem", color: T.text2, display: "flex", alignItems: "center", gap: 4 }}>

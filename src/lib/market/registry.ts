@@ -25,6 +25,7 @@ export type StockMeta = {
   divYieldAnnual: number;   // dividend yield (e.g. 0.045 = 4.5% per year)
   divDayOfWeek: 1|2|3|4|5;  // weekday dividend pays (1=Mon … 5=Fri)
   liquidityTier: LiquidityTier; // determines bid/ask spread
+  type?: "stock" | "etf";       // defaults to "stock"
 };
 
 // Bid/ask spread (round-trip) by liquidity tier — applied as half above/below mid
@@ -160,6 +161,51 @@ export const NZX_STOCKS: StockMeta[] = [
     basePrice: 3.40, volatilityDaily: 0.026, driftAnnual: 0.04, meanReversion: 0.035,
     shareCount: 200_000_000, baseEPS: 0.18, divYieldAnnual: 0.04,
     divDayOfWeek: 2, liquidityTier: "low",
+  },
+  // ─── ETFs and Managed Funds ─────────────────────────────────────────────
+  // Lower volatility because they hold many companies. Slightly higher drift
+  // because diversification smooths returns. P/E shows n/a (baseEPS = 0).
+  {
+    symbol: "USF", name: "Smartshares S&P 500 ETF", sector: "US Large Cap ETF",
+    about: "Tracks the S&P 500 index — the 500 largest US companies, including Apple, Microsoft, Amazon, and Google.",
+    basePrice: 15.20, volatilityDaily: 0.008, driftAnnual: 0.09, meanReversion: 0.015,
+    shareCount: 90_000_000, baseEPS: 0, divYieldAnnual: 0.015,
+    divDayOfWeek: 3, liquidityTier: "high", type: "etf",
+  },
+  {
+    symbol: "USG", name: "Smartshares Total World ETF", sector: "Global ETF",
+    about: "Tracks global share markets across developed and emerging economies. The most diversified equity option.",
+    basePrice: 12.50, volatilityDaily: 0.007, driftAnnual: 0.07, meanReversion: 0.015,
+    shareCount: 60_000_000, baseEPS: 0, divYieldAnnual: 0.022,
+    divDayOfWeek: 4, liquidityTier: "high", type: "etf",
+  },
+  {
+    symbol: "NZG", name: "Smartshares NZ Top 50 ETF", sector: "NZ Index ETF",
+    about: "Tracks the NZX 50 — the 50 largest companies on the New Zealand stock exchange.",
+    basePrice: 3.50, volatilityDaily: 0.009, driftAnnual: 0.06, meanReversion: 0.02,
+    shareCount: 180_000_000, baseEPS: 0, divYieldAnnual: 0.035,
+    divDayOfWeek: 5, liquidityTier: "high", type: "etf",
+  },
+  {
+    symbol: "AGG", name: "Smartshares Global Bond ETF", sector: "Bond ETF",
+    about: "Holds government and corporate bonds globally. Much lower risk and lower return than shares.",
+    basePrice: 2.80, volatilityDaily: 0.003, driftAnnual: 0.035, meanReversion: 0.03,
+    shareCount: 120_000_000, baseEPS: 0, divYieldAnnual: 0.04,
+    divDayOfWeek: 2, liquidityTier: "high", type: "etf",
+  },
+  {
+    symbol: "MFG", name: "Milford Active Growth Fund", sector: "Managed Fund",
+    about: "Actively managed NZ fund mixing shares, property and bonds. Aims to return 5%+ above inflation over the long term.",
+    basePrice: 5.20, volatilityDaily: 0.008, driftAnnual: 0.085, meanReversion: 0.018,
+    shareCount: 250_000_000, baseEPS: 0, divYieldAnnual: 0.025,
+    divDayOfWeek: 3, liquidityTier: "mid", type: "etf",
+  },
+  {
+    symbol: "MFD", name: "Milford Diversified Income Fund", sector: "Managed Fund",
+    about: "Income-focused Milford fund holding mostly bonds and dividend-paying shares. Lower risk than growth funds.",
+    basePrice: 4.80, volatilityDaily: 0.005, driftAnnual: 0.055, meanReversion: 0.025,
+    shareCount: 200_000_000, baseEPS: 0, divYieldAnnual: 0.045,
+    divDayOfWeek: 1, liquidityTier: "mid", type: "etf",
   },
 ];
 
