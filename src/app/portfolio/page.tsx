@@ -2,6 +2,7 @@
 import PortfolioTutorial from "@/components/PortfolioTutorial";
 import DayTradingTerminal from "@/components/DayTradingTerminal";
 import { useTheme } from "@/lib/theme";
+import MarketsTab from "@/components/MarketsTab";
 import { useState, useCallback } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
@@ -727,19 +728,16 @@ export default function PortfolioPage(){
 
           {/* MARKETS */}
           {tab === "Markets" && (
-            <StockMarket
-                prices={prices}
+            <MarketsTab
                 stocks={stocks}
-                buyQty={buyQty}
-                setBuyQty={setBuyQty}
                 balance={balance}
                 marketEvent={marketEvent ?? null}
-                onBuy={(symbol, name, qty, price) => {
-                  const ok = buyStock(symbol, name, qty, price);
-                  if (ok) notify(`Bought ${qty} ${symbol} @ $${price.toFixed(2)}`);
+                onBuy={(symbol, name, qty, midPrice) => {
+                  const ok = buyStock(symbol, name, qty, midPrice);
+                  if (ok) notify(`Bought ${qty} ${symbol} @ ~$${midPrice.toFixed(2)}`);
                   else notify("Insufficient balance");
                 }}
-                onSell={(id, price) => sellStock(id, price)}
+                onSell={(stockId, qty, midPrice) => sellStock(stockId, qty, midPrice)}
               />
           )}
 

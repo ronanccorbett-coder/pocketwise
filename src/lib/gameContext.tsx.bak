@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useRef, useCallback, ReactNode } 
 import { id } from "@instantdb/react";
 import { db } from "./db";
 import { generateWeeklyNews, generateLifeEvent, shouldFireLifeEvent } from "./events";
-import { STOCK_BY_SYMBOL, buyCost as calcBuyCost, sellProceeds as calcSellProceeds } from "./stockSimulator";
 
 // ── XP Gates ──────────────────────────────────────────────────────────────
 export const XP_GATES = {
@@ -112,7 +111,7 @@ type GameCtx = {
   applyForJob: (jobId: string, salary: number) => void;
   updateStockPrice: (stockId: string, newPrice: number) => void;
   buyStock: (symbol: string, name: string, qty: number, price: number) => boolean;
-  sellStock: (stockId: string, qtyOrPrice: number, maybePrice?: number) => void;
+  sellStock: (stockId: string, currentPrice: number) => void;
   buyProperty: (name: string, price: number, weeklyRent: number, mortgageWeekly: number) => boolean;
   takeLoan: (name: string, principal: number, rate: number, weeklyRepayment: number) => boolean;
   buyAsset: (name: string, category: string, price: number, depRate: number) => boolean;
@@ -267,11 +266,11 @@ export function GameProvider({ children }: { children: ReactNode }) {
           }
         });
 
-        // Stock dividends — daily portion (annualised yield ÷ 365)
+        // Stock dividends — daily portion
         stocks.forEach(stock => {
-          const meta = STOCK_BY_SYMBOL[stock.symbol];
-          if (meta && meta.divYieldAnnual > 0) {
-            const dailyDiv = ((stock.currentValue ?? meta.basePrice) * (stock.quantity ?? 0) * meta.divYieldAnnual) / 365;
+          const meta = NZX_STOCKS.find(s => s.symbol === stock.symbol);
+          if (meta && meta.dividendYield > 0) {
+            const dailyDiv = ((stock.currentValue ?? meta.basePrice) * (stock.quantity ?? 0) * meta.dividendYield) / 365;
             balanceDelta += dailyDiv;
             txns.push(
               (db as any).tx.userStocks[stock.id].update({
@@ -432,92 +431,43 @@ export function GameProvider({ children }: { children: ReactNode }) {
     db.transact((db as any).tx.userStocks[stockId].update({ currentValue: newPrice }));
   }, []);
 
-  const buyStock = useCallback((symbol: string, name: string, qty: number, midPrice: number): boolean => {
+  const buyStock = useCallback((symbol: string, name: string, qty: number, price: number): boolean => {
     if (!rawState || !authUser || !sid()) return false;
+    if ((rawState.balance ?? 0) < price * qty) return false;
     if (!canAccess("buyStock")) return false;
-    // Compute total cost at ask + brokerage
-    const { ask, total } = calcBuyCost(symbol, qty, midPrice);
-    if ((rawState.balance ?? 0) < total) return false;
-
-    const newBal = (rawState.balance ?? 0) - total;
-    const newInvested = (rawState.totalInvested ?? 0) + total;
-
-    // Look for existing position in this symbol → merge with weighted-avg cost
-    const existing = stocks.find(s => s.symbol === symbol);
-    const txns: any[] = [
+    const cost = price * qty;
+    const newBal = (rawState.balance ?? 0) - cost;
+    const newInvested = (rawState.totalInvested ?? 0) + cost;
+    db.transact([
       (db as any).tx.userState[sid()].update({
         balance: newBal,
         totalInvested: newInvested,
         netWorth: newBal + newInvested - (rawState.totalDebt ?? 0),
       }),
-    ];
-    if (existing) {
-      const oldQty = existing.quantity ?? 0;
-      const oldAvg = existing.purchasePrice ?? ask;
-      const newQty = oldQty + qty;
-      const newAvg = ((oldAvg * oldQty) + (ask * qty)) / newQty;
-      txns.push(
-        (db as any).tx.userStocks[existing.id].update({
-          quantity: newQty,
-          purchasePrice: newAvg,
-          currentValue: midPrice,
-        })
-      );
-    } else {
-      txns.push(
-        (db as any).tx.userStocks[id()].update({
-          userId: authUser.id, symbol, name, quantity: qty,
-          purchasePrice: ask, purchaseDate: Date.now(),
-          currentValue: midPrice, dividendsEarned: 0,
-        })
-      );
-    }
-    db.transact(txns);
+      (db as any).tx.userStocks[id()].update({
+        userId: authUser.id, symbol, name, quantity: qty,
+        purchasePrice: price, purchaseDate: Date.now(),
+        currentValue: price, dividendsEarned: 0,
+      }),
+    ]);
     return true;
-  }, [rawState, authUser, canAccess, stocks]);
+  }, [rawState, authUser, canAccess]);
 
-  // Sell shares — supports partial quantities. If qty omitted, sells the entire holding (legacy callers).
-  const sellStock = useCallback((stockId: string, qtyOrPrice: number, maybePrice?: number) => {
+  const sellStock = useCallback((stockId: string, currentPrice: number) => {
     if (!rawState || !sid()) return;
     const stock = stocks.find(s => s.id === stockId);
     if (!stock) return;
-    const holdingQty = stock.quantity ?? 0;
-    if (holdingQty <= 0) return;
-    // Detect old signature: sellStock(id, price) → sell all at price
-    // vs new signature: sellStock(id, qty, midPrice)
-    let sellQty: number, midPrice: number;
-    if (typeof maybePrice === "number") {
-      sellQty = Math.min(qtyOrPrice, holdingQty);
-      midPrice = maybePrice;
-    } else {
-      sellQty = holdingQty;
-      midPrice = qtyOrPrice;
-    }
-    if (sellQty <= 0) return;
-
-    const { net } = calcSellProceeds(stock.symbol, sellQty, midPrice);
-    const newBal = (rawState.balance ?? 0) + net;
-    const costBasisRemoved = (stock.purchasePrice ?? 0) * sellQty;
-    const newInvested = Math.max(0, (rawState.totalInvested ?? 0) - costBasisRemoved);
-
-    const txns: any[] = [
+    const proceeds = currentPrice * (stock.quantity ?? 0);
+    const newBal = (rawState.balance ?? 0) + proceeds;
+    const newInvested = Math.max(0, (rawState.totalInvested ?? 0) - (stock.purchasePrice ?? 0) * (stock.quantity ?? 0));
+    db.transact([
       (db as any).tx.userState[sid()].update({
         balance: newBal,
         totalInvested: newInvested,
         netWorth: newBal + newInvested - (rawState.totalDebt ?? 0),
       }),
-    ];
-    if (sellQty >= holdingQty) {
-      txns.push((db as any).tx.userStocks[stockId].delete());
-    } else {
-      txns.push(
-        (db as any).tx.userStocks[stockId].update({
-          quantity: holdingQty - sellQty,
-          currentValue: midPrice,
-        })
-      );
-    }
-    db.transact(txns);
+      (db as any).tx.userStocks[stockId].delete(),
+    ]);
   }, [rawState, stocks]);
 
   const buyProperty = useCallback((name: string, price: number, weeklyRent: number, mortgageWeekly: number): boolean => {
@@ -627,16 +577,13 @@ export function GameProvider({ children }: { children: ReactNode }) {
 }
 
 // ── NZX Stock metadata ────────────────────────────────────────────────────
-// Re-exported from the new market registry so every consumer gets the same
-// 17-stock list. Old shape fields (basePrice, dividendYield) are preserved
-// via the adapter below for backwards compatibility with any callers that
-// still reference them.
-import { NZX_STOCKS as REGISTRY } from "./market/registry";
-export const NZX_STOCKS = REGISTRY.map(s => ({
-  symbol: s.symbol,
-  name: s.name,
-  sector: s.sector,
-  basePrice: s.basePrice,
-  volatility: s.volatilityDaily,
-  dividendYield: s.divYieldAnnual,
-}));
+export const NZX_STOCKS = [
+  { symbol: "ANZ",  name: "ANZ Banking Group",  sector: "Finance",     basePrice: 29.40, volatility: 0.012, dividendYield: 0.058 },
+  { symbol: "FBU",  name: "Fletcher Building",  sector: "Construction",basePrice: 4.85,  volatility: 0.022, dividendYield: 0.045 },
+  { symbol: "SPK",  name: "Spark New Zealand",  sector: "Telecom",     basePrice: 3.72,  volatility: 0.010, dividendYield: 0.072 },
+  { symbol: "MFT",  name: "Mainfreight",         sector: "Logistics",   basePrice: 68.20, volatility: 0.018, dividendYield: 0.022 },
+  { symbol: "AIR",  name: "Air New Zealand",     sector: "Aviation",    basePrice: 0.71,  volatility: 0.035, dividendYield: 0.000 },
+  { symbol: "MEL",  name: "Meridian Energy",     sector: "Utilities",   basePrice: 5.84,  volatility: 0.009, dividendYield: 0.048 },
+  { symbol: "XRO",  name: "Xero Limited",        sector: "Technology",  basePrice: 142.00,volatility: 0.028, dividendYield: 0.000 },
+  { symbol: "NZX",  name: "NZX Limited",         sector: "Finance",     basePrice: 1.28,  volatility: 0.015, dividendYield: 0.055 },
+];
