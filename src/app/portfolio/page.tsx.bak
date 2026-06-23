@@ -578,7 +578,7 @@ export default function PortfolioPage(){
     if (owned) updateStockPrice(owned.id, newPrice);
   }, [stocks, updateStockPrice]);
 
-  const { prices, marketEvent } = useStockSimulator(5000, handlePriceUpdate);
+  const { prices, marketEvent } = useStockSimulator(30000, handlePriceUpdate);
 
   const [activeTutorial, setActiveTutorial] = useState(null as string | null);
   const [completedTutorials, setCompletedTutorials] = useState<string[]>(() => {
