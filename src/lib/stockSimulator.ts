@@ -1,6 +1,13 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import { NZX_STOCKS } from "./gameContext";
+
+import { useEffect, useState, useMemo, useRef } from "react";
+import {
+  NZX_STOCKS, STOCK_BY_SYMBOL, StockMeta, BROKERAGE_PCT, SPREAD_BY_TIER,
+} from "./market/registry";
+import {
+  snapshotStock, priceSeries, HistoryRange, StockSnapshot,
+  isMarketOpen, dailyEvents, tradingDayIndex, bidAsk,
+} from "./market/engine";
 
 export type StockPrice = {
   symbol: string;
@@ -8,6 +15,7 @@ export type StockPrice = {
   sector: string;
   price: number;
   prevPrice: number;
+  prevClose: number;
   change: number;
   changePct: number;
   high: number;
@@ -16,112 +24,152 @@ export type StockPrice = {
   dividendYield: number;
   volume: number;
   basePrice: number;
+  bid: number;
+  ask: number;
+  marketCap: number;
+  peRatio: number | null;
+  about: string;
+  liquidityTier: string;
+  headlines: { day: number; headline: string; magnitude: number }[];
 };
 
-function nextPrice(current: number, base: number, volatility: number): number {
-  const meanReversion = 0.02;
-  const randomShock = (Math.random() - 0.5) * 2 * volatility * current;
-  const drift = meanReversion * (base - current);
-  const next = current + drift + randomShock;
-  return Math.max(base * 0.2, Math.min(base * 3, next));
+function snapshotToOldShape(snap: StockSnapshot, base: number): StockPrice {
+  const volume = Math.round(
+    (snap.marketCap / Math.max(1, snap.price)) * 0.002 * (1 + Math.abs(snap.changePct) * 10)
+  );
+  return {
+    symbol: snap.symbol,
+    name: snap.name,
+    sector: snap.sector,
+    price: snap.price,
+    prevPrice: snap.prevClose,
+    prevClose: snap.prevClose,
+    change: snap.change,
+    changePct: snap.changePct,
+    high: snap.dayHigh,
+    low: snap.dayLow,
+    history: snap.history,
+    dividendYield: snap.dividendYield,
+    volume,
+    basePrice: base,
+    bid: snap.bid,
+    ask: snap.ask,
+    marketCap: snap.marketCap,
+    peRatio: snap.peRatio,
+    about: snap.about,
+    liquidityTier: snap.liquidityTier,
+    headlines: snap.headlines,
+  };
 }
 
-function generateMarketEvent(): string | null {
-  const events = [
-    "RBNZ holds OCR at 5.25%",
-    "NZ GDP growth beats expectations",
-    "Global markets sell off overnight",
-    "NZ inflation data released",
-    "Strong dairy prices boost NZX",
-    "US Federal Reserve signals rate cut",
-    null, null, null, null, null, null,
-  ];
-  return events[Math.floor(Math.random() * events.length)];
+function useMarketTick(intervalMs = 5000): number {
+  const [now, setNow] = useState<number>(() => Date.now());
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), intervalMs);
+    return () => clearInterval(id);
+  }, [intervalMs]);
+  return now;
+}
+
+function pickMarketEvent(ts: number): string | null {
+  const day = tradingDayIndex(ts);
+  let best: { magnitude: number; headline: string } | null = null;
+  for (const stock of NZX_STOCKS) {
+    for (const e of dailyEvents(stock, day)) {
+      if (e.type === "calm") continue;
+      if (!best || Math.abs(e.magnitude) > Math.abs(best.magnitude)) {
+        best = { magnitude: e.magnitude, headline: e.headline };
+      }
+    }
+  }
+  return best?.headline ?? null;
 }
 
 export function useStockSimulator(
-  intervalMs = 30000,
-  onPriceUpdate?: (symbol: string, newPrice: number) => void
-) {
-  const initialPrices: Record<string, StockPrice> = {};
-  NZX_STOCKS.forEach(s => {
-    const startPrice = s.basePrice * (0.95 + Math.random() * 0.1);
-    initialPrices[s.symbol] = {
-      symbol: s.symbol, name: s.name, sector: s.sector,
-      price: startPrice, prevPrice: startPrice,
-      change: 0, changePct: 0,
-      high: startPrice, low: startPrice,
-      history: Array(30).fill(startPrice),
-      dividendYield: s.dividendYield,
-      volume: Math.floor(Math.random() * 500000) + 100000,
-      basePrice: s.basePrice,
+  intervalMs: number = 5000,
+  onPriceUpdate?: (symbol: string, newPrice: number) => void,
+): { prices: Record<string, StockPrice>; marketEvent: string | null; isOpen: boolean } {
+  const now = useMarketTick(intervalMs);
+  const result = useMemo(() => {
+    const prices: Record<string, StockPrice> = {};
+    for (const stock of NZX_STOCKS) {
+      const snap = snapshotStock(stock, now);
+      prices[stock.symbol] = snapshotToOldShape(snap, stock.basePrice);
+    }
+    return {
+      prices,
+      marketEvent: pickMarketEvent(now),
+      isOpen: isMarketOpen(now),
     };
-  });
+  }, [now]);
 
-  const [prices, setPrices] = useState<Record<string, StockPrice>>(initialPrices);
-  const [marketEvent, setMarketEvent] = useState<string | null>(null);
-  const [lastUpdate, setLastUpdate] = useState(Date.now());
-  const tickRef = useRef(0);
   const callbackRef = useRef(onPriceUpdate);
   callbackRef.current = onPriceUpdate;
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      tickRef.current++;
-      const event = generateMarketEvent();
-      if (event) setMarketEvent(event);
-      else if (tickRef.current % 3 === 0) setMarketEvent(null);
+    const cb = callbackRef.current;
+    if (!cb) return;
+    for (const sym of Object.keys(result.prices)) {
+      cb(sym, result.prices[sym].price);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [now]);
 
-      const eventMultiplier = event ? (Math.random() > 0.5 ? 1.05 : 0.95) : 1.0;
-
-      setPrices(prev => {
-        const next: Record<string, StockPrice> = {};
-        NZX_STOCKS.forEach(meta => {
-          const cur = prev[meta.symbol];
-          let vol = meta.volatility;
-          if (event?.includes("RBNZ") && (meta.sector === "Finance" || meta.sector === "Utilities")) vol *= 1.5;
-          if (event?.includes("Global")) vol *= 1.8;
-
-          const raw = nextPrice(cur.price, meta.basePrice * eventMultiplier, vol);
-          const price = parseFloat(raw.toFixed(meta.basePrice < 1 ? 3 : 2));
-          const history = [...cur.history.slice(1), price];
-
-          next[meta.symbol] = {
-            ...cur,
-            prevPrice: cur.price, price,
-            change: parseFloat((price - cur.history[0]).toFixed(3)),
-            changePct: parseFloat(((price - cur.history[0]) / cur.history[0] * 100).toFixed(2)),
-            high: Math.max(cur.high, price),
-            low: Math.min(cur.low, price),
-            history,
-            volume: Math.floor(Math.random() * 500000) + 100000,
-          };
-
-          // Notify parent to save to database
-          if (callbackRef.current) {
-            callbackRef.current(meta.symbol, price);
-          }
-        });
-        return next;
-      });
-      setLastUpdate(Date.now());
-    }, intervalMs);
-
-    return () => clearInterval(interval);
-  }, [intervalMs]);
-
-  return { prices, marketEvent, lastUpdate };
+  return result;
 }
 
-export function sparklinePath(history: number[], width = 80, height = 24): string {
-  if (history.length < 2) return "";
+export function useStockSnapshots(): { snapshots: Record<string, StockSnapshot>; isOpen: boolean; now: number } {
+  const now = useMarketTick(5000);
+  return useMemo(() => {
+    const snapshots: Record<string, StockSnapshot> = {};
+    for (const stock of NZX_STOCKS) snapshots[stock.symbol] = snapshotStock(stock, now);
+    return { snapshots, isOpen: isMarketOpen(now), now };
+  }, [now]);
+}
+
+export function useStockHistory(symbol: string | null, range: HistoryRange): { t: number; price: number }[] {
+  const now = useMarketTick(5000);
+  return useMemo(() => {
+    if (!symbol) return [];
+    const stock = STOCK_BY_SYMBOL[symbol];
+    if (!stock) return [];
+    return priceSeries(stock, now, range);
+  }, [symbol, range, now]);
+}
+
+export function sparklinePath(history: number[], w = 60, h = 20): string {
+  if (!history || history.length < 2) return "";
   const min = Math.min(...history);
   const max = Math.max(...history);
   const range = max - min || 1;
-  const points = history.map((p, i) => {
-    const x = (i / (history.length - 1)) * width;
-    const y = height - ((p - min) / range) * height;
-    return `${x.toFixed(1)},${y.toFixed(1)}`;
-  });
-  return `M ${points.join(" L ")}`;
+  const stepX = w / (history.length - 1);
+  return history
+    .map((p, i) => {
+      const x = i * stepX;
+      const y = h - ((p - min) / range) * h;
+      return `${i === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`;
+    })
+    .join(" ");
 }
+
+export function buyCost(symbol: string, qty: number, midPrice: number): {
+  ask: number; gross: number; brokerage: number; total: number;
+} {
+  const stock = STOCK_BY_SYMBOL[symbol];
+  const ask = stock ? bidAsk(stock, midPrice).ask : midPrice;
+  const gross = ask * qty;
+  const brokerage = gross * BROKERAGE_PCT;
+  return { ask, gross, brokerage, total: gross + brokerage };
+}
+
+export function sellProceeds(symbol: string, qty: number, midPrice: number): {
+  bid: number; gross: number; brokerage: number; net: number;
+} {
+  const stock = STOCK_BY_SYMBOL[symbol];
+  const bid = stock ? bidAsk(stock, midPrice).bid : midPrice;
+  const gross = bid * qty;
+  const brokerage = gross * BROKERAGE_PCT;
+  return { bid, gross, brokerage, net: gross - brokerage };
+}
+
+export { NZX_STOCKS, STOCK_BY_SYMBOL, BROKERAGE_PCT, SPREAD_BY_TIER };
+export type { StockMeta, StockSnapshot, HistoryRange };
