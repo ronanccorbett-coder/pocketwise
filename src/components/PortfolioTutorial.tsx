@@ -44,16 +44,6 @@ const TUTORIALS: Record<string, { title: string; icon: any; color: string; slide
         highlight: "Price, Change, Yield, Volume",
         visual: "stocks",
       },
-      {
-        title: "Quiz time",
-        content: "Let's check your understanding before you start trading.",
-        quiz: {
-          q: "A company's share price falls 10% in one day. What does this most likely mean?",
-          options: ["The company is bankrupt", "More people wanted to sell than buy", "The government banned the company", "Dividends were paid"],
-          correct: 1,
-          explanation: "A price drop means sellers outnumbered buyers — could be bad news, a market downturn, or profit-taking. It does not mean the company is bankrupt.",
-        },
-      },
     ],
   },
 
@@ -85,16 +75,6 @@ const TUTORIALS: Record<string, { title: string; icon: any; color: string; slide
         content: "New Zealand does not have a general capital gains tax (though the bright-line test taxes profits if you sell within 2 years). This means the profit you make when selling a property is mostly tax-free. This is why property has been so popular as a long-term investment.",
         highlight: "NZ: No general capital gains tax",
         visual: "property",
-      },
-      {
-        title: "Quiz time",
-        content: "Test your property knowledge.",
-        quiz: {
-          q: "A property costs $600,000. What is the minimum deposit you typically need to buy it in NZ?",
-          options: ["$30,000 (5%)", "$60,000 (10%)", "$120,000 (20%)", "$180,000 (30%)"],
-          correct: 2,
-          explanation: "NZ banks typically require a 20% deposit for investment properties — that's $120,000 on a $600,000 property. The bank lends the remaining $480,000.",
-        },
       },
     ],
   },
@@ -128,16 +108,6 @@ const TUTORIALS: Record<string, { title: string; icon: any; color: string; slide
         highlight: "NZ student loans are interest-free in NZ",
         visual: "loans",
       },
-      {
-        title: "Quiz time",
-        content: "Final check before exploring loans.",
-        quiz: {
-          q: "A payday loan charges 365% APR. You borrow $200 for 2 weeks. Approximately how much do you repay?",
-          options: ["$202", "$215", "$228", "$276"],
-          correct: 2,
-          explanation: "365% APR = 1% per day. 14 days = 14% extra. $200 x 1.14 = $228. Payday loans are extremely expensive for short-term borrowing.",
-        },
-      },
     ],
   },
 
@@ -169,16 +139,6 @@ const TUTORIALS: Record<string, { title: string; icon: any; color: string; slide
         content: "Financial success comes from systematically converting income into assets. The formula: Earn money, spend less than you earn, invest the difference in appreciating or income-generating assets, repeat. Over time, your assets generate their own income, reducing your dependence on a job.",
         highlight: "Earn → Save → Invest → Repeat",
         visual: "assets",
-      },
-      {
-        title: "Quiz time",
-        content: "Last check before exploring assets.",
-        quiz: {
-          q: "Which of the following is a depreciating asset?",
-          options: ["Investment property in Auckland", "Shares in a growing company", "A 3-year-old car", "A KiwiSaver fund"],
-          correct: 2,
-          explanation: "Cars lose value over time due to wear, age, and new models. Property and shares typically appreciate. KiwiSaver grows through contributions and returns.",
-        },
       },
     ],
   },

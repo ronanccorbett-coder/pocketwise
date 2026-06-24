@@ -2,6 +2,7 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
+import XPGate from "@/components/XPGate";
 import { useTheme } from "@/lib/theme";
 import { useGame } from "@/lib/gameContext";
 import { DollarSign, TrendingUp, TrendingDown, Zap } from "lucide-react";
@@ -10,8 +11,63 @@ type GameTab = "Slots"|"Blackjack"|"Roulette"|"Sports"|"Mines"|"Crash";
 const GAME_TABS: GameTab[] = ["Slots","Blackjack","Roulette","Sports","Mines","Crash"];
 const FONT = "Inter, system-ui, sans-serif";
 
-// ── Shared bet selector ───────────────────────────────────────────────────
-function BetSelector({ bet, setBet, max, bets = [1,2,5,10,25,50] }: { bet: number; setBet: (n: number) => void; max: number; bets?: number[] }) {
+// ── Shared bet slider — bet any amount up to your balance ─────────────────
+function BetSelector({ bet, setBet, max, bets }: { bet: number; setBet: (n: number) => void; max: number; bets?: number[] }) {
+  const { isDark } = useTheme();
+  // Clamp bet to [1, max] whenever max changes (e.g. balance drops)
+  useEffect(() => { if (bet > max) setBet(Math.max(1, max)); }, [max]);
+  const safeMax = Math.max(1, max);
+  const T = { input: isDark ? "rgba(255,255,255,.06)" : "#f8fafc", text: isDark ? "#fff" : "#0d1526", text2: isDark ? "#8b9dc3" : "#475569" };
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 10, padding: "10px 0" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <span style={{ fontSize: "0.72rem", color: T.text2, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".05em" }}>Bet amount</span>
+        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+          <span style={{ color: "#f59e0b", fontWeight: 700 }}>$</span>
+          <input
+            type="number" min={1} max={safeMax} value={bet}
+            onChange={e => setBet(Math.min(safeMax, Math.max(1, parseInt(e.target.value) || 1)))}
+            style={{
+              width: 90, padding: "6px 10px", borderRadius: 8,
+              background: T.input, border: "1px solid #1a4030", color: T.text,
+              fontFamily: FONT, fontSize: "0.95rem", fontWeight: 800,
+              textAlign: "right", outline: "none",
+            }}
+          />
+        </div>
+      </div>
+      <input
+        type="range" min={1} max={safeMax} value={bet} step={1}
+        onChange={e => setBet(parseInt(e.target.value) || 1)}
+        style={{
+          width: "100%", accentColor: "#f59e0b", cursor: "pointer",
+          height: 6,
+        }}
+      />
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>
+        <button onClick={() => setBet(Math.max(1, Math.floor(safeMax * 0.25)))} style={btnQ()}>25%</button>
+        <button onClick={() => setBet(Math.max(1, Math.floor(safeMax * 0.5)))}  style={btnQ()}>50%</button>
+        <button onClick={() => setBet(Math.max(1, Math.floor(safeMax * 0.75)))} style={btnQ()}>75%</button>
+        <button onClick={() => setBet(safeMax)} style={btnQ()}>MAX</button>
+      </div>
+      <div style={{ fontSize: "0.68rem", color: T.text2, textAlign: "center", marginTop: -2 }}>
+        Max bet: ${safeMax.toLocaleString()}
+      </div>
+    </div>
+  );
+}
+function btnQ(): React.CSSProperties {
+  return {
+    flex: 1, padding: "5px 0", borderRadius: 8,
+    background: "rgba(245,158,11,.12)", color: "#f59e0b",
+    border: "1px solid rgba(245,158,11,.25)",
+    fontWeight: 700, fontSize: "0.7rem", cursor: "pointer",
+    fontFamily: FONT,
+  };
+}
+// ── Old BetSelector body (replaced) ───────────────────────────────────────
+function _UNUSED_OldBetSelector({ bet, setBet, max, bets = [1,2,5,10,25,50] }: { bet: number; setBet: (n: number) => void; max: number; bets?: number[] }) {
   const { isDark } = useTheme();
   const T = { bg: isDark?"#0d1526":"#f0f4f8", bg2: isDark?"#111c30":"#ffffff", bg3: isDark?"#1a2540":"#f8fafc", card: isDark?"#111c30":"#ffffff", text: isDark?"#ffffff":"#0d1526", text2: isDark?"#8b9dc3":"#475569", text3: isDark?"#4a6a8a":"#94a3b8", border: isDark?"rgba(255,255,255,.07)":"rgba(0,0,0,.08)", border2: isDark?"rgba(255,255,255,.14)":"rgba(0,0,0,.16)", input: isDark?"rgba(255,255,255,.06)":"#f8fafc", inputBorder: isDark?"rgba(255,255,255,.12)":"rgba(0,0,0,.14)", shadow: isDark?"rgba(0,0,0,.4)":"rgba(0,0,0,.08)", green: isDark?"#76AD25":"#5a9a1a", accent: isDark?"#f59e0b":"#d97706", strip: isDark?"rgba(255,255,255,.03)":"rgba(0,0,0,.02)" };
   return (
@@ -132,7 +188,7 @@ function SlotsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
           <span style={{ color: T.text3, fontSize: "0.875rem" }}>Balance: <strong style={{ color: "#f59e0b" }}>${balance.toFixed(2)}</strong></span>
         </div>
         <div style={{ marginBottom: 14, display: "flex", justifyContent: "center" }}>
-          <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 50)} />
+          <BetSelector bet={bet} setBet={setBet} max={balance} />
         </div>
         <button onClick={handleSpin} disabled={spinning || balance < bet}
           className={spinning || balance < bet ? "" : "btn-3d-amber"}
@@ -261,7 +317,7 @@ function BlackjackGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:
             <h3 style={{ color: T.text, fontWeight: 700, marginBottom: 8 }}>Place Your Bet</h3>
             <p style={{ color: T.text2, fontSize: "0.85rem", marginBottom: 20 }}>Beat the dealer. Get closer to 21 without going over.</p>
             <div style={{ marginBottom: 20 }}>
-              <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 100)} bets={[5,10,25,50,100]} />
+              <BetSelector bet={bet} setBet={setBet} max={balance} />
             </div>
             <button onClick={startGame} disabled={balance < bet} style={{ padding: "13px 40px", background: "#f59e0b", color: "#000", border: "none", borderRadius: 10, fontWeight: 800, fontSize: "0.95rem", cursor: "pointer", fontFamily: FONT }}>
               Deal Cards — ${bet}
@@ -415,7 +471,7 @@ function RouletteGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:n
         </div>
 
         <div style={{ marginBottom: 14, display: "flex", justifyContent: "center" }}>
-          <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 100)} bets={[5,10,25,50,100]} />
+          <BetSelector bet={bet} setBet={setBet} max={balance} />
         </div>
 
         <button onClick={spin} disabled={spinning || !betType || balance < bet} style={{ width: "100%", padding: "14px", background: spinning || !betType || balance < bet ? "#374151" : "linear-gradient(135deg,#f59e0b,#d97706)", color: spinning || !betType || balance < bet ? "#6b7280" : "#000", border: "none", borderRadius: 10, fontWeight: 900, fontSize: "0.95rem", cursor: spinning || !betType || balance < bet ? "not-allowed" : "pointer", fontFamily: FONT }}>
@@ -512,7 +568,7 @@ function SportsGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:num
             Bet slip: <strong style={{ color: T.text }}>{NZ_FIXTURES[selected.fixture][selected.pick === "home" ? "home" : selected.pick === "away" ? "away" : "home"]} ({selected.pick})</strong> @ {selected.odds.toFixed(2)}
           </div>
           <div style={{ marginBottom: 12, display: "flex", justifyContent: "center" }}>
-            <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 200)} bets={[5,10,25,50,100,200]} />
+            <BetSelector bet={bet} setBet={setBet} max={balance} />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.82rem", marginBottom: 10 }}>
             <span style={{ color: T.text2 }}>Potential return</span>
@@ -590,7 +646,7 @@ function MinesGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.7rem", color: "#4a5a7a" }}><span>1 mine (easy)</span><span>20 mines (reckless)</span></div>
           </div>
           <div style={{ marginBottom: 20, display: "flex", justifyContent: "center" }}>
-            <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 100)} bets={[5,10,25,50,100]} />
+            <BetSelector bet={bet} setBet={setBet} max={balance} />
           </div>
           <button onClick={startGame} disabled={balance < bet} style={{ width: "100%", padding: "13px", background: "#f59e0b", color: "#000", border: "none", borderRadius: 10, fontWeight: 800, cursor: "pointer", fontFamily: FONT }}>
             Start — ${bet}
@@ -741,7 +797,7 @@ function CrashGame({ balance, onWin, onLoss }: { balance: number; onWin: (n:numb
               <input type="range" className="pw-range" min={1.1} max={10} step={0.1} value={autoCashout} onChange={e => setAutoCashout(parseFloat(e.target.value))} style={{ width: "100%" }} />
             </div>
             <div style={{ marginBottom: 16, display: "flex", justifyContent: "center" }}>
-              <BetSelector bet={bet} setBet={setBet} max={Math.min(balance, 100)} bets={[5,10,25,50,100]} />
+              <BetSelector bet={bet} setBet={setBet} max={balance} />
             </div>
             <button onClick={startGame} disabled={balance < bet} style={{ width: "100%", padding: "14px", background: "#f59e0b", color: "#000", border: "none", borderRadius: 10, fontWeight: 900, cursor: "pointer", fontFamily: FONT }}>
               {phase === "bet" ? `Launch — $${bet}` : `Play Again — $${bet}`}
@@ -829,12 +885,14 @@ export default function CasinoPage() {
         </div>
 
         <div style={{ maxWidth: 580, margin: "0 auto", padding: "0 1rem 60px", fontFamily: FONT }}>
-          {gameTab === "Slots"     && <SlotsGame     balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
-          {gameTab === "Blackjack" && <BlackjackGame balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
-          {gameTab === "Roulette"  && <RouletteGame  balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
-          {gameTab === "Sports"    && <SportsGame    balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
-          {gameTab === "Mines"     && <MinesGame     balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
-          {gameTab === "Crash"     && <CrashGame     balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
+          <XPGate gate="casino" label="Casino locked — keep learning to unlock">
+            {gameTab === "Slots"     && <SlotsGame     balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
+            {gameTab === "Blackjack" && <BlackjackGame balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
+            {gameTab === "Roulette"  && <RouletteGame  balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
+            {gameTab === "Sports"    && <SportsGame    balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
+            {gameTab === "Mines"     && <MinesGame     balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
+            {gameTab === "Crash"     && <CrashGame     balance={balance} onWin={casinoWin} onLoss={casinoLoss} />}
+          </XPGate>
         </div>
 
         <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}} @keyframes spin{to{transform:rotate(360deg)}}`}</style>

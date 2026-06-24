@@ -19,12 +19,10 @@ const features = [
 ];
 
 const pricing = [
-  { name: "Student Free", price: "$0",  period: "/month", featured: false, cta: "Get Started",
-    features: ["Core modules access","Virtual portfolio basics","Leaderboard access","3 badges to earn"] },
-  { name: "Student Pro",  price: "$9",  period: "/month", featured: true,  cta: "Upgrade to Pro",
-    features: ["All free features","Full portfolio simulator","Career Centre access","Casino simulator","Premium badges"] },
-  { name: "Educator",     price: "$29", period: "/month", featured: false, cta: "Start Free Trial",
-    features: ["Unlimited students","Full classroom tools","Analytics dashboard","Custom module builder","Assessment tools"] },
+  { name: "Individual", price: "$2.49", period: "/month", featured: true, cta: "Get Started",
+    features: ["Full access to every module","Virtual portfolio simulator","Day trading terminal","Casino simulator (unlocks at 10k XP)","Leaderboard and badges"] },
+  { name: "Schools",    price: "$1",    period: "/student / month", featured: false, cta: "Talk to us",
+    features: ["Everything in Individual","Classroom management tools","Live analytics dashboard","Custom class codes","Bulk student onboarding","Priority support"] },
 ];
 
 export default function LandingPage() {

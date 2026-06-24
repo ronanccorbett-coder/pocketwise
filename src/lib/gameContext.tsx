@@ -16,6 +16,7 @@ export const XP_GATES = {
   jobJunior:   200,
   jobGraduate: 500,
   jobSenior:   1500,
+  casino:      10000,
 } as const;
 
 // ── Daily tick — 24 real hours ────────────────────────────────────────────

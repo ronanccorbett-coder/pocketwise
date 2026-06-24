@@ -286,10 +286,28 @@ function DragDropActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => v
   const [checked, setChecked] = useState(false);
   const [attempts, setAttempts] = useState(0);
   const [dragging, setDragging] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(null); // tap-to-place selection
   const [correct, setCorrect] = useState(false);
 
   const placed = Object.keys(placements);
   const unplaced = pairs.map(p => p.item).filter(item => !placed.includes(item));
+
+  // Tap an item to select it, then tap a zone to place it.
+  // Works on iPad where HTML5 drag events don't fire on touch.
+  function tapItem(item: string) {
+    if (selected === item) { setSelected(null); return; }
+    setSelected(item);
+  }
+  function tapZone(zone: string) {
+    if (!selected) return;
+    setPlacements(p => ({ ...p, [selected]: zone }));
+    setSelected(null);
+  }
+  function tapPool() {
+    if (!selected) return;
+    setPlacements(p => { const n = { ...p }; delete n[selected]; return n; });
+    setSelected(null);
+  }
 
   function check() {
     const att = attempts + 1;
@@ -311,31 +329,46 @@ function DragDropActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => v
       </h2>
       <p style={{ color: "#8b9dc3", fontSize: "0.825rem", marginBottom: 20 }}>Drag items into the correct boxes</p>
 
-      {/* Unplaced items pool */}
+      {/* Unplaced items pool — tap an item, then tap a zone */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, minHeight: 50, padding: "12px", background: "rgba(255,255,255,.04)", borderRadius: 12, border: "1.5px dashed rgba(255,255,255,.12)", marginBottom: 20 }}
         onDragOver={e => e.preventDefault()}
+        onClick={tapPool}
         onDrop={e => {
           e.preventDefault();
           if (!dragging) return;
           setPlacements(p => { const n = { ...p }; delete n[dragging]; return n; });
           setDragging(null);
         }}>
-        {unplaced.map(item => (
-          <div key={item} draggable
-            onDragStart={() => setDragging(item)}
-            onDragEnd={() => setDragging(null)}
-            style={{
-              padding: "8px 16px", background: "rgba(255,255,255,.1)",
-              border: "1.5px solid rgba(255,255,255,.2)", borderRadius: 8,
-              color: "#ffffff", fontWeight: 600, fontSize: "0.875rem",
-              cursor: "grab", userSelect: "none",
-              opacity: dragging === item ? 0.4 : 1,
-            }}>
-            {item}
-          </div>
-        ))}
+        {unplaced.map(item => {
+          const isSel = selected === item;
+          return (
+            <div key={item} draggable
+              onDragStart={() => setDragging(item)}
+              onDragEnd={() => setDragging(null)}
+              onClick={e => { e.stopPropagation(); tapItem(item); }}
+              style={{
+                padding: "8px 16px",
+                background: isSel ? "rgba(167,139,250,.35)" : "rgba(255,255,255,.1)",
+                border: `1.5px solid ${isSel ? "#a78bfa" : "rgba(255,255,255,.2)"}`,
+                borderRadius: 8,
+                color: "#ffffff", fontWeight: 600, fontSize: "0.875rem",
+                cursor: "pointer", userSelect: "none",
+                opacity: dragging === item ? 0.4 : 1,
+                touchAction: "manipulation",
+                boxShadow: isSel ? "0 0 16px rgba(167,139,250,.4)" : "none",
+                transition: "all .15s ease",
+              }}>
+              {item}
+            </div>
+          );
+        })}
         {unplaced.length === 0 && <div style={{ color: "#4a5a7a", fontSize: "0.8rem", alignSelf: "center" }}>All items placed</div>}
       </div>
+      {selected && (
+        <div style={{ marginBottom: 12, padding: "8px 14px", borderRadius: 10, background: "rgba(167,139,250,.12)", border: "1px solid rgba(167,139,250,.3)", fontSize: "0.78rem", color: "#a78bfa", fontWeight: 600 }}>
+          "{selected}" selected — tap a box below to place it
+        </div>
+      )}
 
       {/* Drop zones */}
       <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 20 }}>
@@ -347,6 +380,7 @@ function DragDropActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => v
           return (
             <div key={zone}
               onDragOver={e => e.preventDefault()}
+              onClick={() => tapZone(zone)}
               onDrop={e => {
                 e.preventDefault();
                 if (!dragging) return;
@@ -355,9 +389,12 @@ function DragDropActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => v
               }}
               style={{
                 padding: "12px 16px", borderRadius: 12,
-                border: `1.5px solid ${zoneCorrect ? "#76AD25" : zoneWrong ? "#EF4444" : "rgba(255,255,255,.15)"}`,
-                background: zoneCorrect ? "rgba(118,173,37,.1)" : zoneWrong ? "rgba(239,68,68,.08)" : "rgba(255,255,255,.04)",
+                border: `1.5px solid ${selected ? "#a78bfa" : zoneCorrect ? "#76AD25" : zoneWrong ? "#EF4444" : "rgba(255,255,255,.15)"}`,
+                background: zoneCorrect ? "rgba(118,173,37,.1)" : zoneWrong ? "rgba(239,68,68,.08)" : selected ? "rgba(167,139,250,.06)" : "rgba(255,255,255,.04)",
                 minHeight: 54, display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap",
+                cursor: selected ? "pointer" : "default",
+                touchAction: "manipulation",
+                transition: "all .15s ease",
               }}>
               <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#8b9dc3", flexShrink: 0, minWidth: 100 }}>{zone}</span>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, flex: 1 }}>
@@ -365,12 +402,19 @@ function DragDropActivity({ a, onPass, onWrong }: { a: Activity; onPass: () => v
                   <div key={item}
                     draggable
                     onDragStart={() => setDragging(item)}
+                    onClick={e => {
+                      e.stopPropagation();
+                      // tap a placed item to send it back to the pool
+                      setPlacements(p => { const n = { ...p }; delete n[item]; return n; });
+                      setSelected(null);
+                    }}
                     style={{
                       padding: "6px 14px", borderRadius: 7, fontWeight: 600, fontSize: "0.85rem",
-                      cursor: "grab", userSelect: "none",
+                      cursor: "pointer", userSelect: "none",
                       background: zoneCorrect ? "rgba(118,173,37,.25)" : zoneWrong ? "rgba(239,68,68,.2)" : "rgba(255,255,255,.12)",
                       color: zoneCorrect ? "#76AD25" : zoneWrong ? "#EF4444" : "#fff",
                       border: `1px solid ${zoneCorrect ? "#76AD25" : zoneWrong ? "#EF4444" : "rgba(255,255,255,.2)"}`,
+                      touchAction: "manipulation",
                     }}>
                     {item}
                   </div>
