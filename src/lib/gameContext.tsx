@@ -357,14 +357,21 @@ export function GameProvider({ children }: { children: ReactNode }) {
     db.transact((db as any).tx.userState[sid()].update({ xp: newXp, badges, lastActivityDate: Date.now() }));
   }, [rawState]);
 
+  // Keep a ref to rawState so async callbacks (casino games, intervals, etc.)
+  // always read the latest balance instead of a stale closure snapshot.
+  // This fixes the casino payout bug where bet + winnings stacked together.
+  const rawStateRef = useRef(rawState);
+  useEffect(() => { rawStateRef.current = rawState; }, [rawState]);
+
   const addBalance = useCallback((amount: number) => {
-    if (!rawState || !sid()) return;
-    const newBal = Math.max(0, (rawState.balance ?? 0) + amount);
+    const rs = rawStateRef.current;
+    if (!rs || !sid()) return;
+    const newBal = Math.max(0, (rs.balance ?? 0) + amount);
     db.transact((db as any).tx.userState[sid()].update({
       balance: newBal,
-      netWorth: newBal + (rawState.totalInvested ?? 0) - (rawState.totalDebt ?? 0),
+      netWorth: newBal + (rs.totalInvested ?? 0) - (rs.totalDebt ?? 0),
     }));
-  }, [rawState]);
+  }, []);
 
   const completeLesson = useCallback((lessonId: string, xpReward: number, cashReward = 50, lessonTitle?: string) => {
     if (!rawState || !sid()) return;
