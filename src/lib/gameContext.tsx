@@ -116,6 +116,7 @@ type GameCtx = {
   sellStock: (stockId: string, qtyOrPrice: number, maybePrice?: number) => void;
   buyProperty: (name: string, price: number, weeklyRent: number, mortgageWeekly: number) => boolean;
   takeLoan: (name: string, principal: number, rate: number, weeklyRepayment: number) => boolean;
+  repayLoan: (loanId: string, amount: number) => void;
   buyAsset: (name: string, category: string, price: number, depRate: number) => boolean;
   casinoWin: (amount: number) => void;
   casinoLoss: (amount: number) => void;
@@ -562,6 +563,29 @@ export function GameProvider({ children }: { children: ReactNode }) {
     return true;
   }, [rawState, authUser, canAccess]);
 
+  const repayLoan = useCallback((loanId: string, amount: number) => {
+    if (!rawState || !sid()) return;
+    const loan = loans.find(l => l.id === loanId);
+    if (!loan) return;
+    const pay = Math.min(amount, loan.balance ?? 0, rawState.balance ?? 0);
+    if (pay <= 0) return;
+    const newLoanBal = (loan.balance ?? 0) - pay;
+    const newBal = (rawState.balance ?? 0) - pay;
+    const newDebt = Math.max(0, (rawState.totalDebt ?? 0) - pay);
+    const txns: any[] = [
+      (db as any).tx.userState[sid()].update({
+        balance: newBal, totalDebt: newDebt,
+        netWorth: newBal + (rawState.totalInvested ?? 0) - newDebt,
+      }),
+    ];
+    if (newLoanBal <= 0.01) {
+      txns.push((db as any).tx.userLoans[loanId].delete());
+    } else {
+      txns.push((db as any).tx.userLoans[loanId].update({ balance: newLoanBal }));
+    }
+    db.transact(txns);
+  }, [rawState, loans]);
+
   const buyAsset = useCallback((name: string, category: string, price: number, depRate: number): boolean => {
     if (!rawState || !authUser || !sid() || !canAccess("buyAsset")) return false;
     if ((rawState.balance ?? 0) < price) return false;
@@ -605,6 +629,28 @@ export function GameProvider({ children }: { children: ReactNode }) {
     db.transact((db as any).tx.userState[sid()].update({ goals: JSON.stringify(goals) }));
   }, [rawState]);
 
+  // Activity ping — updates lastActivityDate at most once per 30s
+  useEffect(() => {
+    if (!authUser || !sid()) return;
+    let last = 0;
+    function ping() {
+      const now = Date.now();
+      if (now - last < 30000) return;
+      last = now;
+      try { db.transact((db as any).tx.userState[sid()].update({ lastActivityDate: now })); } catch {}
+    }
+    ping();
+    window.addEventListener("click", ping);
+    window.addEventListener("keydown", ping);
+    window.addEventListener("touchstart", ping);
+    return () => {
+      window.removeEventListener("click", ping);
+      window.removeEventListener("keydown", ping);
+      window.removeEventListener("touchstart", ping);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [authUser]);
+
   const signOut = useCallback(() => { db.auth.signOut(); }, []);
 
   const user: GameUser | null = authUser
@@ -617,7 +663,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       isLoading: authLoading, isNewUser,
       canAccess, addXp, addBalance, completeLesson,
       applyForJob, updateStockPrice,
-      buyStock, sellStock, buyProperty, takeLoan, buyAsset,
+      buyStock, sellStock, buyProperty, takeLoan, repayLoan, buyAsset,
       casinoWin, casinoLoss, completeOnboarding,
       clearPendingEvent, clearPendingNews, setGoals,
       signOut,

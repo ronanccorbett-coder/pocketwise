@@ -45,12 +45,16 @@ export default function TeacherPage() {
   const { user, state } = useGame();
   const [tab, setTab] = useState("overview" as Tab);
 
+  const [, setActiveTick] = useState(0);
+  useEffect(() => { const id = setInterval(() => setActiveTick(t => t + 1), 60000); return () => clearInterval(id); }, []);
+
   const { data: classData }    = db.useQuery(user ? { classrooms: { $: { where: { ownerId: user.id } } } } : null);
   const { data: enrollData }   = db.useQuery({ classEnrollments: {} });
   const { data: allStateData } = db.useQuery({ userState: {} });
   const { data: announceData } = db.useQuery({ classAnnouncements: {} });
   const { data: subData }      = db.useQuery(user ? { subscriptions: { $: { where: { ownerEmail: user.email ?? "" } } } } : null);
 
+  const ACTIVE_PULSE_CSS = `@keyframes pw-active-pulse { 0%,100%{transform:scale(1);box-shadow:0 0 8px rgba(34,197,94,.8)} 50%{transform:scale(1.15);box-shadow:0 0 14px rgba(34,197,94,1)} }`;
   const myClasses    = (classData?.classrooms ?? []) as any[];
   const allEnrolls   = (enrollData?.classEnrollments ?? []) as any[];
   const allStates    = (allStateData?.userState ?? []) as any[];
@@ -217,6 +221,7 @@ export default function TeacherPage() {
 
   return (
     <AuthGuard>
+      <style dangerouslySetInnerHTML={{ __html: ACTIVE_PULSE_CSS }} />
       <div style={{ minHeight: "100vh", background: "#0d1526", fontFamily: FONT }}>
         <Nav />
 
@@ -438,10 +443,23 @@ export default function TeacherPage() {
                     <div style={{ padding: "14px 20px", borderBottom: `1px solid ${"rgba(255,255,255,.07)"}`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                       <h3 style={{ fontWeight: 700, color: "#ffffff", fontSize: "0.9rem" }}>All Students ({classEnrolls.length})</h3>
                     </div>
-                    {studentStates.slice().sort((a: any, b: any) => (b.xp ?? 0) - (a.xp ?? 0)).map((st: any, i: number) => (
+                    {studentStates.slice().sort((a: any, b: any) => (b.xp ?? 0) - (a.xp ?? 0)).map((st: any, i: number) => {
+                      const isActive = st.lastActivityDate && (Date.now() - st.lastActivityDate) < 5 * 60 * 1000;
+                      return (
                       <div key={st.id} style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 20px", borderBottom: `1px solid ${"rgba(255,255,255,.07)"}` }}>
-                        <div style={{ width: 36, height: 36, borderRadius: "50%", background: `hsl(${(i * 47) % 360}, 55%, 35%)`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, color: "#ffffff", fontSize: "0.78rem", flexShrink: 0 }}>
-                          {st.email?.slice(0, 2).toUpperCase()}
+                        <div style={{ position: "relative", flexShrink: 0 }}>
+                          <div style={{ width: 36, height: 36, borderRadius: "50%", background: `hsl(${(i * 47) % 360}, 55%, 35%)`, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, color: "#ffffff", fontSize: "0.78rem" }}>
+                            {st.email?.slice(0, 2).toUpperCase()}
+                          </div>
+                          {isActive && (
+                            <span title="Active in the last 5 minutes" style={{
+                              position: "absolute", bottom: -2, right: -2,
+                              width: 12, height: 12, borderRadius: "50%",
+                              background: "#22c55e", border: "2px solid #0d1526",
+                              boxShadow: "0 0 8px rgba(34,197,94,.8)",
+                              animation: "pw-active-pulse 2s ease-in-out infinite",
+                            }} />
+                          )}
                         </div>
                         <div style={{ flex: 1, minWidth: 0 }}>
                           <div style={{ fontWeight: 600, color: "#ffffff", fontSize: "0.85rem" }}>{st.email?.split("@")[0]}</div>
@@ -464,7 +482,7 @@ export default function TeacherPage() {
                           ))}
                         </div>
                       </div>
-                    ))}
+                    );})}
                   </div>
                 )}
               </div>

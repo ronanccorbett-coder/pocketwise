@@ -572,7 +572,9 @@ export default function PortfolioPage(){
   const [assetSort, setAssetSort] = useState("price" as "price"|"income"|"dep");
 
   const { state, stocks, properties, loans, assets, buyStock, sellStock,
-    buyProperty, takeLoan, buyAsset, canAccess, updateStockPrice } = useGame();
+    buyProperty, takeLoan, repayLoan, buyAsset, canAccess, updateStockPrice } = useGame();
+  const [loanAmounts, setLoanAmounts] = useState<Record<string, number>>({});
+  const [repayInputs, setRepayInputs] = useState<Record<string, string>>({});
 
   const handlePriceUpdate = useCallback((symbol: string, newPrice: number) => {
     const owned = stocks.find(s => s.symbol === symbol);
@@ -683,47 +685,162 @@ export default function PortfolioPage(){
 
           {/* OVERVIEW */}
           {tab === "Overview" && (
-            <>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(170px, 1fr))", gap: 12, marginBottom: 20 }}>
-                {[
-                  { label: "Cash Balance",    val: `$${balance.toFixed(2)}`,       color: "#76AD25", Icon: DollarSign,    bg: "#e8f5d0", ic: "#76AD25" },
-                  { label: "Investments",     val: `$${totalInvested.toFixed(2)}`, color: "#3B82F6", Icon: TrendingUp,    bg: "#eff6ff", ic: "#3B82F6" },
-                  { label: "Physical Assets", val: `$${totalAssetValue.toFixed(2)}`,color:"#6b7280", Icon: Car,           bg: "#f1f5f9", ic: "#6b7280" },
-                  { label: "Total Debt",      val: `$${totalDebt.toFixed(2)}`,     color: "#EF4444", Icon: AlertTriangle, bg: "#fef2f2", ic: "#EF4444" },
-                  { label: "Net Worth",       val: `$${netWorth.toFixed(2)}`,      color: netWorth >= 5000 ? "#76AD25" : "#EF4444", Icon: Wallet, bg: "#e8f5d0", ic: "#76AD25" },
-                ].map(c => (
-                  <div key={c.label} style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "18px" }}>
-                    <div style={{ width: 36, height: 36, borderRadius: 9, background: c.bg, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
-                      <c.Icon size={17} color={c.ic} />
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              <div style={{
+                position: "relative", overflow: "hidden",
+                background: `linear-gradient(135deg, ${T.card} 0%, ${T.bg3} 100%)`,
+                border: `1.5px solid ${netWorth >= 5000 ? "rgba(118,173,37,.35)" : "rgba(239,68,68,.35)"}`,
+                borderRadius: 22, padding: "26px 28px",
+                boxShadow: netWorth >= 5000 ? "0 14px 40px rgba(118,173,37,.18)" : "0 14px 40px rgba(239,68,68,.18)",
+              }}>
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3,
+                  background: `linear-gradient(90deg, ${netWorth >= 5000 ? "#76AD25" : "#EF4444"}, transparent)` }} />
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 16, flexWrap: "wrap" }}>
+                  <div>
+                    <div style={{ fontSize: "0.72rem", color: T.text2, fontWeight: 800, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 6 }}>Net Worth</div>
+                    <div style={{
+                      fontSize: "clamp(2rem, 6vw, 3rem)", fontWeight: 900, lineHeight: 1,
+                      color: netWorth >= 5000 ? "#76AD25" : "#EF4444",
+                      textShadow: netWorth >= 5000 ? "0 0 20px rgba(118,173,37,.4)" : "0 0 20px rgba(239,68,68,.4)",
+                    }}>
+                      ${netWorth.toLocaleString("en-NZ", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </div>
-                    <div style={{ fontSize: "0.78rem", color: T.text3, marginBottom: 4 }}>{c.label}</div>
-                    <div style={{ fontSize: "1.2rem", fontWeight: 800, color: c.color }}>{c.val}</div>
+                    <div style={{ marginTop: 8, fontSize: "0.78rem", color: T.text2 }}>
+                      You started with <span style={{ fontWeight: 800, color: T.text }}>$5,000</span>
+                      <span style={{ marginLeft: 8, fontWeight: 800, color: netWorth >= 5000 ? "#76AD25" : "#EF4444" }}>
+                        {netWorth >= 5000 ? "+" : ""}${(netWorth - 5000).toLocaleString("en-NZ", { maximumFractionDigits: 0 })}
+                      </span>
+                    </div>
                   </div>
-                ))}
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-                <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "20px" }}>
-                  <h3 style={{ fontWeight: 700, marginBottom: 12, fontSize: "0.9rem" }}>Active Holdings</h3>
-                  {stocks.length === 0 ? <p style={{ color: T.text3, fontSize: "0.825rem" }}>No investments yet. Head to Markets.</p>
-                  : stocks.map(s => {
-                    const live = prices[s.symbol];
-                    const gain = live ? (live.price - s.purchasePrice) * s.quantity : 0;
-                    return <div key={s.id} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: "1px solid #f8fafc", fontSize: "0.82rem" }}>
-                      <span style={{ fontWeight: 600 }}>{s.symbol} x{s.quantity}</span>
-                      <span style={{ color: gain >= 0 ? "#76AD25" : "#EF4444", fontWeight: 600 }}>{gain >= 0 ? "+" : ""}${gain.toFixed(2)}</span>
-                    </div>;
-                  })}
-                </div>
-                <div style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 14, padding: "20px" }}>
-                  <h3 style={{ fontWeight: 700, marginBottom: 12, fontSize: "0.9rem" }}>Active Loans</h3>
-                  {loans.length === 0 ? <p style={{ color: T.text3, fontSize: "0.825rem" }}>No loans. You are debt-free.</p>
-                  : loans.map(l => <div key={l.id} style={{ display: "flex", justifyContent: "space-between", padding: "6px 0", borderBottom: "1px solid #f8fafc", fontSize: "0.82rem" }}>
-                    <span style={{ fontWeight: 600 }}>{l.name}</span>
-                    <span style={{ color: "#EF4444", fontWeight: 600 }}>${l.balance.toFixed(0)}</span>
-                  </div>)}
+                  <div style={{
+                    width: 56, height: 56, borderRadius: 14,
+                    background: netWorth >= 5000 ? "rgba(118,173,37,.18)" : "rgba(239,68,68,.18)",
+                    border: `1.5px solid ${netWorth >= 5000 ? "rgba(118,173,37,.4)" : "rgba(239,68,68,.4)"}`,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                  }}>
+                    <Wallet size={26} color={netWorth >= 5000 ? "#76AD25" : "#EF4444"} />
+                  </div>
                 </div>
               </div>
-            </>
+
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 12 }}>
+                {([
+                  { key: "Cash",   target: null,             label: "Cash Balance", val: balance,         Icon: DollarSign,    color: "#76AD25", glow: "rgba(118,173,37,.35)" },
+                  { key: "Invest", target: "Markets" as Tab, label: "Investments",  val: totalInvested,   Icon: TrendingUp,    color: "#3B82F6", glow: "rgba(59,130,246,.35)" },
+                  { key: "Assets", target: "Assets" as Tab,  label: "Assets",       val: totalAssetValue, Icon: Car,           color: "#a78bfa", glow: "rgba(167,139,250,.35)" },
+                  { key: "Debt",   target: "Loans" as Tab,   label: "Total Debt",   val: totalDebt,       Icon: AlertTriangle, color: "#EF4444", glow: "rgba(239,68,68,.35)" },
+                ]).map(c => {
+                  const clickable = c.target !== null;
+                  return (
+                    <button key={c.key}
+                      onClick={() => clickable && setTab(c.target as Tab)}
+                      disabled={!clickable}
+                      style={{
+                        position: "relative", overflow: "hidden", textAlign: "left",
+                        background: `linear-gradient(140deg, ${T.card} 0%, ${T.bg3} 100%)`,
+                        border: `1px solid ${c.color}33`,
+                        borderRadius: 16, padding: "18px",
+                        boxShadow: `0 6px 20px ${c.glow.replace(",.35", ",.15")}, 0 0 0 1px ${c.color}11`,
+                        cursor: clickable ? "pointer" : "default",
+                        transition: "transform .15s ease, box-shadow .15s ease",
+                        fontFamily: "Inter, sans-serif", color: T.text,
+                      }}
+                      onMouseEnter={e => { if (clickable) { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = `0 14px 32px ${c.glow}, 0 0 0 1px ${c.color}44`; } }}
+                      onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = `0 6px 20px ${c.glow.replace(",.35", ",.15")}, 0 0 0 1px ${c.color}11`; }}>
+                      <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, ${c.color}, ${c.color}33)` }} />
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
+                        <div style={{ width: 38, height: 38, borderRadius: 11, background: `${c.color}22`, border: `1px solid ${c.color}44`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 14px ${c.glow}` }}>
+                          <c.Icon size={18} color={c.color} />
+                        </div>
+                        {clickable && <ChevronRight size={16} color={T.text3} />}
+                      </div>
+                      <div style={{ fontSize: "0.72rem", color: T.text2, fontWeight: 600, marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.05em" }}>{c.label}</div>
+                      <div style={{ fontSize: "1.35rem", fontWeight: 900, color: c.color, textShadow: `0 0 12px ${c.glow}` }}>
+                        ${c.val.toLocaleString("en-NZ", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 }}>
+                <button onClick={() => setTab("Markets")}
+                  style={{
+                    textAlign: "left", padding: "20px",
+                    background: `linear-gradient(140deg, ${T.card} 0%, ${T.bg3} 100%)`,
+                    border: "1px solid rgba(59,130,246,.25)", borderRadius: 16,
+                    boxShadow: "0 6px 20px rgba(59,130,246,.10)",
+                    cursor: "pointer", color: T.text, fontFamily: "Inter, sans-serif",
+                    transition: "transform .15s, box-shadow .15s",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 32px rgba(59,130,246,.25)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(59,130,246,.10)"; }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+                    <h3 style={{ fontWeight: 800, fontSize: "0.9rem", color: T.text, display: "flex", alignItems: "center", gap: 8 }}>
+                      <TrendingUp size={16} color="#3B82F6" />
+                      Active Holdings
+                    </h3>
+                    <ChevronRight size={16} color={T.text3} />
+                  </div>
+                  {stocks.length === 0 ? (
+                    <div style={{ padding: "20px 0", textAlign: "center", color: T.text3, fontSize: "0.82rem" }}>
+                      No investments yet — tap to open Markets
+                    </div>
+                  ) : (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                      {stocks.slice(0, 6).map(s => {
+                        const live = prices[s.symbol];
+                        const gain = live ? (live.price - (s.purchasePrice ?? 0)) * (s.quantity ?? 0) : 0;
+                        return (
+                          <div key={s.id} style={{ display: "flex", justifyContent: "space-between", padding: "8px 10px", borderRadius: 8, background: T.input, fontSize: "0.82rem" }}>
+                            <span style={{ fontWeight: 700 }}>{s.symbol} <span style={{ color: T.text3, fontWeight: 500 }}>× {s.quantity}</span></span>
+                            <span style={{ color: gain >= 0 ? "#76AD25" : "#EF4444", fontWeight: 800 }}>{gain >= 0 ? "+" : ""}${gain.toFixed(2)}</span>
+                          </div>
+                        );
+                      })}
+                      {stocks.length > 6 && (
+                        <div style={{ fontSize: "0.72rem", color: T.text3, textAlign: "center", marginTop: 4 }}>
+                          +{stocks.length - 6} more · tap to see all
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </button>
+                <button onClick={() => setTab("Loans")}
+                  style={{
+                    textAlign: "left", padding: "20px",
+                    background: `linear-gradient(140deg, ${T.card} 0%, ${T.bg3} 100%)`,
+                    border: "1px solid rgba(239,68,68,.25)", borderRadius: 16,
+                    boxShadow: "0 6px 20px rgba(239,68,68,.10)",
+                    cursor: "pointer", color: T.text, fontFamily: "Inter, sans-serif",
+                    transition: "transform .15s, box-shadow .15s",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 14px 32px rgba(239,68,68,.25)"; }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(239,68,68,.10)"; }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+                    <h3 style={{ fontWeight: 800, fontSize: "0.9rem", color: T.text, display: "flex", alignItems: "center", gap: 8 }}>
+                      <AlertTriangle size={16} color="#EF4444" />
+                      Active Loans
+                    </h3>
+                    <ChevronRight size={16} color={T.text3} />
+                  </div>
+                  {loans.length === 0 ? (
+                    <div style={{ padding: "20px 0", textAlign: "center", color: T.text3, fontSize: "0.82rem" }}>
+                      Debt-free — tap to browse loans
+                    </div>
+                  ) : (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                      {loans.map(l => (
+                        <div key={l.id} style={{ display: "flex", justifyContent: "space-between", padding: "8px 10px", borderRadius: 8, background: T.input, fontSize: "0.82rem" }}>
+                          <span style={{ fontWeight: 700 }}>{l.name}</span>
+                          <span style={{ color: "#EF4444", fontWeight: 800 }}>${(l.balance ?? 0).toFixed(0)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </button>
+              </div>
+            </div>
           )}
 
           {/* MARKETS */}
@@ -806,14 +923,56 @@ export default function PortfolioPage(){
           {tab === "Loans" && (
             <div>
                 {loans.length > 0 && (
-                  <div style={{ background:"#111c30", border:`1px solid ${T.border}`, borderRadius:14, padding:"16px 20px", marginBottom:20 }}>
-                    <h3 style={{ fontWeight:700, fontSize:"0.875rem", color: T.text, marginBottom:12, display:"flex", alignItems:"center", gap:4 }}>Active Loans<InfoDot text="Your current debt. Loans reduce your net worth and require weekly repayments from your balance." /></h3>
-                    {loans.map(l => (
-                      <div key={l.id} style={{ display:"flex", justifyContent:"space-between", alignItems:"center", padding:"10px 0", borderBottom:"1px solid rgba(255,255,255,.04)", fontSize:"0.82rem" }}>
-                        <div><div style={{ fontWeight:700, color: T.text }}>{l.name}</div><div style={{ color: T.text3, marginTop:2, fontSize:"0.7rem" }}>{l.interestRate}% p.a. · ${l.weeklyRepayment}/wk</div></div>
-                        <div style={{ textAlign:"right" }}><div style={{ color:"#EF4444", fontWeight:800 }}>${(l.balance??0).toFixed(0)}</div><div style={{ fontSize:"0.62rem", color: T.text3 }}>owing</div></div>
-                      </div>
-                    ))}
+                  <div style={{ background: T.card, border:`1px solid ${T.border}`, borderRadius:14, padding:"16px 20px", marginBottom:20 }}>
+                    <h3 style={{ fontWeight:700, fontSize:"0.875rem", color: T.text, marginBottom:12, display:"flex", alignItems:"center", gap:4 }}>Active Loans<InfoDot text="Your current debt. Pay down principal early to save on interest." /></h3>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                      {loans.map(l => {
+                        const repayStr = repayInputs[l.id] ?? "";
+                        const repayNum = Math.max(0, parseFloat(repayStr) || 0);
+                        const canRepay = repayNum > 0 && repayNum <= balance && repayNum <= (l.balance ?? 0);
+                        return (
+                          <div key={l.id} style={{ padding: "12px 14px", background: T.bg3, borderRadius: 12, border: `1px solid ${T.border}` }}>
+                            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
+                              <div>
+                                <div style={{ fontWeight: 800, color: T.text, fontSize: "0.9rem" }}>{l.name}</div>
+                                <div style={{ color: T.text3, marginTop: 2, fontSize: "0.7rem" }}>
+                                  {l.interestRate}% p.a. {(l.weeklyRepayment ?? 0) > 0 ? `· $${l.weeklyRepayment}/wk auto` : ""}
+                                </div>
+                              </div>
+                              <div style={{ textAlign: "right" }}>
+                                <div style={{ color: "#EF4444", fontWeight: 900, fontSize: "1.1rem" }}>${(l.balance ?? 0).toFixed(2)}</div>
+                                <div style={{ fontSize: "0.62rem", color: T.text3 }}>owing</div>
+                              </div>
+                            </div>
+                            <div style={{ display: "flex", gap: 8, alignItems: "stretch" }}>
+                              <input
+                                type="number" min={1} placeholder="Amount to repay"
+                                value={repayStr}
+                                onChange={e => setRepayInputs(p => ({ ...p, [l.id]: e.target.value }))}
+                                style={{ flex: 1, padding: "8px 10px", borderRadius: 8, background: T.input, border: `1px solid ${T.border2}`, color: T.text, fontSize: "0.85rem", fontFamily: "Inter, sans-serif", outline: "none" }}
+                              />
+                              <button onClick={() => setRepayInputs(p => ({ ...p, [l.id]: String(Math.floor(Math.min(balance, l.balance ?? 0))) }))}
+                                style={{ padding: "0 12px", background: T.input, border: `1px solid ${T.border2}`, borderRadius: 8, color: T.text2, fontSize: "0.72rem", fontWeight: 700, cursor: "pointer" }}>
+                                Max
+                              </button>
+                              <button
+                                disabled={!canRepay}
+                                onClick={() => { repayLoan(l.id, repayNum); setRepayInputs(p => ({ ...p, [l.id]: "" })); notify(`Repaid $${repayNum.toFixed(2)} of ${l.name}`); }}
+                                style={{
+                                  padding: "8px 18px", borderRadius: 8,
+                                  background: canRepay ? "#76AD25" : "rgba(118,173,37,.25)",
+                                  color: canRepay ? "#fff" : "rgba(255,255,255,.5)",
+                                  border: "none", fontWeight: 800, fontSize: "0.78rem",
+                                  cursor: canRepay ? "pointer" : "not-allowed",
+                                  fontFamily: "Inter, sans-serif",
+                                }}>
+                                Repay
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 )}
                 {["Education","Vehicle","Home","Business","Personal"].map(cat => {
@@ -837,16 +996,36 @@ export default function PortfolioPage(){
                                 <div style={{ fontWeight:800, fontSize:"0.875rem", color: T.text, display:"flex", alignItems:"center", gap:4, flex:1 }}>{lp.name}<InfoDot text={lp.note}/></div>
                                 {have && <span style={{ background:"rgba(239,68,68,.15)", color:"#EF4444", padding:"2px 7px", borderRadius:99, fontSize:"0.6rem", fontWeight:800 }}>Active</span>}
                               </div>
-                              <div style={{ display:"flex", gap:14, marginBottom:12 }}>
-                                <div><div style={{ fontSize:"0.6rem", color: T.text3, textTransform:"uppercase" }}>Amount</div><div style={{ fontWeight:800, color: T.text }}>${lp.principal.toLocaleString()}</div></div>
-                                <div><div style={{ fontSize:"0.6rem", color: T.text3, textTransform:"uppercase", display:"flex", alignItems:"center" }}>Rate<InfoDot text="Annual interest rate. Higher = more expensive debt." /></div><div style={{ fontWeight:800, color:lp.rate===0?"#76AD25":lp.rate>20?"#EF4444":"#f59e0b" }}>{lp.rate===0?"0%":lp.rate>100?`${lp.rate}% ⚠`:`${lp.rate}%`}</div></div>
-                                {lp.weekly>0&&<div><div style={{ fontSize:"0.6rem", color: T.text3, textTransform:"uppercase" }}>Weekly</div><div style={{ fontWeight:800, color:"#EF4444" }}>-${lp.weekly}</div></div>}
-                              </div>
-                              <button disabled={!!have} onClick={() => { const ok=takeLoan(lp.name,lp.principal,lp.rate,lp.weekly); if(ok)notify(`${lp.name} approved`); }}
-                                className={!have?(isDangerous?"btn-3d-red":"btn-3d-navy"):""}
-                                style={{ width:"100%", padding:"9px", borderRadius:9, fontWeight:700, fontSize:"0.78rem", background:have?"rgba(255,255,255,.05)":undefined, color:have?"#4a6a8a":undefined, border:"none", cursor:have?"not-allowed":"pointer", fontFamily:"Inter,sans-serif" }}>
-                                {have?"Active":"Apply Now"}
-                              </button>
+                              {(() => {
+                                const chosen = loanAmounts[lp.name] ?? lp.principal;
+                                const scaledWeekly = lp.weekly > 0 ? Math.round(lp.weekly * (chosen / lp.principal)) : 0;
+                                const minA = Math.max(500, Math.round(lp.principal * 0.25));
+                                const maxA = Math.round(lp.principal * 3);
+                                return (
+                                  <>
+                                    <div style={{ display:"flex", gap:14, marginBottom:10 }}>
+                                      <div style={{ flex: 1 }}>
+                                        <div style={{ fontSize:"0.6rem", color: T.text3, textTransform:"uppercase", marginBottom: 4 }}>Amount</div>
+                                        <input type="number" min={minA} max={maxA} value={chosen} disabled={!!have}
+                                          onChange={e => setLoanAmounts(p => ({ ...p, [lp.name]: Math.max(minA, Math.min(maxA, parseInt(e.target.value) || minA)) }))}
+                                          style={{ width: "100%", background: T.input, color: T.text, border: `1px solid ${T.border2}`, borderRadius: 7, padding: "5px 8px", fontWeight: 800, fontSize: "0.85rem", fontFamily: "Inter, sans-serif", outline: "none" }} />
+                                      </div>
+                                      <div><div style={{ fontSize:"0.6rem", color: T.text3, textTransform:"uppercase", display:"flex", alignItems:"center" }}>Rate<InfoDot text="Annual interest rate. Higher = more expensive debt." /></div><div style={{ fontWeight:800, color:lp.rate===0?"#76AD25":lp.rate>20?"#EF4444":"#f59e0b", paddingTop: 6 }}>{lp.rate===0?"0%":lp.rate>100?`${lp.rate}% ⚠`:`${lp.rate}%`}</div></div>
+                                      {scaledWeekly>0&&<div><div style={{ fontSize:"0.6rem", color: T.text3, textTransform:"uppercase" }}>Weekly</div><div style={{ fontWeight:800, color:"#EF4444", paddingTop: 6 }}>-${scaledWeekly}</div></div>}
+                                    </div>
+                                    {!have && (
+                                      <input type="range" min={minA} max={maxA} step={Math.max(100, Math.round((maxA-minA)/100))} value={chosen}
+                                        onChange={e => setLoanAmounts(p => ({ ...p, [lp.name]: parseInt(e.target.value) }))}
+                                        style={{ width: "100%", marginBottom: 10, accentColor: color, cursor: "pointer" }} />
+                                    )}
+                                    <button disabled={!!have} onClick={() => { const ok=takeLoan(lp.name, chosen, lp.rate, scaledWeekly); if(ok) notify(`${lp.name} approved — $${chosen.toLocaleString()} deposited`); }}
+                                      className={!have?(isDangerous?"btn-3d-red":"btn-3d-navy"):""}
+                                      style={{ width:"100%", padding:"9px", borderRadius:9, fontWeight:700, fontSize:"0.78rem", background:have?"rgba(255,255,255,.05)":undefined, color:have?"#4a6a8a":undefined, border:"none", cursor:have?"not-allowed":"pointer", fontFamily:"Inter,sans-serif" }}>
+                                      {have?"Active":`Borrow $${chosen.toLocaleString()}`}
+                                    </button>
+                                  </>
+                                );
+                              })()}
                             </div>
                           );
                         })}
