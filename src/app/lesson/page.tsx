@@ -63,19 +63,64 @@ function XPFloat({ show }: { show: boolean }) {
 }
 
 // ── Hearts display ────────────────────────────────────────────────────────
+const HEART_ANIM_CSS = `
+@keyframes pw-heart-break {
+  0%   { transform: scale(1)   rotate(0);   opacity: 1; }
+  25%  { transform: scale(1.6) rotate(-15deg); opacity: 1; }
+  60%  { transform: scale(.8)  rotate(30deg) translateY(20px); opacity: .6; }
+  100% { transform: scale(.2)  rotate(60deg) translateY(80px); opacity: 0; }
+}
+@keyframes pw-heart-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+@keyframes pw-screen-flash {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+`;
 function HeartsBar({ hearts, maxHearts = 3 }: { hearts: number; maxHearts?: number }) {
+  const [prev, setPrev] = useState(hearts);
+  const [lostAt, setLostAt] = useState<number | null>(null);
+  const [flashing, setFlashing] = useState(false);
+  useEffect(() => {
+    if (hearts < prev) {
+      setLostAt(prev - 1);
+      setFlashing(true);
+      const t = setTimeout(() => { setLostAt(null); setFlashing(false); }, 900);
+      return () => clearTimeout(t);
+    }
+    setPrev(hearts);
+  }, [hearts]);
+  const FlashOverlay = flashing ? (
+    <div style={{
+      position: "fixed", inset: 0, pointerEvents: "none", zIndex: 1000,
+      background: "radial-gradient(circle at top, rgba(239,68,68,.35), transparent 60%)",
+      animation: "pw-screen-flash .9s ease-out",
+    }} />
+  ) : null;
   return (
-    <div style={{ display: "flex", gap: 4 }}>
-      {Array.from({ length: maxHearts }).map((_, i) => (
-        <Heart
-          key={i}
-          size={22}
-          fill={i < hearts ? "#EF4444" : "none"}
-          color={i < hearts ? "#EF4444" : "#cbd5e1"}
-          style={{ transition: "all 0.3s" }}
-        />
-      ))}
-    </div>
+    <>
+      <style dangerouslySetInnerHTML={{ __html: HEART_ANIM_CSS }} />
+      {FlashOverlay}
+      <div style={{ display: "flex", gap: 4 }}>
+        {Array.from({ length: maxHearts }).map((_, i) => (
+          <Heart
+            key={i}
+            size={22}
+            fill={i < hearts ? "#EF4444" : "none"}
+            color={i < hearts ? "#EF4444" : "#cbd5e1"}
+            style={{
+              transition: "all 0.3s",
+              transformOrigin: "center",
+              animation: lostAt === i ? "pw-heart-break .9s forwards" : flashing && i < hearts ? "pw-heart-shake .4s" : "none",
+            }}
+          />
+        ))}
+      </div>
+    </>
   );
 }
 

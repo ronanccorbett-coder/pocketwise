@@ -15,7 +15,6 @@ const ADMIN_EMAILS = [
 
 const links = [
   { href: "/curriculum",  label: "Curriculum",  Icon: BookOpen },
-  { href: "/activities",  label: "Activities",  Icon: Star },
   { href: "/goals",       label: "Goals",       Icon: Target },
   { href: "/portfolio",   label: "Portfolio",   Icon: BarChart2 },
   { href: "/jobs",        label: "Jobs",        Icon: Briefcase },
