@@ -365,9 +365,10 @@ export function GameProvider({ children }: { children: ReactNode }) {
 
   const addBalance = useCallback((amount: number) => {
     const rs = rawStateRef.current;
-    if (!rs || !sid()) return;
+    const userStateId = rs?.id;
+    if (!rs || !userStateId) return;
     const newBal = Math.max(0, (rs.balance ?? 0) + amount);
-    db.transact((db as any).tx.userState[sid()].update({
+    db.transact((db as any).tx.userState[userStateId].update({
       balance: newBal,
       netWorth: newBal + (rs.totalInvested ?? 0) - (rs.totalDebt ?? 0),
     }));
