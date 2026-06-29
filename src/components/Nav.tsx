@@ -18,7 +18,6 @@ const links = [
   { href: "/goals",       label: "Goals",       Icon: Target },
   { href: "/portfolio",   label: "Portfolio",   Icon: BarChart2 },
   { href: "/jobs",        label: "Jobs",        Icon: Briefcase },
-  { href: "/casino",      label: "Casino",      Icon: Spade },
   { href: "/leaderboard", label: "Leaderboard", Icon: Trophy },
 ];
 
