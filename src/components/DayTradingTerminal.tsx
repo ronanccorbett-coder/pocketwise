@@ -419,10 +419,19 @@ export default function DayTradingTerminal() {
     setOrders(prev => prev.map(o => {
       if (o.status !== "open") return o;
       const pnl = o.side==="buy" ? (bid-o.price)*o.qty*leverage : (o.price-ask)*o.qty*leverage;
-      if (o.sl && o.side==="buy" && bid<=o.sl) { notify(`SL hit — ${o.symbol} closed`); addBalance(pnl); return {...o,status:"filled",pnl}; }
-      if (o.tp && o.side==="buy" && bid>=o.tp)  { notify(`TP hit +$${pnl.toFixed(2)}`);  addBalance(pnl); return {...o,status:"filled",pnl}; }
-      if (o.sl && o.side==="sell" && ask>=o.sl) { notify(`SL hit — ${o.symbol} closed`); addBalance(pnl); return {...o,status:"filled",pnl}; }
-      if (o.tp && o.side==="sell" && ask<=o.tp) { notify(`TP hit +$${pnl.toFixed(2)}`);  addBalance(pnl); return {...o,status:"filled",pnl}; }
+      // Liquidation: if loss exceeds 80% of stake, force close.
+      const stake = o.price * o.qty;
+      if (pnl <= -stake * 0.8) {
+        const commission = stake * 0.002;
+        notify(`LIQUIDATED — ${o.symbol} (loss ${pnl.toFixed(2)})`);
+        addBalance(stake + pnl - commission);
+        return {...o, status:"filled", pnl: pnl - commission};
+      }
+      const commission = stake * 0.002;
+      if (o.sl && o.side==="buy"  && bid<=o.sl) { notify(`SL hit — ${o.symbol} closed`);     addBalance(stake + pnl - commission); return {...o,status:"filled",pnl: pnl - commission}; }
+      if (o.tp && o.side==="buy"  && bid>=o.tp) { notify(`TP hit +$${(pnl-commission).toFixed(2)}`); addBalance(stake + pnl - commission); return {...o,status:"filled",pnl: pnl - commission}; }
+      if (o.sl && o.side==="sell" && ask>=o.sl) { notify(`SL hit — ${o.symbol} closed`);     addBalance(stake + pnl - commission); return {...o,status:"filled",pnl: pnl - commission}; }
+      if (o.tp && o.side==="sell" && ask<=o.tp) { notify(`TP hit +$${(pnl-commission).toFixed(2)}`); addBalance(stake + pnl - commission); return {...o,status:"filled",pnl: pnl - commission}; }
       return {...o,pnl};
     }));
   }, [candles.length, price]);
@@ -432,19 +441,23 @@ export default function DayTradingTerminal() {
   function placeOrder() {
     const execPx = orderType==="market"?(side==="buy"?ask:bid):limitPx;
     const cost = execPx*qty;
-    if (orderType==="market" && cost>balance) { notify("Insufficient balance"); return; }
+    const commission = cost * 0.002; // 0.2% on entry
+    if (orderType==="market" && (cost + commission) > balance) { notify("Insufficient balance (incl. 0.2% commission)"); return; }
     const o: Order = { id:Math.random().toString(36).slice(2,8), symbol:sym, side, type:orderType, qty, price:execPx, sl:slPrice||undefined, tp:tpPrice||undefined, status:"open", openTime:Date.now() };
-    if (orderType==="market") addBalance(-cost);
+    if (orderType==="market") addBalance(-(cost + commission));
     setOrders(p=>[o,...p]);
-    notify(`${side.toUpperCase()} ${qty} ${sym} @ ${execPx.toFixed(dec)}`);
+    notify(`${side.toUpperCase()} ${qty} ${sym} @ ${execPx.toFixed(dec)} (fee $${commission.toFixed(2)})`);
   }
 
   function closePos(o: Order) {
     const closePx = o.side==="buy"?bid:ask;
     const pnl = o.side==="buy" ? (closePx-o.price)*o.qty*leverage : (o.price-closePx)*o.qty*leverage;
-    addBalance(o.price*o.qty+pnl);
-    setOrders(p=>p.map(x=>x.id===o.id?{...x,status:"filled",pnl}:x));
-    notify(`Closed — ${pnl>=0?"+":" "}$${pnl.toFixed(2)}`);
+    const stake = o.price*o.qty;
+    const commission = stake * 0.002; // 0.2% on exit
+    const netPnl = pnl - commission;
+    addBalance(stake + netPnl);
+    setOrders(p=>p.map(x=>x.id===o.id?{...x,status:"filled",pnl: netPnl}:x));
+    notify(`Closed — ${netPnl>=0?"+":""}$${netPnl.toFixed(2)} (fee $${commission.toFixed(2)})`);
   }
 
   const openPos = orders.filter(o=>o.status==="open");
@@ -610,8 +623,8 @@ export default function DayTradingTerminal() {
             {/* Leverage */}
             <div>
               <label style={{ display:"block", fontSize:"0.6rem", color:T.text3, fontWeight:600, marginBottom:5, textTransform:"uppercase" as const, letterSpacing:".04em" }}>Leverage: {leverage}x</label>
-              <input type="range" min={1} max={10} step={1} value={leverage} onChange={e=>setLeverage(parseInt(e.target.value))} className="pw-range" style={{ width:"100%" }} />
-              {leverage>4&&<div style={{ marginTop:4, display:"flex", alignItems:"center", gap:4, fontSize:"0.65rem", color:T.red }}><AlertTriangle size={10}/> High risk</div>}
+              <input type="range" min={1} max={3} step={1} value={leverage} onChange={e=>setLeverage(parseInt(e.target.value))} className="pw-range" style={{ width:"100%" }} />
+              {leverage>=3&&<div style={{ marginTop:4, display:"flex", alignItems:"center", gap:4, fontSize:"0.65rem", color:T.red }}><AlertTriangle size={10}/> High risk</div>}
             </div>
 
             {/* Summary */}

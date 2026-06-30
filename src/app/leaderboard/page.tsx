@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Nav from "@/components/Nav";
 import AuthGuard from "@/components/AuthGuard";
 import { useTheme } from "@/lib/theme";
@@ -32,7 +33,12 @@ export default function LeaderboardPage() {
   const { data } = db.useQuery({ userState: {} });
 
   const allStates = (data?.userState ?? []) as any[];
-  const sorted = [...allStates].sort((a, b) => (b.xp ?? 0) - (a.xp ?? 0)).slice(0, 20);
+  const [sortBy, setSortBy] = useState<"xp" | "netWorth">("xp");
+  const sorted = [...allStates].sort((a, b) => {
+    const av = sortBy === "xp" ? (a.xp ?? 0) : (a.netWorth ?? 0);
+    const bv = sortBy === "xp" ? (b.xp ?? 0) : (b.netWorth ?? 0);
+    return bv - av;
+  }).slice(0, 20);
 
   const userRank = sorted.findIndex(s => s.userId === user?.id);
 
@@ -80,6 +86,20 @@ export default function LeaderboardPage() {
             ))}
           </div>
 
+          <div style={{ display: "flex", gap: 6, marginBottom: 14, padding: 4, background: "rgba(255,255,255,.04)", borderRadius: 10, width: "fit-content" }}>
+            {(["xp","netWorth"] as const).map(opt => (
+              <button key={opt} onClick={() => setSortBy(opt)}
+                style={{
+                  padding: "7px 16px", borderRadius: 7,
+                  background: sortBy === opt ? "#76AD25" : "transparent",
+                  color: sortBy === opt ? "#fff" : "#8b9dc3",
+                  border: "none", fontWeight: 800, fontSize: "0.78rem",
+                  cursor: "pointer", fontFamily: "Inter, sans-serif",
+                }}>
+                {opt === "xp" ? "XP" : "Net Worth"}
+              </button>
+            ))}
+          </div>
           {sorted.length === 0 ? (
             <div style={{ background: "#111c30", border: `1px solid ${"rgba(255,255,255,.07)"}`, borderRadius: 14, padding: "48px", textAlign: "center" }}>
               <p style={{ color: "#4a6a8a", fontSize: "0.875rem" }}>No students on the leaderboard yet. Complete lessons to appear here.</p>
@@ -120,7 +140,7 @@ export default function LeaderboardPage() {
                       <div style={{ display: "flex", alignItems: "center", gap: 3 }}>
                         <Zap size={13} color="#3B82F6" />
                         <span style={{ fontWeight: 700, fontSize: "0.875rem", color: "#3B82F6" }}>
-                          {(s.xp ?? 0).toLocaleString()}
+                          {sortBy === "xp" ? (s.xp ?? 0).toLocaleString() + " XP" : "$" + (s.netWorth ?? 0).toLocaleString("en-NZ", { maximumFractionDigits: 0 })}
                         </span>
                       </div>
                     </div>
