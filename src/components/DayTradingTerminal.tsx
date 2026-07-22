@@ -414,26 +414,29 @@ export default function DayTradingTerminal() {
     return () => clearInterval(tickRef.current);
   }, [sym, simState===null]);
 
-  // Tick open positions — check SL/TP
+  // Tick open positions — check SL/TP. Payouts are applied here in the effect
+  // body (once per closed order), NOT inside the setOrders updater — updaters
+  // must be pure, and React re-invokes them (e.g. StrictMode) which would
+  // otherwise double-credit balance.
   useEffect(() => {
-    setOrders(prev => prev.map(o => {
+    const closures: { credit: number; note: string }[] = [];
+    const next = orders.map(o => {
       if (o.status !== "open") return o;
       const pnl = o.side==="buy" ? (bid-o.price)*o.qty*leverage : (o.price-ask)*o.qty*leverage;
-      // Liquidation: if loss exceeds 80% of stake, force close.
       const stake = o.price * o.qty;
-      if (pnl <= -stake * 0.8) {
-        const commission = stake * 0.002;
-        notify(`LIQUIDATED — ${o.symbol} (loss ${pnl.toFixed(2)})`);
-        addBalance(stake + pnl - commission);
-        return {...o, status:"filled", pnl: pnl - commission};
-      }
       const commission = stake * 0.002;
-      if (o.sl && o.side==="buy"  && bid<=o.sl) { notify(`SL hit — ${o.symbol} closed`);     addBalance(stake + pnl - commission); return {...o,status:"filled",pnl: pnl - commission}; }
-      if (o.tp && o.side==="buy"  && bid>=o.tp) { notify(`TP hit +$${(pnl-commission).toFixed(2)}`); addBalance(stake + pnl - commission); return {...o,status:"filled",pnl: pnl - commission}; }
-      if (o.sl && o.side==="sell" && ask>=o.sl) { notify(`SL hit — ${o.symbol} closed`);     addBalance(stake + pnl - commission); return {...o,status:"filled",pnl: pnl - commission}; }
-      if (o.tp && o.side==="sell" && ask<=o.tp) { notify(`TP hit +$${(pnl-commission).toFixed(2)}`); addBalance(stake + pnl - commission); return {...o,status:"filled",pnl: pnl - commission}; }
-      return {...o,pnl};
-    }));
+      const netPnl = pnl - commission;
+      const close = (note: string) => { closures.push({ credit: stake + netPnl, note }); return {...o, status:"filled" as const, pnl: netPnl}; };
+      // Liquidation: if loss exceeds 80% of stake, force close.
+      if (pnl <= -stake * 0.8)                        return close(`LIQUIDATED — ${o.symbol} (loss ${pnl.toFixed(2)})`);
+      if (o.sl && o.side==="buy"  && bid<=o.sl)       return close(`SL hit — ${o.symbol} closed`);
+      if (o.tp && o.side==="buy"  && bid>=o.tp)       return close(`TP hit +$${netPnl.toFixed(2)}`);
+      if (o.sl && o.side==="sell" && ask>=o.sl)       return close(`SL hit — ${o.symbol} closed`);
+      if (o.tp && o.side==="sell" && ask<=o.tp)       return close(`TP hit +$${netPnl.toFixed(2)}`);
+      return {...o, pnl};
+    });
+    closures.forEach(c => { notify(c.note); addBalance(c.credit); });
+    setOrders(next);
   }, [candles.length, price]);
 
   function notify(msg: string) { setNotif(msg); setTimeout(()=>setNotif(null),3500); }
