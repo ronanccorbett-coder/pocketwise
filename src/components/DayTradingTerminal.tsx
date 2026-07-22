@@ -440,11 +440,14 @@ export default function DayTradingTerminal() {
 
   function placeOrder() {
     const execPx = orderType==="market"?(side==="buy"?ask:bid):limitPx;
+    if (!(execPx > 0)) { notify("Enter a valid price"); return; }
     const cost = execPx*qty;
     const commission = cost * 0.002; // 0.2% on entry
-    if (orderType==="market" && (cost + commission) > balance) { notify("Insufficient balance (incl. 0.2% commission)"); return; }
+    // Every order becomes a live position immediately, so charge the stake up front
+    // for all order types — otherwise limit/stop orders open for free and pay out on close.
+    if ((cost + commission) > balance) { notify("Insufficient balance (incl. 0.2% commission)"); return; }
     const o: Order = { id:Math.random().toString(36).slice(2,8), symbol:sym, side, type:orderType, qty, price:execPx, sl:slPrice||undefined, tp:tpPrice||undefined, status:"open", openTime:Date.now() };
-    if (orderType==="market") addBalance(-(cost + commission));
+    addBalance(-(cost + commission));
     setOrders(p=>[o,...p]);
     notify(`${side.toUpperCase()} ${qty} ${sym} @ ${execPx.toFixed(dec)} (fee $${commission.toFixed(2)})`);
   }
