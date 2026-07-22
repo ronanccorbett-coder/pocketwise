@@ -19,7 +19,7 @@ const ADMIN_EMAILS = [
   "ronanccorbett@gmail.com",
 ];
 
-type AdminTab = "overview" | "users" | "modules" | "permissions";
+type AdminTab = "overview" | "users" | "access" | "modules" | "permissions";
 
 type EditField = { userId: string; field: "xp" | "balance"; value: string };
 
@@ -42,7 +42,9 @@ export default function AdminPage() {
   const { data: classData }    = db.useQuery({ classrooms: {} });
   const { data: reqData }      = db.useQuery({ teacherRequests: {} });
   const { data: subQueryData } = db.useQuery({ subscriptions: {} });
+  const { data: enrollData }   = db.useQuery({ classEnrollments: {} });
   const allSubscriptions = (subQueryData?.subscriptions ?? []) as any[];
+  const allEnrollments   = (enrollData?.classEnrollments ?? []) as any[];
 
   const [newPlanType, setNewPlanType]   = useState("monthly");
   const [newPlanLimit, setNewPlanLimit] = useState(35);
@@ -136,6 +138,20 @@ export default function AdminPage() {
   function generatePlanCode() {
     const seg = () => Math.random().toString(36).substring(2,6).toUpperCase();
     return `${seg()}-${seg()}-${seg()}`;
+  }
+
+  async function reactivateSub(sub: any) {
+    const days = sub.plan === "annual" ? 365 : sub.plan === "trial" ? 14 : 30;
+    const expiresAt = Date.now() + days * 24 * 60 * 60 * 1000;
+    if (!confirm(`Re-activate ${sub.planCode} for ${days} more days (until ${new Date(expiresAt).toLocaleDateString("en-NZ")})?`)) return;
+    await db.transact(
+      (db as any).tx.subscriptions[sub.id].update({
+        status: "active",
+        activatedAt: Date.now(),
+        expiresAt,
+      })
+    );
+    notify(`${sub.planCode} extended to ${new Date(expiresAt).toLocaleDateString("en-NZ")}`);
   }
 
   async function createPlanCode() {
@@ -324,6 +340,7 @@ export default function AdminPage() {
   const TABS = [
     { key: "overview" as AdminTab,    Icon: Home,      label: "Overview" },
     { key: "users" as AdminTab,       Icon: Users,     label: "Users" },
+    { key: "access" as AdminTab,      Icon: GraduationCap, label: "Access" },
     { key: "modules" as AdminTab,     Icon: BookOpen,  label: "Modules" },
     { key: "permissions" as AdminTab, Icon: Shield,    label: "Permissions" },
   ];
@@ -756,6 +773,153 @@ export default function AdminPage() {
               </div>
             </div>
           )}
+
+          {/* ACCESS — subscription → class troubleshooting */}
+          {tab === "access" && (() => {
+            const now = Date.now();
+            const activeSubs = allSubscriptions.filter((s: any) => s.status === "active");
+            const classroomById = (cid: string) => allClassrooms.find((c: any) => c.id === cid);
+            const enrollsFor = (cid: string) => allEnrollments.filter((e: any) => e.classroomId === cid);
+
+            // Replicate AuthGuard: a class grants access when a sub is active AND not past expiry AND linked to that class.
+            const grants = (sub: any) => sub.status === "active" && !!sub.classroomId && (sub.expiresAt ?? 0) > now;
+
+            return (
+              <div>
+                <h1 style={{ fontWeight: 800, fontSize: "1.4rem", marginBottom: 4 }}>Access & Subscriptions</h1>
+                <p style={{ color: "#8b9dc3", fontSize: "0.875rem", marginBottom: 20, lineHeight: 1.6 }}>
+                  Active subscriptions and the classes they unlock. Students only get access when their class is linked
+                  to a subscription that is <strong>active</strong> <em>and</em> not past its expiry date. A sub can read
+                  "active" on the dashboard but still be denied here if its expiry has passed or it isn't linked to a class —
+                  that's the usual cause of a "subscription expired" message.
+                </p>
+
+                {/* Summary cards */}
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 14, marginBottom: 24 }}>
+                  {[
+                    { label: "Active Subscriptions", val: activeSubs.length, color: "#76AD25", bg: "rgba(118,173,37,.1)", Icon: Shield },
+                    { label: "Classes w/ Access",    val: activeSubs.filter(grants).length, color: "#3B82F6", bg: "rgba(59,130,246,.1)", Icon: GraduationCap },
+                    { label: "Active but Expired",   val: activeSubs.filter((s:any) => (s.expiresAt ?? 0) <= now).length, color: "#f87171", bg: "rgba(239,68,68,.1)", Icon: AlertCircle },
+                    { label: "Active, No Class",     val: activeSubs.filter((s:any) => !s.classroomId).length, color: "#fbbf24", bg: "rgba(245,158,11,.1)", Icon: AlertCircle },
+                  ].map(stat => (
+                    <div key={stat.label} style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "16px" }}>
+                      <div style={{ width: 34, height: 34, borderRadius: 9, background: stat.bg, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 10 }}>
+                        <stat.Icon size={16} color={stat.color} />
+                      </div>
+                      <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#fff" }}>{stat.val}</div>
+                      <div style={{ fontSize: "0.72rem", color: "#8b9dc3", marginTop: 2 }}>{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {activeSubs.length === 0 && (
+                  <div style={{ background: "#1a2540", border: "1px solid #2a3a5c", borderRadius: 12, padding: "40px", textAlign: "center", color: "#8b9dc3" }}>
+                    No active subscriptions.
+                  </div>
+                )}
+
+                <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                  {activeSubs
+                    .slice()
+                    .sort((a: any, b: any) => (b.activatedAt ?? b.createdAt ?? 0) - (a.activatedAt ?? a.createdAt ?? 0))
+                    .map((sub: any) => {
+                      const cls = sub.classroomId ? classroomById(sub.classroomId) : null;
+                      const enrolls = cls ? enrollsFor(cls.id) : [];
+                      const expiredByDate = (sub.expiresAt ?? 0) <= now;
+                      const ok = grants(sub);
+
+                      // Diagnostic reasons why access would be denied despite "active" status
+                      const problems: string[] = [];
+                      if (!sub.classroomId) problems.push("Not linked to any class — teacher must activate the code on a class.");
+                      else if (!cls) problems.push(`Linked classroomId ${String(sub.classroomId).slice(0,8)}… no longer exists.`);
+                      if (expiredByDate) problems.push(`Expiry date passed (${sub.expiresAt ? new Date(sub.expiresAt).toLocaleDateString("en-NZ") : "no date"}) — students see "expired" even though status is "active".`);
+
+                      return (
+                        <div key={sub.id} style={{ background: "#1a2540", border: `1px solid ${ok ? "rgba(118,173,37,.3)" : "rgba(239,68,68,.3)"}`, borderRadius: 12, overflow: "hidden" }}>
+                          {/* Header row */}
+                          <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 18px", flexWrap: "wrap" }}>
+                            <span style={{ fontFamily: "monospace", fontWeight: 800, color: "#fff", fontSize: "0.9rem", letterSpacing: ".05em" }}>{sub.planCode}</span>
+                            <span style={{ background: "rgba(118,173,37,.15)", color: "#76AD25", padding: "2px 8px", borderRadius: 99, fontSize: "0.65rem", fontWeight: 700 }}>{sub.status}</span>
+                            <span style={{ color: "#8b9dc3", fontSize: "0.75rem" }}>{sub.plan ?? "—"}</span>
+                            <span style={{ color: "#8b9dc3", fontSize: "0.75rem" }}>{sub.ownerEmail ?? "no owner"}</span>
+                            <span style={{
+                              marginLeft: "auto",
+                              background: ok ? "rgba(118,173,37,.15)" : "rgba(239,68,68,.15)",
+                              color: ok ? "#76AD25" : "#f87171",
+                              padding: "3px 10px", borderRadius: 99, fontSize: "0.68rem", fontWeight: 800,
+                              display: "flex", alignItems: "center", gap: 5,
+                            }}>
+                              {ok ? <Check size={12} /> : <X size={12} />}
+                              {ok ? "GRANTS ACCESS" : "ACCESS DENIED"}
+                            </span>
+                            <button
+                              onClick={() => reactivateSub(sub)}
+                              title="Reset status to active and push expiry out by the plan length"
+                              style={{ display: "flex", alignItems: "center", gap: 5, background: expiredByDate ? "rgba(118,173,37,.15)" : "rgba(255,255,255,.05)", border: `1px solid ${expiredByDate ? "rgba(118,173,37,.3)" : "rgba(255,255,255,.1)"}`, borderRadius: 8, padding: "5px 12px", color: expiredByDate ? "#76AD25" : "#8b9dc3", fontWeight: 700, fontSize: "0.72rem", cursor: "pointer", fontFamily: "Inter,sans-serif" }}>
+                              <RefreshCw size={12} /> {expiredByDate ? "Re-activate" : "Extend"}
+                            </button>
+                          </div>
+
+                          {/* Detail body */}
+                          <div style={{ borderTop: "1px solid #2a3a5c", padding: "14px 18px", background: "#111c30" }}>
+                            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 8, marginBottom: 12 }}>
+                              <div style={{ background: "#1a2540", borderRadius: 8, padding: "8px 12px" }}>
+                                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginBottom: 2 }}>Linked Class</div>
+                                <div style={{ fontSize: "0.825rem", fontWeight: 600, color: cls ? "#fff" : "#f87171" }}>{cls ? cls.name : "— none —"}</div>
+                              </div>
+                              <div style={{ background: "#1a2540", borderRadius: 8, padding: "8px 12px" }}>
+                                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginBottom: 2 }}>Join Code</div>
+                                <div style={{ fontSize: "0.825rem", fontWeight: 600, fontFamily: "monospace" }}>{cls?.joinCode ?? "—"}</div>
+                              </div>
+                              <div style={{ background: "#1a2540", borderRadius: 8, padding: "8px 12px" }}>
+                                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginBottom: 2 }}>Enrolled Students</div>
+                                <div style={{ fontSize: "0.825rem", fontWeight: 600 }}>{cls ? `${enrolls.length}${sub.studentLimit ? ` / ${sub.studentLimit}` : ""}` : "—"}</div>
+                              </div>
+                              <div style={{ background: "#1a2540", borderRadius: 8, padding: "8px 12px" }}>
+                                <div style={{ fontSize: "0.68rem", color: "#8b9dc3", marginBottom: 2 }}>Expires</div>
+                                <div style={{ fontSize: "0.825rem", fontWeight: 600, color: expiredByDate ? "#f87171" : "#fff" }}>
+                                  {sub.expiresAt ? new Date(sub.expiresAt).toLocaleDateString("en-NZ") : "—"}{expiredByDate ? " (passed)" : ""}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Problems */}
+                            {problems.length > 0 && (
+                              <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.15)", borderRadius: 10, padding: "10px 14px", marginBottom: enrolls.length ? 12 : 0 }}>
+                                <div style={{ fontSize: "0.7rem", color: "#f87171", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", marginBottom: 6, display: "flex", alignItems: "center", gap: 5 }}>
+                                  <AlertCircle size={12} /> Why access is denied
+                                </div>
+                                {problems.map((p, i) => (
+                                  <div key={i} style={{ fontSize: "0.78rem", color: "#fca5a5", lineHeight: 1.5, marginBottom: i < problems.length - 1 ? 4 : 0 }}>• {p}</div>
+                                ))}
+                              </div>
+                            )}
+
+                            {/* Enrolled students — verify the affected student's email is present & matches exactly */}
+                            {cls && (
+                              <>
+                                <div style={{ fontSize: "0.72rem", fontWeight: 700, color: "#8b9dc3", marginBottom: 6, textTransform: "uppercase", letterSpacing: ".04em" }}>
+                                  Students in this class ({enrolls.length})
+                                </div>
+                                {enrolls.length === 0
+                                  ? <span style={{ fontSize: "0.78rem", color: "#4a5a7a" }}>No students enrolled yet.</span>
+                                  : (
+                                    <div style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+                                      {enrolls.map((e: any) => (
+                                        <span key={e.id} style={{ background: "#2a3a5c", color: "#94a3b8", padding: "2px 8px", borderRadius: 4, fontSize: "0.7rem", fontFamily: "monospace" }}>{e.studentEmail}</span>
+                                      ))}
+                                    </div>
+                                  )}
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            );
+          })()}
 
           {/* MODULES */}
           {tab === "modules" && (
